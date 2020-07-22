@@ -1,11 +1,9 @@
 {
-	"name": "essential-blocks/pricing-table",
+	"name": "block/pricing-table",
 	"title": "Pricing Table",
 	"category": "widgets",
-	"icon": "smiley",
 	"description": "",
-	"textdomain": "essential-blocks",
-	"editorScript": "file:./build/index.js",
+	"textdomain": "pricing-table",
 	"editorStyle": "file:./build/index.css",
 	"style": "file:./build/style-index.css"
 }

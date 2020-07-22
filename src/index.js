@@ -6,9 +6,9 @@ import Edit from "./edit";
 import save from "./save";
 import icon from "./icon";
 
-registerBlockType("essential-blocks/pricing-table", {
-	title: __("Pricing Table", "essential-blocks"),
-	description: __("", "essential-blocks"),
+registerBlockType("block/pricing-table", {
+	title: __("Pricing Table", "block"),
+	description: __("", "block"),
 	category: "widgets",
 	icon,
 	edit: Edit,
