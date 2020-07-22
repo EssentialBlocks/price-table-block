@@ -6,9 +6,9 @@
  * Author:          The WordPress Contributors
  * License:         GPL-2.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:     create-block
+ * Text Domain:     pricing-table 
  *
- * @package         create-block
+ * @package         block
  */
 
 /**
@@ -35,13 +35,6 @@ function create_block_pricing_table_block_init() {
 		$script_asset['version']
 	);
 
-	$editor_css = 'build/index.css';
-	wp_register_style(
-		'create-block-pricing-table-block-editor',
-		plugins_url( $editor_css, __FILE__ ),
-		array(),
-		filemtime( "$dir/$editor_css" )
-	);
 
 	$style_css = 'build/style-index.css';
 	wp_register_style(
@@ -51,10 +44,11 @@ function create_block_pricing_table_block_init() {
 		filemtime( "$dir/$style_css" )
 	);
 
-	register_block_type( 'create-block/pricing-table', array(
-		'editor_script' => 'create-block-pricing-table-block-editor',
-		'editor_style'  => 'create-block-pricing-table-block-editor',
-		'style'         => 'create-block-pricing-table-block',
-	) );
+	if( ! WP_Block_Type_Registry::get_instance()->is_registered( 'essential-blocks/pricing-table' ) ) {
+    register_block_type( 'block/pricing-table', array(
+      'editor_script' => 'create-block-pricing-table-block-editor',
+      'style'         => 'create-block-pricing-table-block',
+    ) );
+  }
 }
 add_action( 'init', 'create_block_pricing_table_block_init' );
