@@ -1,14 +1,14 @@
 <?php
 /**
- * Plugin Name:     Pricing Table
- * Description:     Example block written with ESNext standard and JSX support – build step required.
- * Version:         0.1.0
- * Author:          The WordPress Contributors
+ * Plugin Name:     Price Table Block
+ * Description:     Instantly create beautiful pricing menu for eCommerce website
+ * Version:         1.0.0
+ * Author:          WPDeveloper
  * License:         GPL-2.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:     pricing-table 
  *
- * @package         block
+ * @package         price-table-block
  */
 
 /**
