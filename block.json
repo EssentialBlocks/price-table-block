@@ -3,7 +3,7 @@
 	"title": "Pricing Table",
 	"category": "widgets",
 	"description": "",
-	"textdomain": "pricing-table",
+	"textdomain": "price-table-block",
 	"editorScript": "file:./build/index.js",
 	"style": "file:./build/style-index.css"
 }
