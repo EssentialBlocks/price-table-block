@@ -28,10 +28,19 @@
   width: 200px;
   white-space: nowrap; }
 
+.drag-handle {
+  flex: 1;
+  background: darkgrey;
+  border-right: 1px solid;
+  cursor: move;
+  color: #ffffff;
+  align-items: center;
+  display: flex !important;
+  justify-content: center; }
+
 .eb-pricebox-sortable-trash {
   font-size: 16px;
   border-left: 1px solid gray;
-  line-height: 2.5em;
   flex: 1;
   text-align: center;
   padding: 8px; }
@@ -53,6 +62,10 @@
 
 .eb-pricebox-wrapper p {
   margin-bottom: 0; }
+
+.eb-typography-base div {
+  display: flex;
+  justify-content: space-between; }
 
 .input-wrapper {
   width: 20%;
