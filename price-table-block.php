@@ -1,9 +1,11 @@
 <?php
 /**
  * Plugin Name:     Price Table Block
+ * Plugin URI: 		https://essential-blocks.com
  * Description:     Instantly create beautiful pricing menu for eCommerce website
  * Version:         1.0.0
  * Author:          WPDeveloper
+ * Author URI: 		https://wpdeveloper.net
  * License:         GPL-3.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain:     pricing-table 
