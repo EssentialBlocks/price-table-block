@@ -4,8 +4,8 @@
  * Description:     Instantly create beautiful pricing menu for eCommerce website
  * Version:         1.0.0
  * Author:          WPDeveloper
- * License:         GPL-2.0-or-later
- * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
+ * License:         GPL-3.0-or-later
+ * License URI:     https://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain:     pricing-table 
  *
  * @package         price-table-block

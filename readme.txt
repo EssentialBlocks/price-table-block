@@ -2,10 +2,10 @@
 Contributors: wpdevteam, re_enter_rupok, Asif2BD, alam789
 Tags: block, blocks, price, pricing, discount, offers, price table, pricing table, gutenberg, gutenberg blocks
 Requires at least: 5.0
-Tested up to: 5.4
+Tested up to: 5.5
 Stable tag: 1.0.0
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GPLv3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Instantly create beautiful pricing menu for eCommerce website.
 
@@ -17,6 +17,7 @@ Without any coding or hassle, it’ll take a few clicks to create a pricing tabl
 
 *Completely Customizable:* You can customize Pricing Table based on your product or service categories. 
 Super Light-weight: No extra resources used and it's highly optimized for super fast loading & instant Live editing.
+
 *Dedicated Support:* We’ve an extraordinary support team ready to help you. Ask your questions in the support forum, we’ll get back to you immediately.
 
 
@@ -33,9 +34,10 @@ This Block is brought to you by [WPDeveloper](https://wpdeveloper.net), the team
 
 ## 🙌 JOIN THE COMMUNITY ##
 
-- 🎦 Subscribe to our [Youtube Channel](https://www.youtube.com/wpdevelopernet/?sub_confirmation=1) to watch video tutorials on WordPress.
+🎦 Subscribe to our [Youtube Channel](https://www.youtube.com/wpdevelopernet/?sub_confirmation=1) to watch video tutorials on WordPress.
 - 🤝 Join our [Facebook Community](https://www.facebook.com/groups/wpdeveloper.net/) & get connected with expert web creators like yourself.
-- 🧡 LOVED Pricing Table? Rate us on WordPress Repository
+
+🧡 LOVED PRICING TABLE BLOCK? Rate us on [WordPress Repository](https://wordpress.org/support/plugin/pricing-table-block/reviews/#new-post)
 
 == Installation ==
 
