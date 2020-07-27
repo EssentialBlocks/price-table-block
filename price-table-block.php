@@ -8,7 +8,7 @@
  * Author URI: 		https://wpdeveloper.net
  * License:         GPL-3.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-3.0.html
- * Text Domain:     pricen-table-block
+ * Text Domain:     price-table-block 
  *
  * @package         price-table-block
  */
