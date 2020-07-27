@@ -8,7 +8,7 @@
  * Author URI: 		https://wpdeveloper.net
  * License:         GPL-3.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-3.0.html
- * Text Domain:     pricing-table 
+ * Text Domain:     pricen-table-block
  *
  * @package         price-table-block
  */
@@ -20,12 +20,8 @@
  * @see https://developer.wordpress.org/block-editor/tutorials/block-tutorial/applying-styles-with-stylesheets/
  */
 
-if( ! class_exists('EB_Font_Loader') ) {
-	require_once __DIR__ . '/includes/font-loader.php';
-}
-if( ! class_exists('EB_Post_Meta') ) {
-	require_once __DIR__ . '/includes/post-meta.php';
-}
+require_once __DIR__ . '/includes/font-loader.php';
+require_once __DIR__ . '/includes/post-meta.php';
 
 function create_block_pricing_table_block_init() {
 	$dir = dirname( __FILE__ );
