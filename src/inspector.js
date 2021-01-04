@@ -759,7 +759,7 @@ class Inspector extends Component {
 							allowReset
 							onChange={(shadowHOffset) => setAttributes({ shadowHOffset })}
 							min={0}
-							max={100}
+							max={200}
 						/>
 
 						<RangeControl
@@ -768,7 +768,7 @@ class Inspector extends Component {
 							allowReset
 							onChange={(shadowVOffset) => setAttributes({ shadowVOffset })}
 							min={0}
-							max={100}
+							max={200}
 						/>
 
 						<RangeControl
@@ -777,7 +777,7 @@ class Inspector extends Component {
 							allowReset
 							onChange={(shadowBlur) => setAttributes({ shadowBlur })}
 							min={0}
-							max={20}
+							max={200}
 						/>
 
 						<RangeControl
@@ -786,7 +786,7 @@ class Inspector extends Component {
 							allowReset
 							onChange={(shadowSpread) => setAttributes({ shadowSpread })}
 							min={0}
-							max={20}
+							max={200}
 						/>
 					</PanelBody>
 
