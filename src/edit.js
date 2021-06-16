@@ -1,25 +1,28 @@
 /**
  * WordPress dependencies
  */
-import { __ } from "@wordpress/i18n";
-import { URLInput } from "@wordpress/editor";
-import { RichText } from "@wordpress/block-editor";
+const { __ } = wp.i18n;
+const { RichText } = wp.blockEditor;
 /**
  * Internal dependencies
  */
+import "./editor.scss";
 import Inspector from "./inspector";
 
 const edit = (props) => {
 	const { attributes, isSelected, setAttributes } = props;
 	const {
+		pricingStyle,
 		title,
-		displaySubtitle,
 		subtitle,
+		headerIcon,
+		price,
+		salePrice,
+		priceCurrency,
+
+		displaySubtitle,
 		titleBackgroundColor,
 		titleTextColor,
-		price,
-		displayPriceDetails,
-		priceDetails,
 		priceBackgroundColor,
 		priceTextColor,
 		features,
@@ -50,7 +53,6 @@ const edit = (props) => {
 		paddingLeft,
 		marginUnit,
 		paddingUnit,
-		iconSizeUnit,
 		buttonHeight,
 		buttonHeightUnit,
 		buttonWidth,
@@ -65,7 +67,6 @@ const edit = (props) => {
 		subtitleFontSize,
 		subtitleSizeUnit,
 		subtitleFontWeight,
-		subtitleTextTransform,
 		subtitleTextDecoration,
 		subtitleLineHeight,
 		subtitleLineHeightUnit,
@@ -225,77 +226,96 @@ const edit = (props) => {
 		cursor: isHover ? "pointer" : "default",
 	};
 
+	const colorStyles = {
+		color: "#00C853",
+	};
+
+	const wrapperStylesNew = {
+		overflow: "hidden",
+	};
+
 	return [
-		isSelected && <Inspector {...props} />,
+		isSelected && (
+			<Inspector attributes={attributes} setAttributes={setAttributes} />
+		),
 
 		// Edit view here
-		<div className="eb-pricebox-wrapper" style={wrapperStyles}>
-			<div style={titleWrapperStyles}>
-				<RichText
-					tagName="h3"
-					className="eb-pricebox-title"
-					value={title}
-					style={titleStyles}
-					placeholder="Add Title"
-					onChange={(newTitle) => setAttributes({ title: newTitle })}
-					keepPlaceholderOnFocus
-				/>
-
-				<RichText
-					tagName="p"
-					className="eb-pricebox-subtitle"
-					value={subtitle}
-					style={{
-						...titleStyles,
-						...subtitleStyles,
-						display: displaySubtitle ? "block" : "none",
-					}}
-					placeholder="Add Subtitle"
-					onChange={(newSubtitle) => setAttributes({ subtitle: newSubtitle })}
-					keepPlaceholderOnFocus
-				/>
-			</div>
-
-			<div className="eb-pricebox-price" style={priceWrapperStyles}>
-				<RichText
-					tagName="p"
-					value={price}
-					style={priceStyles}
-					placeholder={__("99")}
-					onChange={(newPrice) => setAttributes({ price: newPrice })}
-					keepPlaceholderOnFocus
-				/>
-			</div>
-
-			<div style={featuresWrapperStyles}>
-				<ul className="eb-pricebox-features" style={featureStyles}>
-					{features.map(({ icon, text, color }) => (
-						<li data-icon={icon} data-color={color} style={featureListStyle}>
-							<span
-								className={`eb-pricebox-icon ${icon}`}
-								style={{ color: color }}
-							/>
-							<span className="eb-pricebox-text">{text}</span>
+		<div className={`ebgb-pricing ${pricingStyle}`} style={wrapperStylesNew}>
+			<div className="ebgb-pricing-item featured ribbon-4">
+				{pricingStyle === "style-2" && headerIcon && (
+					<div className="ebgb-pricing-icon" data-icon={headerIcon}>
+						<span className="icon">
+							<i class={headerIcon}></i>
+						</span>
+					</div>
+				)}
+				<div className="header">
+					<h2 className="ebgb-pricing-title">{title}</h2>
+					{pricingStyle !== "style-1" && (
+						<span className="ebgb-pricing-subtitle">{subtitle}</span>
+					)}
+				</div>
+				<div className="ebgb-pricing-tag">
+					<span className="price-tag">
+						<del className="original-price">
+							<span className="price-currency">{priceCurrency}</span>
+							{price}
+						</del>
+						<span className="sale-price">
+							<span className="price-currency">{priceCurrency}</span>
+							{salePrice}
+						</span>
+					</span>
+					<span className="price-period">/ month</span>
+				</div>
+				<div className="body">
+					<ul>
+						<li>
+							<span className="li-icon" style={colorStyles}>
+								<i className="fas fa-check"></i>
+							</span>
+							Unlimited calls
 						</li>
-					))}
-				</ul>
+						<li>
+							<span className="li-icon" style={colorStyles}>
+								<i className="fas fa-check"></i>
+							</span>
+							Free hosting
+						</li>
+						<li>
+							<span className="li-icon" style={colorStyles}>
+								<i className="fas fa-check"></i>
+							</span>
+							500 MB of storage space
+						</li>
+						<li>
+							<span className="li-icon" style={colorStyles}>
+								<i className="fas fa-check"></i>
+							</span>
+							500 MB Bandwidth
+						</li>
+						<li>
+							<span className="li-icon" style={colorStyles}>
+								<i className="fas fa-check"></i>
+							</span>
+							24/7 support
+						</li>
+					</ul>
+				</div>
+				<div className="footer">
+					<a
+						href="#"
+						target="_blank"
+						rel="nofollow noopener"
+						className="ebgb-pricing-button"
+					>
+						<i className=" fa-icon-left"></i>
+						Choose Plan{" "}
+					</a>
+				</div>
 			</div>
-
-			<div
-				className="eb-pricebox-button"
-				style={buttonStyles}
-				onMouseEnter={() => setAttributes({ isHover: true })}
-				onMouseLeave={() => setAttributes({ isHover: false })}
-			>
-				<RichText
-					value={buttonText}
-					placeholder={__("Add Text")}
-					onChange={(newText) => setAttributes({ buttonText: newText })}
-					keepPlaceholderOnFocus
-				/>
-			</div>
-			<div />
 		</div>,
+		// edit view end
 	];
 };
 

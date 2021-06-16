@@ -5,17 +5,13 @@ const { RichText } = wp.blockEditor;
 
 const save = ({ attributes }) => {
 	const {
-		pricingStyle,
 		title,
-		subtitle,
-		headerIcon,
-		price,
-		salePrice,
-		priceCurrency,
-
+		titleTag,
 		displaySubtitle,
+		subtitle,
 		titleBackgroundColor,
 		titleTextColor,
+		price,
 		priceValueSize,
 		displayPriceDetails,
 		priceDetails,
@@ -155,7 +151,7 @@ const save = ({ attributes }) => {
 	};
 
 	const priceStyles = {
-		fontSize: `${priceFontSize || 48}${priceSizeUnit}`,
+		fontSize: `${priceValueSize || 48}${priceSizeUnit}`,
 		fontFamily: priceFontFamily,
 		fontWeight: priceFontWeight,
 		textDecoration: priceTextDecoration,
@@ -215,92 +211,75 @@ const save = ({ attributes }) => {
 			? `${buttonLineHeight}${buttonLineHeightUnit}`
 			: undefined,
 	};
-	const colorStyles = {
-		color: "#00C853",
-	};
-
-	const wrapperStylesNew = {
-		overflow: "hidden",
-	};
 
 	return (
-		<>
-			<div class={`ebgb-pricing ${pricingStyle}`} style={wrapperStylesNew}>
-				<div class="ebgb-pricing-item featured ribbon-4">
-					{pricingStyle === "style-2" && headerIcon && (
-						<div className="ebgb-pricing-icon" data-icon={headerIcon}>
-							<span className="icon">
-								<i class={headerIcon}></i>
-							</span>
-						</div>
-					)}
-					<div class="header">
-						<h2 class="ebgb-pricing-title">{title}</h2>
-						{pricingStyle !== "style-1" && (
-							<span className="ebgb-pricing-subtitle">{subtitle}</span>
-						)}
-					</div>
-					<div class="ebgb-pricing-tag">
-						<span class="price-tag">
-							<del class="original-price">
-								<span class="price-currency">{priceCurrency}</span>
-								{price}
-							</del>
-							<span class="sale-price">
-								<span class="price-currency">{priceCurrency}</span>
-								{salePrice}
-							</span>
-						</span>
-						<span class="price-period">/ month</span>
-					</div>
-					<div class="body">
-						<ul>
-							<li>
-								<span class="li-icon" style={colorStyles}>
-									<i class="fas fa-check"></i>
-								</span>
-								Unlimited calls
-							</li>
-							<li>
-								<span class="li-icon" style={colorStyles}>
-									<i class="fas fa-check"></i>
-								</span>
-								Free hosting
-							</li>
-							<li>
-								<span class="li-icon" style={colorStyles}>
-									<i class="fas fa-check"></i>
-								</span>
-								500 MB of storage space
-							</li>
-							<li>
-								<span class="li-icon" style={colorStyles}>
-									<i class="fas fa-check"></i>
-								</span>
-								500 MB Bandwidth
-							</li>
-							<li>
-								<span class="li-icon" style={colorStyles}>
-									<i class="fas fa-check"></i>
-								</span>
-								24/7 support
-							</li>
-						</ul>
-					</div>
-					<div class="footer">
-						<a
-							href="#"
-							target="_blank"
-							rel="nofollow noopener"
-							class="ebgb-pricing-button"
-						>
-							<i class=" fa-icon-left"></i>
-							Choose Plan{" "}
-						</a>
-					</div>
-				</div>
+		<div
+			className="eb-pricebox-wrapper"
+			style={wrapperStyles}
+			data-button-background={buttonBackground || "#3074ff"}
+			data-button-text-color={buttonTextColor || "#ffffff"}
+			data-button-border={`${buttonBorderWidth || 0}px ${buttonBorderStyle} ${
+				buttonBorderColor || "#000000"
+			}`}
+			data-hover-background={hoverBackgroundColor || "#7967ff"}
+			data-hover-text-color={hoverTextColor || "#edf1f7"}
+			data-hover-border={`${buttonBorderWidth || 0}px ${buttonBorderStyle} ${
+				hoverBorderColor || "#000000"
+			}`}
+		>
+			<div style={titleWrapperStyles}>
+				<RichText.Content
+					tagName="h3"
+					className="eb-pricebox-title"
+					value={title}
+					style={titleStyles}
+				/>
+				<RichText.Content
+					tagName="p"
+					className="eb-pricebox-subtitle"
+					style={{
+						...titleStyles,
+						...subtitleStyles,
+						display: displaySubtitle ? "block" : "none",
+					}}
+					value={subtitle}
+				/>
 			</div>
-		</>
+
+			<div style={priceWrapperStyles}>
+				<RichText.Content
+					tagName="p"
+					className="eb-pricebox-price"
+					value={price}
+					style={priceStyles}
+				/>
+			</div>
+
+			<div style={featuresWrapperStyles}>
+				<ul className="eb-pricebox-features" style={featureStyles}>
+					{features.map(({ icon, text, color, clickable, link }) => (
+						<li
+							className="eb-pricebox-feature-item"
+							style={featureListStyle}
+							data-icon={icon}
+							data-color={color}
+							data-clickable={clickable}
+							data-link={link}
+						>
+							<span
+								className={`eb-pricebox-icon ${icon}`}
+								style={{ color: color }}
+							/>
+							<span className="eb-pricebox-feature-text">{text}</span>
+						</li>
+					))}
+				</ul>
+			</div>
+
+			<a className="eb-pricebox-button" href={buttonURL} style={buttonStyles}>
+				{buttonText}
+			</a>
+		</div>
 	);
 };
 export default save;

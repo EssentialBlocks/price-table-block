@@ -1,52 +1,12 @@
 const attributes = {
-	pricingStyle: {
+	priceboxBackground: {
 		type: "string",
-		default: "style-1",
 	},
-
 	title: {
 		type: "string",
 		source: "text",
-		selector: ".ebgb-pricing .header .ebgb-pricing-title",
+		selector: ".eb-pricebox-title",
 		default: "Startup",
-	},
-	subtitle: {
-		type: "string",
-		source: "text",
-		selector: ".ebgb-pricing .header .ebgb-pricing-subtitle",
-		default: "A tagline here.",
-	},
-	headerIcon: {
-		type: "attribute",
-		selector: ".ebgb-pricing-icon",
-		attribute: "data-icon",
-		default: "fas fa-home",
-	},
-	price: {
-		type: "string",
-		source: "text",
-		selector: ".ebgb-pricing-tag .original-price",
-		default: "99",
-	},
-	showOnSale: {
-		type: "boolean",
-		default: false,
-	},
-	salePrice: {
-		type: "string",
-		source: "text",
-		selector: ".ebgb-pricing-tag .sale-price",
-		default: "89",
-	},
-	priceCurrency: {
-		type: "string",
-		source: "text",
-		selector: ".ebgb-pricing-tag .price-currency",
-		default: "$",
-	},
-
-	priceboxBackground: {
-		type: "string",
 	},
 	titleTag: {
 		type: "string",
@@ -56,7 +16,12 @@ const attributes = {
 		type: "boolean",
 		default: false,
 	},
-
+	subtitle: {
+		type: "string",
+		source: "text",
+		selector: ".eb-pricebox-subtitle",
+		default: "Free for 30 days",
+	},
 	titleBackgroundColor: {
 		type: "string",
 	},

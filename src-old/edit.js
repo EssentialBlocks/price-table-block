@@ -1,22 +1,23 @@
 /**
  * WordPress dependencies
  */
-const { RichText } = wp.blockEditor;
+import { __ } from "@wordpress/i18n";
+import { URLInput } from "@wordpress/editor";
+import { RichText } from "@wordpress/block-editor";
+/**
+ * Internal dependencies
+ */
+import Inspector from "./inspector";
 
-const save = ({ attributes }) => {
+const edit = (props) => {
+	const { attributes, isSelected, setAttributes } = props;
 	const {
-		pricingStyle,
 		title,
-		subtitle,
-		headerIcon,
-		price,
-		salePrice,
-		priceCurrency,
-
 		displaySubtitle,
+		subtitle,
 		titleBackgroundColor,
 		titleTextColor,
-		priceValueSize,
+		price,
 		displayPriceDetails,
 		priceDetails,
 		priceBackgroundColor,
@@ -27,9 +28,9 @@ const save = ({ attributes }) => {
 		buttonBackground,
 		buttonTextColor,
 		buttonText,
+		isHover,
 		hoverBackgroundColor,
 		hoverTextColor,
-		buttonURL,
 		priceboxBackground,
 		shadowColor,
 		shadowHOffset,
@@ -113,7 +114,7 @@ const save = ({ attributes }) => {
 		display: "flex",
 		flexDirection: "column",
 		alignItems: "center",
-		background: priceboxBackground ? priceboxBackground : "#ffffff",
+		background: priceboxBackground || "#fff",
 		boxShadow: `${shadowHOffset || 0}px ${shadowVOffset || 0}px ${
 			shadowBlur || 0
 		}px ${shadowSpread || 0}px ${shadowColor || "#000000"}`,
@@ -162,6 +163,7 @@ const save = ({ attributes }) => {
 		letterSpacing: priceLetterSpacing
 			? `${priceLetterSpacing}${priceLetterSpacingUnit}`
 			: undefined,
+		margin: 0,
 	};
 
 	const featuresWrapperStyles = {
@@ -187,22 +189,28 @@ const save = ({ attributes }) => {
 		letterSpacing: featureLetterSpacing
 			? `${featureLetterSpacing}${featureLetterSpacingUnit}`
 			: undefined,
+		marginLeft: 0,
+		paddingLeft: 0,
 	};
 
 	const buttonStyles = {
 		height: buttonHeight ? `${buttonHeight}${buttonHeightUnit}` : undefined,
 		width: buttonWidth ? `${buttonWidth}${buttonWidthUnit}` : undefined,
-		background: buttonBackground || "#3074ff",
 		borderWidth: `${buttonBorderWidth || 0}px`,
 		borderStyle: buttonBorderStyle,
-		borderColor: buttonBorderColor || "#000000",
-		color: buttonTextColor || "#edf1f7",
-		margin: 10,
-		padding: "8px 26px",
+		borderColor: isHover
+			? hoverBorderColor || "#000000"
+			: buttonBorderColor || "#000000",
 		textAlign: "center",
+		background: isHover
+			? hoverBackgroundColor || "#7967ff"
+			: buttonBackground || "#3074ff",
+		color: isHover ? hoverTextColor || "#ffffff" : buttonTextColor || "#edf1f7",
+		margin: 10,
+		textAlign: "center",
+		padding: "8px 26px",
 		display: "inline-block",
 		borderRadius: `${buttonBorderRadius || 0}${buttonBorderRadiusUnit}`,
-		textDecoration: "none",
 		fontSize: `${buttonFontSize || 16}${buttonSizeUnit}`,
 		fontFamily: buttonFontFamily,
 		fontWeight: buttonFontWeight,
@@ -214,93 +222,81 @@ const save = ({ attributes }) => {
 		lineHeight: buttonLineHeight
 			? `${buttonLineHeight}${buttonLineHeightUnit}`
 			: undefined,
-	};
-	const colorStyles = {
-		color: "#00C853",
+		cursor: isHover ? "pointer" : "default",
 	};
 
-	const wrapperStylesNew = {
-		overflow: "hidden",
-	};
+	return [
+		isSelected && <Inspector {...props} />,
 
-	return (
-		<>
-			<div class={`ebgb-pricing ${pricingStyle}`} style={wrapperStylesNew}>
-				<div class="ebgb-pricing-item featured ribbon-4">
-					{pricingStyle === "style-2" && headerIcon && (
-						<div className="ebgb-pricing-icon" data-icon={headerIcon}>
-							<span className="icon">
-								<i class={headerIcon}></i>
-							</span>
-						</div>
-					)}
-					<div class="header">
-						<h2 class="ebgb-pricing-title">{title}</h2>
-						{pricingStyle !== "style-1" && (
-							<span className="ebgb-pricing-subtitle">{subtitle}</span>
-						)}
-					</div>
-					<div class="ebgb-pricing-tag">
-						<span class="price-tag">
-							<del class="original-price">
-								<span class="price-currency">{priceCurrency}</span>
-								{price}
-							</del>
-							<span class="sale-price">
-								<span class="price-currency">{priceCurrency}</span>
-								{salePrice}
-							</span>
-						</span>
-						<span class="price-period">/ month</span>
-					</div>
-					<div class="body">
-						<ul>
-							<li>
-								<span class="li-icon" style={colorStyles}>
-									<i class="fas fa-check"></i>
-								</span>
-								Unlimited calls
-							</li>
-							<li>
-								<span class="li-icon" style={colorStyles}>
-									<i class="fas fa-check"></i>
-								</span>
-								Free hosting
-							</li>
-							<li>
-								<span class="li-icon" style={colorStyles}>
-									<i class="fas fa-check"></i>
-								</span>
-								500 MB of storage space
-							</li>
-							<li>
-								<span class="li-icon" style={colorStyles}>
-									<i class="fas fa-check"></i>
-								</span>
-								500 MB Bandwidth
-							</li>
-							<li>
-								<span class="li-icon" style={colorStyles}>
-									<i class="fas fa-check"></i>
-								</span>
-								24/7 support
-							</li>
-						</ul>
-					</div>
-					<div class="footer">
-						<a
-							href="#"
-							target="_blank"
-							rel="nofollow noopener"
-							class="ebgb-pricing-button"
-						>
-							<i class=" fa-icon-left"></i>
-							Choose Plan{" "}
-						</a>
-					</div>
-				</div>
+		// Edit view here
+		<div className="eb-pricebox-wrapper" style={wrapperStyles}>
+			<div style={titleWrapperStyles}>
+				<RichText
+					tagName="h3"
+					className="eb-pricebox-title"
+					value={title}
+					style={titleStyles}
+					placeholder="Add Title"
+					onChange={(newTitle) => setAttributes({ title: newTitle })}
+					keepPlaceholderOnFocus
+				/>
+
+				<RichText
+					tagName="p"
+					className="eb-pricebox-subtitle"
+					value={subtitle}
+					style={{
+						...titleStyles,
+						...subtitleStyles,
+						display: displaySubtitle ? "block" : "none",
+					}}
+					placeholder="Add Subtitle"
+					onChange={(newSubtitle) => setAttributes({ subtitle: newSubtitle })}
+					keepPlaceholderOnFocus
+				/>
 			</div>
-		</>
-	);
+
+			<div className="eb-pricebox-price" style={priceWrapperStyles}>
+				<RichText
+					tagName="p"
+					value={price}
+					style={priceStyles}
+					placeholder={__("99")}
+					onChange={(newPrice) => setAttributes({ price: newPrice })}
+					keepPlaceholderOnFocus
+				/>
+			</div>
+
+			<div style={featuresWrapperStyles}>
+				<ul className="eb-pricebox-features" style={featureStyles}>
+					{features.map(({ icon, text, color }) => (
+						<li data-icon={icon} data-color={color} style={featureListStyle}>
+							<span
+								className={`eb-pricebox-icon ${icon}`}
+								style={{ color: color }}
+							/>
+							<span className="eb-pricebox-text">{text}</span>
+						</li>
+					))}
+				</ul>
+			</div>
+
+			<div
+				className="eb-pricebox-button"
+				style={buttonStyles}
+				onMouseEnter={() => setAttributes({ isHover: true })}
+				onMouseLeave={() => setAttributes({ isHover: false })}
+			>
+				<RichText
+					value={buttonText}
+					placeholder={__("Add Text")}
+					onChange={(newText) => setAttributes({ buttonText: newText })}
+					keepPlaceholderOnFocus
+				/>
+			</div>
+			<div />
+		</div>,
+	];
 };
-export default save;
+
+export default edit;

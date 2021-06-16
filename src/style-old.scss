@@ -1,0 +1,70 @@
+.eb-pricebox-features li {
+	margin: 10px auto;
+	border-bottom: 1px solid #eee;
+}
+
+.eb-pricebox-price {
+	margin: 0;
+}
+
+.eb-pricebox-feature-button {
+	margin: 0 auto;
+}
+
+.eb-pricebox-icon {
+	padding-right: 10px;
+}
+
+// Sortable Styles
+.eb-pricebox-sortable-item {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border: 1px solid;
+	line-height: 2.5em;
+}
+
+.eb-pricebox-sortable-title {
+	flex: 12;
+	padding-left: 5px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 200px;
+	white-space: nowrap;
+}
+
+.eb-pricebox-sortable-trash {
+	font-size: 16px;
+	border-left: 1px solid gray;
+	line-height: 2.5em;
+	flex: 1;
+	text-align: center;
+	padding: 8px;
+}
+.eb-pricebox-sortable-trash:hover {
+	background: #f44336;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+.eb-pricebox-sortable-title:hover {
+	cursor: pointer;
+}
+
+.eb-pricebox-button {
+	line-height: inherit;
+}
+
+.eb-pricebox-add-button-label {
+	margin-left: 10px;
+}
+
+.eb-pricebox-features {
+	margin: 0;
+	padding: 0;
+}
+
+.eb-pricebox-wrapper p {
+	margin-bottom: 0;
+}

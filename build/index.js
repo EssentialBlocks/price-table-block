@@ -1,46 +1,16 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["style-index"],{
+(window["webpackJsonp_pricing_table"] = window["webpackJsonp_pricing_table"] || []).push([["style-index"],{
 
 /***/ "./src/style.scss":
 /*!************************!*\
   !*** ./src/style.scss ***!
   \************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
-/***/ }),
-
-/***/ "./util/color-control/style.css":
-/*!**************************************!*\
-  !*** ./util/color-control/style.css ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-
-/***/ "./util/dimensions-control/style.scss":
-/*!********************************************!*\
-  !*** ./util/dimensions-control/style.scss ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-
-/***/ "./util/unit-control/style.scss":
-/*!**************************************!*\
-  !*** ./util/unit-control/style.scss ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
 
 /***/ })
 
@@ -187,7 +157,7 @@
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
 /******/
-/******/ 	var jsonpArray = window["webpackJsonp"] = window["webpackJsonp"] || [];
+/******/ 	var jsonpArray = window["webpackJsonp_pricing_table"] = window["webpackJsonp_pricing_table"] || [];
 /******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
 /******/ 	jsonpArray.push = webpackJsonpCallback;
 /******/ 	jsonpArray = jsonpArray.slice();
@@ -765,6 +735,39 @@ function _unsupportedIterableToArray(o, minLen) {
  */
 !function(e,t){ true?module.exports=t(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"),__webpack_require__(/*! react */ "react"),__webpack_require__(/*! classnames */ "./node_modules/classnames/index.js"),__webpack_require__(/*! react-dom */ "react-dom"),__webpack_require__(/*! react-transition-group */ "./node_modules/react-transition-group/esm/index.js")):undefined}(window,function(e,t,r,n,a){return function(e){var t={};function r(n){if(t[n])return t[n].exports;var a=t[n]={i:n,l:!1,exports:{}};return e[n].call(a.exports,a,a.exports,r),a.l=!0,a.exports}return r.m=e,r.c=t,r.d=function(e,t,n){r.o(e,t)||Object.defineProperty(e,t,{configurable:!1,enumerable:!0,get:n})},r.r=function(e){Object.defineProperty(e,"__esModule",{value:!0})},r.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return r.d(t,"a",t),t},r.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},r.p="",r(r.s=15)}([function(t,r){t.exports=e},function(e,r){e.exports=t},function(e,t,r){"use strict";function n(e){return(n="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function a(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}function o(e){return function(e){if(Array.isArray(e)){for(var t=0,r=new Array(e.length);t<e.length;t++)r[t]=e[t];return r}}(e)||function(e){if(Symbol.iterator in Object(e)||"[object Arguments]"===Object.prototype.toString.call(e))return Array.from(e)}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance")}()}Object.defineProperty(t,"__esModule",{value:!0}),t.flattenPossiblyCategorizedSource=function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:null;if(Array.isArray(e))return o(e);if(null!==t)return void 0!==e[t]?o(e[t]):[];var r=[],n=function(e){for(var t=1;t<arguments.length;t++){var r=null!=arguments[t]?arguments[t]:{},n=Object.keys(r);"function"==typeof Object.getOwnPropertySymbols&&(n=n.concat(Object.getOwnPropertySymbols(r).filter(function(e){return Object.getOwnPropertyDescriptor(r,e).enumerable}))),n.forEach(function(t){a(e,t,r[t])})}return e}({},e);return Object.keys(n).forEach(function(e){r=o(r).concat(o(n[e]))}),r},t.getPossibleCategories=function(e){return Array.isArray(e)?null:Object.keys(e)},t.convertToHex=function(e){return String.fromCodePoint(parseInt(e,10))},t.isArrayEqual=function(e,t){if(!Array.isArray(e)||!Array.isArray(t))return!1;var r=o(e);r.sort();var n=o(t);return n.sort(),JSON.stringify(r)===JSON.stringify(n)},t.getOffset=function(e){var t=e.getBoundingClientRect(),r=window.pageXOffset||document.documentElement.scrollLeft,n=window.pageYOffset||document.documentElement.scrollTop;return{top:t.top+n,left:t.left+r}},t.getSourceType=function(e){return null===e?"null":"object"!==n(e)||Array.isArray(e)?Array.isArray(e)?"array":n(e):"object"},t.InvalidSourceException=function(e,t){this.givenType=e,this.requiredType=t,this.message="Expected of type: ".concat(this.requiredType,", found: ").concat(this.givenType),this.toString=function(){return"Invalid Source Exception: ".concat(this.message)}},t.fuzzySearch=function(e,t){e=e.toLowerCase();var r=(t=t.toLowerCase()).length,n=e.length;if(n>r)return!1;if(n===r)return e===t;e:for(var a=0,o=0;a<n;a++){for(var l=e.codePointAt(a);o<r;)if(t.codePointAt(o++)===l)continue e;return!1}return!0},t.debounce=void 0,t.debounce=function(e,t){var r;return function(){var n=this,a=arguments;clearTimeout(r),r=setTimeout(function(){return e.apply(n,a)},t)}}},function(e,t){e.exports=r},,,function(e,t){e.exports=n},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var n=u(r(1)),a=r(6),o=u(r(0)),l=u(r(3)),i=r(2);function u(e){return e&&e.__esModule?e:{default:e}}function c(e){return(c="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function s(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function f(e,t,r){return t&&s(e.prototype,t),r&&s(e,r),e}function d(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}var p=function(e){function t(e){var r,n;return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),this,n=(t.__proto__||Object.getPrototypeOf(t)).call(this,e),r=!n||"object"!==c(n)&&"function"!=typeof n?d(this):n,Object.defineProperty(d(r),"syncPortalPosition",{configurable:!0,enumerable:!0,writable:!0,value:function(){r.resetPortalPosition(),r.fixWindowOverflow()}}),Object.defineProperty(d(r),"fixWindowOverflow",{configurable:!0,enumerable:!0,writable:!0,value:function(){var e=r.props.domRef.current.offsetWidth,t=r.props.domRef.current.offsetHeight,n=window,a=n.innerWidth,o=n.pageYOffset,l=document.documentElement.clientHeight,u=(0,i.getOffset)(r.props.domRef.current),c=u.left,s=u.top,f="self"===r.state.appendRoot?r.props.domRef.current:r.state.appendRoot,d=(0,i.getOffset)(f),p=r.props.btnRef.current,h=r.props.domRef.current,y=(0,i.getOffset)(p),b=getComputedStyle(p),g=(parseInt(b.borderTop,10)||0)+(parseInt(b.borderBottom,10)||0);if(c+e>a-20){var m=y.left+r.props.btnRef.current.offsetWidth-(e+d.left);m+d.left<0&&(m=10-d.left),h.style.left="".concat(m,"px")}t+s-o>l&&y.top-t>0&&("self"===r.state.appendRoot?h.style.top="-".concat(t-g,"px"):h.style.top="".concat(y.top+g-t,"px"))}}),r.state={},r.debouncedSyncPortalPosition=(0,i.debounce)(r.syncPortalPosition,250),r}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function");e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,n.default.PureComponent),f(t,null,[{key:"getDerivedStateFromProps",value:function(e){var r=t.calculateAppendAndClass(e.appendRoot);return{appendRoot:r.appendRoot,portalClasses:r.portalClasses}}},{key:"calculateAppendAndClass",value:function(e){var t="self",r=(0,l.default)({"rfipdropdown--portal":!1!==e});return!1!==e&&(t=document.querySelector(e)),{portalClasses:r,appendRoot:t}}}]),f(t,[{key:"componentDidMount",value:function(){window.addEventListener("resize",this.debouncedSyncPortalPosition),window.addEventListener("scroll",this.debouncedSyncPortalPosition),this.syncPortalPosition()}},{key:"componentDidUpdate",value:function(){this.syncPortalPosition()}},{key:"componentWillUnmount",value:function(){window.removeEventListener("resize",this.debouncedSyncPortalPosition),window.removeEventListener("scroll",this.debouncedSyncPortalPosition)}},{key:"positionPortal",value:function(){var e=this.props.domRef.current.style.display;this.props.domRef.current.style.display="none";var t=this.props.btnRef.current,r=(0,i.getOffset)(t),n=(0,i.getOffset)(this.state.appendRoot),a=t.offsetHeight;this.props.domRef.current.style.left="".concat(r.left-n.left,"px"),this.props.domRef.current.style.top="".concat(r.top+a,"px"),this.props.domRef.current.style.display=e}},{key:"resetPortalPosition",value:function(){var e=this.props.domRef.current;"self"===this.state.appendRoot?e.style.top="":this.positionPortal()}},{key:"render",value:function(){var e=(0,l.default)(this.props.className,this.state.portalClasses),t=n.default.createElement("div",{className:e,ref:this.props.domRef},this.props.children);return"self"===this.state.appendRoot?t:(0,a.createPortal)(t,this.state.appendRoot)}}]),t}();Object.defineProperty(p,"propTypes",{configurable:!0,enumerable:!0,writable:!0,value:{appendRoot:o.default.oneOfType([o.default.bool,o.default.string]),children:o.default.node.isRequired,domRef:o.default.object.isRequired,btnRef:o.default.object.isRequired,className:o.default.string.isRequired}}),Object.defineProperty(p,"defaultProps",{configurable:!0,enumerable:!0,writable:!0,value:{appendRoot:!1}});var h=p;t.default=h},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var n=i(r(1)),a=i(r(0)),o=i(r(3)),l=r(2);function i(e){return e&&e.__esModule?e:{default:e}}function u(e){return(u="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function c(e){return function(e){if(Array.isArray(e)){for(var t=0,r=new Array(e.length);t<e.length;t++)r[t]=e[t];return r}}(e)||function(e){if(Symbol.iterator in Object(e)||"[object Arguments]"===Object.prototype.toString.call(e))return Array.from(e)}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance")}()}function s(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function f(e,t,r){return t&&s(e.prototype,t),r&&s(e,r),e}function d(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}var p=function(e){function t(e){var r,n;return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),this,n=(t.__proto__||Object.getPrototypeOf(t)).call(this,e),r=!n||"object"!==u(n)&&"function"!=typeof n?d(this):n,Object.defineProperty(d(r),"handleChangePage",{configurable:!0,enumerable:!0,writable:!0,value:function(e){var t,n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:null,a=r.props.currentPage,o=r.state.totalPage;null!==n?"next"===n?a+=1:a-=1:a=parseInt(e.target.value,10)-1,a<0&&(a=0),a>o-1&&(a=o-1),t=a+1,null===n&&Number.isNaN(a)&&(a=0,t=""),r.setState({viewPage:t}),r.props.handleChangePage(a)}}),Object.defineProperty(d(r),"handlePageKeyBoard",{configurable:!0,enumerable:!0,writable:!0,value:function(e,t){13!==e.keyCode&&32!==e.keyCode||r.handleChangePage({},t)}}),Object.defineProperty(d(r),"handleChangeValue",{configurable:!0,enumerable:!0,writable:!0,value:function(e){r.props.handleChangeValue(e)}}),Object.defineProperty(d(r),"handleValueKeyboard",{configurable:!0,enumerable:!0,writable:!0,value:function(e,t){13!==e.keyCode&&32!==e.keyCode||r.handleChangeValue(t)}}),r.state={viewPage:r.props.currentPage+1},r}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function");e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,n.default.PureComponent),f(t,null,[{key:"getDerivedStateFromProps",value:function(e,r){var n=t.getCategoryFilteredState(e.currentCategory,e.categories,e.icons),a=t.getCategoryFilteredState(e.currentCategory,e.categories,null===e.search?e.icons:e.search),o=t.getActiveIcons(n,a,e.currentSearch),l=o.activeIcons,i=o.activeTitles,u=e.currentPage,c=e.iconsPerPage,s={iconView:t.getCurrentViewIcons(l,c,u),titleView:t.getCurrentViewIcons(i,c,u),totalPage:Math.ceil(l.length/c)};return""!==r.viewPage&&(s.viewPage=e.currentPage+1),s}},{key:"getActiveIcons",value:function(e,t,r){var n=c(e),a=c(t);if(""===r||null===r)return{activeIcons:n,activeTitles:a};var o=[],i=[];return n.forEach(function(e,n){(0,l.fuzzySearch)(r,t[n])&&(o.push(e),i.push(t[n]))}),{activeIcons:o,activeTitles:i}}},{key:"getCategoryFilteredState",value:function(e,t,r){var n=null,a=(0,l.getSourceType)(r);if(Array.isArray(t)){if("object"!==a)throw new l.InvalidSourceException(a,"object")}else if("array"!==a)throw new l.InvalidSourceException(a,"array");return 0!==e&&Array.isArray(t)&&(n=t[e]||null),(0,l.flattenPossiblyCategorizedSource)(r,n)}},{key:"getCurrentViewIcons",value:function(e,t,r){var n=r*t,a=(r+1)*t;return e.slice(n,a)}}]),f(t,[{key:"renderPager",value:function(){var e=this;if(this.state.totalPage<1)return null;var t=this.props.currentPage>0?n.default.createElement("span",{className:"rfipicons__left",role:"button",tabIndex:0,onKeyDown:function(t){return e.handlePageKeyBoard(t,"prev")},onClick:function(t){return e.handleChangePage(t,"prev")}},n.default.createElement("span",{role:"presentation",className:"rfipicons__label","aria-label":"Left"},n.default.createElement("i",{className:"fipicon-angle-left"}))):null,r=this.props.currentPage<this.state.totalPage-1?n.default.createElement("span",{className:"rfipicons__right",role:"button",tabIndex:0,onKeyDown:function(t){return e.handlePageKeyBoard(t,"next")},onClick:function(t){return e.handleChangePage(t,"next")}},n.default.createElement("span",{role:"presentation",className:"rfipicons__label","aria-label":"Right"},n.default.createElement("i",{className:"fipicon-angle-right"}))):null;return n.default.createElement("div",{className:"rfipicons__pager"},n.default.createElement("div",{className:"rfipicons__num"},n.default.createElement("input",{value:this.state.viewPage,onChange:this.handleChangePage,className:"rfipicons__cp",type:"tel",min:1}),n.default.createElement("span",{className:"rfipicons__sp"},"/"),n.default.createElement("span",{className:"rfipicons__tp"},this.state.totalPage)),n.default.createElement("div",{className:"rfipicons__arrow"},t,r))}},{key:"renderIconView",value:function(){var e=this;return this.state.totalPage>0?this.state.iconView.map(function(t,r){var a=(0,o.default)("rfipicons__icon",{"rfipicons__icon--selected":e.props.value===t||Array.isArray(e.props.value)&&e.props.value.includes(t)});return n.default.createElement("span",{className:a,key:t,title:e.state.titleView[r]},n.default.createElement("span",{className:"rfipicons__ibox",tabIndex:0,role:"button",onClick:function(){return e.handleChangeValue(t)},onKeyDown:function(r){return e.handleValueKeyboard(r,t)}},e.props.renderIcon(t)))}):n.default.createElement("span",{className:"rfipicons__icon--error"},n.default.createElement("span",{className:"rfipicons__ibox--error"},this.props.noIconPlaceholder))}},{key:"render",value:function(){return n.default.createElement("div",{className:"rfipicons"},this.renderPager(),n.default.createElement("div",{className:"rfipicons__selector"},this.renderIconView()))}}]),t}();Object.defineProperty(p,"propTypes",{configurable:!0,enumerable:!0,writable:!0,value:{categories:a.default.arrayOf(a.default.string),currentCategory:a.default.number,isMulti:a.default.bool.isRequired,icons:a.default.oneOfType([a.default.arrayOf(a.default.string),a.default.arrayOf(a.default.number),a.default.objectOf(a.default.oneOfType([a.default.arrayOf(a.default.number),a.default.arrayOf(a.default.string)]))]).isRequired,search:a.default.oneOfType([a.default.objectOf(a.default.arrayOf(a.default.string)),a.default.arrayOf(a.default.string)]),value:a.default.oneOfType([a.default.number,a.default.string,a.default.arrayOf(a.default.oneOfType([a.default.number,a.default.string]))]).isRequired,currentSearch:a.default.string.isRequired,handleChangeValue:a.default.func.isRequired,currentPage:a.default.number.isRequired,iconsPerPage:a.default.number.isRequired,handleChangePage:a.default.func.isRequired,renderIcon:a.default.func.isRequired,noIconPlaceholder:a.default.string.isRequired}}),Object.defineProperty(p,"defaultProps",{configurable:!0,enumerable:!0,writable:!0,value:{categories:null,currentCategory:null,search:null}});var h=p;t.default=h},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var n=o(r(1)),a=o(r(0));function o(e){return e&&e.__esModule?e:{default:e}}var l=function(e){return n.default.createElement("div",{className:"rfipsearch"},n.default.createElement("input",{type:"text",className:"rfipsearch__input",value:e.value,onChange:e.handleSearch,placeholder:e.placeholder}))};l.propTypes={handleSearch:a.default.func.isRequired,value:a.default.string.isRequired,placeholder:a.default.string.isRequired};var i=l;t.default=i},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var n=o(r(1)),a=o(r(0));function o(e){return e&&e.__esModule?e:{default:e}}function l(e){return(l="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function i(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}var u=function(e){function t(){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){return!t||"object"!==l(t)&&"function"!=typeof t?function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}(e):t}(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}var r,a;return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function");e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,n.default.PureComponent),r=t,(a=[{key:"render",value:function(){return n.default.createElement("div",{className:"rfipcategory"},n.default.createElement("select",{className:"rfipcategory__select",onChange:this.props.handleCategory,value:this.props.value},this.props.categories.map(function(e,t){return n.default.createElement("option",{className:"rfipcategory__select__option",key:e,value:t},e)})),n.default.createElement("i",{className:"fipicon-angle-down",role:"presentation","aria-label":"Open"}))}}])&&i(r.prototype,a),t}();Object.defineProperty(u,"propTypes",{configurable:!0,enumerable:!0,writable:!0,value:{handleCategory:a.default.func.isRequired,value:a.default.number.isRequired,categories:a.default.arrayOf(a.default.string).isRequired}});var c=u;t.default=c},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var n=c(r(1)),a=c(r(0)),o=c(r(10)),l=c(r(9)),i=c(r(8)),u=r(2);function c(e){return e&&e.__esModule?e:{default:e}}function s(e){return(s="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function f(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function d(e,t,r){return t&&f(e.prototype,t),r&&f(e,r),e}function p(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}var h=function(e){function t(e){var r,n;return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),this,n=(t.__proto__||Object.getPrototypeOf(t)).call(this,e),r=!n||"object"!==s(n)&&"function"!=typeof n?p(this):n,Object.defineProperty(p(r),"handleCategory",{configurable:!0,enumerable:!0,writable:!0,value:function(e){var t=parseInt(e.target.value,10);Number.isNaN(t)&&(t=0),r.props.handleChangeCategory(t),r.props.handleChangePage(0)}}),Object.defineProperty(p(r),"handleSearch",{configurable:!0,enumerable:!0,writable:!0,value:function(e){var t=e.target.value;r.props.handleChangeSearch(t)}}),r.state={},r}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function");e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,n.default.PureComponent),d(t,null,[{key:"getDerivedStateFromProps",value:function(e){var t=(0,u.getPossibleCategories)(e.icons);return null!==t&&(t=[e.allCatPlaceholder].concat(function(e){return function(e){if(Array.isArray(e)){for(var t=0,r=new Array(e.length);t<e.length;t++)r[t]=e[t];return r}}(e)||function(e){if(Symbol.iterator in Object(e)||"[object Arguments]"===Object.prototype.toString.call(e))return Array.from(e)}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance")}()}(t))),{categories:t,searchString:e.currentSearch}}}]),d(t,[{key:"render",value:function(){return n.default.createElement("div",{className:"rfipdropdown__selector"},this.props.showSearch?n.default.createElement(l.default,{handleSearch:this.handleSearch,value:this.state.searchString,placeholder:this.props.searchPlaceholder}):null,this.props.showCategory&&this.state.categories&&this.state.categories.length?n.default.createElement(o.default,{handleCategory:this.handleCategory,value:this.props.currentCategory,categories:this.state.categories}):null,n.default.createElement(i.default,{categories:this.state.categories,currentCategory:this.props.currentCategory,isMulti:this.props.isMulti,icons:this.props.icons,search:this.props.search,value:this.props.value,currentSearch:this.props.currentSearch,handleChangeValue:this.props.handleChangeValue,currentPage:this.props.currentPage,iconsPerPage:this.props.iconsPerPage,handleChangePage:this.props.handleChangePage,renderIcon:this.props.renderIcon,noIconPlaceholder:this.props.noIconPlaceholder}))}}]),t}();Object.defineProperty(h,"propTypes",{configurable:!0,enumerable:!0,writable:!0,value:{isMulti:a.default.bool.isRequired,value:a.default.oneOfType([a.default.number,a.default.string,a.default.arrayOf(a.default.any)]).isRequired,currentCategory:a.default.number.isRequired,currentPage:a.default.number.isRequired,currentSearch:a.default.string.isRequired,icons:a.default.oneOfType([a.default.arrayOf(a.default.number),a.default.arrayOf(a.default.string),a.default.objectOf(a.default.oneOfType([a.default.arrayOf(a.default.number),a.default.arrayOf(a.default.string)]))]).isRequired,search:a.default.oneOfType([a.default.object,a.default.arrayOf(a.default.string)]),showCategory:a.default.bool.isRequired,showSearch:a.default.bool.isRequired,iconsPerPage:a.default.number.isRequired,allCatPlaceholder:a.default.string.isRequired,searchPlaceholder:a.default.string.isRequired,noIconPlaceholder:a.default.string.isRequired,renderIcon:a.default.func.isRequired,handleChangeValue:a.default.func.isRequired,handleChangeCategory:a.default.func.isRequired,handleChangePage:a.default.func.isRequired,handleChangeSearch:a.default.func.isRequired}}),Object.defineProperty(h,"defaultProps",{configurable:!0,enumerable:!0,writable:!0,value:{search:null}});var y=h;t.default=y},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var n=l(r(1)),a=l(r(0)),o=l(r(3));function l(e){return e&&e.__esModule?e:{default:e}}function i(e){return(i="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function u(){return(u=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(e[n]=r[n])}return e}).apply(this,arguments)}function c(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function s(e,t){return!t||"object"!==i(t)&&"function"!=typeof t?f(e):t}function f(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}var d=function(e){function t(){var e,r,a;!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t);for(var o=arguments.length,l=new Array(o),i=0;i<o;i++)l[i]=arguments[i];return s(a,(r=a=s(this,(e=t.__proto__||Object.getPrototypeOf(t)).call.apply(e,[this].concat(l))),Object.defineProperty(f(a),"handleClick",{configurable:!0,enumerable:!0,writable:!0,value:function(){a.props.onClick()}}),Object.defineProperty(f(a),"handleKeyDown",{configurable:!0,enumerable:!0,writable:!0,value:function(e){32!==e.keyCode&&13!==e.keyCode||a.props.onClick()}}),Object.defineProperty(f(a),"handleDelete",{configurable:!0,enumerable:!0,writable:!0,value:function(e,t){e.stopPropagation(),a.props.handleDeleteValue(t)}}),Object.defineProperty(f(a),"handleDeleteKeyboard",{configurable:!0,enumerable:!0,writable:!0,value:function(e,t){32!==e.keyCode&&13!==e.keyCode||a.props.handleDeleteValue(t)}}),Object.defineProperty(f(a),"renderEmptyIcon",{configurable:!0,enumerable:!0,writable:!0,value:function(){return n.default.createElement("span",{className:"rfipbtn__icon--empty"},a.props.noSelectedPlaceholder)}}),r))}var r,a;return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function");e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,n.default.PureComponent),r=t,(a=[{key:"renderIcon",value:function(e){var t=this;return""===e||null===e||void 0===e?this.renderEmptyIcon():n.default.createElement("span",{className:"rfipbtn__icon",key:e},n.default.createElement("span",{className:"rfipbtn__elm"},this.props.renderIcon(e)),n.default.createElement("span",{className:"rfipbtn__del",onClick:function(r){return t.handleDelete(r,e)},onKeyDown:function(r){return t.handleDeleteKeyboard(r,e)},tabIndex:0,role:"button"},"×"))}},{key:"renderCurrentIcons",value:function(){var e=this;return this.props.isMulti?this.props.value.length?this.props.value.map(function(t){return e.renderIcon(t)}):this.renderEmptyIcon():this.renderIcon(this.props.value)}},{key:"render",value:function(){var e={onClick:this.handleClick,onKeyDown:this.handleKeyDown,onFocus:this.handleFocus,onBlur:this.handleBlur,tabIndex:0},t=(0,o.default)("rfipbtn__button","rfipbtn__button--".concat(this.props.isOpen?"open":"close")),r=(0,o.default)(this.props.className);return n.default.createElement("div",u({className:r,ref:this.props.domRef},e),n.default.createElement("div",{className:"rfipbtn__current"},this.renderCurrentIcons()),n.default.createElement("div",{className:t},n.default.createElement("i",{className:"fipicon-angle-down",role:"presentation","aria-label":"Open"})))}}])&&c(r.prototype,a),t}();Object.defineProperty(d,"propTypes",{configurable:!0,enumerable:!0,writable:!0,value:{className:a.default.string.isRequired,isOpen:a.default.bool.isRequired,onClick:a.default.func.isRequired,domRef:a.default.object.isRequired,isMulti:a.default.bool.isRequired,value:a.default.oneOfType([a.default.number,a.default.string,a.default.arrayOf(a.default.oneOfType([a.default.number,a.default.string]))]).isRequired,renderIcon:a.default.func.isRequired,handleDeleteValue:a.default.func.isRequired,noSelectedPlaceholder:a.default.string.isRequired}});var p=d;t.default=p},function(e,t){e.exports=a},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var n=f(r(1)),a=f(r(0)),o=f(r(3)),l=r(13),i=f(r(12)),u=f(r(11)),c=f(r(7)),s=r(2);function f(e){return e&&e.__esModule?e:{default:e}}function d(e){return(d="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function p(e){return function(e){if(Array.isArray(e)){for(var t=0,r=new Array(e.length);t<e.length;t++)r[t]=e[t];return r}}(e)||function(e){if(Symbol.iterator in Object(e)||"[object Arguments]"===Object.prototype.toString.call(e))return Array.from(e)}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance")}()}function h(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}function y(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function b(e,t,r){return t&&y(e.prototype,t),r&&y(e,r),e}function g(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}var m=[],v="",P=function(e){function t(e){var r,a;return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),this,a=(t.__proto__||Object.getPrototypeOf(t)).call(this,e),r=!a||"object"!==d(a)&&"function"!=typeof a?g(this):a,Object.defineProperty(g(r),"handleOuterClick",{configurable:!0,enumerable:!0,writable:!0,value:function(e){var t=e.target;r.isClickWithin(t)||r.closeDropdown()}}),Object.defineProperty(g(r),"handleEscapeKeyboard",{configurable:!0,enumerable:!0,writable:!0,value:function(e){27===e.keyCode&&r.closeDropdown()}}),Object.defineProperty(g(r),"isClickWithin",{configurable:!0,enumerable:!0,writable:!0,value:function(e){return r.fipButtonRef.current.contains(e)||r.fipDropDownRef.current&&r.fipDropDownRef.current.contains(e)}}),Object.defineProperty(g(r),"handleToggle",{configurable:!0,enumerable:!0,writable:!0,value:function(){r.setState(function(e){return r.handleDropDown(!e.isOpen,!1)})}}),Object.defineProperty(g(r),"closeDropdown",{configurable:!0,enumerable:!0,writable:!0,value:function(){r.handleDropDown(!1)}}),Object.defineProperty(g(r),"handleDropDown",{configurable:!0,enumerable:!0,writable:!0,value:function(e){var n=!(arguments.length>1&&void 0!==arguments[1])||arguments[1],a={isOpen:e};return a.elemClass=t.getDerivedClassName("rfip",r.props.theme,r.props.isMulti,e),a.btnClass=t.getDerivedClassName("rfipbtn",r.props.theme,r.props.isMulti,e),a.ddClass=t.getDerivedClassName("rfipdropdown",r.props.theme,r.props.isMulti,e),n&&r.setState(a),a}}),Object.defineProperty(g(r),"handleChangeValue",{configurable:!0,enumerable:!0,writable:!0,value:function(e){var t;r.props.isMulti?(t=p(r.state.value)).includes(e)?(t=t.filter(function(t){return t!==e})).length||(t=m):t.push(e):t=e===r.state.value?v:e,r.setState({value:t,isOpen:!r.props.closeOnSelect}),r.props.onChange(t)}}),Object.defineProperty(g(r),"handleDeleteValue",{configurable:!0,enumerable:!0,writable:!0,value:function(e){var n;n=r.props.isMulti?r.state.value.filter(function(t){return t!==e}):t.getDerivedValue(n,r.props.isMulti),r.setState({value:n}),r.props.onChange(n)}}),Object.defineProperty(g(r),"handleChangePage",{configurable:!0,enumerable:!0,writable:!0,value:function(e){r.setState({currentPage:e})}}),Object.defineProperty(g(r),"handleChangeCategory",{configurable:!0,enumerable:!0,writable:!0,value:function(e){r.setState({currentCategory:e,currentPage:0})}}),Object.defineProperty(g(r),"handleChangeSearch",{configurable:!0,enumerable:!0,writable:!0,value:function(e){r.setState({currentSearch:e,currentPage:0})}}),Object.defineProperty(g(r),"resetPortalStyle",{configurable:!0,enumerable:!0,writable:!0,value:function(e){["maxHeight","paddingTop","paddingBottom"].forEach(function(t){e.style[t]=null})}}),Object.defineProperty(g(r),"handlePortalEnter",{configurable:!0,enumerable:!0,writable:!0,value:function(e){var t=e.childNodes[0];r.resetPortalStyle(t);var n=getComputedStyle(t);r.fipPortalComputedStyle={height:n.height,paddingTop:n.paddingTop,paddingBottom:n.paddingBottom},["maxHeight","paddingTop","paddingBottom"].forEach(function(e){t.style[e]="0px"})}}),Object.defineProperty(g(r),"handlePortalEntering",{configurable:!0,enumerable:!0,writable:!0,value:function(e){var t=e.childNodes[0];t.style.maxHeight=r.fipPortalComputedStyle.height,t.style.paddingTop=r.fipPortalComputedStyle.paddingTop,t.style.paddingBottom=r.fipPortalComputedStyle.paddingBottom}}),Object.defineProperty(g(r),"handlePortalEntered",{configurable:!0,enumerable:!0,writable:!0,value:function(e){var t=e.childNodes[0];r.resetPortalStyle(t),r.props.showSearch&&void 0===window.orientation&&-1===navigator.userAgent.indexOf("IEMobile")&&t.querySelector(".rfipsearch__input").focus()}}),Object.defineProperty(g(r),"handlePortalExit",{configurable:!0,enumerable:!0,writable:!0,value:function(e){var t=e.childNodes[0];r.resetPortalStyle(t);var n=getComputedStyle(t).height;t.style.maxHeight=n}}),Object.defineProperty(g(r),"handlePortalExiting",{configurable:!0,enumerable:!0,writable:!0,value:function(e){var t=e.childNodes[0];t.style.maxHeight="0px",t.style.paddingTop="0px",t.style.paddingBottom="0px"}}),Object.defineProperty(g(r),"renderIcon",{configurable:!0,enumerable:!0,writable:!0,value:function(e){if("function"==typeof r.props.renderFunc)return r.props.renderFunc(e);if("class"===r.props.renderUsing)return n.default.createElement("i",{className:e});var t=h({},r.props.renderUsing,r.props.convertHex?(0,s.convertToHex)(e):e);return n.default.createElement("i",t)}}),r.fipButtonRef=n.default.createRef(),r.fipDropDownRef=n.default.createRef(),r.state={currentCategory:0,currentPage:0,isOpen:!1,currentSearch:""},r.fipPortalComputedStyle=null,r}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function");e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,n.default.PureComponent),b(t,null,[{key:"getDerivedStateFromProps",value:function(e,r){var n={};return n.elemClass=t.getDerivedClassName("rfip",e.theme,e.isMulti,r.isOpen),n.btnClass=t.getDerivedClassName("rfipbtn",e.theme,e.isMulti,r.isOpen),n.ddClass=t.getDerivedClassName("rfipdropdown",e.theme,e.isMulti,r.isOpen),n.value=t.getDerivedValue(e.value,e.isMulti),e.showCategory||(n.currentCategory=0,n.currentPage=0),e.showSearch||(n.currentSearch="",n.currentPage=0),n}},{key:"getDerivedClassName",value:function(e,t,r,n){return(0,o.default)(e,"".concat(e,"--").concat(t),h({},"".concat(e,"--multi"),r),"".concat(e,"--").concat(n?"open":"close"))}},{key:"getDerivedValue",value:function(e,t){var r=e;return t?r=Array.isArray(e)?p(e):m:"number"!=typeof e&&"string"!=typeof e&&(r=v),r}}]),b(t,[{key:"componentDidMount",value:function(){var e=this;["click"].forEach(function(t){document.addEventListener(t,e.handleOuterClick,!1)}),document.addEventListener("keydown",this.handleEscapeKeyboard,!1),this.props.onChange(this.state.value)}},{key:"componentWillUnmount",value:function(){var e=this;["click"].forEach(function(t){document.removeEventListener(t,e.handleOuterClick,!1)}),document.removeEventListener("keydown",this.handleEscapeKeyboard,!1)}},{key:"render",value:function(){var e={currentCategory:this.state.currentCategory,currentPage:this.state.currentPage,currentSearch:this.state.currentSearch,value:this.state.value,isMulti:this.props.isMulti,icons:this.props.icons,search:this.props.search,showCategory:this.props.showCategory,showSearch:this.props.showSearch,iconsPerPage:this.props.iconsPerPage,allCatPlaceholder:this.props.allCatPlaceholder,searchPlaceholder:this.props.searchPlaceholder,noIconPlaceholder:this.props.noIconPlaceholder,renderIcon:this.renderIcon,handleChangeValue:this.handleChangeValue,handleChangeCategory:this.handleChangeCategory,handleChangePage:this.handleChangePage,handleChangeSearch:this.handleChangeSearch};return n.default.createElement("div",{className:this.state.elemClass,ref:this.fipRef},n.default.createElement(i.default,{className:this.state.btnClass,isOpen:this.state.isOpen,onClick:this.handleToggle,domRef:this.fipButtonRef,isMulti:this.props.isMulti,value:this.state.value,renderIcon:this.renderIcon,handleDeleteValue:this.handleDeleteValue,noSelectedPlaceholder:this.props.noSelectedPlaceholder}),n.default.createElement(l.CSSTransition,{classNames:"fipappear",timeout:300,in:this.state.isOpen,unmountOnExit:!0,onEnter:this.handlePortalEnter,onEntering:this.handlePortalEntering,onEntered:this.handlePortalEntered,onExit:this.handlePortalExit,onExiting:this.handlePortalExiting},n.default.createElement(c.default,{appendRoot:this.props.appendTo,domRef:this.fipDropDownRef,btnRef:this.fipButtonRef,className:this.state.ddClass},n.default.createElement(u.default,e))))}}]),t}();Object.defineProperty(P,"propTypes",{configurable:!0,enumerable:!0,writable:!0,value:{icons:a.default.oneOfType([a.default.arrayOf(a.default.string),a.default.arrayOf(a.default.number),a.default.objectOf(a.default.oneOfType([a.default.arrayOf(a.default.number),a.default.arrayOf(a.default.string)]))]).isRequired,search:a.default.oneOfType([a.default.objectOf(a.default.arrayOf(a.default.string)),a.default.arrayOf(a.default.string)]),iconsPerPage:a.default.number,theme:a.default.string,onChange:a.default.func.isRequired,showCategory:a.default.bool,showSearch:a.default.bool,value:a.default.oneOfType([a.default.arrayOf(a.default.string),a.default.arrayOf(a.default.number),a.default.number,a.default.string]),isMulti:a.default.bool,renderUsing:a.default.string,convertHex:a.default.bool,renderFunc:a.default.func,appendTo:a.default.oneOfType([a.default.bool,a.default.string]),allCatPlaceholder:a.default.string,searchPlaceholder:a.default.string,noIconPlaceholder:a.default.string,noSelectedPlaceholder:a.default.string,closeOnSelect:a.default.bool}}),Object.defineProperty(P,"defaultProps",{configurable:!0,enumerable:!0,writable:!0,value:{search:null,iconsPerPage:20,theme:"default",showCategory:!0,showSearch:!0,value:null,isMulti:!1,renderUsing:"class",convertHex:!0,renderFunc:null,appendTo:!1,allCatPlaceholder:"Show from all",searchPlaceholder:"Search Icons",noIconPlaceholder:"No icons found",noSelectedPlaceholder:"Select icon",closeOnSelect:!1}}),Object.defineProperty(P,"displayName",{configurable:!0,enumerable:!0,writable:!0,value:"FontIconPicker"});var O=P;t.default=O},function(e,t,r){"use strict";var n;Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var a=((n=r(14))&&n.__esModule?n:{default:n}).default;t.default=a}]).default});
 //# sourceMappingURL=fonticonpicker.react.js.map
+
+/***/ }),
+
+/***/ "./node_modules/array-move/index.js":
+/*!******************************************!*\
+  !*** ./node_modules/array-move/index.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+const arrayMoveMutate = (array, from, to) => {
+	const startIndex = from < 0 ? array.length + from : from;
+
+	if (startIndex >= 0 && startIndex < array.length) {
+		const endIndex = to < 0 ? array.length + to : to;
+
+		const [item] = array.splice(from, 1);
+		array.splice(endIndex, 0, item);
+	}
+};
+
+const arrayMove = (array, from, to) => {
+	array = [...array];
+	arrayMoveMutate(array, from, to);
+	return array;
+};
+
+module.exports = arrayMove;
+module.exports.mutate = arrayMoveMutate;
+
 
 /***/ }),
 
@@ -5643,15 +5646,57 @@ var classNamesShape =  true ? prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var attributes = {
-  priceboxBackground: {
-    type: "string"
+var _attributes;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var attributes = (_attributes = {
+  pricingStyle: {
+    type: "string",
+    "default": "style-1"
   },
   title: {
     type: "string",
     source: "text",
-    selector: ".eb-pricebox-title",
+    selector: ".ebgb-pricing .header .ebgb-pricing-title",
     "default": "Startup"
+  },
+  subtitle: {
+    type: "string",
+    source: "text",
+    selector: ".ebgb-pricing .header .ebgb-pricing-subtitle",
+    "default": "A tagline here."
+  },
+  headerIcon: {
+    type: "attribute",
+    selector: ".ebgb-pricing-icon",
+    attribute: "data-icon",
+    "default": "fas fa-home"
+  },
+  price: {
+    type: "string",
+    source: "text",
+    selector: ".ebgb-pricing-tag .original-price",
+    "default": "99"
+  },
+  showOnSale: {
+    type: "boolean",
+    "default": false
+  },
+  salePrice: {
+    type: "string",
+    source: "text",
+    selector: ".ebgb-pricing-tag .sale-price",
+    "default": "89"
+  },
+  priceCurrency: {
+    type: "string",
+    source: "text",
+    selector: ".ebgb-pricing-tag .price-currency",
+    "default": "$"
+  },
+  priceboxBackground: {
+    type: "string"
   },
   titleTag: {
     type: "string",
@@ -5661,366 +5706,274 @@ var attributes = {
     type: "boolean",
     "default": false
   },
-  subtitle: {
-    type: "string",
-    source: "text",
-    selector: ".eb-pricebox-subtitle",
-    "default": "Free for 30 days"
-  },
   titleBackgroundColor: {
     type: "string"
   },
   titleTextColor: {
     type: "string"
-  },
-  price: {
-    type: "string",
-    source: "text",
-    selector: ".eb-pricebox-price",
-    "default": "$99"
-  },
-  priceValueSize: {
-    type: "number"
-  },
-  displayPriceDetails: {
-    type: "boolean",
-    "default": false
-  },
-  priceDetails: {
-    type: "string",
-    source: "text",
-    selector: ".eb-pricebox-price-details"
-  },
-  priceBackgroundColor: {
-    type: "string"
-  },
-  priceTextColor: {
-    type: "string"
-  },
-  features: {
-    type: "array",
-    source: "query",
-    selector: ".eb-pricebox-feature-item",
-    query: {
-      text: {
-        type: "string",
-        source: "text",
-        selector: ".eb-pricebox-feature-text"
-      },
-      icon: {
-        type: "string",
-        source: "attribute",
-        attribute: "data-icon"
-      },
-      color: {
-        type: "string",
-        source: "attribute",
-        attribute: "data-color"
-      },
-      link: {
-        type: "string",
-        source: "attribute",
-        attribute: "data-link"
-      },
-      clickable: {
-        type: "string",
-        source: "attribute",
-        attribute: "data-clickable"
-      }
-    },
-    "default": [{
-      icon: "fas fa-check",
-      text: "Unlimited Calls",
-      color: "#03bb89",
-      clickable: "false",
-      link: ""
-    }, {
-      icon: "fas fa-check",
-      text: "Free Hosting",
-      color: "#03bb89",
-      clickable: "false",
-      link: ""
-    }, {
-      icon: "fas fa-check",
-      text: "500MB free storage",
-      color: "#03bb89",
-      clickable: "false",
-      link: ""
-    }, {
-      icon: "fas fa-check",
-      text: "24/7 Support",
-      color: "#03bb89",
-      clickable: "false",
-      link: ""
-    }]
-  },
-  featuresBackgroundColor: {
-    type: "string"
-  },
-  featuresTextColor: {
-    type: "string"
-  },
-  buttonText: {
-    type: "string",
-    "default": "Choose Plan"
-  },
-  buttonSize: {
-    type: "string"
-  },
-  buttonFontSize: {
-    type: "number"
-  },
-  buttonBackground: {
-    type: "string"
-  },
-  buttonTextColor: {
-    type: "string"
-  },
-  hoverBackgroundColor: {
-    type: "string"
-  },
-  hoverTextColor: {
-    type: "string"
-  },
-  buttonURL: {
-    type: "string",
-    "default": "#"
-  },
-  featureFontSize: {
-    type: "number"
-  },
-  shadowColor: {
-    type: "string"
-  },
-  shadowHOffset: {
-    type: "number"
-  },
-  shadowVOffset: {
-    type: "number"
-  },
-  shadowSpread: {
-    type: "number"
-  },
-  shadowBlur: {
-    type: "number"
-  },
-  borderWidth: {
-    type: "number"
-  },
-  borderStyle: {
-    type: "string",
-    "default": "solid"
-  },
-  borderColor: {
-    type: "string"
-  },
-  linkedMargin: {
-    type: "boolean",
-    "default": false
-  },
-  marginTop: {
-    type: "number"
-  },
-  marginRight: {
-    type: "number"
-  },
-  marginBottom: {
-    type: "number"
-  },
-  marginLeft: {
-    type: "number"
-  },
-  linkedPadding: {
-    type: "boolean",
-    "default": false
-  },
-  paddingTop: {
-    type: "number"
-  },
-  paddingRight: {
-    type: "number"
-  },
-  paddingBottom: {
-    type: "number"
-  },
-  paddingLeft: {
-    type: "number"
-  },
-  isHover: {
-    type: "boolean",
-    "default": false
-  },
-  marginUnit: {
-    type: "string",
-    "default": "px"
-  },
-  paddingUnit: {
-    type: "string",
-    "default": "px"
-  },
-  iconSizeUnit: {
-    type: "string",
-    "default": "px"
-  },
-  priceSizeUnit: {
-    type: "string",
-    "default": "px"
-  },
-  featureSizeUnit: {
-    type: "string",
-    "default": "px"
-  },
-  buttonSizeUnit: {
-    type: "string",
-    "default": "px"
-  },
-  buttonHeight: {
-    type: "number"
-  },
-  buttonHeightUnit: {
-    type: "string",
-    "default": "px"
-  },
-  buttonWidth: {
-    type: "number"
-  },
-  buttonWidthUnit: {
-    type: "string",
-    "default": "px"
-  },
-  buttonBorderStyle: {
-    type: "string",
-    "default": "solid"
-  },
-  buttonBorderWidth: {
-    type: "number"
-  },
-  buttonBorderColor: {
-    type: "string"
-  },
-  hoverBorderColor: {
-    type: "string"
-  },
-  buttonBorderRadius: {
-    type: "number"
-  },
-  buttonBorderRadiusUnit: {
-    type: "string",
-    "default": "px"
-  },
-  subtitleFontFamily: {
-    type: "string"
-  },
-  subtitleFontSize: {
-    type: "number"
-  },
-  subtitleSizeUnit: {
-    type: "string",
-    "default": "px"
-  },
-  subtitleFontWeight: {
-    type: "string",
-    "default": "normal"
-  },
-  subtitleTextTransform: {
-    type: "string"
-  },
-  subtitleTextDecoration: {
-    type: "string"
-  },
-  subtitleLineHeight: {
-    type: "number"
-  },
-  subtitleLineHeightUnit: {
-    type: "string",
-    "default": "px"
-  },
-  subtitleLetterSpacing: {
-    type: "number"
-  },
-  subtitleLetterSpacingUnit: {
-    type: "string",
-    "default": "px"
-  },
-  priceFontFamily: {
-    type: "string"
-  },
-  priceFontWeight: {
-    type: "string",
-    "default": "normal"
-  },
-  priceTextDecoration: {
-    type: "string"
-  },
-  priceLineHeight: {
-    type: "number"
-  },
-  priceLineHeightUnit: {
-    type: "string",
-    "default": "px"
-  },
-  priceLetterSpacing: {
-    type: "number"
-  },
-  priceLetterSpacingUnit: {
-    type: "string",
-    "default": "px"
-  },
-  featureFontFamily: {
-    type: "string"
-  },
-  featureFontWeight: {
-    type: "string",
-    "default": "normal"
-  },
-  featureTextTransform: {
-    type: "string"
-  },
-  featureTextDecoration: {
-    type: "string"
-  },
-  featureLineHeight: {
-    type: "number"
-  },
-  featureLineHeightUnit: {
-    type: "string",
-    "default": "px"
-  },
-  featureLetterSpacing: {
-    type: "number"
-  },
-  featureLetterSpacingUnit: {
-    type: "string",
-    "default": "px"
-  },
-  buttonFontFamily: {
-    type: "string"
-  },
-  buttonFontWeight: {
-    type: "string",
-    "default": "normal"
-  },
-  buttonTextTransform: {
-    type: "string"
-  },
-  buttonTextDecoration: {
-    type: "string"
-  },
-  buttonLineHeight: {
-    type: "number"
-  },
-  buttonLineHeightUnit: {
-    type: "string",
-    "default": "px"
-  },
-  buttonLetterSpacing: {
-    type: "number"
-  },
-  buttonLetterSpacingUnit: {
-    type: "string",
-    "default": "px"
   }
-};
+}, _defineProperty(_attributes, "price", {
+  type: "string",
+  source: "text",
+  selector: ".eb-pricebox-price",
+  "default": "$99"
+}), _defineProperty(_attributes, "priceValueSize", {
+  type: "number"
+}), _defineProperty(_attributes, "displayPriceDetails", {
+  type: "boolean",
+  "default": false
+}), _defineProperty(_attributes, "priceDetails", {
+  type: "string",
+  source: "text",
+  selector: ".eb-pricebox-price-details"
+}), _defineProperty(_attributes, "priceBackgroundColor", {
+  type: "string"
+}), _defineProperty(_attributes, "priceTextColor", {
+  type: "string"
+}), _defineProperty(_attributes, "features", {
+  type: "array",
+  source: "query",
+  selector: ".eb-pricebox-feature-item",
+  query: {
+    text: {
+      type: "string",
+      source: "text",
+      selector: ".eb-pricebox-feature-text"
+    },
+    icon: {
+      type: "string",
+      source: "attribute",
+      attribute: "data-icon"
+    },
+    color: {
+      type: "string",
+      source: "attribute",
+      attribute: "data-color"
+    },
+    link: {
+      type: "string",
+      source: "attribute",
+      attribute: "data-link"
+    },
+    clickable: {
+      type: "string",
+      source: "attribute",
+      attribute: "data-clickable"
+    }
+  },
+  "default": [{
+    icon: "fas fa-check",
+    text: "Unlimited Calls",
+    color: "#03bb89",
+    clickable: "false",
+    link: ""
+  }, {
+    icon: "fas fa-check",
+    text: "Free Hosting",
+    color: "#03bb89",
+    clickable: "false",
+    link: ""
+  }, {
+    icon: "fas fa-check",
+    text: "500MB free storage",
+    color: "#03bb89",
+    clickable: "false",
+    link: ""
+  }, {
+    icon: "fas fa-check",
+    text: "24/7 Support",
+    color: "#03bb89",
+    clickable: "false",
+    link: ""
+  }]
+}), _defineProperty(_attributes, "featuresBackgroundColor", {
+  type: "string"
+}), _defineProperty(_attributes, "featuresTextColor", {
+  type: "string"
+}), _defineProperty(_attributes, "buttonText", {
+  type: "string",
+  "default": "Choose Plan"
+}), _defineProperty(_attributes, "buttonSize", {
+  type: "string"
+}), _defineProperty(_attributes, "buttonFontSize", {
+  type: "number"
+}), _defineProperty(_attributes, "buttonBackground", {
+  type: "string"
+}), _defineProperty(_attributes, "buttonTextColor", {
+  type: "string"
+}), _defineProperty(_attributes, "hoverBackgroundColor", {
+  type: "string"
+}), _defineProperty(_attributes, "hoverTextColor", {
+  type: "string"
+}), _defineProperty(_attributes, "buttonURL", {
+  type: "string",
+  "default": "#"
+}), _defineProperty(_attributes, "featureFontSize", {
+  type: "number"
+}), _defineProperty(_attributes, "shadowColor", {
+  type: "string"
+}), _defineProperty(_attributes, "shadowHOffset", {
+  type: "number"
+}), _defineProperty(_attributes, "shadowVOffset", {
+  type: "number"
+}), _defineProperty(_attributes, "shadowSpread", {
+  type: "number"
+}), _defineProperty(_attributes, "shadowBlur", {
+  type: "number"
+}), _defineProperty(_attributes, "borderWidth", {
+  type: "number"
+}), _defineProperty(_attributes, "borderStyle", {
+  type: "string",
+  "default": "solid"
+}), _defineProperty(_attributes, "borderColor", {
+  type: "string"
+}), _defineProperty(_attributes, "linkedMargin", {
+  type: "boolean",
+  "default": false
+}), _defineProperty(_attributes, "marginTop", {
+  type: "number"
+}), _defineProperty(_attributes, "marginRight", {
+  type: "number"
+}), _defineProperty(_attributes, "marginBottom", {
+  type: "number"
+}), _defineProperty(_attributes, "marginLeft", {
+  type: "number"
+}), _defineProperty(_attributes, "linkedPadding", {
+  type: "boolean",
+  "default": false
+}), _defineProperty(_attributes, "paddingTop", {
+  type: "number"
+}), _defineProperty(_attributes, "paddingRight", {
+  type: "number"
+}), _defineProperty(_attributes, "paddingBottom", {
+  type: "number"
+}), _defineProperty(_attributes, "paddingLeft", {
+  type: "number"
+}), _defineProperty(_attributes, "isHover", {
+  type: "boolean",
+  "default": false
+}), _defineProperty(_attributes, "marginUnit", {
+  type: "string",
+  "default": "px"
+}), _defineProperty(_attributes, "paddingUnit", {
+  type: "string",
+  "default": "px"
+}), _defineProperty(_attributes, "iconSizeUnit", {
+  type: "string",
+  "default": "px"
+}), _defineProperty(_attributes, "priceSizeUnit", {
+  type: "string",
+  "default": "px"
+}), _defineProperty(_attributes, "featureSizeUnit", {
+  type: "string",
+  "default": "px"
+}), _defineProperty(_attributes, "buttonSizeUnit", {
+  type: "string",
+  "default": "px"
+}), _defineProperty(_attributes, "buttonHeight", {
+  type: "number"
+}), _defineProperty(_attributes, "buttonHeightUnit", {
+  type: "string",
+  "default": "px"
+}), _defineProperty(_attributes, "buttonWidth", {
+  type: "number"
+}), _defineProperty(_attributes, "buttonWidthUnit", {
+  type: "string",
+  "default": "px"
+}), _defineProperty(_attributes, "buttonBorderStyle", {
+  type: "string",
+  "default": "solid"
+}), _defineProperty(_attributes, "buttonBorderWidth", {
+  type: "number"
+}), _defineProperty(_attributes, "buttonBorderColor", {
+  type: "string"
+}), _defineProperty(_attributes, "hoverBorderColor", {
+  type: "string"
+}), _defineProperty(_attributes, "buttonBorderRadius", {
+  type: "number"
+}), _defineProperty(_attributes, "buttonBorderRadiusUnit", {
+  type: "string",
+  "default": "px"
+}), _defineProperty(_attributes, "subtitleFontFamily", {
+  type: "string"
+}), _defineProperty(_attributes, "subtitleFontSize", {
+  type: "number"
+}), _defineProperty(_attributes, "subtitleSizeUnit", {
+  type: "string",
+  "default": "px"
+}), _defineProperty(_attributes, "subtitleFontWeight", {
+  type: "string",
+  "default": "normal"
+}), _defineProperty(_attributes, "subtitleTextTransform", {
+  type: "string"
+}), _defineProperty(_attributes, "subtitleTextDecoration", {
+  type: "string"
+}), _defineProperty(_attributes, "subtitleLineHeight", {
+  type: "number"
+}), _defineProperty(_attributes, "subtitleLineHeightUnit", {
+  type: "string",
+  "default": "px"
+}), _defineProperty(_attributes, "subtitleLetterSpacing", {
+  type: "number"
+}), _defineProperty(_attributes, "subtitleLetterSpacingUnit", {
+  type: "string",
+  "default": "px"
+}), _defineProperty(_attributes, "priceFontFamily", {
+  type: "string"
+}), _defineProperty(_attributes, "priceFontWeight", {
+  type: "string",
+  "default": "normal"
+}), _defineProperty(_attributes, "priceTextDecoration", {
+  type: "string"
+}), _defineProperty(_attributes, "priceLineHeight", {
+  type: "number"
+}), _defineProperty(_attributes, "priceLineHeightUnit", {
+  type: "string",
+  "default": "px"
+}), _defineProperty(_attributes, "priceLetterSpacing", {
+  type: "number"
+}), _defineProperty(_attributes, "priceLetterSpacingUnit", {
+  type: "string",
+  "default": "px"
+}), _defineProperty(_attributes, "featureFontFamily", {
+  type: "string"
+}), _defineProperty(_attributes, "featureFontWeight", {
+  type: "string",
+  "default": "normal"
+}), _defineProperty(_attributes, "featureTextTransform", {
+  type: "string"
+}), _defineProperty(_attributes, "featureTextDecoration", {
+  type: "string"
+}), _defineProperty(_attributes, "featureLineHeight", {
+  type: "number"
+}), _defineProperty(_attributes, "featureLineHeightUnit", {
+  type: "string",
+  "default": "px"
+}), _defineProperty(_attributes, "featureLetterSpacing", {
+  type: "number"
+}), _defineProperty(_attributes, "featureLetterSpacingUnit", {
+  type: "string",
+  "default": "px"
+}), _defineProperty(_attributes, "buttonFontFamily", {
+  type: "string"
+}), _defineProperty(_attributes, "buttonFontWeight", {
+  type: "string",
+  "default": "normal"
+}), _defineProperty(_attributes, "buttonTextTransform", {
+  type: "string"
+}), _defineProperty(_attributes, "buttonTextDecoration", {
+  type: "string"
+}), _defineProperty(_attributes, "buttonLineHeight", {
+  type: "number"
+}), _defineProperty(_attributes, "buttonLineHeightUnit", {
+  type: "string",
+  "default": "px"
+}), _defineProperty(_attributes, "buttonLetterSpacing", {
+  type: "number"
+}), _defineProperty(_attributes, "buttonLetterSpacingUnit", {
+  type: "string",
+  "default": "px"
+}), _attributes);
 /* harmony default export */ __webpack_exports__["default"] = (attributes);
 
 /***/ }),
@@ -6118,28 +6071,19 @@ var TEXT_DECORATION = [{
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/editor */ "@wordpress/editor");
-/* harmony import */ var _wordpress_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_editor__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _inspector__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./inspector */ "./src/inspector.js");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
+/* harmony import */ var _inspector__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./inspector */ "./src/inspector.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /**
  * WordPress dependencies
  */
-
-
-
+var __ = wp.i18n.__;
+var RichText = wp.blockEditor.RichText;
 /**
  * Internal dependencies
  */
+
 
 
 
@@ -6149,14 +6093,16 @@ var edit = function edit(props) {
   var attributes = props.attributes,
       isSelected = props.isSelected,
       setAttributes = props.setAttributes;
-  var title = attributes.title,
-      displaySubtitle = attributes.displaySubtitle,
+  var pricingStyle = attributes.pricingStyle,
+      title = attributes.title,
       subtitle = attributes.subtitle,
+      headerIcon = attributes.headerIcon,
+      price = attributes.price,
+      salePrice = attributes.salePrice,
+      priceCurrency = attributes.priceCurrency,
+      displaySubtitle = attributes.displaySubtitle,
       titleBackgroundColor = attributes.titleBackgroundColor,
       titleTextColor = attributes.titleTextColor,
-      price = attributes.price,
-      displayPriceDetails = attributes.displayPriceDetails,
-      priceDetails = attributes.priceDetails,
       priceBackgroundColor = attributes.priceBackgroundColor,
       priceTextColor = attributes.priceTextColor,
       features = attributes.features,
@@ -6187,7 +6133,6 @@ var edit = function edit(props) {
       paddingLeft = attributes.paddingLeft,
       marginUnit = attributes.marginUnit,
       paddingUnit = attributes.paddingUnit,
-      iconSizeUnit = attributes.iconSizeUnit,
       buttonHeight = attributes.buttonHeight,
       buttonHeightUnit = attributes.buttonHeightUnit,
       buttonWidth = attributes.buttonWidth,
@@ -6202,7 +6147,6 @@ var edit = function edit(props) {
       subtitleFontSize = attributes.subtitleFontSize,
       subtitleSizeUnit = attributes.subtitleSizeUnit,
       subtitleFontWeight = attributes.subtitleFontWeight,
-      subtitleTextTransform = attributes.subtitleTextTransform,
       subtitleTextDecoration = attributes.subtitleTextDecoration,
       subtitleLineHeight = attributes.subtitleLineHeight,
       subtitleLineHeightUnit = attributes.subtitleLineHeightUnit,
@@ -6310,101 +6254,121 @@ var edit = function edit(props) {
     color: isHover ? hoverTextColor || "#ffffff" : buttonTextColor || "#edf1f7",
     margin: 10
   }, _defineProperty(_buttonStyles, "textAlign", "center"), _defineProperty(_buttonStyles, "padding", "8px 26px"), _defineProperty(_buttonStyles, "display", "inline-block"), _defineProperty(_buttonStyles, "borderRadius", "".concat(buttonBorderRadius || 0).concat(buttonBorderRadiusUnit)), _defineProperty(_buttonStyles, "fontSize", "".concat(buttonFontSize || 16).concat(buttonSizeUnit)), _defineProperty(_buttonStyles, "fontFamily", buttonFontFamily), _defineProperty(_buttonStyles, "fontWeight", buttonFontWeight), _defineProperty(_buttonStyles, "textDecoration", buttonTextDecoration), _defineProperty(_buttonStyles, "textTransform", buttonTextTransform), _defineProperty(_buttonStyles, "letterSpacing", buttonLetterSpacing ? "".concat(buttonLetterSpacing).concat(buttonLetterSpacingUnit) : undefined), _defineProperty(_buttonStyles, "lineHeight", buttonLineHeight ? "".concat(buttonLineHeight).concat(buttonLineHeightUnit) : undefined), _defineProperty(_buttonStyles, "cursor", isHover ? "pointer" : "default"), _buttonStyles);
-  return [isSelected && /*#__PURE__*/React.createElement(_inspector__WEBPACK_IMPORTED_MODULE_3__["default"], props),
+  var colorStyles = {
+    color: "#00C853"
+  };
+  var wrapperStylesNew = {
+    overflow: "hidden"
+  };
+  return [isSelected && /*#__PURE__*/React.createElement(_inspector__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    attributes: attributes,
+    setAttributes: setAttributes
+  }),
   /*#__PURE__*/
   // Edit view here
   React.createElement("div", {
-    className: "eb-pricebox-wrapper",
-    style: wrapperStyles
+    className: "ebgb-pricing ".concat(pricingStyle),
+    style: wrapperStylesNew
   }, /*#__PURE__*/React.createElement("div", {
-    style: titleWrapperStyles
-  }, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"], {
-    tagName: "h3",
-    className: "eb-pricebox-title",
-    value: title,
-    style: titleStyles,
-    placeholder: "Add Title",
-    onChange: function onChange(newTitle) {
-      return setAttributes({
-        title: newTitle
-      });
-    },
-    keepPlaceholderOnFocus: true
-  }), /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"], {
-    tagName: "p",
-    className: "eb-pricebox-subtitle",
-    value: subtitle,
-    style: _objectSpread(_objectSpread(_objectSpread({}, titleStyles), subtitleStyles), {}, {
-      display: displaySubtitle ? "block" : "none"
-    }),
-    placeholder: "Add Subtitle",
-    onChange: function onChange(newSubtitle) {
-      return setAttributes({
-        subtitle: newSubtitle
-      });
-    },
-    keepPlaceholderOnFocus: true
-  })), /*#__PURE__*/React.createElement("div", {
-    className: "eb-pricebox-price",
-    style: priceWrapperStyles
-  }, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"], {
-    tagName: "p",
-    value: price,
-    style: priceStyles,
-    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])("99"),
-    onChange: function onChange(newPrice) {
-      return setAttributes({
-        price: newPrice
-      });
-    },
-    keepPlaceholderOnFocus: true
-  })), /*#__PURE__*/React.createElement("div", {
-    style: featuresWrapperStyles
-  }, /*#__PURE__*/React.createElement("ul", {
-    className: "eb-pricebox-features",
-    style: featureStyles
-  }, features.map(function (_ref) {
-    var icon = _ref.icon,
-        text = _ref.text,
-        color = _ref.color;
-    return /*#__PURE__*/React.createElement("li", {
-      "data-icon": icon,
-      "data-color": color,
-      style: featureListStyle
-    }, /*#__PURE__*/React.createElement("span", {
-      className: "eb-pricebox-icon ".concat(icon),
-      style: {
-        color: color
-      }
-    }), /*#__PURE__*/React.createElement("span", {
-      className: "eb-pricebox-text"
-    }, text));
+    className: "ebgb-pricing-item featured ribbon-4"
+  }, pricingStyle === "style-2" && headerIcon && /*#__PURE__*/React.createElement("div", {
+    className: "ebgb-pricing-icon",
+    "data-icon": headerIcon
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "icon"
+  }, /*#__PURE__*/React.createElement("i", {
+    "class": headerIcon
   }))), /*#__PURE__*/React.createElement("div", {
-    className: "eb-pricebox-button",
-    style: buttonStyles,
-    onMouseEnter: function onMouseEnter() {
-      return setAttributes({
-        isHover: true
-      });
-    },
-    onMouseLeave: function onMouseLeave() {
-      return setAttributes({
-        isHover: false
-      });
-    }
-  }, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"], {
-    value: buttonText,
-    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])("Add Text"),
-    onChange: function onChange(newText) {
-      return setAttributes({
-        buttonText: newText
-      });
-    },
-    keepPlaceholderOnFocus: true
-  })), /*#__PURE__*/React.createElement("div", null))];
+    className: "header"
+  }, /*#__PURE__*/React.createElement("h2", {
+    className: "ebgb-pricing-title"
+  }, title), pricingStyle !== "style-1" && /*#__PURE__*/React.createElement("span", {
+    className: "ebgb-pricing-subtitle"
+  }, subtitle)), /*#__PURE__*/React.createElement("div", {
+    className: "ebgb-pricing-tag"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "price-tag"
+  }, /*#__PURE__*/React.createElement("del", {
+    className: "original-price"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "price-currency"
+  }, priceCurrency), price), /*#__PURE__*/React.createElement("span", {
+    className: "sale-price"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "price-currency"
+  }, priceCurrency), salePrice)), /*#__PURE__*/React.createElement("span", {
+    className: "price-period"
+  }, "/ month")), /*#__PURE__*/React.createElement("div", {
+    className: "body"
+  }, /*#__PURE__*/React.createElement("ul", null, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
+    className: "li-icon",
+    style: colorStyles
+  }, /*#__PURE__*/React.createElement("i", {
+    className: "fas fa-check"
+  })), "Unlimited calls"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
+    className: "li-icon",
+    style: colorStyles
+  }, /*#__PURE__*/React.createElement("i", {
+    className: "fas fa-check"
+  })), "Free hosting"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
+    className: "li-icon",
+    style: colorStyles
+  }, /*#__PURE__*/React.createElement("i", {
+    className: "fas fa-check"
+  })), "500 MB of storage space"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
+    className: "li-icon",
+    style: colorStyles
+  }, /*#__PURE__*/React.createElement("i", {
+    className: "fas fa-check"
+  })), "500 MB Bandwidth"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
+    className: "li-icon",
+    style: colorStyles
+  }, /*#__PURE__*/React.createElement("i", {
+    className: "fas fa-check"
+  })), "24/7 support"))), /*#__PURE__*/React.createElement("div", {
+    className: "footer"
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "#",
+    target: "_blank",
+    rel: "nofollow noopener",
+    className: "ebgb-pricing-button"
+  }, /*#__PURE__*/React.createElement("i", {
+    className: " fa-icon-left"
+  }), "Choose Plan", " ")))) // edit view end
+  ];
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (edit);
+
+/***/ }),
+
+/***/ "./src/editor.scss":
+/*!*************************!*\
+  !*** ./src/editor.scss ***!
+  \*************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./src/example.js":
+/*!************************!*\
+  !*** ./src/example.js ***!
+  \************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var example = {
+  attributes: {}
+};
+/* harmony default export */ __webpack_exports__["default"] = (example);
 
 /***/ }),
 
@@ -6460,16 +6424,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./edit */ "./src/edit.js");
-/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./save */ "./src/save.js");
-/* harmony import */ var _icon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./icon */ "./src/icon.js");
-/* harmony import */ var _attributes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./attributes */ "./src/attributes.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./save */ "./src/save.js");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./edit */ "./src/edit.js");
+/* harmony import */ var _attributes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./attributes */ "./src/attributes.js");
+/* harmony import */ var _icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./icon */ "./src/icon.js");
+/* harmony import */ var _example__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./example */ "./src/example.js");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
+/**
+ * WordPress dependeincies
+ */
+var __ = wp.i18n.__;
+var registerBlockType = wp.blocks.registerBlockType;
+/**
+ * Internal dependencies
+ */
 
 
 
@@ -6477,14 +6445,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockType"])("block/pricing-table", {
-  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])("Pricing Table", "block"),
-  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])("", "block"),
+registerBlockType("pricing-table-block/pricing-table", {
+  title: __("Pricing Table", "essential-blocks"),
+  icon: _icon__WEBPACK_IMPORTED_MODULE_3__["default"],
   category: "widgets",
-  icon: _icon__WEBPACK_IMPORTED_MODULE_5__["default"],
-  attributes: _attributes__WEBPACK_IMPORTED_MODULE_6__["default"],
-  edit: _edit__WEBPACK_IMPORTED_MODULE_3__["default"],
-  save: _save__WEBPACK_IMPORTED_MODULE_4__["default"]
+  attributes: _attributes__WEBPACK_IMPORTED_MODULE_2__["default"],
+  keywords: [__("eb price", "essential-blocks"), __("table", "essential-blocks"), __("comparison", "essential-blocks")],
+  edit: _edit__WEBPACK_IMPORTED_MODULE_1__["default"],
+  save: _save__WEBPACK_IMPORTED_MODULE_0__["default"],
+  example: _example__WEBPACK_IMPORTED_MODULE_4__["default"]
 });
 
 /***/ }),
@@ -6499,13 +6468,16 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockType"])("blo
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./constants */ "./src/constants.js");
-/* harmony import */ var _util_dimensions_control__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util/dimensions-control */ "./util/dimensions-control/index.js");
-/* harmony import */ var _util_unit_control__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../util/unit-control */ "./util/unit-control/index.js");
-/* harmony import */ var _sortable_features__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./sortable-features */ "./src/sortable-features.js");
-/* harmony import */ var _util_typography_control_FontPicker__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../util/typography-control/FontPicker */ "./util/typography-control/FontPicker.js");
-/* harmony import */ var _util_color_control__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../util/color-control */ "./util/color-control/index.js");
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
+/* harmony import */ var _util_faIcons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util/faIcons */ "./util/faIcons.js");
+/* harmony import */ var _util_dimensions_control__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../util/dimensions-control */ "./util/dimensions-control/index.js");
+/* harmony import */ var _util_unit_control__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../util/unit-control */ "./util/unit-control/index.js");
+/* harmony import */ var _sortable_features__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./sortable-features */ "./src/sortable-features.js");
+/* harmony import */ var _util_typography_control_FontPicker__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../util/typography-control/FontPicker */ "./util/typography-control/FontPicker.js");
+/* harmony import */ var _util_color_control__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../util/color-control */ "./util/color-control/index.js");
+/* harmony import */ var _util_icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../util/icons */ "./util/icons.js");
+/* harmony import */ var _util_reset_control__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../util/reset-control */ "./util/reset-control/index.js");
+/* harmony import */ var _fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fonticonpicker/react-fonticonpicker */ "./node_modules/@fonticonpicker/react-fonticonpicker/dist/fonticonpicker.react.js");
+/* harmony import */ var _fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_9__);
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -6517,24 +6489,6 @@ function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.it
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /**
  * WordPress dependencies
@@ -6564,1105 +6518,1189 @@ var _wp$components = wp.components,
 
 
 
-var Inspector = /*#__PURE__*/function (_Component) {
-  _inherits(Inspector, _Component);
 
-  var _super = _createSuper(Inspector);
 
-  function Inspector() {
-    var _this;
 
-    _classCallCheck(this, Inspector);
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
+var Inspector = function Inspector(_ref) {
+  var attributes = _ref.attributes,
+      setAttributes = _ref.setAttributes;
+  var pricingStyle = attributes.pricingStyle,
+      title = attributes.title,
+      subtitle = attributes.subtitle,
+      headerIcon = attributes.headerIcon,
+      price = attributes.price,
+      showOnSale = attributes.showOnSale,
+      salePrice = attributes.salePrice,
+      priceCurrency = attributes.priceCurrency,
+      displaySubtitle = attributes.displaySubtitle,
+      titleBackgroundColor = attributes.titleBackgroundColor,
+      titleTextColor = attributes.titleTextColor,
+      displayPriceDetails = attributes.displayPriceDetails,
+      priceDetails = attributes.priceDetails,
+      priceBackgroundColor = attributes.priceBackgroundColor,
+      priceTextColor = attributes.priceTextColor,
+      features = attributes.features,
+      featuresBackgroundColor = attributes.featuresBackgroundColor,
+      featuresTextColor = attributes.featuresTextColor,
+      buttonBackground = attributes.buttonBackground,
+      buttonTextColor = attributes.buttonTextColor,
+      buttonText = attributes.buttonText,
+      hoverBackgroundColor = attributes.hoverBackgroundColor,
+      hoverTextColor = attributes.hoverTextColor,
+      priceboxBackground = attributes.priceboxBackground,
+      shadowColor = attributes.shadowColor,
+      shadowHOffset = attributes.shadowHOffset,
+      shadowVOffset = attributes.shadowVOffset,
+      shadowBlur = attributes.shadowBlur,
+      shadowSpread = attributes.shadowSpread,
+      borderWidth = attributes.borderWidth,
+      borderStyle = attributes.borderStyle,
+      borderColor = attributes.borderColor,
+      linkedMargin = attributes.linkedMargin,
+      marginTop = attributes.marginTop,
+      marginRight = attributes.marginRight,
+      marginBottom = attributes.marginBottom,
+      marginLeft = attributes.marginLeft,
+      linkedPadding = attributes.linkedPadding,
+      paddingTop = attributes.paddingTop,
+      paddingRight = attributes.paddingRight,
+      paddingBottom = attributes.paddingBottom,
+      paddingLeft = attributes.paddingLeft,
+      priceIcon = attributes.priceIcon,
+      marginUnit = attributes.marginUnit,
+      paddingUnit = attributes.paddingUnit,
+      iconSizeUnit = attributes.iconSizeUnit,
+      buttonHeight = attributes.buttonHeight,
+      buttonHeightUnit = attributes.buttonHeightUnit,
+      buttonWidth = attributes.buttonWidth,
+      buttonWidthUnit = attributes.buttonWidthUnit,
+      buttonBorderStyle = attributes.buttonBorderStyle,
+      buttonBorderWidth = attributes.buttonBorderWidth,
+      buttonBorderColor = attributes.buttonBorderColor,
+      hoverBorderColor = attributes.hoverBorderColor,
+      buttonBorderRadius = attributes.buttonBorderRadius,
+      buttonBorderRadiusUnit = attributes.buttonBorderRadiusUnit,
+      buttonURL = attributes.buttonURL,
+      subtitleFontFamily = attributes.subtitleFontFamily,
+      subtitleFontSize = attributes.subtitleFontSize,
+      subtitleSizeUnit = attributes.subtitleSizeUnit,
+      subtitleFontWeight = attributes.subtitleFontWeight,
+      subtitleTextTransform = attributes.subtitleTextTransform,
+      subtitleTextDecoration = attributes.subtitleTextDecoration,
+      subtitleLineHeight = attributes.subtitleLineHeight,
+      subtitleLineHeightUnit = attributes.subtitleLineHeightUnit,
+      subtitleLetterSpacing = attributes.subtitleLetterSpacing,
+      subtitleLetterSpacingUnit = attributes.subtitleLetterSpacingUnit,
+      featureFontFamily = attributes.featureFontFamily,
+      featureFontSize = attributes.featureFontSize,
+      featureSizeUnit = attributes.featureSizeUnit,
+      featureFontWeight = attributes.featureFontWeight,
+      featureTextTransform = attributes.featureTextTransform,
+      featureTextDecoration = attributes.featureTextDecoration,
+      featureLineHeight = attributes.featureLineHeight,
+      featureLineHeightUnit = attributes.featureLineHeightUnit,
+      featureLetterSpacing = attributes.featureLetterSpacing,
+      featureLetterSpacingUnit = attributes.featureLetterSpacingUnit,
+      priceFontFamily = attributes.priceFontFamily,
+      priceFontSize = attributes.priceFontSize,
+      priceSizeUnit = attributes.priceSizeUnit,
+      priceFontWeight = attributes.priceFontWeight,
+      priceTextDecoration = attributes.priceTextDecoration,
+      priceLineHeight = attributes.priceLineHeight,
+      priceLineHeightUnit = attributes.priceLineHeightUnit,
+      priceLetterSpacing = attributes.priceLetterSpacing,
+      priceLetterSpacingUnit = attributes.priceLetterSpacingUnit,
+      buttonFontFamily = attributes.buttonFontFamily,
+      buttonFontSize = attributes.buttonFontSize,
+      buttonSizeUnit = attributes.buttonSizeUnit,
+      buttonFontWeight = attributes.buttonFontWeight,
+      buttonTextDecoration = attributes.buttonTextDecoration,
+      buttonLineHeight = attributes.buttonLineHeight,
+      buttonLineHeightUnit = attributes.buttonLineHeightUnit,
+      buttonLetterSpacing = attributes.buttonLetterSpacing,
+      buttonLetterSpacingUnit = attributes.buttonLetterSpacingUnit;
 
-    _this = _super.call.apply(_super, [this].concat(args));
-
-    _defineProperty(_assertThisInitialized(_this), "onFeatureAdd", function () {
-      var count = _this.props.attributes.features.length;
-      var features = [].concat(_toConsumableArray(_this.props.attributes.features), [{
-        icon: "fas fa-check",
-        text: "Feature ".concat(count),
-        color: "#03bb89"
-      }]);
-
-      _this.props.setAttributes({
-        features: features
-      });
+  var onFeatureAdd = function onFeatureAdd() {
+    var count = attributes.features.length;
+    var features = [].concat(_toConsumableArray(attributes.features), [{
+      icon: "fas fa-check",
+      text: "Feature ".concat(count),
+      color: "#03bb89"
+    }]);
+    setAttributes({
+      features: features
     });
+  };
 
-    _defineProperty(_assertThisInitialized(_this), "render", function () {
-      var _this$props = _this.props,
-          attributes = _this$props.attributes,
-          setAttributes = _this$props.setAttributes;
-      var displaySubtitle = attributes.displaySubtitle,
-          titleBackgroundColor = attributes.titleBackgroundColor,
-          titleTextColor = attributes.titleTextColor,
-          price = attributes.price,
-          priceValueSize = attributes.priceValueSize,
-          displayPriceDetails = attributes.displayPriceDetails,
-          priceDetails = attributes.priceDetails,
-          priceBackgroundColor = attributes.priceBackgroundColor,
-          priceTextColor = attributes.priceTextColor,
-          features = attributes.features,
-          featuresBackgroundColor = attributes.featuresBackgroundColor,
-          featuresTextColor = attributes.featuresTextColor,
-          buttonBackground = attributes.buttonBackground,
-          buttonTextColor = attributes.buttonTextColor,
-          buttonText = attributes.buttonText,
-          hoverBackgroundColor = attributes.hoverBackgroundColor,
-          hoverTextColor = attributes.hoverTextColor,
-          priceboxBackground = attributes.priceboxBackground,
-          shadowColor = attributes.shadowColor,
-          shadowHOffset = attributes.shadowHOffset,
-          shadowVOffset = attributes.shadowVOffset,
-          shadowBlur = attributes.shadowBlur,
-          shadowSpread = attributes.shadowSpread,
-          borderWidth = attributes.borderWidth,
-          borderStyle = attributes.borderStyle,
-          borderColor = attributes.borderColor,
-          linkedMargin = attributes.linkedMargin,
-          marginTop = attributes.marginTop,
-          marginRight = attributes.marginRight,
-          marginBottom = attributes.marginBottom,
-          marginLeft = attributes.marginLeft,
-          linkedPadding = attributes.linkedPadding,
-          paddingTop = attributes.paddingTop,
-          paddingRight = attributes.paddingRight,
-          paddingBottom = attributes.paddingBottom,
-          paddingLeft = attributes.paddingLeft,
-          priceIcon = attributes.priceIcon,
-          marginUnit = attributes.marginUnit,
-          paddingUnit = attributes.paddingUnit,
-          iconSizeUnit = attributes.iconSizeUnit,
-          buttonHeight = attributes.buttonHeight,
-          buttonHeightUnit = attributes.buttonHeightUnit,
-          buttonWidth = attributes.buttonWidth,
-          buttonWidthUnit = attributes.buttonWidthUnit,
-          buttonBorderStyle = attributes.buttonBorderStyle,
-          buttonBorderWidth = attributes.buttonBorderWidth,
-          buttonBorderColor = attributes.buttonBorderColor,
-          hoverBorderColor = attributes.hoverBorderColor,
-          buttonBorderRadius = attributes.buttonBorderRadius,
-          buttonBorderRadiusUnit = attributes.buttonBorderRadiusUnit,
-          buttonURL = attributes.buttonURL,
-          subtitleFontFamily = attributes.subtitleFontFamily,
-          subtitleFontSize = attributes.subtitleFontSize,
-          subtitleSizeUnit = attributes.subtitleSizeUnit,
-          subtitleFontWeight = attributes.subtitleFontWeight,
-          subtitleTextTransform = attributes.subtitleTextTransform,
-          subtitleTextDecoration = attributes.subtitleTextDecoration,
-          subtitleLineHeight = attributes.subtitleLineHeight,
-          subtitleLineHeightUnit = attributes.subtitleLineHeightUnit,
-          subtitleLetterSpacing = attributes.subtitleLetterSpacing,
-          subtitleLetterSpacingUnit = attributes.subtitleLetterSpacingUnit,
-          featureFontFamily = attributes.featureFontFamily,
-          featureFontSize = attributes.featureFontSize,
-          featureSizeUnit = attributes.featureSizeUnit,
-          featureFontWeight = attributes.featureFontWeight,
-          featureTextTransform = attributes.featureTextTransform,
-          featureTextDecoration = attributes.featureTextDecoration,
-          featureLineHeight = attributes.featureLineHeight,
-          featureLineHeightUnit = attributes.featureLineHeightUnit,
-          featureLetterSpacing = attributes.featureLetterSpacing,
-          featureLetterSpacingUnit = attributes.featureLetterSpacingUnit,
-          priceFontFamily = attributes.priceFontFamily,
-          priceFontSize = attributes.priceFontSize,
-          priceSizeUnit = attributes.priceSizeUnit,
-          priceFontWeight = attributes.priceFontWeight,
-          priceTextDecoration = attributes.priceTextDecoration,
-          priceLineHeight = attributes.priceLineHeight,
-          priceLineHeightUnit = attributes.priceLineHeightUnit,
-          priceLetterSpacing = attributes.priceLetterSpacing,
-          priceLetterSpacingUnit = attributes.priceLetterSpacingUnit,
-          buttonFontFamily = attributes.buttonFontFamily,
-          buttonFontSize = attributes.buttonFontSize,
-          buttonSizeUnit = attributes.buttonSizeUnit,
-          buttonFontWeight = attributes.buttonFontWeight,
-          buttonTextDecoration = attributes.buttonTextDecoration,
-          buttonLineHeight = attributes.buttonLineHeight,
-          buttonLineHeightUnit = attributes.buttonLineHeightUnit,
-          buttonLetterSpacing = attributes.buttonLetterSpacing,
-          buttonLetterSpacingUnit = attributes.buttonLetterSpacingUnit;
-      var SUBTITLE_SIZE_MAX = subtitleSizeUnit === "em" ? 10 : 100;
-      var SUBTITLE_SIZE_MIN = subtitleSizeUnit === "em" ? 0.5 : 8;
-      var SUBTITLE_SIZE_STEP = subtitleSizeUnit === "em" ? 0.1 : 1;
-      var SUBTITLE_SPACING_MAX = subtitleLetterSpacingUnit === "em" ? 10 : 100;
-      var SUBTITLE_SPACING_STEP = subtitleLetterSpacingUnit === "em" ? 0.1 : 1;
-      var SUBTITLE_LINE_HEIGHT_MAX = subtitleLineHeightUnit === "em" ? 10 : 100;
-      var SUBTITLE_LINE_HEIGHT_STEP = subtitleLineHeightUnit === "em" ? 0.1 : 1;
-      var PRICE_SIZE_MAX = priceSizeUnit === "em" ? 10 : 100;
-      var PRICE_SIZE_MIN = priceSizeUnit === "em" ? 0.5 : 8;
-      var PRICE_SIZE_STEP = priceSizeUnit === "em" ? 0.1 : 1;
-      var PRICE_SPACING_MAX = priceLetterSpacingUnit === "em" ? 10 : 100;
-      var PRICE_SPACING_STEP = priceLetterSpacingUnit === "em" ? 0.1 : 1;
-      var PRICE_LINE_HEIGHT_MAX = priceLineHeightUnit === "em" ? 10 : 100;
-      var PRICE_LINE_HEIGHT_STEP = priceLineHeightUnit === "em" ? 0.1 : 1;
-      var FEATURE_SIZE_MAX = featureSizeUnit === "em" ? 10 : 100;
-      var FEATURE_SIZE_MIN = featureSizeUnit === "em" ? 0.5 : 8;
-      var FEATURE_SIZE_STEP = featureSizeUnit === "em" ? 0.1 : 1;
-      var FEATURE_SPACING_MAX = featureLetterSpacingUnit === "em" ? 10 : 100;
-      var FEATURE_SPACING_STEP = featureLetterSpacingUnit === "em" ? 0.1 : 1;
-      var FEATURE_LINE_HEIGHT_MAX = featureLineHeightUnit === "em" ? 10 : 100;
-      var FEATURE_LINE_HEIGHT_STEP = featureLineHeightUnit === "em" ? 0.1 : 1;
-      var BUTTON_SIZE_MAX = buttonSizeUnit === "em" ? 10 : 100;
-      var BUTTON_SIZE_MIN = buttonSizeUnit === "em" ? 0.5 : 8;
-      var BUTTON_SIZE_STEP = buttonSizeUnit === "em" ? 0.1 : 1;
-      var BUTTON_SPACING_MAX = buttonLetterSpacingUnit === "em" ? 10 : 100;
-      var BUTTON_SPACING_STEP = buttonLetterSpacingUnit === "em" ? 0.1 : 1;
-      var BUTTON_LINE_HEIGHT_MAX = buttonLineHeightUnit === "em" ? 10 : 100;
-      var BUTTON_LINE_HEIGHT_STEP = buttonLineHeightUnit === "em" ? 0.1 : 1;
-      return /*#__PURE__*/React.createElement(InspectorControls, {
-        key: "controls"
-      }, /*#__PURE__*/React.createElement(PanelBody, null, /*#__PURE__*/React.createElement(ToggleControl, {
-        label: "Display Subtitle",
-        checked: displaySubtitle,
-        onChange: function onChange() {
+  return /*#__PURE__*/React.createElement(InspectorControls, {
+    key: "controls"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "eb-panel-control"
+  }, /*#__PURE__*/React.createElement(PanelBody, {
+    title: __("Settings")
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    label: __("Pricing Style"),
+    value: pricingStyle,
+    options: [{
+      label: "Default",
+      value: "style-1"
+    }, {
+      label: "Style 2",
+      value: "style-2"
+    }, {
+      label: "Style 3",
+      value: "style-3"
+    }],
+    onChange: function onChange(pricingStyle) {
+      setAttributes({
+        pricingStyle: pricingStyle
+      });
+    }
+  }), /*#__PURE__*/React.createElement(TextControl, {
+    label: __("Title"),
+    value: title,
+    onChange: function onChange(newTitle) {
+      return setAttributes({
+        title: newTitle
+      });
+    }
+  }), pricingStyle !== "style-1" && /*#__PURE__*/React.createElement(TextControl, {
+    label: __("Sub Title"),
+    value: subtitle,
+    onChange: function onChange(newSubtitle) {
+      return setAttributes({
+        subtitle: newSubtitle
+      });
+    }
+  }), pricingStyle === "style-2" && /*#__PURE__*/React.createElement(BaseControl, {
+    label: __("Icon")
+  }, /*#__PURE__*/React.createElement(_fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_9___default.a, {
+    icons: _util_faIcons__WEBPACK_IMPORTED_MODULE_1__["default"],
+    value: headerIcon,
+    onChange: function onChange(headerIcon) {
+      return setAttributes({
+        headerIcon: headerIcon
+      });
+    },
+    appendTo: "body",
+    closeOnSelect: true
+  }))), /*#__PURE__*/React.createElement(PanelBody, {
+    title: __("Price"),
+    initialOpen: false
+  }, /*#__PURE__*/React.createElement(TextControl, {
+    label: __("Price"),
+    value: price,
+    onChange: function onChange(newPrice) {
+      return setAttributes({
+        price: newPrice
+      });
+    }
+  }), /*#__PURE__*/React.createElement(ToggleControl, {
+    label: __("On Sale?"),
+    checked: showOnSale,
+    onChange: function onChange() {
+      setAttributes({
+        showOnSale: !showOnSale
+      });
+    }
+  }), showOnSale && /*#__PURE__*/React.createElement(TextControl, {
+    label: __("Sale Price"),
+    value: salePrice,
+    onChange: function onChange(newsalePrice) {
+      return setAttributes({
+        price: newsalePrice
+      });
+    }
+  }), /*#__PURE__*/React.createElement(TextControl, {
+    label: __("Price Currency"),
+    value: priceCurrency,
+    onChange: function onChange(newPriceCurrency) {
+      return setAttributes({
+        priceCurrency: newPriceCurrency
+      });
+    }
+  })), /*#__PURE__*/React.createElement(PanelBody, {
+    title: __("Features"),
+    initialOpen: false
+  }, /*#__PURE__*/React.createElement(_sortable_features__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    features: attributes.features,
+    setAttributes: setAttributes
+  }), /*#__PURE__*/React.createElement(Button, {
+    className: "eb-pricebox-feature-button",
+    label: __("Add feature"),
+    icon: "plus-alt",
+    onClick: onFeatureAdd
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "eb-pricebox-add-button-label"
+  }, "Add Feature"))), /*#__PURE__*/React.createElement(PanelBody, {
+    title: __("Typography"),
+    initialOpen: false
+  }, displaySubtitle && /*#__PURE__*/React.createElement(BaseControl, {
+    label: __("Subtitle"),
+    className: "eb-typography-base"
+  }, /*#__PURE__*/React.createElement(Dropdown, {
+    className: "eb-typography-dropdown",
+    contentClassName: "my-popover-content-classname",
+    position: "bottom right",
+    renderToggle: function renderToggle(_ref2) {
+      var isOpen = _ref2.isOpen,
+          onToggle = _ref2.onToggle;
+      return /*#__PURE__*/React.createElement(Button, {
+        isSmall: true,
+        onClick: onToggle,
+        "aria-expanded": isOpen
+      }, /*#__PURE__*/React.createElement(_util_icons__WEBPACK_IMPORTED_MODULE_7__["TypographyIcon"], null));
+    },
+    renderContent: function renderContent() {
+      return /*#__PURE__*/React.createElement("div", {
+        className: "eb-panel-control",
+        style: {
+          padding: "0.2rem"
+        }
+      }, /*#__PURE__*/React.createElement(_util_typography_control_FontPicker__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        label: __("Font Family"),
+        value: subtitleFontFamily,
+        onChange: function onChange(subtitleFontFamily) {
           return setAttributes({
-            displaySubtitle: !displaySubtitle
+            subtitleFontFamily: subtitleFontFamily
           });
         }
-      }), /*#__PURE__*/React.createElement(PanelBody, {
-        title: __("Features")
-      }, /*#__PURE__*/React.createElement(_sortable_features__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        features: _this.props.attributes.features,
-        setAttributes: setAttributes
-      }), /*#__PURE__*/React.createElement(Button, {
-        className: "eb-pricebox-feature-button",
-        label: __("Add feature"),
-        icon: "plus-alt",
-        onClick: _this.onFeatureAdd
-      }, "Add Feature")), /*#__PURE__*/React.createElement(PanelBody, {
-        title: __("Typography"),
-        initialOpen: false
-      }, displaySubtitle && /*#__PURE__*/React.createElement(BaseControl, {
-        label: __("Subtitle"),
-        className: "eb-typography-base"
-      }, /*#__PURE__*/React.createElement(Dropdown, {
-        className: "eb-typography-dropdown",
-        contentClassName: "my-popover-content-classname",
-        position: "bottom right",
-        renderToggle: function renderToggle(_ref) {
-          var isOpen = _ref.isOpen,
-              onToggle = _ref.onToggle;
-          return /*#__PURE__*/React.createElement(Button, {
-            isSmall: true,
-            onClick: onToggle,
-            "aria-expanded": isOpen,
-            icon: "edit"
-          });
-        },
-        renderContent: function renderContent() {
-          return /*#__PURE__*/React.createElement("div", {
-            style: {
-              padding: "1rem"
-            }
-          }, /*#__PURE__*/React.createElement(_util_typography_control_FontPicker__WEBPACK_IMPORTED_MODULE_4__["default"], {
-            label: __("Font Family"),
-            value: subtitleFontFamily,
-            onChange: function onChange(subtitleFontFamily) {
-              return setAttributes({
-                subtitleFontFamily: subtitleFontFamily
-              });
-            }
-          }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            selectedUnit: subtitleSizeUnit,
-            unitTypes: [{
-              label: "px",
-              value: "px"
-            }, {
-              label: "%",
-              value: "%"
-            }, {
-              label: "em",
-              value: "em"
-            }],
-            onClick: function onClick(subtitleSizeUnit) {
-              return setAttributes({
-                subtitleSizeUnit: subtitleSizeUnit
-              });
-            }
-          }), /*#__PURE__*/React.createElement(RangeControl, {
-            label: __("Font Size"),
-            value: subtitleFontSize,
-            onChange: function onChange(subtitleFontSize) {
-              return setAttributes({
-                subtitleFontSize: subtitleFontSize
-              });
-            },
-            step: SUBTITLE_SIZE_STEP,
-            min: 0,
-            max: SUBTITLE_SIZE_MAX
-          }), /*#__PURE__*/React.createElement(SelectControl, {
-            label: __("Font Weight"),
-            value: subtitleFontWeight,
-            options: _constants__WEBPACK_IMPORTED_MODULE_0__["FONT_WEIGHT"],
-            onChange: function onChange(subtitleFontWeight) {
-              return setAttributes({
-                subtitleFontWeight: subtitleFontWeight
-              });
-            }
-          }), /*#__PURE__*/React.createElement(SelectControl, {
-            label: __("Text Decoration"),
-            value: subtitleTextDecoration,
-            options: _constants__WEBPACK_IMPORTED_MODULE_0__["TEXT_DECORATION"],
-            onChange: function onChange(subtitleTextDecoration) {
-              return setAttributes({
-                subtitleTextDecoration: subtitleTextDecoration
-              });
-            }
-          }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            selectedUnit: subtitleLetterSpacingUnit,
-            unitTypes: [{
-              label: "px",
-              value: "px"
-            }, {
-              label: "em",
-              value: "em"
-            }],
-            onClick: function onClick(subtitleLetterSpacingUnit) {
-              return setAttributes({
-                subtitleLetterSpacingUnit: subtitleLetterSpacingUnit
-              });
-            }
-          }), /*#__PURE__*/React.createElement(RangeControl, {
-            label: __("Letter Spacing"),
-            value: subtitleLetterSpacing,
-            onChange: function onChange(subtitleLetterSpacing) {
-              return setAttributes({
-                subtitleLetterSpacing: subtitleLetterSpacing
-              });
-            },
-            min: 0,
-            max: SUBTITLE_SPACING_MAX,
-            step: SUBTITLE_SPACING_STEP
-          }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            selectedUnit: subtitleLineHeightUnit,
-            unitTypes: [{
-              label: "px",
-              value: "px"
-            }, {
-              label: "em",
-              value: "em"
-            }],
-            onClick: function onClick(subtitleLineHeightUnit) {
-              return setAttributes({
-                subtitleLineHeightUnit: subtitleLineHeightUnit
-              });
-            }
-          }), /*#__PURE__*/React.createElement(RangeControl, {
-            label: __("Line Height"),
-            value: subtitleLineHeight,
-            onChange: function onChange(subtitleLineHeight) {
-              return setAttributes({
-                subtitleLineHeight: subtitleLineHeight
-              });
-            },
-            min: 0,
-            max: SUBTITLE_LINE_HEIGHT_MAX,
-            step: SUBTITLE_LINE_HEIGHT_STEP
-          }));
-        }
-      })), /*#__PURE__*/React.createElement(BaseControl, {
-        label: __("Price"),
-        className: "eb-typography-base"
-      }, /*#__PURE__*/React.createElement(Dropdown, {
-        className: "eb-typography-dropdown",
-        contentClassName: "my-popover-content-classname",
-        position: "bottom right",
-        renderToggle: function renderToggle(_ref2) {
-          var isOpen = _ref2.isOpen,
-              onToggle = _ref2.onToggle;
-          return /*#__PURE__*/React.createElement(Button, {
-            isSmall: true,
-            onClick: onToggle,
-            "aria-expanded": isOpen,
-            icon: "edit"
-          });
-        },
-        renderContent: function renderContent() {
-          return /*#__PURE__*/React.createElement("div", {
-            style: {
-              padding: "1rem"
-            }
-          }, /*#__PURE__*/React.createElement(_util_typography_control_FontPicker__WEBPACK_IMPORTED_MODULE_4__["default"], {
-            label: __("Font Family"),
-            value: priceFontFamily,
-            onChange: function onChange(priceFontFamily) {
-              return setAttributes({
-                priceFontFamily: priceFontFamily
-              });
-            }
-          }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            selectedUnit: priceSizeUnit,
-            unitTypes: [{
-              label: "px",
-              value: "px"
-            }, {
-              label: "%",
-              value: "%"
-            }, {
-              label: "em",
-              value: "em"
-            }],
-            onClick: function onClick(priceSizeUnit) {
-              return setAttributes({
-                priceSizeUnit: priceSizeUnit
-              });
-            }
-          }), /*#__PURE__*/React.createElement(RangeControl, {
-            label: __("Font Size"),
-            value: priceFontSize,
-            onChange: function onChange(priceFontSize) {
-              return setAttributes({
-                priceFontSize: priceFontSize
-              });
-            },
-            step: PRICE_SIZE_STEP,
-            min: 0,
-            max: PRICE_SIZE_MAX
-          }), /*#__PURE__*/React.createElement(SelectControl, {
-            label: __("Font Weight"),
-            value: priceFontWeight,
-            options: _constants__WEBPACK_IMPORTED_MODULE_0__["FONT_WEIGHT"],
-            onChange: function onChange(priceFontWeight) {
-              return setAttributes({
-                priceFontWeight: priceFontWeight
-              });
-            }
-          }), /*#__PURE__*/React.createElement(SelectControl, {
-            label: __("Text Decoration"),
-            value: priceTextDecoration,
-            options: _constants__WEBPACK_IMPORTED_MODULE_0__["TEXT_DECORATION"],
-            onChange: function onChange(priceTextDecoration) {
-              return setAttributes({
-                priceTextDecoration: priceTextDecoration
-              });
-            }
-          }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            selectedUnit: priceLetterSpacingUnit,
-            unitTypes: [{
-              label: "px",
-              value: "px"
-            }, {
-              label: "em",
-              value: "em"
-            }],
-            onClick: function onClick(priceLetterSpacingUnit) {
-              return setAttributes({
-                priceLetterSpacingUnit: priceLetterSpacingUnit
-              });
-            }
-          }), /*#__PURE__*/React.createElement(RangeControl, {
-            label: __("Letter Spacing"),
-            value: priceLetterSpacing,
-            onChange: function onChange(priceLetterSpacing) {
-              return setAttributes({
-                priceLetterSpacing: priceLetterSpacing
-              });
-            },
-            min: 0,
-            max: PRICE_SPACING_MAX,
-            step: PRICE_SPACING_STEP
-          }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            selectedUnit: priceLineHeightUnit,
-            unitTypes: [{
-              label: "px",
-              value: "px"
-            }, {
-              label: "em",
-              value: "em"
-            }],
-            onClick: function onClick(priceLineHeightUnit) {
-              return setAttributes({
-                priceLineHeightUnit: priceLineHeightUnit
-              });
-            }
-          }), /*#__PURE__*/React.createElement(RangeControl, {
-            label: __("Line Height"),
-            value: priceLineHeight,
-            onChange: function onChange(priceLineHeight) {
-              return setAttributes({
-                priceLineHeight: priceLineHeight
-              });
-            },
-            min: 0,
-            max: PRICE_LINE_HEIGHT_MAX,
-            step: PRICE_LINE_HEIGHT_STEP
-          }));
-        }
-      })), /*#__PURE__*/React.createElement(BaseControl, {
-        label: __("Feauture"),
-        className: "eb-typography-base"
-      }, /*#__PURE__*/React.createElement(Dropdown, {
-        className: "eb-typography-dropdown",
-        contentClassName: "my-popover-content-classname",
-        position: "bottom right",
-        renderToggle: function renderToggle(_ref3) {
-          var isOpen = _ref3.isOpen,
-              onToggle = _ref3.onToggle;
-          return /*#__PURE__*/React.createElement(Button, {
-            isSmall: true,
-            onClick: onToggle,
-            "aria-expanded": isOpen,
-            icon: "edit"
-          });
-        },
-        renderContent: function renderContent() {
-          return /*#__PURE__*/React.createElement("div", {
-            style: {
-              padding: "1rem"
-            }
-          }, /*#__PURE__*/React.createElement(_util_typography_control_FontPicker__WEBPACK_IMPORTED_MODULE_4__["default"], {
-            label: __("Font Family"),
-            value: featureFontFamily,
-            onChange: function onChange(featureFontFamily) {
-              return setAttributes({
-                featureFontFamily: featureFontFamily
-              });
-            }
-          }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            selectedUnit: featureSizeUnit,
-            unitTypes: [{
-              label: "px",
-              value: "px"
-            }, {
-              label: "%",
-              value: "%"
-            }, {
-              label: "em",
-              value: "em"
-            }],
-            onClick: function onClick(featureSizeUnit) {
-              return setAttributes({
-                featureSizeUnit: featureSizeUnit
-              });
-            }
-          }), /*#__PURE__*/React.createElement(RangeControl, {
-            label: __("Font Size"),
-            value: featureFontSize,
-            onChange: function onChange(featureFontSize) {
-              return setAttributes({
-                featureFontSize: featureFontSize
-              });
-            },
-            step: FEATURE_SIZE_STEP,
-            min: 0,
-            max: FEATURE_SIZE_MAX
-          }), /*#__PURE__*/React.createElement(SelectControl, {
-            label: __("Font Weight"),
-            value: featureFontWeight,
-            options: _constants__WEBPACK_IMPORTED_MODULE_0__["FONT_WEIGHT"],
-            onChange: function onChange(featureFontWeight) {
-              return setAttributes({
-                featureFontWeight: featureFontWeight
-              });
-            }
-          }), /*#__PURE__*/React.createElement(SelectControl, {
-            label: __("Text Transform"),
-            value: featureTextTransform,
-            options: _constants__WEBPACK_IMPORTED_MODULE_0__["TEXT_TRANSFORM"],
-            onChange: function onChange(featureTextTransform) {
-              return setAttributes({
-                featureTextTransform: featureTextTransform
-              });
-            }
-          }), /*#__PURE__*/React.createElement(SelectControl, {
-            label: __("Text Decoration"),
-            value: featureTextDecoration,
-            options: _constants__WEBPACK_IMPORTED_MODULE_0__["TEXT_DECORATION"],
-            onChange: function onChange(featureTextDecoration) {
-              return setAttributes({
-                featureTextDecoration: featureTextDecoration
-              });
-            }
-          }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            selectedUnit: featureLetterSpacingUnit,
-            unitTypes: [{
-              label: "px",
-              value: "px"
-            }, {
-              label: "em",
-              value: "em"
-            }],
-            onClick: function onClick(featureLetterSpacingUnit) {
-              return setAttributes({
-                featureLetterSpacingUnit: featureLetterSpacingUnit
-              });
-            }
-          }), /*#__PURE__*/React.createElement(RangeControl, {
-            label: __("Letter Spacing"),
-            value: featureLetterSpacing,
-            onChange: function onChange(featureLetterSpacing) {
-              return setAttributes({
-                featureLetterSpacing: featureLetterSpacing
-              });
-            },
-            min: 0,
-            max: FEATURE_SPACING_MAX,
-            step: FEATURE_SPACING_STEP
-          }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            selectedUnit: featureLineHeightUnit,
-            unitTypes: [{
-              label: "px",
-              value: "px"
-            }, {
-              label: "em",
-              value: "em"
-            }],
-            onClick: function onClick(featureLineHeightUnit) {
-              return setAttributes({
-                featureLineHeightUnit: featureLineHeightUnit
-              });
-            }
-          }), /*#__PURE__*/React.createElement(RangeControl, {
-            label: __("Line Height"),
-            value: featureLineHeight,
-            onChange: function onChange(featureLineHeight) {
-              return setAttributes({
-                featureLineHeight: featureLineHeight
-              });
-            },
-            min: 0,
-            max: FEATURE_LINE_HEIGHT_MAX,
-            step: FEATURE_LINE_HEIGHT_STEP
-          }));
-        }
-      })), /*#__PURE__*/React.createElement(BaseControl, {
-        label: __("Button"),
-        className: "eb-typography-base"
-      }, /*#__PURE__*/React.createElement(Dropdown, {
-        className: "eb-typography-dropdown",
-        contentClassName: "my-popover-content-classname",
-        position: "bottom right",
-        renderToggle: function renderToggle(_ref4) {
-          var isOpen = _ref4.isOpen,
-              onToggle = _ref4.onToggle;
-          return /*#__PURE__*/React.createElement(Button, {
-            isSmall: true,
-            onClick: onToggle,
-            "aria-expanded": isOpen,
-            icon: "edit"
-          });
-        },
-        renderContent: function renderContent() {
-          return /*#__PURE__*/React.createElement("div", {
-            style: {
-              padding: "1rem"
-            }
-          }, /*#__PURE__*/React.createElement(_util_typography_control_FontPicker__WEBPACK_IMPORTED_MODULE_4__["default"], {
-            label: __("Font Family"),
-            value: buttonFontFamily,
-            onChange: function onChange(buttonFontFamily) {
-              return setAttributes({
-                buttonFontFamily: buttonFontFamily
-              });
-            }
-          }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            selectedUnit: buttonSizeUnit,
-            unitTypes: [{
-              label: "px",
-              value: "px"
-            }, {
-              label: "%",
-              value: "%"
-            }, {
-              label: "em",
-              value: "em"
-            }],
-            onClick: function onClick(buttonSizeUnit) {
-              return setAttributes({
-                buttonSizeUnit: buttonSizeUnit
-              });
-            }
-          }), /*#__PURE__*/React.createElement(RangeControl, {
-            label: __("Font Size"),
-            value: buttonFontSize,
-            onChange: function onChange(buttonFontSize) {
-              return setAttributes({
-                buttonFontSize: buttonFontSize
-              });
-            },
-            step: BUTTON_SIZE_STEP,
-            min: 0,
-            max: BUTTON_SIZE_MAX
-          }), /*#__PURE__*/React.createElement(SelectControl, {
-            label: __("Font Weight"),
-            value: buttonFontWeight,
-            options: _constants__WEBPACK_IMPORTED_MODULE_0__["FONT_WEIGHT"],
-            onChange: function onChange(buttonFontWeight) {
-              return setAttributes({
-                buttonFontWeight: buttonFontWeight
-              });
-            }
-          }), /*#__PURE__*/React.createElement(SelectControl, {
-            label: __("Text Decoration"),
-            value: buttonTextDecoration,
-            options: _constants__WEBPACK_IMPORTED_MODULE_0__["TEXT_DECORATION"],
-            onChange: function onChange(buttonTextDecoration) {
-              return setAttributes({
-                buttonTextDecoration: buttonTextDecoration
-              });
-            }
-          }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            selectedUnit: buttonLetterSpacingUnit,
-            unitTypes: [{
-              label: "px",
-              value: "px"
-            }, {
-              label: "em",
-              value: "em"
-            }],
-            onClick: function onClick(buttonLetterSpacingUnit) {
-              return setAttributes({
-                buttonLetterSpacingUnit: buttonLetterSpacingUnit
-              });
-            }
-          }), /*#__PURE__*/React.createElement(RangeControl, {
-            label: __("Letter Spacing"),
-            value: buttonLetterSpacing,
-            onChange: function onChange(buttonLetterSpacing) {
-              return setAttributes({
-                buttonLetterSpacing: buttonLetterSpacing
-              });
-            },
-            min: 0,
-            max: BUTTON_SPACING_MAX,
-            step: BUTTON_SPACING_STEP
-          }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            selectedUnit: buttonLineHeightUnit,
-            unitTypes: [{
-              label: "px",
-              value: "px"
-            }, {
-              label: "em",
-              value: "em"
-            }],
-            onClick: function onClick(buttonLineHeightUnit) {
-              return setAttributes({
-                buttonLineHeightUnit: buttonLineHeightUnit
-              });
-            }
-          }), /*#__PURE__*/React.createElement(RangeControl, {
-            label: __("Line Height"),
-            value: buttonLineHeight,
-            onChange: function onChange(buttonLineHeight) {
-              return setAttributes({
-                buttonLineHeight: buttonLineHeight
-              });
-            },
-            min: 0,
-            max: BUTTON_LINE_HEIGHT_MAX,
-            step: BUTTON_LINE_HEIGHT_STEP
-          }));
-        }
-      }))), /*#__PURE__*/React.createElement(PanelBody, {
-        title: __("Colors"),
-        initialOpen: false
-      }, /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        label: __("Background Color"),
-        color: priceboxBackground,
-        onChange: function onChange(priceboxBackground) {
+      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        selectedUnit: subtitleSizeUnit,
+        unitTypes: [{
+          label: "px",
+          value: "px"
+        }, {
+          label: "%",
+          value: "%"
+        }, {
+          label: "em",
+          value: "em"
+        }],
+        onClick: function onClick(subtitleSizeUnit) {
           return setAttributes({
-            priceboxBackground: priceboxBackground
-          });
-        }
-      }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        label: __("Title Background"),
-        color: titleBackgroundColor,
-        onChange: function onChange(titleBackgroundColor) {
-          return setAttributes({
-            titleBackgroundColor: titleBackgroundColor
-          });
-        }
-      }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        label: __("Title Text"),
-        color: titleTextColor,
-        onChange: function onChange(titleTextColor) {
-          return setAttributes({
-            titleTextColor: titleTextColor
-          });
-        }
-      }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        label: __("Price Background"),
-        color: priceBackgroundColor,
-        onChange: function onChange(priceBackgroundColor) {
-          return setAttributes({
-            priceBackgroundColor: priceBackgroundColor
-          });
-        }
-      }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        label: __("Price Text"),
-        color: priceTextColor,
-        onChange: function onChange(priceTextColor) {
-          return setAttributes({
-            priceTextColor: priceTextColor
-          });
-        }
-      }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        label: __("Features Background"),
-        color: featuresBackgroundColor,
-        onChange: function onChange(featuresBackgroundColor) {
-          return setAttributes({
-            featuresBackgroundColor: featuresBackgroundColor
-          });
-        }
-      }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        label: __("Features Text"),
-        color: featuresTextColor,
-        onChange: function onChange(featuresTextColor) {
-          return setAttributes({
-            featuresTextColor: featuresTextColor
-          });
-        }
-      })), /*#__PURE__*/React.createElement(PanelBody, {
-        title: __("Border"),
-        initialOpen: false
-      }, /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        label: __("Border Color"),
-        color: borderColor,
-        onChange: function onChange(borderColor) {
-          return setAttributes({
-            borderColor: borderColor
+            subtitleSizeUnit: subtitleSizeUnit
           });
         }
       }), /*#__PURE__*/React.createElement(RangeControl, {
-        label: __("Border Width"),
-        initialOpen: false,
-        value: borderWidth,
-        allowReset: true,
-        onChange: function onChange(borderWidth) {
+        label: __("Font Size"),
+        value: subtitleFontSize,
+        onChange: function onChange(subtitleFontSize) {
           return setAttributes({
-            borderWidth: borderWidth
+            subtitleFontSize: subtitleFontSize
+          });
+        },
+        step: SUBTITLE_SIZE_STEP,
+        min: 0,
+        max: SUBTITLE_SIZE_MAX
+      }), /*#__PURE__*/React.createElement(SelectControl, {
+        label: __("Font Weight"),
+        value: subtitleFontWeight,
+        options: _constants__WEBPACK_IMPORTED_MODULE_0__["FONT_WEIGHT"],
+        onChange: function onChange(subtitleFontWeight) {
+          return setAttributes({
+            subtitleFontWeight: subtitleFontWeight
           });
         }
       }), /*#__PURE__*/React.createElement(SelectControl, {
-        label: __("Border Style"),
-        value: borderStyle,
-        options: _constants__WEBPACK_IMPORTED_MODULE_0__["BORDER_STYLES"],
-        onChange: function onChange(newStyle) {
+        label: __("Text Decoration"),
+        value: subtitleTextDecoration,
+        options: _constants__WEBPACK_IMPORTED_MODULE_0__["TEXT_DECORATION"],
+        onChange: function onChange(subtitleTextDecoration) {
           return setAttributes({
-            borderStyle: newStyle
+            subtitleTextDecoration: subtitleTextDecoration
           });
         }
-      })), /*#__PURE__*/React.createElement(PanelBody, {
-        title: __("Shadow"),
-        initialOpen: false
-      }, /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        label: __("Shadow Color"),
-        color: shadowColor,
-        onChange: function onChange(shadowColor) {
-          return setAttributes({
-            shadowColor: shadowColor
-          });
-        }
-      }), /*#__PURE__*/React.createElement(RangeControl, {
-        label: __("Horizontal Offset"),
-        value: shadowHOffset,
-        allowReset: true,
-        onChange: function onChange(shadowHOffset) {
-          return setAttributes({
-            shadowHOffset: shadowHOffset
-          });
-        },
-        min: 0,
-        max: 200
-      }), /*#__PURE__*/React.createElement(RangeControl, {
-        label: __("Vertical Offset"),
-        value: shadowVOffset,
-        allowReset: true,
-        onChange: function onChange(shadowVOffset) {
-          return setAttributes({
-            shadowVOffset: shadowVOffset
-          });
-        },
-        min: 0,
-        max: 200
-      }), /*#__PURE__*/React.createElement(RangeControl, {
-        label: __("Blur"),
-        value: shadowBlur,
-        allowReset: true,
-        onChange: function onChange(shadowBlur) {
-          return setAttributes({
-            shadowBlur: shadowBlur
-          });
-        },
-        min: 0,
-        max: 200
-      }), /*#__PURE__*/React.createElement(RangeControl, {
-        label: __("Spread"),
-        value: shadowSpread,
-        allowReset: true,
-        onChange: function onChange(shadowSpread) {
-          return setAttributes({
-            shadowSpread: shadowSpread
-          });
-        },
-        min: 0,
-        max: 200
-      })), /*#__PURE__*/React.createElement(PanelBody, {
-        title: __("Button Settings"),
-        initialOpen: false
-      }, /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        selectedUnit: buttonHeightUnit,
+      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        selectedUnit: subtitleLetterSpacingUnit,
         unitTypes: [{
           label: "px",
           value: "px"
         }, {
           label: "em",
           value: "em"
-        }, {
-          label: "%",
-          value: "%"
         }],
-        onClick: function onClick(buttonHeightUnit) {
+        onClick: function onClick(subtitleLetterSpacingUnit) {
           return setAttributes({
-            buttonHeightUnit: buttonHeightUnit
+            subtitleLetterSpacingUnit: subtitleLetterSpacingUnit
           });
         }
       }), /*#__PURE__*/React.createElement(RangeControl, {
-        label: __("Height"),
-        value: buttonHeight,
-        allowReset: true,
-        onChange: function onChange(buttonHeight) {
+        label: __("Letter Spacing"),
+        value: subtitleLetterSpacing,
+        onChange: function onChange(subtitleLetterSpacing) {
           return setAttributes({
-            buttonHeight: buttonHeight
+            subtitleLetterSpacing: subtitleLetterSpacing
           });
         },
         min: 0,
-        max: 600
-      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        selectedUnit: buttonWidthUnit,
+        max: SUBTITLE_SPACING_MAX,
+        step: SUBTITLE_SPACING_STEP
+      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        selectedUnit: subtitleLineHeightUnit,
         unitTypes: [{
           label: "px",
           value: "px"
         }, {
           label: "em",
           value: "em"
-        }, {
-          label: "%",
-          value: "%"
         }],
-        onClick: function onClick(buttonWidthUnit) {
+        onClick: function onClick(subtitleLineHeightUnit) {
           return setAttributes({
-            buttonWidthUnit: buttonWidthUnit
+            subtitleLineHeightUnit: subtitleLineHeightUnit
           });
         }
       }), /*#__PURE__*/React.createElement(RangeControl, {
-        label: __("Width"),
-        value: buttonWidth,
-        allowReset: true,
-        onChange: function onChange(buttonWidth) {
+        label: __("Line Height"),
+        value: subtitleLineHeight,
+        onChange: function onChange(subtitleLineHeight) {
           return setAttributes({
-            buttonWidth: buttonWidth
+            subtitleLineHeight: subtitleLineHeight
           });
         },
         min: 0,
-        max: 600
-      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        max: SUBTITLE_LINE_HEIGHT_MAX,
+        step: SUBTITLE_LINE_HEIGHT_STEP
+      }));
+    }
+  })), /*#__PURE__*/React.createElement(BaseControl, {
+    label: __("Price"),
+    className: "eb-typography-base"
+  }, /*#__PURE__*/React.createElement(Dropdown, {
+    className: "eb-typography-dropdown",
+    contentClassName: "my-popover-content-classname",
+    position: "bottom right",
+    renderToggle: function renderToggle(_ref3) {
+      var isOpen = _ref3.isOpen,
+          onToggle = _ref3.onToggle;
+      return /*#__PURE__*/React.createElement(Button, {
+        isSmall: true,
+        onClick: onToggle,
+        "aria-expanded": isOpen
+      }, /*#__PURE__*/React.createElement(_util_icons__WEBPACK_IMPORTED_MODULE_7__["TypographyIcon"], null));
+    },
+    renderContent: function renderContent() {
+      return /*#__PURE__*/React.createElement("div", {
+        className: "eb-panel-control",
+        style: {
+          padding: "0.2rem"
+        }
+      }, /*#__PURE__*/React.createElement(_util_typography_control_FontPicker__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        label: __("Font Family"),
+        value: priceFontFamily,
+        onChange: function onChange(priceFontFamily) {
+          return setAttributes({
+            priceFontFamily: priceFontFamily
+          });
+        }
+      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        selectedUnit: priceSizeUnit,
+        unitTypes: [{
+          label: "px",
+          value: "px"
+        }, {
+          label: "%",
+          value: "%"
+        }, {
+          label: "em",
+          value: "em"
+        }],
+        onClick: function onClick(priceSizeUnit) {
+          return setAttributes({
+            priceSizeUnit: priceSizeUnit
+          });
+        }
+      }), /*#__PURE__*/React.createElement(RangeControl, {
+        label: __("Font Size"),
+        value: priceFontSize,
+        onChange: function onChange(priceFontSize) {
+          return setAttributes({
+            priceFontSize: priceFontSize
+          });
+        },
+        step: PRICE_SIZE_STEP,
+        min: 0,
+        max: PRICE_SIZE_MAX
+      }), /*#__PURE__*/React.createElement(SelectControl, {
+        label: __("Font Weight"),
+        value: priceFontWeight,
+        options: _constants__WEBPACK_IMPORTED_MODULE_0__["FONT_WEIGHT"],
+        onChange: function onChange(priceFontWeight) {
+          return setAttributes({
+            priceFontWeight: priceFontWeight
+          });
+        }
+      }), /*#__PURE__*/React.createElement(SelectControl, {
+        label: __("Text Decoration"),
+        value: priceTextDecoration,
+        options: _constants__WEBPACK_IMPORTED_MODULE_0__["TEXT_DECORATION"],
+        onChange: function onChange(priceTextDecoration) {
+          return setAttributes({
+            priceTextDecoration: priceTextDecoration
+          });
+        }
+      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        selectedUnit: priceLetterSpacingUnit,
+        unitTypes: [{
+          label: "px",
+          value: "px"
+        }, {
+          label: "em",
+          value: "em"
+        }],
+        onClick: function onClick(priceLetterSpacingUnit) {
+          return setAttributes({
+            priceLetterSpacingUnit: priceLetterSpacingUnit
+          });
+        }
+      }), /*#__PURE__*/React.createElement(RangeControl, {
+        label: __("Letter Spacing"),
+        value: priceLetterSpacing,
+        onChange: function onChange(priceLetterSpacing) {
+          return setAttributes({
+            priceLetterSpacing: priceLetterSpacing
+          });
+        },
+        min: 0,
+        max: PRICE_SPACING_MAX,
+        step: PRICE_SPACING_STEP
+      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        selectedUnit: priceLineHeightUnit,
+        unitTypes: [{
+          label: "px",
+          value: "px"
+        }, {
+          label: "em",
+          value: "em"
+        }],
+        onClick: function onClick(priceLineHeightUnit) {
+          return setAttributes({
+            priceLineHeightUnit: priceLineHeightUnit
+          });
+        }
+      }), /*#__PURE__*/React.createElement(RangeControl, {
+        label: __("Line Height"),
+        value: priceLineHeight,
+        onChange: function onChange(priceLineHeight) {
+          return setAttributes({
+            priceLineHeight: priceLineHeight
+          });
+        },
+        min: 0,
+        max: PRICE_LINE_HEIGHT_MAX,
+        step: PRICE_LINE_HEIGHT_STEP
+      }));
+    }
+  })), /*#__PURE__*/React.createElement(BaseControl, {
+    label: __("Feauture"),
+    className: "eb-typography-base"
+  }, /*#__PURE__*/React.createElement(Dropdown, {
+    className: "eb-typography-dropdown",
+    contentClassName: "my-popover-content-classname",
+    position: "bottom right",
+    renderToggle: function renderToggle(_ref4) {
+      var isOpen = _ref4.isOpen,
+          onToggle = _ref4.onToggle;
+      return /*#__PURE__*/React.createElement(Button, {
+        isSmall: true,
+        onClick: onToggle,
+        "aria-expanded": isOpen
+      }, /*#__PURE__*/React.createElement(_util_icons__WEBPACK_IMPORTED_MODULE_7__["TypographyIcon"], null));
+    },
+    renderContent: function renderContent() {
+      return /*#__PURE__*/React.createElement("div", {
+        className: "eb-panel-control",
+        style: {
+          padding: "0.2rem"
+        }
+      }, /*#__PURE__*/React.createElement(_util_typography_control_FontPicker__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        label: __("Font Family"),
+        value: featureFontFamily,
+        onChange: function onChange(featureFontFamily) {
+          return setAttributes({
+            featureFontFamily: featureFontFamily
+          });
+        }
+      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        selectedUnit: featureSizeUnit,
+        unitTypes: [{
+          label: "px",
+          value: "px"
+        }, {
+          label: "%",
+          value: "%"
+        }, {
+          label: "em",
+          value: "em"
+        }],
+        onClick: function onClick(featureSizeUnit) {
+          return setAttributes({
+            featureSizeUnit: featureSizeUnit
+          });
+        }
+      }), /*#__PURE__*/React.createElement(RangeControl, {
+        label: __("Font Size"),
+        value: featureFontSize,
+        onChange: function onChange(featureFontSize) {
+          return setAttributes({
+            featureFontSize: featureFontSize
+          });
+        },
+        step: FEATURE_SIZE_STEP,
+        min: 0,
+        max: FEATURE_SIZE_MAX
+      }), /*#__PURE__*/React.createElement(SelectControl, {
+        label: __("Font Weight"),
+        value: featureFontWeight,
+        options: _constants__WEBPACK_IMPORTED_MODULE_0__["FONT_WEIGHT"],
+        onChange: function onChange(featureFontWeight) {
+          return setAttributes({
+            featureFontWeight: featureFontWeight
+          });
+        }
+      }), /*#__PURE__*/React.createElement(SelectControl, {
+        label: __("Text Transform"),
+        value: featureTextTransform,
+        options: _constants__WEBPACK_IMPORTED_MODULE_0__["TEXT_TRANSFORM"],
+        onChange: function onChange(featureTextTransform) {
+          return setAttributes({
+            featureTextTransform: featureTextTransform
+          });
+        }
+      }), /*#__PURE__*/React.createElement(SelectControl, {
+        label: __("Text Decoration"),
+        value: featureTextDecoration,
+        options: _constants__WEBPACK_IMPORTED_MODULE_0__["TEXT_DECORATION"],
+        onChange: function onChange(featureTextDecoration) {
+          return setAttributes({
+            featureTextDecoration: featureTextDecoration
+          });
+        }
+      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        selectedUnit: featureLetterSpacingUnit,
+        unitTypes: [{
+          label: "px",
+          value: "px"
+        }, {
+          label: "em",
+          value: "em"
+        }],
+        onClick: function onClick(featureLetterSpacingUnit) {
+          return setAttributes({
+            featureLetterSpacingUnit: featureLetterSpacingUnit
+          });
+        }
+      }), /*#__PURE__*/React.createElement(RangeControl, {
+        label: __("Letter Spacing"),
+        value: featureLetterSpacing,
+        onChange: function onChange(featureLetterSpacing) {
+          return setAttributes({
+            featureLetterSpacing: featureLetterSpacing
+          });
+        },
+        min: 0,
+        max: FEATURE_SPACING_MAX,
+        step: FEATURE_SPACING_STEP
+      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        selectedUnit: featureLineHeightUnit,
+        unitTypes: [{
+          label: "px",
+          value: "px"
+        }, {
+          label: "em",
+          value: "em"
+        }],
+        onClick: function onClick(featureLineHeightUnit) {
+          return setAttributes({
+            featureLineHeightUnit: featureLineHeightUnit
+          });
+        }
+      }), /*#__PURE__*/React.createElement(RangeControl, {
+        label: __("Line Height"),
+        value: featureLineHeight,
+        onChange: function onChange(featureLineHeight) {
+          return setAttributes({
+            featureLineHeight: featureLineHeight
+          });
+        },
+        min: 0,
+        max: FEATURE_LINE_HEIGHT_MAX,
+        step: FEATURE_LINE_HEIGHT_STEP
+      }));
+    }
+  })), /*#__PURE__*/React.createElement(BaseControl, {
+    label: __("Button"),
+    className: "eb-typography-base"
+  }, /*#__PURE__*/React.createElement(Dropdown, {
+    className: "eb-typography-dropdown",
+    contentClassName: "my-popover-content-classname",
+    position: "bottom right",
+    renderToggle: function renderToggle(_ref5) {
+      var isOpen = _ref5.isOpen,
+          onToggle = _ref5.onToggle;
+      return /*#__PURE__*/React.createElement(Button, {
+        isSmall: true,
+        onClick: onToggle,
+        "aria-expanded": isOpen
+      }, /*#__PURE__*/React.createElement(_util_icons__WEBPACK_IMPORTED_MODULE_7__["TypographyIcon"], null));
+    },
+    renderContent: function renderContent() {
+      return /*#__PURE__*/React.createElement("div", {
+        className: "eb-panel-control",
+        style: {
+          padding: "0.2rem"
+        }
+      }, /*#__PURE__*/React.createElement(_util_typography_control_FontPicker__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        label: __("Font Family"),
+        value: buttonFontFamily,
+        onChange: function onChange(buttonFontFamily) {
+          return setAttributes({
+            buttonFontFamily: buttonFontFamily
+          });
+        }
+      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
         selectedUnit: buttonSizeUnit,
         unitTypes: [{
           label: "px",
           value: "px"
         }, {
-          label: "em",
-          value: "em"
-        }, {
           label: "%",
           value: "%"
+        }, {
+          label: "em",
+          value: "em"
         }],
         onClick: function onClick(buttonSizeUnit) {
           return setAttributes({
             buttonSizeUnit: buttonSizeUnit
           });
         }
-      }), /*#__PURE__*/React.createElement(TextControl, {
-        label: __("Button Link"),
-        value: buttonURL,
-        onChange: function onChange(link) {
+      }), /*#__PURE__*/React.createElement(RangeControl, {
+        label: __("Font Size"),
+        value: buttonFontSize,
+        onChange: function onChange(buttonFontSize) {
           return setAttributes({
-            buttonURL: link
-          });
-        }
-      }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        label: __("Button Background"),
-        color: buttonBackground,
-        onChange: function onChange(buttonBackground) {
-          return setAttributes({
-            buttonBackground: buttonBackground
-          });
-        }
-      }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        label: __("Button Text"),
-        color: buttonTextColor,
-        onChange: function onChange(buttonTextColor) {
-          return setAttributes({
-            buttonTextColor: buttonTextColor
-          });
-        }
-      }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        label: __("Border Color"),
-        color: buttonBorderColor,
-        onChange: function onChange(buttonBorderColor) {
-          return setAttributes({
-            buttonBorderColor: buttonBorderColor
-          });
-        }
-      }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        label: __("Hover Background"),
-        color: hoverBackgroundColor,
-        onChange: function onChange(hoverBackgroundColor) {
-          return setAttributes({
-            hoverBackgroundColor: hoverBackgroundColor
-          });
-        }
-      }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        label: __("Hover Text"),
-        color: hoverTextColor,
-        onChange: function onChange(hoverTextColor) {
-          return setAttributes({
-            hoverTextColor: hoverTextColor
-          });
-        }
-      }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        label: __("Hover Border"),
-        color: hoverBorderColor,
-        onChange: function onChange(hoverBorderColor) {
-          return setAttributes({
-            hoverBorderColor: hoverBorderColor
-          });
-        }
-      }), /*#__PURE__*/React.createElement(PanelBody, {
-        title: __("Border"),
-        initialOpen: false
-      }, /*#__PURE__*/React.createElement(RangeControl, {
-        label: __("Border Width (px)"),
-        value: buttonBorderWidth,
-        allowReset: true,
-        onChange: function onChange(buttonBorderWidth) {
-          return setAttributes({
-            buttonBorderWidth: buttonBorderWidth
+            buttonFontSize: buttonFontSize
           });
         },
+        step: BUTTON_SIZE_STEP,
         min: 0,
-        max: 20
-      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        selectedUnit: buttonBorderRadiusUnit,
+        max: BUTTON_SIZE_MAX
+      }), /*#__PURE__*/React.createElement(SelectControl, {
+        label: __("Font Weight"),
+        value: buttonFontWeight,
+        options: _constants__WEBPACK_IMPORTED_MODULE_0__["FONT_WEIGHT"],
+        onChange: function onChange(buttonFontWeight) {
+          return setAttributes({
+            buttonFontWeight: buttonFontWeight
+          });
+        }
+      }), /*#__PURE__*/React.createElement(SelectControl, {
+        label: __("Text Decoration"),
+        value: buttonTextDecoration,
+        options: _constants__WEBPACK_IMPORTED_MODULE_0__["TEXT_DECORATION"],
+        onChange: function onChange(buttonTextDecoration) {
+          return setAttributes({
+            buttonTextDecoration: buttonTextDecoration
+          });
+        }
+      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        selectedUnit: buttonLetterSpacingUnit,
         unitTypes: [{
           label: "px",
           value: "px"
         }, {
-          label: "%",
-          value: "%"
+          label: "em",
+          value: "em"
         }],
-        onClick: function onClick(buttonBorderRadiusUnit) {
+        onClick: function onClick(buttonLetterSpacingUnit) {
           return setAttributes({
-            buttonBorderRadiusUnit: buttonBorderRadiusUnit
+            buttonLetterSpacingUnit: buttonLetterSpacingUnit
           });
         }
       }), /*#__PURE__*/React.createElement(RangeControl, {
-        label: __("Border Radius"),
-        value: buttonBorderRadius,
-        allowReset: true,
-        onChange: function onChange(buttonBorderRadius) {
+        label: __("Letter Spacing"),
+        value: buttonLetterSpacing,
+        onChange: function onChange(buttonLetterSpacing) {
           return setAttributes({
-            buttonBorderRadius: buttonBorderRadius
+            buttonLetterSpacing: buttonLetterSpacing
           });
         },
         min: 0,
-        max: 100
-      }), /*#__PURE__*/React.createElement(SelectControl, {
-        label: __("Border Style"),
-        value: buttonBorderStyle,
-        options: _constants__WEBPACK_IMPORTED_MODULE_0__["BORDER_STYLES"],
-        onChange: function onChange(buttonBorderStyle) {
-          return setAttributes({
-            buttonBorderStyle: buttonBorderStyle
-          });
-        }
-      }))), /*#__PURE__*/React.createElement(PanelBody, {
-        title: __("Margin & Padding"),
-        initialOpen: false
-      }, /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        selectedUnit: marginUnit,
+        max: BUTTON_SPACING_MAX,
+        step: BUTTON_SPACING_STEP
+      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        selectedUnit: buttonLineHeightUnit,
         unitTypes: [{
           label: "px",
           value: "px"
         }, {
           label: "em",
           value: "em"
-        }, {
-          label: "%",
-          value: "%"
         }],
-        onClick: function onClick(marginUnit) {
+        onClick: function onClick(buttonLineHeightUnit) {
           return setAttributes({
-            marginUnit: marginUnit
+            buttonLineHeightUnit: buttonLineHeightUnit
           });
         }
-      }), /*#__PURE__*/React.createElement(_util_dimensions_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        label: __("Margin"),
-        top: marginTop,
-        right: marginRight,
-        bottom: marginBottom,
-        left: marginLeft,
-        onChange: function onChange(_ref5) {
-          var top = _ref5.top,
-              right = _ref5.right,
-              bottom = _ref5.bottom,
-              left = _ref5.left;
+      }), /*#__PURE__*/React.createElement(RangeControl, {
+        label: __("Line Height"),
+        value: buttonLineHeight,
+        onChange: function onChange(buttonLineHeight) {
           return setAttributes({
-            marginTop: top,
-            marginRight: right,
-            marginBottom: bottom,
-            marginLeft: left
+            buttonLineHeight: buttonLineHeight
           });
-        }
-      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        selectedUnit: paddingUnit,
-        unitTypes: [{
-          label: "px",
-          value: "px"
-        }, {
-          label: "em",
-          value: "em"
-        }, {
-          label: "%",
-          value: "%"
-        }],
-        onClick: function onClick(paddingUnit) {
-          return setAttributes({
-            paddingUnit: paddingUnit
-          });
-        }
-      }), /*#__PURE__*/React.createElement(_util_dimensions_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        label: __("Padding"),
-        top: paddingTop,
-        right: paddingRight,
-        bottom: paddingBottom,
-        left: paddingLeft,
-        onChange: function onChange(_ref6) {
-          var top = _ref6.top,
-              right = _ref6.right,
-              bottom = _ref6.bottom,
-              left = _ref6.left;
-          return setAttributes({
-            paddingTop: top,
-            paddingRight: right,
-            paddingBottom: bottom,
-            paddingLeft: left
-          });
-        }
-      }))));
-    });
-
-    return _this;
-  }
-
-  return Inspector;
-}(Component);
+        },
+        min: 0,
+        max: BUTTON_LINE_HEIGHT_MAX,
+        step: BUTTON_LINE_HEIGHT_STEP
+      }));
+    }
+  }))), /*#__PURE__*/React.createElement(PanelBody, {
+    title: __("Colors"),
+    initialOpen: false
+  }, /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    label: __("Background Color"),
+    color: priceboxBackground,
+    onChange: function onChange(priceboxBackground) {
+      return setAttributes({
+        priceboxBackground: priceboxBackground
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    label: __("Title Background"),
+    color: titleBackgroundColor,
+    onChange: function onChange(titleBackgroundColor) {
+      return setAttributes({
+        titleBackgroundColor: titleBackgroundColor
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    label: __("Title Text"),
+    color: titleTextColor,
+    onChange: function onChange(titleTextColor) {
+      return setAttributes({
+        titleTextColor: titleTextColor
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    label: __("Price Background"),
+    color: priceBackgroundColor,
+    onChange: function onChange(priceBackgroundColor) {
+      return setAttributes({
+        priceBackgroundColor: priceBackgroundColor
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    label: __("Price Text"),
+    color: priceTextColor,
+    onChange: function onChange(priceTextColor) {
+      return setAttributes({
+        priceTextColor: priceTextColor
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    label: __("Features Background"),
+    color: featuresBackgroundColor,
+    onChange: function onChange(featuresBackgroundColor) {
+      return setAttributes({
+        featuresBackgroundColor: featuresBackgroundColor
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    label: __("Features Text"),
+    color: featuresTextColor,
+    onChange: function onChange(featuresTextColor) {
+      return setAttributes({
+        featuresTextColor: featuresTextColor
+      });
+    }
+  })), /*#__PURE__*/React.createElement(PanelBody, {
+    title: __("Border"),
+    initialOpen: false
+  }, /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    label: __("Border Color"),
+    color: borderColor,
+    onChange: function onChange(borderColor) {
+      return setAttributes({
+        borderColor: borderColor
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_reset_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    onReset: function onReset() {
+      return setAttributes({
+        borderWidth: undefined
+      });
+    }
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Border Width"),
+    initialOpen: false,
+    value: borderWidth,
+    onChange: function onChange(borderWidth) {
+      return setAttributes({
+        borderWidth: borderWidth
+      });
+    }
+  })), /*#__PURE__*/React.createElement(SelectControl, {
+    label: __("Border Style"),
+    value: borderStyle,
+    options: _constants__WEBPACK_IMPORTED_MODULE_0__["BORDER_STYLES"],
+    onChange: function onChange(newStyle) {
+      return setAttributes({
+        borderStyle: newStyle
+      });
+    }
+  })), /*#__PURE__*/React.createElement(PanelBody, {
+    title: __("Shadow"),
+    initialOpen: false
+  }, /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    label: __("Shadow Color"),
+    color: shadowColor,
+    onChange: function onChange(shadowColor) {
+      return setAttributes({
+        shadowColor: shadowColor
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_reset_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    onReset: function onReset() {
+      return setAttributes({
+        shadowHOffset: undefined
+      });
+    }
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Horizontal Offset"),
+    value: shadowHOffset,
+    onChange: function onChange(shadowHOffset) {
+      return setAttributes({
+        shadowHOffset: shadowHOffset
+      });
+    },
+    min: 0,
+    max: 200
+  })), /*#__PURE__*/React.createElement(_util_reset_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    onReset: function onReset() {
+      return setAttributes({
+        shadowVOffset: undefined
+      });
+    }
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Vertical Offset"),
+    value: shadowVOffset,
+    onChange: function onChange(shadowVOffset) {
+      return setAttributes({
+        shadowVOffset: shadowVOffset
+      });
+    },
+    min: 0,
+    max: 200
+  })), /*#__PURE__*/React.createElement(_util_reset_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    onReset: function onReset() {
+      return setAttributes({
+        shadowBlur: undefined
+      });
+    }
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Blur"),
+    value: shadowBlur,
+    onChange: function onChange(shadowBlur) {
+      return setAttributes({
+        shadowBlur: shadowBlur
+      });
+    },
+    min: 0,
+    max: 200
+  })), /*#__PURE__*/React.createElement(_util_reset_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    onReset: function onReset() {
+      return setAttributes({
+        shadowSpread: undefined
+      });
+    }
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Spread"),
+    value: shadowSpread,
+    onChange: function onChange(shadowSpread) {
+      return setAttributes({
+        shadowSpread: shadowSpread
+      });
+    },
+    min: 0,
+    max: 200
+  }))), /*#__PURE__*/React.createElement(PanelBody, {
+    title: __("Button Settings"),
+    initialOpen: false
+  }, /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    selectedUnit: buttonHeightUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(buttonHeightUnit) {
+      return setAttributes({
+        buttonHeightUnit: buttonHeightUnit
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_reset_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    onReset: function onReset() {
+      return setAttributes({
+        buttonHeight: undefined
+      });
+    }
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Height"),
+    value: buttonHeight,
+    onChange: function onChange(buttonHeight) {
+      return setAttributes({
+        buttonHeight: buttonHeight
+      });
+    },
+    min: 0,
+    max: 600
+  })), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    selectedUnit: buttonWidthUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(buttonWidthUnit) {
+      return setAttributes({
+        buttonWidthUnit: buttonWidthUnit
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_reset_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    onReset: function onReset() {
+      return setAttributes({
+        buttonWidth: undefined
+      });
+    }
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Width"),
+    value: buttonWidth,
+    onChange: function onChange(buttonWidth) {
+      return setAttributes({
+        buttonWidth: buttonWidth
+      });
+    },
+    min: 0,
+    max: 600
+  })), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    selectedUnit: buttonSizeUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(buttonSizeUnit) {
+      return setAttributes({
+        buttonSizeUnit: buttonSizeUnit
+      });
+    }
+  }), /*#__PURE__*/React.createElement(TextControl, {
+    label: __("Button Link"),
+    value: buttonURL,
+    onChange: function onChange(link) {
+      return setAttributes({
+        buttonURL: link
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    label: __("Button Background"),
+    color: buttonBackground,
+    onChange: function onChange(buttonBackground) {
+      return setAttributes({
+        buttonBackground: buttonBackground
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    label: __("Button Text"),
+    color: buttonTextColor,
+    onChange: function onChange(buttonTextColor) {
+      return setAttributes({
+        buttonTextColor: buttonTextColor
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    label: __("Border Color"),
+    color: buttonBorderColor,
+    onChange: function onChange(buttonBorderColor) {
+      return setAttributes({
+        buttonBorderColor: buttonBorderColor
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    label: __("Hover Background"),
+    color: hoverBackgroundColor,
+    onChange: function onChange(hoverBackgroundColor) {
+      return setAttributes({
+        hoverBackgroundColor: hoverBackgroundColor
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    label: __("Hover Text"),
+    color: hoverTextColor,
+    onChange: function onChange(hoverTextColor) {
+      return setAttributes({
+        hoverTextColor: hoverTextColor
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    label: __("Hover Border"),
+    color: hoverBorderColor,
+    onChange: function onChange(hoverBorderColor) {
+      return setAttributes({
+        hoverBorderColor: hoverBorderColor
+      });
+    }
+  }), /*#__PURE__*/React.createElement(PanelBody, {
+    title: __("Border"),
+    initialOpen: false
+  }, /*#__PURE__*/React.createElement(_util_reset_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    onReset: function onReset() {
+      return setAttributes({
+        buttonBorderWidth: undefined
+      });
+    }
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Border Width (px)"),
+    value: buttonBorderWidth,
+    onChange: function onChange(buttonBorderWidth) {
+      return setAttributes({
+        buttonBorderWidth: buttonBorderWidth
+      });
+    },
+    min: 0,
+    max: 20
+  })), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    selectedUnit: buttonBorderRadiusUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(buttonBorderRadiusUnit) {
+      return setAttributes({
+        buttonBorderRadiusUnit: buttonBorderRadiusUnit
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_reset_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    onReset: function onReset() {
+      return setAttributes({
+        buttonBorderRadius: undefined
+      });
+    }
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Border Radius"),
+    value: buttonBorderRadius,
+    onChange: function onChange(buttonBorderRadius) {
+      return setAttributes({
+        buttonBorderRadius: buttonBorderRadius
+      });
+    },
+    min: 0,
+    max: 100
+  })), /*#__PURE__*/React.createElement(SelectControl, {
+    label: __("Border Style"),
+    value: buttonBorderStyle,
+    options: _constants__WEBPACK_IMPORTED_MODULE_0__["BORDER_STYLES"],
+    onChange: function onChange(buttonBorderStyle) {
+      return setAttributes({
+        buttonBorderStyle: buttonBorderStyle
+      });
+    }
+  }))), /*#__PURE__*/React.createElement(PanelBody, {
+    title: __("Margin & Padding"),
+    initialOpen: false
+  }, /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    selectedUnit: marginUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(marginUnit) {
+      return setAttributes({
+        marginUnit: marginUnit
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_dimensions_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    label: __("Margin"),
+    top: marginTop,
+    right: marginRight,
+    bottom: marginBottom,
+    left: marginLeft,
+    onChange: function onChange(_ref6) {
+      var top = _ref6.top,
+          right = _ref6.right,
+          bottom = _ref6.bottom,
+          left = _ref6.left;
+      return setAttributes({
+        marginTop: top,
+        marginRight: right,
+        marginBottom: bottom,
+        marginLeft: left
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    selectedUnit: paddingUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(paddingUnit) {
+      return setAttributes({
+        paddingUnit: paddingUnit
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_dimensions_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    label: __("Padding"),
+    top: paddingTop,
+    right: paddingRight,
+    bottom: paddingBottom,
+    left: paddingLeft,
+    onChange: function onChange(_ref7) {
+      var top = _ref7.top,
+          right = _ref7.right,
+          bottom = _ref7.bottom,
+          left = _ref7.left;
+      return setAttributes({
+        paddingTop: top,
+        paddingRight: right,
+        paddingBottom: bottom,
+        paddingLeft: left
+      });
+    }
+  }))));
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (Inspector);
 
@@ -7677,10 +7715,6 @@ var Inspector = /*#__PURE__*/function (_Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /**
@@ -7692,13 +7726,16 @@ var save = function save(_ref) {
   var _buttonStyles;
 
   var attributes = _ref.attributes;
-  var title = attributes.title,
-      titleTag = attributes.titleTag,
-      displaySubtitle = attributes.displaySubtitle,
+  var pricingStyle = attributes.pricingStyle,
+      title = attributes.title,
       subtitle = attributes.subtitle,
+      headerIcon = attributes.headerIcon,
+      price = attributes.price,
+      salePrice = attributes.salePrice,
+      priceCurrency = attributes.priceCurrency,
+      displaySubtitle = attributes.displaySubtitle,
       titleBackgroundColor = attributes.titleBackgroundColor,
       titleTextColor = attributes.titleTextColor,
-      price = attributes.price,
       priceValueSize = attributes.priceValueSize,
       displayPriceDetails = attributes.displayPriceDetails,
       priceDetails = attributes.priceDetails,
@@ -7817,7 +7854,7 @@ var save = function save(_ref) {
     lineHeight: priceLineHeight ? "".concat(priceLineHeight).concat(priceLineHeightUnit) : undefined
   };
   var priceStyles = {
-    fontSize: "".concat(priceValueSize || 48).concat(priceSizeUnit),
+    fontSize: "".concat(priceFontSize || 48).concat(priceSizeUnit),
     fontFamily: priceFontFamily,
     fontWeight: priceFontWeight,
     textDecoration: priceTextDecoration,
@@ -7859,67 +7896,81 @@ var save = function save(_ref) {
     fontFamily: buttonFontFamily,
     fontWeight: buttonFontWeight
   }, _defineProperty(_buttonStyles, "textDecoration", buttonTextDecoration), _defineProperty(_buttonStyles, "textTransform", buttonTextTransform), _defineProperty(_buttonStyles, "letterSpacing", buttonLetterSpacing ? "".concat(buttonLetterSpacing).concat(buttonLetterSpacingUnit) : undefined), _defineProperty(_buttonStyles, "lineHeight", buttonLineHeight ? "".concat(buttonLineHeight).concat(buttonLineHeightUnit) : undefined), _buttonStyles);
-  return /*#__PURE__*/React.createElement("div", {
-    className: "eb-pricebox-wrapper",
-    style: wrapperStyles,
-    "data-button-background": buttonBackground || "#3074ff",
-    "data-button-text-color": buttonTextColor || "#ffffff",
-    "data-button-border": "".concat(buttonBorderWidth || 0, "px ").concat(buttonBorderStyle, " ").concat(buttonBorderColor || "#000000"),
-    "data-hover-background": hoverBackgroundColor || "#7967ff",
-    "data-hover-text-color": hoverTextColor || "#edf1f7",
-    "data-hover-border": "".concat(buttonBorderWidth || 0, "px ").concat(buttonBorderStyle, " ").concat(hoverBorderColor || "#000000")
+  var colorStyles = {
+    color: "#00C853"
+  };
+  var wrapperStylesNew = {
+    overflow: "hidden"
+  };
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+    "class": "ebgb-pricing ".concat(pricingStyle),
+    style: wrapperStylesNew
   }, /*#__PURE__*/React.createElement("div", {
-    style: titleWrapperStyles
-  }, /*#__PURE__*/React.createElement(RichText.Content, {
-    tagName: "h3",
-    className: "eb-pricebox-title",
-    value: title,
-    style: titleStyles
-  }), /*#__PURE__*/React.createElement(RichText.Content, {
-    tagName: "p",
-    className: "eb-pricebox-subtitle",
-    style: _objectSpread(_objectSpread(_objectSpread({}, titleStyles), subtitleStyles), {}, {
-      display: displaySubtitle ? "block" : "none"
-    }),
-    value: subtitle
-  })), /*#__PURE__*/React.createElement("div", {
-    style: priceWrapperStyles
-  }, /*#__PURE__*/React.createElement(RichText.Content, {
-    tagName: "p",
-    className: "eb-pricebox-price",
-    value: price,
-    style: priceStyles
-  })), /*#__PURE__*/React.createElement("div", {
-    style: featuresWrapperStyles
-  }, /*#__PURE__*/React.createElement("ul", {
-    className: "eb-pricebox-features",
-    style: featureStyles
-  }, features.map(function (_ref2) {
-    var icon = _ref2.icon,
-        text = _ref2.text,
-        color = _ref2.color,
-        clickable = _ref2.clickable,
-        link = _ref2.link;
-    return /*#__PURE__*/React.createElement("li", {
-      className: "eb-pricebox-feature-item",
-      style: featureListStyle,
-      "data-icon": icon,
-      "data-color": color,
-      "data-clickable": clickable,
-      "data-link": link
-    }, /*#__PURE__*/React.createElement("span", {
-      className: "eb-pricebox-icon ".concat(icon),
-      style: {
-        color: color
-      }
-    }), /*#__PURE__*/React.createElement("span", {
-      className: "eb-pricebox-feature-text"
-    }, text));
-  }))), /*#__PURE__*/React.createElement("a", {
-    className: "eb-pricebox-button",
-    href: buttonURL,
-    style: buttonStyles
-  }, buttonText));
+    "class": "ebgb-pricing-item featured ribbon-4"
+  }, pricingStyle === "style-2" && headerIcon && /*#__PURE__*/React.createElement("div", {
+    className: "ebgb-pricing-icon",
+    "data-icon": headerIcon
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "icon"
+  }, /*#__PURE__*/React.createElement("i", {
+    "class": headerIcon
+  }))), /*#__PURE__*/React.createElement("div", {
+    "class": "header"
+  }, /*#__PURE__*/React.createElement("h2", {
+    "class": "ebgb-pricing-title"
+  }, title), pricingStyle !== "style-1" && /*#__PURE__*/React.createElement("span", {
+    className: "ebgb-pricing-subtitle"
+  }, subtitle)), /*#__PURE__*/React.createElement("div", {
+    "class": "ebgb-pricing-tag"
+  }, /*#__PURE__*/React.createElement("span", {
+    "class": "price-tag"
+  }, /*#__PURE__*/React.createElement("del", {
+    "class": "original-price"
+  }, /*#__PURE__*/React.createElement("span", {
+    "class": "price-currency"
+  }, priceCurrency), price), /*#__PURE__*/React.createElement("span", {
+    "class": "sale-price"
+  }, /*#__PURE__*/React.createElement("span", {
+    "class": "price-currency"
+  }, priceCurrency), salePrice)), /*#__PURE__*/React.createElement("span", {
+    "class": "price-period"
+  }, "/ month")), /*#__PURE__*/React.createElement("div", {
+    "class": "body"
+  }, /*#__PURE__*/React.createElement("ul", null, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
+    "class": "li-icon",
+    style: colorStyles
+  }, /*#__PURE__*/React.createElement("i", {
+    "class": "fas fa-check"
+  })), "Unlimited calls"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
+    "class": "li-icon",
+    style: colorStyles
+  }, /*#__PURE__*/React.createElement("i", {
+    "class": "fas fa-check"
+  })), "Free hosting"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
+    "class": "li-icon",
+    style: colorStyles
+  }, /*#__PURE__*/React.createElement("i", {
+    "class": "fas fa-check"
+  })), "500 MB of storage space"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
+    "class": "li-icon",
+    style: colorStyles
+  }, /*#__PURE__*/React.createElement("i", {
+    "class": "fas fa-check"
+  })), "500 MB Bandwidth"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
+    "class": "li-icon",
+    style: colorStyles
+  }, /*#__PURE__*/React.createElement("i", {
+    "class": "fas fa-check"
+  })), "24/7 support"))), /*#__PURE__*/React.createElement("div", {
+    "class": "footer"
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "#",
+    target: "_blank",
+    rel: "nofollow noopener",
+    "class": "ebgb-pricing-button"
+  }, /*#__PURE__*/React.createElement("i", {
+    "class": " fa-icon-left"
+  }), "Choose Plan", " ")))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (save);
@@ -7935,19 +7986,13 @@ var save = function save(_ref) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_sortable_hoc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-sortable-hoc */ "./node_modules/react-sortable-hoc/dist/react-sortable-hoc.esm.js");
-/* harmony import */ var _fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fonticonpicker/react-fonticonpicker */ "./node_modules/@fonticonpicker/react-fonticonpicker/dist/fonticonpicker.react.js");
-/* harmony import */ var _fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _util_color_control__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../util/color-control */ "./util/color-control/index.js");
-/* harmony import */ var _util_faIcons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../util/faIcons */ "./util/faIcons.js");
+/* harmony import */ var react_sortable_hoc__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-sortable-hoc */ "./node_modules/react-sortable-hoc/dist/react-sortable-hoc.esm.js");
+/* harmony import */ var array_move__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! array-move */ "./node_modules/array-move/index.js");
+/* harmony import */ var array_move__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(array_move__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fonticonpicker/react-fonticonpicker */ "./node_modules/@fonticonpicker/react-fonticonpicker/dist/fonticonpicker.react.js");
+/* harmony import */ var _fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _util_color_control__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../util/color-control */ "./util/color-control/index.js");
+/* harmony import */ var _util_faIcons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../util/faIcons */ "./util/faIcons.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
@@ -7983,13 +8028,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /**
  * WordPress dependencies
  */
-
-
-
-
+var __ = wp.i18n.__;
+var PanelColorSettings = wp.blockEditor.PanelColorSettings;
+var _wp$components = wp.components,
+    BaseControl = _wp$components.BaseControl,
+    TextControl = _wp$components.TextControl,
+    ToggleControl = _wp$components.ToggleControl;
+var _wp$element = wp.element,
+    Component = _wp$element.Component,
+    Fragment = _wp$element.Fragment;
 /**
  * External dependencies
  */
+
 
 
 
@@ -7998,25 +8049,76 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
  * Internal dependencies
  */
 
+ // Style objects
 
-var DragHandle = Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_4__["SortableHandle"])(function () {
+var trashStyle = {
+  fontSize: 14,
+  borderLeft: "1px solid #b4b4cb",
+  lineHeight: "2.5em",
+  flex: 2,
+  textAlign: "center",
+  display: "flex",
+  justifyContent: "center"
+};
+var DragHandle = Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_0__["SortableHandle"])(function () {
   return /*#__PURE__*/React.createElement("span", {
-    className: "fa fa-ellipsis-v drag-handle"
-  });
-});
+    className: "drag-handle"
+  }, /*#__PURE__*/React.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    x: "0",
+    y: "0",
+    enableBackground: "new 0 0 512 512",
+    version: "1.1",
+    viewBox: "0 0 512 512",
+    xmlSpace: "preserve",
+    style: {
+      height: 14
+    }
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M512 256L402.6 146.6 402.6 210.3 301 210.3 301 109.4 365.4 109.4 256 0 146.6 109.4 211 109.4 211 210.3 109.4 210.3 109.4 146.6 0 256 109.4 365.4 109.4 300.3 211 300.3 211 402.6 146.6 402.6 256 512 365.4 402.6 301 402.6 301 300.3 402.6 300.3 402.6 365.4z",
+    style: {
+      fill: "#a9a9a9"
+    }
+  })));
+}); // const DragHandle = SortableHandle(() => (
+// 	<span className="fa fa-ellipsis-v drag-handle" />
+// ));
 
 var TrashIcon = function TrashIcon(_ref) {
   var position = _ref.position,
       onDeleteFeature = _ref.onDeleteFeature;
   return /*#__PURE__*/React.createElement("span", {
-    className: "fa fa-trash eb-pricebox-sortable-trash",
+    className: "eb-social-delete-icon",
+    style: trashStyle,
     onClick: function onClick() {
       return onDeleteFeature(position);
     }
-  });
-};
+  }, /*#__PURE__*/React.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    x: "0",
+    y: "0",
+    enableBackground: "new 0 0 512 512",
+    version: "1.1",
+    viewBox: "0 0 512 512",
+    xmlSpace: "preserve",
+    style: {
+      width: 14
+    }
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M423.3 86.6H89c-16.8.1-32.2 9.3-40.1 24.1-7.9 14.8-7.1 32.7 2.2 46.8l37.2 55.6V456c0 30.9 25.1 56 56 56h223.9c30.9 0 56-25.1 56-56V213.1l37.2-56c9.1-14 9.8-31.8 1.9-46.5-8.1-14.7-23.4-23.9-40-24zm-198 347c0 13.9-11.3 25.2-25.2 25.2-13.9 0-25.2-11.3-25.2-25.2V220.9c0-13.9 11.3-25.2 25.2-25.2 13.9 0 25.2 11.3 25.2 25.2v212.7zm112 0c0 13.9-11.3 25.2-25.2 25.2-13.9 0-25.2-11.3-25.2-25.2V220.9c0-13.9 11.3-25.2 25.2-25.2 13.9 0 25.2 11.3 25.2 25.2v212.7zM325.8 19.4C309.9 7.1 290.2 0 269.3 0h-26.4c-20.9 0-40.6 7.1-56.5 19.4-11.2 8.7-20.5 20.1-26.9 33.4h193.1c-6.3-13.3-15.6-24.7-26.8-33.4z",
+    style: {
+      fill: "#FF6464"
+    }
+  })));
+}; // const TrashIcon = ({ position, onDeleteFeature }) => (
+// 	<span
+// 		className="fa fa-trash eb-pricebox-sortable-trash"
+// 		onClick={() => onDeleteFeature(position)}
+// 	/>
+// );
 
-var SortableItem = Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_4__["SortableElement"])(function (_ref2) {
+
+var SortableItem = Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_0__["SortableElement"])(function (_ref2) {
   var feature = _ref2.feature,
       position = _ref2.position,
       onFeatureClick = _ref2.onFeatureClick,
@@ -8027,51 +8129,51 @@ var SortableItem = Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_4__["Sorta
     className: "drag-helper"
   }, /*#__PURE__*/React.createElement("span", {
     className: "eb-pricebox-sortable-item"
-  }, /*#__PURE__*/React.createElement(DragHandle, null), /*#__PURE__*/React.createElement("span", {
+  }, /*#__PURE__*/React.createElement("span", {
     className: "eb-pricebox-sortable-title",
     onClick: function onClick() {
       return onFeatureClick(position);
     }
-  }, feature.text), /*#__PURE__*/React.createElement(TrashIcon, {
+  }, feature.text), /*#__PURE__*/React.createElement(DragHandle, null), /*#__PURE__*/React.createElement(TrashIcon, {
     position: position,
     onDeleteFeature: onDeleteFeature
-  })), position === clickedItem && /*#__PURE__*/React.createElement(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["Fragment"], null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__["TextControl"], {
-    label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])("Text"),
+  })), position === clickedItem && /*#__PURE__*/React.createElement(Fragment, null, /*#__PURE__*/React.createElement(TextControl, {
+    label: __("Text"),
     value: feature.text,
     onChange: function onChange(value) {
       return onFeatureChange("text", value, position);
     }
-  }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__["ToggleControl"], {
-    label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])("Link"),
+  }), /*#__PURE__*/React.createElement(ToggleControl, {
+    label: __("Link"),
     checked: feature.clickable === "true",
     onChange: function onChange(value) {
       return onFeatureChange("clickable", value.toString(), position);
     }
-  }), feature.clickable === "true" && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__["TextControl"], {
-    label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])("Link"),
+  }), feature.clickable === "true" && /*#__PURE__*/React.createElement(TextControl, {
+    label: __("Link"),
     value: feature.link,
     onChange: function onChange(value) {
       return onFeatureChange("link", value, position);
     }
-  }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__["BaseControl"], {
-    label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])("Select Icon")
-  }, /*#__PURE__*/React.createElement(_fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_5___default.a, {
-    icons: _util_faIcons__WEBPACK_IMPORTED_MODULE_7__["default"],
+  }), /*#__PURE__*/React.createElement(BaseControl, {
+    label: __("Select Icon")
+  }, /*#__PURE__*/React.createElement(_fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    icons: _util_faIcons__WEBPACK_IMPORTED_MODULE_4__["default"],
     onChange: function onChange(value) {
       return onFeatureChange("icon", value, position);
     },
     value: feature.icon,
     appendTo: "body",
     isMulti: false
-  })), feature.icon && /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])("Icon Color"),
+  })), feature.icon && /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    label: __("Icon Color"),
     color: feature.color,
     onChange: function onChange(value) {
       return onFeatureChange("color", value, position);
     }
   })));
 });
-var SortableList = Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_4__["SortableContainer"])(function (_ref3) {
+var SortableList = Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_0__["SortableContainer"])(function (_ref3) {
   var features = _ref3.features,
       onFeatureClick = _ref3.onFeatureClick,
       onFeatureChange = _ref3.onFeatureChange,
@@ -8118,7 +8220,7 @@ var SortableFeatures = /*#__PURE__*/function (_Component) {
           features = _this$props.features,
           setAttributes = _this$props.setAttributes;
       setAttributes({
-        features: Object(react_sortable_hoc__WEBPACK_IMPORTED_MODULE_4__["arrayMove"])(features, oldIndex, newIndex)
+        features: array_move__WEBPACK_IMPORTED_MODULE_1___default()(features, oldIndex, newIndex)
       });
     });
 
@@ -8167,7 +8269,7 @@ var SortableFeatures = /*#__PURE__*/function (_Component) {
   }
 
   return SortableFeatures;
-}(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__["Component"]);
+}(Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (SortableFeatures);
 
@@ -8182,8 +8284,12 @@ var SortableFeatures = /*#__PURE__*/function (_Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./util/color-control/style.css");
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_0__);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -8196,7 +8302,6 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-var __ = wp.i18n.__;
 var _wp$element = wp.element,
     useState = _wp$element.useState,
     useEffect = _wp$element.useEffect;
@@ -8206,58 +8311,64 @@ var _wp$components = wp.components,
     Tooltip = _wp$components.Tooltip,
     ColorPicker = _wp$components.ColorPicker,
     Button = _wp$components.Button;
-
+var colorBallStyles = {
+  padding: 2,
+  borderRadius: 0,
+  background: "white",
+  border: "1px solid #ebebeb"
+};
+var colorStyles = {
+  height: 16,
+  width: 16,
+  borderRadius: "0%",
+  boxShadow: "inset 0 0 0 1px rgba(0,0,0,.1)"
+};
 
 var ColorControl = function ColorControl(_ref) {
   var label = _ref.label,
       color = _ref.color,
       onChange = _ref.onChange;
 
-  var _useState = useState(color),
+  var _useState = useState(null),
       _useState2 = _slicedToArray(_useState, 2),
       bgColor = _useState2[0],
       setBgColor = _useState2[1];
 
   useEffect(function () {
+    onChange(bgColor);
+  }, [bgColor]);
+  useEffect(function () {
+    // console.log("----color-useEffect-fired", { color, bgColor });
     setBgColor(color);
-  }, [color]);
-
-  var _onChangeComplete = function onChangeComplete(_ref2) {
-    var rgb = _ref2.rgb,
-        hex = _ref2.hex;
-    var color = rgb ? "rgba(".concat(rgb.r, ",").concat(rgb.g, ",").concat(rgb.b, ",").concat(rgb.a, ")") : hex;
-    onChange(color);
-  };
+  }, []); // console.log({ color, bgColor });
 
   return /*#__PURE__*/React.createElement(BaseControl, {
     label: label || "",
     className: "eb-color-base"
   }, /*#__PURE__*/React.createElement(Dropdown, {
-    renderToggle: function renderToggle(_ref3) {
-      var isOpen = _ref3.isOpen,
-          onToggle = _ref3.onToggle;
+    renderToggle: function renderToggle(_ref2) {
+      var isOpen = _ref2.isOpen,
+          onToggle = _ref2.onToggle;
       return /*#__PURE__*/React.createElement(Tooltip, {
-        text: color || "default"
+        text: bgColor || "default"
       }, /*#__PURE__*/React.createElement("div", {
-        className: "eb-color-ball"
+        className: "eb-color-ball",
+        style: bgColor && colorBallStyles
       }, /*#__PURE__*/React.createElement("div", {
-        style: {
-          height: 32,
-          width: 32,
-          borderRadius: "50%",
-          boxShadow: "inset 0 0 0 1px rgba(0,0,0,.1)",
+        style: _objectSpread(_objectSpread({}, colorStyles), {}, {
           backgroundColor: bgColor
-        },
+        }),
         "aria-expanded": isOpen,
         onClick: onToggle,
-        "aria-label": color || "default"
+        "aria-label": bgColor || "default"
       })));
     },
     renderContent: function renderContent() {
       return /*#__PURE__*/React.createElement(ColorPicker, {
-        color: color,
-        onChangeComplete: function onChangeComplete(color) {
-          return _onChangeComplete(color);
+        color: bgColor,
+        onChangeComplete: function onChangeComplete(_ref3) {
+          var rgb = _ref3.rgb;
+          setBgColor("rgba(".concat(rgb.r, ",").concat(rgb.g, ",").concat(rgb.b, ",").concat(rgb.a, ")"));
         }
       });
     }
@@ -8265,8 +8376,11 @@ var ColorControl = function ColorControl(_ref) {
     isSmall: true,
     className: "eb-color-undo",
     icon: "image-rotate",
+    style: {
+      transform: "scaleX(-1) rotate(90deg)"
+    },
     onClick: function onClick() {
-      return onChange(undefined);
+      setBgColor(undefined);
     }
   }));
 };
@@ -8288,8 +8402,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style.scss */ "./util/dimensions-control/style.scss");
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_2__);
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -8313,7 +8425,6 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
@@ -8453,10 +8564,10 @@ var DimensionsControl = /*#__PURE__*/function (_Component) {
         onChange: this.onInputChange
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "dimentions-input-label"
-      }, "Left")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "Left")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "linked-btn components-button is-button dashicons dashicons-".concat(isLinked ? "admin-links is-primary" : "editor-unlink is-default"),
         onClick: this.onButtonClick
-      }))));
+      })));
     }
   }]);
 
@@ -8484,8 +8595,2739 @@ DimensionsControl.propTypes = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var faIcons = ["far fa-address-book", "far fa-address-card", "far fa-angry", "far fa-arrow-alt-circle-down", "far fa-arrow-alt-circle-left", "far fa-arrow-alt-circle-right", "far fa-arrow-alt-circle-up", "far fa-bell", "far fa-bell-slash", "far fa-bookmark", "far fa-building", "far fa-calendar", "far fa-calendar-alt", "far fa-calendar-check", "far fa-calendar-minus", "far fa-calendar-plus", "far fa-calendar-times", "far fa-caret-square-down", "far fa-caret-square-left", "far fa-caret-square-right", "far fa-caret-square-up", "far fa-chart-bar", "far fa-check-circle", "far fa-check-square", "far fa-circle", "far fa-clipboard", "far fa-clock", "far fa-clone", "far fa-closed-captioning", "far fa-comment", "far fa-comment-alt", "far fa-comment-dots", "far fa-comments", "far fa-compass", "far fa-copy", "far fa-copyright", "far fa-credit-card", "far fa-dizzy", "far fa-dot-circle", "far fa-edit", "far fa-envelope", "far fa-envelope-open", "far fa-eye", "far fa-eye-slash", "far fa-file", "far fa-file-alt", "far fa-file-archive", "far fa-file-audio", "far fa-file-code", "far fa-file-excel", "far fa-file-image", "far fa-file-pdf", "far fa-file-powerpoint", "far fa-file-video", "far fa-file-word", "far fa-flag", "far fa-flushed", "far fa-folder", "far fa-folder-open", "far fa-frown", "far fa-frown-open", "far fa-futbol", "far fa-gem", "far fa-grimace", "far fa-grin", "far fa-grin-alt", "far fa-grin-beam", "far fa-grin-beam-sweat", "far fa-grin-hearts", "far fa-grin-squint", "far fa-grin-squint-tears", "far fa-grin-stars", "far fa-grin-tears", "far fa-grin-tongue", "far fa-grin-tongue-squint", "far fa-grin-tongue-wink", "far fa-grin-wink", "far fa-hand-lizard", "far fa-hand-paper", "far fa-hand-peace", "far fa-hand-point-down", "far fa-hand-point-left", "far fa-hand-point-right", "far fa-hand-point-up", "far fa-hand-pointer", "far fa-hand-rock", "far fa-hand-scissors", "far fa-hand-spock", "far fa-handshake", "far fa-hdd", "far fa-heart", "far fa-hospital", "far fa-hourglass", "far fa-id-badge", "far fa-id-card", "far fa-image", "far fa-images", "far fa-keyboard", "far fa-kiss", "far fa-kiss-beam", "far fa-kiss-wink-heart", "far fa-laugh", "far fa-laugh-beam", "far fa-laugh-squint", "far fa-laugh-wink", "far fa-lemon", "far fa-life-ring", "far fa-lightbulb", "far fa-list-alt", "far fa-map", "far fa-meh", "far fa-meh-blank", "far fa-meh-rolling-eyes", "far fa-minus-square", "far fa-money-bill-alt", "far fa-moon", "far fa-newspaper", "far fa-object-group", "far fa-object-ungroup", "far fa-paper-plane", "far fa-pause-circle", "far fa-play-circle", "far fa-plus-square", "far fa-question-circle", "far fa-registered", "far fa-sad-cry", "far fa-sad-tear", "far fa-save", "far fa-share-square", "far fa-smile", "far fa-smile-beam", "far fa-smile-wink", "far fa-snowflake", "far fa-square", "far fa-star", "far fa-star-half", "far fa-sticky-note", "far fa-stop-circle", "far fa-sun", "far fa-surprise", "far fa-thumbs-down", "far fa-thumbs-up", "far fa-times-circle", "far fa-tired", "far fa-trash-alt", "far fa-user", "far fa-user-circle", "far fa-window-close", "far fa-window-maximize", "far fa-window-minimize", "far fa-window-restore", "fas fa-ad", "fas fa-address-book", "fas fa-address-card", "fas fa-adjust", "fas fa-air-freshener", "fas fa-align-center", "fas fa-align-justify", "fas fa-align-left", "fas fa-align-right", "fas fa-allergies", "fas fa-ambulance", "fas fa-american-sign-language-interpreting", "fas fa-anchor", "fas fa-angle-double-down", "fas fa-angle-double-left", "fas fa-angle-double-right", "fas fa-angle-double-up", "fas fa-angle-down", "fas fa-angle-left", "fas fa-angle-right", "fas fa-angle-up", "fas fa-angry", "fas fa-ankh", "fas fa-apple-alt", "fas fa-archive", "fas fa-archway", "fas fa-arrow-alt-circle-down", "fas fa-arrow-alt-circle-left", "fas fa-arrow-alt-circle-right", "fas fa-arrow-alt-circle-up", "fas fa-arrow-circle-down", "fas fa-arrow-circle-left", "fas fa-arrow-circle-right", "fas fa-arrow-circle-up", "fas fa-arrow-down", "fas fa-arrow-left", "fas fa-arrow-right", "fas fa-arrow-up", "fas fa-arrows-alt", "fas fa-arrows-alt-h", "fas fa-arrows-alt-v", "fas fa-assistive-listening-systems", "fas fa-asterisk", "fas fa-at", "fas fa-atlas", "fas fa-atom", "fas fa-audio-description", "fas fa-award", "fas fa-baby", "fas fa-baby-carriage", "fas fa-backspace", "fas fa-backward", "fas fa-bacon", "fas fa-bahai", "fas fa-balance-scale", "fas fa-balance-scale-left", "fas fa-balance-scale-right", "fas fa-ban", "fas fa-band-aid", "fas fa-barcode", "fas fa-bars", "fas fa-baseball-ball", "fas fa-basketball-ball", "fas fa-bath", "fas fa-battery-empty", "fas fa-battery-full", "fas fa-battery-half", "fas fa-battery-quarter", "fas fa-battery-three-quarters", "fas fa-bed", "fas fa-beer", "fas fa-bell", "fas fa-bell-slash", "fas fa-bezier-curve", "fas fa-bible", "fas fa-bicycle", "fas fa-biking", "fas fa-binoculars", "fas fa-biohazard", "fas fa-birthday-cake", "fas fa-blender", "fas fa-blender-phone", "fas fa-blind", "fas fa-blog", "fas fa-bold", "fas fa-bolt", "fas fa-bomb", "fas fa-bone", "fas fa-bong", "fas fa-book", "fas fa-book-dead", "fas fa-book-medical", "fas fa-book-open", "fas fa-book-reader", "fas fa-bookmark", "fas fa-border-all", "fas fa-border-none", "fas fa-border-style", "fas fa-bowling-ball", "fas fa-box", "fas fa-box-open", "fas fa-boxes", "fas fa-braille", "fas fa-brain", "fas fa-bread-slice", "fas fa-briefcase", "fas fa-briefcase-medical", "fas fa-broadcast-tower", "fas fa-broom", "fas fa-brush", "fas fa-bug", "fas fa-building", "fas fa-bullhorn", "fas fa-bullseye", "fas fa-burn", "fas fa-bus", "fas fa-bus-alt", "fas fa-business-time", "fas fa-calculator", "fas fa-calendar", "fas fa-calendar-alt", "fas fa-calendar-check", "fas fa-calendar-day", "fas fa-calendar-minus", "fas fa-calendar-plus", "fas fa-calendar-times", "fas fa-calendar-week", "fas fa-camera", "fas fa-camera-retro", "fas fa-campground", "fas fa-candy-cane", "fas fa-cannabis", "fas fa-capsules", "fas fa-car", "fas fa-car-alt", "fas fa-car-battery", "fas fa-car-crash", "fas fa-car-side", "fas fa-caravan", "fas fa-caret-down", "fas fa-caret-left", "fas fa-caret-right", "fas fa-caret-square-down", "fas fa-caret-square-left", "fas fa-caret-square-right", "fas fa-caret-square-up", "fas fa-caret-up", "fas fa-carrot", "fas fa-cart-arrow-down", "fas fa-cart-plus", "fas fa-cash-register", "fas fa-cat", "fas fa-certificate", "fas fa-chair", "fas fa-chalkboard", "fas fa-chalkboard-teacher", "fas fa-charging-station", "fas fa-chart-area", "fas fa-chart-bar", "fas fa-chart-line", "fas fa-chart-pie", "fas fa-check", "fas fa-check-circle", "fas fa-check-double", "fas fa-check-square", "fas fa-cheese", "fas fa-chess", "fas fa-chess-bishop", "fas fa-chess-board", "fas fa-chess-king", "fas fa-chess-knight", "fas fa-chess-pawn", "fas fa-chess-queen", "fas fa-chess-rook", "fas fa-chevron-circle-down", "fas fa-chevron-circle-left", "fas fa-chevron-circle-right", "fas fa-chevron-circle-up", "fas fa-chevron-down", "fas fa-chevron-left", "fas fa-chevron-right", "fas fa-chevron-up", "fas fa-child", "fas fa-church", "fas fa-circle", "fas fa-circle-notch", "fas fa-city", "fas fa-clinic-medical", "fas fa-clipboard", "fas fa-clipboard-check", "fas fa-clipboard-list", "fas fa-clock", "fas fa-clone", "fas fa-closed-captioning", "fas fa-cloud", "fas fa-cloud-download-alt", "fas fa-cloud-meatball", "fas fa-cloud-moon", "fas fa-cloud-moon-rain", "fas fa-cloud-rain", "fas fa-cloud-showers-heavy", "fas fa-cloud-sun", "fas fa-cloud-sun-rain", "fas fa-cloud-upload-alt", "fas fa-cocktail", "fas fa-code", "fas fa-code-branch", "fas fa-coffee", "fas fa-cog", "fas fa-cogs", "fas fa-coins", "fas fa-columns", "fas fa-comment", "fas fa-comment-alt", "fas fa-comment-dollar", "fas fa-comment-dots", "fas fa-comment-medical", "fas fa-comment-slash", "fas fa-comments", "fas fa-comments-dollar", "fas fa-compact-disc", "fas fa-compass", "fas fa-compress", "fas fa-compress-alt", "fas fa-compress-arrows-alt", "fas fa-concierge-bell", "fas fa-cookie", "fas fa-cookie-bite", "fas fa-copy", "fas fa-copyright", "fas fa-couch", "fas fa-credit-card", "fas fa-crop", "fas fa-crop-alt", "fas fa-cross", "fas fa-crosshairs", "fas fa-crow", "fas fa-crown", "fas fa-crutch", "fas fa-cube", "fas fa-cubes", "fas fa-cut", "fas fa-database", "fas fa-deaf", "fas fa-democrat", "fas fa-desktop", "fas fa-dharmachakra", "fas fa-diagnoses", "fas fa-dice", "fas fa-dice-d20", "fas fa-dice-d6", "fas fa-dice-five", "fas fa-dice-four", "fas fa-dice-one", "fas fa-dice-six", "fas fa-dice-three", "fas fa-dice-two", "fas fa-digital-tachograph", "fas fa-directions", "fas fa-divide", "fas fa-dizzy", "fas fa-dna", "fas fa-dog", "fas fa-dollar-sign", "fas fa-dolly", "fas fa-dolly-flatbed", "fas fa-donate", "fas fa-door-closed", "fas fa-door-open", "fas fa-dot-circle", "fas fa-dove", "fas fa-download", "fas fa-drafting-compass", "fas fa-dragon", "fas fa-draw-polygon", "fas fa-drum", "fas fa-drum-steelpan", "fas fa-drumstick-bite", "fas fa-dumbbell", "fas fa-dumpster", "fas fa-dumpster-fire", "fas fa-dungeon", "fas fa-edit", "fas fa-egg", "fas fa-eject", "fas fa-ellipsis-h", "fas fa-ellipsis-v", "fas fa-envelope", "fas fa-envelope-open", "fas fa-envelope-open-text", "fas fa-envelope-square", "fas fa-equals", "fas fa-eraser", "fas fa-ethernet", "fas fa-euro-sign", "fas fa-exchange-alt", "fas fa-exclamation", "fas fa-exclamation-circle", "fas fa-exclamation-triangle", "fas fa-expand", "fas fa-expand-alt", "fas fa-expand-arrows-alt", "fas fa-external-link-alt", "fas fa-external-link-square-alt", "fas fa-eye", "fas fa-eye-dropper", "fas fa-eye-slash", "fas fa-fan", "fas fa-fast-backward", "fas fa-fast-forward", "fas fa-fax", "fas fa-feather", "fas fa-feather-alt", "fas fa-female", "fas fa-fighter-jet", "fas fa-file", "fas fa-file-alt", "fas fa-file-archive", "fas fa-file-audio", "fas fa-file-code", "fas fa-file-contract", "fas fa-file-csv", "fas fa-file-download", "fas fa-file-excel", "fas fa-file-export", "fas fa-file-image", "fas fa-file-import", "fas fa-file-invoice", "fas fa-file-invoice-dollar", "fas fa-file-medical", "fas fa-file-medical-alt", "fas fa-file-pdf", "fas fa-file-powerpoint", "fas fa-file-prescription", "fas fa-file-signature", "fas fa-file-upload", "fas fa-file-video", "fas fa-file-word", "fas fa-fill", "fas fa-fill-drip", "fas fa-film", "fas fa-filter", "fas fa-fingerprint", "fas fa-fire", "fas fa-fire-alt", "fas fa-fire-extinguisher", "fas fa-first-aid", "fas fa-fish", "fas fa-fist-raised", "fas fa-flag", "fas fa-flag-checkered", "fas fa-flag-usa", "fas fa-flask", "fas fa-flushed", "fas fa-folder", "fas fa-folder-minus", "fas fa-folder-open", "fas fa-folder-plus", "fas fa-font", "fas fa-football-ball", "fas fa-forward", "fas fa-frog", "fas fa-frown", "fas fa-frown-open", "fas fa-funnel-dollar", "fas fa-futbol", "fas fa-gamepad", "fas fa-gas-pump", "fas fa-gavel", "fas fa-gem", "fas fa-genderless", "fas fa-ghost", "fas fa-gift", "fas fa-gifts", "fas fa-glass-cheers", "fas fa-glass-martini", "fas fa-glass-martini-alt", "fas fa-glass-whiskey", "fas fa-glasses", "fas fa-globe", "fas fa-globe-africa", "fas fa-globe-americas", "fas fa-globe-asia", "fas fa-globe-europe", "fas fa-golf-ball", "fas fa-gopuram", "fas fa-graduation-cap", "fas fa-greater-than", "fas fa-greater-than-equal", "fas fa-grimace", "fas fa-grin", "fas fa-grin-alt", "fas fa-grin-beam", "fas fa-grin-beam-sweat", "fas fa-grin-hearts", "fas fa-grin-squint", "fas fa-grin-squint-tears", "fas fa-grin-stars", "fas fa-grin-tears", "fas fa-grin-tongue", "fas fa-grin-tongue-squint", "fas fa-grin-tongue-wink", "fas fa-grin-wink", "fas fa-grip-horizontal", "fas fa-grip-lines", "fas fa-grip-lines-vertical", "fas fa-grip-vertical", "fas fa-guitar", "fas fa-h-square", "fas fa-hamburger", "fas fa-hammer", "fas fa-hamsa", "fas fa-hand-holding", "fas fa-hand-holding-heart", "fas fa-hand-holding-usd", "fas fa-hand-lizard", "fas fa-hand-middle-finger", "fas fa-hand-paper", "fas fa-hand-peace", "fas fa-hand-point-down", "fas fa-hand-point-left", "fas fa-hand-point-right", "fas fa-hand-point-up", "fas fa-hand-pointer", "fas fa-hand-rock", "fas fa-hand-scissors", "fas fa-hand-spock", "fas fa-hands", "fas fa-hands-helping", "fas fa-handshake", "fas fa-hanukiah", "fas fa-hard-hat", "fas fa-hashtag", "fas fa-hat-cowboy", "fas fa-hat-cowboy-side", "fas fa-hat-wizard", "fas fa-hdd", "fas fa-heading", "fas fa-headphones", "fas fa-headphones-alt", "fas fa-headset", "fas fa-heart", "fas fa-heart-broken", "fas fa-heartbeat", "fas fa-helicopter", "fas fa-highlighter", "fas fa-hiking", "fas fa-hippo", "fas fa-history", "fas fa-hockey-puck", "fas fa-holly-berry", "fas fa-home", "fas fa-horse", "fas fa-horse-head", "fas fa-hospital", "fas fa-hospital-alt", "fas fa-hospital-symbol", "fas fa-hot-tub", "fas fa-hotdog", "fas fa-hotel", "fas fa-hourglass", "fas fa-hourglass-end", "fas fa-hourglass-half", "fas fa-hourglass-start", "fas fa-house-damage", "fas fa-hryvnia", "fas fa-i-cursor", "fas fa-ice-cream", "fas fa-icicles", "fas fa-icons", "fas fa-id-badge", "fas fa-id-card", "fas fa-id-card-alt", "fas fa-igloo", "fas fa-image", "fas fa-images", "fas fa-inbox", "fas fa-indent", "fas fa-industry", "fas fa-infinity", "fas fa-info", "fas fa-info-circle", "fas fa-italic", "fas fa-jedi", "fas fa-joint", "fas fa-journal-whills", "fas fa-kaaba", "fas fa-key", "fas fa-keyboard", "fas fa-khanda", "fas fa-kiss", "fas fa-kiss-beam", "fas fa-kiss-wink-heart", "fas fa-kiwi-bird", "fas fa-landmark", "fas fa-language", "fas fa-laptop", "fas fa-laptop-code", "fas fa-laptop-medical", "fas fa-laugh", "fas fa-laugh-beam", "fas fa-laugh-squint", "fas fa-laugh-wink", "fas fa-layer-group", "fas fa-leaf", "fas fa-lemon", "fas fa-less-than", "fas fa-less-than-equal", "fas fa-level-down-alt", "fas fa-level-up-alt", "fas fa-life-ring", "fas fa-lightbulb", "fas fa-link", "fas fa-lira-sign", "fas fa-list", "fas fa-list-alt", "fas fa-list-ol", "fas fa-list-ul", "fas fa-location-arrow", "fas fa-lock", "fas fa-lock-open", "fas fa-long-arrow-alt-down", "fas fa-long-arrow-alt-left", "fas fa-long-arrow-alt-right", "fas fa-long-arrow-alt-up", "fas fa-low-vision", "fas fa-luggage-cart", "fas fa-magic", "fas fa-magnet", "fas fa-mail-bulk", "fas fa-male", "fas fa-map", "fas fa-map-marked", "fas fa-map-marked-alt", "fas fa-map-marker", "fas fa-map-marker-alt", "fas fa-map-pin", "fas fa-map-signs", "fas fa-marker", "fas fa-mars", "fas fa-mars-double", "fas fa-mars-stroke", "fas fa-mars-stroke-h", "fas fa-mars-stroke-v", "fas fa-mask", "fas fa-medal", "fas fa-medkit", "fas fa-meh", "fas fa-meh-blank", "fas fa-meh-rolling-eyes", "fas fa-memory", "fas fa-menorah", "fas fa-mercury", "fas fa-meteor", "fas fa-microchip", "fas fa-microphone", "fas fa-microphone-alt", "fas fa-microphone-alt-slash", "fas fa-microphone-slash", "fas fa-microscope", "fas fa-minus", "fas fa-minus-circle", "fas fa-minus-square", "fas fa-mitten", "fas fa-mobile", "fas fa-mobile-alt", "fas fa-money-bill", "fas fa-money-bill-alt", "fas fa-money-bill-wave", "fas fa-money-bill-wave-alt", "fas fa-money-check", "fas fa-money-check-alt", "fas fa-monument", "fas fa-moon", "fas fa-mortar-pestle", "fas fa-mosque", "fas fa-motorcycle", "fas fa-mountain", "fas fa-mouse", "fas fa-mouse-pointer", "fas fa-mug-hot", "fas fa-music", "fas fa-network-wired", "fas fa-neuter", "fas fa-newspaper", "fas fa-not-equal", "fas fa-notes-medical", "fas fa-object-group", "fas fa-object-ungroup", "fas fa-oil-can", "fas fa-om", "fas fa-otter", "fas fa-outdent", "fas fa-pager", "fas fa-paint-brush", "fas fa-paint-roller", "fas fa-palette", "fas fa-pallet", "fas fa-paper-plane", "fas fa-paperclip", "fas fa-parachute-box", "fas fa-paragraph", "fas fa-parking", "fas fa-passport", "fas fa-pastafarianism", "fas fa-paste", "fas fa-pause", "fas fa-pause-circle", "fas fa-paw", "fas fa-peace", "fas fa-pen", "fas fa-pen-alt", "fas fa-pen-fancy", "fas fa-pen-nib", "fas fa-pen-square", "fas fa-pencil-alt", "fas fa-pencil-ruler", "fas fa-people-carry", "fas fa-pepper-hot", "fas fa-percent", "fas fa-percentage", "fas fa-person-booth", "fas fa-phone", "fas fa-phone-alt", "fas fa-phone-slash", "fas fa-phone-square", "fas fa-phone-square-alt", "fas fa-phone-volume", "fas fa-photo-video", "fas fa-piggy-bank", "fas fa-pills", "fas fa-pizza-slice", "fas fa-place-of-worship", "fas fa-plane", "fas fa-plane-arrival", "fas fa-plane-departure", "fas fa-play", "fas fa-play-circle", "fas fa-plug", "fas fa-plus", "fas fa-plus-circle", "fas fa-plus-square", "fas fa-podcast", "fas fa-poll", "fas fa-poll-h", "fas fa-poo", "fas fa-poo-storm", "fas fa-poop", "fas fa-portrait", "fas fa-pound-sign", "fas fa-power-off", "fas fa-pray", "fas fa-praying-hands", "fas fa-prescription", "fas fa-prescription-bottle", "fas fa-prescription-bottle-alt", "fas fa-print", "fas fa-procedures", "fas fa-project-diagram", "fas fa-puzzle-piece", "fas fa-qrcode", "fas fa-question", "fas fa-question-circle", "fas fa-quidditch", "fas fa-quote-left", "fas fa-quote-right", "fas fa-quran", "fas fa-radiation", "fas fa-radiation-alt", "fas fa-rainbow", "fas fa-random", "fas fa-receipt", "fas fa-record-vinyl", "fas fa-recycle", "fas fa-redo", "fas fa-redo-alt", "fas fa-registered", "fas fa-remove-format", "fas fa-reply", "fas fa-reply-all", "fas fa-republican", "fas fa-restroom", "fas fa-retweet", "fas fa-ribbon", "fas fa-ring", "fas fa-road", "fas fa-robot", "fas fa-rocket", "fas fa-route", "fas fa-rss", "fas fa-rss-square", "fas fa-ruble-sign", "fas fa-ruler", "fas fa-ruler-combined", "fas fa-ruler-horizontal", "fas fa-ruler-vertical", "fas fa-running", "fas fa-rupee-sign", "fas fa-sad-cry", "fas fa-sad-tear", "fas fa-satellite", "fas fa-satellite-dish", "fas fa-save", "fas fa-school", "fas fa-screwdriver", "fas fa-scroll", "fas fa-sd-card", "fas fa-search", "fas fa-search-dollar", "fas fa-search-location", "fas fa-search-minus", "fas fa-search-plus", "fas fa-seedling", "fas fa-server", "fas fa-shapes", "fas fa-share", "fas fa-share-alt", "fas fa-share-alt-square", "fas fa-share-square", "fas fa-shekel-sign", "fas fa-shield-alt", "fas fa-ship", "fas fa-shipping-fast", "fas fa-shoe-prints", "fas fa-shopping-bag", "fas fa-shopping-basket", "fas fa-shopping-cart", "fas fa-shower", "fas fa-shuttle-van", "fas fa-sign", "fas fa-sign-in-alt", "fas fa-sign-language", "fas fa-sign-out-alt", "fas fa-signal", "fas fa-signature", "fas fa-sim-card", "fas fa-sitemap", "fas fa-skating", "fas fa-skiing", "fas fa-skiing-nordic", "fas fa-skull", "fas fa-skull-crossbones", "fas fa-slash", "fas fa-sleigh", "fas fa-sliders-h", "fas fa-smile", "fas fa-smile-beam", "fas fa-smile-wink", "fas fa-smog", "fas fa-smoking", "fas fa-smoking-ban", "fas fa-sms", "fas fa-snowboarding", "fas fa-snowflake", "fas fa-snowman", "fas fa-snowplow", "fas fa-socks", "fas fa-solar-panel", "fas fa-sort", "fas fa-sort-alpha-down", "fas fa-sort-alpha-down-alt", "fas fa-sort-alpha-up", "fas fa-sort-alpha-up-alt", "fas fa-sort-amount-down", "fas fa-sort-amount-down-alt", "fas fa-sort-amount-up", "fas fa-sort-amount-up-alt", "fas fa-sort-down", "fas fa-sort-numeric-down", "fas fa-sort-numeric-down-alt", "fas fa-sort-numeric-up", "fas fa-sort-numeric-up-alt", "fas fa-sort-up", "fas fa-spa", "fas fa-space-shuttle", "fas fa-spell-check", "fas fa-spider", "fas fa-spinner", "fas fa-splotch", "fas fa-spray-can", "fas fa-square", "fas fa-square-full", "fas fa-square-root-alt", "fas fa-stamp", "fas fa-star", "fas fa-star-and-crescent", "fas fa-star-half", "fas fa-star-half-alt", "fas fa-star-of-david", "fas fa-star-of-life", "fas fa-step-backward", "fas fa-step-forward", "fas fa-stethoscope", "fas fa-sticky-note", "fas fa-stop", "fas fa-stop-circle", "fas fa-stopwatch", "fas fa-store", "fas fa-store-alt", "fas fa-stream", "fas fa-street-view", "fas fa-strikethrough", "fas fa-stroopwafel", "fas fa-subscript", "fas fa-subway", "fas fa-suitcase", "fas fa-suitcase-rolling", "fas fa-sun", "fas fa-superscript", "fas fa-surprise", "fas fa-swatchbook", "fas fa-swimmer", "fas fa-swimming-pool", "fas fa-synagogue", "fas fa-sync", "fas fa-sync-alt", "fas fa-syringe", "fas fa-table", "fas fa-table-tennis", "fas fa-tablet", "fas fa-tablet-alt", "fas fa-tablets", "fas fa-tachometer-alt", "fas fa-tag", "fas fa-tags", "fas fa-tape", "fas fa-tasks", "fas fa-taxi", "fas fa-teeth", "fas fa-teeth-open", "fas fa-temperature-high", "fas fa-temperature-low", "fas fa-tenge", "fas fa-terminal", "fas fa-text-height", "fas fa-text-width", "fas fa-th", "fas fa-th-large", "fas fa-th-list", "fas fa-theater-masks", "fas fa-thermometer", "fas fa-thermometer-empty", "fas fa-thermometer-full", "fas fa-thermometer-half", "fas fa-thermometer-quarter", "fas fa-thermometer-three-quarters", "fas fa-thumbs-down", "fas fa-thumbs-up", "fas fa-thumbtack", "fas fa-ticket-alt", "fas fa-times", "fas fa-times-circle", "fas fa-tint", "fas fa-tint-slash", "fas fa-tired", "fas fa-toggle-off", "fas fa-toggle-on", "fas fa-toilet", "fas fa-toilet-paper", "fas fa-toolbox", "fas fa-tools", "fas fa-tooth", "fas fa-torah", "fas fa-torii-gate", "fas fa-tractor", "fas fa-trademark", "fas fa-traffic-light", "fas fa-trailer", "fas fa-train", "fas fa-tram", "fas fa-transgender", "fas fa-transgender-alt", "fas fa-trash", "fas fa-trash-alt", "fas fa-trash-restore", "fas fa-trash-restore-alt", "fas fa-tree", "fas fa-trophy", "fas fa-truck", "fas fa-truck-loading", "fas fa-truck-monster", "fas fa-truck-moving", "fas fa-truck-pickup", "fas fa-tshirt", "fas fa-tty", "fas fa-tv", "fas fa-umbrella", "fas fa-umbrella-beach", "fas fa-underline", "fas fa-undo", "fas fa-undo-alt", "fas fa-universal-access", "fas fa-university", "fas fa-unlink", "fas fa-unlock", "fas fa-unlock-alt", "fas fa-upload", "fas fa-user", "fas fa-user-alt", "fas fa-user-alt-slash", "fas fa-user-astronaut", "fas fa-user-check", "fas fa-user-circle", "fas fa-user-clock", "fas fa-user-cog", "fas fa-user-edit", "fas fa-user-friends", "fas fa-user-graduate", "fas fa-user-injured", "fas fa-user-lock", "fas fa-user-md", "fas fa-user-minus", "fas fa-user-ninja", "fas fa-user-nurse", "fas fa-user-plus", "fas fa-user-secret", "fas fa-user-shield", "fas fa-user-slash", "fas fa-user-tag", "fas fa-user-tie", "fas fa-user-times", "fas fa-users", "fas fa-users-cog", "fas fa-utensil-spoon", "fas fa-utensils", "fas fa-vector-square", "fas fa-venus", "fas fa-venus-double", "fas fa-venus-mars", "fas fa-vial", "fas fa-vials", "fas fa-video", "fas fa-video-slash", "fas fa-vihara", "fas fa-voicemail", "fas fa-volleyball-ball", "fas fa-volume-down", "fas fa-volume-mute", "fas fa-volume-off", "fas fa-volume-up", "fas fa-vote-yea", "fas fa-vr-cardboard", "fas fa-walking", "fas fa-wallet", "fas fa-warehouse", "fas fa-water", "fas fa-wave-square", "fas fa-weight", "fas fa-weight-hanging", "fas fa-wheelchair", "fas fa-wifi", "fas fa-wind", "fas fa-window-close", "fas fa-window-maximize", "fas fa-window-minimize", "fas fa-window-restore", "fas fa-wine-bottle", "fas fa-wine-glass", "fas fa-wine-glass-alt", "fas fa-won-sign", "fas fa-wrench", "fas fa-x-ray", "fas fa-yen-sign", "fas fa-yin-yang", "fab fa-500px", "fab fa-accessible-icon", "fab fa-accusoft", "fab fa-acquisitions-incorporated", "fab fa-adn", "fab fa-adversal", "fab fa-affiliatetheme", "fab fa-airbnb", "fab fa-algolia", "fab fa-alipay", "fab fa-amazon", "fab fa-amazon-pay", "fab fa-amilia", "fab fa-android", "fab fa-angellist", "fab fa-angrycreative", "fab fa-angular", "fab fa-app-store", "fab fa-app-store-ios", "fab fa-apper", "fab fa-apple", "fab fa-apple-pay", "fab fa-artstation", "fab fa-asymmetrik", "fab fa-atlassian", "fab fa-audible", "fab fa-autoprefixer", "fab fa-avianex", "fab fa-aviato", "fab fa-aws", "fab fa-bandcamp", "fab fa-battle-net", "fab fa-behance", "fab fa-behance-square", "fab fa-bimobject", "fab fa-bitbucket", "fab fa-bitcoin", "fab fa-bity", "fab fa-black-tie", "fab fa-blackberry", "fab fa-blogger", "fab fa-blogger-b", "fab fa-bluetooth", "fab fa-bluetooth-b", "fab fa-bootstrap", "fab fa-btc", "fab fa-buffer", "fab fa-buromobelexperte", "fab fa-buy-n-large", "fab fa-buysellads", "fab fa-canadian-maple-leaf", "fab fa-cc-amazon-pay", "fab fa-cc-amex", "fab fa-cc-apple-pay", "fab fa-cc-diners-club", "fab fa-cc-discover", "fab fa-cc-jcb", "fab fa-cc-mastercard", "fab fa-cc-paypal", "fab fa-cc-stripe", "fab fa-cc-visa", "fab fa-centercode", "fab fa-centos", "fab fa-chrome", "fab fa-chromecast", "fab fa-cloudscale", "fab fa-cloudsmith", "fab fa-cloudversify", "fab fa-codepen", "fab fa-codiepie", "fab fa-confluence", "fab fa-connectdevelop", "fab fa-contao", "fab fa-cotton-bureau", "fab fa-cpanel", "fab fa-creative-commons", "fab fa-creative-commons-by", "fab fa-creative-commons-nc", "fab fa-creative-commons-nc-eu", "fab fa-creative-commons-nc-jp", "fab fa-creative-commons-nd", "fab fa-creative-commons-pd", "fab fa-creative-commons-pd-alt", "fab fa-creative-commons-remix", "fab fa-creative-commons-sa", "fab fa-creative-commons-sampling", "fab fa-creative-commons-sampling-plus", "fab fa-creative-commons-share", "fab fa-creative-commons-zero", "fab fa-critical-role", "fab fa-css3", "fab fa-css3-alt", "fab fa-cuttlefish", "fab fa-d-and-d", "fab fa-d-and-d-beyond", "fab fa-dashcube", "fab fa-delicious", "fab fa-deploydog", "fab fa-deskpro", "fab fa-dev", "fab fa-deviantart", "fab fa-dhl", "fab fa-diaspora", "fab fa-digg", "fab fa-digital-ocean", "fab fa-discord", "fab fa-discourse", "fab fa-dochub", "fab fa-docker", "fab fa-draft2digital", "fab fa-dribbble", "fab fa-dribbble-square", "fab fa-dropbox", "fab fa-drupal", "fab fa-dyalog", "fab fa-earlybirds", "fab fa-ebay", "fab fa-edge", "fab fa-elementor", "fab fa-ello", "fab fa-ember", "fab fa-empire", "fab fa-envira", "fab fa-erlang", "fab fa-ethereum", "fab fa-etsy", "fab fa-evernote", "fab fa-expeditedssl", "fab fa-facebook", "fab fa-facebook-f", "fab fa-facebook-messenger", "fab fa-facebook-square", "fab fa-fantasy-flight-games", "fab fa-fedex", "fab fa-fedora", "fab fa-figma", "fab fa-firefox", "fab fa-firefox-browser", "fab fa-first-order", "fab fa-first-order-alt", "fab fa-firstdraft", "fab fa-flickr", "fab fa-flipboard", "fab fa-fly", "fab fa-font-awesome", "fab fa-font-awesome-alt", "fab fa-font-awesome-flag", "fab fa-fonticons", "fab fa-fonticons-fi", "fab fa-fort-awesome", "fab fa-fort-awesome-alt", "fab fa-forumbee", "fab fa-foursquare", "fab fa-free-code-camp", "fab fa-freebsd", "fab fa-fulcrum", "fab fa-galactic-republic", "fab fa-galactic-senate", "fab fa-get-pocket", "fab fa-gg", "fab fa-gg-circle", "fab fa-git", "fab fa-git-alt", "fab fa-git-square", "fab fa-github", "fab fa-github-alt", "fab fa-github-square", "fab fa-gitkraken", "fab fa-gitlab", "fab fa-gitter", "fab fa-glide", "fab fa-glide-g", "fab fa-gofore", "fab fa-goodreads", "fab fa-goodreads-g", "fab fa-google", "fab fa-google-drive", "fab fa-google-play", "fab fa-google-plus", "fab fa-google-plus-g", "fab fa-google-plus-square", "fab fa-google-wallet", "fab fa-gratipay", "fab fa-grav", "fab fa-gripfire", "fab fa-grunt", "fab fa-gulp", "fab fa-hacker-news", "fab fa-hacker-news-square", "fab fa-hackerrank", "fab fa-hips", "fab fa-hire-a-helper", "fab fa-hooli", "fab fa-hornbill", "fab fa-hotjar", "fab fa-houzz", "fab fa-html5", "fab fa-hubspot", "fab fa-ideal", "fab fa-imdb", "fab fa-instagram", "fab fa-intercom", "fab fa-internet-explorer", "fab fa-invision", "fab fa-ioxhost", "fab fa-itch-io", "fab fa-itunes", "fab fa-itunes-note", "fab fa-java", "fab fa-jedi-order", "fab fa-jenkins", "fab fa-jira", "fab fa-joget", "fab fa-joomla", "fab fa-js", "fab fa-js-square", "fab fa-jsfiddle", "fab fa-kaggle", "fab fa-keybase", "fab fa-keycdn", "fab fa-kickstarter", "fab fa-kickstarter-k", "fab fa-korvue", "fab fa-laravel", "fab fa-lastfm", "fab fa-lastfm-square", "fab fa-leanpub", "fab fa-less", "fab fa-line", "fab fa-linkedin", "fab fa-linkedin-in", "fab fa-linode", "fab fa-linux", "fab fa-lyft", "fab fa-magento", "fab fa-mailchimp", "fab fa-mandalorian", "fab fa-markdown", "fab fa-mastodon", "fab fa-maxcdn", "fab fa-mdb", "fab fa-medapps", "fab fa-medium", "fab fa-medium-m", "fab fa-medrt", "fab fa-meetup", "fab fa-megaport", "fab fa-mendeley", "fab fa-microblog", "fab fa-microsoft", "fab fa-mix", "fab fa-mixcloud", "fab fa-mizuni", "fab fa-modx", "fab fa-monero", "fab fa-napster", "fab fa-neos", "fab fa-nimblr", "fab fa-node", "fab fa-node-js", "fab fa-npm", "fab fa-ns8", "fab fa-nutritionix", "fab fa-odnoklassniki", "fab fa-odnoklassniki-square", "fab fa-old-republic", "fab fa-opencart", "fab fa-openid", "fab fa-opera", "fab fa-optin-monster", "fab fa-orcid", "fab fa-osi", "fab fa-page4", "fab fa-pagelines", "fab fa-palfed", "fab fa-patreon", "fab fa-paypal", "fab fa-penny-arcade", "fab fa-periscope", "fab fa-phabricator", "fab fa-phoenix-framework", "fab fa-phoenix-squadron", "fab fa-php", "fab fa-pied-piper", "fab fa-pied-piper-alt", "fab fa-pied-piper-hat", "fab fa-pied-piper-pp", "fab fa-pied-piper-square", "fab fa-pinterest", "fab fa-pinterest-p", "fab fa-pinterest-square", "fab fa-playstation", "fab fa-product-hunt", "fab fa-pushed", "fab fa-python", "fab fa-qq", "fab fa-quinscape", "fab fa-quora", "fab fa-r-project", "fab fa-raspberry-pi", "fab fa-ravelry", "fab fa-react", "fab fa-reacteurope", "fab fa-readme", "fab fa-rebel", "fab fa-red-river", "fab fa-reddit", "fab fa-reddit-alien", "fab fa-reddit-square", "fab fa-redhat", "fab fa-renren", "fab fa-replyd", "fab fa-researchgate", "fab fa-resolving", "fab fa-rev", "fab fa-rocketchat", "fab fa-rockrms", "fab fa-safari", "fab fa-salesforce", "fab fa-sass", "fab fa-schlix", "fab fa-scribd", "fab fa-searchengin", "fab fa-sellcast", "fab fa-sellsy", "fab fa-servicestack", "fab fa-shirtsinbulk", "fab fa-shopware", "fab fa-simplybuilt", "fab fa-sistrix", "fab fa-sith", "fab fa-sketch", "fab fa-skyatlas", "fab fa-skype", "fab fa-slack", "fab fa-slack-hash", "fab fa-slideshare", "fab fa-snapchat", "fab fa-snapchat-ghost", "fab fa-snapchat-square", "fab fa-soundcloud", "fab fa-sourcetree", "fab fa-speakap", "fab fa-speaker-deck", "fab fa-spotify", "fab fa-squarespace", "fab fa-stack-exchange", "fab fa-stack-overflow", "fab fa-stackpath", "fab fa-staylinked", "fab fa-steam", "fab fa-steam-square", "fab fa-steam-symbol", "fab fa-sticker-mule", "fab fa-strava", "fab fa-stripe", "fab fa-stripe-s", "fab fa-studiovinari", "fab fa-stumbleupon", "fab fa-stumbleupon-circle", "fab fa-superpowers", "fab fa-supple", "fab fa-suse", "fab fa-swift", "fab fa-symfony", "fab fa-teamspeak", "fab fa-telegram", "fab fa-telegram-plane", "fab fa-tencent-weibo", "fab fa-the-red-yeti", "fab fa-themeco", "fab fa-themeisle", "fab fa-think-peaks", "fab fa-trade-federation", "fab fa-trello", "fab fa-tripadvisor", "fab fa-tumblr", "fab fa-tumblr-square", "fab fa-twitch", "fab fa-twitter", "fab fa-twitter-square", "fab fa-typo3", "fab fa-uber", "fab fa-ubuntu", "fab fa-uikit", "fab fa-umbraco", "fab fa-uniregistry", "fab fa-unity", "fab fa-untappd", "fab fa-ups", "fab fa-usb", "fab fa-usps", "fab fa-ussunnah", "fab fa-vaadin", "fab fa-viacoin", "fab fa-viadeo", "fab fa-viadeo-square", "fab fa-viber", "fab fa-vimeo", "fab fa-vimeo-square", "fab fa-vimeo-v", "fab fa-vine", "fab fa-vk", "fab fa-vnv", "fab fa-vuejs", "fab fa-waze", "fab fa-weebly", "fab fa-weibo", "fab fa-weixin", "fab fa-whatsapp", "fab fa-whatsapp-square", "fab fa-whmcs", "fab fa-wikipedia-w", "fab fa-windows", "fab fa-wix", "fab fa-wizards-of-the-coast", "fab fa-wolf-pack-battalion", "fab fa-wordpress", "fab fa-wordpress-simple", "fab fa-wpbeginner", "fab fa-wpexplorer", "fab fa-wpforms", "fab fa-wpressr", "fab fa-xbox", "fab fa-xing", "fab fa-xing-square", "fab fa-y-combinator", "fab fa-yahoo", "fab fa-yammer", "fab fa-yandex", "fab fa-yandex-international", "fab fa-yarn", "fab fa-yelp", "fab fa-yoast", "fab fa-youtube", "fab fa-youtube-square", "fab fa-zhihu"];
+var faIcons = ["fab fa-500px", "fab fa-accessible-icon", "fab fa-accusoft", "fas fa-address-book", "far fa-address-book", "fas fa-address-card", "far fa-address-card", "fas fa-adjust", "fab fa-adn", "fab fa-adversal", "fab fa-affiliatetheme", "fab fa-algolia", "fas fa-align-center", "fas fa-align-justify", "fas fa-align-left", "fas fa-align-right", "fab fa-amazon", "fas fa-ambulance", "fas fa-american-sign-language-interpreting", "fab fa-amilia", "fas fa-anchor", "fab fa-android", "fab fa-angellist", "fas fa-angle-double-down", "fas fa-angle-double-left", "fas fa-angle-double-right", "fas fa-angle-double-up", "fas fa-angle-down", "fas fa-angle-left", "fas fa-angle-right", "fas fa-angle-up", "fab fa-angrycreative", "fab fa-angular", "fab fa-app-store", "fab fa-app-store-ios", "fab fa-apper", "fab fa-apple", "fab fa-apple-pay", "fas fa-archive", "fas fa-arrow-alt-circle-down", "far fa-arrow-alt-circle-down", "fas fa-arrow-alt-circle-left", "far fa-arrow-alt-circle-left", "fas fa-arrow-alt-circle-right", "far fa-arrow-alt-circle-right", "fas fa-arrow-alt-circle-up", "far fa-arrow-alt-circle-up", "fas fa-arrow-circle-down", "fas fa-arrow-circle-left", "fas fa-arrow-circle-right", "fas fa-arrow-circle-up", "fas fa-arrow-down", "fas fa-arrow-left", "fas fa-arrow-right", "fas fa-arrow-up", "fas fa-arrows-alt", "fas fa-arrows-alt-h", "fas fa-arrows-alt-v", "fas fa-assistive-listening-systems", "fas fa-asterisk", "fab fa-asymmetrik", "fas fa-at", "fab fa-audible", "fas fa-audio-description", "fab fa-autoprefixer", "fab fa-avianex", "fab fa-aviato", "fab fa-aws", "fas fa-backward", "fas fa-balance-scale", "fas fa-ban", "fab fa-bandcamp", "fas fa-barcode", "fas fa-bars", "fas fa-bath", "fas fa-battery-empty", "fas fa-battery-full", "fas fa-battery-half", "fas fa-battery-quarter", "fas fa-battery-three-quarters", "fas fa-bed", "fas fa-beer", "fab fa-behance", "fab fa-behance-square", "fas fa-bell", "far fa-bell", "fas fa-bell-slash", "far fa-bell-slash", "fas fa-bicycle", "fab fa-bimobject", "fas fa-binoculars", "fas fa-birthday-cake", "fab fa-bitbucket", "fab fa-bitcoin", "fab fa-bity", "fab fa-black-tie", "fab fa-blackberry", "fas fa-blind", "fab fa-blogger", "fab fa-blogger-b", "fab fa-bluetooth", "fab fa-bluetooth-b", "fas fa-bold", "fas fa-bolt", "fas fa-bomb", "fas fa-book", "fas fa-bookmark", "far fa-bookmark", "fas fa-braille", "fas fa-briefcase", "fab fa-btc", "fas fa-bug", "fas fa-building", "far fa-building", "fas fa-bullhorn", "fas fa-bullseye", "fab fa-buromobelexperte", "fas fa-bus", "fab fa-buysellads", "fas fa-calculator", "fas fa-calendar", "far fa-calendar", "fas fa-calendar-alt", "far fa-calendar-alt", "fas fa-calendar-check", "far fa-calendar-check", "fas fa-calendar-minus", "far fa-calendar-minus", "fas fa-calendar-plus", "far fa-calendar-plus", "fas fa-calendar-times", "far fa-calendar-times", "fas fa-camera", "fas fa-camera-retro", "fas fa-car", "fas fa-caret-down", "fas fa-caret-left", "fas fa-caret-right", "fas fa-caret-square-down", "far fa-caret-square-down", "fas fa-caret-square-left", "far fa-caret-square-left", "fas fa-caret-square-right", "far fa-caret-square-right", "fas fa-caret-square-up", "far fa-caret-square-up", "fas fa-caret-up", "fas fa-cart-arrow-down", "fas fa-cart-plus", "fab fa-cc-amex", "fab fa-cc-apple-pay", "fab fa-cc-diners-club", "fab fa-cc-discover", "fab fa-cc-jcb", "fab fa-cc-mastercard", "fab fa-cc-paypal", "fab fa-cc-stripe", "fab fa-cc-visa", "fab fa-centercode", "fas fa-certificate", "fas fa-chart-area", "fas fa-chart-bar", "far fa-chart-bar", "fas fa-chart-line", "fas fa-chart-pie", "fas fa-check", "fas fa-check-circle", "far fa-check-circle", "fas fa-check-square", "far fa-check-square", "fas fa-chevron-circle-down", "fas fa-chevron-circle-left", "fas fa-chevron-circle-right", "fas fa-chevron-circle-up", "fas fa-chevron-down", "fas fa-chevron-left", "fas fa-chevron-right", "fas fa-chevron-up", "fas fa-child", "fab fa-chrome", "fas fa-circle", "far fa-circle", "fas fa-circle-notch", "fas fa-clipboard", "far fa-clipboard", "fas fa-clock", "far fa-clock", "fas fa-clone", "far fa-clone", "fas fa-closed-captioning", "far fa-closed-captioning", "fas fa-cloud", "fas fa-cloud-download-alt", "fas fa-cloud-upload-alt", "fab fa-cloudscale", "fab fa-cloudsmith", "fab fa-cloudversify", "fas fa-code", "fas fa-code-branch", "fab fa-codepen", "fab fa-codiepie", "fas fa-coffee", "fas fa-cog", "fas fa-cogs", "fas fa-columns", "fas fa-comment", "far fa-comment", "fas fa-comment-alt", "far fa-comment-alt", "fas fa-comments", "far fa-comments", "fas fa-compass", "far fa-compass", "fas fa-compress", "fab fa-connectdevelop", "fab fa-contao", "fas fa-copy", "far fa-copy", "fas fa-copyright", "far fa-copyright", "fab fa-cpanel", "fab fa-creative-commons", "fas fa-credit-card", "far fa-credit-card", "fas fa-crop", "fas fa-crosshairs", "fab fa-css3", "fab fa-css3-alt", "fas fa-cube", "fas fa-cubes", "fas fa-cut", "fab fa-cuttlefish", "fab fa-d-and-d", "fab fa-dashcube", "fas fa-database", "fas fa-deaf", "fab fa-delicious", "fab fa-deploydog", "fab fa-deskpro", "fas fa-desktop", "fab fa-deviantart", "fab fa-digg", "fab fa-digital-ocean", "fab fa-discord", "fab fa-discourse", "fab fa-dochub", "fab fa-docker", "fas fa-dollar-sign", "fas fa-dot-circle", "far fa-dot-circle", "fas fa-download", "fab fa-draft2digital", "fab fa-dribbble", "fab fa-dribbble-square", "fab fa-dropbox", "fab fa-drupal", "fab fa-dyalog", "fab fa-earlybirds", "fab fa-edge", "fas fa-edit", "far fa-edit", "fas fa-eject", "fas fa-ellipsis-h", "fas fa-ellipsis-v", "fab fa-ember", "fab fa-empire", "fas fa-envelope", "far fa-envelope", "fas fa-envelope-open", "far fa-envelope-open", "fas fa-envelope-square", "fab fa-envira", "fas fa-eraser", "fab fa-erlang", "fab fa-etsy", "fas fa-euro-sign", "fas fa-exchange-alt", "fas fa-exclamation", "fas fa-exclamation-circle", "fas fa-exclamation-triangle", "fas fa-expand", "fas fa-expand-arrows-alt", "fab fa-expeditedssl", "fas fa-external-link-alt", "fas fa-external-link-square-alt", "fas fa-eye", "fas fa-eye-dropper", "fas fa-eye-slash", "far fa-eye-slash", "fab fa-facebook", "fab fa-facebook-f", "fab fa-facebook-messenger", "fab fa-facebook-square", "fas fa-fast-backward", "fas fa-fast-forward", "fas fa-fax", "fas fa-female", "fas fa-fighter-jet", "fas fa-file", "far fa-file", "fas fa-file-alt", "far fa-file-alt", "fas fa-file-archive", "far fa-file-archive", "fas fa-file-audio", "far fa-file-audio", "fas fa-file-code", "far fa-file-code", "fas fa-file-excel", "far fa-file-excel", "fas fa-file-image", "far fa-file-image", "fas fa-file-pdf", "far fa-file-pdf", "fas fa-file-powerpoint", "far fa-file-powerpoint", "fas fa-file-video", "far fa-file-video", "fas fa-file-word", "far fa-file-word", "fas fa-film", "fas fa-filter", "fas fa-fire", "fas fa-fire-extinguisher", "fab fa-firefox", "fab fa-first-order", "fab fa-firstdraft", "fas fa-flag", "far fa-flag", "fas fa-flag-checkered", "fas fa-flask", "fab fa-flickr", "fab fa-fly", "fas fa-folder", "far fa-folder", "fas fa-folder-open", "far fa-folder-open", "fas fa-font", "fab fa-font-awesome", "fab fa-font-awesome-alt", "fab fa-font-awesome-flag", "fab fa-fonticons", "fab fa-fonticons-fi", "fab fa-fort-awesome", "fab fa-fort-awesome-alt", "fab fa-forumbee", "fas fa-forward", "fab fa-foursquare", "fab fa-free-code-camp", "fab fa-freebsd", "fas fa-frown", "far fa-frown", "fas fa-futbol", "far fa-futbol", "fas fa-gamepad", "fas fa-gavel", "fas fa-gem", "far fa-gem", "fas fa-genderless", "fab fa-get-pocket", "fab fa-gg", "fab fa-gg-circle", "fas fa-gift", "fab fa-git", "fab fa-git-square", "fab fa-github", "fab fa-github-alt", "fab fa-github-square", "fab fa-gitkraken", "fab fa-gitlab", "fab fa-gitter", "fas fa-glass-martini", "fab fa-glide", "fab fa-glide-g", "fas fa-globe", "fab fa-gofore", "fab fa-goodreads", "fab fa-goodreads-g", "fab fa-google", "fab fa-google-drive", "fab fa-google-play", "fab fa-google-plus", "fab fa-google-plus-g", "fab fa-google-plus-square", "fab fa-google-wallet", "fas fa-graduation-cap", "fab fa-gratipay", "fab fa-grav", "fab fa-gripfire", "fab fa-grunt", "fab fa-gulp", "fas fa-h-square", "fab fa-hacker-news", "fab fa-hacker-news-square", "fas fa-hand-lizard", "far fa-hand-lizard", "fas fa-hand-paper", "far fa-hand-paper", "fas fa-hand-peace", "far fa-hand-peace", "fas fa-hand-point-down", "far fa-hand-point-down", "fas fa-hand-point-left", "far fa-hand-point-left", "fas fa-hand-point-right", "far fa-hand-point-right", "fas fa-hand-point-up", "far fa-hand-point-up", "fas fa-hand-pointer", "far fa-hand-pointer", "fas fa-hand-rock", "far fa-hand-rock", "fas fa-hand-scissors", "far fa-hand-scissors", "fas fa-hand-spock", "far fa-hand-spock", "fas fa-handshake", "far fa-handshake", "fas fa-hashtag", "fas fa-hdd", "far fa-hdd", "fas fa-heading", "fas fa-headphones", "fas fa-heart", "far fa-heart", "fas fa-heartbeat", "fab fa-hire-a-helper", "fas fa-history", "fas fa-home", "fab fa-hooli", "fas fa-hospital", "far fa-hospital", "fab fa-hotjar", "fas fa-hourglass", "far fa-hourglass", "fas fa-hourglass-end", "fas fa-hourglass-half", "fas fa-hourglass-start", "fab fa-houzz", "fab fa-html5", "fab fa-hubspot", "fas fa-i-cursor", "fas fa-id-badge", "far fa-id-badge", "fas fa-id-card", "far fa-id-card", "fas fa-image", "far fa-image", "fas fa-images", "far fa-images", "fab fa-imdb", "fas fa-inbox", "fas fa-indent", "fas fa-industry", "fas fa-info", "fas fa-info-circle", "fab fa-instagram", "fab fa-internet-explorer", "fab fa-ioxhost", "fas fa-italic", "fab fa-itunes", "fab fa-itunes-note", "fab fa-jenkins", "fab fa-joget", "fab fa-joomla", "fab fa-js", "fab fa-js-square", "fab fa-jsfiddle", "fas fa-key", "fas fa-keyboard", "far fa-keyboard", "fab fa-keycdn", "fab fa-kickstarter", "fab fa-kickstarter-k", "fas fa-language", "fas fa-laptop", "fab fa-laravel", "fab fa-lastfm", "fab fa-lastfm-square", "fas fa-leaf", "fab fa-leanpub", "fas fa-lemon", "far fa-lemon", "fab fa-less", "fas fa-level-down-alt", "fas fa-level-up-alt", "fas fa-life-ring", "far fa-life-ring", "fas fa-lightbulb", "far fa-lightbulb", "fab fa-line", "fas fa-link", "fab fa-linkedin", "fab fa-linkedin-in", "fab fa-linode", "fab fa-linux", "fas fa-lira-sign", "fas fa-list", "fas fa-list-alt", "far fa-list-alt", "fas fa-list-ol", "fas fa-list-ul", "fas fa-location-arrow", "fas fa-lock", "fas fa-lock-open", "fas fa-long-arrow-alt-down", "fas fa-long-arrow-alt-left", "fas fa-long-arrow-alt-right", "fas fa-long-arrow-alt-up", "fas fa-low-vision", "fab fa-lyft", "fab fa-magento", "fas fa-magic", "fas fa-magnet", "fas fa-male", "fas fa-map", "far fa-map", "fas fa-map-marker", "fas fa-map-marker-alt", "fas fa-map-pin", "fas fa-map-signs", "fas fa-mars", "fas fa-mars-double", "fas fa-mars-stroke", "fas fa-mars-stroke-h", "fas fa-mars-stroke-v", "fab fa-maxcdn", "fab fa-medapps", "fab fa-medium", "fab fa-medium-m", "fas fa-medkit", "fab fa-medrt", "fab fa-meetup", "fas fa-meh", "far fa-meh", "fas fa-mercury", "fas fa-microchip", "fas fa-microphone", "fas fa-microphone-slash", "fab fa-microsoft", "fas fa-minus", "fas fa-minus-circle", "fas fa-minus-square", "far fa-minus-square", "fab fa-mix", "fab fa-mixcloud", "fab fa-mizuni", "fas fa-mobile", "fas fa-mobile-alt", "fab fa-modx", "fab fa-monero", "fas fa-money-bill-alt", "far fa-money-bill-alt", "fas fa-moon", "far fa-moon", "fas fa-motorcycle", "fas fa-mouse-pointer", "fas fa-music", "fab fa-napster", "fas fa-neuter", "fas fa-newspaper", "far fa-newspaper", "fab fa-nintendo-switch", "fab fa-node", "fab fa-node-js", "fab fa-npm", "fab fa-ns8", "fab fa-nutritionix", "fas fa-object-group", "far fa-object-group", "fas fa-object-ungroup", "far fa-object-ungroup", "fab fa-odnoklassniki", "fab fa-odnoklassniki-square", "fab fa-opencart", "fab fa-openid", "fab fa-opera", "fab fa-optin-monster", "fab fa-osi", "fas fa-outdent", "fab fa-page4", "fab fa-pagelines", "fas fa-paint-brush", "fab fa-palfed", "fas fa-paper-plane", "far fa-paper-plane", "fas fa-paperclip", "fas fa-paragraph", "fas fa-paste", "fab fa-patreon", "fas fa-pause", "fas fa-pause-circle", "far fa-pause-circle", "fas fa-paw", "fab fa-paypal", "fas fa-pen-square", "fas fa-pencil-alt", "fas fa-percent", "fab fa-periscope", "fab fa-phabricator", "fab fa-phoenix-framework", "fas fa-phone", "fas fa-phone-square", "fas fa-phone-volume", "fab fa-pied-piper", "fab fa-pied-piper-alt", "fab fa-pied-piper-pp", "fab fa-pinterest", "fab fa-pinterest-p", "fab fa-pinterest-square", "fas fa-plane", "fas fa-play", "fas fa-play-circle", "far fa-play-circle", "fab fa-playstation", "fas fa-plug", "fas fa-plus", "fas fa-plus-circle", "fas fa-plus-square", "far fa-plus-square", "fas fa-podcast", "fas fa-pound-sign", "fas fa-power-off", "fas fa-print", "fab fa-product-hunt", "fab fa-pushed", "fas fa-puzzle-piece", "fab fa-python", "fab fa-qq", "fas fa-qrcode", "fas fa-question", "fas fa-question-circle", "far fa-question-circle", "fab fa-quora", "fas fa-quote-left", "fas fa-quote-right", "fas fa-random", "fab fa-ravelry", "fab fa-react", "fab fa-rebel", "fas fa-recycle", "fab fa-red-river", "fab fa-reddit", "fab fa-reddit-alien", "fab fa-reddit-square", "fas fa-redo", "fas fa-redo-alt", "fas fa-registered", "far fa-registered", "fab fa-rendact", "fab fa-renren", "fas fa-reply", "fas fa-reply-all", "fab fa-replyd", "fab fa-resolving", "fas fa-retweet", "fas fa-road", "fas fa-rocket", "fab fa-rocketchat", "fab fa-rockrms", "fas fa-rss", "fas fa-rss-square", "fas fa-ruble-sign", "fas fa-rupee-sign", "fab fa-safari", "fab fa-sass", "fas fa-save", "far fa-save", "fab fa-schlix", "fab fa-scribd", "fas fa-search", "fas fa-search-minus", "fas fa-search-plus", "fab fa-searchengin", "fab fa-sellcast", "fab fa-sellsy", "fas fa-server", "fab fa-servicestack", "fas fa-share", "fas fa-share-alt", "fas fa-share-alt-square", "fas fa-share-square", "far fa-share-square", "fas fa-shekel-sign", "fas fa-shield-alt", "fas fa-ship", "fab fa-shirtsinbulk", "fas fa-shopping-bag", "fas fa-shopping-basket", "fas fa-shopping-cart", "fas fa-shower", "fas fa-sign-in-alt", "fas fa-sign-language", "fas fa-sign-out-alt", "fas fa-signal", "fab fa-simplybuilt", "fab fa-sistrix", "fas fa-sitemap", "fab fa-skyatlas", "fab fa-skype", "fab fa-slack", "fab fa-slack-hash", "fas fa-sliders-h", "fab fa-slideshare", "fas fa-smile", "far fa-smile", "fab fa-snapchat", "fab fa-snapchat-ghost", "fab fa-snapchat-square", "fas fa-snowflake", "far fa-snowflake", "fas fa-sort", "fas fa-sort-alpha-down", "fas fa-sort-alpha-up", "fas fa-sort-amount-down", "fas fa-sort-amount-up", "fas fa-sort-down", "fas fa-sort-numeric-down", "fas fa-sort-numeric-up", "fas fa-sort-up", "fab fa-soundcloud", "fas fa-space-shuttle", "fab fa-speakap", "fas fa-spinner", "fab fa-spotify", "fas fa-square", "far fa-square", "fab fa-stack-exchange", "fab fa-stack-overflow", "fas fa-star", "far fa-star", "fas fa-star-half", "far fa-star-half", "fab fa-staylinked", "fab fa-steam", "fab fa-steam-square", "fab fa-steam-symbol", "fas fa-step-backward", "fas fa-step-forward", "fas fa-stethoscope", "fab fa-sticker-mule", "fas fa-sticky-note", "far fa-sticky-note", "fas fa-stop", "fas fa-stop-circle", "far fa-stop-circle", "fab fa-strava", "fas fa-street-view", "fas fa-strikethrough", "fab fa-stripe", "fab fa-stripe-s", "fab fa-studiovinari", "fab fa-stumbleupon", "fab fa-stumbleupon-circle", "fas fa-subscript", "fas fa-subway", "fas fa-suitcase", "fas fa-sun", "far fa-sun", "fab fa-superpowers", "fas fa-superscript", "fab fa-supple", "fas fa-sync", "fas fa-sync-alt", "fas fa-table", "fas fa-tablet", "fas fa-tablet-alt", "fas fa-tachometer-alt", "fas fa-tag", "fas fa-tags", "fas fa-tasks", "fas fa-taxi", "fab fa-telegram", "fab fa-telegram-plane", "fab fa-tencent-weibo", "fas fa-terminal", "fas fa-text-height", "fas fa-text-width", "fas fa-th", "fas fa-th-large", "fas fa-th-list", "fab fa-themeisle", "fas fa-thermometer-empty", "fas fa-thermometer-full", "fas fa-thermometer-half", "fas fa-thermometer-quarter", "fas fa-thermometer-three-quarters", "fas fa-thumbs-down", "far fa-thumbs-down", "fas fa-thumbs-up", "far fa-thumbs-up", "fas fa-thumbtack", "fas fa-ticket-alt", "fas fa-times", "fas fa-times-circle", "far fa-times-circle", "fas fa-tint", "fas fa-toggle-off", "fas fa-toggle-on", "fas fa-trademark", "fas fa-train", "fas fa-transgender", "fas fa-transgender-alt", "fas fa-trash", "fas fa-trash-alt", "far fa-trash-alt", "fas fa-tree", "fab fa-trello", "fab fa-tripadvisor", "fas fa-trophy", "fas fa-truck", "fas fa-tty", "fab fa-tumblr", "fab fa-tumblr-square", "fas fa-tv", "fab fa-twitch", "fab fa-twitter", "fab fa-twitter-square", "fab fa-typo3", "fab fa-uber", "fab fa-uikit", "fas fa-umbrella", "fas fa-underline", "fas fa-undo", "fas fa-undo-alt", "fab fa-uniregistry", "fas fa-universal-access", "fas fa-university", "fas fa-unlink", "fas fa-unlock", "fas fa-unlock-alt", "fab fa-untappd", "fas fa-upload", "fab fa-usb", "fas fa-user", "far fa-user", "fas fa-user-circle", "far fa-user-circle", "fas fa-user-md", "fas fa-user-plus", "fas fa-user-secret", "fas fa-user-times", "fas fa-users", "fab fa-ussunnah", "fas fa-utensil-spoon", "fas fa-utensils", "fab fa-vaadin", "fas fa-venus", "fas fa-venus-double", "fas fa-venus-mars", "fab fa-viacoin", "fab fa-viadeo", "fab fa-viadeo-square", "fab fa-viber", "fas fa-video", "fab fa-vimeo", "fab fa-vimeo-square", "fab fa-vimeo-v", "fab fa-vine", "fab fa-vk", "fab fa-vnv", "fas fa-volume-down", "fas fa-volume-off", "fas fa-volume-up", "fab fa-vuejs", "fab fa-weibo", "fab fa-weixin", "fab fa-whatsapp", "fab fa-whatsapp-square", "fas fa-wheelchair", "fab fa-whmcs", "fas fa-wifi", "fab fa-wikipedia-w", "fas fa-window-close", "far fa-window-close", "fas fa-window-maximize", "far fa-window-maximize", "fas fa-window-minimize", "fas fa-window-restore", "far fa-window-restore", "fab fa-windows", "fas fa-won-sign", "fab fa-wordpress", "fab fa-wordpress-simple", "fab fa-wpbeginner", "fab fa-wpexplorer", "fab fa-wpforms", "fas fa-wrench", "fab fa-xbox", "fab fa-xing", "fab fa-xing-square", "fab fa-y-combinator", "fab fa-yahoo", "fab fa-yandex", "fab fa-yandex-international", "fab fa-yelp", "fas fa-yen-sign", "fab fa-yoast", "fab fa-youtube"];
 /* harmony default export */ __webpack_exports__["default"] = (faIcons);
+
+/***/ }),
+
+/***/ "./util/icons.js":
+/*!***********************!*\
+  !*** ./util/icons.js ***!
+  \***********************/
+/*! exports provided: AccordionIcon, ButtonIcon, CountdownIcon, CounterIcon, CallToActionIcon, FlipboxIcon, InfoboxIcon, NoticeIcon, PricingTableIcon, ProgressbarIcon, InteractivePromoIcon, SocialIcon, TeamMembersIcon, TestimonialIcon, ImageComparisonIcon, TestIcon, WrapperIcon, InstagramIcon, ImageGalleryIcon, HeadingIcon, SliderIcon, TypingTextIcon, InstagramOriginalIcon, SaveIcon, ParallaxSliderIcon, CategoryIcon, ToggleContentIcon, TypographyIcon, UserIcon, LeftAlignIcon, RightAlignIcon, CenterAlignIcon, JustifyAlignIcon */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AccordionIcon", function() { return AccordionIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ButtonIcon", function() { return ButtonIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CountdownIcon", function() { return CountdownIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CounterIcon", function() { return CounterIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CallToActionIcon", function() { return CallToActionIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FlipboxIcon", function() { return FlipboxIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InfoboxIcon", function() { return InfoboxIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NoticeIcon", function() { return NoticeIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PricingTableIcon", function() { return PricingTableIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProgressbarIcon", function() { return ProgressbarIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InteractivePromoIcon", function() { return InteractivePromoIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SocialIcon", function() { return SocialIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TeamMembersIcon", function() { return TeamMembersIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TestimonialIcon", function() { return TestimonialIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ImageComparisonIcon", function() { return ImageComparisonIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TestIcon", function() { return TestIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WrapperIcon", function() { return WrapperIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InstagramIcon", function() { return InstagramIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ImageGalleryIcon", function() { return ImageGalleryIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HeadingIcon", function() { return HeadingIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SliderIcon", function() { return SliderIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TypingTextIcon", function() { return TypingTextIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InstagramOriginalIcon", function() { return InstagramOriginalIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SaveIcon", function() { return SaveIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ParallaxSliderIcon", function() { return ParallaxSliderIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CategoryIcon", function() { return CategoryIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ToggleContentIcon", function() { return ToggleContentIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TypographyIcon", function() { return TypographyIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserIcon", function() { return UserIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LeftAlignIcon", function() { return LeftAlignIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RightAlignIcon", function() { return RightAlignIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CenterAlignIcon", function() { return CenterAlignIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JustifyAlignIcon", function() { return JustifyAlignIcon; });
+var AccordionIcon = function AccordionIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    width: "256",
+    height: "256",
+    viewBox: "0 0 256 256",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("linearGradient", {
+    x1: "50%",
+    y1: "-8.333%",
+    x2: "50%",
+    y2: "108.44%",
+    id: "linearGradient-1"
+  }, /*#__PURE__*/React.createElement("stop", {
+    stopColor: "#6DC7FF",
+    offset: "0%"
+  }), /*#__PURE__*/React.createElement("stop", {
+    stopColor: "#E6ABFF",
+    offset: "100%"
+  })), /*#__PURE__*/React.createElement("linearGradient", {
+    x1: "50%",
+    y1: "-.962%",
+    x2: "50%",
+    y2: "102.035%",
+    id: "linearGradient-2"
+  }, /*#__PURE__*/React.createElement("stop", {
+    stopColor: "#1A6DFF",
+    offset: "0%"
+  }), /*#__PURE__*/React.createElement("stop", {
+    stopColor: "#C822FF",
+    offset: "100%"
+  }))), /*#__PURE__*/React.createElement("g", {
+    id: "Page-1",
+    fill: "none",
+    fillRule: "evenodd"
+  }, /*#__PURE__*/React.createElement("g", {
+    id: "eb-icon-accordion"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M128,0 C91.9749264,0 59.4418701,14.8956537 36.1835498,38.8488312 L203.514459,38.8488312 L203.514459,119.749264 L0.277056277,119.749264 C0.103064935,122.478823 0,125.227221 0,128 C0,130.065732 0.0664935065,132.11484 0.164017316,134.15619 L203.514459,134.15619 L203.514459,215.056623 L34.1732294,215.056623 C57.5468052,240.239931 90.9309784,256 128,256 C198.692571,256 256,198.692571 256,128 C256,57.3074286 198.692571,0 128,0 Z",
+    id: "Path",
+    fill: "url(#linearGradient-1)"
+  }), /*#__PURE__*/React.createElement("polygon", {
+    id: "Path",
+    fill: "url(#linearGradient-2)",
+    fillRule: "nonzero",
+    points: "186.891082 74.2621645 171.979913 74.2621645 171.979913 59.3509957 160.797922 59.3509957 160.797922 74.2621645 145.886753 74.2621645 145.886753 85.4441558 160.797922 85.4441558 160.797922 100.355325 171.979913 100.355325 171.979913 85.4441558 186.891082 85.4441558"
+  }), /*#__PURE__*/React.createElement("rect", {
+    id: "Rectangle",
+    fill: "url(#linearGradient-2)",
+    fillRule: "nonzero",
+    x: "145.887",
+    y: "169.015",
+    width: "41.004",
+    height: "11.183"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M128.155152,67.662684 L15.0929177,67.662684 C10.9747532,75.3537662 7.62015584,83.5147359 5.12775758,92.0436364 L128.155152,92.0436364 L128.155152,67.662684 Z",
+    id: "Path",
+    fill: "#E5E5E5"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M128.155152,162.415931 L4.68668398,162.415931 C7.05939394,170.933749 10.2887619,179.09361 14.2805887,186.796883 L128.155152,186.796883 L128.155152,162.415931 Z",
+    id: "Path",
+    fill: "#E5E5E5"
+  }))));
+};
+var ButtonIcon = function ButtonIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    width: "256",
+    height: "156",
+    viewBox: "0 0 256 156",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("linearGradient", {
+    x1: "50%",
+    y1: "-.962%",
+    x2: "50%",
+    y2: "102.035%",
+    id: "linearGradient-1"
+  }, /*#__PURE__*/React.createElement("stop", {
+    stopColor: "#1A6DFF",
+    offset: "0%"
+  }), /*#__PURE__*/React.createElement("stop", {
+    stopColor: "#C822FF",
+    offset: "100%"
+  }))), /*#__PURE__*/React.createElement("g", {
+    id: "Page-1",
+    fill: "none",
+    fillRule: "evenodd"
+  }, /*#__PURE__*/React.createElement("g", {
+    id: "eb-button",
+    fill: "url(#linearGradient-1)",
+    fillRule: "nonzero"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M15.5151515,0 C6.98484752,0 0,6.98484752 0,15.5151515 L0,124.121212 C0,132.651516 6.98484752,139.636364 15.5151515,139.636364 C15.5151515,141.772726 17.2575767,143.515152 19.3939394,143.515152 C21.5303021,143.515152 23.2727273,141.772726 23.2727273,139.636364 L31.030303,139.636364 C31.030303,141.772726 32.7727282,143.515152 34.9090909,143.515152 C37.0454536,143.515152 38.7878788,141.772726 38.7878788,139.636364 L46.5454545,139.636364 C46.5454545,141.772726 48.2878798,143.515152 50.4242424,143.515152 C52.5606051,143.515152 54.3030303,141.772726 54.3030303,139.636364 L62.0606061,139.636364 C62.0606061,141.772726 63.8030313,143.515152 65.9393939,143.515152 C68.0757566,143.515152 69.8181818,141.772726 69.8181818,139.636364 L77.5757576,139.636364 C77.5757576,141.772726 79.3181828,143.515152 81.4545455,143.515152 C83.5909081,143.515152 85.3333333,141.772726 85.3333333,139.636364 L93.0909091,139.636364 C93.0909091,141.772726 94.8333343,143.515152 96.969697,143.515152 C99.1060596,143.515152 100.848485,141.772726 100.848485,139.636364 L108.606061,139.636364 C108.606061,141.772726 110.348486,143.515152 112.484848,143.515152 C114.621211,143.515152 116.363636,141.772726 116.363636,139.636364 L124.121212,139.636364 C124.121212,141.772726 125.863637,143.515152 128,143.515152 C130.136363,143.515152 131.878788,141.772726 131.878788,139.636364 L139.636364,139.636364 C139.636364,141.772726 141.378789,143.515152 143.515152,143.515152 C145.651514,143.515152 147.393939,141.772726 147.393939,139.636364 L155.151515,139.636364 C155.151515,141.772726 156.89394,143.515152 159.030303,143.515152 C161.166666,143.515152 162.909091,141.772726 162.909091,139.636364 L170.666667,139.636364 C170.666667,141.772726 172.409092,143.515152 174.545455,143.515152 C176.681817,143.515152 178.424242,141.772726 178.424242,139.636364 L186.181818,139.636364 C186.181818,141.772726 187.924243,143.515152 190.060606,143.515152 C192.196969,143.515152 193.939394,141.772726 193.939394,139.636364 L201.69697,139.636364 C201.69697,141.772726 203.439395,143.515152 205.575758,143.515152 C207.71212,143.515152 209.454545,141.772726 209.454545,139.636364 L217.212121,139.636364 C217.212121,141.772726 218.954546,143.515152 221.090909,143.515152 C223.227272,143.515152 224.969697,141.772726 224.969697,139.636364 L232.727273,139.636364 C232.727273,141.772726 234.469698,143.515152 236.606061,143.515152 C238.742423,143.515152 240.484848,141.772726 240.484848,139.636364 C249.015152,139.636364 256,132.651516 256,124.121212 L256,15.5151515 C256,6.98484752 249.015152,0 240.484848,0 L15.5151515,0 Z M15.5151515,7.75757576 L240.484848,7.75757576 C244.818184,7.75757576 248.242424,11.1818201 248.242424,15.5151515 L248.242424,124.121212 C248.242424,128.454547 244.818184,131.878788 240.484848,131.878788 L15.5151515,131.878788 C11.1818201,131.878788 7.75757576,128.454547 7.75757576,124.121212 L7.75757576,15.5151515 C7.75757576,11.1818201 11.1818201,7.75757576 15.5151515,7.75757576 Z M42.6666667,19.3939394 C40.530304,19.3939394 38.7878788,21.1363646 38.7878788,23.2727273 C38.7878788,25.4090899 40.530304,27.1515152 42.6666667,27.1515152 C44.8030293,27.1515152 46.5454545,25.4090899 46.5454545,23.2727273 C46.5454545,21.1363646 44.8030293,19.3939394 42.6666667,19.3939394 Z M58.1818182,19.3939394 C56.0454555,19.3939394 54.3030303,21.1363646 54.3030303,23.2727273 C54.3030303,25.4090899 56.0454555,27.1515152 58.1818182,27.1515152 C60.3181808,27.1515152 62.0606061,25.4090899 62.0606061,23.2727273 C62.0606061,21.1363646 60.3181808,19.3939394 58.1818182,19.3939394 Z M73.6969697,19.3939394 C71.560607,19.3939394 69.8181818,21.1363646 69.8181818,23.2727273 C69.8181818,25.4090899 71.560607,27.1515152 73.6969697,27.1515152 C75.8333324,27.1515152 77.5757576,25.4090899 77.5757576,23.2727273 C77.5757576,21.1363646 75.8333324,19.3939394 73.6969697,19.3939394 Z M89.2121212,19.3939394 C87.0757585,19.3939394 85.3333333,21.1363646 85.3333333,23.2727273 C85.3333333,25.4090899 87.0757585,27.1515152 89.2121212,27.1515152 C91.3484839,27.1515152 93.0909091,25.4090899 93.0909091,23.2727273 C93.0909091,21.1363646 91.3484839,19.3939394 89.2121212,19.3939394 Z M104.727273,19.3939394 C102.59091,19.3939394 100.848485,21.1363646 100.848485,23.2727273 C100.848485,25.4090899 102.59091,27.1515152 104.727273,27.1515152 C106.863635,27.1515152 108.606061,25.4090899 108.606061,23.2727273 C108.606061,21.1363646 106.863635,19.3939394 104.727273,19.3939394 Z M120.242424,19.3939394 C118.106062,19.3939394 116.363636,21.1363646 116.363636,23.2727273 C116.363636,25.4090899 118.106062,27.1515152 120.242424,27.1515152 C122.378787,27.1515152 124.121212,25.4090899 124.121212,23.2727273 C124.121212,21.1363646 122.378787,19.3939394 120.242424,19.3939394 Z M135.757576,19.3939394 C133.621213,19.3939394 131.878788,21.1363646 131.878788,23.2727273 C131.878788,25.4090899 133.621213,27.1515152 135.757576,27.1515152 C137.893938,27.1515152 139.636364,25.4090899 139.636364,23.2727273 C139.636364,21.1363646 137.893938,19.3939394 135.757576,19.3939394 Z M151.272727,19.3939394 C149.136365,19.3939394 147.393939,21.1363646 147.393939,23.2727273 C147.393939,25.4090899 149.136365,27.1515152 151.272727,27.1515152 C153.40909,27.1515152 155.151515,25.4090899 155.151515,23.2727273 C155.151515,21.1363646 153.40909,19.3939394 151.272727,19.3939394 Z M166.787879,19.3939394 C164.651516,19.3939394 162.909091,21.1363646 162.909091,23.2727273 C162.909091,25.4090899 164.651516,27.1515152 166.787879,27.1515152 C168.924241,27.1515152 170.666667,25.4090899 170.666667,23.2727273 C170.666667,21.1363646 168.924241,19.3939394 166.787879,19.3939394 Z M182.30303,19.3939394 C180.166668,19.3939394 178.424242,21.1363646 178.424242,23.2727273 C178.424242,25.4090899 180.166668,27.1515152 182.30303,27.1515152 C184.439393,27.1515152 186.181818,25.4090899 186.181818,23.2727273 C186.181818,21.1363646 184.439393,19.3939394 182.30303,19.3939394 Z M197.818182,19.3939394 C195.681819,19.3939394 193.939394,21.1363646 193.939394,23.2727273 C193.939394,25.4090899 195.681819,27.1515152 197.818182,27.1515152 C199.954544,27.1515152 201.69697,25.4090899 201.69697,23.2727273 C201.69697,21.1363646 199.954544,19.3939394 197.818182,19.3939394 Z M213.333333,19.3939394 C211.196971,19.3939394 209.454545,21.1363646 209.454545,23.2727273 C209.454545,25.4090899 211.196971,27.1515152 213.333333,27.1515152 C215.469696,27.1515152 217.212121,25.4090899 217.212121,23.2727273 C217.212121,21.1363646 215.469696,19.3939394 213.333333,19.3939394 Z M170.30303,55.4090899 C162.106062,55.4090899 156.818184,60.9242415 156.818184,69.8181818 C156.818184,78.7121222 162.045456,84.2272737 170.30303,84.2272737 C178.515153,84.2272737 183.757576,78.7121222 183.757576,69.8181818 C183.757576,60.9242415 178.515153,55.4090899 170.30303,55.4090899 Z M41.2727273,56.1515171 L41.2727273,83.4848504 L54.4090919,83.4848504 C60.2575748,83.4848504 63.9393939,80.3939413 63.9393939,75.6060625 C63.9393939,72.1212121 61.1818201,69.3333333 57.6060625,69.1515152 L57.6060625,68.7878788 C60.499999,68.3939413 62.6969716,65.9090928 62.6969716,62.969697 C62.6969716,58.7272727 59.469696,56.1515171 54.0151505,56.1515171 L41.2727273,56.1515171 Z M70.8636354,56.1515171 L70.8636354,74.0606061 C70.8636354,80.1818182 75.5454565,84.2272737 82.6515161,84.2272737 C89.7424252,84.2272737 94.4090919,80.1818182 94.4090919,74.0606061 L94.4090919,56.1515171 L87.4545455,56.1515171 L87.4545455,73.3181828 C87.4545455,76.499999 85.7272747,78.3636364 82.6515161,78.3636364 C79.560607,78.3636364 77.8181818,76.4848485 77.8181818,73.3181828 L77.8181818,56.1515171 L70.8636354,56.1515171 Z M190.848485,56.1515171 L190.848485,83.4848504 L197.439395,83.4848504 L197.439395,67.9545445 L197.803031,67.9545445 L209.212121,83.4848504 L214.727273,83.4848504 L214.727273,56.1515171 L208.136363,56.1515171 L208.136363,71.5303021 L207.772726,71.5303021 L196.393941,56.1515171 L190.848485,56.1515171 Z M101.318183,56.1666676 L101.318183,61.7424252 L109.196971,61.7424252 L109.196971,83.4848504 L116.121212,83.4848504 L116.121212,61.7424252 L124.015151,61.7424252 L124.015151,56.1666676 L101.318183,56.1666676 Z M129.40909,56.1666676 L129.40909,61.7424252 L137.287878,61.7424252 L137.287878,83.4848504 L144.227274,83.4848504 L144.227274,61.7424252 L152.121212,61.7424252 L152.121212,56.1666676 L129.40909,56.1666676 Z M48.2272737,61.0454536 L52.1666676,61.0454536 C54.530304,61.0454536 55.9242434,62.2272737 55.9242434,64.1818182 C55.9242434,66.1060616 54.439393,67.2878778 51.8939384,67.2878778 L48.2272737,67.2878778 L48.2272737,61.0454536 Z M170.30303,61.1666657 C174.136363,61.1666657 176.681817,64.5454545 176.681817,69.8181818 C176.681817,75.0909091 174.151517,78.4696979 170.30303,78.4696979 C166.424242,78.4696979 163.893938,75.0909091 163.893938,69.8181818 C163.893938,64.5454545 166.454547,61.1666657 170.30303,61.1666657 Z M48.2272737,71.5151515 L52.3939413,71.5151515 C55.2727273,71.5151515 56.8787898,72.7727282 56.8787898,75.0000019 C56.8787898,77.3181828 55.3030322,78.5757595 52.4242424,78.5757595 L48.2272737,78.5757595 L48.2272737,71.5151515 Z M42.6666667,112.484848 C40.530304,112.484848 38.7878788,114.227274 38.7878788,116.363636 C38.7878788,118.499999 40.530304,120.242424 42.6666667,120.242424 C44.8030293,120.242424 46.5454545,118.499999 46.5454545,116.363636 C46.5454545,114.227274 44.8030293,112.484848 42.6666667,112.484848 Z M58.1818182,112.484848 C56.0454555,112.484848 54.3030303,114.227274 54.3030303,116.363636 C54.3030303,118.499999 56.0454555,120.242424 58.1818182,120.242424 C60.3181808,120.242424 62.0606061,118.499999 62.0606061,116.363636 C62.0606061,114.227274 60.3181808,112.484848 58.1818182,112.484848 Z M73.6969697,112.484848 C71.560607,112.484848 69.8181818,114.227274 69.8181818,116.363636 C69.8181818,118.499999 71.560607,120.242424 73.6969697,120.242424 C75.8333324,120.242424 77.5757576,118.499999 77.5757576,116.363636 C77.5757576,114.227274 75.8333324,112.484848 73.6969697,112.484848 Z M89.2121212,112.484848 C87.0757585,112.484848 85.3333333,114.227274 85.3333333,116.363636 C85.3333333,118.499999 87.0757585,120.242424 89.2121212,120.242424 C91.3484839,120.242424 93.0909091,118.499999 93.0909091,116.363636 C93.0909091,114.227274 91.3484839,112.484848 89.2121212,112.484848 Z M104.727273,112.484848 C102.59091,112.484848 100.848485,114.227274 100.848485,116.363636 C100.848485,118.499999 102.59091,120.242424 104.727273,120.242424 C106.863635,120.242424 108.606061,118.499999 108.606061,116.363636 C108.606061,114.227274 106.863635,112.484848 104.727273,112.484848 Z M120.242424,112.484848 C118.106062,112.484848 116.363636,114.227274 116.363636,116.363636 C116.363636,118.499999 118.106062,120.242424 120.242424,120.242424 C122.378787,120.242424 124.121212,118.499999 124.121212,116.363636 C124.121212,114.227274 122.378787,112.484848 120.242424,112.484848 Z M135.757576,112.484848 C133.621213,112.484848 131.878788,114.227274 131.878788,116.363636 C131.878788,118.499999 133.621213,120.242424 135.757576,120.242424 C137.893938,120.242424 139.636364,118.499999 139.636364,116.363636 C139.636364,114.227274 137.893938,112.484848 135.757576,112.484848 Z M151.272727,112.484848 C149.136365,112.484848 147.393939,114.227274 147.393939,116.363636 C147.393939,118.499999 149.136365,120.242424 151.272727,120.242424 C153.40909,120.242424 155.151515,118.499999 155.151515,116.363636 C155.151515,114.227274 153.40909,112.484848 151.272727,112.484848 Z M166.787879,112.484848 C164.651516,112.484848 162.909091,114.227274 162.909091,116.363636 C162.909091,118.499999 164.651516,120.242424 166.787879,120.242424 C168.924241,120.242424 170.666667,118.499999 170.666667,116.363636 C170.666667,114.227274 168.924241,112.484848 166.787879,112.484848 Z M182.30303,112.484848 C180.166668,112.484848 178.424242,114.227274 178.424242,116.363636 C178.424242,118.499999 180.166668,120.242424 182.30303,120.242424 C184.439393,120.242424 186.181818,118.499999 186.181818,116.363636 C186.181818,114.227274 184.439393,112.484848 182.30303,112.484848 Z M197.818182,112.484848 C195.681819,112.484848 193.939394,114.227274 193.939394,116.363636 C193.939394,118.499999 195.681819,120.242424 197.818182,120.242424 C199.954544,120.242424 201.69697,118.499999 201.69697,116.363636 C201.69697,114.227274 199.954544,112.484848 197.818182,112.484848 Z M213.333333,112.484848 C211.196971,112.484848 209.454545,114.227274 209.454545,116.363636 C209.454545,118.499999 211.196971,120.242424 213.333333,120.242424 C215.469696,120.242424 217.212121,118.499999 217.212121,116.363636 C217.212121,114.227274 215.469696,112.484848 213.333333,112.484848 Z M27.1515152,147.393939 C25.0151525,147.393939 23.2727273,149.136365 23.2727273,151.272727 C23.2727273,153.40909 25.0151525,155.151515 27.1515152,155.151515 C29.2878778,155.151515 31.030303,153.40909 31.030303,151.272727 C31.030303,149.136365 29.2878778,147.393939 27.1515152,147.393939 Z M42.6666667,147.393939 C40.530304,147.393939 38.7878788,149.136365 38.7878788,151.272727 C38.7878788,153.40909 40.530304,155.151515 42.6666667,155.151515 C44.8030293,155.151515 46.5454545,153.40909 46.5454545,151.272727 C46.5454545,149.136365 44.8030293,147.393939 42.6666667,147.393939 Z M58.1818182,147.393939 C56.0454555,147.393939 54.3030303,149.136365 54.3030303,151.272727 C54.3030303,153.40909 56.0454555,155.151515 58.1818182,155.151515 C60.3181808,155.151515 62.0606061,153.40909 62.0606061,151.272727 C62.0606061,149.136365 60.3181808,147.393939 58.1818182,147.393939 Z M73.6969697,147.393939 C71.560607,147.393939 69.8181818,149.136365 69.8181818,151.272727 C69.8181818,153.40909 71.560607,155.151515 73.6969697,155.151515 C75.8333324,155.151515 77.5757576,153.40909 77.5757576,151.272727 C77.5757576,149.136365 75.8333324,147.393939 73.6969697,147.393939 Z M89.2121212,147.393939 C87.0757585,147.393939 85.3333333,149.136365 85.3333333,151.272727 C85.3333333,153.40909 87.0757585,155.151515 89.2121212,155.151515 C91.3484839,155.151515 93.0909091,153.40909 93.0909091,151.272727 C93.0909091,149.136365 91.3484839,147.393939 89.2121212,147.393939 Z M104.727273,147.393939 C102.59091,147.393939 100.848485,149.136365 100.848485,151.272727 C100.848485,153.40909 102.59091,155.151515 104.727273,155.151515 C106.863635,155.151515 108.606061,153.40909 108.606061,151.272727 C108.606061,149.136365 106.863635,147.393939 104.727273,147.393939 Z M120.242424,147.393939 C118.106062,147.393939 116.363636,149.136365 116.363636,151.272727 C116.363636,153.40909 118.106062,155.151515 120.242424,155.151515 C122.378787,155.151515 124.121212,153.40909 124.121212,151.272727 C124.121212,149.136365 122.378787,147.393939 120.242424,147.393939 Z M135.757576,147.393939 C133.621213,147.393939 131.878788,149.136365 131.878788,151.272727 C131.878788,153.40909 133.621213,155.151515 135.757576,155.151515 C137.893938,155.151515 139.636364,153.40909 139.636364,151.272727 C139.636364,149.136365 137.893938,147.393939 135.757576,147.393939 Z M151.272727,147.393939 C149.136365,147.393939 147.393939,149.136365 147.393939,151.272727 C147.393939,153.40909 149.136365,155.151515 151.272727,155.151515 C153.40909,155.151515 155.151515,153.40909 155.151515,151.272727 C155.151515,149.136365 153.40909,147.393939 151.272727,147.393939 Z M166.787879,147.393939 C164.651516,147.393939 162.909091,149.136365 162.909091,151.272727 C162.909091,153.40909 164.651516,155.151515 166.787879,155.151515 C168.924241,155.151515 170.666667,153.40909 170.666667,151.272727 C170.666667,149.136365 168.924241,147.393939 166.787879,147.393939 Z M182.30303,147.393939 C180.166668,147.393939 178.424242,149.136365 178.424242,151.272727 C178.424242,153.40909 180.166668,155.151515 182.30303,155.151515 C184.439393,155.151515 186.181818,153.40909 186.181818,151.272727 C186.181818,149.136365 184.439393,147.393939 182.30303,147.393939 Z M197.818182,147.393939 C195.681819,147.393939 193.939394,149.136365 193.939394,151.272727 C193.939394,153.40909 195.681819,155.151515 197.818182,155.151515 C199.954544,155.151515 201.69697,153.40909 201.69697,151.272727 C201.69697,149.136365 199.954544,147.393939 197.818182,147.393939 Z M213.333333,147.393939 C211.196971,147.393939 209.454545,149.136365 209.454545,151.272727 C209.454545,153.40909 211.196971,155.151515 213.333333,155.151515 C215.469696,155.151515 217.212121,153.40909 217.212121,151.272727 C217.212121,149.136365 215.469696,147.393939 213.333333,147.393939 Z M228.848485,147.393939 C226.712122,147.393939 224.969697,149.136365 224.969697,151.272727 C224.969697,153.40909 226.712122,155.151515 228.848485,155.151515 C230.984848,155.151515 232.727273,153.40909 232.727273,151.272727 C232.727273,149.136365 230.984848,147.393939 228.848485,147.393939 Z",
+    id: "Shape"
+  }))));
+};
+var CountdownIcon = function CountdownIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    id: "eb-countdown",
+    viewBox: "0 0 64 64"
+  }, /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_1__43666",
+    gradientUnits: "userSpaceOnUse",
+    x1: "30",
+    y1: "33",
+    x2: "30",
+    y2: "38.875",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#6dc7ff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#e6abff"
+  })), /*#__PURE__*/React.createElement("circle", {
+    cx: "30",
+    cy: "36",
+    r: "4",
+    fill: "url(#SVGID_1__43666)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_2__43666",
+    gradientUnits: "userSpaceOnUse",
+    x1: "30",
+    y1: "5.5",
+    x2: "30",
+    y2: "59.058",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M30,18c-9.925,0-18,8.075-18,18s8.075,18,18,18s18-8.075,18-18S39.925,18,30,18z M45.949,37 c-0.228,3.658-1.683,6.98-3.968,9.567l-1.375-1.375l-1.414,1.414l1.375,1.375c-2.587,2.285-5.91,3.74-9.568,3.968V50h-2v1.949 c-3.658-0.228-6.981-1.683-9.568-3.968l1.375-1.375l-1.414-1.414l-1.375,1.375c-2.284-2.587-3.74-5.91-3.968-9.567H16v-2h-1.949 c0.228-3.658,1.683-6.98,3.968-9.567l1.375,1.375l1.414-1.414l-1.375-1.375c2.587-2.285,5.91-3.74,9.568-3.968V22h2v-1.949 c3.658,0.228,6.981,1.683,9.568,3.968l-1.375,1.375l1.414,1.414l1.375-1.375c2.284,2.587,3.74,5.91,3.968,9.567H44v2H45.949z",
+    fill: "url(#SVGID_2__43666)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_3__43666",
+    gradientUnits: "userSpaceOnUse",
+    x1: "32",
+    y1: "5.5",
+    x2: "32",
+    y2: "59.058",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M31,31.101V27h-2v4.101c-2.279,0.465-4,2.484-4,4.899c0,2.757,2.243,5,5,5 c2.415,0,4.434-1.721,4.899-4H39v-2h-4.101C34.5,33.044,32.956,31.5,31,31.101z M30,39c-1.654,0-3-1.346-3-3s1.346-3,3-3 s3,1.346,3,3S31.654,39,30,39z",
+    fill: "url(#SVGID_3__43666)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_4__43666",
+    gradientUnits: "userSpaceOnUse",
+    x1: "32",
+    y1: "5.5",
+    x2: "32",
+    y2: "59.058",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M54,33h-2.21C50.366,22.607,41.661,14.505,31,14.025v-0.167c1.72-0.447,3-1.999,3-3.858 c0-2.206-1.794-4-4-4s-4,1.794-4,4c0,1.859,1.28,3.411,3,3.858v0.167C17.332,14.55,8,24.205,8,36c0,12.131,9.869,22,22,22 c11.113,0,20.322-8.284,21.79-19H54c1.103,0,2-0.897,2-2v-2C56,33.897,55.103,33,54,33z M28,10c0-1.103,0.897-2,2-2s2,0.897,2,2 s-0.897,2-2,2S28,11.103,28,10z M30,56c-11.028,0-20-8.972-20-20s8.972-20,20-20s20,8.972,20,20S41.028,56,30,56z M54,37h-2.025 C51.99,36.668,52,36.335,52,36s-0.01-0.668-0.025-1H54V37z",
+    fill: "url(#SVGID_4__43666)"
+  }));
+};
+var CounterIcon = function CounterIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    x: "0",
+    y: "0",
+    enableBackground: "new 0 0 66 70",
+    version: "1.1",
+    viewBox: "0 0 66 70",
+    xmlSpace: "preserve"
+  }, /*#__PURE__*/React.createElement("linearGradient", {
+    id: "COUNTER_SVGID_1_",
+    x1: "-0.125",
+    x2: "64.866",
+    y1: "35",
+    y2: "35",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#C822FF"
+  })), /*#__PURE__*/React.createElement("path", {
+    fill: "url(#COUNTER_SVGID_1_)",
+    d: "M60.7 61.1H5.3c-2.9 0-5.3-2.4-5.3-5.3V14.2c0-2.9 2.4-5.3 5.3-5.3h55.4c2.9 0 5.3 2.4 5.3 5.3v41.6c0 2.9-2.4 5.3-5.3 5.3zM5.3 11.8c-1.3 0-2.4 1.1-2.4 2.4v41.6c0 1.3 1.1 2.4 2.4 2.4h55.4c1.3 0 2.4-1.1 2.4-2.4V14.2c0-1.3-1.1-2.4-2.4-2.4H5.3z"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "COUNTER_SVGID_2_",
+    x1: "-0.125",
+    x2: "64.866",
+    y1: "16.62",
+    y2: "16.62",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#C822FF"
+  })), /*#__PURE__*/React.createElement("circle", {
+    fill: "url(#COUNTER_SVGID_2_)",
+    cx: "21.5",
+    cy: "16.6",
+    r: "1.3"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "COUNTER_SVGID_3_",
+    x1: "-0.125",
+    x2: "64.866",
+    y1: "22.572",
+    y2: "22.572",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#C822FF"
+  })), /*#__PURE__*/React.createElement("circle", {
+    fill: "url(#COUNTER_SVGID_3_)",
+    cx: "21.5",
+    cy: "22.6",
+    r: "1.3"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "COUNTER_SVGID_4_",
+    x1: "-0.125",
+    x2: "64.866",
+    y1: "28.525",
+    y2: "28.525",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#C822FF"
+  })), /*#__PURE__*/React.createElement("circle", {
+    fill: "url(#COUNTER_SVGID_4_)",
+    cx: "21.5",
+    cy: "28.5",
+    r: "1.3"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "COUNTER_SVGID_5_",
+    x1: "-0.125",
+    x2: "64.866",
+    y1: "34.477",
+    y2: "34.477",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#C822FF"
+  })), /*#__PURE__*/React.createElement("circle", {
+    fill: "url(#COUNTER_SVGID_5_)",
+    cx: "21.5",
+    cy: "34.5",
+    r: "1.3"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "COUNTER_SVGID_6_",
+    x1: "-0.125",
+    x2: "64.866",
+    y1: "40.43",
+    y2: "40.43",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#C822FF"
+  })), /*#__PURE__*/React.createElement("circle", {
+    fill: "url(#COUNTER_SVGID_6_)",
+    cx: "21.5",
+    cy: "40.4",
+    r: "1.3"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "COUNTER_SVGID_7_",
+    x1: "-0.125",
+    x2: "64.866",
+    y1: "46.382",
+    y2: "46.382",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#C822FF"
+  })), /*#__PURE__*/React.createElement("circle", {
+    fill: "url(#COUNTER_SVGID_7_)",
+    cx: "21.5",
+    cy: "46.4",
+    r: "1.3"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "COUNTER_SVGID_8_",
+    x1: "-0.125",
+    x2: "64.866",
+    y1: "52.335",
+    y2: "52.335",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#C822FF"
+  })), /*#__PURE__*/React.createElement("circle", {
+    fill: "url(#COUNTER_SVGID_8_)",
+    cx: "21.5",
+    cy: "52.3",
+    r: "1.3"
+  }), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("linearGradient", {
+    id: "COUNTER_SVGID_9_",
+    x1: "-0.125",
+    x2: "64.866",
+    y1: "16.62",
+    y2: "16.62",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#C822FF"
+  })), /*#__PURE__*/React.createElement("circle", {
+    fill: "url(#COUNTER_SVGID_9_)",
+    cx: "43.7",
+    cy: "16.6",
+    r: "1.3"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "COUNTER_SVGID_10_",
+    x1: "-0.125",
+    x2: "64.866",
+    y1: "22.572",
+    y2: "22.572",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#C822FF"
+  })), /*#__PURE__*/React.createElement("circle", {
+    fill: "url(#COUNTER_SVGID_10_)",
+    cx: "43.7",
+    cy: "22.6",
+    r: "1.3"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "COUNTER_SVGID_11_",
+    x1: "-0.125",
+    x2: "64.866",
+    y1: "28.525",
+    y2: "28.525",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#C822FF"
+  })), /*#__PURE__*/React.createElement("circle", {
+    fill: "url(#COUNTER_SVGID_11_)",
+    cx: "43.7",
+    cy: "28.5",
+    r: "1.3"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "COUNTER_SVGID_12_",
+    x1: "-0.125",
+    x2: "64.866",
+    y1: "34.477",
+    y2: "34.477",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#C822FF"
+  })), /*#__PURE__*/React.createElement("circle", {
+    fill: "url(#COUNTER_SVGID_12_)",
+    cx: "43.7",
+    cy: "34.5",
+    r: "1.3"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "COUNTER_SVGID_13_",
+    x1: "-0.125",
+    x2: "64.866",
+    y1: "40.43",
+    y2: "40.43",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#C822FF"
+  })), /*#__PURE__*/React.createElement("circle", {
+    fill: "url(#COUNTER_SVGID_13_)",
+    cx: "43.7",
+    cy: "40.4",
+    r: "1.3"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "COUNTER_SVGID_14_",
+    x1: "-0.125",
+    x2: "64.866",
+    y1: "46.382",
+    y2: "46.382",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#C822FF"
+  })), /*#__PURE__*/React.createElement("circle", {
+    fill: "url(#COUNTER_SVGID_14_)",
+    cx: "43.7",
+    cy: "46.4",
+    r: "1.3"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "COUNTER_SVGID_15_",
+    x1: "-0.125",
+    x2: "64.866",
+    y1: "52.335",
+    y2: "52.335",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#C822FF"
+  })), /*#__PURE__*/React.createElement("circle", {
+    fill: "url(#COUNTER_SVGID_15_)",
+    cx: "43.7",
+    cy: "52.3",
+    r: "1.3"
+  })), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "COUNTER_SVGID_16_",
+    x1: "-0.125",
+    x2: "64.866",
+    y1: "35.766",
+    y2: "35.766",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#C822FF"
+  })), /*#__PURE__*/React.createElement("path", {
+    fill: "url(#COUNTER_SVGID_16_)",
+    d: "M55.9 28.7h-6v-1.8h8v1.7l-4.5 15.9h-2l4.5-15.8z"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "COUNTER_SVGID_17_",
+    x1: "-0.125",
+    x2: "64.866",
+    y1: "35.766",
+    y2: "35.766",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#C822FF"
+  })), /*#__PURE__*/React.createElement("path", {
+    fill: "url(#COUNTER_SVGID_17_)",
+    d: "M33.1 43.2h-1.2c-.2 0-.3-.2-.3-.3V28.7c0-.2.2-.3.3-.3h1.2c.2 0 .3.2.3.3v14.2c.1.2-.1.3-.3.3z"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "COUNTER_SVGID_18_",
+    x1: "-0.125",
+    x2: "64.866",
+    y1: "35.766",
+    y2: "35.766",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#C822FF"
+  })), /*#__PURE__*/React.createElement("path", {
+    fill: "url(#COUNTER_SVGID_18_)",
+    d: "M12.5 43.2h-1.2c-.2 0-.3-.2-.3-.3V28.7c0-.2.2-.3.3-.3h1.2c.2 0 .3.2.3.3v14.2c.1.2-.1.3-.3.3z"
+  }));
+};
+var CallToActionIcon = function CallToActionIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    id: "eb-cta",
+    viewBox: "0 0 64 64"
+  }, /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_1__52516",
+    gradientUnits: "userSpaceOnUse",
+    x1: "32",
+    y1: "12",
+    x2: "32",
+    y2: "20.876",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#6dc7ff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#e6abff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M36,16.911c0,1.36-0.68,2.56-1.712,3.288c-0.296-0.984-1.208-1.688-2.288-1.688 c-1.08,0-1.992,0.704-2.288,1.688C28.68,19.471,28,18.271,28,16.911c0-2.208,1.792-4,4-4S36,14.703,36,16.911z",
+    fill: "url(#SVGID_1__52516)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_2__52516",
+    gradientUnits: "userSpaceOnUse",
+    x1: "32",
+    y1: "4",
+    x2: "32",
+    y2: "59.752",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("rect", {
+    x: "31",
+    y: "6",
+    width: "2",
+    height: "4",
+    fill: "url(#SVGID_2__52516)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_3__52516",
+    gradientUnits: "userSpaceOnUse",
+    x1: "41",
+    y1: "4",
+    x2: "41",
+    y2: "59.752",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("rect", {
+    x: "39",
+    y: "16",
+    width: "4",
+    height: "2",
+    fill: "url(#SVGID_3__52516)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_4__52516",
+    gradientUnits: "userSpaceOnUse",
+    x1: "23",
+    y1: "4",
+    x2: "23",
+    y2: "59.752",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("rect", {
+    x: "21",
+    y: "16",
+    width: "4",
+    height: "2",
+    fill: "url(#SVGID_4__52516)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_5__52516",
+    gradientUnits: "userSpaceOnUse",
+    x1: "38.364",
+    y1: "4",
+    x2: "38.364",
+    y2: "59.752",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("polygon", {
+    points: "37.657,12.758 36.243,11.344 39.071,8.515 40.485,9.929",
+    fill: "url(#SVGID_5__52516)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_6__52516",
+    gradientUnits: "userSpaceOnUse",
+    x1: "25.637",
+    y1: "4",
+    x2: "25.637",
+    y2: "59.752",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("polygon", {
+    points: "26.344,12.758 23.515,9.929 24.929,8.515 27.758,11.344",
+    fill: "url(#SVGID_6__52516)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_7__52516",
+    gradientUnits: "userSpaceOnUse",
+    x1: "32",
+    y1: "4",
+    x2: "32",
+    y2: "59.752",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M34,58h-4c-1.103,0-2-0.897-2-2V44h-9.013c-0.711,0-1.351-0.369-1.711-0.987 c-0.365-0.627-0.371-1.38-0.013-2.012l12.168-21.493C29.966,18.564,30.926,18.001,32,18c1.074,0,2.035,0.563,2.569,1.507 l12.168,21.494c0.357,0.632,0.353,1.384-0.014,2.012C46.363,43.631,45.724,44,45.013,44H36v12C36,57.103,35.103,58,34,58z M32.001,20c-0.166,0-0.577,0.049-0.829,0.493L19.003,41.986L30,42v14h4V42h11.013l0.854-0.507l-0.87,0.492L32.829,20.492 C32.577,20.048,32.166,20,32.001,20z",
+    fill: "url(#SVGID_7__52516)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_8__52516",
+    gradientUnits: "userSpaceOnUse",
+    x1: "32",
+    y1: "25.25",
+    x2: "32",
+    y2: "40.053",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#6dc7ff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#e6abff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M38.28,39H25.72c-0.766,0-1.247-0.828-0.867-1.493l6.28-10.99c0.383-0.671,1.35-0.671,1.733,0 l6.28,10.99C39.527,38.172,39.047,39,38.28,39z",
+    fill: "url(#SVGID_8__52516)"
+  }));
+};
+var FlipboxIcon = function FlipboxIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    width: "600",
+    height: "672",
+    viewBox: "0 0 600 672",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("linearGradient", {
+    x1: "50%",
+    y1: "-.962%",
+    x2: "50%",
+    y2: "102.035%",
+    id: "linearGradient-1"
+  }, /*#__PURE__*/React.createElement("stop", {
+    stopColor: "#1A6DFF",
+    offset: "0%"
+  }), /*#__PURE__*/React.createElement("stop", {
+    stopColor: "#C822FF",
+    offset: "100%"
+  }))), /*#__PURE__*/React.createElement("g", {
+    id: "Page-1",
+    fill: "none",
+    fillRule: "evenodd"
+  }, /*#__PURE__*/React.createElement("g", {
+    id: "Artboard",
+    fill: "url(#linearGradient-1)",
+    fillRule: "nonzero"
+  }, /*#__PURE__*/React.createElement("g", {
+    id: "eb-flipbox"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M410,0 L393.55469,13.82812 L301.36719,91.48437 L0,91.48437 L0,671.48437 L308.63281,671.48437 L410,586.13281 L410,0 Z M390,42.96875 L390,576.83593 L301.36719,651.48437 L20,651.48437 L20,111.48437 L308.63281,111.48437 L390,42.96875 Z M430,91.48437 C424.49219,91.48437 420,95.97656 420,101.48437 C420,106.99218 424.49219,111.48437 430,111.48437 C435.50781,111.48437 440,106.99218 440,101.48437 C440,95.97656 435.50781,91.48437 430,91.48437 Z M470,91.48437 C464.49219,91.48437 460,95.97656 460,101.48437 C460,106.99218 464.49219,111.48437 470,111.48437 C475.50781,111.48437 480,106.99218 480,101.48437 C480,95.97656 475.50781,91.48437 470,91.48437 Z M510,91.48437 C504.49219,91.48437 500,95.97656 500,101.48437 C500,106.99218 504.49219,111.48437 510,111.48437 C515.50781,111.48437 520,106.99218 520,101.48437 C520,95.97656 515.50781,91.48437 510,91.48437 Z M550,91.48437 C544.49219,91.48437 540,95.97656 540,101.48437 C540,106.99218 544.49219,111.48437 550,111.48437 C555.50781,111.48437 560,106.99218 560,101.48437 C560,95.97656 555.50781,91.48437 550,91.48437 Z M590,91.48437 C584.49219,91.48437 580,95.97656 580,101.48437 C580,106.99218 584.49219,111.48437 590,111.48437 C595.50781,111.48437 600,106.99218 600,101.48437 C600,95.97656 595.50781,91.48437 590,91.48437 Z M300,131.48437 C294.49219,131.48437 290,135.97656 290,141.48437 C290,146.99218 294.49219,151.48437 300,151.48437 C305.50781,151.48437 310,146.99218 310,141.48437 C310,135.97656 305.50781,131.48437 300,131.48437 Z M590,131.48437 C584.49219,131.48437 580,135.97656 580,141.48437 C580,146.99218 584.49219,151.48437 590,151.48437 C595.50781,151.48437 600,146.99218 600,141.48437 C600,135.97656 595.50781,131.48437 590,131.48437 Z M300,171.48437 C294.49219,171.48437 290,175.97656 290,181.48437 C290,186.99218 294.49219,191.48437 300,191.48437 C305.50781,191.48437 310,186.99218 310,181.48437 C310,175.97656 305.50781,171.48437 300,171.48437 Z M590,171.48437 C584.49219,171.48437 580,175.97656 580,181.48437 C580,186.99218 584.49219,191.48437 590,191.48437 C595.50781,191.48437 600,186.99218 600,181.48437 C600,175.97656 595.50781,171.48437 590,171.48437 Z M300,211.48437 C294.49219,211.48437 290,215.97656 290,221.48437 C290,226.99218 294.49219,231.48437 300,231.48437 C305.50781,231.48437 310,226.99218 310,221.48437 C310,215.97656 305.50781,211.48437 300,211.48437 Z M590,211.48437 C584.49219,211.48437 580,215.97656 580,221.48437 C580,226.99218 584.49219,231.48437 590,231.48437 C595.50781,231.48437 600,226.99218 600,221.48437 C600,215.97656 595.50781,211.48437 590,211.48437 Z M300,251.48437 C294.49219,251.48437 290,255.97656 290,261.48437 C290,266.99218 294.49219,271.48437 300,271.48437 C305.50781,271.48437 310,266.99218 310,261.48437 C310,255.97656 305.50781,251.48437 300,251.48437 Z M590,251.48437 C584.49219,251.48437 580,255.97656 580,261.48437 C580,266.99218 584.49219,271.48437 590,271.48437 C595.50781,271.48437 600,266.99218 600,261.48437 C600,255.97656 595.50781,251.48437 590,251.48437 Z M270,291.48437 L270,331.48437 L220,331.48437 C181.44531,331.48437 150,362.92968 150,401.48437 L150,491.48437 L170,491.48437 L170,401.48437 C170,373.75 192.26563,351.48437 220,351.48437 L270,351.48437 L270,391.48437 L330,341.48437 L270,291.48437 Z M590,291.48437 C584.49219,291.48437 580,295.97656 580,301.48437 C580,306.99218 584.49219,311.48437 590,311.48437 C595.50781,311.48437 600,306.99218 600,301.48437 C600,295.97656 595.50781,291.48437 590,291.48437 Z M590,331.48437 C584.49219,331.48437 580,335.97656 580,341.48437 C580,346.99218 584.49219,351.48437 590,351.48437 C595.50781,351.48437 600,346.99218 600,341.48437 C600,335.97656 595.50781,331.48437 590,331.48437 Z M590,371.48437 C584.49219,371.48437 580,375.97656 580,381.48437 C580,386.99218 584.49219,391.48437 590,391.48437 C595.50781,391.48437 600,386.99218 600,381.48437 C600,375.97656 595.50781,371.48437 590,371.48437 Z M300,411.48437 C294.49219,411.48437 290,415.97656 290,421.48437 C290,426.99218 294.49219,431.48437 300,431.48437 C305.50781,431.48437 310,426.99218 310,421.48437 C310,415.97656 305.50781,411.48437 300,411.48437 Z M590,411.48437 C584.49219,411.48437 580,415.97656 580,421.48437 C580,426.99218 584.49219,431.48437 590,431.48437 C595.50781,431.48437 600,426.99218 600,421.48437 C600,415.97656 595.50781,411.48437 590,411.48437 Z M300,451.48437 C294.49219,451.48437 290,455.97656 290,461.48437 C290,466.99218 294.49219,471.48437 300,471.48437 C305.50781,471.48437 310,466.99218 310,461.48437 C310,455.97656 305.50781,451.48437 300,451.48437 Z M590,451.48437 C584.49219,451.48437 580,455.97656 580,461.48437 C580,466.99218 584.49219,471.48437 590,471.48437 C595.50781,471.48437 600,466.99218 600,461.48437 C600,455.97656 595.50781,451.48437 590,451.48437 Z M300,491.48437 C294.49219,491.48437 290,495.97656 290,501.48437 C290,506.99218 294.49219,511.48437 300,511.48437 C305.50781,511.48437 310,506.99218 310,501.48437 C310,495.97656 305.50781,491.48437 300,491.48437 Z M590,491.48437 C584.49219,491.48437 580,495.97656 580,501.48437 C580,506.99218 584.49219,511.48437 590,511.48437 C595.50781,511.48437 600,506.99218 600,501.48437 C600,495.97656 595.50781,491.48437 590,491.48437 Z M300,531.48437 C294.49219,531.48437 290,535.97656 290,541.48437 C290,546.99218 294.49219,551.48437 300,551.48437 C305.50781,551.48437 310,546.99218 310,541.48437 C310,535.97656 305.50781,531.48437 300,531.48437 Z M590,531.48437 C584.49219,531.48437 580,535.97656 580,541.48437 C580,546.99218 584.49219,551.48437 590,551.48437 C595.50781,551.48437 600,546.99218 600,541.48437 C600,535.97656 595.50781,531.48437 590,531.48437 Z M300,571.48437 C294.49219,571.48437 290,575.97656 290,581.48437 C290,586.99218 294.49219,591.48437 300,591.48437 C305.50781,591.48437 310,586.99218 310,581.48437 C310,575.97656 305.50781,571.48437 300,571.48437 Z M590,571.48437 C584.49219,571.48437 580,575.97656 580,581.48437 C580,586.99218 584.49219,591.48437 590,591.48437 C595.50781,591.48437 600,586.99218 600,581.48437 C600,575.97656 595.50781,571.48437 590,571.48437 Z M300,611.48437 C294.49219,611.48437 290,615.97656 290,621.48437 C290,626.99218 294.49219,631.48437 300,631.48437 C305.50781,631.48437 310,626.99218 310,621.48437 C310,615.97656 305.50781,611.48437 300,611.48437 Z M590,611.48437 C584.49219,611.48437 580,615.97656 580,621.48437 C580,626.99218 584.49219,631.48437 590,631.48437 C595.50781,631.48437 600,626.99218 600,621.48437 C600,615.97656 595.50781,611.48437 590,611.48437 Z M350,651.48437 C344.49219,651.48437 340,655.97656 340,661.48437 C340,666.99218 344.49219,671.48437 350,671.48437 C355.50781,671.48437 360,666.99218 360,661.48437 C360,655.97656 355.50781,651.48437 350,651.48437 Z M390,651.48437 C384.49219,651.48437 380,655.97656 380,661.48437 C380,666.99218 384.49219,671.48437 390,671.48437 C395.50781,671.48437 400,666.99218 400,661.48437 C400,655.97656 395.50781,651.48437 390,651.48437 Z M430,651.48437 C424.49219,651.48437 420,655.97656 420,661.48437 C420,666.99218 424.49219,671.48437 430,671.48437 C435.50781,671.48437 440,666.99218 440,661.48437 C440,655.97656 435.50781,651.48437 430,651.48437 Z M470,651.48437 C464.49219,651.48437 460,655.97656 460,661.48437 C460,666.99218 464.49219,671.48437 470,671.48437 C475.50781,671.48437 480,666.99218 480,661.48437 C480,655.97656 475.50781,651.48437 470,651.48437 Z M510,651.48437 C504.49219,651.48437 500,655.97656 500,661.48437 C500,666.99218 504.49219,671.48437 510,671.48437 C515.50781,671.48437 520,666.99218 520,661.48437 C520,655.97656 515.50781,651.48437 510,651.48437 Z M550,651.48437 C544.49219,651.48437 540,655.97656 540,661.48437 C540,666.99218 544.49219,671.48437 550,671.48437 C555.50781,671.48437 560,666.99218 560,661.48437 C560,655.97656 555.50781,651.48437 550,651.48437 Z M590,651.48437 C584.49219,651.48437 580,655.97656 580,661.48437 C580,666.99218 584.49219,671.48437 590,671.48437 C595.50781,671.48437 600,666.99218 600,661.48437 C600,655.97656 595.50781,651.48437 590,651.48437 Z",
+    id: "Shape"
+  })))));
+};
+var InfoboxIcon = function InfoboxIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    id: "eb-info-box",
+    viewBox: "0 0 64 64"
+  }, /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_1__56360",
+    gradientUnits: "userSpaceOnUse",
+    x1: "32",
+    y1: "19.203",
+    x2: "32",
+    y2: "45.242",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("polygon", {
+    points: "43,19 21,19 21,25 29,25 29,45 35,45 35,25 43,25",
+    fill: "url(#SVGID_1__56360)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_2__56360",
+    gradientUnits: "userSpaceOnUse",
+    x1: "32",
+    y1: "9.359",
+    x2: "32",
+    y2: "55.428",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#6dc7ff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#e6abff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M54,9H10c-2.757,0-5,2.243-5,5v36c0,2.757,2.243,5,5,5h44c2.757,0,5-2.243,5-5V14 C59,11.243,56.757,9,54,9z M57,50c0,1.654-1.346,3-3,3H10c-1.654,0-3-1.346-3-3V14c0-1.654,1.346-3,3-3h44c1.654,0,3,1.346,3,3V50z",
+    fill: "url(#SVGID_2__56360)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_3__56360",
+    gradientUnits: "userSpaceOnUse",
+    x1: "58",
+    y1: "26.939",
+    x2: "58",
+    y2: "61.543",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M58,28c-2.206,0-4,1.794-4,4s1.794,4,4,4s4-1.794,4-4S60.206,28,58,28z",
+    fill: "url(#SVGID_3__56360)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_4__56360",
+    gradientUnits: "userSpaceOnUse",
+    x1: "58",
+    y1: "30.125",
+    x2: "58",
+    y2: "33.875",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#6dc7ff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#e6abff"
+  })), /*#__PURE__*/React.createElement("circle", {
+    cx: "58",
+    cy: "32",
+    r: "2",
+    fill: "url(#SVGID_4__56360)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_5__56360",
+    gradientUnits: "userSpaceOnUse",
+    x1: "6",
+    y1: "26.939",
+    x2: "6",
+    y2: "61.543",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M6,28c-2.206,0-4,1.794-4,4s1.794,4,4,4s4-1.794,4-4S8.206,28,6,28z",
+    fill: "url(#SVGID_5__56360)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_6__56360",
+    gradientUnits: "userSpaceOnUse",
+    x1: "6",
+    y1: "30.125",
+    x2: "6",
+    y2: "33.875",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#6dc7ff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#e6abff"
+  })), /*#__PURE__*/React.createElement("circle", {
+    cx: "6",
+    cy: "32",
+    r: "2",
+    fill: "url(#SVGID_6__56360)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_7__56360",
+    gradientUnits: "userSpaceOnUse",
+    x1: "32",
+    y1: "21.172",
+    x2: "32",
+    y2: "43.205",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#6dc7ff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#e6abff"
+  })), /*#__PURE__*/React.createElement("polygon", {
+    points: "41,21 23,21 23,23 31,23 31,43 33,43 33,23 41,23",
+    fill: "url(#SVGID_7__56360)"
+  }));
+};
+var NoticeIcon = function NoticeIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    width: "256",
+    height: "359",
+    viewBox: "0 0 256 359",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("linearGradient", {
+    x1: "50%",
+    y1: "-.962%",
+    x2: "50%",
+    y2: "102.035%",
+    id: "linearGradient-1"
+  }, /*#__PURE__*/React.createElement("stop", {
+    stopColor: "#1A6DFF",
+    offset: "0%"
+  }), /*#__PURE__*/React.createElement("stop", {
+    stopColor: "#C822FF",
+    offset: "100%"
+  }))), /*#__PURE__*/React.createElement("g", {
+    id: "Page-1",
+    fill: "none",
+    fillRule: "evenodd"
+  }, /*#__PURE__*/React.createElement("g", {
+    id: "eb-notice",
+    fill: "url(#linearGradient-1)",
+    fillRule: "nonzero"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M128,0 C111.09568,0 97.28,13.815678 97.28,30.72 L97.28,40.96 L15.36,40.96 C6.9377536,40.96 0,47.8977536 0,56.32 L0,343.04 C0,351.462246 6.9377536,358.4 15.36,358.4 L240.64,358.4 C249.062246,358.4 256,351.462246 256,343.04 L256,56.32 C256,47.8977536 249.062246,40.96 240.64,40.96 L158.72,40.96 L158.72,30.72 C158.72,13.815678 144.90432,0 128,0 Z M128,10.24 C139.36832,10.24 148.48,19.351682 148.48,30.72 L148.48,66.56 C148.48,69.4529536 146.252954,71.68 143.36,71.68 L112.64,71.68 C109.747046,71.68 107.52,69.4529536 107.52,66.56 L107.52,30.72 C107.52,19.351682 116.63168,10.24 128,10.24 Z M128,25.6 C125.172302,25.6 122.88,27.8923021 122.88,30.72 C122.88,33.5476979 125.172302,35.84 128,35.84 C130.827698,35.84 133.12,33.5476979 133.12,30.72 C133.12,27.8923021 130.827698,25.6 128,25.6 Z M15.36,51.2 L97.28,51.2 L97.28,61.44 L92.16,61.44 C80.9096499,61.44 71.68,70.6696499 71.68,81.92 L71.68,87.04 L72.72,87.04 C75.0565325,95.7765786 82.7207987,102.4 92.16,102.4 L163.84,102.4 C173.279201,102.4 180.943468,95.7765786 183.28,87.04 L184.32,87.04 L184.32,81.92 C184.32,70.6696499 175.09035,61.44 163.84,61.44 L158.72,61.44 L158.72,51.2 L240.64,51.2 C243.532954,51.2 245.76,53.4270464 245.76,56.32 L245.76,343.04 C245.76,345.932954 243.532954,348.16 240.64,348.16 L15.36,348.16 C12.4670464,348.16 10.24,345.932954 10.24,343.04 L10.24,56.32 C10.24,53.4270464 12.4670464,51.2 15.36,51.2 Z M35.84,71.68 C33.0123021,71.68 30.72,73.9723021 30.72,76.8 C30.72,79.6276979 33.0123021,81.92 35.84,81.92 C38.6676979,81.92 40.96,79.6276979 40.96,76.8 C40.96,73.9723021 38.6676979,71.68 35.84,71.68 Z M92.16,71.68 L98.24,71.68 C100.376924,77.6054835 106.01919,81.92 112.64,81.92 L143.36,81.92 C149.98081,81.92 155.623076,77.6054835 157.76,71.68 L163.84,71.68 C169.55733,71.68 174.08,76.2026701 174.08,81.92 C174.08,87.6373299 169.55733,92.16 163.84,92.16 L92.16,92.16 C86.4426701,92.16 81.92,87.6373299 81.92,81.92 C81.92,76.2026701 86.4426701,71.68 92.16,71.68 Z M35.84,92.16 C33.0123021,92.16 30.72,94.4523021 30.72,97.28 C30.72,100.107698 33.0123021,102.4 35.84,102.4 C38.6676979,102.4 40.96,100.107698 40.96,97.28 C40.96,94.4523021 38.6676979,92.16 35.84,92.16 Z M35.84,112.64 C33.0123021,112.64 30.72,114.932302 30.72,117.76 C30.72,120.587698 33.0123021,122.88 35.84,122.88 C38.6676979,122.88 40.96,120.587698 40.96,117.76 C40.96,114.932302 38.6676979,112.64 35.84,112.64 Z M35.84,133.12 C33.0123021,133.12 30.72,135.412302 30.72,138.24 C30.72,141.067698 33.0123021,143.36 35.84,143.36 C38.6676979,143.36 40.96,141.067698 40.96,138.24 C40.96,135.412302 38.6676979,133.12 35.84,133.12 Z M35.84,153.6 C33.0123021,153.6 30.72,155.892302 30.72,158.72 C30.72,161.547698 33.0123021,163.84 35.84,163.84 C38.6676979,163.84 40.96,161.547698 40.96,158.72 C40.96,155.892302 38.6676979,153.6 35.84,153.6 Z M117.76,153.6 L121.180001,242.349998 L134.819999,242.349998 L138.24,153.6 L117.76,153.6 Z M35.84,174.08 C33.0123021,174.08 30.72,176.372302 30.72,179.2 C30.72,182.027698 33.0123021,184.32 35.84,184.32 C38.6676979,184.32 40.96,182.027698 40.96,179.2 C40.96,176.372302 38.6676979,174.08 35.84,174.08 Z M35.84,194.56 C33.0123021,194.56 30.72,196.852302 30.72,199.68 C30.72,202.507698 33.0123021,204.8 35.84,204.8 C38.6676979,204.8 40.96,202.507698 40.96,199.68 C40.96,196.852302 38.6676979,194.56 35.84,194.56 Z M35.84,215.04 C33.0123021,215.04 30.72,217.332302 30.72,220.16 C30.72,222.987698 33.0123021,225.28 35.84,225.28 C38.6676979,225.28 40.96,222.987698 40.96,220.16 C40.96,217.332302 38.6676979,215.04 35.84,215.04 Z M35.84,235.52 C33.0123021,235.52 30.72,237.812302 30.72,240.64 C30.72,243.467698 33.0123021,245.76 35.84,245.76 C38.6676979,245.76 40.96,243.467698 40.96,240.64 C40.96,237.812302 38.6676979,235.52 35.84,235.52 Z M35.84,256 C33.0123021,256 30.72,258.292302 30.72,261.12 C30.72,263.947698 33.0123021,266.24 35.84,266.24 C38.6676979,266.24 40.96,263.947698 40.96,261.12 C40.96,258.292302 38.6676979,256 35.84,256 Z M128,256.860001 C122.344604,256.860001 117.76,261.444605 117.76,267.100001 C117.76,272.755397 122.344604,277.340001 128,277.340001 C133.655396,277.340001 138.24,272.755397 138.24,267.100001 C138.24,261.444605 133.655396,256.860001 128,256.860001 Z M35.84,276.48 C33.0123021,276.48 30.72,278.772302 30.72,281.6 C30.72,284.427698 33.0123021,286.72 35.84,286.72 C38.6676979,286.72 40.96,284.427698 40.96,281.6 C40.96,278.772302 38.6676979,276.48 35.84,276.48 Z M35.84,296.96 C33.0123021,296.96 30.72,299.252302 30.72,302.08 C30.72,304.907698 33.0123021,307.2 35.84,307.2 C38.6676979,307.2 40.96,304.907698 40.96,302.08 C40.96,299.252302 38.6676979,296.96 35.84,296.96 Z M35.84,317.44 C33.0123021,317.44 30.72,319.732302 30.72,322.56 C30.72,325.387698 33.0123021,327.68 35.84,327.68 C38.6676979,327.68 40.96,325.387698 40.96,322.56 C40.96,319.732302 38.6676979,317.44 35.84,317.44 Z",
+    id: "Shape"
+  }))));
+};
+var PricingTableIcon = function PricingTableIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    width: "256",
+    height: "256",
+    viewBox: "0 0 256 256",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("linearGradient", {
+    x1: "50%",
+    y1: "-.962%",
+    x2: "50%",
+    y2: "102.035%",
+    id: "linearGradient-1"
+  }, /*#__PURE__*/React.createElement("stop", {
+    stopColor: "#1A6DFF",
+    offset: "0%"
+  }), /*#__PURE__*/React.createElement("stop", {
+    stopColor: "#C822FF",
+    offset: "100%"
+  }))), /*#__PURE__*/React.createElement("g", {
+    id: "Page-1",
+    fill: "none",
+    fillRule: "evenodd"
+  }, /*#__PURE__*/React.createElement("g", {
+    id: "eb-pricing-table",
+    fill: "url(#linearGradient-1)",
+    fillRule: "nonzero"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M85.3333333,0 C77.4385707,0 70.8027733,5.47924907 68.8833323,12.8 L17.0666667,12.8 C7.69137493,12.8 0,20.4913749 0,29.8666667 L0,226.133333 C0,235.508625 7.69137493,243.2 17.0666667,243.2 L21.3333333,243.2 C23.6897483,243.2 25.6,241.289748 25.6,238.933333 C25.6,236.576918 23.6897483,234.666667 21.3333333,234.666667 L17.0666667,234.666667 C12.3022251,234.666667 8.53333333,230.897775 8.53333333,226.133333 L8.53333333,29.8666667 C8.53333333,25.1022251 12.3022251,21.3333333 17.0666667,21.3333333 L68.2666667,21.3333333 L68.2666667,51.2 L29.8666667,51.2 L29.8666667,59.7333333 L68.2666667,59.7333333 L68.2666667,76.8 L29.8666667,76.8 L29.8666667,85.3333333 L68.2666667,85.3333333 L68.2666667,136.533333 L51.2,136.533333 L51.2,145.066667 L68.2666667,145.066667 L68.2666667,162.133333 L51.2,162.133333 L51.2,170.666667 L68.2666667,170.666667 L68.2666667,238.933333 C68.2666667,248.308625 75.9580416,256 85.3333333,256 L93.8666667,256 C96.2230816,256 98.1333333,254.089748 98.1333333,251.733333 C98.1333333,249.376918 96.2230816,247.466667 93.8666667,247.466667 L85.3333333,247.466667 C80.5688917,247.466667 76.8,243.697775 76.8,238.933333 L76.8,17.0666667 C76.8,12.3022251 80.5688917,8.53333333 85.3333333,8.53333333 L170.666667,8.53333333 C175.431108,8.53333333 179.2,12.3022251 179.2,17.0666667 L179.2,136.533333 L179.2,145.066667 L179.2,162.133333 L179.2,170.666667 L179.2,187.733333 L179.2,196.266667 L179.2,238.933333 C179.2,243.697775 175.431108,247.466667 170.666667,247.466667 L162.133333,247.466667 C159.776918,247.466667 157.866667,249.376918 157.866667,251.733333 C157.866667,254.089748 159.776918,256 162.133333,256 L170.666667,256 C180.041958,256 187.733333,248.308625 187.733333,238.933333 L187.733333,196.266667 L226.133333,196.266667 L226.133333,187.733333 L187.733333,187.733333 L187.733333,170.666667 L226.133333,170.666667 L226.133333,162.133333 L187.733333,162.133333 L187.733333,145.066667 L226.133333,145.066667 L226.133333,136.533333 L187.733333,136.533333 L187.733333,85.3333333 L226.133333,85.3333333 L226.133333,76.8 L187.733333,76.8 L187.733333,59.7333333 L226.133333,59.7333333 L226.133333,51.2 L187.733333,51.2 L187.733333,21.3333333 L238.933333,21.3333333 C243.697775,21.3333333 247.466667,25.1022251 247.466667,29.8666667 L247.466667,226.133333 C247.466667,230.897775 243.697775,234.666667 238.933333,234.666667 L234.666667,234.666667 C232.310252,234.666667 230.4,236.576918 230.4,238.933333 C230.4,241.289748 232.310252,243.2 234.666667,243.2 L238.933333,243.2 C248.308625,243.2 256,235.508625 256,226.133333 L256,29.8666667 C256,20.4913749 248.308625,12.8 238.933333,12.8 L187.116668,12.8 C185.197227,5.47924907 178.561429,0 170.666667,0 L85.3333333,0 Z M93.8666667,42.6666667 L93.8666667,51.2 L162.133333,51.2 L162.133333,42.6666667 L93.8666667,42.6666667 Z M93.8666667,68.2666667 L93.8666667,76.8 L162.133333,76.8 L162.133333,68.2666667 L93.8666667,68.2666667 Z M98.1333333,128 C95.7769184,128 93.8666667,129.910252 93.8666667,132.266667 C93.8666667,134.623082 95.7769184,136.533333 98.1333333,136.533333 C100.489748,136.533333 102.4,134.623082 102.4,132.266667 C102.4,129.910252 100.489748,128 98.1333333,128 Z M115.2,128 L115.2,136.533333 L162.133333,136.533333 L162.133333,128 L115.2,128 Z M34.1333333,136.533333 C31.7769184,136.533333 29.8666667,138.443585 29.8666667,140.8 C29.8666667,143.156415 31.7769184,145.066667 34.1333333,145.066667 C36.4897483,145.066667 38.4,143.156415 38.4,140.8 C38.4,138.443585 36.4897483,136.533333 34.1333333,136.533333 Z M98.1333333,153.6 C95.7769184,153.6 93.8666667,155.510252 93.8666667,157.866667 C93.8666667,160.223082 95.7769184,162.133333 98.1333333,162.133333 C100.489748,162.133333 102.4,160.223082 102.4,157.866667 C102.4,155.510252 100.489748,153.6 98.1333333,153.6 Z M115.2,153.6 L115.2,162.133333 L162.133333,162.133333 L162.133333,153.6 L115.2,153.6 Z M34.1333333,162.133333 C31.7769184,162.133333 29.8666667,164.043585 29.8666667,166.4 C29.8666667,168.756415 31.7769184,170.666667 34.1333333,170.666667 C36.4897483,170.666667 38.4,168.756415 38.4,166.4 C38.4,164.043585 36.4897483,162.133333 34.1333333,162.133333 Z M98.1333333,179.2 C95.7769184,179.2 93.8666667,181.110252 93.8666667,183.466667 C93.8666667,185.823082 95.7769184,187.733333 98.1333333,187.733333 C100.489748,187.733333 102.4,185.823082 102.4,183.466667 C102.4,181.110252 100.489748,179.2 98.1333333,179.2 Z M115.2,179.2 L115.2,187.733333 L162.133333,187.733333 L162.133333,179.2 L115.2,179.2 Z M98.1333333,204.8 C95.7769184,204.8 93.8666667,206.710252 93.8666667,209.066667 C93.8666667,211.423082 95.7769184,213.333333 98.1333333,213.333333 C100.489748,213.333333 102.4,211.423082 102.4,209.066667 C102.4,206.710252 100.489748,204.8 98.1333333,204.8 Z M115.2,204.8 L115.2,213.333333 L162.133333,213.333333 L162.133333,204.8 L115.2,204.8 Z M38.4,234.666667 C36.0435851,234.666667 34.1333333,236.576918 34.1333333,238.933333 C34.1333333,241.289748 36.0435851,243.2 38.4,243.2 C40.7564149,243.2 42.6666667,241.289748 42.6666667,238.933333 C42.6666667,236.576918 40.7564149,234.666667 38.4,234.666667 Z M55.4666667,234.666667 C53.1102517,234.666667 51.2,236.576918 51.2,238.933333 C51.2,241.289748 53.1102517,243.2 55.4666667,243.2 C57.8230816,243.2 59.7333333,241.289748 59.7333333,238.933333 C59.7333333,236.576918 57.8230816,234.666667 55.4666667,234.666667 Z M200.533333,234.666667 C198.176918,234.666667 196.266667,236.576918 196.266667,238.933333 C196.266667,241.289748 198.176918,243.2 200.533333,243.2 C202.889748,243.2 204.8,241.289748 204.8,238.933333 C204.8,236.576918 202.889748,234.666667 200.533333,234.666667 Z M217.6,234.666667 C215.243585,234.666667 213.333333,236.576918 213.333333,238.933333 C213.333333,241.289748 215.243585,243.2 217.6,243.2 C219.956415,243.2 221.866667,241.289748 221.866667,238.933333 C221.866667,236.576918 219.956415,234.666667 217.6,234.666667 Z M110.933333,247.466667 C108.576918,247.466667 106.666667,249.376918 106.666667,251.733333 C106.666667,254.089748 108.576918,256 110.933333,256 C113.289748,256 115.2,254.089748 115.2,251.733333 C115.2,249.376918 113.289748,247.466667 110.933333,247.466667 Z M128,247.466667 C125.643585,247.466667 123.733333,249.376918 123.733333,251.733333 C123.733333,254.089748 125.643585,256 128,256 C130.356415,256 132.266667,254.089748 132.266667,251.733333 C132.266667,249.376918 130.356415,247.466667 128,247.466667 Z M145.066667,247.466667 C142.710252,247.466667 140.8,249.376918 140.8,251.733333 C140.8,254.089748 142.710252,256 145.066667,256 C147.423082,256 149.333333,254.089748 149.333333,251.733333 C149.333333,249.376918 147.423082,247.466667 145.066667,247.466667 Z",
+    id: "Shape"
+  }))));
+};
+var ProgressbarIcon = function ProgressbarIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    id: "eb-progress",
+    viewBox: "0 0 64 64"
+  }, /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_1__48178",
+    gradientUnits: "userSpaceOnUse",
+    x1: "12.315",
+    y1: "4.167",
+    x2: "12.315",
+    y2: "59.168",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M9.8,45.771c1.027,1.637,2.24,3.162,3.606,4.536l1.424-1.408 c-1.261-1.269-2.381-2.678-3.329-4.188L9.8,45.771z",
+    fill: "url(#SVGID_1__48178)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_2__48178",
+    gradientUnits: "userSpaceOnUse",
+    x1: "7.592",
+    y1: "4.167",
+    x2: "7.592",
+    y2: "59.168",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M6.003,34.906c0.215,1.923,0.646,3.823,1.283,5.646l1.894-0.658 c-0.588-1.682-0.985-3.435-1.183-5.209L6.003,34.906z",
+    fill: "url(#SVGID_2__48178)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_3__48178",
+    gradientUnits: "userSpaceOnUse",
+    x1: "7.586",
+    y1: "4.167",
+    x2: "7.586",
+    y2: "59.168",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M9.173,24.127l-1.894-0.656C6.643,25.295,6.213,27.196,6,29.121l1.994,0.219 C8.19,27.563,8.587,25.81,9.173,24.127z",
+    fill: "url(#SVGID_3__48178)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_4__48178",
+    gradientUnits: "userSpaceOnUse",
+    x1: "12.299",
+    y1: "4.167",
+    x2: "12.299",
+    y2: "59.168",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M14.813,15.115l-1.426-1.406c-1.364,1.374-2.576,2.901-3.602,4.538l1.7,1.061 C12.433,17.796,13.552,16.385,14.813,15.115z",
+    fill: "url(#SVGID_4__48178)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_5__48178",
+    gradientUnits: "userSpaceOnUse",
+    x1: "20.846",
+    y1: "4.167",
+    x2: "20.846",
+    y2: "59.168",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M23.789,9.403l-0.676-1.883c-1.821,0.65-3.574,1.509-5.211,2.551l1.079,1.686 C20.493,10.795,22.11,10.003,23.789,9.403z",
+    fill: "url(#SVGID_5__48178)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_6__48178",
+    gradientUnits: "userSpaceOnUse",
+    x1: "20.869",
+    y1: "4.167",
+    x2: "20.869",
+    y2: "59.168",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M17.924,53.942c1.64,1.04,3.395,1.896,5.215,2.546l0.676-1.883 c-1.68-0.6-3.3-1.39-4.813-2.351L17.924,53.942z",
+    fill: "url(#SVGID_6__48178)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_7__48178",
+    gradientUnits: "userSpaceOnUse",
+    x1: "43.399",
+    y1: "4.167",
+    x2: "43.399",
+    y2: "59.168",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M31.921,6c-1.042,0-2.093,0.063-3.124,0.185l0.237,1.986C29.988,8.058,30.958,8,31.921,8 c13.274,0,24.073,10.767,24.073,24S45.195,56,31.921,56c-0.963,0-1.934-0.058-2.887-0.171l-0.237,1.986 C29.828,57.938,30.879,58,31.921,58C46.302,58,58,46.337,58,32S46.302,6,31.921,6z",
+    fill: "url(#SVGID_7__48178)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_8__48178",
+    gradientUnits: "userSpaceOnUse",
+    x1: "31.921",
+    y1: "20.667",
+    x2: "31.921",
+    y2: "45.235",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#6dc7ff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#e6abff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M27.908,41.937c-1.028,0-2.056-0.391-2.839-1.171l-7.606-7.583l2.837-2.828l7.606,7.583 l15.636-15.583l2.837,2.828l-15.63,15.583C29.965,41.546,28.937,41.937,27.908,41.937z",
+    fill: "url(#SVGID_8__48178)"
+  }));
+};
+var InteractivePromoIcon = function InteractivePromoIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    id: "eb-promo",
+    viewBox: "0 0 64 64"
+  }, /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_1__43971",
+    gradientUnits: "userSpaceOnUse",
+    x1: "37",
+    y1: "16.125",
+    x2: "37",
+    y2: "22.38",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#6dc7ff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#e6abff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M42,22H32c-0.552,0-1-0.448-1-1v-4c0-0.552,0.448-1,1-1h10c0.552,0,1,0.448,1,1v4 C43,21.552,42.552,22,42,22z",
+    fill: "url(#SVGID_1__43971)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_2__43971",
+    gradientUnits: "userSpaceOnUse",
+    x1: "39.5",
+    y1: "10",
+    x2: "39.5",
+    y2: "54.388",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M58,36c0-2.967-2.167-5.431-5-5.91v-7.004c0-0.777-0.435-1.468-1.135-1.805 c-0.7-0.335-1.511-0.244-2.119,0.241l-7.996,6.396c-0.03,0.024-0.052,0.055-0.081,0.081H30c-2.757,0-5,2.243-5,5h-2 c-1.103,0-2,0.897-2,2v2c0,1.103,0.897,2,2,2h2c0,2.757,2.243,5,5,5v6c0,2.206,1.794,4,4,4s4-1.794,4-4v-6h3.669 c0.029,0.026,0.051,0.057,0.082,0.082l7.995,6.396c0.365,0.292,0.804,0.441,1.247,0.441c0.295,0,0.593-0.066,0.872-0.2 C52.565,50.382,53,49.69,53,48.914V41.91C55.833,41.431,58,38.967,58,36z M23,37v-2h2v2H23z M36,50c0,1.103-0.897,2-2,2 s-2-0.897-2-2v-6h4V50z M30,42c-1.654,0-3-1.346-3-3v-6c0-1.654,1.346-3,3-3h11v12h-3H30z M50.996,48.916L43,42.518V29.479l4-3.197 V36h2V24.684l2-1.598l0.002,25.834C51.002,48.92,51,48.919,50.996,48.916z M53,39.858v-7.716c1.72,0.447,3,2,3,3.858 S54.72,39.411,53,39.858z",
+    fill: "url(#SVGID_2__43971)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_3__43971",
+    gradientUnits: "userSpaceOnUse",
+    x1: "31",
+    y1: "10",
+    x2: "31",
+    y2: "54.388",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M29,34v2h2v-2h2v-2h-2C29.897,32,29,32.897,29,34z",
+    fill: "url(#SVGID_3__43971)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_4__43971",
+    gradientUnits: "userSpaceOnUse",
+    x1: "27.5",
+    y1: "10",
+    x2: "27.5",
+    y2: "54.388",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M8,40V15c0-1.654,1.346-3,3-3h33c1.654,0,3,1.346,3,3v4h2v-4c0-2.757-2.243-5-5-5H11 c-2.757,0-5,2.243-5,5v25c0,2.757,2.243,5,5,5h12v-2H11C9.346,43,8,41.654,8,40z",
+    fill: "url(#SVGID_4__43971)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_5__43971",
+    gradientUnits: "userSpaceOnUse",
+    x1: "19",
+    y1: "10",
+    x2: "19",
+    y2: "54.388",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("rect", {
+    x: "12",
+    y: "16",
+    width: "14",
+    height: "2",
+    fill: "url(#SVGID_5__43971)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_6__43971",
+    gradientUnits: "userSpaceOnUse",
+    x1: "19",
+    y1: "10",
+    x2: "19",
+    y2: "54.388",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("rect", {
+    x: "12",
+    y: "20",
+    width: "14",
+    height: "2",
+    fill: "url(#SVGID_6__43971)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_7__43971",
+    gradientUnits: "userSpaceOnUse",
+    x1: "17",
+    y1: "10",
+    x2: "17",
+    y2: "54.388",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("rect", {
+    x: "12",
+    y: "24",
+    width: "10",
+    height: "2",
+    fill: "url(#SVGID_7__43971)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_8__43971",
+    gradientUnits: "userSpaceOnUse",
+    x1: "16",
+    y1: "10",
+    x2: "16",
+    y2: "54.388",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("rect", {
+    x: "12",
+    y: "28",
+    width: "8",
+    height: "2",
+    fill: "url(#SVGID_8__43971)"
+  }));
+};
+var SocialIcon = function SocialIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    id: "eb-social",
+    viewBox: "0 0 64 64"
+  }, /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_1__44048",
+    gradientUnits: "userSpaceOnUse",
+    x1: "28",
+    y1: "38.167",
+    x2: "28",
+    y2: "49.844",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#6dc7ff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#e6abff"
+  })), /*#__PURE__*/React.createElement("circle", {
+    cx: "28",
+    cy: "44",
+    r: "5",
+    fill: "url(#SVGID_1__44048)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_2__44048",
+    gradientUnits: "userSpaceOnUse",
+    x1: "32",
+    y1: "10",
+    x2: "32",
+    y2: "56.363",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M49,11c-6.617,0-12,5.383-12,12c0,2.949,1.074,5.649,2.845,7.741l-6.234,6.234 C32.071,35.742,30.122,35,28,35s-4.071,0.742-5.611,1.975l-5.077-5.077C18.366,30.542,19,28.846,19,27c0-4.411-3.589-8-8-8 s-8,3.589-8,8s3.589,8,8,8c1.846,0,3.542-0.634,4.897-1.688l5.077,5.077C19.742,39.929,19,41.878,19,44c0,4.963,4.037,9,9,9 s9-4.037,9-9c0-2.122-0.742-4.071-1.975-5.611l6.234-6.234C43.351,33.926,46.051,35,49,35c6.617,0,12-5.383,12-12S55.617,11,49,11z M11,33c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S14.309,33,11,33z M28,51c-3.859,0-7-3.141-7-7s3.141-7,7-7s7,3.141,7,7 S31.859,51,28,51z M49,33c-5.514,0-10-4.486-10-10s4.486-10,10-10s10,4.486,10,10S54.514,33,49,33z",
+    fill: "url(#SVGID_2__44048)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_3__44048",
+    gradientUnits: "userSpaceOnUse",
+    x1: "49",
+    y1: "10",
+    x2: "49",
+    y2: "56.363",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M49,15c-4.411,0-8,3.589-8,8s3.589,8,8,8s8-3.589,8-8S53.411,15,49,15z M49,29 c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S52.309,29,49,29z",
+    fill: "url(#SVGID_3__44048)"
+  }));
+};
+var TeamMembersIcon = function TeamMembersIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    id: "eb-team-members",
+    viewBox: "0 0 64 64"
+  }, /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_1__43670",
+    gradientUnits: "userSpaceOnUse",
+    x1: "30",
+    y1: "30.75",
+    x2: "30",
+    y2: "35.17",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#6dc7ff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#e6abff"
+  })), /*#__PURE__*/React.createElement("circle", {
+    cx: "30",
+    cy: "33",
+    r: "2",
+    fill: "url(#SVGID_1__43670)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_2__43670",
+    gradientUnits: "userSpaceOnUse",
+    x1: "22",
+    y1: "30.75",
+    x2: "22",
+    y2: "35.17",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#6dc7ff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#e6abff"
+  })), /*#__PURE__*/React.createElement("circle", {
+    cx: "22",
+    cy: "33",
+    r: "2",
+    fill: "url(#SVGID_2__43670)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_3__43670",
+    gradientUnits: "userSpaceOnUse",
+    x1: "26",
+    y1: "36.833",
+    x2: "26",
+    y2: "41.25",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#6dc7ff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#e6abff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M23,38c0,1.657,1.343,3,3,3h0c1.657,0,3-1.343,3-3v-1h-6V38z",
+    fill: "url(#SVGID_3__43670)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_4__43670",
+    gradientUnits: "userSpaceOnUse",
+    x1: "32",
+    y1: "6.75",
+    x2: "32",
+    y2: "57.323",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M51.114,40.344c0.329-0.77,0.569-1.584,0.716-2.428C54.191,37.518,56,35.473,56,33 c0-2.415-1.721-4.434-4-4.899V27h3.5c1.379,0,2.5-1.121,2.5-2.5S56.879,22,55.5,22H52v-3c0-3.859-3.141-7-7-7H33.715 c-0.866-0.477-1.77-0.885-2.715-1.195V7h-2c-1.2,0-2.266,0.542-3,1.382C25.266,7.542,24.2,7,23,7h-2v3.811 C14.621,12.917,10,18.925,10,26v2h0.026C9.391,28.838,9,29.87,9,31c0,2.533,1.894,4.632,4.339,4.956 c0.165,0.706,0.389,1.389,0.664,2.046C8.968,41.773,6,47.648,6,54v3h40h12v-3C58,48.6,55.436,43.548,51.114,40.344z M54,33 c0,1.302-0.838,2.402-2,2.816v-5.631C53.162,30.598,54,31.698,54,33z M55.5,24c0.275,0,0.5,0.225,0.5,0.5S55.775,25,55.5,25H42 c0-0.333-0.012-0.667-0.033-1H55.5z M43.789,44.874c-1.369-2.668-3.341-5.025-5.794-6.868c0.278-0.664,0.493-1.358,0.659-2.072 C41.1,35.61,43,33.533,43,31c0-1.13-0.391-2.162-1.026-3H42v-1h6v4c0,1.302,0.838,2.402,2,2.816V36c0,3.954-2.532,7.405-6.301,8.588 L43.789,44.874z M35.203,26H36c0.34,0,0.672-0.033,1-0.08v2.792C36.345,28.374,35.563,27.626,35.203,26z M37,30.823V33 c0,6.065-4.935,11-11,11s-11-4.935-11-11v-2.177c1.238-0.356,3.247-1.46,3.83-4.823H33.17C33.753,29.363,35.762,30.466,37,30.823z M36,24h-1h-2H19.101c0.465-2.279,2.484-4,4.899-4h16.899C40.435,22.279,38.415,24,36,24z M41,31c0,1.317-0.859,2.427-2.042,2.829 C38.976,33.553,39,33.28,39,33v-4.816C40.162,28.598,41,29.698,41,31z M39,26.101v-0.786c0.347-0.166,0.679-0.355,0.992-0.573 C39.993,24.828,40,24.914,40,25v1.424C39.682,26.284,39.349,26.172,39,26.101z M45,14c2.757,0,5,2.243,5,5v3h-7.685 C42.75,21.089,43,20.074,43,19v-1h-3.152c-0.881-1.525-1.988-2.87-3.269-4H45z M29,9v1.289c-0.575-0.109-1.159-0.19-1.75-0.236 C27.589,9.429,28.242,9,29,9z M23,9c0.762,0,1.418,0.434,1.756,1.063c-0.595,0.046-1.181,0.119-1.756,0.229V9z M11,31 c0-1.304,0.836-2.416,2-2.829V33c0,0.281,0.009,0.562,0.026,0.838C11.849,33.433,11,32.313,11,31z M14,26 c-0.712,0-1.386,0.155-2,0.424V26c0-7.72,6.28-14,14-14c4.626,0,8.885,2.264,11.486,6H24c-3.519,0-6.432,2.614-6.92,6H17 c0,3.078-1.119,4.258-2,4.713V26H14z M14.937,39.81C17.229,43.52,21.328,46,26,46c4.672,0,8.765-2.486,11.056-6.197 c0.541,0.422,1.053,0.873,1.537,1.349C35.839,45.401,31.104,48,26,48c-5.086,0-9.84-2.612-12.594-6.858 C13.888,40.672,14.399,40.228,14.937,39.81z M44,55h-4v-2h-2v2H14v-2h-2v2H8v-1c0-4.207,1.447-8.182,4.016-11.342 C15.173,47.216,20.41,50,26,50c5.608,0,10.815-2.774,13.972-7.33C42.54,45.843,44,49.835,44,54V55z M56,55h-4v-2h-2v2h-4v-1 c0-2.631-0.53-5.198-1.504-7.574c2.377-0.795,4.334-2.333,5.654-4.311C53.828,44.949,56,49.328,56,54V55z",
+    fill: "url(#SVGID_4__43670)"
+  }));
+};
+var TestimonialIcon = function TestimonialIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    id: "eb-testimonials",
+    viewBox: "0 0 64 64"
+  }, /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_1__43982",
+    gradientUnits: "userSpaceOnUse",
+    x1: "8",
+    y1: "22.938",
+    x2: "8",
+    y2: "27.125",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#6dc7ff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#e6abff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M10,26c0,0.552-0.448,1-1,1H7c-0.552,0-1-0.448-1-1v-2c0-0.552,0.448-1,1-1h2 c0.552,0,1,0.448,1,1V26z",
+    fill: "url(#SVGID_1__43982)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_2__43982",
+    gradientUnits: "userSpaceOnUse",
+    x1: "14",
+    y1: "22.938",
+    x2: "14",
+    y2: "27.125",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#6dc7ff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#e6abff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M16,26c0,0.552-0.448,1-1,1h-2c-0.552,0-1-0.448-1-1v-2c0-0.552,0.448-1,1-1h2 c0.552,0,1,0.448,1,1V26z",
+    fill: "url(#SVGID_2__43982)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_3__43982",
+    gradientUnits: "userSpaceOnUse",
+    x1: "20",
+    y1: "22.938",
+    x2: "20",
+    y2: "27.125",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#6dc7ff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#e6abff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M22,26c0,0.552-0.448,1-1,1h-2c-0.552,0-1-0.448-1-1v-2c0-0.552,0.448-1,1-1h2 c0.552,0,1,0.448,1,1V26z",
+    fill: "url(#SVGID_3__43982)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_4__43982",
+    gradientUnits: "userSpaceOnUse",
+    x1: "26",
+    y1: "22.938",
+    x2: "26",
+    y2: "27.125",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#6dc7ff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#e6abff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M28,26c0,0.552-0.448,1-1,1h-2c-0.552,0-1-0.448-1-1v-2c0-0.552,0.448-1,1-1h2 c0.552,0,1,0.448,1,1V26z",
+    fill: "url(#SVGID_4__43982)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_5__43982",
+    gradientUnits: "userSpaceOnUse",
+    x1: "8",
+    y1: "28.813",
+    x2: "8",
+    y2: "33.448",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#6dc7ff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#e6abff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M10,32c0,0.552-0.448,1-1,1H7c-0.552,0-1-0.448-1-1v-2c0-0.552,0.448-1,1-1h2 c0.552,0,1,0.448,1,1V32z",
+    fill: "url(#SVGID_5__43982)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_6__43982",
+    gradientUnits: "userSpaceOnUse",
+    x1: "17",
+    y1: "28.813",
+    x2: "17",
+    y2: "33.448",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#6dc7ff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#e6abff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M22,32c0,0.552-0.448,1-1,1h-8c-0.552,0-1-0.448-1-1v-2c0-0.552,0.448-1,1-1h8 c0.552,0,1,0.448,1,1V32z",
+    fill: "url(#SVGID_6__43982)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_7__43982",
+    gradientUnits: "userSpaceOnUse",
+    x1: "26",
+    y1: "28.813",
+    x2: "26",
+    y2: "33.448",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#6dc7ff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#e6abff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M28,32c0,0.552-0.448,1-1,1h-2c-0.552,0-1-0.448-1-1v-2c0-0.552,0.448-1,1-1h2 c0.552,0,1,0.448,1,1V32z",
+    fill: "url(#SVGID_7__43982)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_8__43982",
+    gradientUnits: "userSpaceOnUse",
+    x1: "28",
+    y1: "9.5",
+    x2: "28",
+    y2: "55.566",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M49,9H19c-2.757,0-5,2.241-5,4.998V17H5c-1.654,0-3,1.344-3,2.998v16C2,37.653,3.346,39,5,39 h9v2.998C14,44.755,16.243,47,19,47h11c0.552,0,1,0.447,1,0.998v4.1c0,1.132,0.658,2.135,1.717,2.617 c0.422,0.193,0.865,0.287,1.302,0.287c0.721,0,1.425-0.256,1.995-0.751l8.077-7.007C44.272,47.086,44.506,47,44.748,47H49 c2.757,0,5-2.245,5-5.002v-28C54,11.241,51.757,9,49,9z M14,35c-1.103,0-2,1-2,2H5c-0.552,0-1-0.45-1-1.002v-16 C4,19.447,4.448,19,5,19h24c0.552,0,1,0.447,1,0.998v16C30,36.55,29.552,37,29,37h-7c0-1-0.897-2-2-2H14z M52,41.998 C52,43.653,50.654,45,49,45h-4.252c-0.724,0-1.424,0.26-1.969,0.734l-8.076,7.007c-0.381,0.328-0.846,0.296-1.156,0.154 C33.383,52.821,33,52.593,33,52.098v-4.1C33,46.344,31.654,45,30,45H19c-1.654,0-3-1.347-3-3.002V39h13c1.654,0,3-1.347,3-3.002v-16 C32,18.344,30.654,17,29,17H16v-3.002C16,12.344,17.346,11,19,11h30c1.654,0,3,1.344,3,2.998V41.998z",
+    fill: "url(#SVGID_8__43982)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_9__43982",
+    gradientUnits: "userSpaceOnUse",
+    x1: "42",
+    y1: "9.5",
+    x2: "42",
+    y2: "55.568",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("rect", {
+    x: "37",
+    y: "17",
+    width: "10",
+    height: "2",
+    fill: "url(#SVGID_9__43982)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_10__43982",
+    gradientUnits: "userSpaceOnUse",
+    x1: "42",
+    y1: "9.5",
+    x2: "42",
+    y2: "55.568",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("rect", {
+    x: "37",
+    y: "21",
+    width: "10",
+    height: "2",
+    fill: "url(#SVGID_10__43982)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_11__43982",
+    gradientUnits: "userSpaceOnUse",
+    x1: "42",
+    y1: "9.5",
+    x2: "42",
+    y2: "55.568",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M44,25h-4c-1.654,0-3,1.344-3,2.998V39h2v-5h6v5h2V27.998C47,26.344,45.654,25,44,25z M45,32 h-6v-4.002C39,27.447,39.448,27,40,27h4c0.552,0,1,0.447,1,0.998V32z",
+    fill: "url(#SVGID_11__43982)"
+  }));
+};
+var ImageComparisonIcon = function ImageComparisonIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    id: "eb-img-comparison",
+    viewBox: "0 0 64 64"
+  }, /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_1__56353",
+    gradientUnits: "userSpaceOnUse",
+    x1: "32",
+    y1: "7",
+    x2: "32",
+    y2: "56.807",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M52,7H12c-2.757,0-5,2.243-5,5v40c0,2.757,2.243,5,5,5h40c2.757,0,5-2.243,5-5V12 C57,9.243,54.757,7,52,7z M9,12c0-1.654,1.346-3,3-3h40c0.462,0,0.894,0.113,1.285,0.301L41.154,21.432C38.697,19.3,35.501,18,32,18 c-7.72,0-14,6.28-14,14c0,3.501,1.3,6.697,3.432,9.154L9.301,53.285C9.113,52.894,9,52.462,9,52V12z M22.845,39.741 C21.074,37.649,20,34.949,20,32c0-6.617,5.383-12,12-12c2.949,0,5.649,1.074,7.741,2.845L22.845,39.741z M41.155,24.259 C42.926,26.351,44,29.051,44,32c0,6.617-5.383,12-12,12c-2.949,0-5.649-1.074-7.741-2.845L41.155,24.259z M55,52 c0,1.654-1.346,3-3,3H12c-0.462,0-0.894-0.113-1.285-0.301l12.131-12.131C25.303,44.7,28.499,46,32,46c7.72,0,14-6.28,14-14 c0-3.501-1.3-6.697-3.432-9.154l12.131-12.131C54.887,11.106,55,11.538,55,12V52z",
+    fill: "url(#SVGID_1__56353)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_2__56353",
+    gradientUnits: "userSpaceOnUse",
+    x1: "34.691",
+    y1: "27.618",
+    x2: "34.691",
+    y2: "41.826",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#6dc7ff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#e6abff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M32,42c-1.614,0-3.199-0.397-4.618-1.139l13.479-13.479C41.603,28.801,42,30.386,42,32 C42,37.514,37.514,42,32,42z",
+    fill: "url(#SVGID_2__56353)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_3__56353",
+    gradientUnits: "userSpaceOnUse",
+    x1: "29.879",
+    y1: "11.097",
+    x2: "29.879",
+    y2: "48.982",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#6dc7ff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#e6abff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M40.98,18.777C38.336,16.976,35.209,16,32,16c-8.822,0-16,7.178-16,16 c0,3.209,0.976,6.336,2.777,8.98L11,48.758V12c0-0.551,0.449-1,1-1h36.758L40.98,18.777z",
+    fill: "url(#SVGID_3__56353)"
+  }));
+};
+var TestIcon = function TestIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    width: "20",
+    height: "20",
+    className: "eb-category-icon",
+    viewBox: "0 0 453 446",
+    xmlns: "http://www.w3.org/2000/svg",
+    xmlnsXlink: "http://www.w3.org/1999/xlink"
+  }, /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("linearGradient", {
+    x1: "50%",
+    y1: "0%",
+    x2: "50%",
+    y2: "100%",
+    id: "linearGradient-1"
+  }, /*#__PURE__*/React.createElement("stop", {
+    stopColor: "#2460FF",
+    offset: "0%"
+  }), /*#__PURE__*/React.createElement("stop", {
+    stopColor: "#B80AFF",
+    offset: "100%"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M110.214843,146.445312 L165.730468,146.445312 L165.996093,146.578125 L166.195312,146.578125 C169.515641,146.578125 172.216135,148.282535 174.296875,151.691406 C175.005211,153.10808 175.359375,154.569003 175.359375,156.074219 C175.359375,159.748716 173.544288,162.582021 169.914062,164.574219 C168.674472,165.149742 167.434902,165.4375 166.195312,165.4375 L109.617187,165.4375 C106.960924,165.4375 104.614593,164.220064 102.578125,161.785156 C101.249993,160.014314 100.585937,158.199228 100.585937,156.339844 L100.585937,155.542969 C100.585937,152.621079 102.04686,150.119802 104.96875,148.039062 C106.562507,147.065099 108.134106,146.578125 109.683593,146.578125 L109.949218,146.578125 L110.214843,146.445312 Z M110.082031,193.925781 L138.703125,194.058594 C140.60678,194.058594 142.643218,195.032542 144.8125,196.980469 C146.539071,198.972666 147.402343,201.141915 147.402343,203.488281 C147.402343,206.764339 145.875015,209.442698 142.820312,211.523438 C141.315096,212.408859 139.854173,212.851562 138.4375,212.851562 L109.484375,212.851562 C106.651027,212.851562 104.19402,211.43491 102.113281,208.601562 C101.095046,207.007805 100.585937,205.41407 100.585937,203.820312 L100.585937,203.023438 C100.585937,200.013006 102.157536,197.423188 105.300781,195.253906 C106.894539,194.457027 108.399732,194.058594 109.816406,194.058594 L109.949218,194.058594 C110.03776,194.058594 110.082031,194.014323 110.082031,193.925781 Z M165.664062,194.058594 L166.128906,194.058594 C169.714861,194.058594 172.526031,195.91795 174.5625,199.636719 C175.093752,200.96485 175.359375,202.248692 175.359375,203.488281 C175.359375,207.20705 173.522153,210.06249 169.847656,212.054688 C168.519524,212.58594 167.346359,212.851562 166.328125,212.851562 L165.398437,212.851562 C162.388005,212.851562 159.820323,211.279964 157.695312,208.136719 C156.854162,206.542961 156.433593,204.971362 156.433593,203.421875 C156.433593,199.791649 158.248679,196.958344 161.878906,194.921875 C163.251308,194.346351 164.513015,194.058594 165.664062,194.058594 Z M110.214843,241.207031 L165.730468,241.207031 C165.730468,241.295573 166.416659,241.406249 167.789062,241.539062 C170.091157,242.114586 171.839837,243.15494 173.035156,244.660156 C174.584643,246.475269 175.359375,248.555978 175.359375,250.902344 C175.359375,254.488299 173.544288,257.321604 169.914062,259.402344 C168.807286,259.800783 168.054689,260 167.65625,260 L108.289062,260 C106.739575,260 104.880219,258.959646 102.710937,256.878906 C101.294263,254.975251 100.585937,253.049489 100.585937,251.101562 L100.585937,250.503906 C100.585937,247.227848 102.246077,244.54949 105.566406,242.46875 C106.540369,241.893226 108.045562,241.494793 110.082031,241.273438 C110.082031,241.229166 110.126301,241.207031 110.214843,241.207031 Z M200.175781,145.582031 L242.609375,145.582031 C252.216194,145.582031 260.494757,149.256474 267.445312,156.605469 C273.156279,163.113314 276.011719,170.528604 276.011719,178.851562 C276.011719,188.104213 272.669304,196.050748 265.984375,202.691406 C272.669304,209.022167 276.011719,216.968702 276.011719,226.53125 C276.011719,236.713593 271.783896,245.390589 263.328125,252.5625 C260.539049,254.598969 257.882825,256.148432 255.359375,257.210938 C251.37498,258.716153 248.253918,259.46875 245.996094,259.46875 L203.628906,259.46875 C202.212232,259.46875 200.485687,258.561207 198.449219,256.746094 C196.678377,254.753896 195.792969,252.606782 195.792969,250.304688 L195.792969,202.425781 C195.792969,198.884097 197.608055,196.072927 201.238281,193.992188 C202.787768,193.372393 204.093745,193.0625 205.15625,193.0625 C206.572924,193.106771 207.436196,193.128906 207.746094,193.128906 C214.696649,193.128906 226.649655,193.151041 243.605469,193.195312 C245.951835,193.195312 248.630193,192.199229 251.640625,190.207031 C255.270851,186.930973 257.085938,183.101584 257.085938,178.71875 C257.085938,175.265608 255.735691,171.989599 253.035156,168.890625 C250.290351,166.057277 246.881531,164.640625 242.808594,164.640625 L200.175781,164.640625 C195.881489,164.640625 192.804697,162.559917 190.945312,158.398438 C190.591144,157.24739 190.414062,156.207036 190.414062,155.277344 L190.414062,154.945312 C190.414062,151.713526 191.919256,149.079437 194.929688,147.042969 C196.434903,146.069006 198.183584,145.582031 200.175781,145.582031 Z M217.441406,212.652344 L217.441406,241.140625 L245,241.140625 C251.817742,241.140625 256.466133,237.776075 258.945312,231.046875 C259.388023,229.453117 259.609375,228.10287 259.609375,226.996094 C259.609375,223.365867 258.170587,219.979182 255.292969,216.835938 C252.636705,214.046861 249.028669,212.652344 244.46875,212.652344 L217.441406,212.652344 Z",
+    id: "path-2"
+  }), /*#__PURE__*/React.createElement("filter", {
+    x: "-23.1%",
+    y: "-22.3%",
+    width: "146.2%",
+    height: "170.8%",
+    filterUnits: "objectBoundingBox",
+    id: "filter-3"
+  }, /*#__PURE__*/React.createElement("feOffset", {
+    dy: "15",
+    "in": "SourceAlpha",
+    result: "shadowOffsetOuter1"
+  }), /*#__PURE__*/React.createElement("feGaussianBlur", {
+    stdDeviation: "11",
+    "in": "shadowOffsetOuter1",
+    result: "shadowBlurOuter1"
+  }), /*#__PURE__*/React.createElement("feColorMatrix", {
+    values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0",
+    "in": "shadowBlurOuter1"
+  })), /*#__PURE__*/React.createElement("circle", {
+    id: "path-4",
+    cx: "318.5",
+    cy: "60.5",
+    r: "55.5"
+  }), /*#__PURE__*/React.createElement("filter", {
+    x: "-65.8%",
+    y: "-44.1%",
+    width: "222.5%",
+    height: "222.5%",
+    filterUnits: "objectBoundingBox",
+    id: "filter-5"
+  }, /*#__PURE__*/React.createElement("feOffset", {
+    dx: "-5",
+    dy: "19",
+    "in": "SourceAlpha",
+    result: "shadowOffsetOuter1"
+  }), /*#__PURE__*/React.createElement("feGaussianBlur", {
+    stdDeviation: "19.5",
+    "in": "shadowOffsetOuter1",
+    result: "shadowBlurOuter1"
+  }), /*#__PURE__*/React.createElement("feColorMatrix", {
+    values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.28161798 0",
+    "in": "shadowBlurOuter1"
+  })), /*#__PURE__*/React.createElement("circle", {
+    id: "path-6",
+    cx: "319",
+    cy: "61",
+    r: "17"
+  }), /*#__PURE__*/React.createElement("filter", {
+    x: "-152.9%",
+    y: "-111.8%",
+    width: "388.2%",
+    height: "388.2%",
+    filterUnits: "objectBoundingBox",
+    id: "filter-7"
+  }, /*#__PURE__*/React.createElement("feOffset", {
+    dx: "-3",
+    dy: "11",
+    "in": "SourceAlpha",
+    result: "shadowOffsetOuter1"
+  }), /*#__PURE__*/React.createElement("feGaussianBlur", {
+    stdDeviation: "14.5",
+    "in": "shadowOffsetOuter1",
+    result: "shadowBlurOuter1"
+  }), /*#__PURE__*/React.createElement("feColorMatrix", {
+    values: "0 0 0 0 0.382304935 0 0 0 0 0.0324290316 0 0 0 0 0.516581633 0 0 0 0.654381793 0",
+    "in": "shadowBlurOuter1"
+  })), /*#__PURE__*/React.createElement("circle", {
+    id: "path-8",
+    cx: "63.5",
+    cy: "348.5",
+    r: "9.5"
+  }), /*#__PURE__*/React.createElement("filter", {
+    x: "-147.4%",
+    y: "-89.5%",
+    width: "363.2%",
+    height: "363.2%",
+    filterUnits: "objectBoundingBox",
+    id: "filter-9"
+  }, /*#__PURE__*/React.createElement("feOffset", {
+    dx: "-3",
+    dy: "8",
+    "in": "SourceAlpha",
+    result: "shadowOffsetOuter1"
+  }), /*#__PURE__*/React.createElement("feGaussianBlur", {
+    stdDeviation: "7",
+    "in": "shadowOffsetOuter1",
+    result: "shadowBlurOuter1"
+  }), /*#__PURE__*/React.createElement("feColorMatrix", {
+    values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.28161798 0",
+    "in": "shadowBlurOuter1"
+  })), /*#__PURE__*/React.createElement("linearGradient", {
+    x1: "79.408%",
+    y1: "0%",
+    x2: "6.263%",
+    y2: "100%",
+    id: "linearGradient-10"
+  }, /*#__PURE__*/React.createElement("stop", {
+    stopColor: "#FF710F",
+    offset: "0%"
+  }), /*#__PURE__*/React.createElement("stop", {
+    stopColor: "#CB16A9",
+    offset: "100%"
+  }))), /*#__PURE__*/React.createElement("g", {
+    id: "EB-Logo",
+    fill: "none",
+    fillRule: "evenodd"
+  }, /*#__PURE__*/React.createElement("g", {
+    id: "Group-5",
+    transform: "translate(29 19)"
+  }, /*#__PURE__*/React.createElement("circle", {
+    id: "Oval-2",
+    fill: "url(#linearGradient-1)",
+    cx: "187",
+    cy: "208",
+    r: "187"
+  }), /*#__PURE__*/React.createElement("g", {
+    id: "EB"
+  }, /*#__PURE__*/React.createElement("use", {
+    fill: "#000",
+    filter: "url(#filter-3)",
+    xlinkHref: "#path-2"
+  }), /*#__PURE__*/React.createElement("use", {
+    fill: "#FFF",
+    xlinkHref: "#path-2"
+  })), /*#__PURE__*/React.createElement("g", {
+    id: "Oval-3",
+    opacity: "0.913"
+  }, /*#__PURE__*/React.createElement("use", {
+    fill: "#000",
+    filter: "url(#filter-5)",
+    xlinkHref: "#path-4"
+  }), /*#__PURE__*/React.createElement("use", {
+    fill: "#FFF",
+    xlinkHref: "#path-4"
+  })), /*#__PURE__*/React.createElement("g", {
+    id: "Oval-3"
+  }, /*#__PURE__*/React.createElement("use", {
+    fill: "#000",
+    filter: "url(#filter-7)",
+    xlinkHref: "#path-6"
+  }), /*#__PURE__*/React.createElement("use", {
+    fill: "#A43DFF",
+    xlinkHref: "#path-6"
+  })), /*#__PURE__*/React.createElement("g", {
+    id: "Oval-3-Copy-2",
+    opacity: "0.913",
+    transform: "rotate(-7 63.5 348.5)"
+  }, /*#__PURE__*/React.createElement("use", {
+    fill: "#000",
+    filter: "url(#filter-9)",
+    xlinkHref: "#path-8"
+  }), /*#__PURE__*/React.createElement("use", {
+    fill: "#FFF",
+    xlinkHref: "#path-8"
+  })), /*#__PURE__*/React.createElement("circle", {
+    id: "Oval-3-Copy-4",
+    fill: "#F5A623",
+    cx: "385",
+    cy: "117",
+    r: "12"
+  }), /*#__PURE__*/React.createElement("circle", {
+    id: "Oval-3-Copy-5",
+    fill: "#D8D8D8",
+    cx: "257",
+    cy: "9",
+    r: "9"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M145.182623,334.548531 C139.966285,339.764869 137.156925,346.476118 136.753323,353.300766 C136.311922,360.746058 133.113592,367.759704 127.839945,373.033351 C122.604098,378.270418 115.653858,381.543128 108.259778,381.941852 C100.95349,382.335699 93.769137,385.480378 88.3930654,391.383204 C83.408402,396.856823 80.9099736,403.833889 80.8989995,410.813393 L80.8989995,410.914598 C80.9111929,417.89898 83.4144987,424.878484 88.4064781,430.352103 C99.6170933,442.645492 118.683918,442.977153 130.316425,431.343426 C135.532764,426.127088 138.340904,419.418278 138.745725,412.591191 C139.185907,405.144679 142.384237,398.132253 147.659103,392.857387 C152.894951,387.62032 159.843972,384.350049 167.239271,383.951325 C174.544339,383.557478 181.729912,380.41036 187.104764,374.508753 C192.077234,369.048547 194.575662,362.093429 194.59883,355.130996 L194.59883,354.934682 C194.575662,347.964933 192.073576,341.002499 187.092571,335.541074 C181.332407,329.223671 173.498145,326.06558 165.663883,326.06558 C158.251513,326.06558 150.839143,328.89323 145.182623,334.548531",
+    id: "Fill-1",
+    fill: "url(#linearGradient-10)",
+    opacity: "0.898",
+    transform: "rotate(34 137.749 382.946)"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M220.972652,42 C213.584652,42.035 207.609652,48.035 207.609652,55.43 C207.609652,58.85 208.887652,61.971 210.992652,64.341 C213.289652,66.927 214.540652,70.274 214.540652,73.732 L214.539652,73.732 C214.539652,76.922 213.499652,80.038 211.513652,82.514 C209.037652,84.5 205.920652,85.541 202.731652,85.541 C199.272652,85.541 195.925652,84.29 193.340652,81.994 C190.969652,79.888 187.849652,78.609 184.429652,78.609 C176.801652,78.609 170.659652,84.969 171.014652,92.675 C171.330652,99.551 176.908652,105.132 183.784652,105.454 C187.483652,105.627 190.869652,104.303 193.393652,102.036 C195.949652,99.743 199.300652,98.537 202.733652,98.537 C206.191652,98.537 209.539652,99.788 212.125652,102.085 C214.494652,104.189 217.614652,105.469 221.035652,105.469 C222.732652,105.469 224.354652,105.152 225.849652,104.578 C225.856652,104.576 225.863652,104.574 225.869652,104.57 C226.071652,104.492 226.271652,104.411 226.467652,104.323 C226.485652,104.315 226.501652,104.307 226.519652,104.299 C226.705652,104.216 226.888652,104.13 227.070652,104.038 C227.097652,104.024 227.125652,104.009 227.152652,103.995 C227.322652,103.908 227.489652,103.818 227.656652,103.725 C227.693652,103.704 227.729652,103.681 227.765652,103.659 C227.920652,103.569 228.073652,103.479 228.223652,103.384 C228.270652,103.355 228.315652,103.323 228.361652,103.292 C228.499652,103.202 228.637652,103.111 228.772652,103.017 C228.828652,102.977 228.882652,102.936 228.936652,102.896 C229.058652,102.806 229.181652,102.717 229.301652,102.623 C229.366652,102.572 229.427652,102.52 229.491652,102.468 C229.598652,102.381 229.705652,102.295 229.809652,102.205 C229.882652,102.143 229.952652,102.077 230.023652,102.013 C230.115652,101.931 230.207652,101.848 230.296652,101.763 C230.377652,101.687 230.452652,101.608 230.530652,101.531 C230.608652,101.454 230.686652,101.377 230.762652,101.298 C230.847652,101.208 230.929652,101.116 231.012652,101.024 C231.076652,100.952 231.141652,100.883 231.204652,100.811 C231.294652,100.706 231.380652,100.599 231.467652,100.492 C231.518652,100.429 231.572652,100.366 231.621652,100.302 C231.715652,100.182 231.805652,100.06 231.894652,99.938 C231.934652,99.882 231.976652,99.829 232.015652,99.774 C232.110652,99.639 232.201652,99.501 232.291652,99.362 C232.321652,99.317 232.353652,99.271 232.383652,99.224 C232.478652,99.074 232.569652,98.921 232.658652,98.767 C232.679652,98.73 232.702652,98.694 232.723652,98.656 C232.818652,98.491 232.906652,98.322 232.994652,98.152 C233.008652,98.125 233.022652,98.099 233.037652,98.071 C233.129652,97.89 233.214652,97.707 233.298652,97.519 C233.305652,97.503 233.314652,97.486 233.321652,97.469 C233.409652,97.272 233.491652,97.072 233.569652,96.871 L233.578652,96.851 C234.152652,95.356 234.467652,93.733 234.467652,92.037 C234.467652,88.617 233.189652,85.496 231.083652,83.125 C228.787652,80.54 227.536652,77.191 227.536652,73.733 C227.536652,70.301 228.741652,66.949 231.035652,64.395 C233.302652,61.87 234.625652,58.484 234.453652,54.786 C234.131652,47.91 228.550652,42.332 221.673652,42.015 C221.486652,42.006 221.299652,42.001 221.113652,42 L220.972652,42 Z",
+    id: "Fill-1",
+    fill: "#FFF",
+    opacity: "0.097"
+  }))));
+};
+var WrapperIcon = function WrapperIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 64 42",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("linearGradient", {
+    x1: "50%",
+    y1: "-.962%",
+    x2: "50%",
+    y2: "102.035%",
+    id: "linearGradient-1"
+  }, /*#__PURE__*/React.createElement("stop", {
+    stopColor: "#1A6DFF",
+    offset: "0%"
+  }), /*#__PURE__*/React.createElement("stop", {
+    stopColor: "#C822FF",
+    offset: "100%"
+  }))), /*#__PURE__*/React.createElement("g", {
+    id: "Page-1",
+    fill: "none",
+    fillRule: "evenodd"
+  }, /*#__PURE__*/React.createElement("g", {
+    id: "eb-wrapper",
+    fill: "url(#linearGradient-1)",
+    fillRule: "nonzero"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M3,0 C1.347656,0 0,1.347656 0,3 L0,27 C0,28.652344 1.347656,30 3,30 L20.050781,30 C20.566406,36.699219 26.171875,42 33,42 C39.828125,42 45.433594,36.699219 45.949219,30 L61,30 C62.652344,30 64,28.652344 64,27 L64,3 C64,1.347656 62.652344,0 61,0 L3,0 Z M3,2 L61,2 C61.550781,2 62,2.449219 62,3 L62,27 C62,27.550781 61.550781,28 61,28 L45.949219,28 C45.460938,21.628906 40.371094,16.539063 34,16.050781 L34,5 C34,4.449219 33.554688,4 33,4 C32.445313,4 32,4.449219 32,5 L32,16.050781 C25.628906,16.539063 20.539063,21.628906 20.050781,28 L3,28 C2.449219,28 2,27.550781 2,27 L2,3 C2,2.449219 2.449219,2 3,2 Z M5,4 C4.445313,4 4,4.449219 4,5 C4,5.550781 4.445313,6 5,6 L7,6 C7.554688,6 8,5.550781 8,5 C8,4.449219 7.554688,4 7,4 L5,4 Z M17,4 C16.445313,4 16,4.449219 16,5 L16,25 C16,25.550781 16.445313,26 17,26 C17.554688,26 18,25.550781 18,25 L18,5 C18,4.449219 17.554688,4 17,4 Z M49,4 C48.445313,4 48,4.449219 48,5 L48,25 C48,25.550781 48.445313,26 49,26 C49.554688,26 50,25.550781 50,25 L50,5 C50,4.449219 49.554688,4 49,4 Z M5,9 C4.445313,9 4,9.449219 4,10 C4,10.550781 4.445313,11 5,11 L7,11 C7.554688,11 8,10.550781 8,10 C8,9.449219 7.554688,9 7,9 L5,9 Z M5,14 C4.445313,14 4,14.449219 4,15 C4,15.550781 4.445313,16 5,16 L7,16 C7.554688,16 8,15.550781 8,15 C8,14.449219 7.554688,14 7,14 L5,14 Z M33,18 C39.066406,18 44,22.933594 44,29 C44,35.066406 39.066406,40 33,40 C26.933594,40 22,35.066406 22,29 C22,22.933594 26.933594,18 33,18 Z M5,19 C4.445313,19 4,19.449219 4,20 C4,20.550781 4.445313,21 5,21 L7,21 C7.554688,21 8,20.550781 8,20 C8,19.449219 7.554688,19 7,19 L5,19 Z M33,22 C32.445313,22 32,22.449219 32,23 L32,28 L27,28 C26.445313,28 26,28.449219 26,29 C26,29.550781 26.445313,30 27,30 L32,30 L32,35 C32,35.550781 32.445313,36 33,36 C33.554688,36 34,35.550781 34,35 L34,30 L39,30 C39.554688,30 40,29.550781 40,29 C40,28.449219 39.554688,28 39,28 L34,28 L34,23 C34,22.449219 33.554688,22 33,22 Z M5,24 C4.445313,24 4,24.449219 4,25 C4,25.550781 4.445313,26 5,26 L7,26 C7.554688,26 8,25.550781 8,25 C8,24.449219 7.554688,24 7,24 L5,24 Z",
+    id: "Shape"
+  }))));
+};
+var InstagramIcon = function InstagramIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    id: "\u0421\u043B\u043E\u0439_1",
+    viewBox: "0 0 64 64"
+  }, /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_1__43625",
+    gradientUnits: "userSpaceOnUse",
+    x1: "32",
+    y1: "6.667",
+    x2: "32",
+    y2: "57.872",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M44,57H20c-7.168,0-13-5.832-13-13V20c0-7.168,5.832-13,13-13h24c7.168,0,13,5.832,13,13v24 C57,51.168,51.168,57,44,57z M20,9C13.935,9,9,13.935,9,20v24c0,6.065,4.935,11,11,11h24c6.065,0,11-4.935,11-11V20 c0-6.065-4.935-11-11-11H20z",
+    fill: "url(#SVGID_1__43625)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_2__43625",
+    gradientUnits: "userSpaceOnUse",
+    x1: "32",
+    y1: "18.167",
+    x2: "32",
+    y2: "45.679",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#6dc7ff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#e6abff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M32,45c-7.168,0-13-5.832-13-13c0-7.168,5.832-13,13-13c7.168,0,13,5.832,13,13 C45,39.168,39.168,45,32,45z M32,23c-4.962,0-9,4.038-9,9c0,4.963,4.038,9,9,9c4.963,0,9-4.037,9-9C41,27.038,36.963,23,32,23z",
+    fill: "url(#SVGID_2__43625)"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_3__43625",
+    gradientUnits: "userSpaceOnUse",
+    x1: "46",
+    y1: "12.75",
+    x2: "46",
+    y2: "23.049",
+    spreadMethod: "reflect"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#6dc7ff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#e6abff"
+  })), /*#__PURE__*/React.createElement("circle", {
+    cx: "46",
+    cy: "18",
+    r: "3",
+    fill: "url(#SVGID_3__43625)"
+  }));
+};
+var ImageGalleryIcon = function ImageGalleryIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    id: "Layer_1",
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 66 70"
+  }, /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_1_GALLERY",
+    gradientUnits: "userSpaceOnUse",
+    x1: "-11.021",
+    y1: "35.1",
+    x2: "79.881",
+    y2: "35.1"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("path", {
+    className: "st0g",
+    d: "M66.1,2.1H-0.1c-0.9,0-1.6,0.7-1.6,1.6v31.4v31.4c0,0.9,0.7,1.6,1.6,1.6h66.2c0.9,0.2,1.6-0.5,1.6-1.4V35.3 V3.7C67.7,2.8,67,2.1,66.1,2.1z M64.6,36.9v5.8v22.5H1.5V33.8V23.5v-18h63.1V36.9z"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_2_GALLERY",
+    gradientUnits: "userSpaceOnUse",
+    x1: "-11.021",
+    y1: "25.217",
+    x2: "79.881",
+    y2: "25.217"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("path", {
+    className: "st1g",
+    d: "M12.4,33.2h15.7c1.7,0,3-1.4,3-3v-10c0-1.7-1.4-3-3-3H12.4c-1.7,0-3,1.4-3,3v10C9.4,31.9,10.8,33.2,12.4,33.2z M12,20.2c0-0.2,0.2-0.4,0.4-0.4h15.7c0.2,0,0.4,0.2,0.4,0.4v10c0,0.2-0.2,0.4-0.4,0.4H12.4c-0.2,0-0.4-0.2-0.4-0.4V20.2z"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_3_GALLERY",
+    gradientUnits: "userSpaceOnUse",
+    x1: "-11.021",
+    y1: "43.836",
+    x2: "79.881",
+    y2: "43.836"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("path", {
+    className: "st2g",
+    d: "M12.4,51.8h15.7c1.7,0,3-1.4,3-3v-10c0-1.7-1.4-3-3-3H12.4c-1.7,0-3,1.4-3,3v10C9.4,50.5,10.8,51.8,12.4,51.8z M12,38.9c0-0.2,0.2-0.4,0.4-0.4h15.7c0.2,0,0.4,0.2,0.4,0.4v10c0,0.2-0.2,0.4-0.4,0.4H12.4c-0.2,0-0.4-0.2-0.4-0.4V38.9z"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_4_GALLERY",
+    gradientUnits: "userSpaceOnUse",
+    x1: "-11.021",
+    y1: "43.836",
+    x2: "79.881",
+    y2: "43.836"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("path", {
+    className: "st3g",
+    d: "M37.5,51.8h15.7c1.7,0,3-1.4,3-3v-10c0-1.7-1.4-3-3-3H37.5c-1.7,0-3,1.4-3,3v10C34.5,50.5,35.9,51.8,37.5,51.8 z M37.1,38.9c0-0.2,0.2-0.4,0.4-0.4h15.7c0.2,0,0.4,0.2,0.4,0.4v10c0,0.2-0.2,0.4-0.4,0.4H37.5c-0.2,0-0.4-0.2-0.4-0.4V38.9z"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_5_GALLERY",
+    gradientUnits: "userSpaceOnUse",
+    x1: "-11.021",
+    y1: "25.217",
+    x2: "79.881",
+    y2: "25.217"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("path", {
+    className: "st4g",
+    d: "M37.5,33.2h15.7c1.7,0,3-1.4,3-3v-10c0-1.7-1.4-3-3-3H37.5c-1.7,0-3,1.4-3,3v10C34.5,31.9,35.9,33.2,37.5,33.2 z M37.1,20.2c0-0.2,0.2-0.4,0.4-0.4h15.7c0.2,0,0.4,0.2,0.4,0.4v10c0,0.2-0.2,0.4-0.4,0.4h0l-4.7-4.9h-0.1l-2.5,2.2l-3.2-4 c0,0,0,0-0.1,0c0,0,0,0-0.1,0l-5,6.7c-0.2-0.1-0.3-0.2-0.3-0.4V20.2z"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_6_GALLERY",
+    gradientUnits: "userSpaceOnUse",
+    x1: "-11.021",
+    y1: "22.534",
+    x2: "79.881",
+    y2: "22.534"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("path", {
+    className: "st5g",
+    d: "M48.1,23.8c0.7,0,1.2-0.6,1.2-1.2s-0.6-1.2-1.2-1.2s-1.2,0.6-1.2,1.2C46.8,23.1,47.3,23.8,48.1,23.8z"
+  }));
+};
+var HeadingIcon = function HeadingIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 83 63"
+  }, /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("linearGradient", {
+    id: "a",
+    x1: "50%",
+    x2: "50%",
+    y1: ".781%",
+    y2: "100.93%"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0%",
+    stopColor: "#6DC7FF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "100%",
+    stopColor: "#E6ABFF"
+  })), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "b",
+    x1: "50%",
+    x2: "50%",
+    y1: "-13.261%",
+    y2: "419.291%"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0%",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "100%",
+    stopColor: "#C822FF"
+  })), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "c",
+    x1: "50%",
+    x2: "50%",
+    y1: "3.125%",
+    y2: "96.88%"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0%",
+    stopColor: "#6DC7FF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "100%",
+    stopColor: "#E6ABFF"
+  })), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "d",
+    x1: "50%",
+    x2: "50%",
+    y1: ".781%",
+    y2: "100.93%"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0%",
+    stopColor: "#6DC7FF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "100%",
+    stopColor: "#E6ABFF"
+  })), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "e",
+    x1: "50%",
+    x2: "50%",
+    y1: ".782%",
+    y2: "100.93%"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0%",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "100%",
+    stopColor: "#C822FF"
+  }))), /*#__PURE__*/React.createElement("g", {
+    fill: "none",
+    fillRule: "evenodd",
+    stroke: "none",
+    strokeWidth: "1"
+  }, /*#__PURE__*/React.createElement("path", {
+    fill: "url(#a)",
+    fillRule: "nonzero",
+    d: "M72.056 0H10.944C7.115 0 4 3.072 4 6.848v49.304C4 59.928 7.115 63 10.944 63h61.112C75.885 63 79 59.928 79 56.152V6.848C79 3.072 75.885 0 72.056 0zm4.166 56.152c0 2.265-1.87 4.109-4.166 4.109H10.944c-2.297 0-4.166-1.844-4.166-4.109V6.848c0-2.265 1.87-4.109 4.166-4.109h61.112c2.297 0 4.166 1.844 4.166 4.109v49.304z"
+  }), /*#__PURE__*/React.createElement("path", {
+    fill: "url(#b)",
+    d: "M77.5 26a5.506 5.506 0 00-5.5 5.5c0 3.033 2.467 5.5 5.5 5.5s5.5-2.467 5.5-5.5-2.467-5.5-5.5-5.5z"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "77.5",
+    cy: "31.5",
+    r: "2.5",
+    fill: "url(#c)"
+  }), /*#__PURE__*/React.createElement("path", {
+    fill: "url(#b)",
+    d: "M5.5 26A5.506 5.506 0 000 31.5C0 34.533 2.467 37 5.5 37s5.5-2.467 5.5-5.5S8.533 26 5.5 26z"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "5.5",
+    cy: "31.5",
+    r: "2.5",
+    fill: "url(#c)"
+  }), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
+    fill: "url(#d)",
+    d: "M3 12.667h14.452V19H3v-6.333zm30.968-4.223l-6.194 4.223H25.71V6.333L33.968 0H35v8.444h-1.032z",
+    transform: "translate(22 17)"
+  }), /*#__PURE__*/React.createElement("path", {
+    fill: "url(#e)",
+    d: "M0 0h6v30H0V0zm16 0h6v30h-6V0zm18 0h6v30h-6V0z",
+    transform: "translate(22 17)"
+  }))));
+};
+var SliderIcon = function SliderIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    x: "0",
+    y: "0",
+    enableBackground: "new 0 0 70 70",
+    version: "1.1",
+    viewBox: "0 0 70 70",
+    xmlSpace: "preserve"
+  }, /*#__PURE__*/React.createElement("linearGradient", {
+    x1: "-68.872",
+    x2: "-62.187",
+    y1: "35.19",
+    y2: "35.19",
+    gradientTransform: "matrix(-1 0 0 1 1.128 0)",
+    gradientUnits: "userSpaceOnUse",
+    id: "SVGID_1_SLIDER"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#C822FF"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M64.8 40.6c-.4 0-.7-.1-1-.4-.6-.6-.6-1.5 0-2.1l2.4-2.5-2.3-3.4c-.5-.7-.3-1.6.4-2.1s1.6-.3 2.1.4l3.6 5.4-4.1 4.3c-.3.2-.7.4-1.1.4z",
+    className: "st0"
+  }), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("linearGradient", {
+    x1: "-132.008",
+    x2: "-125.322",
+    y1: "35.19",
+    y2: "35.19",
+    gradientTransform: "translate(132.008)",
+    gradientUnits: "userSpaceOnUse",
+    id: "SVGID_2_SLIDER"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#C822FF"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M5.2 40.6c-.4 0-.8-.2-1.1-.5L0 35.8l3.6-5.4c.5-.7 1.4-.9 2.1-.4.7.5.9 1.4.4 2.1l-2.3 3.4L6.3 38c.6.6.6 1.5 0 2.1-.4.3-.7.5-1.1.5z",
+    className: "st1"
+  })), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("linearGradient", {
+    x1: "10.48",
+    x2: "59.603",
+    y1: "35",
+    y2: "35",
+    gradientUnits: "userSpaceOnUse",
+    id: "SVGID_3_SLIDER"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#C822FF"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M53 65.2H17.1c-3.6 0-6.6-3-6.6-6.6V11.4c0-3.6 3-6.6 6.6-6.6H53c3.6 0 6.6 3 6.6 6.6v47.2c0 3.6-3 6.6-6.6 6.6zM17.1 7.8c-2 0-3.6 1.6-3.6 3.6v47.2c0 2 1.6 3.6 3.6 3.6H53c2 0 3.6-1.6 3.6-3.6V11.4c0-2-1.6-3.6-3.6-3.6H17.1z",
+    className: "st2"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    x1: "10.809",
+    x2: "59.152",
+    y1: "40.508",
+    y2: "40.508",
+    gradientUnits: "userSpaceOnUse",
+    id: "SVGID_4_SLIDER"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#C822FF"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M33.2 53.8L23 41.3 13.2 53.7 10.8 51.8 23 36.6 33.5 49.4 57.1 27.2 59.2 29.4z",
+    className: "st3"
+  }), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("linearGradient", {
+    x1: "39.404",
+    x2: "49.259",
+    y1: "21.195",
+    y2: "21.195",
+    gradientUnits: "userSpaceOnUse",
+    id: "SVGID_5_SLIDER"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#C822FF"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M44.3 26.1c-2.7 0-4.9-2.2-4.9-4.9s2.2-4.9 4.9-4.9 4.9 2.2 4.9 4.9c.1 2.7-2.2 4.9-4.9 4.9zm0-7c-1.2 0-2.1 1-2.1 2.1 0 1.2 1 2.1 2.1 2.1s2.1-1 2.1-2.1c.1-1.2-.9-2.1-2.1-2.1z",
+    className: "st4"
+  }))));
+};
+var TypingTextIcon = function TypingTextIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    x: "0",
+    y: "0",
+    enableBackground: "new 0 0 70 70",
+    version: "1.1",
+    viewBox: "0 0 70 70",
+    xmlSpace: "preserve"
+  }, /*#__PURE__*/React.createElement("linearGradient", {
+    x1: "-16.082",
+    x2: "86.557",
+    y1: "32.808",
+    y2: "37.212",
+    gradientUnits: "userSpaceOnUse",
+    id: "SVGID_1_TYPED"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#C822FF"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M63.4 0H6.6C3 0 0 3 0 6.6v56.8C0 67 3 70 6.6 70h56.8c3.6 0 6.6-3 6.6-6.6V6.6C70 3 67 0 63.4 0zM67 63.4c0 2-1.6 3.6-3.6 3.6H6.6c-2 0-3.6-1.6-3.6-3.6V6.6C3 4.6 4.6 3 6.6 3h56.8c2 0 3.6 1.6 3.6 3.6v56.8z",
+    className: "st0t"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    x1: "-16.763",
+    x2: "85.875",
+    y1: "48.693",
+    y2: "53.097",
+    gradientUnits: "userSpaceOnUse",
+    id: "SVGID_2_TYPED"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#C822FF"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M58.8 50.1H44.9c-.8 0-1.5.7-1.5 1.5s.7 1.5 1.5 1.5h13.9c.8 0 1.5-.7 1.5-1.5s-.7-1.5-1.5-1.5z",
+    className: "st1t"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    x1: "-16.087",
+    x2: "86.551",
+    y1: "32.94",
+    y2: "37.344",
+    gradientUnits: "userSpaceOnUse",
+    id: "SVGID_3_TYPED"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#C822FF"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M45.4 25.2v-6.1c0-1.3-1.2-2.2-2.2-2.2H11.9c-1.3 0-2.2 1.2-2.2 2.2v6.1c0 .7.3 1.3.7 1.6.4.4 1.1.7 1.6.7h2.7c1.3 0 2.2-1.2 2.2-2.2v-.8H24V46h-3.2c-1.3 0-2.2 1.2-2.2 2.2v2.7c0 1.3 1.2 2.2 2.2 2.2H35c1.3 0 2.2-1.2 2.2-2.2v-2.6c.1-.5-.1-1-.5-1.4-.4-.5-1-.8-1.7-.8h-3.8V24.4h7.1v.8c0 1.3 1.2 2.2 2.2 2.2h2.7c1.3 0 2.2-1.1 2.2-2.2zm-5.9-3.3H30c-.7 0-1.2.5-1.2 1.2v24.1c0 .7.5 1.2 1.2 1.2h4.8v2.2H21.1v-2.2h4.2c.7 0 1.2-.5 1.2-1.2v-24c0-.7-.5-1.2-1.2-1.2h-9.6c-.7 0-1.2.5-1.2 1.2V25h-2.4v-5.7H43v5.6h-2.2v-1.8c-.1-.6-.6-1.2-1.3-1.2z",
+    className: "st2t"
+  }));
+};
+var InstagramOriginalIcon = function InstagramOriginalIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    x: "0",
+    y: "0",
+    enableBackground: "new 0 0 512 512",
+    version: "1.1",
+    viewBox: "0 0 512 512",
+    xmlSpace: "preserve",
+    id: "SVG_INS_ORG"
+  }, /*#__PURE__*/React.createElement("linearGradient", {
+    id: "a",
+    x1: "-46.004",
+    x2: "-32.933",
+    y1: "634.121",
+    y2: "647.192",
+    gradientTransform: "matrix(32 0 0 -32 1519 20757)",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#FFC107"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "0.507",
+    stopColor: "#F44336"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "0.99",
+    stopColor: "#9C27B0"
+  })), /*#__PURE__*/React.createElement("path", {
+    fill: "url(#a)",
+    d: "M352 0H160C71.648 0 0 71.648 0 160v192c0 88.352 71.648 160 160 160h192c88.352 0 160-71.648 160-160V160C512 71.648 440.352 0 352 0zm112 352c0 61.76-50.24 112-112 112H160c-61.76 0-112-50.24-112-112V160C48 98.24 98.24 48 160 48h192c61.76 0 112 50.24 112 112v192z"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "b",
+    x1: "-42.297",
+    x2: "-36.64",
+    y1: "637.828",
+    y2: "643.485",
+    gradientTransform: "matrix(32 0 0 -32 1519 20757)",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#FFC107"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "0.507",
+    stopColor: "#F44336"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "0.99",
+    stopColor: "#9C27B0"
+  })), /*#__PURE__*/React.createElement("path", {
+    fill: "url(#b)",
+    d: "M256 128c-70.688 0-128 57.312-128 128s57.312 128 128 128 128-57.312 128-128-57.312-128-128-128zm0 208c-44.096 0-80-35.904-80-80 0-44.128 35.904-80 80-80s80 35.872 80 80c0 44.096-35.904 80-80 80z"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "c",
+    x1: "-35.546",
+    x2: "-34.792",
+    y1: "644.579",
+    y2: "645.333",
+    gradientTransform: "matrix(32 0 0 -32 1519 20757)",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#FFC107"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "0.507",
+    stopColor: "#F44336"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "0.99",
+    stopColor: "#9C27B0"
+  })), /*#__PURE__*/React.createElement("circle", {
+    cx: "393.6",
+    cy: "118.4",
+    r: "17.056",
+    fill: "url(#c)"
+  }));
+};
+var SaveIcon = function SaveIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    x: "0",
+    y: "0",
+    enableBackground: "new 0 0 500 500",
+    version: "1.1",
+    viewBox: "0 0 500 500",
+    xmlSpace: "preserve",
+    className: "eb-instagram-save-icon"
+  }, /*#__PURE__*/React.createElement("path", {
+    id: "INS_SAVE",
+    d: "M156.4 348c-2.1 0-4.2-.4-6.1-1.4-5.1-2.4-8.4-7.6-8.4-13.2V101.3c0-10.8 8.8-19.7 19.7-19.7h190.6c10.8 0 19.6 8.8 19.6 19.7v232.1c0 5.6-3.3 10.8-8.4 13.2-5.1 2.4-11.2 1.6-15.5-2.1l-91-76.4-91 76.4c-2.8 2.3-6.1 3.5-9.5 3.5zm-6.4-22.3zm213.6 0zm-106.8-85.3c3.4 0 6.7 1.2 9.5 3.5l80.8 67.9V106.3H166.5v205.5l80.9-67.9c2.7-2.3 6-3.5 9.4-3.5zm-6.4 22.3zm12.8 0z",
+    className: "st0"
+  }));
+};
+var ParallaxSliderIcon = function ParallaxSliderIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    x: "0",
+    y: "0",
+    enableBackground: "new 0 0 66 70",
+    version: "1.1",
+    viewBox: "0 0 66 70",
+    xmlSpace: "preserve"
+  }, /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_PARA_1",
+    x1: "-16.218",
+    x2: "89.025",
+    y1: "15.344",
+    y2: "18.043",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#C822FF"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M68.4 13c-.3-.4-.7-.6-1.1-.6-.3 0-.5.1-.8.2-.6.5-.8 1.3-.4 1.9l2.3 3.3-2.4 2.5c-.5.5-.5 1.3 0 1.9.2.2.6.4.9.4.3 0 .7-.2 1-.5l3.9-4.1-3.4-5z",
+    className: "parallax-st0"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_PARA_2",
+    x1: "-17.074",
+    x2: "88.169",
+    y1: "48.75",
+    y2: "51.448",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#C822FF"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M3.5 49.7l2.3-3.3c.4-.6.3-1.4-.4-1.9-.2-.2-.5-.2-.8-.2-.4 0-.9.2-1.1.6l-3.4 5 3.9 4c.3.3.6.5 1 .5.3 0 .7-.1.9-.4.5-.5.5-1.3 0-1.9l-2.4-2.4z",
+    className: "parallax-st1"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_PARA_3",
+    x1: "-16.667",
+    x2: "88.576",
+    y1: "32.874",
+    y2: "35.573",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#C822FF"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M58 2L17.4.3c-2.7 0-4.8 2.2-4.8 4.8L10 62.3c0 2.7 2.2 4.8 4.8 4.8h.1l35.8-2.8h.1c2.5-.4 4.1-2 4.6-4.6L61 19l.5-3.6L62.7 7v-.2C62.7 4.1 60.6 2 58 2zm-7.6 59.5l-35.6 2.8c-1.1 0-1.9-.9-1.9-1.9l.7-15.9L26 32l9.5 16.6 21.9-24.2-3.6 26.1-1.2 8.8c-.3 1.3-.9 1.9-2.2 2.2zM36 43.7L26.5 27 13.8 41.8l1.6-36.7c0-1.1.9-2 1.9-2l40.6 1.7c1 0 1.9.8 1.9 1.9L58 19.3 36 43.7z",
+    className: "parallax-st2"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_PARA_4",
+    x1: "-17.353",
+    x2: "87.89",
+    y1: "59.614",
+    y2: "62.312",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#C822FF"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M60.5 52.9c-.6-.1-1.3.4-1.4 1l-1.6 10.8c-.2 1-1 1.8-2.1 1.9l-9.8.9c-.7.1-1.1.6-1.1 1.3.1.6.6 1.1 1.2 1.1h.1l9.8-.9c2.2-.2 3.9-1.8 4.2-4l1.6-10.8c.2-.6-.3-1.2-.9-1.3z",
+    className: "parallax-st3"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "SVGID_PARA_5",
+    x1: "-16.284",
+    x2: "88.959",
+    y1: "17.925",
+    y2: "20.623",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1A6DFF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#C822FF"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M42.8 17.1c-.1-.3-.3-.5-.5-.8-.2-.2-.3-.4-.5-.5-.2-.1-.3-.3-.5-.4-.2-.1-.3-.2-.5-.3-.2-.1-.3-.2-.5-.2-.2-.1-.3-.1-.5-.1-.1 0-.2-.1-.3-.1h-.7c-.2 0-.4 0-.5.1-.2 0-.4.1-.5.2-.2.1-.4.2-.5.3-.2.1-.4.2-.5.4-.2.2-.4.3-.5.5-.2.2-.4.5-.6.8-.3.5-.5 1-.6 1.6 0 .2-.1.5-.1.7v1.1c.1.6.2 1.1.5 1.5.1.3.3.5.5.8.2.2.3.4.5.5.2.1.3.2.5.4.2.1.3.2.5.3.2.1.3.1.5.2h1.1c.2 0 .4 0 .5-.1.2 0 .4-.1.5-.1.2-.1.4-.1.5-.2.2-.1.4-.2.5-.3.2-.1.4-.3.5-.4.2-.2.4-.3.5-.5.2-.2.4-.5.6-.8.3-.4.5-.9.6-1.4 0-.2.1-.4.1-.6v-1c-.2-.7-.4-1.2-.6-1.6zM40.5 20c-.1.3-.3.5-.6.7-.2.1-.3.2-.5.3-.2.1-.3.1-.5.1h-.1c-.2 0-.3 0-.5-.1s-.4-.2-.5-.3c-.2-.2-.4-.5-.5-.8-.1-.2-.1-.5-.1-.8 0-.2.1-.4.2-.6.1-.3.3-.6.6-.8.2-.1.3-.3.5-.3.2-.1.3-.1.5-.1h.1c.2 0 .3 0 .4.1.2.1.4.2.5.3.2.2.4.4.5.7.1.2.1.5.1.8.1.3 0 .6-.1.8z",
+    className: "parallax-st4"
+  }));
+};
+var CategoryIcon = function CategoryIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    className: "eb-category-icon",
+    xmlns: "http://www.w3.org/2000/svg",
+    xmlnsXlink: "http://www.w3.org/1999/xlink",
+    width: "20",
+    height: "20",
+    viewBox: "0 0 374 374"
+  }, /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("linearGradient", {
+    id: "a",
+    x1: "50%",
+    x2: "50%",
+    y1: "0%",
+    y2: "100%"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0%",
+    stopColor: "#2460FF"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "100%",
+    stopColor: "#B80AFF"
+  })), /*#__PURE__*/React.createElement("path", {
+    id: "c",
+    d: "M135.028 96h103.944l.497.21h.373c6.217 0 11.273 2.692 15.169 8.077 1.326 2.237 1.989 4.545 1.989 6.923 0 5.804-3.398 10.28-10.195 13.426-2.321.91-4.642 1.364-6.963 1.364H133.909c-4.973 0-9.366-1.923-13.179-5.77-2.487-2.796-3.73-5.664-3.73-8.6v-1.26c0-4.615 2.735-8.566 8.206-11.853 2.984-1.538 5.927-2.307 8.828-2.307h.497l.497-.21zm1.242 77l58.078.214c3.862 0 7.995 1.568 12.397 4.705 3.503 3.208 5.255 6.701 5.255 10.48 0 5.275-3.1 9.588-9.298 12.939-3.054 1.425-6.019 2.138-8.893 2.138h-58.752c-5.75 0-10.735-2.281-14.958-6.844-2.066-2.566-3.099-5.132-3.099-7.699v-1.283c0-4.848 3.19-9.018 9.567-12.511 3.234-1.284 6.289-1.925 9.163-1.925h.27c.18 0 .27-.071.27-.214zm105.362 0h.736c5.685 0 10.14 2.968 13.369 8.905.842 2.12 1.263 4.17 1.263 6.148 0 5.936-2.912 10.495-8.737 13.675-2.105.848-3.965 1.272-5.579 1.272h-1.473c-4.772 0-8.843-2.509-12.211-7.527-1.333-2.544-2-5.052-2-7.526 0-5.795 2.877-10.318 8.632-13.569 2.175-.919 4.175-1.378 6-1.378zm-106.604 75h103.944c0 .141 1.284.318 3.854.53 4.31.919 7.584 2.58 9.822 4.982 2.901 2.898 4.352 6.22 4.352 9.965 0 5.724-3.398 10.247-10.195 13.569-2.073.636-3.482.954-4.228.954H131.423c-2.901 0-6.383-1.66-10.444-4.982-2.653-3.04-3.979-6.113-3.979-9.223v-.954c0-5.23 3.108-9.505 9.325-12.827 1.824-.919 4.642-1.555 8.455-1.908 0-.07.083-.106.248-.106z"
+  }), /*#__PURE__*/React.createElement("filter", {
+    id: "b",
+    width: "157.9%",
+    height: "144.5%",
+    x: "-28.9%",
+    y: "-14%",
+    filterUnits: "objectBoundingBox"
+  }, /*#__PURE__*/React.createElement("feOffset", {
+    dy: "15",
+    "in": "SourceAlpha",
+    result: "shadowOffsetOuter1"
+  }), /*#__PURE__*/React.createElement("feGaussianBlur", {
+    "in": "shadowOffsetOuter1",
+    result: "shadowBlurOuter1",
+    stdDeviation: "11"
+  }), /*#__PURE__*/React.createElement("feColorMatrix", {
+    "in": "shadowBlurOuter1",
+    values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+  }))), /*#__PURE__*/React.createElement("g", {
+    fill: "none",
+    fillRule: "evenodd",
+    stroke: "none",
+    strokeWidth: "1"
+  }, /*#__PURE__*/React.createElement("g", {
+    transform: "translate(-69 -69)"
+  }, /*#__PURE__*/React.createElement("g", {
+    transform: "translate(69 69)"
+  }, /*#__PURE__*/React.createElement("circle", {
+    cx: "187",
+    cy: "187",
+    r: "187",
+    fill: "url(#a)"
+  }), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("use", {
+    fill: "#000",
+    filter: "url(#b)",
+    xlinkHref: "#c"
+  }), /*#__PURE__*/React.createElement("use", {
+    fill: "#FFF",
+    xlinkHref: "#c"
+  }))))));
+};
+var ToggleContentIcon = function ToggleContentIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    xmlnsXlink: "http://www.w3.org/1999/xlink",
+    viewBox: "0 0 66 70"
+  }, /*#__PURE__*/React.createElement("linearGradient", {
+    id: "a"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "toggle-b",
+    x1: "1.959",
+    x2: "68.382",
+    y1: "47.1",
+    y2: "47.1",
+    gradientUnits: "userSpaceOnUse",
+    xlinkHref: "#a"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "toggle-c",
+    x1: "1.959",
+    x2: "68.382",
+    y1: "47.15",
+    y2: "47.15",
+    gradientUnits: "userSpaceOnUse",
+    xlinkHref: "#a"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "d",
+    x1: "1.959",
+    x2: "68.382",
+    y1: "7.5",
+    y2: "7.5",
+    gradientUnits: "userSpaceOnUse",
+    xlinkHref: "#a"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "e",
+    x1: "1.959",
+    x2: "68.382",
+    y1: "7.6",
+    y2: "7.6",
+    gradientUnits: "userSpaceOnUse",
+    xlinkHref: "#a"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "f",
+    x1: "1.959",
+    x2: "68.382",
+    y1: "36.6",
+    y2: "36.6",
+    gradientUnits: "userSpaceOnUse",
+    xlinkHref: "#a"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "g",
+    x1: "1.959",
+    x2: "68.382",
+    y1: "43.3",
+    y2: "43.3",
+    gradientUnits: "userSpaceOnUse",
+    xlinkHref: "#a"
+  }), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "h",
+    x1: "1.959",
+    x2: "68.382",
+    y1: "49.95",
+    y2: "49.95",
+    gradientUnits: "userSpaceOnUse",
+    xlinkHref: "#a"
+  }), /*#__PURE__*/React.createElement("path", {
+    fill: "url(#toggle-b)",
+    d: "M26.5 24.2H4.6c-2.1 0-3.7 1.6-3.7 3.7v38.5c0 2 1.6 3.6 3.7 3.6h21.9c2.1 0 3.7-1.6 3.7-3.7V28.1c-.1-2.3-1.7-3.9-3.7-3.9zm.9 42.1c0 .5-.5.9-.9.9H4.6c-.5 0-.9-.5-.9-.9V28.1c0-.5.5-.9.9-.9h21.9c.5 0 .9.5.9.9z"
+  }), /*#__PURE__*/React.createElement("path", {
+    fill: "url(#toggle-c)",
+    d: "M61.5 24.2H39.6c-2.1 0-3.7 1.6-3.7 3.7v38.5c0 2.1 1.6 3.7 3.7 3.7h21.9c2.1 0 3.7-1.6 3.7-3.7V28.1c.2-2.3-1.7-3.9-3.7-3.9zm.9 42.1c0 .5-.5.9-.9.9H39.6c-.5 0-.9-.5-.9-.9V28.1c0-.5.5-.9.9-.9h21.9c.5 0 .9.5.9.9z"
+  }), /*#__PURE__*/React.createElement("path", {
+    fill: "url(#d)",
+    d: "M24.8 15h18.9c2.1 0 3.9-1.6 3.9-3.9V3.9C47.6 1.8 46 0 43.7 0H24.8c-2 0-3.9 1.6-3.9 3.9V11c0 2.4 1.6 4 3.9 4zM23.7 4.1c0-.5.5-.9.9-.9h18.9c.5 0 .9.5.9.9v7.1c0 .5-.5.9-.9.9H24.6c-.5 0-.9-.5-.9-.9z"
+  }), /*#__PURE__*/React.createElement("path", {
+    fill: "url(#e)",
+    d: "M36.8 10.4H42.3V4.8H36.8V9z"
+  }), /*#__PURE__*/React.createElement("path", {
+    fill: "url(#f)",
+    d: "M56.6 35.2H44.4V38H56.6z"
+  }), /*#__PURE__*/React.createElement("path", {
+    fill: "url(#g)",
+    d: "M56.6 41.9H44.4v2.8H56.6z"
+  }), /*#__PURE__*/React.createElement("path", {
+    fill: "url(#h)",
+    d: "M56.6 48.6H44.4v2.7H56.6z"
+  }), /*#__PURE__*/React.createElement("path", {
+    fill: "url(#f)",
+    d: "M21.4 35.2H9.2V38H21.6v-2.8z"
+  }), /*#__PURE__*/React.createElement("path", {
+    fill: "url(#g)",
+    d: "M21.4 41.9H9.2v2.8H21.6v-2.8z"
+  }), /*#__PURE__*/React.createElement("path", {
+    fill: "url(#h)",
+    d: "M21.4 48.6H9.2v2.7H21.6v-2.7z"
+  }));
+};
+var TypographyIcon = function TypographyIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    x: "0",
+    y: "0",
+    enableBackground: "new 0 0 512 512",
+    version: "1.1",
+    viewBox: "0 0 512 512",
+    xmlSpace: "preserve",
+    style: {
+      width: 14
+    }
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M92.6 431.3c5.1 0 6.1-.5 10.7-1.5l91.9-18.4c9.7-2.5 19.4-7.1 27.1-14.8L444.9 174c34.2-34.2 34.2-92.9 0-127.1L426 27c-34.2-34.2-93.4-34.2-127.6 0L75.8 250.1c-7.2 7.1-12.3 17.4-14.8 27.1l-19.4 92.9c-2.5 17.4 2.6 34.2 14.8 46.5 9.7 9.6 24 14.7 36.2 14.7zM110 286.9L332.6 63.8c14.8-14.8 41.9-14.8 56.2 0l19.4 19.4c17.4 17.4 17.4 41.9 0 58.7L186.1 365l-94.4 15.8 18.3-93.9zm0 0M442.8 463H66.1c-14.8 0-24.5 9.7-24.5 24.5S53.9 512 66.1 512h374.7c14.8 0 27.1-9.7 27.1-24.5-.6-14.8-12.8-24.5-25.1-24.5zm0 0",
+    className: "eb-typography-icon"
+  }));
+};
+var UserIcon = function UserIcon(_ref) {
+  var color = _ref.color;
+  return /*#__PURE__*/React.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    x: "0",
+    y: "0",
+    style: {
+      width: 24
+    },
+    enableBackground: "new 0 0 512 512",
+    version: "1.1",
+    viewBox: "0 0 512 512",
+    xmlSpace: "preserve"
+  }, /*#__PURE__*/React.createElement("path", {
+    fill: color || "#b7b7b7",
+    d: "M175.4 249c22.6 16.5 50.5 26.1 80.6 26.1 73.5 0 137.6-63.6 137.6-137.6C393.6 61.7 331.9 0 256 0S118.4 61.7 118.4 137.6c0 45.7 22.4 86.4 57 111.4zm0 0M407.4 285.6c-38.9 39.8-92.8 64.9-151.4 64.9-45.3 0-88.5-14-124.8-40.5-9.9-7.2-19.1-15.1-27.5-23.7C41.2 332.9.5 407.4.5 491.3c0 10.8 8.8 19.7 19.7 19.7h471.6c10.8 0 19.7-8.8 19.7-19.7 0-84.3-41-159.2-104.1-205.7z"
+  }));
+};
+var LeftAlignIcon = function LeftAlignIcon(_ref2) {
+  var color = _ref2.color;
+  return /*#__PURE__*/React.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    x: "0",
+    y: "0",
+    enableBackground: "new 0 0 512 512",
+    version: "1.1",
+    viewBox: "0 0 512 512",
+    xmlSpace: "preserve"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M224.9 72.9H36.3C16.3 72.9 0 89.2 0 109.2c0 19.9 16.3 36.3 36.3 36.3h188.6c19.9 0 36.3-16.3 36.3-36.3 0-20-16.3-36.3-36.3-36.3zm0 0M372.5 205.9H36.3c-20 0-36.3 16.3-36.3 36.3 0 19.9 16.3 36.3 36.3 36.3h336.2c19.9 0 36.3-16.3 36.3-36.3 0-19.9-16.4-36.3-36.3-36.3zm0 0M475.7 339H36.3C16.3 339 0 355.3 0 375.3c0 20 16.3 36.3 36.3 36.3h439.4c19.9 0 36.3-16.3 36.3-36.3 0-20-16.3-36.3-36.3-36.3zm0 0",
+    fill: color || "#a9a9a9"
+  }));
+};
+var RightAlignIcon = function RightAlignIcon(_ref3) {
+  var color = _ref3.color;
+  return /*#__PURE__*/React.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    x: "0",
+    y: "0",
+    enableBackground: "new 0 0 512 512",
+    version: "1.1",
+    viewBox: "0 0 512 512",
+    xmlSpace: "preserve"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M475.7 78.1H235.1c-20 0-36.3 16.3-36.3 36.3 0 19.9 16.3 36.3 36.3 36.3h240.6c19.9 0 36.3-16.3 36.3-36.3 0-20-16.3-36.3-36.3-36.3zm0 0M475.7 211.2H115.9c-20 0-36.3 16.3-36.3 36.3 0 19.9 16.3 36.3 36.3 36.3h359.8c19.9 0 36.3-16.3 36.3-36.3 0-20-16.3-36.3-36.3-36.3zm0 0M475.7 344.2H36.3c-20 0-36.3 16.3-36.3 36.3 0 20 16.3 36.3 36.3 36.3h439.4c19.9 0 36.3-16.3 36.3-36.3 0-19.9-16.3-36.3-36.3-36.3zm0 0",
+    fill: color || "#a9a9a9"
+  }));
+};
+var CenterAlignIcon = function CenterAlignIcon(_ref4) {
+  var color = _ref4.color;
+  return /*#__PURE__*/React.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    x: "0",
+    y: "0",
+    enableBackground: "new 0 0 512 512",
+    version: "1.1",
+    viewBox: "0 0 512 512",
+    xmlSpace: "preserve"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M350.3 86.6H161.7c-20 0-36.3 16.3-36.3 36.3 0 19.9 16.3 36.3 36.3 36.3h188.6c19.9 0 36.3-16.3 36.3-36.3 0-19.9-16.3-36.3-36.3-36.3zm0 0M424.1 219.7H87.9c-20 0-36.3 16.3-36.3 36.3 0 19.9 16.3 36.3 36.3 36.3h336.2c19.9 0 36.3-16.3 36.3-36.3 0-20-16.4-36.3-36.3-36.3zm0 0M475.7 352.8H36.3c-20 0-36.3 16.3-36.3 36.3 0 20 16.3 36.3 36.3 36.3h439.4c19.9 0 36.3-16.3 36.3-36.3 0-20-16.3-36.3-36.3-36.3zm0 0",
+    fill: color || "#a9a9a9"
+  }));
+};
+var JustifyAlignIcon = function JustifyAlignIcon(_ref5) {
+  var color = _ref5.color;
+  return /*#__PURE__*/React.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    x: "0",
+    y: "0",
+    enableBackground: "new 0 0 512 512",
+    version: "1.1",
+    viewBox: "0 0 512 512",
+    xmlSpace: "preserve"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M475.7 86.6H36.3C16.3 86.6 0 103 0 122.9s16.3 36.3 36.3 36.3h439.4c19.9 0 36.3-16.3 36.3-36.3 0-19.9-16.3-36.3-36.3-36.3zm0 0M475.7 219.7H36.3C16.3 219.7 0 236 0 256c0 19.9 16.3 36.3 36.3 36.3h439.4c19.9 0 36.3-16.3 36.3-36.3 0-20-16.3-36.3-36.3-36.3zm0 0M475.7 352.8H36.3c-20 0-36.3 16.3-36.3 36.3 0 20 16.3 36.3 36.3 36.3h439.4c19.9 0 36.3-16.3 36.3-36.3 0-20-16.3-36.3-36.3-36.3zm0 0",
+    fill: color || "#a9a9a9"
+  }));
+};
+
+/***/ }),
+
+/***/ "./util/reset-control/index.js":
+/*!*************************************!*\
+  !*** ./util/reset-control/index.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var ResetControl = function ResetControl(_ref) {
+  var onReset = _ref.onReset,
+      children = _ref.children;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "eb-range-controller-container"
+  }, children, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "eb-range-reset-button",
+    onClick: onReset
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "dashicon dashicons dashicons-image-rotate"
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ResetControl);
 
 /***/ }),
 
@@ -8744,31 +11586,21 @@ var TRANSFORMS = [{
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./util/unit-control/style.scss");
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-
-
 /**
  * WordPress dependencies
  */
-
-
-
+var _wp$components = wp.components,
+    ButtonGroup = _wp$components.ButtonGroup,
+    Button = _wp$components.Button;
 
 var UnitControl = function UnitControl(_ref) {
   var selectedUnit = _ref.selectedUnit,
       unitTypes = _ref.unitTypes,
       _onClick = _ref.onClick;
-  return /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["ButtonGroup"], {
+  return /*#__PURE__*/React.createElement(ButtonGroup, {
     className: "eb-unit-control-btn-group"
   }, unitTypes.map(function (unit) {
-    return /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Button"], {
+    return /*#__PURE__*/React.createElement(Button, {
       className: "eb-unit-control-btn ".concat(unit.value === selectedUnit && "eb-unit-active"),
       isSmall: true,
       isPrimary: unit.value === selectedUnit,
@@ -8779,103 +11611,29 @@ var UnitControl = function UnitControl(_ref) {
   }));
 };
 
-UnitControl.propTypes = {
-  selectedUnit: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.string.isRequired,
-  unitTypes: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.shape({
-    label: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.string,
-    value: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.string
-  }),
-  onClick: prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.func.isRequired
-};
 /* harmony default export */ __webpack_exports__["default"] = (UnitControl);
 
 /***/ }),
 
-/***/ "@wordpress/block-editor":
-/*!**********************************************!*\
-  !*** external {"this":["wp","blockEditor"]} ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-(function() { module.exports = this["wp"]["blockEditor"]; }());
-
-/***/ }),
-
-/***/ "@wordpress/blocks":
-/*!*****************************************!*\
-  !*** external {"this":["wp","blocks"]} ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-(function() { module.exports = this["wp"]["blocks"]; }());
-
-/***/ }),
-
-/***/ "@wordpress/components":
-/*!*********************************************!*\
-  !*** external {"this":["wp","components"]} ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-(function() { module.exports = this["wp"]["components"]; }());
-
-/***/ }),
-
-/***/ "@wordpress/editor":
-/*!*****************************************!*\
-  !*** external {"this":["wp","editor"]} ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-(function() { module.exports = this["wp"]["editor"]; }());
-
-/***/ }),
-
-/***/ "@wordpress/element":
-/*!******************************************!*\
-  !*** external {"this":["wp","element"]} ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-(function() { module.exports = this["wp"]["element"]; }());
-
-/***/ }),
-
-/***/ "@wordpress/i18n":
-/*!***************************************!*\
-  !*** external {"this":["wp","i18n"]} ***!
-  \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-(function() { module.exports = this["wp"]["i18n"]; }());
-
-/***/ }),
-
 /***/ "react":
-/*!*********************************!*\
-  !*** external {"this":"React"} ***!
-  \*********************************/
+/*!************************!*\
+  !*** external "React" ***!
+  \************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-(function() { module.exports = this["React"]; }());
+(function() { module.exports = window["React"]; }());
 
 /***/ }),
 
 /***/ "react-dom":
-/*!************************************!*\
-  !*** external {"this":"ReactDOM"} ***!
-  \************************************/
+/*!***************************!*\
+  !*** external "ReactDOM" ***!
+  \***************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-(function() { module.exports = this["ReactDOM"]; }());
+(function() { module.exports = window["ReactDOM"]; }());
 
 /***/ })
 

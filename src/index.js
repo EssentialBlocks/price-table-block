@@ -1,18 +1,30 @@
-import { registerBlockType } from "@wordpress/blocks";
-import { __ } from "@wordpress/i18n";
+/**
+ * WordPress dependeincies
+ */
+const { __ } = wp.i18n;
+const { registerBlockType } = wp.blocks;
 
-import "./style.scss";
+/**
+ * Internal dependencies
+ */
+import Save from "./save";
 import Edit from "./edit";
-import save from "./save";
-import icon from "./icon";
 import attributes from "./attributes";
+import icon from "./icon";
+import example from "./example";
+import "./style.scss";
 
-registerBlockType("block/pricing-table", {
-	title: __("Pricing Table", "block"),
-	description: __("", "block"),
-	category: "widgets",
+registerBlockType("pricing-table-block/pricing-table", {
+	title: __("Pricing Table", "essential-blocks"),
 	icon,
+	category: "widgets",
 	attributes,
+	keywords: [
+		__("eb price", "essential-blocks"),
+		__("table", "essential-blocks"),
+		__("comparison", "essential-blocks"),
+	],
 	edit: Edit,
-	save,
+	save: Save,
+	example,
 });
