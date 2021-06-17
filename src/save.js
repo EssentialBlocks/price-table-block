@@ -9,9 +9,13 @@ const save = ({ attributes }) => {
 		title,
 		subtitle,
 		headerIcon,
-		price,
+		mainPrice,
+		showOnSale,
 		salePrice,
 		priceCurrency,
+		currencyPlacement,
+		pricePeriod,
+		periodSeparator,
 
 		displaySubtitle,
 		titleBackgroundColor,
@@ -225,8 +229,8 @@ const save = ({ attributes }) => {
 
 	return (
 		<>
-			<div class={`ebgb-pricing ${pricingStyle}`} style={wrapperStylesNew}>
-				<div class="ebgb-pricing-item featured ribbon-4">
+			<div className={`ebgb-pricing ${pricingStyle}`} style={wrapperStylesNew}>
+				<div className="ebgb-pricing-item featured ribbon-4">
 					{pricingStyle === "style-2" && headerIcon && (
 						<div className="ebgb-pricing-icon" data-icon={headerIcon}>
 							<span className="icon">
@@ -234,67 +238,111 @@ const save = ({ attributes }) => {
 							</span>
 						</div>
 					)}
-					<div class="header">
-						<h2 class="ebgb-pricing-title">{title}</h2>
+					<div className="header">
+						<h2 className="ebgb-pricing-title">{title}</h2>
 						{pricingStyle !== "style-1" && (
 							<span className="ebgb-pricing-subtitle">{subtitle}</span>
 						)}
 					</div>
-					<div class="ebgb-pricing-tag">
-						<span class="price-tag">
-							<del class="original-price">
-								<span class="price-currency">{priceCurrency}</span>
-								{price}
-							</del>
-							<span class="sale-price">
-								<span class="price-currency">{priceCurrency}</span>
-								{salePrice}
+					<div className="ebgb-pricing-tag">
+						<span className="price-tag">
+							<span
+								className={`original-price${
+									showOnSale === true ? " line-through" : ""
+								}`}
+								data-price={mainPrice}
+							>
+								{currencyPlacement === "left" && (
+									<span className="price-currency">{priceCurrency}</span>
+								)}
+								{mainPrice}
+								{currencyPlacement === "right" && (
+									<span className="price-currency">{priceCurrency}</span>
+								)}
 							</span>
+
+							{showOnSale && (
+								<>
+									<span className="sale-price" data-sale-price={salePrice}>
+										{currencyPlacement === "left" && (
+											<span className="price-currency">{priceCurrency}</span>
+										)}
+										{salePrice}
+										{currencyPlacement === "right" && (
+											<span className="price-currency">{priceCurrency}</span>
+										)}
+									</span>
+								</>
+							)}
 						</span>
-						<span class="price-period">/ month</span>
+						<span
+							className="price-period"
+							data-period-separator={periodSeparator}
+							data-price-period={pricePeriod}
+						>
+							{periodSeparator} {pricePeriod}
+						</span>
 					</div>
-					<div class="body">
-						<ul>
+					<div className="body">
+						<ul className="ebgb-pricebox-features" style={featureStyles}>
+							{features.map(({ icon, text, color, clickable, link }) => (
+								<li
+									className="ebgb-pricebox-feature-item"
+									style={featureListStyle}
+									data-icon={icon}
+									data-color={color}
+									data-clickable={clickable}
+									data-link={link}
+								>
+									<span
+										className={`ebgb-pricebox-icon ${icon}`}
+										style={{ color: color }}
+									/>
+									<span className="ebgb-pricebox-feature-text">{text}</span>
+								</li>
+							))}
+						</ul>
+						{/* <ul>
 							<li>
-								<span class="li-icon" style={colorStyles}>
-									<i class="fas fa-check"></i>
+								<span className="li-icon" style={colorStyles}>
+									<i className="fas fa-check"></i>
 								</span>
 								Unlimited calls
 							</li>
 							<li>
-								<span class="li-icon" style={colorStyles}>
-									<i class="fas fa-check"></i>
+								<span className="li-icon" style={colorStyles}>
+									<i className="fas fa-check"></i>
 								</span>
 								Free hosting
 							</li>
 							<li>
-								<span class="li-icon" style={colorStyles}>
-									<i class="fas fa-check"></i>
+								<span className="li-icon" style={colorStyles}>
+									<i className="fas fa-check"></i>
 								</span>
 								500 MB of storage space
 							</li>
 							<li>
-								<span class="li-icon" style={colorStyles}>
-									<i class="fas fa-check"></i>
+								<span className="li-icon" style={colorStyles}>
+									<i className="fas fa-check"></i>
 								</span>
 								500 MB Bandwidth
 							</li>
 							<li>
-								<span class="li-icon" style={colorStyles}>
-									<i class="fas fa-check"></i>
+								<span className="li-icon" style={colorStyles}>
+									<i className="fas fa-check"></i>
 								</span>
 								24/7 support
 							</li>
-						</ul>
+						</ul> */}
 					</div>
-					<div class="footer">
+					<div className="footer">
 						<a
 							href="#"
 							target="_blank"
 							rel="nofollow noopener"
-							class="ebgb-pricing-button"
+							className="ebgb-pricing-button"
 						>
-							<i class=" fa-icon-left"></i>
+							<i className=" fa-icon-left"></i>
 							Choose Plan{" "}
 						</a>
 					</div>

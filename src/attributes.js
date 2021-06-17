@@ -22,10 +22,11 @@ const attributes = {
 		attribute: "data-icon",
 		default: "fas fa-home",
 	},
-	price: {
+	mainPrice: {
 		type: "string",
-		source: "text",
+		source: "attribute",
 		selector: ".ebgb-pricing-tag .original-price",
+		attribute: "data-price",
 		default: "99",
 	},
 	showOnSale: {
@@ -34,8 +35,9 @@ const attributes = {
 	},
 	salePrice: {
 		type: "string",
-		source: "text",
+		source: "attribute",
 		selector: ".ebgb-pricing-tag .sale-price",
+		attribute: "data-sale-price",
 		default: "89",
 	},
 	priceCurrency: {
@@ -43,6 +45,24 @@ const attributes = {
 		source: "text",
 		selector: ".ebgb-pricing-tag .price-currency",
 		default: "$",
+	},
+	currencyPlacement: {
+		type: "string",
+		default: "left",
+	},
+	pricePeriod: {
+		type: "string",
+		source: "attribute",
+		selector: ".ebgb-pricing-tag .price-period",
+		attribute: "data-price-period",
+		default: "month",
+	},
+	periodSeparator: {
+		type: "string",
+		source: "attribute",
+		selector: ".ebgb-pricing-tag .price-period",
+		attribute: "data-period-separator",
+		default: "/",
 	},
 
 	priceboxBackground: {
@@ -90,12 +110,12 @@ const attributes = {
 	features: {
 		type: "array",
 		source: "query",
-		selector: ".eb-pricebox-feature-item",
+		selector: ".ebgb-pricing .body ul li",
 		query: {
 			text: {
 				type: "string",
 				source: "text",
-				selector: ".eb-pricebox-feature-text",
+				selector: ".ebgb-pricebox-feature-item",
 			},
 			icon: {
 				type: "string",

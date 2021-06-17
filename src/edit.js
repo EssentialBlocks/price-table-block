@@ -16,9 +16,13 @@ const edit = (props) => {
 		title,
 		subtitle,
 		headerIcon,
-		price,
+		mainPrice,
+		showOnSale,
 		salePrice,
 		priceCurrency,
+		currencyPlacement,
+		pricePeriod,
+		periodSeparator,
 
 		displaySubtitle,
 		titleBackgroundColor,
@@ -257,24 +261,62 @@ const edit = (props) => {
 				</div>
 				<div className="ebgb-pricing-tag">
 					<span className="price-tag">
-						<del className="original-price">
-							<span className="price-currency">{priceCurrency}</span>
-							{price}
-						</del>
-						<span className="sale-price">
-							<span className="price-currency">{priceCurrency}</span>
-							{salePrice}
+						<span
+							className={`original-price${
+								showOnSale === true ? " line-through" : ""
+							}`}
+							data-price={mainPrice}
+						>
+							{currencyPlacement === "left" && (
+								<span className="price-currency">{priceCurrency}</span>
+							)}
+							{mainPrice}
+							{currencyPlacement === "right" && (
+								<span className="price-currency">{priceCurrency}</span>
+							)}
 						</span>
+
+						{showOnSale && (
+							<>
+								<span className="sale-price" data-sale-price={salePrice}>
+									{currencyPlacement === "left" && (
+										<span className="price-currency">{priceCurrency}</span>
+									)}
+									{salePrice}
+									{currencyPlacement === "right" && (
+										<span className="price-currency">{priceCurrency}</span>
+									)}
+								</span>
+							</>
+						)}
 					</span>
-					<span className="price-period">/ month</span>
+					<span
+						className="price-period"
+						data-period-separator={periodSeparator}
+						data-price-period={pricePeriod}
+					>
+						{periodSeparator} {pricePeriod}
+					</span>
 				</div>
+				{console.log(attributes)}
 				<div className="body">
 					<ul>
-						<li>
+						{features.map(({ icon, text, color }) => (
+							<li data-icon={icon} data-color={color}>
+								<span
+									className={`ebgb-pricebox-icon ${icon}`}
+									style={{ color: color }}
+								/>
+								<span className="ebgb-pricebox-text">{text}</span>
+							</li>
+						))}
+						{/* <li>
 							<span className="li-icon" style={colorStyles}>
 								<i className="fas fa-check"></i>
 							</span>
-							Unlimited calls
+							<span className="ebgb-pricebox-feature-text">
+								Unlimited calls
+							</span>
 						</li>
 						<li>
 							<span className="li-icon" style={colorStyles}>
@@ -299,7 +341,7 @@ const edit = (props) => {
 								<i className="fas fa-check"></i>
 							</span>
 							24/7 support
-						</li>
+						</li> */}
 					</ul>
 				</div>
 				<div className="footer">

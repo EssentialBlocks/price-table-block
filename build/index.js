@@ -5646,11 +5646,7 @@ var classNamesShape =  true ? prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var _attributes;
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-var attributes = (_attributes = {
+var attributes = {
   pricingStyle: {
     type: "string",
     "default": "style-1"
@@ -5673,10 +5669,11 @@ var attributes = (_attributes = {
     attribute: "data-icon",
     "default": "fas fa-home"
   },
-  price: {
+  mainPrice: {
     type: "string",
-    source: "text",
+    source: "attribute",
     selector: ".ebgb-pricing-tag .original-price",
+    attribute: "data-price",
     "default": "99"
   },
   showOnSale: {
@@ -5685,8 +5682,9 @@ var attributes = (_attributes = {
   },
   salePrice: {
     type: "string",
-    source: "text",
+    source: "attribute",
     selector: ".ebgb-pricing-tag .sale-price",
+    attribute: "data-sale-price",
     "default": "89"
   },
   priceCurrency: {
@@ -5694,6 +5692,24 @@ var attributes = (_attributes = {
     source: "text",
     selector: ".ebgb-pricing-tag .price-currency",
     "default": "$"
+  },
+  currencyPlacement: {
+    type: "string",
+    "default": "left"
+  },
+  pricePeriod: {
+    type: "string",
+    source: "attribute",
+    selector: ".ebgb-pricing-tag .price-period",
+    attribute: "data-price-period",
+    "default": "month"
+  },
+  periodSeparator: {
+    type: "string",
+    source: "attribute",
+    selector: ".ebgb-pricing-tag .price-period",
+    attribute: "data-period-separator",
+    "default": "/"
   },
   priceboxBackground: {
     type: "string"
@@ -5711,269 +5727,355 @@ var attributes = (_attributes = {
   },
   titleTextColor: {
     type: "string"
-  }
-}, _defineProperty(_attributes, "price", {
-  type: "string",
-  source: "text",
-  selector: ".eb-pricebox-price",
-  "default": "$99"
-}), _defineProperty(_attributes, "priceValueSize", {
-  type: "number"
-}), _defineProperty(_attributes, "displayPriceDetails", {
-  type: "boolean",
-  "default": false
-}), _defineProperty(_attributes, "priceDetails", {
-  type: "string",
-  source: "text",
-  selector: ".eb-pricebox-price-details"
-}), _defineProperty(_attributes, "priceBackgroundColor", {
-  type: "string"
-}), _defineProperty(_attributes, "priceTextColor", {
-  type: "string"
-}), _defineProperty(_attributes, "features", {
-  type: "array",
-  source: "query",
-  selector: ".eb-pricebox-feature-item",
-  query: {
-    text: {
-      type: "string",
-      source: "text",
-      selector: ".eb-pricebox-feature-text"
-    },
-    icon: {
-      type: "string",
-      source: "attribute",
-      attribute: "data-icon"
-    },
-    color: {
-      type: "string",
-      source: "attribute",
-      attribute: "data-color"
-    },
-    link: {
-      type: "string",
-      source: "attribute",
-      attribute: "data-link"
-    },
-    clickable: {
-      type: "string",
-      source: "attribute",
-      attribute: "data-clickable"
-    }
   },
-  "default": [{
-    icon: "fas fa-check",
-    text: "Unlimited Calls",
-    color: "#03bb89",
-    clickable: "false",
-    link: ""
-  }, {
-    icon: "fas fa-check",
-    text: "Free Hosting",
-    color: "#03bb89",
-    clickable: "false",
-    link: ""
-  }, {
-    icon: "fas fa-check",
-    text: "500MB free storage",
-    color: "#03bb89",
-    clickable: "false",
-    link: ""
-  }, {
-    icon: "fas fa-check",
-    text: "24/7 Support",
-    color: "#03bb89",
-    clickable: "false",
-    link: ""
-  }]
-}), _defineProperty(_attributes, "featuresBackgroundColor", {
-  type: "string"
-}), _defineProperty(_attributes, "featuresTextColor", {
-  type: "string"
-}), _defineProperty(_attributes, "buttonText", {
-  type: "string",
-  "default": "Choose Plan"
-}), _defineProperty(_attributes, "buttonSize", {
-  type: "string"
-}), _defineProperty(_attributes, "buttonFontSize", {
-  type: "number"
-}), _defineProperty(_attributes, "buttonBackground", {
-  type: "string"
-}), _defineProperty(_attributes, "buttonTextColor", {
-  type: "string"
-}), _defineProperty(_attributes, "hoverBackgroundColor", {
-  type: "string"
-}), _defineProperty(_attributes, "hoverTextColor", {
-  type: "string"
-}), _defineProperty(_attributes, "buttonURL", {
-  type: "string",
-  "default": "#"
-}), _defineProperty(_attributes, "featureFontSize", {
-  type: "number"
-}), _defineProperty(_attributes, "shadowColor", {
-  type: "string"
-}), _defineProperty(_attributes, "shadowHOffset", {
-  type: "number"
-}), _defineProperty(_attributes, "shadowVOffset", {
-  type: "number"
-}), _defineProperty(_attributes, "shadowSpread", {
-  type: "number"
-}), _defineProperty(_attributes, "shadowBlur", {
-  type: "number"
-}), _defineProperty(_attributes, "borderWidth", {
-  type: "number"
-}), _defineProperty(_attributes, "borderStyle", {
-  type: "string",
-  "default": "solid"
-}), _defineProperty(_attributes, "borderColor", {
-  type: "string"
-}), _defineProperty(_attributes, "linkedMargin", {
-  type: "boolean",
-  "default": false
-}), _defineProperty(_attributes, "marginTop", {
-  type: "number"
-}), _defineProperty(_attributes, "marginRight", {
-  type: "number"
-}), _defineProperty(_attributes, "marginBottom", {
-  type: "number"
-}), _defineProperty(_attributes, "marginLeft", {
-  type: "number"
-}), _defineProperty(_attributes, "linkedPadding", {
-  type: "boolean",
-  "default": false
-}), _defineProperty(_attributes, "paddingTop", {
-  type: "number"
-}), _defineProperty(_attributes, "paddingRight", {
-  type: "number"
-}), _defineProperty(_attributes, "paddingBottom", {
-  type: "number"
-}), _defineProperty(_attributes, "paddingLeft", {
-  type: "number"
-}), _defineProperty(_attributes, "isHover", {
-  type: "boolean",
-  "default": false
-}), _defineProperty(_attributes, "marginUnit", {
-  type: "string",
-  "default": "px"
-}), _defineProperty(_attributes, "paddingUnit", {
-  type: "string",
-  "default": "px"
-}), _defineProperty(_attributes, "iconSizeUnit", {
-  type: "string",
-  "default": "px"
-}), _defineProperty(_attributes, "priceSizeUnit", {
-  type: "string",
-  "default": "px"
-}), _defineProperty(_attributes, "featureSizeUnit", {
-  type: "string",
-  "default": "px"
-}), _defineProperty(_attributes, "buttonSizeUnit", {
-  type: "string",
-  "default": "px"
-}), _defineProperty(_attributes, "buttonHeight", {
-  type: "number"
-}), _defineProperty(_attributes, "buttonHeightUnit", {
-  type: "string",
-  "default": "px"
-}), _defineProperty(_attributes, "buttonWidth", {
-  type: "number"
-}), _defineProperty(_attributes, "buttonWidthUnit", {
-  type: "string",
-  "default": "px"
-}), _defineProperty(_attributes, "buttonBorderStyle", {
-  type: "string",
-  "default": "solid"
-}), _defineProperty(_attributes, "buttonBorderWidth", {
-  type: "number"
-}), _defineProperty(_attributes, "buttonBorderColor", {
-  type: "string"
-}), _defineProperty(_attributes, "hoverBorderColor", {
-  type: "string"
-}), _defineProperty(_attributes, "buttonBorderRadius", {
-  type: "number"
-}), _defineProperty(_attributes, "buttonBorderRadiusUnit", {
-  type: "string",
-  "default": "px"
-}), _defineProperty(_attributes, "subtitleFontFamily", {
-  type: "string"
-}), _defineProperty(_attributes, "subtitleFontSize", {
-  type: "number"
-}), _defineProperty(_attributes, "subtitleSizeUnit", {
-  type: "string",
-  "default": "px"
-}), _defineProperty(_attributes, "subtitleFontWeight", {
-  type: "string",
-  "default": "normal"
-}), _defineProperty(_attributes, "subtitleTextTransform", {
-  type: "string"
-}), _defineProperty(_attributes, "subtitleTextDecoration", {
-  type: "string"
-}), _defineProperty(_attributes, "subtitleLineHeight", {
-  type: "number"
-}), _defineProperty(_attributes, "subtitleLineHeightUnit", {
-  type: "string",
-  "default": "px"
-}), _defineProperty(_attributes, "subtitleLetterSpacing", {
-  type: "number"
-}), _defineProperty(_attributes, "subtitleLetterSpacingUnit", {
-  type: "string",
-  "default": "px"
-}), _defineProperty(_attributes, "priceFontFamily", {
-  type: "string"
-}), _defineProperty(_attributes, "priceFontWeight", {
-  type: "string",
-  "default": "normal"
-}), _defineProperty(_attributes, "priceTextDecoration", {
-  type: "string"
-}), _defineProperty(_attributes, "priceLineHeight", {
-  type: "number"
-}), _defineProperty(_attributes, "priceLineHeightUnit", {
-  type: "string",
-  "default": "px"
-}), _defineProperty(_attributes, "priceLetterSpacing", {
-  type: "number"
-}), _defineProperty(_attributes, "priceLetterSpacingUnit", {
-  type: "string",
-  "default": "px"
-}), _defineProperty(_attributes, "featureFontFamily", {
-  type: "string"
-}), _defineProperty(_attributes, "featureFontWeight", {
-  type: "string",
-  "default": "normal"
-}), _defineProperty(_attributes, "featureTextTransform", {
-  type: "string"
-}), _defineProperty(_attributes, "featureTextDecoration", {
-  type: "string"
-}), _defineProperty(_attributes, "featureLineHeight", {
-  type: "number"
-}), _defineProperty(_attributes, "featureLineHeightUnit", {
-  type: "string",
-  "default": "px"
-}), _defineProperty(_attributes, "featureLetterSpacing", {
-  type: "number"
-}), _defineProperty(_attributes, "featureLetterSpacingUnit", {
-  type: "string",
-  "default": "px"
-}), _defineProperty(_attributes, "buttonFontFamily", {
-  type: "string"
-}), _defineProperty(_attributes, "buttonFontWeight", {
-  type: "string",
-  "default": "normal"
-}), _defineProperty(_attributes, "buttonTextTransform", {
-  type: "string"
-}), _defineProperty(_attributes, "buttonTextDecoration", {
-  type: "string"
-}), _defineProperty(_attributes, "buttonLineHeight", {
-  type: "number"
-}), _defineProperty(_attributes, "buttonLineHeightUnit", {
-  type: "string",
-  "default": "px"
-}), _defineProperty(_attributes, "buttonLetterSpacing", {
-  type: "number"
-}), _defineProperty(_attributes, "buttonLetterSpacingUnit", {
-  type: "string",
-  "default": "px"
-}), _attributes);
+  price: {
+    type: "string",
+    source: "text",
+    selector: ".eb-pricebox-price",
+    "default": "$99"
+  },
+  priceValueSize: {
+    type: "number"
+  },
+  displayPriceDetails: {
+    type: "boolean",
+    "default": false
+  },
+  priceDetails: {
+    type: "string",
+    source: "text",
+    selector: ".eb-pricebox-price-details"
+  },
+  priceBackgroundColor: {
+    type: "string"
+  },
+  priceTextColor: {
+    type: "string"
+  },
+  features: {
+    type: "array",
+    source: "query",
+    selector: ".ebgb-pricing .body ul li",
+    query: {
+      text: {
+        type: "string",
+        source: "text",
+        selector: ".ebgb-pricebox-feature-item"
+      },
+      icon: {
+        type: "string",
+        source: "attribute",
+        attribute: "data-icon"
+      },
+      color: {
+        type: "string",
+        source: "attribute",
+        attribute: "data-color"
+      },
+      link: {
+        type: "string",
+        source: "attribute",
+        attribute: "data-link"
+      },
+      clickable: {
+        type: "string",
+        source: "attribute",
+        attribute: "data-clickable"
+      }
+    },
+    "default": [{
+      icon: "fas fa-check",
+      text: "Unlimited Calls",
+      color: "#03bb89",
+      clickable: "false",
+      link: ""
+    }, {
+      icon: "fas fa-check",
+      text: "Free Hosting",
+      color: "#03bb89",
+      clickable: "false",
+      link: ""
+    }, {
+      icon: "fas fa-check",
+      text: "500MB free storage",
+      color: "#03bb89",
+      clickable: "false",
+      link: ""
+    }, {
+      icon: "fas fa-check",
+      text: "24/7 Support",
+      color: "#03bb89",
+      clickable: "false",
+      link: ""
+    }]
+  },
+  featuresBackgroundColor: {
+    type: "string"
+  },
+  featuresTextColor: {
+    type: "string"
+  },
+  buttonText: {
+    type: "string",
+    "default": "Choose Plan"
+  },
+  buttonSize: {
+    type: "string"
+  },
+  buttonFontSize: {
+    type: "number"
+  },
+  buttonBackground: {
+    type: "string"
+  },
+  buttonTextColor: {
+    type: "string"
+  },
+  hoverBackgroundColor: {
+    type: "string"
+  },
+  hoverTextColor: {
+    type: "string"
+  },
+  buttonURL: {
+    type: "string",
+    "default": "#"
+  },
+  featureFontSize: {
+    type: "number"
+  },
+  shadowColor: {
+    type: "string"
+  },
+  shadowHOffset: {
+    type: "number"
+  },
+  shadowVOffset: {
+    type: "number"
+  },
+  shadowSpread: {
+    type: "number"
+  },
+  shadowBlur: {
+    type: "number"
+  },
+  borderWidth: {
+    type: "number"
+  },
+  borderStyle: {
+    type: "string",
+    "default": "solid"
+  },
+  borderColor: {
+    type: "string"
+  },
+  linkedMargin: {
+    type: "boolean",
+    "default": false
+  },
+  marginTop: {
+    type: "number"
+  },
+  marginRight: {
+    type: "number"
+  },
+  marginBottom: {
+    type: "number"
+  },
+  marginLeft: {
+    type: "number"
+  },
+  linkedPadding: {
+    type: "boolean",
+    "default": false
+  },
+  paddingTop: {
+    type: "number"
+  },
+  paddingRight: {
+    type: "number"
+  },
+  paddingBottom: {
+    type: "number"
+  },
+  paddingLeft: {
+    type: "number"
+  },
+  isHover: {
+    type: "boolean",
+    "default": false
+  },
+  marginUnit: {
+    type: "string",
+    "default": "px"
+  },
+  paddingUnit: {
+    type: "string",
+    "default": "px"
+  },
+  iconSizeUnit: {
+    type: "string",
+    "default": "px"
+  },
+  priceSizeUnit: {
+    type: "string",
+    "default": "px"
+  },
+  featureSizeUnit: {
+    type: "string",
+    "default": "px"
+  },
+  buttonSizeUnit: {
+    type: "string",
+    "default": "px"
+  },
+  buttonHeight: {
+    type: "number"
+  },
+  buttonHeightUnit: {
+    type: "string",
+    "default": "px"
+  },
+  buttonWidth: {
+    type: "number"
+  },
+  buttonWidthUnit: {
+    type: "string",
+    "default": "px"
+  },
+  buttonBorderStyle: {
+    type: "string",
+    "default": "solid"
+  },
+  buttonBorderWidth: {
+    type: "number"
+  },
+  buttonBorderColor: {
+    type: "string"
+  },
+  hoverBorderColor: {
+    type: "string"
+  },
+  buttonBorderRadius: {
+    type: "number"
+  },
+  buttonBorderRadiusUnit: {
+    type: "string",
+    "default": "px"
+  },
+  subtitleFontFamily: {
+    type: "string"
+  },
+  subtitleFontSize: {
+    type: "number"
+  },
+  subtitleSizeUnit: {
+    type: "string",
+    "default": "px"
+  },
+  subtitleFontWeight: {
+    type: "string",
+    "default": "normal"
+  },
+  subtitleTextTransform: {
+    type: "string"
+  },
+  subtitleTextDecoration: {
+    type: "string"
+  },
+  subtitleLineHeight: {
+    type: "number"
+  },
+  subtitleLineHeightUnit: {
+    type: "string",
+    "default": "px"
+  },
+  subtitleLetterSpacing: {
+    type: "number"
+  },
+  subtitleLetterSpacingUnit: {
+    type: "string",
+    "default": "px"
+  },
+  priceFontFamily: {
+    type: "string"
+  },
+  priceFontWeight: {
+    type: "string",
+    "default": "normal"
+  },
+  priceTextDecoration: {
+    type: "string"
+  },
+  priceLineHeight: {
+    type: "number"
+  },
+  priceLineHeightUnit: {
+    type: "string",
+    "default": "px"
+  },
+  priceLetterSpacing: {
+    type: "number"
+  },
+  priceLetterSpacingUnit: {
+    type: "string",
+    "default": "px"
+  },
+  featureFontFamily: {
+    type: "string"
+  },
+  featureFontWeight: {
+    type: "string",
+    "default": "normal"
+  },
+  featureTextTransform: {
+    type: "string"
+  },
+  featureTextDecoration: {
+    type: "string"
+  },
+  featureLineHeight: {
+    type: "number"
+  },
+  featureLineHeightUnit: {
+    type: "string",
+    "default": "px"
+  },
+  featureLetterSpacing: {
+    type: "number"
+  },
+  featureLetterSpacingUnit: {
+    type: "string",
+    "default": "px"
+  },
+  buttonFontFamily: {
+    type: "string"
+  },
+  buttonFontWeight: {
+    type: "string",
+    "default": "normal"
+  },
+  buttonTextTransform: {
+    type: "string"
+  },
+  buttonTextDecoration: {
+    type: "string"
+  },
+  buttonLineHeight: {
+    type: "number"
+  },
+  buttonLineHeightUnit: {
+    type: "string",
+    "default": "px"
+  },
+  buttonLetterSpacing: {
+    type: "number"
+  },
+  buttonLetterSpacingUnit: {
+    type: "string",
+    "default": "px"
+  }
+};
 /* harmony default export */ __webpack_exports__["default"] = (attributes);
 
 /***/ }),
@@ -6097,9 +6199,13 @@ var edit = function edit(props) {
       title = attributes.title,
       subtitle = attributes.subtitle,
       headerIcon = attributes.headerIcon,
-      price = attributes.price,
+      mainPrice = attributes.mainPrice,
+      showOnSale = attributes.showOnSale,
       salePrice = attributes.salePrice,
       priceCurrency = attributes.priceCurrency,
+      currencyPlacement = attributes.currencyPlacement,
+      pricePeriod = attributes.pricePeriod,
+      periodSeparator = attributes.periodSeparator,
       displaySubtitle = attributes.displaySubtitle,
       titleBackgroundColor = attributes.titleBackgroundColor,
       titleTextColor = attributes.titleTextColor,
@@ -6288,44 +6394,42 @@ var edit = function edit(props) {
     className: "ebgb-pricing-tag"
   }, /*#__PURE__*/React.createElement("span", {
     className: "price-tag"
-  }, /*#__PURE__*/React.createElement("del", {
-    className: "original-price"
   }, /*#__PURE__*/React.createElement("span", {
+    className: "original-price".concat(showOnSale === true ? " line-through" : ""),
+    "data-price": mainPrice
+  }, currencyPlacement === "left" && /*#__PURE__*/React.createElement("span", {
     className: "price-currency"
-  }, priceCurrency), price), /*#__PURE__*/React.createElement("span", {
-    className: "sale-price"
-  }, /*#__PURE__*/React.createElement("span", {
+  }, priceCurrency), mainPrice, currencyPlacement === "right" && /*#__PURE__*/React.createElement("span", {
     className: "price-currency"
-  }, priceCurrency), salePrice)), /*#__PURE__*/React.createElement("span", {
-    className: "price-period"
-  }, "/ month")), /*#__PURE__*/React.createElement("div", {
+  }, priceCurrency)), showOnSale && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("span", {
+    className: "sale-price",
+    "data-sale-price": salePrice
+  }, currencyPlacement === "left" && /*#__PURE__*/React.createElement("span", {
+    className: "price-currency"
+  }, priceCurrency), salePrice, currencyPlacement === "right" && /*#__PURE__*/React.createElement("span", {
+    className: "price-currency"
+  }, priceCurrency)))), /*#__PURE__*/React.createElement("span", {
+    className: "price-period",
+    "data-period-separator": periodSeparator,
+    "data-price-period": pricePeriod
+  }, periodSeparator, " ", pricePeriod)), console.log(attributes), /*#__PURE__*/React.createElement("div", {
     className: "body"
-  }, /*#__PURE__*/React.createElement("ul", null, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
-    className: "li-icon",
-    style: colorStyles
-  }, /*#__PURE__*/React.createElement("i", {
-    className: "fas fa-check"
-  })), "Unlimited calls"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
-    className: "li-icon",
-    style: colorStyles
-  }, /*#__PURE__*/React.createElement("i", {
-    className: "fas fa-check"
-  })), "Free hosting"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
-    className: "li-icon",
-    style: colorStyles
-  }, /*#__PURE__*/React.createElement("i", {
-    className: "fas fa-check"
-  })), "500 MB of storage space"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
-    className: "li-icon",
-    style: colorStyles
-  }, /*#__PURE__*/React.createElement("i", {
-    className: "fas fa-check"
-  })), "500 MB Bandwidth"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
-    className: "li-icon",
-    style: colorStyles
-  }, /*#__PURE__*/React.createElement("i", {
-    className: "fas fa-check"
-  })), "24/7 support"))), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("ul", null, features.map(function (_ref) {
+    var icon = _ref.icon,
+        text = _ref.text,
+        color = _ref.color;
+    return /*#__PURE__*/React.createElement("li", {
+      "data-icon": icon,
+      "data-color": color
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "ebgb-pricebox-icon ".concat(icon),
+      style: {
+        color: color
+      }
+    }), /*#__PURE__*/React.createElement("span", {
+      className: "ebgb-pricebox-text"
+    }, text));
+  }))), /*#__PURE__*/React.createElement("div", {
     className: "footer"
   }, /*#__PURE__*/React.createElement("a", {
     href: "#",
@@ -6529,10 +6633,13 @@ var Inspector = function Inspector(_ref) {
       title = attributes.title,
       subtitle = attributes.subtitle,
       headerIcon = attributes.headerIcon,
-      price = attributes.price,
+      mainPrice = attributes.mainPrice,
       showOnSale = attributes.showOnSale,
       salePrice = attributes.salePrice,
       priceCurrency = attributes.priceCurrency,
+      currencyPlacement = attributes.currencyPlacement,
+      pricePeriod = attributes.pricePeriod,
+      periodSeparator = attributes.periodSeparator,
       displaySubtitle = attributes.displaySubtitle,
       titleBackgroundColor = attributes.titleBackgroundColor,
       titleTextColor = attributes.titleTextColor,
@@ -6690,10 +6797,10 @@ var Inspector = function Inspector(_ref) {
     initialOpen: false
   }, /*#__PURE__*/React.createElement(TextControl, {
     label: __("Price"),
-    value: price,
+    value: mainPrice,
     onChange: function onChange(newPrice) {
       return setAttributes({
-        price: newPrice
+        mainPrice: newPrice
       });
     }
   }), /*#__PURE__*/React.createElement(ToggleControl, {
@@ -6709,7 +6816,7 @@ var Inspector = function Inspector(_ref) {
     value: salePrice,
     onChange: function onChange(newsalePrice) {
       return setAttributes({
-        price: newsalePrice
+        salePrice: newsalePrice
       });
     }
   }), /*#__PURE__*/React.createElement(TextControl, {
@@ -6718,6 +6825,37 @@ var Inspector = function Inspector(_ref) {
     onChange: function onChange(newPriceCurrency) {
       return setAttributes({
         priceCurrency: newPriceCurrency
+      });
+    }
+  }), /*#__PURE__*/React.createElement(SelectControl, {
+    label: __("Currency Placement"),
+    value: currencyPlacement,
+    options: [{
+      label: "Left",
+      value: "left"
+    }, {
+      label: "Right",
+      value: "right"
+    }],
+    onChange: function onChange(currencyPlacement) {
+      setAttributes({
+        currencyPlacement: currencyPlacement
+      });
+    }
+  }), /*#__PURE__*/React.createElement(TextControl, {
+    label: __("Price Period (per)"),
+    value: pricePeriod,
+    onChange: function onChange(pricePeriod) {
+      return setAttributes({
+        pricePeriod: pricePeriod
+      });
+    }
+  }), /*#__PURE__*/React.createElement(TextControl, {
+    label: __("Period Separator"),
+    value: periodSeparator,
+    onChange: function onChange(periodSeparator) {
+      return setAttributes({
+        periodSeparator: periodSeparator
       });
     }
   })), /*#__PURE__*/React.createElement(PanelBody, {
@@ -7730,9 +7868,13 @@ var save = function save(_ref) {
       title = attributes.title,
       subtitle = attributes.subtitle,
       headerIcon = attributes.headerIcon,
-      price = attributes.price,
+      mainPrice = attributes.mainPrice,
+      showOnSale = attributes.showOnSale,
       salePrice = attributes.salePrice,
       priceCurrency = attributes.priceCurrency,
+      currencyPlacement = attributes.currencyPlacement,
+      pricePeriod = attributes.pricePeriod,
+      periodSeparator = attributes.periodSeparator,
       displaySubtitle = attributes.displaySubtitle,
       titleBackgroundColor = attributes.titleBackgroundColor,
       titleTextColor = attributes.titleTextColor,
@@ -7903,10 +8045,10 @@ var save = function save(_ref) {
     overflow: "hidden"
   };
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
-    "class": "ebgb-pricing ".concat(pricingStyle),
+    className: "ebgb-pricing ".concat(pricingStyle),
     style: wrapperStylesNew
   }, /*#__PURE__*/React.createElement("div", {
-    "class": "ebgb-pricing-item featured ribbon-4"
+    className: "ebgb-pricing-item featured ribbon-4"
   }, pricingStyle === "style-2" && headerIcon && /*#__PURE__*/React.createElement("div", {
     className: "ebgb-pricing-icon",
     "data-icon": headerIcon
@@ -7915,61 +8057,68 @@ var save = function save(_ref) {
   }, /*#__PURE__*/React.createElement("i", {
     "class": headerIcon
   }))), /*#__PURE__*/React.createElement("div", {
-    "class": "header"
+    className: "header"
   }, /*#__PURE__*/React.createElement("h2", {
-    "class": "ebgb-pricing-title"
+    className: "ebgb-pricing-title"
   }, title), pricingStyle !== "style-1" && /*#__PURE__*/React.createElement("span", {
     className: "ebgb-pricing-subtitle"
   }, subtitle)), /*#__PURE__*/React.createElement("div", {
-    "class": "ebgb-pricing-tag"
+    className: "ebgb-pricing-tag"
   }, /*#__PURE__*/React.createElement("span", {
-    "class": "price-tag"
-  }, /*#__PURE__*/React.createElement("del", {
-    "class": "original-price"
+    className: "price-tag"
   }, /*#__PURE__*/React.createElement("span", {
-    "class": "price-currency"
-  }, priceCurrency), price), /*#__PURE__*/React.createElement("span", {
-    "class": "sale-price"
-  }, /*#__PURE__*/React.createElement("span", {
-    "class": "price-currency"
-  }, priceCurrency), salePrice)), /*#__PURE__*/React.createElement("span", {
-    "class": "price-period"
-  }, "/ month")), /*#__PURE__*/React.createElement("div", {
-    "class": "body"
-  }, /*#__PURE__*/React.createElement("ul", null, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
-    "class": "li-icon",
-    style: colorStyles
-  }, /*#__PURE__*/React.createElement("i", {
-    "class": "fas fa-check"
-  })), "Unlimited calls"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
-    "class": "li-icon",
-    style: colorStyles
-  }, /*#__PURE__*/React.createElement("i", {
-    "class": "fas fa-check"
-  })), "Free hosting"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
-    "class": "li-icon",
-    style: colorStyles
-  }, /*#__PURE__*/React.createElement("i", {
-    "class": "fas fa-check"
-  })), "500 MB of storage space"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
-    "class": "li-icon",
-    style: colorStyles
-  }, /*#__PURE__*/React.createElement("i", {
-    "class": "fas fa-check"
-  })), "500 MB Bandwidth"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
-    "class": "li-icon",
-    style: colorStyles
-  }, /*#__PURE__*/React.createElement("i", {
-    "class": "fas fa-check"
-  })), "24/7 support"))), /*#__PURE__*/React.createElement("div", {
-    "class": "footer"
+    className: "original-price".concat(showOnSale === true ? " line-through" : ""),
+    "data-price": mainPrice
+  }, currencyPlacement === "left" && /*#__PURE__*/React.createElement("span", {
+    className: "price-currency"
+  }, priceCurrency), mainPrice, currencyPlacement === "right" && /*#__PURE__*/React.createElement("span", {
+    className: "price-currency"
+  }, priceCurrency)), showOnSale && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("span", {
+    className: "sale-price",
+    "data-sale-price": salePrice
+  }, currencyPlacement === "left" && /*#__PURE__*/React.createElement("span", {
+    className: "price-currency"
+  }, priceCurrency), salePrice, currencyPlacement === "right" && /*#__PURE__*/React.createElement("span", {
+    className: "price-currency"
+  }, priceCurrency)))), /*#__PURE__*/React.createElement("span", {
+    className: "price-period",
+    "data-period-separator": periodSeparator,
+    "data-price-period": pricePeriod
+  }, periodSeparator, " ", pricePeriod)), /*#__PURE__*/React.createElement("div", {
+    className: "body"
+  }, /*#__PURE__*/React.createElement("ul", {
+    className: "ebgb-pricebox-features",
+    style: featureStyles
+  }, features.map(function (_ref2) {
+    var icon = _ref2.icon,
+        text = _ref2.text,
+        color = _ref2.color,
+        clickable = _ref2.clickable,
+        link = _ref2.link;
+    return /*#__PURE__*/React.createElement("li", {
+      className: "ebgb-pricebox-feature-item",
+      style: featureListStyle,
+      "data-icon": icon,
+      "data-color": color,
+      "data-clickable": clickable,
+      "data-link": link
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "ebgb-pricebox-icon ".concat(icon),
+      style: {
+        color: color
+      }
+    }), /*#__PURE__*/React.createElement("span", {
+      className: "ebgb-pricebox-feature-text"
+    }, text));
+  }))), /*#__PURE__*/React.createElement("div", {
+    className: "footer"
   }, /*#__PURE__*/React.createElement("a", {
     href: "#",
     target: "_blank",
     rel: "nofollow noopener",
-    "class": "ebgb-pricing-button"
+    className: "ebgb-pricing-button"
   }, /*#__PURE__*/React.createElement("i", {
-    "class": " fa-icon-left"
+    className: " fa-icon-left"
   }), "Choose Plan", " ")))));
 };
 

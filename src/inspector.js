@@ -40,10 +40,13 @@ const Inspector = ({ attributes, setAttributes }) => {
 		title,
 		subtitle,
 		headerIcon,
-		price,
+		mainPrice,
 		showOnSale,
 		salePrice,
 		priceCurrency,
+		currencyPlacement,
+		pricePeriod,
+		periodSeparator,
 
 		displaySubtitle,
 		titleBackgroundColor,
@@ -196,8 +199,8 @@ const Inspector = ({ attributes, setAttributes }) => {
 				<PanelBody title={__("Price")} initialOpen={false}>
 					<TextControl
 						label={__("Price")}
-						value={price}
-						onChange={(newPrice) => setAttributes({ price: newPrice })}
+						value={mainPrice}
+						onChange={(newPrice) => setAttributes({ mainPrice: newPrice })}
 					/>
 					<ToggleControl
 						label={__("On Sale?")}
@@ -211,7 +214,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 							label={__("Sale Price")}
 							value={salePrice}
 							onChange={(newsalePrice) =>
-								setAttributes({ price: newsalePrice })
+								setAttributes({ salePrice: newsalePrice })
 							}
 						/>
 					)}
@@ -221,6 +224,27 @@ const Inspector = ({ attributes, setAttributes }) => {
 						onChange={(newPriceCurrency) =>
 							setAttributes({ priceCurrency: newPriceCurrency })
 						}
+					/>
+					<SelectControl
+						label={__("Currency Placement")}
+						value={currencyPlacement}
+						options={[
+							{ label: "Left", value: "left" },
+							{ label: "Right", value: "right" },
+						]}
+						onChange={(currencyPlacement) => {
+							setAttributes({ currencyPlacement });
+						}}
+					/>
+					<TextControl
+						label={__("Price Period (per)")}
+						value={pricePeriod}
+						onChange={(pricePeriod) => setAttributes({ pricePeriod })}
+					/>
+					<TextControl
+						label={__("Period Separator")}
+						value={periodSeparator}
+						onChange={(periodSeparator) => setAttributes({ periodSeparator })}
 					/>
 				</PanelBody>
 
