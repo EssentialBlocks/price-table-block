@@ -110,7 +110,7 @@ const save = ({ attributes }) => {
 		buttonLetterSpacingUnit,
 	} = attributes;
 
-	console.log(features);
+	// console.log(features);
 
 	const wrapperStyles = {
 		margin: `${marginTop || 0}${marginUnit} ${marginRight || 0}${marginUnit} ${

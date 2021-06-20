@@ -1,8 +1,19 @@
+import * as typoPrefixs from "./constants/typographyPrefixConstants";
 import {
+	generateTypographyAttributes,
 	generateResponsiveRangeAttributes,
 	generateDimensionsAttributes,
+	generateBackgroundAttributes,
+	generateBorderShadowAttributes,
 } from "../util/helpers";
-import { buttonIconSpacing, buttonMargin } from "./constants";
+import {
+	buttonIconSpacing,
+	buttonIconSize,
+	buttonPadding,
+	buttonMargin,
+	buttonBackground,
+	buttonBorderShadow,
+} from "./constants";
 
 const attributes = {
 	// the following 4 attributes is must required for responsive options and asset generation for frontend
@@ -170,7 +181,20 @@ const attributes = {
 		defaultRange: 0,
 		noUnits: true,
 	}),
+	...generateResponsiveRangeAttributes(buttonIconSize, {
+		defaultRange: 20,
+		noUnits: true,
+	}),
+	...generateDimensionsAttributes(buttonPadding),
 	...generateDimensionsAttributes(buttonMargin),
+	// typography attributes
+	...generateTypographyAttributes(Object.values(typoPrefixs)),
+	// background attributes
+	...generateBackgroundAttributes(buttonBackground, {
+		defaultFillColor: "#7967ff",
+	}),
+	// border shadow attriubtes
+	...generateBorderShadowAttributes(buttonBorderShadow),
 	// new attributes end
 
 	priceboxBackground: {

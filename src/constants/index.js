@@ -35,6 +35,14 @@ export const TEXT_DECORATION = [
 
 // Responsive Range Controller
 export const buttonIconSpacing = "btnIconSpace";
+export const buttonIconSize = "btnIconSize";
 
 // dimension controls
+export const buttonPadding = "btnPadding";
 export const buttonMargin = "btnMargin";
+
+// background controls
+export const buttonBackground = "btnBg";
+
+// border shadow controller
+export const buttonBorderShadow = "btnBrdSdw";

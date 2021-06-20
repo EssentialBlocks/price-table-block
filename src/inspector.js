@@ -25,8 +25,12 @@ import {
 	TEXT_TRANSFORM,
 	TEXT_DECORATION,
 	buttonIconSpacing,
+	buttonIconSize,
+	buttonPadding,
 	buttonMargin,
+	buttonBorderShadow,
 } from "./constants";
+
 import objAttributes from "./attributes";
 import faIcons from "../util/faIcons";
 import DimensionsControl from "../util/dimensions-control";
@@ -39,6 +43,10 @@ import ResetControl from "../util/reset-control";
 import FontIconPicker from "@fonticonpicker/react-fonticonpicker";
 import ResponsiveRangeController from "../util/responsive-range-control";
 import ResponsiveDimensionsControl from "../util/dimensions-control-v2";
+import TypographyDropdown from "../util/typography-control-v2";
+import { typoPrefix_button } from "./constants/typographyPrefixConstants";
+import BackgroundControl from "../util/background-control";
+import BorderShadowControl from "../util/border-shadow-control";
 import {
 	mimmikCssForResBtns,
 	mimmikCssOnPreviewBtnClickWhileBlockSelected,
@@ -64,6 +72,9 @@ const Inspector = ({ attributes, setAttributes }) => {
 		buttonIconPosition,
 		buttonText,
 		buttonURL,
+		buttonTextColor,
+		hoverTextColor,
+		buttonBackground,
 		// new attributes
 
 		displaySubtitle,
@@ -73,13 +84,9 @@ const Inspector = ({ attributes, setAttributes }) => {
 		priceDetails,
 		priceBackgroundColor,
 		priceTextColor,
-		// features,
 		featuresBackgroundColor,
 		featuresTextColor,
-		buttonBackground,
-		buttonTextColor,
 		hoverBackgroundColor,
-		hoverTextColor,
 		priceboxBackground,
 		shadowColor,
 		shadowHOffset,
@@ -362,20 +369,54 @@ const Inspector = ({ attributes, setAttributes }) => {
 					/>
 					<ResponsiveDimensionsControl
 						resRequiredProps={resRequiredProps}
+						controlName={buttonPadding}
+						baseLabel={__("Padding")}
+					/>
+					<ResponsiveDimensionsControl
+						resRequiredProps={resRequiredProps}
 						controlName={buttonMargin}
-						baseLabel="Margin"
+						baseLabel={__("Margin")}
 					/>
-
-					<ColorControl
-						label={__("Button Background")}
-						color={buttonBackground}
-						onChange={(buttonBackground) => setAttributes({ buttonBackground })}
+					<ResponsiveRangeController
+						baseLabel={__("Icon Size")}
+						controlName={buttonIconSize}
+						resRequiredProps={resRequiredProps}
+						min={0}
+						max={50}
+						step={1}
+						noUnits
 					/>
-
+					<TypographyDropdown
+						baseLabel={__("Typography")}
+						typographyPrefixConstant={typoPrefix_button}
+						resRequiredProps={resRequiredProps}
+					/>
 					<ColorControl
-						label={__("Button Text")}
+						label={__("Text Color")}
 						color={buttonTextColor}
 						onChange={(buttonTextColor) => setAttributes({ buttonTextColor })}
+					/>
+					<ColorControl
+						label={__("Text Hover Color")}
+						color={hoverTextColor}
+						onChange={(hoverTextColor) => setAttributes({ hoverTextColor })}
+					/>
+					<BaseControl label="Button Background"></BaseControl>
+					<BackgroundControl
+						controlName={buttonBackground}
+						resRequiredProps={resRequiredProps}
+					/>
+					<ColorControl
+						label={__("Hover Background")}
+						color={hoverBackgroundColor}
+						onChange={(hoverBackgroundColor) =>
+							setAttributes({ hoverBackgroundColor })
+						}
+					/>
+					<BaseControl label="Button Border Style"></BaseControl>
+					<BorderShadowControl
+						controlName={buttonBorderShadow}
+						resRequiredProps={resRequiredProps}
 					/>
 
 					<ColorControl
@@ -385,76 +426,6 @@ const Inspector = ({ attributes, setAttributes }) => {
 							setAttributes({ buttonBorderColor })
 						}
 					/>
-
-					<ColorControl
-						label={__("Hover Background")}
-						color={hoverBackgroundColor}
-						onChange={(hoverBackgroundColor) =>
-							setAttributes({ hoverBackgroundColor })
-						}
-					/>
-
-					<ColorControl
-						label={__("Hover Text")}
-						color={hoverTextColor}
-						onChange={(hoverTextColor) => setAttributes({ hoverTextColor })}
-					/>
-
-					<ColorControl
-						label={__("Hover Border")}
-						color={hoverBorderColor}
-						onChange={(hoverBorderColor) => setAttributes({ hoverBorderColor })}
-					/>
-
-					<PanelBody title={__("Border")} initialOpen={false}>
-						<ResetControl
-							onReset={() => setAttributes({ buttonBorderWidth: undefined })}
-						>
-							<RangeControl
-								label={__("Border Width (px)")}
-								value={buttonBorderWidth}
-								onChange={(buttonBorderWidth) =>
-									setAttributes({ buttonBorderWidth })
-								}
-								min={0}
-								max={20}
-							/>
-						</ResetControl>
-
-						<UnitControl
-							selectedUnit={buttonBorderRadiusUnit}
-							unitTypes={[
-								{ label: "px", value: "px" },
-								{ label: "%", value: "%" },
-							]}
-							onClick={(buttonBorderRadiusUnit) =>
-								setAttributes({ buttonBorderRadiusUnit })
-							}
-						/>
-
-						<ResetControl
-							onReset={() => setAttributes({ buttonBorderRadius: undefined })}
-						>
-							<RangeControl
-								label={__("Border Radius")}
-								value={buttonBorderRadius}
-								onChange={(buttonBorderRadius) =>
-									setAttributes({ buttonBorderRadius })
-								}
-								min={0}
-								max={100}
-							/>
-						</ResetControl>
-
-						<SelectControl
-							label={__("Border Style")}
-							value={buttonBorderStyle}
-							options={BORDER_STYLES}
-							onChange={(buttonBorderStyle) =>
-								setAttributes({ buttonBorderStyle })
-							}
-						/>
-					</PanelBody>
 				</PanelBody>
 
 				<PanelBody title={__("Margin & Padding")} initialOpen={false}>

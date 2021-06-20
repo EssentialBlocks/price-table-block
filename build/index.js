@@ -5646,8 +5646,9 @@ var classNamesShape =  true ? prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/helpers */ "./util/helpers/index.js");
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./constants */ "./src/constants.js");
+/* harmony import */ var _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./constants/typographyPrefixConstants */ "./src/constants/typographyPrefixConstants.js");
+/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util/helpers */ "./util/helpers/index.js");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./constants */ "./src/constants/index.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -5657,7 +5658,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var attributes = _objectSpread(_objectSpread(_objectSpread({
+
+var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({
   // the following 4 attributes is must required for responsive options and asset generation for frontend
   // responsive control attributes ⬇
   resOption: {
@@ -5814,10 +5816,15 @@ var attributes = _objectSpread(_objectSpread(_objectSpread({
     type: "string",
     "default": "Choose Plan"
   }
-}, Object(_util_helpers__WEBPACK_IMPORTED_MODULE_0__["generateResponsiveRangeAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_1__["buttonIconSpacing"], {
+}, Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateResponsiveRangeAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["buttonIconSpacing"], {
   defaultRange: 0,
   noUnits: true
-})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_0__["generateDimensionsAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_1__["buttonMargin"])), {}, {
+})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateResponsiveRangeAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["buttonIconSize"], {
+  defaultRange: 20,
+  noUnits: true
+})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["buttonPadding"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["buttonMargin"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateTypographyAttributes"])(Object.values(_constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_0__))), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBackgroundAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["buttonBackground"], {
+  defaultFillColor: "#7967ff"
+})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBorderShadowAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["buttonBorderShadow"])), {}, {
   // new attributes end
   priceboxBackground: {
     type: "string"
@@ -6128,11 +6135,11 @@ var attributes = _objectSpread(_objectSpread(_objectSpread({
 
 /***/ }),
 
-/***/ "./src/constants.js":
-/*!**************************!*\
-  !*** ./src/constants.js ***!
-  \**************************/
-/*! exports provided: BORDER_STYLES, TEXT_TRANSFORM, FONT_WEIGHT, TEXT_DECORATION, buttonIconSpacing, buttonMargin */
+/***/ "./src/constants/index.js":
+/*!********************************!*\
+  !*** ./src/constants/index.js ***!
+  \********************************/
+/*! exports provided: BORDER_STYLES, TEXT_TRANSFORM, FONT_WEIGHT, TEXT_DECORATION, buttonIconSpacing, buttonIconSize, buttonPadding, buttonMargin, buttonBackground, buttonBorderShadow */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6142,7 +6149,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FONT_WEIGHT", function() { return FONT_WEIGHT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TEXT_DECORATION", function() { return TEXT_DECORATION; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buttonIconSpacing", function() { return buttonIconSpacing; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buttonIconSize", function() { return buttonIconSize; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buttonPadding", function() { return buttonPadding; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buttonMargin", function() { return buttonMargin; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buttonBackground", function() { return buttonBackground; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buttonBorderShadow", function() { return buttonBorderShadow; });
 var __ = wp.i18n.__;
 var BORDER_STYLES = [{
   label: __("Dashed"),
@@ -6212,9 +6223,29 @@ var TEXT_DECORATION = [{
   value: "underline overline"
 }]; // Responsive Range Controller
 
-var buttonIconSpacing = "btnIconSpace"; // dimension controls
+var buttonIconSpacing = "btnIconSpace";
+var buttonIconSize = "btnIconSize"; // dimension controls
 
-var buttonMargin = "btnMargin";
+var buttonPadding = "btnPadding";
+var buttonMargin = "btnMargin"; // background controls
+
+var buttonBackground = "btnBg"; // border shadow controller
+
+var buttonBorderShadow = "btnBrdSdw";
+
+/***/ }),
+
+/***/ "./src/constants/typographyPrefixConstants.js":
+/*!****************************************************!*\
+  !*** ./src/constants/typographyPrefixConstants.js ***!
+  \****************************************************/
+/*! exports provided: typoPrefix_button */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "typoPrefix_button", function() { return typoPrefix_button; });
+var typoPrefix_button = "btnText";
 
 /***/ }),
 
@@ -6645,7 +6676,7 @@ registerBlockType("pricing-table-block/pricing-table", {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./constants */ "./src/constants.js");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./constants */ "./src/constants/index.js");
 /* harmony import */ var _attributes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./attributes */ "./src/attributes.js");
 /* harmony import */ var _util_faIcons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../util/faIcons */ "./util/faIcons.js");
 /* harmony import */ var _util_dimensions_control__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../util/dimensions-control */ "./util/dimensions-control/index.js");
@@ -6659,7 +6690,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var _util_responsive_range_control__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../util/responsive-range-control */ "./util/responsive-range-control/index.js");
 /* harmony import */ var _util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../util/dimensions-control-v2 */ "./util/dimensions-control-v2/index.js");
-/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../util/helpers */ "./util/helpers/index.js");
+/* harmony import */ var _util_typography_control_v2__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../util/typography-control-v2 */ "./util/typography-control-v2/index.js");
+/* harmony import */ var _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./constants/typographyPrefixConstants */ "./src/constants/typographyPrefixConstants.js");
+/* harmony import */ var _util_background_control__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../util/background-control */ "./util/background-control/index.js");
+/* harmony import */ var _util_border_shadow_control__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../util/border-shadow-control */ "./util/border-shadow-control/index.js");
+/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../util/helpers */ "./util/helpers/index.js");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -6711,6 +6746,10 @@ var _wp$components = wp.components,
 
 
 
+
+
+
+
 var Inspector = function Inspector(_ref) {
   var attributes = _ref.attributes,
       setAttributes = _ref.setAttributes;
@@ -6732,6 +6771,9 @@ var Inspector = function Inspector(_ref) {
       buttonIconPosition = attributes.buttonIconPosition,
       buttonText = attributes.buttonText,
       buttonURL = attributes.buttonURL,
+      buttonTextColor = attributes.buttonTextColor,
+      hoverTextColor = attributes.hoverTextColor,
+      buttonBackground = attributes.buttonBackground,
       displaySubtitle = attributes.displaySubtitle,
       titleBackgroundColor = attributes.titleBackgroundColor,
       titleTextColor = attributes.titleTextColor,
@@ -6741,10 +6783,7 @@ var Inspector = function Inspector(_ref) {
       priceTextColor = attributes.priceTextColor,
       featuresBackgroundColor = attributes.featuresBackgroundColor,
       featuresTextColor = attributes.featuresTextColor,
-      buttonBackground = attributes.buttonBackground,
-      buttonTextColor = attributes.buttonTextColor,
       hoverBackgroundColor = attributes.hoverBackgroundColor,
-      hoverTextColor = attributes.hoverTextColor,
       priceboxBackground = attributes.priceboxBackground,
       shadowColor = attributes.shadowColor,
       shadowHOffset = attributes.shadowHOffset,
@@ -6824,14 +6863,14 @@ var Inspector = function Inspector(_ref) {
   }, []); // this useEffect is for mimmiking css for all the eb blocks on resOption changing
 
   useEffect(function () {
-    Object(_util_helpers__WEBPACK_IMPORTED_MODULE_13__["mimmikCssForResBtns"])({
+    Object(_util_helpers__WEBPACK_IMPORTED_MODULE_17__["mimmikCssForResBtns"])({
       domObj: document,
       resOption: resOption
     });
   }, [resOption]); // this useEffect is to mimmik css for responsive preview in the editor page when clicking the buttons in the 'Preview button of wordpress' located beside the 'update' button while any block is selected and it's inspector panel is mounted in the DOM
 
   useEffect(function () {
-    var cleanUp = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_13__["mimmikCssOnPreviewBtnClickWhileBlockSelected"])({
+    var cleanUp = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_17__["mimmikCssOnPreviewBtnClickWhileBlockSelected"])({
       domObj: document,
       select: select,
       setAttributes: setAttributes
@@ -7054,18 +7093,26 @@ var Inspector = function Inspector(_ref) {
     }
   }), /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_12__["default"], {
     resRequiredProps: resRequiredProps,
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_0__["buttonPadding"],
+    baseLabel: __("Padding")
+  }), /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_12__["default"], {
+    resRequiredProps: resRequiredProps,
     controlName: _constants__WEBPACK_IMPORTED_MODULE_0__["buttonMargin"],
-    baseLabel: "Margin"
+    baseLabel: __("Margin")
+  }), /*#__PURE__*/React.createElement(_util_responsive_range_control__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    baseLabel: __("Icon Size"),
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_0__["buttonIconSize"],
+    resRequiredProps: resRequiredProps,
+    min: 0,
+    max: 50,
+    step: 1,
+    noUnits: true
+  }), /*#__PURE__*/React.createElement(_util_typography_control_v2__WEBPACK_IMPORTED_MODULE_13__["default"], {
+    baseLabel: __("Typography"),
+    typographyPrefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_14__["typoPrefix_button"],
+    resRequiredProps: resRequiredProps
   }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    label: __("Button Background"),
-    color: buttonBackground,
-    onChange: function onChange(buttonBackground) {
-      return setAttributes({
-        buttonBackground: buttonBackground
-      });
-    }
-  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    label: __("Button Text"),
+    label: __("Text Color"),
     color: buttonTextColor,
     onChange: function onChange(buttonTextColor) {
       return setAttributes({
@@ -7073,13 +7120,18 @@ var Inspector = function Inspector(_ref) {
       });
     }
   }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    label: __("Border Color"),
-    color: buttonBorderColor,
-    onChange: function onChange(buttonBorderColor) {
+    label: __("Text Hover Color"),
+    color: hoverTextColor,
+    onChange: function onChange(hoverTextColor) {
       return setAttributes({
-        buttonBorderColor: buttonBorderColor
+        hoverTextColor: hoverTextColor
       });
     }
+  }), /*#__PURE__*/React.createElement(BaseControl, {
+    label: "Button Background"
+  }), /*#__PURE__*/React.createElement(_util_background_control__WEBPACK_IMPORTED_MODULE_15__["default"], {
+    controlName: buttonBackground,
+    resRequiredProps: resRequiredProps
   }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
     label: __("Hover Background"),
     color: hoverBackgroundColor,
@@ -7088,81 +7140,20 @@ var Inspector = function Inspector(_ref) {
         hoverBackgroundColor: hoverBackgroundColor
       });
     }
+  }), /*#__PURE__*/React.createElement(BaseControl, {
+    label: "Button Border Style"
+  }), /*#__PURE__*/React.createElement(_util_border_shadow_control__WEBPACK_IMPORTED_MODULE_16__["default"], {
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_0__["buttonBorderShadow"],
+    resRequiredProps: resRequiredProps
   }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    label: __("Hover Text"),
-    color: hoverTextColor,
-    onChange: function onChange(hoverTextColor) {
+    label: __("Border Color"),
+    color: buttonBorderColor,
+    onChange: function onChange(buttonBorderColor) {
       return setAttributes({
-        hoverTextColor: hoverTextColor
+        buttonBorderColor: buttonBorderColor
       });
     }
-  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    label: __("Hover Border"),
-    color: hoverBorderColor,
-    onChange: function onChange(hoverBorderColor) {
-      return setAttributes({
-        hoverBorderColor: hoverBorderColor
-      });
-    }
-  }), /*#__PURE__*/React.createElement(PanelBody, {
-    title: __("Border"),
-    initialOpen: false
-  }, /*#__PURE__*/React.createElement(_util_reset_control__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    onReset: function onReset() {
-      return setAttributes({
-        buttonBorderWidth: undefined
-      });
-    }
-  }, /*#__PURE__*/React.createElement(RangeControl, {
-    label: __("Border Width (px)"),
-    value: buttonBorderWidth,
-    onChange: function onChange(buttonBorderWidth) {
-      return setAttributes({
-        buttonBorderWidth: buttonBorderWidth
-      });
-    },
-    min: 0,
-    max: 20
-  })), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    selectedUnit: buttonBorderRadiusUnit,
-    unitTypes: [{
-      label: "px",
-      value: "px"
-    }, {
-      label: "%",
-      value: "%"
-    }],
-    onClick: function onClick(buttonBorderRadiusUnit) {
-      return setAttributes({
-        buttonBorderRadiusUnit: buttonBorderRadiusUnit
-      });
-    }
-  }), /*#__PURE__*/React.createElement(_util_reset_control__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    onReset: function onReset() {
-      return setAttributes({
-        buttonBorderRadius: undefined
-      });
-    }
-  }, /*#__PURE__*/React.createElement(RangeControl, {
-    label: __("Border Radius"),
-    value: buttonBorderRadius,
-    onChange: function onChange(buttonBorderRadius) {
-      return setAttributes({
-        buttonBorderRadius: buttonBorderRadius
-      });
-    },
-    min: 0,
-    max: 100
-  })), /*#__PURE__*/React.createElement(SelectControl, {
-    label: __("Border Style"),
-    value: buttonBorderStyle,
-    options: _constants__WEBPACK_IMPORTED_MODULE_0__["BORDER_STYLES"],
-    onChange: function onChange(buttonBorderStyle) {
-      return setAttributes({
-        buttonBorderStyle: buttonBorderStyle
-      });
-    }
-  }))), /*#__PURE__*/React.createElement(PanelBody, {
+  })), /*#__PURE__*/React.createElement(PanelBody, {
     title: __("Margin & Padding"),
     initialOpen: false
   }, /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -8054,8 +8045,8 @@ var save = function save(_ref) {
       buttonLineHeight = attributes.buttonLineHeight,
       buttonLineHeightUnit = attributes.buttonLineHeightUnit,
       buttonLetterSpacing = attributes.buttonLetterSpacing,
-      buttonLetterSpacingUnit = attributes.buttonLetterSpacingUnit;
-  console.log(features);
+      buttonLetterSpacingUnit = attributes.buttonLetterSpacingUnit; // console.log(features);
+
   var wrapperStyles = {
     margin: "".concat(marginTop || 0).concat(marginUnit, " ").concat(marginRight || 0).concat(marginUnit, " ").concat(marginBottom || 0).concat(marginUnit, " ").concat(marginLeft || 0).concat(marginUnit),
     padding: "".concat(paddingTop || 0).concat(paddingUnit, " ").concat(paddingRight || 0).concat(paddingUnit, " ").concat(paddingBottom || 0).concat(paddingUnit, " ").concat(paddingLeft || 0).concat(paddingUnit),
@@ -8523,6 +8514,1225 @@ var SortableFeatures = /*#__PURE__*/function (_Component) {
 }(Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (SortableFeatures);
+
+/***/ }),
+
+/***/ "./util/background-control/index.js":
+/*!******************************************!*\
+  !*** ./util/background-control/index.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return BackgroundControl; });
+/* harmony import */ var _gradient_color_controller__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../gradient-color-controller */ "./util/gradient-color-controller/index.js");
+/* harmony import */ var _unit_control__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../unit-control */ "./util/unit-control/index.js");
+/* harmony import */ var _color_control__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../color-control */ "./util/color-control/index.js");
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../helpers */ "./util/helpers/index.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+/**
+ * WordPress dependencies
+ */
+var __ = wp.i18n.__;
+var MediaUpload = wp.blockEditor.MediaUpload;
+var _wp$components = wp.components,
+    PanelBody = _wp$components.PanelBody,
+    SelectControl = _wp$components.SelectControl,
+    Button = _wp$components.Button,
+    RangeControl = _wp$components.RangeControl,
+    BaseControl = _wp$components.BaseControl,
+    ButtonGroup = _wp$components.ButtonGroup,
+    ToggleControl = _wp$components.ToggleControl;
+var useState = wp.element.useState;
+var dispatch = wp.data.dispatch;
+/**
+ * Internal dependencies
+ */
+
+
+
+
+
+
+function WithResBtns(_ref) {
+  var children = _ref.children,
+      resRequiredProps = _ref.resRequiredProps,
+      label = _ref.label;
+  var setAttributes = resRequiredProps.setAttributes,
+      resOption = resRequiredProps.resOption;
+  return /*#__PURE__*/React.createElement("div", {
+    className: "newWithResWrapper"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "resBtns"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "resLabel"
+  }, label), /*#__PURE__*/React.createElement("span", {
+    onClick: function onClick() {
+      return Object(_helpers__WEBPACK_IMPORTED_MODULE_3__["handleDesktopBtnClick"])({
+        setPreviewDeviceType: dispatch("core/edit-post").__experimentalSetPreviewDeviceType,
+        setAttributes: setAttributes
+      });
+    },
+    "class": "typoResButton dashicons dashicons-desktop ".concat(resOption === "Desktop" ? "active" : " ")
+  }), /*#__PURE__*/React.createElement("span", {
+    onClick: function onClick() {
+      return Object(_helpers__WEBPACK_IMPORTED_MODULE_3__["handleTabBtnClick"])({
+        setPreviewDeviceType: dispatch("core/edit-post").__experimentalSetPreviewDeviceType,
+        setAttributes: setAttributes
+      });
+    },
+    "class": "typoResButton dashicons dashicons-tablet ".concat(resOption === "Tablet" ? "active" : " ")
+  }), /*#__PURE__*/React.createElement("span", {
+    onClick: function onClick() {
+      return Object(_helpers__WEBPACK_IMPORTED_MODULE_3__["handleMobileBtnClick"])({
+        setPreviewDeviceType: dispatch("core/edit-post").__experimentalSetPreviewDeviceType,
+        setAttributes: setAttributes
+      });
+    },
+    "class": "typoResButton dashicons dashicons-smartphone ".concat(resOption === "Mobile" ? "active" : " ")
+  })), children);
+}
+
+var ImageAvatar = function ImageAvatar(_ref2) {
+  var imageUrl = _ref2.imageUrl,
+      onDeleteImage = _ref2.onDeleteImage;
+
+  var _useState = useState(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      hover = _useState2[0],
+      setHover = _useState2[1];
+
+  var _useState3 = useState(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      deleteHover = _useState4[0],
+      setDeleteHover = _useState4[1];
+
+  var deleteButtonStyle = {
+    visibility: hover ? "visible" : "hidden",
+    backgroundColor: deleteHover ? "white" : "#64666a",
+    color: "#b4b5b7",
+    position: "absolute",
+    right: 34,
+    fontSize: 16,
+    alignSelf: "center",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 3,
+    cursor: "pointer"
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    className: "image-avatar",
+    style: {
+      backgroundImage: "url(".concat(imageUrl, ")")
+    },
+    onMouseEnter: function onMouseEnter() {
+      return setHover(true);
+    },
+    onMouseLeave: function onMouseLeave() {
+      return setHover(false);
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "image-avatar-delete dashicons dashicons-trash",
+    onMouseEnter: function onMouseEnter() {
+      return setDeleteHover(true);
+    },
+    onMouseLeave: function onMouseLeave() {
+      return setDeleteHover(false);
+    },
+    style: deleteButtonStyle,
+    onClick: function onClick() {
+      return onDeleteImage();
+    }
+  }));
+};
+
+function BackgroundControl(_ref3) {
+  var resRequiredProps = _ref3.resRequiredProps,
+      controlName = _ref3.controlName;
+  var setAttributes = resRequiredProps.setAttributes,
+      attributes = resRequiredProps.attributes,
+      resOption = resRequiredProps.resOption;
+  var backgroundType = attributes["".concat(controlName, "backgroundType")],
+      backgroundColor = attributes["".concat(controlName, "backgroundColor")],
+      gradientColor = attributes["".concat(controlName, "gradientColor")],
+      bgImageURL = attributes["".concat(controlName, "bgImageURL")],
+      bgImageID = attributes["".concat(controlName, "bgImageID")],
+      backgroundSize = attributes["".concat(controlName, "backgroundSize")],
+      bgImgCustomSize = attributes["".concat(controlName, "bgImgCustomSize")],
+      bgImgCustomSizeUnit = attributes["".concat(controlName, "bgImgCustomSizeUnit")],
+      bgImgPos = attributes["".concat(controlName, "bgImgPos")],
+      bgImgcustomPosX = attributes["".concat(controlName, "bgImgcustomPosX")],
+      bgImgcustomPosXUnit = attributes["".concat(controlName, "bgImgcustomPosXUnit")],
+      bgImgcustomPosY = attributes["".concat(controlName, "bgImgcustomPosY")],
+      bgImgcustomPosYUnit = attributes["".concat(controlName, "bgImgcustomPosYUnit")],
+      bgImgAttachment = attributes["".concat(controlName, "bgImgAttachment")],
+      bgImgRepeat = attributes["".concat(controlName, "bgImgRepeat")],
+      isBgOverly = attributes["".concat(controlName, "isBgOverly")],
+      overlyType = attributes["".concat(controlName, "overlyType")],
+      _attributes$ = attributes["".concat(controlName, "overlyColor")],
+      overlyColor = _attributes$ === void 0 ? "#00000080" : _attributes$,
+      overlyGradient = attributes["".concat(controlName, "overlyGradient")],
+      TABbackgroundSize = attributes["TAB".concat(controlName, "backgroundSize")],
+      TABbgImgCustomSize = attributes["TAB".concat(controlName, "bgImgCustomSize")],
+      TABbgImgCustomSizeUnit = attributes["TAB".concat(controlName, "bgImgCustomSizeUnit")],
+      TABbgImgPos = attributes["TAB".concat(controlName, "bgImgPos")],
+      TABbgImgcustomPosX = attributes["TAB".concat(controlName, "bgImgcustomPosX")],
+      TABbgImgcustomPosXUnit = attributes["TAB".concat(controlName, "bgImgcustomPosXUnit")],
+      TABbgImgcustomPosY = attributes["TAB".concat(controlName, "bgImgcustomPosY")],
+      TABbgImgcustomPosYUnit = attributes["TAB".concat(controlName, "bgImgcustomPosYUnit")],
+      TABbgImgRepeat = attributes["TAB".concat(controlName, "bgImgRepeat")],
+      MOBbackgroundSize = attributes["MOB".concat(controlName, "backgroundSize")],
+      MOBbgImgCustomSize = attributes["MOB".concat(controlName, "bgImgCustomSize")],
+      MOBbgImgCustomSizeUnit = attributes["MOB".concat(controlName, "bgImgCustomSizeUnit")],
+      MOBbgImgPos = attributes["MOB".concat(controlName, "bgImgPos")],
+      MOBbgImgcustomPosX = attributes["MOB".concat(controlName, "bgImgcustomPosX")],
+      MOBbgImgcustomPosXUnit = attributes["MOB".concat(controlName, "bgImgcustomPosXUnit")],
+      MOBbgImgcustomPosY = attributes["MOB".concat(controlName, "bgImgcustomPosY")],
+      MOBbgImgcustomPosYUnit = attributes["MOB".concat(controlName, "bgImgcustomPosYUnit")],
+      MOBbgImgRepeat = attributes["MOB".concat(controlName, "bgImgRepeat")];
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(BaseControl, {
+    label: __("Background Type")
+  }, /*#__PURE__*/React.createElement(ButtonGroup, null, [{
+    label: __("Fill"),
+    value: "fill"
+  }, {
+    label: __("Gradient"),
+    value: "gradient"
+  }, {
+    label: __("Image"),
+    value: "image"
+  }].map(function (_ref4) {
+    var value = _ref4.value,
+        label = _ref4.label;
+    return /*#__PURE__*/React.createElement(Button, {
+      isPrimary: backgroundType === value,
+      isSecondary: backgroundType !== value,
+      onClick: function onClick() {
+        return setAttributes(_defineProperty({}, "".concat(controlName, "backgroundType"), value));
+      }
+    }, label);
+  }))), backgroundType === "fill" && /*#__PURE__*/React.createElement(_color_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    label: __("Background Color"),
+    color: backgroundColor,
+    onChange: function onChange(backgroundColor) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "backgroundColor"), backgroundColor));
+    }
+  }), backgroundType === "gradient" && /*#__PURE__*/React.createElement(PanelBody, {
+    title: __("Gradient"),
+    initialOpen: false
+  }, /*#__PURE__*/React.createElement(_gradient_color_controller__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    gradientColor: gradientColor,
+    onChange: function onChange(gradientColor) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "gradientColor"), gradientColor));
+    }
+  })), backgroundType === "image" && /*#__PURE__*/React.createElement(PanelBody, {
+    title: __("Background Image")
+  }, /*#__PURE__*/React.createElement(MediaUpload, {
+    onSelect: function onSelect(_ref5) {
+      var _setAttributes4;
+
+      var url = _ref5.url,
+          id = _ref5.id;
+      return setAttributes((_setAttributes4 = {}, _defineProperty(_setAttributes4, "".concat(controlName, "bgImageURL"), url), _defineProperty(_setAttributes4, "".concat(controlName, "bgImageID"), id), _setAttributes4));
+    },
+    type: "image",
+    value: bgImageID,
+    render: function render(_ref6) {
+      var open = _ref6.open;
+      return !bgImageURL && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Button, {
+        className: "eb-background-control-inspector-panel-img-btn components-button",
+        label: __("Upload Image"),
+        icon: "format-image",
+        onClick: open
+      }), /*#__PURE__*/React.createElement("span", {
+        style: {
+          padding: "10px 0",
+          display: "block"
+        }
+      }));
+    }
+  }), bgImageURL && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(ImageAvatar, {
+    imageUrl: bgImageURL,
+    onDeleteImage: function onDeleteImage() {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "bgImageURL"), null));
+    }
+  }), resOption === "Desktop" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Position"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: bgImgPos,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Center Center"),
+      value: "center center"
+    }, {
+      label: __("Center Left"),
+      value: "center left"
+    }, {
+      label: __("Center Right"),
+      value: "center right"
+    }, {
+      label: __("Top Center"),
+      value: "top center"
+    }, {
+      label: __("Top Left"),
+      value: "top left"
+    }, {
+      label: __("Top Right"),
+      value: "top right"
+    }, {
+      label: __("Bottom Center"),
+      value: "bottom center"
+    }, {
+      label: __("Bottom Left"),
+      value: "bottom left"
+    }, {
+      label: __("Bottom Right"),
+      value: "bottom right"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(bgImgPos) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "bgImgPos"), bgImgPos));
+    }
+  })), bgImgPos === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: bgImgcustomPosXUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(bgImgcustomPosXUnit) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "bgImgcustomPosXUnit"), bgImgcustomPosXUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "X Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: bgImgcustomPosX,
+    min: 0,
+    max: bgImgcustomPosXUnit === "px" ? 2000 : 100,
+    onChange: function onChange(bgImgcustomPosX) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "bgImgcustomPosX"), bgImgcustomPosX));
+    }
+  })), /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: bgImgcustomPosYUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(bgImgcustomPosYUnit) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "bgImgcustomPosYUnit"), bgImgcustomPosYUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Y Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: bgImgcustomPosY,
+    min: 0,
+    max: bgImgcustomPosYUnit === "px" ? 2000 : 100,
+    step: bgImgcustomPosYUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(bgImgcustomPosY) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "bgImgcustomPosY"), bgImgcustomPosY));
+    }
+  }))), /*#__PURE__*/React.createElement(SelectControl, {
+    label: "Attachment",
+    value: bgImgAttachment,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Scroll"),
+      value: "scroll"
+    }, {
+      label: __("Fixed"),
+      value: "fixed"
+    }],
+    onChange: function onChange(bgImgAttachment) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "bgImgAttachment"), bgImgAttachment));
+    }
+  }), bgImgAttachment === "fixed" && /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: "-10px",
+      paddingBottom: "10px"
+    }
+  }, /*#__PURE__*/React.createElement("i", null, "Note: Attachment Fixed works only on desktop.")), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Repeat"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: bgImgRepeat,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("No-repeat"),
+      value: "no-repeat"
+    }, {
+      label: __("Repeat"),
+      value: "repeat"
+    }, {
+      label: __("Repeat-x"),
+      value: "repeat-x"
+    }, {
+      label: __("Repeat-y"),
+      value: "repeat-y"
+    }],
+    onChange: function onChange(bgImgRepeat) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "bgImgRepeat"), bgImgRepeat));
+    }
+  })), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Size"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: backgroundSize,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Auto"),
+      value: "auto"
+    }, {
+      label: __("Cover"),
+      value: "cover"
+    }, {
+      label: __("Contain"),
+      value: "contain"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(backgroundSize) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "backgroundSize"), backgroundSize));
+    }
+  })), backgroundSize === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: bgImgCustomSizeUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(bgImgCustomSizeUnit) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "bgImgCustomSizeUnit"), bgImgCustomSizeUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Width"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: bgImgCustomSize,
+    min: 0,
+    max: bgImgCustomSizeUnit === "px" ? 2000 : 100,
+    step: bgImgCustomSizeUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(bgImgCustomSize) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "bgImgCustomSize"), bgImgCustomSize));
+    }
+  })))), resOption === "Tablet" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Position"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: TABbgImgPos,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Center Center"),
+      value: "center center"
+    }, {
+      label: __("Center Left"),
+      value: "center left"
+    }, {
+      label: __("Center Right"),
+      value: "center right"
+    }, {
+      label: __("Top Center"),
+      value: "top center"
+    }, {
+      label: __("Top Left"),
+      value: "top left"
+    }, {
+      label: __("Top Right"),
+      value: "top right"
+    }, {
+      label: __("Bottom Center"),
+      value: "bottom center"
+    }, {
+      label: __("Bottom Left"),
+      value: "bottom left"
+    }, {
+      label: __("Bottom Right"),
+      value: "bottom right"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(TABbgImgPos) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "bgImgPos"), TABbgImgPos));
+    }
+  })), TABbgImgPos === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: TABbgImgcustomPosXUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(TABbgImgcustomPosXUnit) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "bgImgcustomPosXUnit"), TABbgImgcustomPosXUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "X Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: TABbgImgcustomPosX,
+    min: 0,
+    max: TABbgImgcustomPosXUnit === "px" ? 2000 : 100,
+    onChange: function onChange(TABbgImgcustomPosX) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "bgImgcustomPosX"), TABbgImgcustomPosX));
+    }
+  })), /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: TABbgImgcustomPosYUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(TABbgImgcustomPosYUnit) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "bgImgcustomPosYUnit"), TABbgImgcustomPosYUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Y Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: TABbgImgcustomPosY,
+    min: 0,
+    max: TABbgImgcustomPosYUnit === "px" ? 2000 : 100,
+    step: TABbgImgcustomPosYUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(TABbgImgcustomPosY) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "bgImgcustomPosY"), TABbgImgcustomPosY));
+    }
+  }))), /*#__PURE__*/React.createElement(SelectControl, {
+    label: "Attachment",
+    value: bgImgAttachment,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Scroll"),
+      value: "scroll"
+    }, {
+      label: __("Fixed"),
+      value: "fixed"
+    }],
+    onChange: function onChange(bgImgAttachment) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "bgImgAttachment"), bgImgAttachment));
+    }
+  }), bgImgAttachment === "fixed" && /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: "-10px",
+      paddingBottom: "10px"
+    }
+  }, /*#__PURE__*/React.createElement("i", null, "Note: Attachment Fixed works only on desktop.")), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Repeat"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: TABbgImgRepeat,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("No-repeat"),
+      value: "no-repeat"
+    }, {
+      label: __("Repeat"),
+      value: "repeat"
+    }, {
+      label: __("Repeat-x"),
+      value: "repeat-x"
+    }, {
+      label: __("Repeat-y"),
+      value: "repeat-y"
+    }],
+    onChange: function onChange(TABbgImgRepeat) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "bgImgRepeat"), TABbgImgRepeat));
+    }
+  })), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Size"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: TABbackgroundSize,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Auto"),
+      value: "auto"
+    }, {
+      label: __("Cover"),
+      value: "cover"
+    }, {
+      label: __("Contain"),
+      value: "contain"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(TABbackgroundSize) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "backgroundSize"), TABbackgroundSize));
+    }
+  })), TABbackgroundSize === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: TABbgImgCustomSizeUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(TABbgImgCustomSizeUnit) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "bgImgCustomSizeUnit"), TABbgImgCustomSizeUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Width"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: TABbgImgCustomSize,
+    min: 0,
+    max: TABbgImgCustomSizeUnit === "px" ? 2000 : 100,
+    step: TABbgImgCustomSizeUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(TABbgImgCustomSize) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "bgImgCustomSize"), TABbgImgCustomSize));
+    }
+  })))), resOption === "Mobile" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Position"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: MOBbgImgPos,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Center Center"),
+      value: "center center"
+    }, {
+      label: __("Center Left"),
+      value: "center left"
+    }, {
+      label: __("Center Right"),
+      value: "center right"
+    }, {
+      label: __("Top Center"),
+      value: "top center"
+    }, {
+      label: __("Top Left"),
+      value: "top left"
+    }, {
+      label: __("Top Right"),
+      value: "top right"
+    }, {
+      label: __("Bottom Center"),
+      value: "bottom center"
+    }, {
+      label: __("Bottom Left"),
+      value: "bottom left"
+    }, {
+      label: __("Bottom Right"),
+      value: "bottom right"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(MOBbgImgPos) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "bgImgPos"), MOBbgImgPos));
+    }
+  })), MOBbgImgPos === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: MOBbgImgcustomPosXUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(MOBbgImgcustomPosXUnit) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "bgImgcustomPosXUnit"), MOBbgImgcustomPosXUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "X Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: MOBbgImgcustomPosX,
+    min: 0,
+    max: MOBbgImgcustomPosXUnit === "px" ? 2000 : 100,
+    onChange: function onChange(MOBbgImgcustomPosX) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "bgImgcustomPosX"), MOBbgImgcustomPosX));
+    }
+  })), /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: MOBbgImgcustomPosYUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(MOBbgImgcustomPosYUnit) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "bgImgcustomPosYUnit"), MOBbgImgcustomPosYUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Y Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: MOBbgImgcustomPosY,
+    min: 0,
+    max: MOBbgImgcustomPosYUnit === "px" ? 2000 : 100,
+    step: MOBbgImgcustomPosYUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(MOBbgImgcustomPosY) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "bgImgcustomPosY"), MOBbgImgcustomPosY));
+    }
+  }))), /*#__PURE__*/React.createElement(SelectControl, {
+    label: "Attachment",
+    value: bgImgAttachment,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Scroll"),
+      value: "scroll"
+    }, {
+      label: __("Fixed"),
+      value: "fixed"
+    }],
+    onChange: function onChange(bgImgAttachment) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "bgImgAttachment"), bgImgAttachment));
+    }
+  }), bgImgAttachment === "fixed" && /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: "-10px",
+      paddingBottom: "10px"
+    }
+  }, /*#__PURE__*/React.createElement("i", null, "Note: Attachment Fixed works only on desktop.")), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Repeat"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: MOBbgImgRepeat,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("No-repeat"),
+      value: "no-repeat"
+    }, {
+      label: __("Repeat"),
+      value: "repeat"
+    }, {
+      label: __("Repeat-x"),
+      value: "repeat-x"
+    }, {
+      label: __("Repeat-y"),
+      value: "repeat-y"
+    }],
+    onChange: function onChange(MOBbgImgRepeat) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "bgImgRepeat"), MOBbgImgRepeat));
+    }
+  })), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Size"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: MOBbackgroundSize,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Auto"),
+      value: "auto"
+    }, {
+      label: __("Cover"),
+      value: "cover"
+    }, {
+      label: __("Contain"),
+      value: "contain"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(MOBbackgroundSize) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "backgroundSize"), MOBbackgroundSize));
+    }
+  })), MOBbackgroundSize === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: MOBbgImgCustomSizeUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(MOBbgImgCustomSizeUnit) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "bgImgCustomSizeUnit"), MOBbgImgCustomSizeUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Width"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: MOBbgImgCustomSize,
+    min: 0,
+    max: MOBbgImgCustomSizeUnit === "px" ? 2000 : 100,
+    step: MOBbgImgCustomSizeUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(MOBbgImgCustomSize) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "bgImgCustomSize"), MOBbgImgCustomSize));
+    }
+  }))))), /*#__PURE__*/React.createElement(ToggleControl, {
+    label: __("Enable Overly"),
+    checked: isBgOverly,
+    onChange: function onChange() {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "isBgOverly"), !isBgOverly));
+    }
+  }), isBgOverly && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(BaseControl, {
+    label: __("Overly Type")
+  }, /*#__PURE__*/React.createElement(ButtonGroup, {
+    id: "eb-background-control-new"
+  }, [{
+    label: "Fill",
+    value: "fill"
+  }, {
+    label: "Gradient",
+    value: "gradient"
+  }].map(function (_ref7) {
+    var value = _ref7.value,
+        label = _ref7.label;
+    return /*#__PURE__*/React.createElement(Button, {
+      isLarge: true,
+      isPrimary: overlyType === value,
+      isSecondary: overlyType !== value,
+      onClick: function onClick() {
+        return setAttributes(_defineProperty({}, "".concat(controlName, "overlyType"), value));
+      }
+    }, label);
+  }))), overlyType === "fill" && /*#__PURE__*/React.createElement(_color_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    label: __("Overly"),
+    color: overlyColor,
+    onChange: function onChange(overlyColor) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "overlyColor"), overlyColor));
+    }
+  }), overlyType === "gradient" && /*#__PURE__*/React.createElement(_gradient_color_controller__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    gradientColor: overlyGradient,
+    onChange: function onChange(overlyGradient) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "overlyGradient"), overlyGradient));
+    }
+  }) //   <PanelBody title={__("Gradient")} initialOpen={false}>
+  // </PanelBody>
+  )));
+}
+
+/***/ }),
+
+/***/ "./util/border-shadow-control/index.js":
+/*!*********************************************!*\
+  !*** ./util/border-shadow-control/index.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return BorderShadowControl; });
+/* harmony import */ var _color_control__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../color-control */ "./util/color-control/index.js");
+/* harmony import */ var _reset_control__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reset-control */ "./util/reset-control/index.js");
+/* harmony import */ var _dimensions_control_v2__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../dimensions-control-v2 */ "./util/dimensions-control-v2/index.js");
+/* harmony import */ var _typography_control_v2_Icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../typography-control-v2/Icon */ "./util/typography-control-v2/Icon.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+/**
+ * WordPress dependencies
+ */
+var __ = wp.i18n.__;
+var _wp$components = wp.components,
+    ToggleControl = _wp$components.ToggleControl,
+    TextControl = _wp$components.TextControl,
+    Button = _wp$components.Button,
+    RangeControl = _wp$components.RangeControl,
+    BaseControl = _wp$components.BaseControl,
+    ButtonGroup = _wp$components.ButtonGroup,
+    SelectControl = _wp$components.SelectControl,
+    Dropdown = _wp$components.Dropdown;
+/**
+ * Internal dependencies
+ */
+
+
+
+
+
+function BorderShadowControl(_ref) {
+  var resRequiredProps = _ref.resRequiredProps,
+      controlName = _ref.controlName,
+      noBorder = _ref.noBorder,
+      noShadow = _ref.noShadow;
+  var setAttributes = resRequiredProps.setAttributes,
+      attributes = resRequiredProps.attributes;
+  var borderStyle = attributes["".concat(controlName, "borderStyle")],
+      borderColor = attributes["".concat(controlName, "borderColor")],
+      shadowType = attributes["".concat(controlName, "shadowType")],
+      shadowColor = attributes["".concat(controlName, "shadowColor")],
+      hOffset = attributes["".concat(controlName, "hOffset")],
+      vOffset = attributes["".concat(controlName, "vOffset")],
+      blur = attributes["".concat(controlName, "blur")],
+      spread = attributes["".concat(controlName, "spread")],
+      hoverShadowColor = attributes["".concat(controlName, "hoverShadowColor")],
+      hoverHOffset = attributes["".concat(controlName, "hoverHOffset")],
+      hoverVOffset = attributes["".concat(controlName, "hoverVOffset")],
+      hoverBlur = attributes["".concat(controlName, "hoverBlur")],
+      hoverSpread = attributes["".concat(controlName, "hoverSpread")],
+      inset = attributes["".concat(controlName, "inset")],
+      transitionTime = attributes["".concat(controlName, "transitionTime")],
+      BorderType = attributes["".concat(controlName, "BorderType")],
+      HborderStyle = attributes["".concat(controlName, "HborderStyle")],
+      HborderColor = attributes["".concat(controlName, "HborderColor")];
+  return /*#__PURE__*/React.createElement(React.Fragment, null, noBorder !== true && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(BaseControl, {
+    id: "eb-infobox-border-hover-ptions"
+  }, /*#__PURE__*/React.createElement(ButtonGroup, {
+    id: "eb-infobox-border-hover-ptions"
+  }, [{
+    label: "Normal",
+    value: "normal"
+  }, {
+    label: "Hover",
+    value: "hover"
+  }].map(function (_ref2) {
+    var value = _ref2.value,
+        label = _ref2.label;
+    return /*#__PURE__*/React.createElement(Button, {
+      isLarge: true,
+      isSecondary: BorderType !== value,
+      isPrimary: BorderType === value,
+      onClick: function onClick() {
+        return setAttributes(_defineProperty({}, "".concat(controlName, "BorderType"), value));
+      }
+    }, label);
+  }))), BorderType === "normal" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(SelectControl, {
+    label: __("Border Style"),
+    value: borderStyle,
+    options: [{
+      label: __("None"),
+      value: "none"
+    }, {
+      label: __("Dashed"),
+      value: "dashed"
+    }, {
+      label: __("Solid"),
+      value: "solid"
+    }, {
+      label: __("Dotted"),
+      value: "dotted"
+    }, {
+      label: __("Double"),
+      value: "double"
+    }, {
+      label: __("Groove"),
+      value: "groove"
+    }, {
+      label: __("Inset"),
+      value: "inset"
+    }, {
+      label: __("Outset"),
+      value: "outset"
+    }, {
+      label: __("Ridge"),
+      value: "ridge"
+    }],
+    onChange: function onChange(borderStyle) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "borderStyle"), borderStyle));
+    }
+  }), borderStyle !== "none" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_color_control__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    label: __("Border Color"),
+    color: borderColor,
+    onChange: function onChange(borderColor) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "borderColor"), borderColor));
+    }
+  }), /*#__PURE__*/React.createElement(_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    resRequiredProps: resRequiredProps,
+    controlName: "".concat(controlName, "Bdr_"),
+    baseLabel: "Border Width"
+  })), /*#__PURE__*/React.createElement(_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    forBorderRadius: true,
+    resRequiredProps: resRequiredProps,
+    controlName: "".concat(controlName, "Rds_"),
+    baseLabel: "Border Radius"
+  })), BorderType === "hover" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(SelectControl, {
+    label: __("Border Style"),
+    value: HborderStyle,
+    options: [{
+      label: __("None"),
+      value: "none"
+    }, {
+      label: __("Dashed"),
+      value: "dashed"
+    }, {
+      label: __("Solid"),
+      value: "solid"
+    }, {
+      label: __("Dotted"),
+      value: "dotted"
+    }, {
+      label: __("Double"),
+      value: "double"
+    }, {
+      label: __("Groove"),
+      value: "groove"
+    }, {
+      label: __("Inset"),
+      value: "inset"
+    }, {
+      label: __("Outset"),
+      value: "outset"
+    }, {
+      label: __("Ridge"),
+      value: "ridge"
+    }],
+    onChange: function onChange(HborderStyle) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "HborderStyle"), HborderStyle));
+    }
+  }), HborderStyle !== "none" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_color_control__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    label: __("Border Color"),
+    color: HborderColor,
+    onChange: function onChange(HborderColor) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "HborderColor"), HborderColor));
+    }
+  }), /*#__PURE__*/React.createElement(_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    resRequiredProps: resRequiredProps,
+    controlName: "".concat(controlName, "HBdr_"),
+    baseLabel: "Border Width"
+  })), /*#__PURE__*/React.createElement(_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    forBorderRadius: true,
+    resRequiredProps: resRequiredProps,
+    controlName: "".concat(controlName, "HRds_"),
+    baseLabel: "Border Radius"
+  }))), noShadow !== true && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(BaseControl, {
+    label: __("Box Shadow"),
+    className: "eb-typography-base"
+  }, /*#__PURE__*/React.createElement(Dropdown, {
+    className: "eb-typography-dropdown",
+    contentClassName: "my-popover-content-classname",
+    position: "bottom right",
+    renderToggle: function renderToggle(_ref3) {
+      var isOpen = _ref3.isOpen,
+          onToggle = _ref3.onToggle;
+      return /*#__PURE__*/React.createElement(Button, {
+        isSmall: true,
+        onClick: onToggle,
+        "aria-expanded": isOpen
+      }, /*#__PURE__*/React.createElement(_typography_control_v2_Icon__WEBPACK_IMPORTED_MODULE_3__["default"], null));
+    },
+    renderContent: function renderContent() {
+      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+        className: "eb-panel-control",
+        style: {
+          minWidth: "230px",
+          padding: "10px"
+        }
+      }, /*#__PURE__*/React.createElement(BaseControl, {
+        id: "eb-infobox-shadow-hover-ptions"
+      }, /*#__PURE__*/React.createElement(ButtonGroup, {
+        id: "eb-infobox-shadow-hover-ptions"
+      }, [{
+        label: "Normal",
+        value: "normal"
+      }, {
+        label: "Hover",
+        value: "hover"
+      }].map(function (_ref4) {
+        var value = _ref4.value,
+            label = _ref4.label;
+        return /*#__PURE__*/React.createElement(Button, {
+          isLarge: true,
+          isSecondary: shadowType !== value,
+          isPrimary: shadowType === value,
+          onClick: function onClick() {
+            return setAttributes(_defineProperty({}, "".concat(controlName, "shadowType"), value));
+          }
+        }, label);
+      }))), shadowType === "normal" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_color_control__WEBPACK_IMPORTED_MODULE_0__["default"], {
+        label: __("Shadow Color"),
+        color: shadowColor,
+        onChange: function onChange(shadowColor) {
+          return setAttributes(_defineProperty({}, "".concat(controlName, "shadowColor"), shadowColor));
+        }
+      }), /*#__PURE__*/React.createElement(_reset_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        onReset: function onReset() {
+          return setAttributes(_defineProperty({}, "".concat(controlName, "hOffset"), undefined));
+        }
+      }, /*#__PURE__*/React.createElement(RangeControl, {
+        label: __("Horizontal Offset"),
+        value: hOffset,
+        onChange: function onChange(hOffset) {
+          return setAttributes(_defineProperty({}, "".concat(controlName, "hOffset"), hOffset));
+        },
+        min: 0,
+        max: 20
+      })), /*#__PURE__*/React.createElement(_reset_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        onReset: function onReset() {
+          return setAttributes(_defineProperty({}, "".concat(controlName, "vOffset"), undefined));
+        }
+      }, /*#__PURE__*/React.createElement(RangeControl, {
+        label: __("Vertical Offset"),
+        value: vOffset,
+        onChange: function onChange(vOffset) {
+          return setAttributes(_defineProperty({}, "".concat(controlName, "vOffset"), vOffset));
+        },
+        min: 0,
+        max: 20
+      })), /*#__PURE__*/React.createElement(_reset_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        onReset: function onReset() {
+          return setAttributes(_defineProperty({}, "".concat(controlName, "blur"), undefined));
+        }
+      }, /*#__PURE__*/React.createElement(RangeControl, {
+        label: __("Shadow Blur"),
+        value: blur,
+        onChange: function onChange(blur) {
+          return setAttributes(_defineProperty({}, "".concat(controlName, "blur"), blur));
+        },
+        min: 0,
+        max: 20
+      })), /*#__PURE__*/React.createElement(_reset_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        onReset: function onReset() {
+          return setAttributes(_defineProperty({}, "".concat(controlName, "spread"), undefined));
+        }
+      }, /*#__PURE__*/React.createElement(RangeControl, {
+        label: __("Shadow Spread"),
+        value: spread,
+        onChange: function onChange(spread) {
+          return setAttributes(_defineProperty({}, "".concat(controlName, "spread"), spread));
+        },
+        min: 0,
+        max: 20
+      }))), shadowType === "hover" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_color_control__WEBPACK_IMPORTED_MODULE_0__["default"], {
+        label: __("Hover Shadow Color"),
+        color: hoverShadowColor,
+        onChange: function onChange(hoverShadowColor) {
+          return setAttributes(_defineProperty({}, "".concat(controlName, "hoverShadowColor"), hoverShadowColor));
+        }
+      }), /*#__PURE__*/React.createElement(_reset_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        onReset: function onReset() {
+          return setAttributes(_defineProperty({}, "".concat(controlName, "hoverHOffset"), undefined));
+        }
+      }, /*#__PURE__*/React.createElement(RangeControl, {
+        label: __("Horizontal Offset"),
+        value: hoverHOffset,
+        onChange: function onChange(hoverHOffset) {
+          return setAttributes(_defineProperty({}, "".concat(controlName, "hoverHOffset"), hoverHOffset));
+        },
+        min: 0,
+        max: 20
+      })), /*#__PURE__*/React.createElement(_reset_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        onReset: function onReset() {
+          return setAttributes(_defineProperty({}, "".concat(controlName, "hoverVOffset"), undefined));
+        }
+      }, /*#__PURE__*/React.createElement(RangeControl, {
+        label: __("Vertical Offset"),
+        value: hoverVOffset,
+        onChange: function onChange(hoverVOffset) {
+          return setAttributes(_defineProperty({}, "".concat(controlName, "hoverVOffset"), hoverVOffset));
+        },
+        min: 0,
+        max: 20
+      })), /*#__PURE__*/React.createElement(_reset_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        onReset: function onReset() {
+          return setAttributes(_defineProperty({}, "".concat(controlName, "hoverBlur"), undefined));
+        }
+      }, /*#__PURE__*/React.createElement(RangeControl, {
+        label: __("Shadow Blur"),
+        value: hoverBlur,
+        onChange: function onChange(hoverBlur) {
+          return setAttributes(_defineProperty({}, "".concat(controlName, "hoverBlur"), hoverBlur));
+        },
+        min: 0,
+        max: 20
+      })), /*#__PURE__*/React.createElement(_reset_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        onReset: function onReset() {
+          return setAttributes(_defineProperty({}, "".concat(controlName, "hoverSpread"), undefined));
+        }
+      }, /*#__PURE__*/React.createElement(RangeControl, {
+        label: __("Shadow Spread"),
+        value: hoverSpread,
+        onChange: function onChange(hoverSpread) {
+          return setAttributes(_defineProperty({}, "".concat(controlName, "hoverSpread"), hoverSpread));
+        },
+        min: 0,
+        max: 20
+      }))), /*#__PURE__*/React.createElement(ToggleControl, {
+        label: __("Inset"),
+        checked: inset,
+        onChange: function onChange() {
+          return setAttributes(_defineProperty({}, "".concat(controlName, "inset"), !inset));
+        }
+      })));
+    }
+  }))), /*#__PURE__*/React.createElement(BaseControl, {
+    id: "eb-infobox-transition-time"
+  }, /*#__PURE__*/React.createElement(TextControl, {
+    label: __("Transition"),
+    value: transitionTime,
+    type: "number",
+    onChange: function onChange(transitionTime) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "transitionTime"), transitionTime));
+    }
+  })));
+}
 
 /***/ }),
 
@@ -9135,6 +10345,391 @@ DimensionsControl.propTypes = {
 __webpack_require__.r(__webpack_exports__);
 var faIcons = ["fab fa-500px", "fab fa-accessible-icon", "fab fa-accusoft", "fas fa-address-book", "far fa-address-book", "fas fa-address-card", "far fa-address-card", "fas fa-adjust", "fab fa-adn", "fab fa-adversal", "fab fa-affiliatetheme", "fab fa-algolia", "fas fa-align-center", "fas fa-align-justify", "fas fa-align-left", "fas fa-align-right", "fab fa-amazon", "fas fa-ambulance", "fas fa-american-sign-language-interpreting", "fab fa-amilia", "fas fa-anchor", "fab fa-android", "fab fa-angellist", "fas fa-angle-double-down", "fas fa-angle-double-left", "fas fa-angle-double-right", "fas fa-angle-double-up", "fas fa-angle-down", "fas fa-angle-left", "fas fa-angle-right", "fas fa-angle-up", "fab fa-angrycreative", "fab fa-angular", "fab fa-app-store", "fab fa-app-store-ios", "fab fa-apper", "fab fa-apple", "fab fa-apple-pay", "fas fa-archive", "fas fa-arrow-alt-circle-down", "far fa-arrow-alt-circle-down", "fas fa-arrow-alt-circle-left", "far fa-arrow-alt-circle-left", "fas fa-arrow-alt-circle-right", "far fa-arrow-alt-circle-right", "fas fa-arrow-alt-circle-up", "far fa-arrow-alt-circle-up", "fas fa-arrow-circle-down", "fas fa-arrow-circle-left", "fas fa-arrow-circle-right", "fas fa-arrow-circle-up", "fas fa-arrow-down", "fas fa-arrow-left", "fas fa-arrow-right", "fas fa-arrow-up", "fas fa-arrows-alt", "fas fa-arrows-alt-h", "fas fa-arrows-alt-v", "fas fa-assistive-listening-systems", "fas fa-asterisk", "fab fa-asymmetrik", "fas fa-at", "fab fa-audible", "fas fa-audio-description", "fab fa-autoprefixer", "fab fa-avianex", "fab fa-aviato", "fab fa-aws", "fas fa-backward", "fas fa-balance-scale", "fas fa-ban", "fab fa-bandcamp", "fas fa-barcode", "fas fa-bars", "fas fa-bath", "fas fa-battery-empty", "fas fa-battery-full", "fas fa-battery-half", "fas fa-battery-quarter", "fas fa-battery-three-quarters", "fas fa-bed", "fas fa-beer", "fab fa-behance", "fab fa-behance-square", "fas fa-bell", "far fa-bell", "fas fa-bell-slash", "far fa-bell-slash", "fas fa-bicycle", "fab fa-bimobject", "fas fa-binoculars", "fas fa-birthday-cake", "fab fa-bitbucket", "fab fa-bitcoin", "fab fa-bity", "fab fa-black-tie", "fab fa-blackberry", "fas fa-blind", "fab fa-blogger", "fab fa-blogger-b", "fab fa-bluetooth", "fab fa-bluetooth-b", "fas fa-bold", "fas fa-bolt", "fas fa-bomb", "fas fa-book", "fas fa-bookmark", "far fa-bookmark", "fas fa-braille", "fas fa-briefcase", "fab fa-btc", "fas fa-bug", "fas fa-building", "far fa-building", "fas fa-bullhorn", "fas fa-bullseye", "fab fa-buromobelexperte", "fas fa-bus", "fab fa-buysellads", "fas fa-calculator", "fas fa-calendar", "far fa-calendar", "fas fa-calendar-alt", "far fa-calendar-alt", "fas fa-calendar-check", "far fa-calendar-check", "fas fa-calendar-minus", "far fa-calendar-minus", "fas fa-calendar-plus", "far fa-calendar-plus", "fas fa-calendar-times", "far fa-calendar-times", "fas fa-camera", "fas fa-camera-retro", "fas fa-car", "fas fa-caret-down", "fas fa-caret-left", "fas fa-caret-right", "fas fa-caret-square-down", "far fa-caret-square-down", "fas fa-caret-square-left", "far fa-caret-square-left", "fas fa-caret-square-right", "far fa-caret-square-right", "fas fa-caret-square-up", "far fa-caret-square-up", "fas fa-caret-up", "fas fa-cart-arrow-down", "fas fa-cart-plus", "fab fa-cc-amex", "fab fa-cc-apple-pay", "fab fa-cc-diners-club", "fab fa-cc-discover", "fab fa-cc-jcb", "fab fa-cc-mastercard", "fab fa-cc-paypal", "fab fa-cc-stripe", "fab fa-cc-visa", "fab fa-centercode", "fas fa-certificate", "fas fa-chart-area", "fas fa-chart-bar", "far fa-chart-bar", "fas fa-chart-line", "fas fa-chart-pie", "fas fa-check", "fas fa-check-circle", "far fa-check-circle", "fas fa-check-square", "far fa-check-square", "fas fa-chevron-circle-down", "fas fa-chevron-circle-left", "fas fa-chevron-circle-right", "fas fa-chevron-circle-up", "fas fa-chevron-down", "fas fa-chevron-left", "fas fa-chevron-right", "fas fa-chevron-up", "fas fa-child", "fab fa-chrome", "fas fa-circle", "far fa-circle", "fas fa-circle-notch", "fas fa-clipboard", "far fa-clipboard", "fas fa-clock", "far fa-clock", "fas fa-clone", "far fa-clone", "fas fa-closed-captioning", "far fa-closed-captioning", "fas fa-cloud", "fas fa-cloud-download-alt", "fas fa-cloud-upload-alt", "fab fa-cloudscale", "fab fa-cloudsmith", "fab fa-cloudversify", "fas fa-code", "fas fa-code-branch", "fab fa-codepen", "fab fa-codiepie", "fas fa-coffee", "fas fa-cog", "fas fa-cogs", "fas fa-columns", "fas fa-comment", "far fa-comment", "fas fa-comment-alt", "far fa-comment-alt", "fas fa-comments", "far fa-comments", "fas fa-compass", "far fa-compass", "fas fa-compress", "fab fa-connectdevelop", "fab fa-contao", "fas fa-copy", "far fa-copy", "fas fa-copyright", "far fa-copyright", "fab fa-cpanel", "fab fa-creative-commons", "fas fa-credit-card", "far fa-credit-card", "fas fa-crop", "fas fa-crosshairs", "fab fa-css3", "fab fa-css3-alt", "fas fa-cube", "fas fa-cubes", "fas fa-cut", "fab fa-cuttlefish", "fab fa-d-and-d", "fab fa-dashcube", "fas fa-database", "fas fa-deaf", "fab fa-delicious", "fab fa-deploydog", "fab fa-deskpro", "fas fa-desktop", "fab fa-deviantart", "fab fa-digg", "fab fa-digital-ocean", "fab fa-discord", "fab fa-discourse", "fab fa-dochub", "fab fa-docker", "fas fa-dollar-sign", "fas fa-dot-circle", "far fa-dot-circle", "fas fa-download", "fab fa-draft2digital", "fab fa-dribbble", "fab fa-dribbble-square", "fab fa-dropbox", "fab fa-drupal", "fab fa-dyalog", "fab fa-earlybirds", "fab fa-edge", "fas fa-edit", "far fa-edit", "fas fa-eject", "fas fa-ellipsis-h", "fas fa-ellipsis-v", "fab fa-ember", "fab fa-empire", "fas fa-envelope", "far fa-envelope", "fas fa-envelope-open", "far fa-envelope-open", "fas fa-envelope-square", "fab fa-envira", "fas fa-eraser", "fab fa-erlang", "fab fa-etsy", "fas fa-euro-sign", "fas fa-exchange-alt", "fas fa-exclamation", "fas fa-exclamation-circle", "fas fa-exclamation-triangle", "fas fa-expand", "fas fa-expand-arrows-alt", "fab fa-expeditedssl", "fas fa-external-link-alt", "fas fa-external-link-square-alt", "fas fa-eye", "fas fa-eye-dropper", "fas fa-eye-slash", "far fa-eye-slash", "fab fa-facebook", "fab fa-facebook-f", "fab fa-facebook-messenger", "fab fa-facebook-square", "fas fa-fast-backward", "fas fa-fast-forward", "fas fa-fax", "fas fa-female", "fas fa-fighter-jet", "fas fa-file", "far fa-file", "fas fa-file-alt", "far fa-file-alt", "fas fa-file-archive", "far fa-file-archive", "fas fa-file-audio", "far fa-file-audio", "fas fa-file-code", "far fa-file-code", "fas fa-file-excel", "far fa-file-excel", "fas fa-file-image", "far fa-file-image", "fas fa-file-pdf", "far fa-file-pdf", "fas fa-file-powerpoint", "far fa-file-powerpoint", "fas fa-file-video", "far fa-file-video", "fas fa-file-word", "far fa-file-word", "fas fa-film", "fas fa-filter", "fas fa-fire", "fas fa-fire-extinguisher", "fab fa-firefox", "fab fa-first-order", "fab fa-firstdraft", "fas fa-flag", "far fa-flag", "fas fa-flag-checkered", "fas fa-flask", "fab fa-flickr", "fab fa-fly", "fas fa-folder", "far fa-folder", "fas fa-folder-open", "far fa-folder-open", "fas fa-font", "fab fa-font-awesome", "fab fa-font-awesome-alt", "fab fa-font-awesome-flag", "fab fa-fonticons", "fab fa-fonticons-fi", "fab fa-fort-awesome", "fab fa-fort-awesome-alt", "fab fa-forumbee", "fas fa-forward", "fab fa-foursquare", "fab fa-free-code-camp", "fab fa-freebsd", "fas fa-frown", "far fa-frown", "fas fa-futbol", "far fa-futbol", "fas fa-gamepad", "fas fa-gavel", "fas fa-gem", "far fa-gem", "fas fa-genderless", "fab fa-get-pocket", "fab fa-gg", "fab fa-gg-circle", "fas fa-gift", "fab fa-git", "fab fa-git-square", "fab fa-github", "fab fa-github-alt", "fab fa-github-square", "fab fa-gitkraken", "fab fa-gitlab", "fab fa-gitter", "fas fa-glass-martini", "fab fa-glide", "fab fa-glide-g", "fas fa-globe", "fab fa-gofore", "fab fa-goodreads", "fab fa-goodreads-g", "fab fa-google", "fab fa-google-drive", "fab fa-google-play", "fab fa-google-plus", "fab fa-google-plus-g", "fab fa-google-plus-square", "fab fa-google-wallet", "fas fa-graduation-cap", "fab fa-gratipay", "fab fa-grav", "fab fa-gripfire", "fab fa-grunt", "fab fa-gulp", "fas fa-h-square", "fab fa-hacker-news", "fab fa-hacker-news-square", "fas fa-hand-lizard", "far fa-hand-lizard", "fas fa-hand-paper", "far fa-hand-paper", "fas fa-hand-peace", "far fa-hand-peace", "fas fa-hand-point-down", "far fa-hand-point-down", "fas fa-hand-point-left", "far fa-hand-point-left", "fas fa-hand-point-right", "far fa-hand-point-right", "fas fa-hand-point-up", "far fa-hand-point-up", "fas fa-hand-pointer", "far fa-hand-pointer", "fas fa-hand-rock", "far fa-hand-rock", "fas fa-hand-scissors", "far fa-hand-scissors", "fas fa-hand-spock", "far fa-hand-spock", "fas fa-handshake", "far fa-handshake", "fas fa-hashtag", "fas fa-hdd", "far fa-hdd", "fas fa-heading", "fas fa-headphones", "fas fa-heart", "far fa-heart", "fas fa-heartbeat", "fab fa-hire-a-helper", "fas fa-history", "fas fa-home", "fab fa-hooli", "fas fa-hospital", "far fa-hospital", "fab fa-hotjar", "fas fa-hourglass", "far fa-hourglass", "fas fa-hourglass-end", "fas fa-hourglass-half", "fas fa-hourglass-start", "fab fa-houzz", "fab fa-html5", "fab fa-hubspot", "fas fa-i-cursor", "fas fa-id-badge", "far fa-id-badge", "fas fa-id-card", "far fa-id-card", "fas fa-image", "far fa-image", "fas fa-images", "far fa-images", "fab fa-imdb", "fas fa-inbox", "fas fa-indent", "fas fa-industry", "fas fa-info", "fas fa-info-circle", "fab fa-instagram", "fab fa-internet-explorer", "fab fa-ioxhost", "fas fa-italic", "fab fa-itunes", "fab fa-itunes-note", "fab fa-jenkins", "fab fa-joget", "fab fa-joomla", "fab fa-js", "fab fa-js-square", "fab fa-jsfiddle", "fas fa-key", "fas fa-keyboard", "far fa-keyboard", "fab fa-keycdn", "fab fa-kickstarter", "fab fa-kickstarter-k", "fas fa-language", "fas fa-laptop", "fab fa-laravel", "fab fa-lastfm", "fab fa-lastfm-square", "fas fa-leaf", "fab fa-leanpub", "fas fa-lemon", "far fa-lemon", "fab fa-less", "fas fa-level-down-alt", "fas fa-level-up-alt", "fas fa-life-ring", "far fa-life-ring", "fas fa-lightbulb", "far fa-lightbulb", "fab fa-line", "fas fa-link", "fab fa-linkedin", "fab fa-linkedin-in", "fab fa-linode", "fab fa-linux", "fas fa-lira-sign", "fas fa-list", "fas fa-list-alt", "far fa-list-alt", "fas fa-list-ol", "fas fa-list-ul", "fas fa-location-arrow", "fas fa-lock", "fas fa-lock-open", "fas fa-long-arrow-alt-down", "fas fa-long-arrow-alt-left", "fas fa-long-arrow-alt-right", "fas fa-long-arrow-alt-up", "fas fa-low-vision", "fab fa-lyft", "fab fa-magento", "fas fa-magic", "fas fa-magnet", "fas fa-male", "fas fa-map", "far fa-map", "fas fa-map-marker", "fas fa-map-marker-alt", "fas fa-map-pin", "fas fa-map-signs", "fas fa-mars", "fas fa-mars-double", "fas fa-mars-stroke", "fas fa-mars-stroke-h", "fas fa-mars-stroke-v", "fab fa-maxcdn", "fab fa-medapps", "fab fa-medium", "fab fa-medium-m", "fas fa-medkit", "fab fa-medrt", "fab fa-meetup", "fas fa-meh", "far fa-meh", "fas fa-mercury", "fas fa-microchip", "fas fa-microphone", "fas fa-microphone-slash", "fab fa-microsoft", "fas fa-minus", "fas fa-minus-circle", "fas fa-minus-square", "far fa-minus-square", "fab fa-mix", "fab fa-mixcloud", "fab fa-mizuni", "fas fa-mobile", "fas fa-mobile-alt", "fab fa-modx", "fab fa-monero", "fas fa-money-bill-alt", "far fa-money-bill-alt", "fas fa-moon", "far fa-moon", "fas fa-motorcycle", "fas fa-mouse-pointer", "fas fa-music", "fab fa-napster", "fas fa-neuter", "fas fa-newspaper", "far fa-newspaper", "fab fa-nintendo-switch", "fab fa-node", "fab fa-node-js", "fab fa-npm", "fab fa-ns8", "fab fa-nutritionix", "fas fa-object-group", "far fa-object-group", "fas fa-object-ungroup", "far fa-object-ungroup", "fab fa-odnoklassniki", "fab fa-odnoklassniki-square", "fab fa-opencart", "fab fa-openid", "fab fa-opera", "fab fa-optin-monster", "fab fa-osi", "fas fa-outdent", "fab fa-page4", "fab fa-pagelines", "fas fa-paint-brush", "fab fa-palfed", "fas fa-paper-plane", "far fa-paper-plane", "fas fa-paperclip", "fas fa-paragraph", "fas fa-paste", "fab fa-patreon", "fas fa-pause", "fas fa-pause-circle", "far fa-pause-circle", "fas fa-paw", "fab fa-paypal", "fas fa-pen-square", "fas fa-pencil-alt", "fas fa-percent", "fab fa-periscope", "fab fa-phabricator", "fab fa-phoenix-framework", "fas fa-phone", "fas fa-phone-square", "fas fa-phone-volume", "fab fa-pied-piper", "fab fa-pied-piper-alt", "fab fa-pied-piper-pp", "fab fa-pinterest", "fab fa-pinterest-p", "fab fa-pinterest-square", "fas fa-plane", "fas fa-play", "fas fa-play-circle", "far fa-play-circle", "fab fa-playstation", "fas fa-plug", "fas fa-plus", "fas fa-plus-circle", "fas fa-plus-square", "far fa-plus-square", "fas fa-podcast", "fas fa-pound-sign", "fas fa-power-off", "fas fa-print", "fab fa-product-hunt", "fab fa-pushed", "fas fa-puzzle-piece", "fab fa-python", "fab fa-qq", "fas fa-qrcode", "fas fa-question", "fas fa-question-circle", "far fa-question-circle", "fab fa-quora", "fas fa-quote-left", "fas fa-quote-right", "fas fa-random", "fab fa-ravelry", "fab fa-react", "fab fa-rebel", "fas fa-recycle", "fab fa-red-river", "fab fa-reddit", "fab fa-reddit-alien", "fab fa-reddit-square", "fas fa-redo", "fas fa-redo-alt", "fas fa-registered", "far fa-registered", "fab fa-rendact", "fab fa-renren", "fas fa-reply", "fas fa-reply-all", "fab fa-replyd", "fab fa-resolving", "fas fa-retweet", "fas fa-road", "fas fa-rocket", "fab fa-rocketchat", "fab fa-rockrms", "fas fa-rss", "fas fa-rss-square", "fas fa-ruble-sign", "fas fa-rupee-sign", "fab fa-safari", "fab fa-sass", "fas fa-save", "far fa-save", "fab fa-schlix", "fab fa-scribd", "fas fa-search", "fas fa-search-minus", "fas fa-search-plus", "fab fa-searchengin", "fab fa-sellcast", "fab fa-sellsy", "fas fa-server", "fab fa-servicestack", "fas fa-share", "fas fa-share-alt", "fas fa-share-alt-square", "fas fa-share-square", "far fa-share-square", "fas fa-shekel-sign", "fas fa-shield-alt", "fas fa-ship", "fab fa-shirtsinbulk", "fas fa-shopping-bag", "fas fa-shopping-basket", "fas fa-shopping-cart", "fas fa-shower", "fas fa-sign-in-alt", "fas fa-sign-language", "fas fa-sign-out-alt", "fas fa-signal", "fab fa-simplybuilt", "fab fa-sistrix", "fas fa-sitemap", "fab fa-skyatlas", "fab fa-skype", "fab fa-slack", "fab fa-slack-hash", "fas fa-sliders-h", "fab fa-slideshare", "fas fa-smile", "far fa-smile", "fab fa-snapchat", "fab fa-snapchat-ghost", "fab fa-snapchat-square", "fas fa-snowflake", "far fa-snowflake", "fas fa-sort", "fas fa-sort-alpha-down", "fas fa-sort-alpha-up", "fas fa-sort-amount-down", "fas fa-sort-amount-up", "fas fa-sort-down", "fas fa-sort-numeric-down", "fas fa-sort-numeric-up", "fas fa-sort-up", "fab fa-soundcloud", "fas fa-space-shuttle", "fab fa-speakap", "fas fa-spinner", "fab fa-spotify", "fas fa-square", "far fa-square", "fab fa-stack-exchange", "fab fa-stack-overflow", "fas fa-star", "far fa-star", "fas fa-star-half", "far fa-star-half", "fab fa-staylinked", "fab fa-steam", "fab fa-steam-square", "fab fa-steam-symbol", "fas fa-step-backward", "fas fa-step-forward", "fas fa-stethoscope", "fab fa-sticker-mule", "fas fa-sticky-note", "far fa-sticky-note", "fas fa-stop", "fas fa-stop-circle", "far fa-stop-circle", "fab fa-strava", "fas fa-street-view", "fas fa-strikethrough", "fab fa-stripe", "fab fa-stripe-s", "fab fa-studiovinari", "fab fa-stumbleupon", "fab fa-stumbleupon-circle", "fas fa-subscript", "fas fa-subway", "fas fa-suitcase", "fas fa-sun", "far fa-sun", "fab fa-superpowers", "fas fa-superscript", "fab fa-supple", "fas fa-sync", "fas fa-sync-alt", "fas fa-table", "fas fa-tablet", "fas fa-tablet-alt", "fas fa-tachometer-alt", "fas fa-tag", "fas fa-tags", "fas fa-tasks", "fas fa-taxi", "fab fa-telegram", "fab fa-telegram-plane", "fab fa-tencent-weibo", "fas fa-terminal", "fas fa-text-height", "fas fa-text-width", "fas fa-th", "fas fa-th-large", "fas fa-th-list", "fab fa-themeisle", "fas fa-thermometer-empty", "fas fa-thermometer-full", "fas fa-thermometer-half", "fas fa-thermometer-quarter", "fas fa-thermometer-three-quarters", "fas fa-thumbs-down", "far fa-thumbs-down", "fas fa-thumbs-up", "far fa-thumbs-up", "fas fa-thumbtack", "fas fa-ticket-alt", "fas fa-times", "fas fa-times-circle", "far fa-times-circle", "fas fa-tint", "fas fa-toggle-off", "fas fa-toggle-on", "fas fa-trademark", "fas fa-train", "fas fa-transgender", "fas fa-transgender-alt", "fas fa-trash", "fas fa-trash-alt", "far fa-trash-alt", "fas fa-tree", "fab fa-trello", "fab fa-tripadvisor", "fas fa-trophy", "fas fa-truck", "fas fa-tty", "fab fa-tumblr", "fab fa-tumblr-square", "fas fa-tv", "fab fa-twitch", "fab fa-twitter", "fab fa-twitter-square", "fab fa-typo3", "fab fa-uber", "fab fa-uikit", "fas fa-umbrella", "fas fa-underline", "fas fa-undo", "fas fa-undo-alt", "fab fa-uniregistry", "fas fa-universal-access", "fas fa-university", "fas fa-unlink", "fas fa-unlock", "fas fa-unlock-alt", "fab fa-untappd", "fas fa-upload", "fab fa-usb", "fas fa-user", "far fa-user", "fas fa-user-circle", "far fa-user-circle", "fas fa-user-md", "fas fa-user-plus", "fas fa-user-secret", "fas fa-user-times", "fas fa-users", "fab fa-ussunnah", "fas fa-utensil-spoon", "fas fa-utensils", "fab fa-vaadin", "fas fa-venus", "fas fa-venus-double", "fas fa-venus-mars", "fab fa-viacoin", "fab fa-viadeo", "fab fa-viadeo-square", "fab fa-viber", "fas fa-video", "fab fa-vimeo", "fab fa-vimeo-square", "fab fa-vimeo-v", "fab fa-vine", "fab fa-vk", "fab fa-vnv", "fas fa-volume-down", "fas fa-volume-off", "fas fa-volume-up", "fab fa-vuejs", "fab fa-weibo", "fab fa-weixin", "fab fa-whatsapp", "fab fa-whatsapp-square", "fas fa-wheelchair", "fab fa-whmcs", "fas fa-wifi", "fab fa-wikipedia-w", "fas fa-window-close", "far fa-window-close", "fas fa-window-maximize", "far fa-window-maximize", "fas fa-window-minimize", "fas fa-window-restore", "far fa-window-restore", "fab fa-windows", "fas fa-won-sign", "fab fa-wordpress", "fab fa-wordpress-simple", "fab fa-wpbeginner", "fab fa-wpexplorer", "fab fa-wpforms", "fas fa-wrench", "fab fa-xbox", "fab fa-xing", "fab fa-xing-square", "fab fa-y-combinator", "fab fa-yahoo", "fab fa-yandex", "fab fa-yandex-international", "fab fa-yelp", "fas fa-yen-sign", "fab fa-yoast", "fab fa-youtube"];
 /* harmony default export */ __webpack_exports__["default"] = (faIcons);
+
+/***/ }),
+
+/***/ "./util/gradient-color-controller/constants.js":
+/*!*****************************************************!*\
+  !*** ./util/gradient-color-controller/constants.js ***!
+  \*****************************************************/
+/*! exports provided: GRADIENT_TYPE, RADIAL_TYPES */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GRADIENT_TYPE", function() { return GRADIENT_TYPE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RADIAL_TYPES", function() { return RADIAL_TYPES; });
+var GRADIENT_TYPE = [{
+  label: "Linear",
+  value: "linear"
+}, {
+  label: "Radial",
+  value: "radial"
+}];
+var RADIAL_TYPES = [{
+  label: "Ellipse",
+  value: "ellipse"
+}, {
+  label: "Circle",
+  value: "circle"
+}];
+
+/***/ }),
+
+/***/ "./util/gradient-color-controller/helper.js":
+/*!**************************************************!*\
+  !*** ./util/gradient-color-controller/helper.js ***!
+  \**************************************************/
+/*! exports provided: parseGradientColor */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "parseGradientColor", function() { return parseGradientColor; });
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+// Parses the gradient color string
+var parseGradientColor = function parseGradientColor() {
+  var gradientColor = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "linear-gradient(45deg,#7967ff,#c277f2)";
+  var angle = 45,
+      colorOnePosition = 0,
+      colorTwoPosition = 100,
+      radialShape = "ellipse",
+      radialX = 50,
+      radialY = 50;
+
+  var _ref = gradientColor.match(/\#[a-f\d]{3,8}|rgba?\([\d\,\.]{3,16}\)/gi) || ["rgba(0,0,0,0)", "rgba(0,0,0,0)"],
+      _ref2 = _slicedToArray(_ref, 2),
+      colorOne = _ref2[0],
+      colorTwo = _ref2[1];
+
+  var _ref3 = gradientColor.match(/\w{6}(?=-)/i) || ["linear"],
+      _ref4 = _slicedToArray(_ref3, 1),
+      gradientType = _ref4[0];
+
+  if (gradientType == "linear") {
+    angle = gradientColor.match(/\d{1,3}(?=deg)/i)[0];
+
+    var _ref5 = gradientColor.match(/\d{1,3}(?=\%)/gi) || ["0", "100"];
+
+    var _ref6 = _slicedToArray(_ref5, 2);
+
+    colorOnePosition = _ref6[0];
+    colorTwoPosition = _ref6[1];
+  } else {
+    radialShape = (gradientColor.match(/\w+(?= at)/i) || ["circle"])[0];
+    var pcents = gradientColor.match(/\d{1,3}(?=\%)/gi) || ["50", "50", "18", "82"];
+    radialX = pcents[0];
+    radialY = pcents[1];
+    colorOnePosition = pcents[2];
+    colorTwoPosition = pcents[3];
+  }
+
+  return {
+    gradientType: gradientType,
+    angle: angle,
+    colorOne: colorOne,
+    colorTwo: colorTwo,
+    colorOnePosition: colorOnePosition,
+    colorTwoPosition: colorTwoPosition,
+    radialShape: radialShape,
+    radialX: radialX,
+    radialY: radialY
+  };
+};
+
+/***/ }),
+
+/***/ "./util/gradient-color-controller/index.js":
+/*!*************************************************!*\
+  !*** ./util/gradient-color-controller/index.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _toggle_button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../toggle-button */ "./util/toggle-button/index.js");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./constants */ "./util/gradient-color-controller/constants.js");
+/* harmony import */ var _helper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./helper */ "./util/gradient-color-controller/helper.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+/**
+ * WordPress dependencies
+ */
+var __ = wp.i18n.__;
+var _wp$components = wp.components,
+    RangeControl = _wp$components.RangeControl,
+    BaseControl = _wp$components.BaseControl,
+    Dropdown = _wp$components.Dropdown,
+    Tooltip = _wp$components.Tooltip,
+    ColorPicker = _wp$components.ColorPicker;
+var _wp$element = wp.element,
+    useState = _wp$element.useState,
+    useEffect = _wp$element.useEffect;
+/**
+ * Internal dependencies
+ */
+// import React, { useState, useEffect } from "react";
+// import PropTypes from "prop-types";
+
+
+
+
+var colorBallStyles = {
+  padding: 2,
+  borderRadius: 0,
+  background: "white",
+  border: "1px solid #ebebeb"
+};
+var colorStyles = {
+  height: 16,
+  width: 16,
+  borderRadius: "0%",
+  boxShadow: "inset 0 0 0 1px rgba(0,0,0,.1)"
+};
+
+var GradientColorControl = function GradientColorControl(_ref) {
+  var gradientColor = _ref.gradientColor,
+      onChange = _ref.onChange;
+
+  var _useState = useState("linear"),
+      _useState2 = _slicedToArray(_useState, 2),
+      gradientType = _useState2[0],
+      setGradientType = _useState2[1];
+
+  var _useState3 = useState("transparent"),
+      _useState4 = _slicedToArray(_useState3, 2),
+      colorOne = _useState4[0],
+      setColorOne = _useState4[1];
+
+  var _useState5 = useState(0),
+      _useState6 = _slicedToArray(_useState5, 2),
+      colorOnePosition = _useState6[0],
+      setColorOnePosition = _useState6[1];
+
+  var _useState7 = useState("transparent"),
+      _useState8 = _slicedToArray(_useState7, 2),
+      colorTwo = _useState8[0],
+      setColorTwo = _useState8[1];
+
+  var _useState9 = useState(100),
+      _useState10 = _slicedToArray(_useState9, 2),
+      colorTwoPosition = _useState10[0],
+      setColorTwoPosition = _useState10[1];
+
+  var _useState11 = useState(0),
+      _useState12 = _slicedToArray(_useState11, 2),
+      angle = _useState12[0],
+      setAngle = _useState12[1];
+
+  var _useState13 = useState("ellipse"),
+      _useState14 = _slicedToArray(_useState13, 2),
+      radialShape = _useState14[0],
+      setRadialShape = _useState14[1];
+
+  var _useState15 = useState(50),
+      _useState16 = _slicedToArray(_useState15, 2),
+      radialX = _useState16[0],
+      setRadialX = _useState16[1];
+
+  var _useState17 = useState(50),
+      _useState18 = _slicedToArray(_useState17, 2),
+      radialY = _useState18[0],
+      setRadialY = _useState18[1];
+
+  useEffect(function () {
+    var _parseGradientColor = Object(_helper__WEBPACK_IMPORTED_MODULE_2__["parseGradientColor"])(gradientColor),
+        gradientType = _parseGradientColor.gradientType,
+        angle = _parseGradientColor.angle,
+        colorOne = _parseGradientColor.colorOne,
+        colorTwo = _parseGradientColor.colorTwo,
+        colorOnePosition = _parseGradientColor.colorOnePosition,
+        colorTwoPosition = _parseGradientColor.colorTwoPosition,
+        radialShape = _parseGradientColor.radialShape,
+        radialX = _parseGradientColor.radialX,
+        radialY = _parseGradientColor.radialY;
+
+    setGradientType(gradientType);
+    setAngle(angle);
+    setColorOne(colorOne);
+    setColorTwo(colorTwo);
+    setColorOnePosition(colorOnePosition);
+    setColorTwoPosition(colorTwoPosition);
+    setRadialShape(radialShape);
+    setRadialX(radialX);
+    setRadialY(radialY);
+  }, []);
+  useEffect(function () {
+    onChange(gradientType === "linear" ? getLinearGradient() : getRadialGradient());
+  }, [gradientType, colorOne, colorOnePosition, colorTwo, colorTwoPosition, angle, radialShape, radialX, radialY]);
+
+  var getColorString = function getColorString() {
+    return "".concat(colorOne, " ").concat(colorOnePosition, "% , ").concat(colorTwo, " ").concat(colorTwoPosition, "%");
+  };
+
+  var getRadialGradient = function getRadialGradient() {
+    return "radial-gradient(".concat(radialShape, " at ").concat(radialX, "% ").concat(radialY, "%, ").concat(getColorString(), ")");
+  };
+
+  var getLinearGradient = function getLinearGradient() {
+    return "linear-gradient(".concat(angle, "deg, ").concat(getColorString(), ")");
+  };
+
+  return /*#__PURE__*/React.createElement("div", {
+    className: "eb-gradient-control"
+  }, /*#__PURE__*/React.createElement(BaseControl, {
+    label: __("Gradient Type"),
+    className: "eb-gradient-toggle-label"
+  }, /*#__PURE__*/React.createElement(_toggle_button__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    defaultSelected: gradientType === "linear" ? _constants__WEBPACK_IMPORTED_MODULE_1__["GRADIENT_TYPE"][0] : _constants__WEBPACK_IMPORTED_MODULE_1__["GRADIENT_TYPE"][1],
+    options: _constants__WEBPACK_IMPORTED_MODULE_1__["GRADIENT_TYPE"],
+    onChange: function onChange(gradientType) {
+      return setGradientType(gradientType);
+    }
+  })), gradientType === "radial" && /*#__PURE__*/React.createElement(BaseControl, {
+    label: __("Radial Type"),
+    className: "eb-gradient-toggle-label"
+  }, /*#__PURE__*/React.createElement(_toggle_button__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    defaultSelected: radialShape === "ellipse" ? _constants__WEBPACK_IMPORTED_MODULE_1__["RADIAL_TYPES"][0] : _constants__WEBPACK_IMPORTED_MODULE_1__["RADIAL_TYPES"][1],
+    options: _constants__WEBPACK_IMPORTED_MODULE_1__["RADIAL_TYPES"],
+    onChange: function onChange(radialShape) {
+      return setRadialShape(radialShape);
+    }
+  })), /*#__PURE__*/React.createElement(BaseControl, {
+    label: "First Color",
+    className: "eb-color-base"
+  }, /*#__PURE__*/React.createElement(Dropdown, {
+    renderToggle: function renderToggle(_ref2) {
+      var isOpen = _ref2.isOpen,
+          onToggle = _ref2.onToggle;
+      return /*#__PURE__*/React.createElement(Tooltip, {
+        text: colorOne || "default"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "eb-color-ball",
+        style: colorOne && colorBallStyles
+      }, /*#__PURE__*/React.createElement("div", {
+        style: _objectSpread(_objectSpread({}, colorStyles), {}, {
+          backgroundColor: colorOne
+        }),
+        "aria-expanded": isOpen,
+        onClick: onToggle,
+        "aria-label": colorOne || "default"
+      })));
+    },
+    renderContent: function renderContent() {
+      return /*#__PURE__*/React.createElement(ColorPicker, {
+        color: colorOne,
+        onChangeComplete: function onChangeComplete(_ref3) {
+          var rgb = _ref3.rgb;
+          setColorOne("rgba(".concat(rgb.r, ",").concat(rgb.g, ",").concat(rgb.b, ",").concat(rgb.a, ")"));
+        }
+      });
+    }
+  })), /*#__PURE__*/React.createElement(BaseControl, {
+    label: "Second Color",
+    className: "eb-color-base"
+  }, /*#__PURE__*/React.createElement(Dropdown, {
+    renderToggle: function renderToggle(_ref4) {
+      var isOpen = _ref4.isOpen,
+          onToggle = _ref4.onToggle;
+      return /*#__PURE__*/React.createElement(Tooltip, {
+        text: colorTwo || "default"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "eb-color-ball",
+        style: colorTwo && colorBallStyles
+      }, /*#__PURE__*/React.createElement("div", {
+        style: _objectSpread(_objectSpread({}, colorStyles), {}, {
+          backgroundColor: colorTwo
+        }),
+        "aria-expanded": isOpen,
+        onClick: onToggle,
+        "aria-label": colorTwo || "default"
+      })));
+    },
+    renderContent: function renderContent() {
+      return /*#__PURE__*/React.createElement(ColorPicker, {
+        color: colorTwo,
+        onChangeComplete: function onChangeComplete(_ref5) {
+          var rgb = _ref5.rgb;
+          setColorTwo("rgba(".concat(rgb.r, ",").concat(rgb.g, ",").concat(rgb.b, ",").concat(rgb.a, ")"));
+        }
+      });
+    }
+  })), /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("First Color Position"),
+    value: colorOnePosition,
+    onChange: function onChange(colorOnePosition) {
+      return setColorOnePosition(colorOnePosition);
+    },
+    min: 0,
+    max: 100
+  }), /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Second Color Position"),
+    value: colorTwoPosition,
+    onChange: function onChange(colorTwoPosition) {
+      return setColorTwoPosition(colorTwoPosition);
+    },
+    min: 0,
+    max: 100
+  }), gradientType === "linear" && /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Angle"),
+    value: angle,
+    onChange: function onChange(angle) {
+      return setAngle(angle);
+    },
+    min: 0,
+    max: 360
+  }), gradientType === "radial" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Center X Position"),
+    value: radialX,
+    onChange: function onChange(radialX) {
+      return setRadialX(radialX);
+    },
+    min: 0,
+    max: 100
+  }), /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Center Y Position"),
+    value: radialY,
+    onChange: function onChange(radialY) {
+      return setRadialY(radialY);
+    },
+    min: 0,
+    max: 100
+  })));
+}; // GradientColorControl.propTypes = {
+//   gradientColor: PropTypes.string.isRequired,
+//   onChange: PropTypes.func.isRequired,
+// };
+
+
+/* harmony default export */ __webpack_exports__["default"] = (GradientColorControl);
 
 /***/ }),
 
@@ -13161,6 +14756,769 @@ function WithResBtns(_ref) {
     className: "dashicon dashicons dashicons-image-rotate"
   }))));
 }
+
+/***/ }),
+
+/***/ "./util/toggle-button/index.js":
+/*!*************************************!*\
+  !*** ./util/toggle-button/index.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var _wp$element = wp.element,
+    useEffect = _wp$element.useEffect,
+    useState = _wp$element.useState;
+
+var ToggleButton = function ToggleButton(_ref) {
+  var options = _ref.options,
+      onChange = _ref.onChange,
+      defaultSelected = _ref.defaultSelected;
+
+  var _useState = useState(defaultSelected || options[0]),
+      _useState2 = _slicedToArray(_useState, 2),
+      selected = _useState2[0],
+      setSelected = _useState2[1];
+
+  useEffect(function () {
+    onChange(selected.value);
+  }, [selected]);
+  useEffect(function () {
+    if (defaultSelected) {
+      setSelected(defaultSelected);
+    }
+  }, [defaultSelected]);
+  return /*#__PURE__*/React.createElement("div", {
+    id: "switch",
+    className: "eb-switch-control"
+  }, options.map(function (option) {
+    return /*#__PURE__*/React.createElement("label", null, /*#__PURE__*/React.createElement("input", {
+      type: "radio",
+      name: "gh",
+      placeholder: "name",
+      onChange: function onChange() {
+        return setSelected(option);
+      }
+    }), /*#__PURE__*/React.createElement("span", {
+      style: {
+        color: selected.value === option.value ? "white" : "black"
+      }
+    }, option.label));
+  }), /*#__PURE__*/React.createElement("span", {
+    className: "slideBg",
+    style: {
+      backgroundColor: "#551ef7",
+      transform: selected == options[0] ? "translateX(0)" : "translateX(100%)"
+    }
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ToggleButton);
+
+/***/ }),
+
+/***/ "./util/typography-control-v2/FontPicker.js":
+/*!**************************************************!*\
+  !*** ./util/typography-control-v2/FontPicker.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./constants */ "./util/typography-control-v2/constants.js");
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+/**
+ * Internal dependencies
+ */
+
+/**
+ * WordPress dependencies
+ */
+
+var __ = wp.i18n.__;
+var withInstanceId = wp.compose.withInstanceId;
+var BaseControl = wp.components.BaseControl;
+
+function FontFamilyPicker(_ref) {
+  var label = _ref.label,
+      value = _ref.value,
+      help = _ref.help,
+      instanceId = _ref.instanceId,
+      onChange = _ref.onChange,
+      className = _ref.className,
+      props = _objectWithoutProperties(_ref, ["label", "value", "help", "instanceId", "onChange", "className"]);
+
+  var id = "inspector-eb-font-family-".concat(instanceId);
+  var fonts = [{
+    value: "",
+    label: __("Default")
+  }, {
+    value: "Arial",
+    label: "Arial"
+  }, {
+    value: "Helvetica",
+    label: "Helvetica"
+  }, {
+    value: "Times New Roman",
+    label: "Times New Roman"
+  }, {
+    value: "Georgia",
+    label: "Georgia"
+  }]; //Add Google Fonts
+
+  Object.keys(_constants__WEBPACK_IMPORTED_MODULE_0__["FONTS"]).map(function (k) {
+    fonts.push({
+      value: k,
+      label: k
+    });
+  });
+
+  var onChangeValue = function onChangeValue(event) {
+    var meta = wp.data.select("core/editor").getEditedPostAttribute("meta");
+    var ba = "";
+    var googleFontsAttr = ":100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic";
+    var link = document.createElement("link");
+    link.rel = "stylesheet";
+
+    if (typeof meta !== "undefined" && typeof meta._eb_attr !== "undefined") {
+      ba = meta._eb_attr;
+    }
+
+    if (ba.length > 0) {
+      //Load fonts on the header
+      if (!ba.includes(event.target.value)) {
+        link.href = "https://fonts.googleapis.com/css?family=" + event.target.value.replace(/ /g, "+") + googleFontsAttr;
+        document.head.appendChild(link);
+      }
+
+      ba = ba.replace("," + event.target.value, "");
+      ba = ba + "," + event.target.value;
+    } else {
+      link.href = "https://fonts.googleapis.com/css?family=" + event.target.value.replace(/ /g, "+") + googleFontsAttr;
+      document.head.appendChild(link);
+      ba = event.target.value;
+    } //Save values to metadata
+
+
+    wp.data.dispatch("core/editor").editPost({
+      meta: {
+        _eb_attr: ba
+      }
+    });
+    onChange(event.target.value);
+  };
+
+  return /*#__PURE__*/React.createElement(BaseControl, {
+    label: label,
+    id: id,
+    help: help,
+    className: className
+  }, /*#__PURE__*/React.createElement("select", _extends({
+    id: id,
+    className: "components-select-control__input",
+    onChange: onChangeValue,
+    "aria-describedby": !!help ? "".concat(id, "__help") : undefined
+  }, props), fonts.map(function (option, index) {
+    return /*#__PURE__*/React.createElement("option", {
+      key: "".concat(option.label, "-").concat(option.value, "-").concat(index),
+      value: option.value,
+      selected: value === option.value ? "selected" : ""
+    }, option.label);
+  })));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (withInstanceId(FontFamilyPicker));
+
+/***/ }),
+
+/***/ "./util/typography-control-v2/Icon.js":
+/*!********************************************!*\
+  !*** ./util/typography-control-v2/Icon.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var TypographyIcon = function TypographyIcon() {
+  return /*#__PURE__*/React.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    x: "0",
+    y: "0",
+    enableBackground: "new 0 0 512 512",
+    version: "1.1",
+    viewBox: "0 0 512 512",
+    xmlSpace: "preserve",
+    style: {
+      width: 14
+    }
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M92.6 431.3c5.1 0 6.1-.5 10.7-1.5l91.9-18.4c9.7-2.5 19.4-7.1 27.1-14.8L444.9 174c34.2-34.2 34.2-92.9 0-127.1L426 27c-34.2-34.2-93.4-34.2-127.6 0L75.8 250.1c-7.2 7.1-12.3 17.4-14.8 27.1l-19.4 92.9c-2.5 17.4 2.6 34.2 14.8 46.5 9.7 9.6 24 14.7 36.2 14.7zM110 286.9L332.6 63.8c14.8-14.8 41.9-14.8 56.2 0l19.4 19.4c17.4 17.4 17.4 41.9 0 58.7L186.1 365l-94.4 15.8 18.3-93.9zm0 0M442.8 463H66.1c-14.8 0-24.5 9.7-24.5 24.5S53.9 512 66.1 512h374.7c14.8 0 27.1-9.7 27.1-24.5-.6-14.8-12.8-24.5-25.1-24.5zm0 0",
+    className: "eb-typography-icon"
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (TypographyIcon);
+
+/***/ }),
+
+/***/ "./util/typography-control-v2/WithResButtons.js":
+/*!******************************************************!*\
+  !*** ./util/typography-control-v2/WithResButtons.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return WithResButtons; });
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helpers */ "./util/helpers/index.js");
+var dispatch = wp.data.dispatch;
+
+function WithResButtons(_ref) {
+  var className = _ref.className,
+      children = _ref.children,
+      resOption = _ref.resOption,
+      setAttributes = _ref.setAttributes;
+  return /*#__PURE__*/React.createElement("div", {
+    className: "wrap_res ".concat(className || " ")
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "resIcons"
+  }, /*#__PURE__*/React.createElement("span", {
+    onClick: function onClick() {
+      return Object(_helpers__WEBPACK_IMPORTED_MODULE_0__["handleDesktopBtnClick"])({
+        setPreviewDeviceType: dispatch("core/edit-post").__experimentalSetPreviewDeviceType,
+        setAttributes: setAttributes
+      });
+    },
+    "class": "typoResButton dashicons dashicons-desktop ".concat(resOption === "Desktop" ? "active" : " ")
+  }), /*#__PURE__*/React.createElement("span", {
+    onClick: function onClick() {
+      return Object(_helpers__WEBPACK_IMPORTED_MODULE_0__["handleTabBtnClick"])({
+        setPreviewDeviceType: dispatch("core/edit-post").__experimentalSetPreviewDeviceType,
+        setAttributes: setAttributes
+      });
+    },
+    "class": "typoResButton dashicons dashicons-tablet ".concat(resOption === "Tablet" ? "active" : " ")
+  }), /*#__PURE__*/React.createElement("span", {
+    onClick: function onClick() {
+      return Object(_helpers__WEBPACK_IMPORTED_MODULE_0__["handleMobileBtnClick"])({
+        setPreviewDeviceType: dispatch("core/edit-post").__experimentalSetPreviewDeviceType,
+        setAttributes: setAttributes
+      });
+    },
+    "class": "typoResButton dashicons dashicons-smartphone ".concat(resOption === "Mobile" ? "active" : " ")
+  })), children);
+}
+
+/***/ }),
+
+/***/ "./util/typography-control-v2/constants.js":
+/*!*************************************************!*\
+  !*** ./util/typography-control-v2/constants.js ***!
+  \*************************************************/
+/*! exports provided: FONTS, sizeUnitTypes, optionsFontWeights, optionsTextTransforms, optionsTextDecorations, optionsLhLsp */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FONTS", function() { return FONTS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sizeUnitTypes", function() { return sizeUnitTypes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "optionsFontWeights", function() { return optionsFontWeights; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "optionsTextTransforms", function() { return optionsTextTransforms; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "optionsTextDecorations", function() { return optionsTextDecorations; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "optionsLhLsp", function() { return optionsLhLsp; });
+var __ = wp.i18n.__;
+var FONTS = {
+  "Abril Fatface": {
+    weight: ["400"]
+  },
+  Anton: {
+    weight: ["400"]
+  },
+  Arvo: {
+    weight: ["400", "700"]
+  },
+  Asap: {
+    weight: ["400", "500", "600", "700"]
+  },
+  "Barlow Condensed": {
+    weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+  },
+  Barlow: {
+    weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+  },
+  "Cormorant Garamond": {
+    weight: ["300", "400", "500", "600", "700"]
+  },
+  Faustina: {
+    weight: ["400", "500", "600", "700"]
+  },
+  "Fira Sans": {
+    weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+  },
+  "IBM Plex Sans": {
+    weight: ["100", "200", "300", "400", "500", "600", "700"]
+  },
+  Inconsolata: {
+    weight: ["400", "700"]
+  },
+  Heebo: {
+    weight: ["100", "300", "400", "500", "700", "800", "900"]
+  },
+  Karla: {
+    weight: ["400", "700"]
+  },
+  Lato: {
+    weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+  },
+  Lora: {
+    weight: ["400", "700"]
+  },
+  Merriweather: {
+    weight: ["300", "400", "500", "600", "700", "800", "900"]
+  },
+  Montserrat: {
+    weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+  },
+  "Noto Sans": {
+    weight: ["400", "700"]
+  },
+  "Noto Serif": {
+    weight: ["400", "700"]
+  },
+  "Open Sans": {
+    weight: ["300", "400", "500", "600", "700", "800"]
+  },
+  Oswald: {
+    weight: ["200", "300", "400", "500", "600", "700"]
+  },
+  "Playfair Display": {
+    weight: ["400", "700", "900"]
+  },
+  "PT Serif": {
+    weight: ["400", "700"]
+  },
+  Roboto: {
+    weight: ["100", "300", "400", "500", "700", "900"]
+  },
+  Rubik: {
+    weight: ["300", "400", "500", "700", "900"]
+  },
+  Tajawal: {
+    weight: ["200", "300", "400", "500", "700", "800", "900"]
+  },
+  Ubuntu: {
+    weight: ["300", "400", "500", "700"]
+  },
+  Yrsa: {
+    weight: ["300", "400", "500", "600", "700"]
+  }
+};
+var sizeUnitTypes = [{
+  label: "px",
+  value: "px"
+}, {
+  label: "%",
+  value: "%"
+}, {
+  label: "em",
+  value: "em"
+}];
+var optionsFontWeights = [{
+  label: __("Default"),
+  value: ""
+}, {
+  label: __("100"),
+  value: "100"
+}, {
+  label: __("200"),
+  value: "200"
+}, {
+  label: __("300"),
+  value: "300"
+}, {
+  label: __("400"),
+  value: "400"
+}, {
+  label: __("500"),
+  value: "500"
+}, {
+  label: __("600"),
+  value: "600"
+}, {
+  label: __("700"),
+  value: "700"
+}, {
+  label: __("800"),
+  value: "800"
+}, {
+  label: __("900"),
+  value: "900"
+}];
+var optionsTextTransforms = [{
+  label: __("Default"),
+  value: ""
+}, {
+  label: __("None"),
+  value: "none"
+}, {
+  label: __("Lowercase"),
+  value: "lowercase"
+}, {
+  label: __("Capitalize"),
+  value: "capitalize"
+}, {
+  label: __("Uppercase"),
+  value: "uppercase"
+}];
+var optionsTextDecorations = [{
+  label: __("Default"),
+  value: ""
+}, {
+  label: __("None"),
+  value: "initial"
+}, {
+  label: __("Overline"),
+  value: "overline"
+}, {
+  label: __("Line Through"),
+  value: "line-through"
+}, {
+  label: __("Underline"),
+  value: "underline"
+}, {
+  label: __("Underline Oveline"),
+  value: "underline overline"
+}];
+var optionsLhLsp = [{
+  label: "px",
+  value: "px"
+}, {
+  label: "em",
+  value: "em"
+}];
+
+/***/ }),
+
+/***/ "./util/typography-control-v2/index.js":
+/*!*********************************************!*\
+  !*** ./util/typography-control-v2/index.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _unit_control__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./unit-control */ "./util/typography-control-v2/unit-control.js");
+/* harmony import */ var _FontPicker__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FontPicker */ "./util/typography-control-v2/FontPicker.js");
+/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Icon */ "./util/typography-control-v2/Icon.js");
+/* harmony import */ var _WithResButtons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./WithResButtons */ "./util/typography-control-v2/WithResButtons.js");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./constants */ "./util/typography-control-v2/constants.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var __ = wp.i18n.__;
+var _wp$components = wp.components,
+    BaseControl = _wp$components.BaseControl,
+    Button = _wp$components.Button,
+    Dropdown = _wp$components.Dropdown,
+    RangeControl = _wp$components.RangeControl,
+    SelectControl = _wp$components.SelectControl;
+
+
+
+
+
+
+function TypographyDropdown(_ref) {
+  var baseLabel = _ref.baseLabel,
+      typographyPrefixConstant = _ref.typographyPrefixConstant,
+      resRequiredProps = _ref.resRequiredProps;
+  var attributes = resRequiredProps.attributes,
+      setAttributes = resRequiredProps.setAttributes,
+      resOption = resRequiredProps.resOption;
+  var fontFamily = attributes["".concat(typographyPrefixConstant, "FontFamily")],
+      fontWeight = attributes["".concat(typographyPrefixConstant, "FontWeight")],
+      textTransform = attributes["".concat(typographyPrefixConstant, "TextTransform")],
+      textDecoration = attributes["".concat(typographyPrefixConstant, "TextDecoration")],
+      fontSize = attributes["".concat(typographyPrefixConstant, "FontSize")],
+      sizeUnit = attributes["".concat(typographyPrefixConstant, "SizeUnit")],
+      letterSpacing = attributes["".concat(typographyPrefixConstant, "LetterSpacing")],
+      letterSpacingUnit = attributes["".concat(typographyPrefixConstant, "LetterSpacingUnit")],
+      lineHeight = attributes["".concat(typographyPrefixConstant, "LineHeight")],
+      lineHeightUnit = attributes["".concat(typographyPrefixConstant, "LineHeightUnit")],
+      TABsizeUnit = attributes["TAB".concat(typographyPrefixConstant, "SizeUnit")],
+      TABletterSpacingUnit = attributes["TAB".concat(typographyPrefixConstant, "LetterSpacingUnit")],
+      TABlineHeightUnit = attributes["TAB".concat(typographyPrefixConstant, "LineHeightUnit")],
+      TABfontSize = attributes["TAB".concat(typographyPrefixConstant, "FontSize")],
+      TABletterSpacing = attributes["TAB".concat(typographyPrefixConstant, "LetterSpacing")],
+      TABlineHeight = attributes["TAB".concat(typographyPrefixConstant, "LineHeight")],
+      MOBsizeUnit = attributes["MOB".concat(typographyPrefixConstant, "SizeUnit")],
+      MOBletterSpacingUnit = attributes["MOB".concat(typographyPrefixConstant, "LetterSpacingUnit")],
+      MOBlineHeightUnit = attributes["MOB".concat(typographyPrefixConstant, "LineHeightUnit")],
+      MOBfontSize = attributes["MOB".concat(typographyPrefixConstant, "FontSize")],
+      MOBletterSpacing = attributes["MOB".concat(typographyPrefixConstant, "LetterSpacing")],
+      MOBlineHeight = attributes["MOB".concat(typographyPrefixConstant, "LineHeight")];
+  return /*#__PURE__*/React.createElement(BaseControl, {
+    label: __(baseLabel),
+    className: "eb-typography-base"
+  }, /*#__PURE__*/React.createElement(Dropdown, {
+    className: "eb-typography-dropdown",
+    contentClassName: "my-popover-content-classname",
+    position: "bottom right",
+    renderToggle: function renderToggle(_ref2) {
+      var isOpen = _ref2.isOpen,
+          onToggle = _ref2.onToggle;
+      return /*#__PURE__*/React.createElement(Button, {
+        isSmall: true,
+        onClick: onToggle,
+        "aria-expanded": isOpen
+      }, /*#__PURE__*/React.createElement(_Icon__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+    },
+    renderContent: function renderContent() {
+      return /*#__PURE__*/React.createElement("div", {
+        className: "eb-panel-control eb-typography-component-panel",
+        style: {
+          padding: "0.2rem"
+        }
+      }, /*#__PURE__*/React.createElement(_FontPicker__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        label: __("Font Family"),
+        value: fontFamily,
+        onChange: function onChange(FontFamily) {
+          setAttributes(_defineProperty({}, "".concat(typographyPrefixConstant, "FontFamily"), FontFamily));
+        }
+      }), /*#__PURE__*/React.createElement(_WithResButtons__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        className: "forFontSize",
+        resOption: resOption,
+        setAttributes: setAttributes
+      }, resOption === "Desktop" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_0__["default"], {
+        selectedUnit: sizeUnit,
+        unitTypes: _constants__WEBPACK_IMPORTED_MODULE_4__["sizeUnitTypes"],
+        onClick: function onClick(sizeUnit) {
+          return setAttributes(_defineProperty({}, "".concat(typographyPrefixConstant, "SizeUnit"), sizeUnit));
+        }
+      }), /*#__PURE__*/React.createElement(RangeControl, {
+        label: __("Font Size"),
+        value: fontSize,
+        onChange: function onChange(FontSize) {
+          return setAttributes(_defineProperty({}, "".concat(typographyPrefixConstant, "FontSize"), FontSize));
+        },
+        step: sizeUnit === "em" ? 0.1 : 1,
+        min: 0,
+        max: sizeUnit === "em" ? 10 : 300
+      })), resOption === "Tablet" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_0__["default"], {
+        selectedUnit: TABsizeUnit,
+        unitTypes: _constants__WEBPACK_IMPORTED_MODULE_4__["sizeUnitTypes"],
+        onClick: function onClick(TABsizeUnit) {
+          return setAttributes(_defineProperty({}, "TAB".concat(typographyPrefixConstant, "SizeUnit"), TABsizeUnit));
+        }
+      }), /*#__PURE__*/React.createElement(RangeControl, {
+        label: __("Font Size"),
+        value: TABfontSize,
+        onChange: function onChange(FontSize) {
+          return setAttributes(_defineProperty({}, "TAB".concat(typographyPrefixConstant, "FontSize"), FontSize));
+        },
+        step: TABsizeUnit === "em" ? 0.1 : 1,
+        min: 0,
+        max: TABsizeUnit === "em" ? 10 : 300
+      })), resOption === "Mobile" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_0__["default"], {
+        selectedUnit: MOBsizeUnit,
+        unitTypes: _constants__WEBPACK_IMPORTED_MODULE_4__["sizeUnitTypes"],
+        onClick: function onClick(MOBsizeUnit) {
+          return setAttributes(_defineProperty({}, "MOB".concat(typographyPrefixConstant, "SizeUnit"), MOBsizeUnit));
+        }
+      }), /*#__PURE__*/React.createElement(RangeControl, {
+        label: __("Font Size"),
+        value: MOBfontSize,
+        onChange: function onChange(FontSize) {
+          return setAttributes(_defineProperty({}, "MOB".concat(typographyPrefixConstant, "FontSize"), FontSize));
+        },
+        step: MOBsizeUnit === "em" ? 0.1 : 1,
+        min: 0,
+        max: MOBsizeUnit === "em" ? 10 : 300
+      }))), /*#__PURE__*/React.createElement(SelectControl, {
+        label: __("Font Weight"),
+        value: fontWeight,
+        options: _constants__WEBPACK_IMPORTED_MODULE_4__["optionsFontWeights"],
+        onChange: function onChange(FontWeight) {
+          return setAttributes(_defineProperty({}, "".concat(typographyPrefixConstant, "FontWeight"), FontWeight));
+        }
+      }), /*#__PURE__*/React.createElement(SelectControl, {
+        label: __("Text Transform"),
+        value: textTransform,
+        options: _constants__WEBPACK_IMPORTED_MODULE_4__["optionsTextTransforms"],
+        onChange: function onChange(TextTransform) {
+          return setAttributes(_defineProperty({}, "".concat(typographyPrefixConstant, "TextTransform"), TextTransform));
+        }
+      }), /*#__PURE__*/React.createElement(SelectControl, {
+        label: __("Text Decoration"),
+        value: textDecoration,
+        options: _constants__WEBPACK_IMPORTED_MODULE_4__["optionsTextDecorations"],
+        onChange: function onChange(TextDecoration) {
+          return setAttributes(_defineProperty({}, "".concat(typographyPrefixConstant, "TextDecoration"), TextDecoration));
+        }
+      }), /*#__PURE__*/React.createElement(_WithResButtons__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        className: "forLetterSpacing",
+        resOption: resOption,
+        setAttributes: setAttributes
+      }, resOption === "Desktop" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_0__["default"], {
+        selectedUnit: letterSpacingUnit,
+        unitTypes: _constants__WEBPACK_IMPORTED_MODULE_4__["optionsLhLsp"],
+        onClick: function onClick(LetterSpacingUnit) {
+          return setAttributes(_defineProperty({}, "".concat(typographyPrefixConstant, "LetterSpacingUnit"), LetterSpacingUnit));
+        }
+      }), /*#__PURE__*/React.createElement(RangeControl, {
+        label: __("Letter Spacing"),
+        value: letterSpacing,
+        onChange: function onChange(LetterSpacing) {
+          return setAttributes(_defineProperty({}, "".concat(typographyPrefixConstant, "LetterSpacing"), LetterSpacing));
+        },
+        min: 0,
+        max: letterSpacingUnit === "em" ? 10 : 100,
+        step: letterSpacingUnit === "em" ? 0.1 : 1
+      })), resOption === "Tablet" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_0__["default"], {
+        selectedUnit: TABletterSpacingUnit,
+        unitTypes: _constants__WEBPACK_IMPORTED_MODULE_4__["optionsLhLsp"],
+        onClick: function onClick(TABletterSpacingUnit) {
+          return setAttributes(_defineProperty({}, "TAB".concat(typographyPrefixConstant, "LetterSpacingUnit"), TABletterSpacingUnit));
+        }
+      }), /*#__PURE__*/React.createElement(RangeControl, {
+        label: __("Letter Spacing"),
+        value: TABletterSpacing,
+        onChange: function onChange(LetterSpacing) {
+          return setAttributes(_defineProperty({}, "TAB".concat(typographyPrefixConstant, "LetterSpacing"), LetterSpacing));
+        },
+        min: 0,
+        max: TABletterSpacingUnit === "em" ? 10 : 100,
+        step: TABletterSpacingUnit === "em" ? 0.1 : 1
+      })), resOption === "Mobile" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_0__["default"], {
+        selectedUnit: MOBletterSpacingUnit,
+        unitTypes: _constants__WEBPACK_IMPORTED_MODULE_4__["optionsLhLsp"],
+        onClick: function onClick(MOBletterSpacingUnit) {
+          return setAttributes(_defineProperty({}, "MOB".concat(typographyPrefixConstant, "LetterSpacingUnit"), MOBletterSpacingUnit));
+        }
+      }), /*#__PURE__*/React.createElement(RangeControl, {
+        label: __("Letter Spacing"),
+        value: MOBletterSpacing,
+        onChange: function onChange(LetterSpacing) {
+          return setAttributes(_defineProperty({}, "MOB".concat(typographyPrefixConstant, "LetterSpacing"), LetterSpacing));
+        },
+        min: 0,
+        max: MOBletterSpacingUnit === "em" ? 10 : 100,
+        step: MOBletterSpacingUnit === "em" ? 0.1 : 1
+      }))), /*#__PURE__*/React.createElement(_WithResButtons__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        className: "forLineHeight",
+        resOption: resOption,
+        setAttributes: setAttributes
+      }, resOption === "Desktop" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_0__["default"], {
+        selectedUnit: lineHeightUnit,
+        unitTypes: _constants__WEBPACK_IMPORTED_MODULE_4__["optionsLhLsp"],
+        onClick: function onClick(LineHeightUnit) {
+          return setAttributes(_defineProperty({}, "".concat(typographyPrefixConstant, "LineHeightUnit"), LineHeightUnit));
+        }
+      }), /*#__PURE__*/React.createElement(RangeControl, {
+        label: __("Line Height"),
+        value: lineHeight,
+        onChange: function onChange(LineHeight) {
+          return setAttributes(_defineProperty({}, "".concat(typographyPrefixConstant, "LineHeight"), LineHeight));
+        },
+        min: 0,
+        max: lineHeightUnit === "em" ? 10 : 600,
+        step: lineHeightUnit === "em" ? 0.1 : 1
+      })), resOption === "Tablet" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_0__["default"], {
+        selectedUnit: TABlineHeightUnit,
+        unitTypes: _constants__WEBPACK_IMPORTED_MODULE_4__["optionsLhLsp"],
+        onClick: function onClick(TABlineHeightUnit) {
+          return setAttributes(_defineProperty({}, "TAB".concat(typographyPrefixConstant, "LineHeightUnit"), TABlineHeightUnit));
+        }
+      }), /*#__PURE__*/React.createElement(RangeControl, {
+        label: __("Line Height"),
+        value: TABlineHeight,
+        onChange: function onChange(LineHeight) {
+          return setAttributes(_defineProperty({}, "TAB".concat(typographyPrefixConstant, "LineHeight"), LineHeight));
+        },
+        min: 0,
+        max: TABlineHeightUnit === "em" ? 10 : 600,
+        step: TABlineHeightUnit === "em" ? 0.1 : 1
+      })), resOption === "Mobile" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_0__["default"], {
+        selectedUnit: MOBlineHeightUnit,
+        unitTypes: _constants__WEBPACK_IMPORTED_MODULE_4__["optionsLhLsp"],
+        onClick: function onClick(MOBlineHeightUnit) {
+          return setAttributes(_defineProperty({}, "MOB".concat(typographyPrefixConstant, "LineHeightUnit"), MOBlineHeightUnit));
+        }
+      }), /*#__PURE__*/React.createElement(RangeControl, {
+        label: __("Line Height"),
+        value: MOBlineHeight,
+        onChange: function onChange(LineHeight) {
+          return setAttributes(_defineProperty({}, "MOB".concat(typographyPrefixConstant, "LineHeight"), LineHeight));
+        },
+        min: 0,
+        max: MOBlineHeightUnit === "em" ? 10 : 600,
+        step: MOBlineHeightUnit === "em" ? 0.1 : 1
+      }))));
+    }
+  }));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (TypographyDropdown);
+
+/***/ }),
+
+/***/ "./util/typography-control-v2/unit-control.js":
+/*!****************************************************!*\
+  !*** ./util/typography-control-v2/unit-control.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/**
+ * WordPress dependencies
+ */
+var _wp$components = wp.components,
+    ButtonGroup = _wp$components.ButtonGroup,
+    Button = _wp$components.Button;
+
+var UnitControl = function UnitControl(_ref) {
+  var selectedUnit = _ref.selectedUnit,
+      unitTypes = _ref.unitTypes,
+      _onClick = _ref.onClick;
+  return /*#__PURE__*/React.createElement(ButtonGroup, {
+    className: "eb-unit-control-btn-group"
+  }, unitTypes.map(function (unit) {
+    return /*#__PURE__*/React.createElement(Button, {
+      className: "eb-unit-control-btn ".concat(unit.value === selectedUnit && "eb-unit-active"),
+      isSmall: true,
+      isPrimary: unit.value === selectedUnit,
+      onClick: function onClick() {
+        return _onClick(unit.value);
+      }
+    }, unit.label);
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (UnitControl);
 
 /***/ }),
 
