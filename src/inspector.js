@@ -2,8 +2,9 @@
  * WordPress dependencies
  */
 const { __ } = wp.i18n;
-const { Component } = wp.element;
+const { Component, useEffect } = wp.element;
 const { InspectorControls, PanelColorSettings } = wp.blockEditor;
+const { select } = wp.data;
 const {
 	PanelBody,
 	ToggleControl,
@@ -23,7 +24,10 @@ import {
 	FONT_WEIGHT,
 	TEXT_TRANSFORM,
 	TEXT_DECORATION,
+	buttonIconSpacing,
+	buttonMargin,
 } from "./constants";
+import objAttributes from "./attributes";
 import faIcons from "../util/faIcons";
 import DimensionsControl from "../util/dimensions-control";
 import UnitControl from "../util/unit-control";
@@ -33,9 +37,16 @@ import ColorControl from "../util/color-control";
 import { TypographyIcon } from "../util/icons";
 import ResetControl from "../util/reset-control";
 import FontIconPicker from "@fonticonpicker/react-fonticonpicker";
+import ResponsiveRangeController from "../util/responsive-range-control";
+import ResponsiveDimensionsControl from "../util/dimensions-control-v2";
+import {
+	mimmikCssForResBtns,
+	mimmikCssOnPreviewBtnClickWhileBlockSelected,
+} from "../util/helpers";
 
 const Inspector = ({ attributes, setAttributes }) => {
 	const {
+		resOption,
 		pricingStyle,
 		title,
 		subtitle,
@@ -47,6 +58,13 @@ const Inspector = ({ attributes, setAttributes }) => {
 		currencyPlacement,
 		pricePeriod,
 		periodSeparator,
+		features,
+		showButton,
+		buttonIcon,
+		buttonIconPosition,
+		buttonText,
+		buttonURL,
+		// new attributes
 
 		displaySubtitle,
 		titleBackgroundColor,
@@ -55,12 +73,11 @@ const Inspector = ({ attributes, setAttributes }) => {
 		priceDetails,
 		priceBackgroundColor,
 		priceTextColor,
-		features,
+		// features,
 		featuresBackgroundColor,
 		featuresTextColor,
 		buttonBackground,
 		buttonTextColor,
-		buttonText,
 		hoverBackgroundColor,
 		hoverTextColor,
 		priceboxBackground,
@@ -96,7 +113,6 @@ const Inspector = ({ attributes, setAttributes }) => {
 		hoverBorderColor,
 		buttonBorderRadius,
 		buttonBorderRadiusUnit,
-		buttonURL,
 		subtitleFontFamily,
 		subtitleFontSize,
 		subtitleSizeUnit,
@@ -136,6 +152,40 @@ const Inspector = ({ attributes, setAttributes }) => {
 		buttonLetterSpacing,
 		buttonLetterSpacingUnit,
 	} = attributes;
+
+	// this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class only the first time once
+	useEffect(() => {
+		setAttributes({
+			resOption: select("core/edit-post").__experimentalGetPreviewDeviceType(),
+		});
+	}, []);
+
+	// this useEffect is for mimmiking css for all the eb blocks on resOption changing
+	useEffect(() => {
+		mimmikCssForResBtns({
+			domObj: document,
+			resOption,
+		});
+	}, [resOption]);
+
+	// this useEffect is to mimmik css for responsive preview in the editor page when clicking the buttons in the 'Preview button of wordpress' located beside the 'update' button while any block is selected and it's inspector panel is mounted in the DOM
+	useEffect(() => {
+		const cleanUp = mimmikCssOnPreviewBtnClickWhileBlockSelected({
+			domObj: document,
+			select,
+			setAttributes,
+		});
+		return () => {
+			cleanUp();
+		};
+	}, []);
+
+	const resRequiredProps = {
+		setAttributes,
+		resOption,
+		attributes,
+		objAttributes,
+	};
 
 	const onFeatureAdd = () => {
 		const count = attributes.features.length;
@@ -261,6 +311,204 @@ const Inspector = ({ attributes, setAttributes }) => {
 					>
 						<span className="eb-pricebox-add-button-label">Add Feature</span>
 					</Button>
+				</PanelBody>
+
+				<PanelBody title={__("Button")} initialOpen={false}>
+					<ToggleControl
+						label={__("Display Button?")}
+						checked={showButton}
+						onChange={() => {
+							setAttributes({ showButton: !showButton });
+						}}
+					/>
+					<BaseControl label={__("Button Icon")}>
+						<FontIconPicker
+							icons={faIcons}
+							value={buttonIcon}
+							onChange={(buttonIcon) => setAttributes({ buttonIcon })}
+							appendTo="body"
+							closeOnSelect
+						/>
+					</BaseControl>
+					<SelectControl
+						label={__("Icon Position")}
+						value={buttonIconPosition}
+						options={[
+							{ label: "Left", value: "left" },
+							{ label: "Right", value: "right" },
+						]}
+						onChange={(buttonIconPosition) => {
+							setAttributes({ buttonIconPosition });
+						}}
+					/>
+					<ResponsiveRangeController
+						baseLabel={__("Icon Spacing")}
+						controlName={buttonIconSpacing}
+						resRequiredProps={resRequiredProps}
+						min={1}
+						max={60}
+						step={1}
+						noUnits
+					/>
+					<TextControl
+						label={__("Button Text")}
+						value={buttonText}
+						onChange={(text) => setAttributes({ buttonText: text })}
+					/>
+					<TextControl
+						label={__("Button Link")}
+						value={buttonURL}
+						onChange={(link) => setAttributes({ buttonURL: link })}
+					/>
+					<ResponsiveDimensionsControl
+						resRequiredProps={resRequiredProps}
+						controlName={buttonMargin}
+						baseLabel="Margin"
+					/>
+
+					<ColorControl
+						label={__("Button Background")}
+						color={buttonBackground}
+						onChange={(buttonBackground) => setAttributes({ buttonBackground })}
+					/>
+
+					<ColorControl
+						label={__("Button Text")}
+						color={buttonTextColor}
+						onChange={(buttonTextColor) => setAttributes({ buttonTextColor })}
+					/>
+
+					<ColorControl
+						label={__("Border Color")}
+						color={buttonBorderColor}
+						onChange={(buttonBorderColor) =>
+							setAttributes({ buttonBorderColor })
+						}
+					/>
+
+					<ColorControl
+						label={__("Hover Background")}
+						color={hoverBackgroundColor}
+						onChange={(hoverBackgroundColor) =>
+							setAttributes({ hoverBackgroundColor })
+						}
+					/>
+
+					<ColorControl
+						label={__("Hover Text")}
+						color={hoverTextColor}
+						onChange={(hoverTextColor) => setAttributes({ hoverTextColor })}
+					/>
+
+					<ColorControl
+						label={__("Hover Border")}
+						color={hoverBorderColor}
+						onChange={(hoverBorderColor) => setAttributes({ hoverBorderColor })}
+					/>
+
+					<PanelBody title={__("Border")} initialOpen={false}>
+						<ResetControl
+							onReset={() => setAttributes({ buttonBorderWidth: undefined })}
+						>
+							<RangeControl
+								label={__("Border Width (px)")}
+								value={buttonBorderWidth}
+								onChange={(buttonBorderWidth) =>
+									setAttributes({ buttonBorderWidth })
+								}
+								min={0}
+								max={20}
+							/>
+						</ResetControl>
+
+						<UnitControl
+							selectedUnit={buttonBorderRadiusUnit}
+							unitTypes={[
+								{ label: "px", value: "px" },
+								{ label: "%", value: "%" },
+							]}
+							onClick={(buttonBorderRadiusUnit) =>
+								setAttributes({ buttonBorderRadiusUnit })
+							}
+						/>
+
+						<ResetControl
+							onReset={() => setAttributes({ buttonBorderRadius: undefined })}
+						>
+							<RangeControl
+								label={__("Border Radius")}
+								value={buttonBorderRadius}
+								onChange={(buttonBorderRadius) =>
+									setAttributes({ buttonBorderRadius })
+								}
+								min={0}
+								max={100}
+							/>
+						</ResetControl>
+
+						<SelectControl
+							label={__("Border Style")}
+							value={buttonBorderStyle}
+							options={BORDER_STYLES}
+							onChange={(buttonBorderStyle) =>
+								setAttributes({ buttonBorderStyle })
+							}
+						/>
+					</PanelBody>
+				</PanelBody>
+
+				<PanelBody title={__("Margin & Padding")} initialOpen={false}>
+					<UnitControl
+						selectedUnit={marginUnit}
+						unitTypes={[
+							{ label: "px", value: "px" },
+							{ label: "em", value: "em" },
+							{ label: "%", value: "%" },
+						]}
+						onClick={(marginUnit) => setAttributes({ marginUnit })}
+					/>
+
+					<DimensionsControl
+						label={__("Margin")}
+						top={marginTop}
+						right={marginRight}
+						bottom={marginBottom}
+						left={marginLeft}
+						onChange={({ top, right, bottom, left }) =>
+							setAttributes({
+								marginTop: top,
+								marginRight: right,
+								marginBottom: bottom,
+								marginLeft: left,
+							})
+						}
+					/>
+
+					<UnitControl
+						selectedUnit={paddingUnit}
+						unitTypes={[
+							{ label: "px", value: "px" },
+							{ label: "em", value: "em" },
+							{ label: "%", value: "%" },
+						]}
+						onClick={(paddingUnit) => setAttributes({ paddingUnit })}
+					/>
+
+					<DimensionsControl
+						label={__("Padding")}
+						top={paddingTop}
+						right={paddingRight}
+						bottom={paddingBottom}
+						left={paddingLeft}
+						onChange={({ top, right, bottom, left }) =>
+							setAttributes({
+								paddingTop: top,
+								paddingRight: right,
+								paddingBottom: bottom,
+								paddingLeft: left,
+							})
+						}
+					/>
 				</PanelBody>
 
 				<PanelBody title={__("Typography")} initialOpen={false}>
@@ -849,212 +1097,6 @@ const Inspector = ({ attributes, setAttributes }) => {
 							max={200}
 						/>
 					</ResetControl>
-				</PanelBody>
-
-				<PanelBody title={__("Button Settings")} initialOpen={false}>
-					<UnitControl
-						selectedUnit={buttonHeightUnit}
-						unitTypes={[
-							{ label: "px", value: "px" },
-							{ label: "em", value: "em" },
-							{ label: "%", value: "%" },
-						]}
-						onClick={(buttonHeightUnit) => setAttributes({ buttonHeightUnit })}
-					/>
-
-					<ResetControl
-						onReset={() => setAttributes({ buttonHeight: undefined })}
-					>
-						<RangeControl
-							label={__("Height")}
-							value={buttonHeight}
-							onChange={(buttonHeight) => setAttributes({ buttonHeight })}
-							min={0}
-							max={600}
-						/>
-					</ResetControl>
-
-					<UnitControl
-						selectedUnit={buttonWidthUnit}
-						unitTypes={[
-							{ label: "px", value: "px" },
-							{ label: "em", value: "em" },
-							{ label: "%", value: "%" },
-						]}
-						onClick={(buttonWidthUnit) => setAttributes({ buttonWidthUnit })}
-					/>
-
-					<ResetControl
-						onReset={() => setAttributes({ buttonWidth: undefined })}
-					>
-						<RangeControl
-							label={__("Width")}
-							value={buttonWidth}
-							onChange={(buttonWidth) => setAttributes({ buttonWidth })}
-							min={0}
-							max={600}
-						/>
-					</ResetControl>
-
-					<UnitControl
-						selectedUnit={buttonSizeUnit}
-						unitTypes={[
-							{ label: "px", value: "px" },
-							{ label: "em", value: "em" },
-							{ label: "%", value: "%" },
-						]}
-						onClick={(buttonSizeUnit) => setAttributes({ buttonSizeUnit })}
-					/>
-
-					<TextControl
-						label={__("Button Link")}
-						value={buttonURL}
-						onChange={(link) => setAttributes({ buttonURL: link })}
-					/>
-
-					<ColorControl
-						label={__("Button Background")}
-						color={buttonBackground}
-						onChange={(buttonBackground) => setAttributes({ buttonBackground })}
-					/>
-
-					<ColorControl
-						label={__("Button Text")}
-						color={buttonTextColor}
-						onChange={(buttonTextColor) => setAttributes({ buttonTextColor })}
-					/>
-
-					<ColorControl
-						label={__("Border Color")}
-						color={buttonBorderColor}
-						onChange={(buttonBorderColor) =>
-							setAttributes({ buttonBorderColor })
-						}
-					/>
-
-					<ColorControl
-						label={__("Hover Background")}
-						color={hoverBackgroundColor}
-						onChange={(hoverBackgroundColor) =>
-							setAttributes({ hoverBackgroundColor })
-						}
-					/>
-
-					<ColorControl
-						label={__("Hover Text")}
-						color={hoverTextColor}
-						onChange={(hoverTextColor) => setAttributes({ hoverTextColor })}
-					/>
-
-					<ColorControl
-						label={__("Hover Border")}
-						color={hoverBorderColor}
-						onChange={(hoverBorderColor) => setAttributes({ hoverBorderColor })}
-					/>
-
-					<PanelBody title={__("Border")} initialOpen={false}>
-						<ResetControl
-							onReset={() => setAttributes({ buttonBorderWidth: undefined })}
-						>
-							<RangeControl
-								label={__("Border Width (px)")}
-								value={buttonBorderWidth}
-								onChange={(buttonBorderWidth) =>
-									setAttributes({ buttonBorderWidth })
-								}
-								min={0}
-								max={20}
-							/>
-						</ResetControl>
-
-						<UnitControl
-							selectedUnit={buttonBorderRadiusUnit}
-							unitTypes={[
-								{ label: "px", value: "px" },
-								{ label: "%", value: "%" },
-							]}
-							onClick={(buttonBorderRadiusUnit) =>
-								setAttributes({ buttonBorderRadiusUnit })
-							}
-						/>
-
-						<ResetControl
-							onReset={() => setAttributes({ buttonBorderRadius: undefined })}
-						>
-							<RangeControl
-								label={__("Border Radius")}
-								value={buttonBorderRadius}
-								onChange={(buttonBorderRadius) =>
-									setAttributes({ buttonBorderRadius })
-								}
-								min={0}
-								max={100}
-							/>
-						</ResetControl>
-
-						<SelectControl
-							label={__("Border Style")}
-							value={buttonBorderStyle}
-							options={BORDER_STYLES}
-							onChange={(buttonBorderStyle) =>
-								setAttributes({ buttonBorderStyle })
-							}
-						/>
-					</PanelBody>
-				</PanelBody>
-
-				<PanelBody title={__("Margin & Padding")} initialOpen={false}>
-					<UnitControl
-						selectedUnit={marginUnit}
-						unitTypes={[
-							{ label: "px", value: "px" },
-							{ label: "em", value: "em" },
-							{ label: "%", value: "%" },
-						]}
-						onClick={(marginUnit) => setAttributes({ marginUnit })}
-					/>
-
-					<DimensionsControl
-						label={__("Margin")}
-						top={marginTop}
-						right={marginRight}
-						bottom={marginBottom}
-						left={marginLeft}
-						onChange={({ top, right, bottom, left }) =>
-							setAttributes({
-								marginTop: top,
-								marginRight: right,
-								marginBottom: bottom,
-								marginLeft: left,
-							})
-						}
-					/>
-
-					<UnitControl
-						selectedUnit={paddingUnit}
-						unitTypes={[
-							{ label: "px", value: "px" },
-							{ label: "em", value: "em" },
-							{ label: "%", value: "%" },
-						]}
-						onClick={(paddingUnit) => setAttributes({ paddingUnit })}
-					/>
-
-					<DimensionsControl
-						label={__("Padding")}
-						top={paddingTop}
-						right={paddingRight}
-						bottom={paddingBottom}
-						left={paddingLeft}
-						onChange={({ top, right, bottom, left }) =>
-							setAttributes({
-								paddingTop: top,
-								paddingRight: right,
-								paddingBottom: bottom,
-								paddingLeft: left,
-							})
-						}
-					/>
 				</PanelBody>
 			</span>
 		</InspectorControls>

@@ -5646,7 +5646,36 @@ var classNamesShape =  true ? prop_types__WEBPACK_IMPORTED_MODULE_0___default.a.
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var attributes = {
+/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/helpers */ "./util/helpers/index.js");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./constants */ "./src/constants.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+var attributes = _objectSpread(_objectSpread(_objectSpread({
+  // the following 4 attributes is must required for responsive options and asset generation for frontend
+  // responsive control attributes ⬇
+  resOption: {
+    type: "string",
+    "default": "Desktop"
+  },
+  // blockId attribute for making unique className and other uniqueness ⬇
+  blockId: {
+    type: "string"
+  },
+  blockRoot: {
+    type: "string",
+    "default": "essential_block"
+  },
+  // blockMeta is for keeping all the styles ⬇
+  blockMeta: {
+    type: "object"
+  },
   pricingStyle: {
     type: "string",
     "default": "style-1"
@@ -5711,47 +5740,6 @@ var attributes = {
     attribute: "data-period-separator",
     "default": "/"
   },
-  priceboxBackground: {
-    type: "string"
-  },
-  titleTag: {
-    type: "string",
-    "default": "h3"
-  },
-  displaySubtitle: {
-    type: "boolean",
-    "default": false
-  },
-  titleBackgroundColor: {
-    type: "string"
-  },
-  titleTextColor: {
-    type: "string"
-  },
-  price: {
-    type: "string",
-    source: "text",
-    selector: ".eb-pricebox-price",
-    "default": "$99"
-  },
-  priceValueSize: {
-    type: "number"
-  },
-  displayPriceDetails: {
-    type: "boolean",
-    "default": false
-  },
-  priceDetails: {
-    type: "string",
-    source: "text",
-    selector: ".eb-pricebox-price-details"
-  },
-  priceBackgroundColor: {
-    type: "string"
-  },
-  priceTextColor: {
-    type: "string"
-  },
   features: {
     type: "array",
     source: "query",
@@ -5760,7 +5748,7 @@ var attributes = {
       text: {
         type: "string",
         source: "text",
-        selector: ".ebgb-pricebox-feature-item"
+        selector: ".ebgb-pricebox-feature-text"
       },
       icon: {
         type: "string",
@@ -5809,15 +5797,74 @@ var attributes = {
       link: ""
     }]
   },
+  showButton: {
+    type: "boolean",
+    "default": true
+  },
+  buttonIcon: {
+    type: "attribute",
+    selector: ".ebgb-pricing .footer",
+    attribute: "data-icon"
+  },
+  buttonIconPosition: {
+    type: "string",
+    "default": "left"
+  },
+  buttonText: {
+    type: "string",
+    "default": "Choose Plan"
+  }
+}, Object(_util_helpers__WEBPACK_IMPORTED_MODULE_0__["generateResponsiveRangeAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_1__["buttonIconSpacing"], {
+  defaultRange: 0,
+  noUnits: true
+})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_0__["generateDimensionsAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_1__["buttonMargin"])), {}, {
+  // new attributes end
+  priceboxBackground: {
+    type: "string"
+  },
+  titleTag: {
+    type: "string",
+    "default": "h3"
+  },
+  displaySubtitle: {
+    type: "boolean",
+    "default": false
+  },
+  titleBackgroundColor: {
+    type: "string"
+  },
+  titleTextColor: {
+    type: "string"
+  },
+  price: {
+    type: "string",
+    source: "text",
+    selector: ".eb-pricebox-price",
+    "default": "$99"
+  },
+  priceValueSize: {
+    type: "number"
+  },
+  displayPriceDetails: {
+    type: "boolean",
+    "default": false
+  },
+  priceDetails: {
+    type: "string",
+    source: "text",
+    selector: ".eb-pricebox-price-details"
+  },
+  priceBackgroundColor: {
+    type: "string"
+  },
+  priceTextColor: {
+    type: "string"
+  },
   featuresBackgroundColor: {
     type: "string"
   },
   featuresTextColor: {
     type: "string"
-  },
-  buttonText: {
-    type: "string",
-    "default": "Choose Plan"
   },
   buttonSize: {
     type: "string"
@@ -6075,7 +6122,8 @@ var attributes = {
     type: "string",
     "default": "px"
   }
-};
+});
+
 /* harmony default export */ __webpack_exports__["default"] = (attributes);
 
 /***/ }),
@@ -6084,7 +6132,7 @@ var attributes = {
 /*!**************************!*\
   !*** ./src/constants.js ***!
   \**************************/
-/*! exports provided: BORDER_STYLES, TEXT_TRANSFORM, FONT_WEIGHT, TEXT_DECORATION */
+/*! exports provided: BORDER_STYLES, TEXT_TRANSFORM, FONT_WEIGHT, TEXT_DECORATION, buttonIconSpacing, buttonMargin */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6093,6 +6141,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TEXT_TRANSFORM", function() { return TEXT_TRANSFORM; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FONT_WEIGHT", function() { return FONT_WEIGHT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TEXT_DECORATION", function() { return TEXT_DECORATION; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buttonIconSpacing", function() { return buttonIconSpacing; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buttonMargin", function() { return buttonMargin; });
 var __ = wp.i18n.__;
 var BORDER_STYLES = [{
   label: __("Dashed"),
@@ -6160,7 +6210,11 @@ var TEXT_DECORATION = [{
 }, {
   label: __("Underline Oveline"),
   value: "underline overline"
-}];
+}]; // Responsive Range Controller
+
+var buttonIconSpacing = "btnIconSpace"; // dimension controls
+
+var buttonMargin = "btnMargin";
 
 /***/ }),
 
@@ -6206,17 +6260,21 @@ var edit = function edit(props) {
       currencyPlacement = attributes.currencyPlacement,
       pricePeriod = attributes.pricePeriod,
       periodSeparator = attributes.periodSeparator,
+      features = attributes.features,
+      showButton = attributes.showButton,
+      buttonIcon = attributes.buttonIcon,
+      buttonIconPosition = attributes.buttonIconPosition,
+      buttonText = attributes.buttonText,
+      buttonURL = attributes.buttonURL,
       displaySubtitle = attributes.displaySubtitle,
       titleBackgroundColor = attributes.titleBackgroundColor,
       titleTextColor = attributes.titleTextColor,
       priceBackgroundColor = attributes.priceBackgroundColor,
       priceTextColor = attributes.priceTextColor,
-      features = attributes.features,
       featuresBackgroundColor = attributes.featuresBackgroundColor,
       featuresTextColor = attributes.featuresTextColor,
       buttonBackground = attributes.buttonBackground,
       buttonTextColor = attributes.buttonTextColor,
-      buttonText = attributes.buttonText,
       isHover = attributes.isHover,
       hoverBackgroundColor = attributes.hoverBackgroundColor,
       hoverTextColor = attributes.hoverTextColor,
@@ -6412,33 +6470,49 @@ var edit = function edit(props) {
     className: "price-period",
     "data-period-separator": periodSeparator,
     "data-price-period": pricePeriod
-  }, periodSeparator, " ", pricePeriod)), console.log(attributes), /*#__PURE__*/React.createElement("div", {
+  }, periodSeparator, " ", pricePeriod)), /*#__PURE__*/React.createElement("div", {
     className: "body"
-  }, /*#__PURE__*/React.createElement("ul", null, features.map(function (_ref) {
+  }, /*#__PURE__*/React.createElement("ul", {
+    className: "ebgb-pricebox-features"
+  }, features.map(function (_ref) {
     var icon = _ref.icon,
         text = _ref.text,
-        color = _ref.color;
+        color = _ref.color,
+        clickable = _ref.clickable,
+        link = _ref.link;
     return /*#__PURE__*/React.createElement("li", {
+      className: "ebgb-pricebox-feature-item",
+      style: featureListStyle,
       "data-icon": icon,
-      "data-color": color
+      "data-color": color,
+      "data-clickable": clickable,
+      "data-link": link
+    }, clickable && link ? /*#__PURE__*/React.createElement("a", {
+      href: link
     }, /*#__PURE__*/React.createElement("span", {
-      className: "ebgb-pricebox-icon ".concat(icon),
-      style: {
-        color: color
-      }
+      className: "ebgb-pricebox-icon ".concat(icon)
     }), /*#__PURE__*/React.createElement("span", {
-      className: "ebgb-pricebox-text"
-    }, text));
-  }))), /*#__PURE__*/React.createElement("div", {
-    className: "footer"
+      className: "ebgb-pricebox-feature-text"
+    }, text)) : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("span", {
+      className: "ebgb-pricebox-icon ".concat(icon)
+    }), /*#__PURE__*/React.createElement("span", {
+      className: "ebgb-pricebox-feature-text"
+    }, text)));
+  }))), showButton && /*#__PURE__*/React.createElement("div", {
+    className: "footer",
+    "data-icon": buttonIcon
   }, /*#__PURE__*/React.createElement("a", {
-    href: "#",
-    target: "_blank",
-    rel: "nofollow noopener",
+    href: buttonURL // target="_blank"
+    // rel="nofollow noopener"
+    ,
     className: "ebgb-pricing-button"
-  }, /*#__PURE__*/React.createElement("i", {
-    className: " fa-icon-left"
-  }), "Choose Plan", " ")))) // edit view end
+  }, buttonIconPosition === "left" && /*#__PURE__*/React.createElement("i", {
+    className: buttonIcon
+  }), /*#__PURE__*/React.createElement("span", {
+    className: "ebgb-button-text"
+  }, buttonText), buttonIconPosition === "right" && /*#__PURE__*/React.createElement("i", {
+    className: buttonIcon
+  }))))) // edit view end
   ];
 };
 
@@ -6572,16 +6646,20 @@ registerBlockType("pricing-table-block/pricing-table", {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./constants */ "./src/constants.js");
-/* harmony import */ var _util_faIcons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util/faIcons */ "./util/faIcons.js");
-/* harmony import */ var _util_dimensions_control__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../util/dimensions-control */ "./util/dimensions-control/index.js");
-/* harmony import */ var _util_unit_control__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../util/unit-control */ "./util/unit-control/index.js");
-/* harmony import */ var _sortable_features__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./sortable-features */ "./src/sortable-features.js");
-/* harmony import */ var _util_typography_control_FontPicker__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../util/typography-control/FontPicker */ "./util/typography-control/FontPicker.js");
-/* harmony import */ var _util_color_control__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../util/color-control */ "./util/color-control/index.js");
-/* harmony import */ var _util_icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../util/icons */ "./util/icons.js");
-/* harmony import */ var _util_reset_control__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../util/reset-control */ "./util/reset-control/index.js");
-/* harmony import */ var _fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fonticonpicker/react-fonticonpicker */ "./node_modules/@fonticonpicker/react-fonticonpicker/dist/fonticonpicker.react.js");
-/* harmony import */ var _fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _attributes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./attributes */ "./src/attributes.js");
+/* harmony import */ var _util_faIcons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../util/faIcons */ "./util/faIcons.js");
+/* harmony import */ var _util_dimensions_control__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../util/dimensions-control */ "./util/dimensions-control/index.js");
+/* harmony import */ var _util_unit_control__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../util/unit-control */ "./util/unit-control/index.js");
+/* harmony import */ var _sortable_features__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./sortable-features */ "./src/sortable-features.js");
+/* harmony import */ var _util_typography_control_FontPicker__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../util/typography-control/FontPicker */ "./util/typography-control/FontPicker.js");
+/* harmony import */ var _util_color_control__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../util/color-control */ "./util/color-control/index.js");
+/* harmony import */ var _util_icons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../util/icons */ "./util/icons.js");
+/* harmony import */ var _util_reset_control__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../util/reset-control */ "./util/reset-control/index.js");
+/* harmony import */ var _fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fonticonpicker/react-fonticonpicker */ "./node_modules/@fonticonpicker/react-fonticonpicker/dist/fonticonpicker.react.js");
+/* harmony import */ var _fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _util_responsive_range_control__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../util/responsive-range-control */ "./util/responsive-range-control/index.js");
+/* harmony import */ var _util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../util/dimensions-control-v2 */ "./util/dimensions-control-v2/index.js");
+/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../util/helpers */ "./util/helpers/index.js");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -6598,10 +6676,13 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
  * WordPress dependencies
  */
 var __ = wp.i18n.__;
-var Component = wp.element.Component;
+var _wp$element = wp.element,
+    Component = _wp$element.Component,
+    useEffect = _wp$element.useEffect;
 var _wp$blockEditor = wp.blockEditor,
     InspectorControls = _wp$blockEditor.InspectorControls,
     PanelColorSettings = _wp$blockEditor.PanelColorSettings;
+var select = wp.data.select;
 var _wp$components = wp.components,
     PanelBody = _wp$components.PanelBody,
     ToggleControl = _wp$components.ToggleControl,
@@ -6626,10 +6707,15 @@ var _wp$components = wp.components,
 
 
 
+
+
+
+
 var Inspector = function Inspector(_ref) {
   var attributes = _ref.attributes,
       setAttributes = _ref.setAttributes;
-  var pricingStyle = attributes.pricingStyle,
+  var resOption = attributes.resOption,
+      pricingStyle = attributes.pricingStyle,
       title = attributes.title,
       subtitle = attributes.subtitle,
       headerIcon = attributes.headerIcon,
@@ -6640,6 +6726,12 @@ var Inspector = function Inspector(_ref) {
       currencyPlacement = attributes.currencyPlacement,
       pricePeriod = attributes.pricePeriod,
       periodSeparator = attributes.periodSeparator,
+      features = attributes.features,
+      showButton = attributes.showButton,
+      buttonIcon = attributes.buttonIcon,
+      buttonIconPosition = attributes.buttonIconPosition,
+      buttonText = attributes.buttonText,
+      buttonURL = attributes.buttonURL,
       displaySubtitle = attributes.displaySubtitle,
       titleBackgroundColor = attributes.titleBackgroundColor,
       titleTextColor = attributes.titleTextColor,
@@ -6647,12 +6739,10 @@ var Inspector = function Inspector(_ref) {
       priceDetails = attributes.priceDetails,
       priceBackgroundColor = attributes.priceBackgroundColor,
       priceTextColor = attributes.priceTextColor,
-      features = attributes.features,
       featuresBackgroundColor = attributes.featuresBackgroundColor,
       featuresTextColor = attributes.featuresTextColor,
       buttonBackground = attributes.buttonBackground,
       buttonTextColor = attributes.buttonTextColor,
-      buttonText = attributes.buttonText,
       hoverBackgroundColor = attributes.hoverBackgroundColor,
       hoverTextColor = attributes.hoverTextColor,
       priceboxBackground = attributes.priceboxBackground,
@@ -6688,7 +6778,6 @@ var Inspector = function Inspector(_ref) {
       hoverBorderColor = attributes.hoverBorderColor,
       buttonBorderRadius = attributes.buttonBorderRadius,
       buttonBorderRadiusUnit = attributes.buttonBorderRadiusUnit,
-      buttonURL = attributes.buttonURL,
       subtitleFontFamily = attributes.subtitleFontFamily,
       subtitleFontSize = attributes.subtitleFontSize,
       subtitleSizeUnit = attributes.subtitleSizeUnit,
@@ -6726,7 +6815,37 @@ var Inspector = function Inspector(_ref) {
       buttonLineHeight = attributes.buttonLineHeight,
       buttonLineHeightUnit = attributes.buttonLineHeightUnit,
       buttonLetterSpacing = attributes.buttonLetterSpacing,
-      buttonLetterSpacingUnit = attributes.buttonLetterSpacingUnit;
+      buttonLetterSpacingUnit = attributes.buttonLetterSpacingUnit; // this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class only the first time once
+
+  useEffect(function () {
+    setAttributes({
+      resOption: select("core/edit-post").__experimentalGetPreviewDeviceType()
+    });
+  }, []); // this useEffect is for mimmiking css for all the eb blocks on resOption changing
+
+  useEffect(function () {
+    Object(_util_helpers__WEBPACK_IMPORTED_MODULE_13__["mimmikCssForResBtns"])({
+      domObj: document,
+      resOption: resOption
+    });
+  }, [resOption]); // this useEffect is to mimmik css for responsive preview in the editor page when clicking the buttons in the 'Preview button of wordpress' located beside the 'update' button while any block is selected and it's inspector panel is mounted in the DOM
+
+  useEffect(function () {
+    var cleanUp = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_13__["mimmikCssOnPreviewBtnClickWhileBlockSelected"])({
+      domObj: document,
+      select: select,
+      setAttributes: setAttributes
+    });
+    return function () {
+      cleanUp();
+    };
+  }, []);
+  var resRequiredProps = {
+    setAttributes: setAttributes,
+    resOption: resOption,
+    attributes: attributes,
+    objAttributes: _attributes__WEBPACK_IMPORTED_MODULE_1__["default"]
+  };
 
   var onFeatureAdd = function onFeatureAdd() {
     var count = attributes.features.length;
@@ -6782,8 +6901,8 @@ var Inspector = function Inspector(_ref) {
     }
   }), pricingStyle === "style-2" && /*#__PURE__*/React.createElement(BaseControl, {
     label: __("Icon")
-  }, /*#__PURE__*/React.createElement(_fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_9___default.a, {
-    icons: _util_faIcons__WEBPACK_IMPORTED_MODULE_1__["default"],
+  }, /*#__PURE__*/React.createElement(_fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_10___default.a, {
+    icons: _util_faIcons__WEBPACK_IMPORTED_MODULE_2__["default"],
     value: headerIcon,
     onChange: function onChange(headerIcon) {
       return setAttributes({
@@ -6861,7 +6980,7 @@ var Inspector = function Inspector(_ref) {
   })), /*#__PURE__*/React.createElement(PanelBody, {
     title: __("Features"),
     initialOpen: false
-  }, /*#__PURE__*/React.createElement(_sortable_features__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, /*#__PURE__*/React.createElement(_sortable_features__WEBPACK_IMPORTED_MODULE_5__["default"], {
     features: attributes.features,
     setAttributes: setAttributes
   }), /*#__PURE__*/React.createElement(Button, {
@@ -6872,6 +6991,251 @@ var Inspector = function Inspector(_ref) {
   }, /*#__PURE__*/React.createElement("span", {
     className: "eb-pricebox-add-button-label"
   }, "Add Feature"))), /*#__PURE__*/React.createElement(PanelBody, {
+    title: __("Button"),
+    initialOpen: false
+  }, /*#__PURE__*/React.createElement(ToggleControl, {
+    label: __("Display Button?"),
+    checked: showButton,
+    onChange: function onChange() {
+      setAttributes({
+        showButton: !showButton
+      });
+    }
+  }), /*#__PURE__*/React.createElement(BaseControl, {
+    label: __("Button Icon")
+  }, /*#__PURE__*/React.createElement(_fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_10___default.a, {
+    icons: _util_faIcons__WEBPACK_IMPORTED_MODULE_2__["default"],
+    value: buttonIcon,
+    onChange: function onChange(buttonIcon) {
+      return setAttributes({
+        buttonIcon: buttonIcon
+      });
+    },
+    appendTo: "body",
+    closeOnSelect: true
+  })), /*#__PURE__*/React.createElement(SelectControl, {
+    label: __("Icon Position"),
+    value: buttonIconPosition,
+    options: [{
+      label: "Left",
+      value: "left"
+    }, {
+      label: "Right",
+      value: "right"
+    }],
+    onChange: function onChange(buttonIconPosition) {
+      setAttributes({
+        buttonIconPosition: buttonIconPosition
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_responsive_range_control__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    baseLabel: __("Icon Spacing"),
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_0__["buttonIconSpacing"],
+    resRequiredProps: resRequiredProps,
+    min: 1,
+    max: 60,
+    step: 1,
+    noUnits: true
+  }), /*#__PURE__*/React.createElement(TextControl, {
+    label: __("Button Text"),
+    value: buttonText,
+    onChange: function onChange(text) {
+      return setAttributes({
+        buttonText: text
+      });
+    }
+  }), /*#__PURE__*/React.createElement(TextControl, {
+    label: __("Button Link"),
+    value: buttonURL,
+    onChange: function onChange(link) {
+      return setAttributes({
+        buttonURL: link
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_12__["default"], {
+    resRequiredProps: resRequiredProps,
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_0__["buttonMargin"],
+    baseLabel: "Margin"
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    label: __("Button Background"),
+    color: buttonBackground,
+    onChange: function onChange(buttonBackground) {
+      return setAttributes({
+        buttonBackground: buttonBackground
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    label: __("Button Text"),
+    color: buttonTextColor,
+    onChange: function onChange(buttonTextColor) {
+      return setAttributes({
+        buttonTextColor: buttonTextColor
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    label: __("Border Color"),
+    color: buttonBorderColor,
+    onChange: function onChange(buttonBorderColor) {
+      return setAttributes({
+        buttonBorderColor: buttonBorderColor
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    label: __("Hover Background"),
+    color: hoverBackgroundColor,
+    onChange: function onChange(hoverBackgroundColor) {
+      return setAttributes({
+        hoverBackgroundColor: hoverBackgroundColor
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    label: __("Hover Text"),
+    color: hoverTextColor,
+    onChange: function onChange(hoverTextColor) {
+      return setAttributes({
+        hoverTextColor: hoverTextColor
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    label: __("Hover Border"),
+    color: hoverBorderColor,
+    onChange: function onChange(hoverBorderColor) {
+      return setAttributes({
+        hoverBorderColor: hoverBorderColor
+      });
+    }
+  }), /*#__PURE__*/React.createElement(PanelBody, {
+    title: __("Border"),
+    initialOpen: false
+  }, /*#__PURE__*/React.createElement(_util_reset_control__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    onReset: function onReset() {
+      return setAttributes({
+        buttonBorderWidth: undefined
+      });
+    }
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Border Width (px)"),
+    value: buttonBorderWidth,
+    onChange: function onChange(buttonBorderWidth) {
+      return setAttributes({
+        buttonBorderWidth: buttonBorderWidth
+      });
+    },
+    min: 0,
+    max: 20
+  })), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    selectedUnit: buttonBorderRadiusUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(buttonBorderRadiusUnit) {
+      return setAttributes({
+        buttonBorderRadiusUnit: buttonBorderRadiusUnit
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_reset_control__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    onReset: function onReset() {
+      return setAttributes({
+        buttonBorderRadius: undefined
+      });
+    }
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Border Radius"),
+    value: buttonBorderRadius,
+    onChange: function onChange(buttonBorderRadius) {
+      return setAttributes({
+        buttonBorderRadius: buttonBorderRadius
+      });
+    },
+    min: 0,
+    max: 100
+  })), /*#__PURE__*/React.createElement(SelectControl, {
+    label: __("Border Style"),
+    value: buttonBorderStyle,
+    options: _constants__WEBPACK_IMPORTED_MODULE_0__["BORDER_STYLES"],
+    onChange: function onChange(buttonBorderStyle) {
+      return setAttributes({
+        buttonBorderStyle: buttonBorderStyle
+      });
+    }
+  }))), /*#__PURE__*/React.createElement(PanelBody, {
+    title: __("Margin & Padding"),
+    initialOpen: false
+  }, /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    selectedUnit: marginUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(marginUnit) {
+      return setAttributes({
+        marginUnit: marginUnit
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_dimensions_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    label: __("Margin"),
+    top: marginTop,
+    right: marginRight,
+    bottom: marginBottom,
+    left: marginLeft,
+    onChange: function onChange(_ref2) {
+      var top = _ref2.top,
+          right = _ref2.right,
+          bottom = _ref2.bottom,
+          left = _ref2.left;
+      return setAttributes({
+        marginTop: top,
+        marginRight: right,
+        marginBottom: bottom,
+        marginLeft: left
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    selectedUnit: paddingUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(paddingUnit) {
+      return setAttributes({
+        paddingUnit: paddingUnit
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_dimensions_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    label: __("Padding"),
+    top: paddingTop,
+    right: paddingRight,
+    bottom: paddingBottom,
+    left: paddingLeft,
+    onChange: function onChange(_ref3) {
+      var top = _ref3.top,
+          right = _ref3.right,
+          bottom = _ref3.bottom,
+          left = _ref3.left;
+      return setAttributes({
+        paddingTop: top,
+        paddingRight: right,
+        paddingBottom: bottom,
+        paddingLeft: left
+      });
+    }
+  })), /*#__PURE__*/React.createElement(PanelBody, {
     title: __("Typography"),
     initialOpen: false
   }, displaySubtitle && /*#__PURE__*/React.createElement(BaseControl, {
@@ -6881,14 +7245,14 @@ var Inspector = function Inspector(_ref) {
     className: "eb-typography-dropdown",
     contentClassName: "my-popover-content-classname",
     position: "bottom right",
-    renderToggle: function renderToggle(_ref2) {
-      var isOpen = _ref2.isOpen,
-          onToggle = _ref2.onToggle;
+    renderToggle: function renderToggle(_ref4) {
+      var isOpen = _ref4.isOpen,
+          onToggle = _ref4.onToggle;
       return /*#__PURE__*/React.createElement(Button, {
         isSmall: true,
         onClick: onToggle,
         "aria-expanded": isOpen
-      }, /*#__PURE__*/React.createElement(_util_icons__WEBPACK_IMPORTED_MODULE_7__["TypographyIcon"], null));
+      }, /*#__PURE__*/React.createElement(_util_icons__WEBPACK_IMPORTED_MODULE_8__["TypographyIcon"], null));
     },
     renderContent: function renderContent() {
       return /*#__PURE__*/React.createElement("div", {
@@ -6896,7 +7260,7 @@ var Inspector = function Inspector(_ref) {
         style: {
           padding: "0.2rem"
         }
-      }, /*#__PURE__*/React.createElement(_util_typography_control_FontPicker__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }, /*#__PURE__*/React.createElement(_util_typography_control_FontPicker__WEBPACK_IMPORTED_MODULE_6__["default"], {
         label: __("Font Family"),
         value: subtitleFontFamily,
         onChange: function onChange(subtitleFontFamily) {
@@ -6904,7 +7268,7 @@ var Inspector = function Inspector(_ref) {
             subtitleFontFamily: subtitleFontFamily
           });
         }
-      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
         selectedUnit: subtitleSizeUnit,
         unitTypes: [{
           label: "px",
@@ -6950,7 +7314,7 @@ var Inspector = function Inspector(_ref) {
             subtitleTextDecoration: subtitleTextDecoration
           });
         }
-      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
         selectedUnit: subtitleLetterSpacingUnit,
         unitTypes: [{
           label: "px",
@@ -6975,7 +7339,7 @@ var Inspector = function Inspector(_ref) {
         min: 0,
         max: SUBTITLE_SPACING_MAX,
         step: SUBTITLE_SPACING_STEP
-      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
         selectedUnit: subtitleLineHeightUnit,
         unitTypes: [{
           label: "px",
@@ -7009,14 +7373,14 @@ var Inspector = function Inspector(_ref) {
     className: "eb-typography-dropdown",
     contentClassName: "my-popover-content-classname",
     position: "bottom right",
-    renderToggle: function renderToggle(_ref3) {
-      var isOpen = _ref3.isOpen,
-          onToggle = _ref3.onToggle;
+    renderToggle: function renderToggle(_ref5) {
+      var isOpen = _ref5.isOpen,
+          onToggle = _ref5.onToggle;
       return /*#__PURE__*/React.createElement(Button, {
         isSmall: true,
         onClick: onToggle,
         "aria-expanded": isOpen
-      }, /*#__PURE__*/React.createElement(_util_icons__WEBPACK_IMPORTED_MODULE_7__["TypographyIcon"], null));
+      }, /*#__PURE__*/React.createElement(_util_icons__WEBPACK_IMPORTED_MODULE_8__["TypographyIcon"], null));
     },
     renderContent: function renderContent() {
       return /*#__PURE__*/React.createElement("div", {
@@ -7024,7 +7388,7 @@ var Inspector = function Inspector(_ref) {
         style: {
           padding: "0.2rem"
         }
-      }, /*#__PURE__*/React.createElement(_util_typography_control_FontPicker__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }, /*#__PURE__*/React.createElement(_util_typography_control_FontPicker__WEBPACK_IMPORTED_MODULE_6__["default"], {
         label: __("Font Family"),
         value: priceFontFamily,
         onChange: function onChange(priceFontFamily) {
@@ -7032,7 +7396,7 @@ var Inspector = function Inspector(_ref) {
             priceFontFamily: priceFontFamily
           });
         }
-      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
         selectedUnit: priceSizeUnit,
         unitTypes: [{
           label: "px",
@@ -7078,7 +7442,7 @@ var Inspector = function Inspector(_ref) {
             priceTextDecoration: priceTextDecoration
           });
         }
-      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
         selectedUnit: priceLetterSpacingUnit,
         unitTypes: [{
           label: "px",
@@ -7103,7 +7467,7 @@ var Inspector = function Inspector(_ref) {
         min: 0,
         max: PRICE_SPACING_MAX,
         step: PRICE_SPACING_STEP
-      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
         selectedUnit: priceLineHeightUnit,
         unitTypes: [{
           label: "px",
@@ -7137,14 +7501,14 @@ var Inspector = function Inspector(_ref) {
     className: "eb-typography-dropdown",
     contentClassName: "my-popover-content-classname",
     position: "bottom right",
-    renderToggle: function renderToggle(_ref4) {
-      var isOpen = _ref4.isOpen,
-          onToggle = _ref4.onToggle;
+    renderToggle: function renderToggle(_ref6) {
+      var isOpen = _ref6.isOpen,
+          onToggle = _ref6.onToggle;
       return /*#__PURE__*/React.createElement(Button, {
         isSmall: true,
         onClick: onToggle,
         "aria-expanded": isOpen
-      }, /*#__PURE__*/React.createElement(_util_icons__WEBPACK_IMPORTED_MODULE_7__["TypographyIcon"], null));
+      }, /*#__PURE__*/React.createElement(_util_icons__WEBPACK_IMPORTED_MODULE_8__["TypographyIcon"], null));
     },
     renderContent: function renderContent() {
       return /*#__PURE__*/React.createElement("div", {
@@ -7152,7 +7516,7 @@ var Inspector = function Inspector(_ref) {
         style: {
           padding: "0.2rem"
         }
-      }, /*#__PURE__*/React.createElement(_util_typography_control_FontPicker__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }, /*#__PURE__*/React.createElement(_util_typography_control_FontPicker__WEBPACK_IMPORTED_MODULE_6__["default"], {
         label: __("Font Family"),
         value: featureFontFamily,
         onChange: function onChange(featureFontFamily) {
@@ -7160,7 +7524,7 @@ var Inspector = function Inspector(_ref) {
             featureFontFamily: featureFontFamily
           });
         }
-      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
         selectedUnit: featureSizeUnit,
         unitTypes: [{
           label: "px",
@@ -7215,7 +7579,7 @@ var Inspector = function Inspector(_ref) {
             featureTextDecoration: featureTextDecoration
           });
         }
-      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
         selectedUnit: featureLetterSpacingUnit,
         unitTypes: [{
           label: "px",
@@ -7240,7 +7604,7 @@ var Inspector = function Inspector(_ref) {
         min: 0,
         max: FEATURE_SPACING_MAX,
         step: FEATURE_SPACING_STEP
-      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
         selectedUnit: featureLineHeightUnit,
         unitTypes: [{
           label: "px",
@@ -7274,14 +7638,14 @@ var Inspector = function Inspector(_ref) {
     className: "eb-typography-dropdown",
     contentClassName: "my-popover-content-classname",
     position: "bottom right",
-    renderToggle: function renderToggle(_ref5) {
-      var isOpen = _ref5.isOpen,
-          onToggle = _ref5.onToggle;
+    renderToggle: function renderToggle(_ref7) {
+      var isOpen = _ref7.isOpen,
+          onToggle = _ref7.onToggle;
       return /*#__PURE__*/React.createElement(Button, {
         isSmall: true,
         onClick: onToggle,
         "aria-expanded": isOpen
-      }, /*#__PURE__*/React.createElement(_util_icons__WEBPACK_IMPORTED_MODULE_7__["TypographyIcon"], null));
+      }, /*#__PURE__*/React.createElement(_util_icons__WEBPACK_IMPORTED_MODULE_8__["TypographyIcon"], null));
     },
     renderContent: function renderContent() {
       return /*#__PURE__*/React.createElement("div", {
@@ -7289,7 +7653,7 @@ var Inspector = function Inspector(_ref) {
         style: {
           padding: "0.2rem"
         }
-      }, /*#__PURE__*/React.createElement(_util_typography_control_FontPicker__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }, /*#__PURE__*/React.createElement(_util_typography_control_FontPicker__WEBPACK_IMPORTED_MODULE_6__["default"], {
         label: __("Font Family"),
         value: buttonFontFamily,
         onChange: function onChange(buttonFontFamily) {
@@ -7297,7 +7661,7 @@ var Inspector = function Inspector(_ref) {
             buttonFontFamily: buttonFontFamily
           });
         }
-      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
         selectedUnit: buttonSizeUnit,
         unitTypes: [{
           label: "px",
@@ -7343,7 +7707,7 @@ var Inspector = function Inspector(_ref) {
             buttonTextDecoration: buttonTextDecoration
           });
         }
-      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
         selectedUnit: buttonLetterSpacingUnit,
         unitTypes: [{
           label: "px",
@@ -7368,7 +7732,7 @@ var Inspector = function Inspector(_ref) {
         min: 0,
         max: BUTTON_SPACING_MAX,
         step: BUTTON_SPACING_STEP
-      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
         selectedUnit: buttonLineHeightUnit,
         unitTypes: [{
           label: "px",
@@ -7398,7 +7762,7 @@ var Inspector = function Inspector(_ref) {
   }))), /*#__PURE__*/React.createElement(PanelBody, {
     title: __("Colors"),
     initialOpen: false
-  }, /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
     label: __("Background Color"),
     color: priceboxBackground,
     onChange: function onChange(priceboxBackground) {
@@ -7406,7 +7770,7 @@ var Inspector = function Inspector(_ref) {
         priceboxBackground: priceboxBackground
       });
     }
-  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
     label: __("Title Background"),
     color: titleBackgroundColor,
     onChange: function onChange(titleBackgroundColor) {
@@ -7414,7 +7778,7 @@ var Inspector = function Inspector(_ref) {
         titleBackgroundColor: titleBackgroundColor
       });
     }
-  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
     label: __("Title Text"),
     color: titleTextColor,
     onChange: function onChange(titleTextColor) {
@@ -7422,7 +7786,7 @@ var Inspector = function Inspector(_ref) {
         titleTextColor: titleTextColor
       });
     }
-  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
     label: __("Price Background"),
     color: priceBackgroundColor,
     onChange: function onChange(priceBackgroundColor) {
@@ -7430,7 +7794,7 @@ var Inspector = function Inspector(_ref) {
         priceBackgroundColor: priceBackgroundColor
       });
     }
-  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
     label: __("Price Text"),
     color: priceTextColor,
     onChange: function onChange(priceTextColor) {
@@ -7438,7 +7802,7 @@ var Inspector = function Inspector(_ref) {
         priceTextColor: priceTextColor
       });
     }
-  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
     label: __("Features Background"),
     color: featuresBackgroundColor,
     onChange: function onChange(featuresBackgroundColor) {
@@ -7446,7 +7810,7 @@ var Inspector = function Inspector(_ref) {
         featuresBackgroundColor: featuresBackgroundColor
       });
     }
-  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
     label: __("Features Text"),
     color: featuresTextColor,
     onChange: function onChange(featuresTextColor) {
@@ -7457,7 +7821,7 @@ var Inspector = function Inspector(_ref) {
   })), /*#__PURE__*/React.createElement(PanelBody, {
     title: __("Border"),
     initialOpen: false
-  }, /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
     label: __("Border Color"),
     color: borderColor,
     onChange: function onChange(borderColor) {
@@ -7465,7 +7829,7 @@ var Inspector = function Inspector(_ref) {
         borderColor: borderColor
       });
     }
-  }), /*#__PURE__*/React.createElement(_util_reset_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }), /*#__PURE__*/React.createElement(_util_reset_control__WEBPACK_IMPORTED_MODULE_9__["default"], {
     onReset: function onReset() {
       return setAttributes({
         borderWidth: undefined
@@ -7492,7 +7856,7 @@ var Inspector = function Inspector(_ref) {
   })), /*#__PURE__*/React.createElement(PanelBody, {
     title: __("Shadow"),
     initialOpen: false
-  }, /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
     label: __("Shadow Color"),
     color: shadowColor,
     onChange: function onChange(shadowColor) {
@@ -7500,7 +7864,7 @@ var Inspector = function Inspector(_ref) {
         shadowColor: shadowColor
       });
     }
-  }), /*#__PURE__*/React.createElement(_util_reset_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }), /*#__PURE__*/React.createElement(_util_reset_control__WEBPACK_IMPORTED_MODULE_9__["default"], {
     onReset: function onReset() {
       return setAttributes({
         shadowHOffset: undefined
@@ -7516,7 +7880,7 @@ var Inspector = function Inspector(_ref) {
     },
     min: 0,
     max: 200
-  })), /*#__PURE__*/React.createElement(_util_reset_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  })), /*#__PURE__*/React.createElement(_util_reset_control__WEBPACK_IMPORTED_MODULE_9__["default"], {
     onReset: function onReset() {
       return setAttributes({
         shadowVOffset: undefined
@@ -7532,7 +7896,7 @@ var Inspector = function Inspector(_ref) {
     },
     min: 0,
     max: 200
-  })), /*#__PURE__*/React.createElement(_util_reset_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  })), /*#__PURE__*/React.createElement(_util_reset_control__WEBPACK_IMPORTED_MODULE_9__["default"], {
     onReset: function onReset() {
       return setAttributes({
         shadowBlur: undefined
@@ -7548,7 +7912,7 @@ var Inspector = function Inspector(_ref) {
     },
     min: 0,
     max: 200
-  })), /*#__PURE__*/React.createElement(_util_reset_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  })), /*#__PURE__*/React.createElement(_util_reset_control__WEBPACK_IMPORTED_MODULE_9__["default"], {
     onReset: function onReset() {
       return setAttributes({
         shadowSpread: undefined
@@ -7564,280 +7928,7 @@ var Inspector = function Inspector(_ref) {
     },
     min: 0,
     max: 200
-  }))), /*#__PURE__*/React.createElement(PanelBody, {
-    title: __("Button Settings"),
-    initialOpen: false
-  }, /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    selectedUnit: buttonHeightUnit,
-    unitTypes: [{
-      label: "px",
-      value: "px"
-    }, {
-      label: "em",
-      value: "em"
-    }, {
-      label: "%",
-      value: "%"
-    }],
-    onClick: function onClick(buttonHeightUnit) {
-      return setAttributes({
-        buttonHeightUnit: buttonHeightUnit
-      });
-    }
-  }), /*#__PURE__*/React.createElement(_util_reset_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    onReset: function onReset() {
-      return setAttributes({
-        buttonHeight: undefined
-      });
-    }
-  }, /*#__PURE__*/React.createElement(RangeControl, {
-    label: __("Height"),
-    value: buttonHeight,
-    onChange: function onChange(buttonHeight) {
-      return setAttributes({
-        buttonHeight: buttonHeight
-      });
-    },
-    min: 0,
-    max: 600
-  })), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    selectedUnit: buttonWidthUnit,
-    unitTypes: [{
-      label: "px",
-      value: "px"
-    }, {
-      label: "em",
-      value: "em"
-    }, {
-      label: "%",
-      value: "%"
-    }],
-    onClick: function onClick(buttonWidthUnit) {
-      return setAttributes({
-        buttonWidthUnit: buttonWidthUnit
-      });
-    }
-  }), /*#__PURE__*/React.createElement(_util_reset_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    onReset: function onReset() {
-      return setAttributes({
-        buttonWidth: undefined
-      });
-    }
-  }, /*#__PURE__*/React.createElement(RangeControl, {
-    label: __("Width"),
-    value: buttonWidth,
-    onChange: function onChange(buttonWidth) {
-      return setAttributes({
-        buttonWidth: buttonWidth
-      });
-    },
-    min: 0,
-    max: 600
-  })), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    selectedUnit: buttonSizeUnit,
-    unitTypes: [{
-      label: "px",
-      value: "px"
-    }, {
-      label: "em",
-      value: "em"
-    }, {
-      label: "%",
-      value: "%"
-    }],
-    onClick: function onClick(buttonSizeUnit) {
-      return setAttributes({
-        buttonSizeUnit: buttonSizeUnit
-      });
-    }
-  }), /*#__PURE__*/React.createElement(TextControl, {
-    label: __("Button Link"),
-    value: buttonURL,
-    onChange: function onChange(link) {
-      return setAttributes({
-        buttonURL: link
-      });
-    }
-  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    label: __("Button Background"),
-    color: buttonBackground,
-    onChange: function onChange(buttonBackground) {
-      return setAttributes({
-        buttonBackground: buttonBackground
-      });
-    }
-  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    label: __("Button Text"),
-    color: buttonTextColor,
-    onChange: function onChange(buttonTextColor) {
-      return setAttributes({
-        buttonTextColor: buttonTextColor
-      });
-    }
-  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    label: __("Border Color"),
-    color: buttonBorderColor,
-    onChange: function onChange(buttonBorderColor) {
-      return setAttributes({
-        buttonBorderColor: buttonBorderColor
-      });
-    }
-  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    label: __("Hover Background"),
-    color: hoverBackgroundColor,
-    onChange: function onChange(hoverBackgroundColor) {
-      return setAttributes({
-        hoverBackgroundColor: hoverBackgroundColor
-      });
-    }
-  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    label: __("Hover Text"),
-    color: hoverTextColor,
-    onChange: function onChange(hoverTextColor) {
-      return setAttributes({
-        hoverTextColor: hoverTextColor
-      });
-    }
-  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    label: __("Hover Border"),
-    color: hoverBorderColor,
-    onChange: function onChange(hoverBorderColor) {
-      return setAttributes({
-        hoverBorderColor: hoverBorderColor
-      });
-    }
-  }), /*#__PURE__*/React.createElement(PanelBody, {
-    title: __("Border"),
-    initialOpen: false
-  }, /*#__PURE__*/React.createElement(_util_reset_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    onReset: function onReset() {
-      return setAttributes({
-        buttonBorderWidth: undefined
-      });
-    }
-  }, /*#__PURE__*/React.createElement(RangeControl, {
-    label: __("Border Width (px)"),
-    value: buttonBorderWidth,
-    onChange: function onChange(buttonBorderWidth) {
-      return setAttributes({
-        buttonBorderWidth: buttonBorderWidth
-      });
-    },
-    min: 0,
-    max: 20
-  })), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    selectedUnit: buttonBorderRadiusUnit,
-    unitTypes: [{
-      label: "px",
-      value: "px"
-    }, {
-      label: "%",
-      value: "%"
-    }],
-    onClick: function onClick(buttonBorderRadiusUnit) {
-      return setAttributes({
-        buttonBorderRadiusUnit: buttonBorderRadiusUnit
-      });
-    }
-  }), /*#__PURE__*/React.createElement(_util_reset_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    onReset: function onReset() {
-      return setAttributes({
-        buttonBorderRadius: undefined
-      });
-    }
-  }, /*#__PURE__*/React.createElement(RangeControl, {
-    label: __("Border Radius"),
-    value: buttonBorderRadius,
-    onChange: function onChange(buttonBorderRadius) {
-      return setAttributes({
-        buttonBorderRadius: buttonBorderRadius
-      });
-    },
-    min: 0,
-    max: 100
-  })), /*#__PURE__*/React.createElement(SelectControl, {
-    label: __("Border Style"),
-    value: buttonBorderStyle,
-    options: _constants__WEBPACK_IMPORTED_MODULE_0__["BORDER_STYLES"],
-    onChange: function onChange(buttonBorderStyle) {
-      return setAttributes({
-        buttonBorderStyle: buttonBorderStyle
-      });
-    }
-  }))), /*#__PURE__*/React.createElement(PanelBody, {
-    title: __("Margin & Padding"),
-    initialOpen: false
-  }, /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    selectedUnit: marginUnit,
-    unitTypes: [{
-      label: "px",
-      value: "px"
-    }, {
-      label: "em",
-      value: "em"
-    }, {
-      label: "%",
-      value: "%"
-    }],
-    onClick: function onClick(marginUnit) {
-      return setAttributes({
-        marginUnit: marginUnit
-      });
-    }
-  }), /*#__PURE__*/React.createElement(_util_dimensions_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    label: __("Margin"),
-    top: marginTop,
-    right: marginRight,
-    bottom: marginBottom,
-    left: marginLeft,
-    onChange: function onChange(_ref6) {
-      var top = _ref6.top,
-          right = _ref6.right,
-          bottom = _ref6.bottom,
-          left = _ref6.left;
-      return setAttributes({
-        marginTop: top,
-        marginRight: right,
-        marginBottom: bottom,
-        marginLeft: left
-      });
-    }
-  }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    selectedUnit: paddingUnit,
-    unitTypes: [{
-      label: "px",
-      value: "px"
-    }, {
-      label: "em",
-      value: "em"
-    }, {
-      label: "%",
-      value: "%"
-    }],
-    onClick: function onClick(paddingUnit) {
-      return setAttributes({
-        paddingUnit: paddingUnit
-      });
-    }
-  }), /*#__PURE__*/React.createElement(_util_dimensions_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    label: __("Padding"),
-    top: paddingTop,
-    right: paddingRight,
-    bottom: paddingBottom,
-    left: paddingLeft,
-    onChange: function onChange(_ref7) {
-      var top = _ref7.top,
-          right = _ref7.right,
-          bottom = _ref7.bottom,
-          left = _ref7.left;
-      return setAttributes({
-        paddingTop: top,
-        paddingRight: right,
-        paddingBottom: bottom,
-        paddingLeft: left
-      });
-    }
-  }))));
+  })))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Inspector);
@@ -7875,6 +7966,12 @@ var save = function save(_ref) {
       currencyPlacement = attributes.currencyPlacement,
       pricePeriod = attributes.pricePeriod,
       periodSeparator = attributes.periodSeparator,
+      features = attributes.features,
+      showButton = attributes.showButton,
+      buttonIcon = attributes.buttonIcon,
+      buttonIconPosition = attributes.buttonIconPosition,
+      buttonText = attributes.buttonText,
+      buttonURL = attributes.buttonURL,
       displaySubtitle = attributes.displaySubtitle,
       titleBackgroundColor = attributes.titleBackgroundColor,
       titleTextColor = attributes.titleTextColor,
@@ -7883,15 +7980,12 @@ var save = function save(_ref) {
       priceDetails = attributes.priceDetails,
       priceBackgroundColor = attributes.priceBackgroundColor,
       priceTextColor = attributes.priceTextColor,
-      features = attributes.features,
       featuresBackgroundColor = attributes.featuresBackgroundColor,
       featuresTextColor = attributes.featuresTextColor,
       buttonBackground = attributes.buttonBackground,
       buttonTextColor = attributes.buttonTextColor,
-      buttonText = attributes.buttonText,
       hoverBackgroundColor = attributes.hoverBackgroundColor,
       hoverTextColor = attributes.hoverTextColor,
-      buttonURL = attributes.buttonURL,
       priceboxBackground = attributes.priceboxBackground,
       shadowColor = attributes.shadowColor,
       shadowHOffset = attributes.shadowHOffset,
@@ -7961,6 +8055,7 @@ var save = function save(_ref) {
       buttonLineHeightUnit = attributes.buttonLineHeightUnit,
       buttonLetterSpacing = attributes.buttonLetterSpacing,
       buttonLetterSpacingUnit = attributes.buttonLetterSpacingUnit;
+  console.log(features);
   var wrapperStyles = {
     margin: "".concat(marginTop || 0).concat(marginUnit, " ").concat(marginRight || 0).concat(marginUnit, " ").concat(marginBottom || 0).concat(marginUnit, " ").concat(marginLeft || 0).concat(marginUnit),
     padding: "".concat(paddingTop || 0).concat(paddingUnit, " ").concat(paddingRight || 0).concat(paddingUnit, " ").concat(paddingBottom || 0).concat(paddingUnit, " ").concat(paddingLeft || 0).concat(paddingUnit),
@@ -8087,8 +8182,7 @@ var save = function save(_ref) {
   }, periodSeparator, " ", pricePeriod)), /*#__PURE__*/React.createElement("div", {
     className: "body"
   }, /*#__PURE__*/React.createElement("ul", {
-    className: "ebgb-pricebox-features",
-    style: featureStyles
+    className: "ebgb-pricebox-features"
   }, features.map(function (_ref2) {
     var icon = _ref2.icon,
         text = _ref2.text,
@@ -8102,24 +8196,32 @@ var save = function save(_ref) {
       "data-color": color,
       "data-clickable": clickable,
       "data-link": link
+    }, clickable && link ? /*#__PURE__*/React.createElement("a", {
+      href: link
     }, /*#__PURE__*/React.createElement("span", {
-      className: "ebgb-pricebox-icon ".concat(icon),
-      style: {
-        color: color
-      }
+      className: "ebgb-pricebox-icon ".concat(icon)
     }), /*#__PURE__*/React.createElement("span", {
       className: "ebgb-pricebox-feature-text"
-    }, text));
-  }))), /*#__PURE__*/React.createElement("div", {
-    className: "footer"
+    }, text)) : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("span", {
+      className: "ebgb-pricebox-icon ".concat(icon)
+    }), /*#__PURE__*/React.createElement("span", {
+      className: "ebgb-pricebox-feature-text"
+    }, text)));
+  }))), showButton && /*#__PURE__*/React.createElement("div", {
+    className: "footer",
+    "data-icon": buttonIcon
   }, /*#__PURE__*/React.createElement("a", {
-    href: "#",
-    target: "_blank",
-    rel: "nofollow noopener",
+    href: buttonURL // target="_blank"
+    // rel="nofollow noopener"
+    ,
     className: "ebgb-pricing-button"
-  }, /*#__PURE__*/React.createElement("i", {
-    className: " fa-icon-left"
-  }), "Choose Plan", " ")))));
+  }, buttonIconPosition === "left" && /*#__PURE__*/React.createElement("i", {
+    className: buttonIcon
+  }), /*#__PURE__*/React.createElement("span", {
+    className: "ebgb-button-text"
+  }, buttonText), buttonIconPosition === "right" && /*#__PURE__*/React.createElement("i", {
+    className: buttonIcon
+  }))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (save);
@@ -8538,6 +8640,293 @@ var ColorControl = function ColorControl(_ref) {
 
 /***/ }),
 
+/***/ "./util/dimensions-control-v2/dimensions.js":
+/*!**************************************************!*\
+  !*** ./util/dimensions-control-v2/dimensions.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return DimensionsControl; });
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helpers */ "./util/helpers/index.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var _wp$element = wp.element,
+    useEffect = _wp$element.useEffect,
+    useState = _wp$element.useState;
+var dispatch = wp.data.dispatch;
+
+function DimensionsControl(_ref) {
+  var top = _ref.top,
+      right = _ref.right,
+      bottom = _ref.bottom,
+      left = _ref.left,
+      onChange = _ref.onChange,
+      neededProps = _ref.neededProps;
+
+  var _useState = useState({
+    top: top,
+    right: right,
+    bottom: bottom,
+    left: left
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      dimensions = _useState2[0],
+      setDimensions = _useState2[1];
+
+  var baseLabel = neededProps.baseLabel,
+      resOption = neededProps.resOption,
+      forBorderRadius = neededProps.forBorderRadius,
+      setAttributes = neededProps.setAttributes;
+
+  var _useState3 = useState(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      isLinked = _useState4[0],
+      setIsLinked = _useState4[1];
+
+  var onButtonClick = function onButtonClick() {
+    return setIsLinked(!isLinked);
+  };
+
+  var onInputChange = function onInputChange(event) {
+    var _event$target = event.target,
+        name = _event$target.name,
+        value = _event$target.value;
+
+    if (isLinked) {
+      setDimensions({
+        top: value,
+        right: value,
+        bottom: value,
+        left: value
+      });
+    } else {
+      setDimensions(function (prevDimensions) {
+        return _objectSpread(_objectSpread({}, prevDimensions), {}, _defineProperty({}, name, value));
+      });
+    }
+  };
+
+  useEffect(function () {
+    onChange(dimensions);
+  }, [dimensions]);
+  return /*#__PURE__*/React.createElement("div", {
+    className: "dimention-container"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "withResWrapperInDimension"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "dimention-label"
+  }, baseLabel), /*#__PURE__*/React.createElement("span", {
+    onClick: function onClick() {
+      return Object(_helpers__WEBPACK_IMPORTED_MODULE_0__["handleDesktopBtnClick"])({
+        setAttributes: setAttributes,
+        setPreviewDeviceType: dispatch("core/edit-post").__experimentalSetPreviewDeviceType
+      });
+    },
+    "class": "typoResButton dashicons dashicons-desktop ".concat(resOption === "Desktop" ? "active" : " ")
+  }), /*#__PURE__*/React.createElement("span", {
+    onClick: function onClick() {
+      return Object(_helpers__WEBPACK_IMPORTED_MODULE_0__["handleTabBtnClick"])({
+        setAttributes: setAttributes,
+        setPreviewDeviceType: dispatch("core/edit-post").__experimentalSetPreviewDeviceType
+      });
+    },
+    "class": "typoResButton dashicons dashicons-tablet ".concat(resOption === "Tablet" ? "active" : " ")
+  }), /*#__PURE__*/React.createElement("span", {
+    onClick: function onClick() {
+      return Object(_helpers__WEBPACK_IMPORTED_MODULE_0__["handleMobileBtnClick"])({
+        setAttributes: setAttributes,
+        setPreviewDeviceType: dispatch("core/edit-post").__experimentalSetPreviewDeviceType
+      });
+    },
+    "class": "typoResButton dashicons dashicons-smartphone ".concat(resOption === "Mobile" ? "active" : " ")
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "input-container"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "input-wrapper"
+  }, /*#__PURE__*/React.createElement("input", {
+    type: "number",
+    name: "top",
+    value: dimensions.top,
+    onChange: onInputChange
+  }), /*#__PURE__*/React.createElement("label", {
+    className: "dimentions-input-label"
+  }, forBorderRadius ? " " : "Top")), /*#__PURE__*/React.createElement("div", {
+    className: "input-wrapper"
+  }, /*#__PURE__*/React.createElement("input", {
+    type: "number",
+    name: "right",
+    value: dimensions.right,
+    onChange: onInputChange
+  }), /*#__PURE__*/React.createElement("label", {
+    className: "dimentions-input-label"
+  }, forBorderRadius ? " " : "Right")), /*#__PURE__*/React.createElement("div", {
+    className: "input-wrapper"
+  }, /*#__PURE__*/React.createElement("input", {
+    type: "number",
+    name: "bottom",
+    value: dimensions.bottom,
+    onChange: onInputChange
+  }), /*#__PURE__*/React.createElement("label", {
+    className: "dimentions-input-label"
+  }, forBorderRadius ? " " : "Bottom")), /*#__PURE__*/React.createElement("div", {
+    className: "input-wrapper"
+  }, /*#__PURE__*/React.createElement("input", {
+    type: "number",
+    name: "left",
+    value: dimensions.left,
+    onChange: onInputChange
+  }), /*#__PURE__*/React.createElement("label", {
+    className: "dimentions-input-label"
+  }, forBorderRadius ? " " : "Left")), /*#__PURE__*/React.createElement("button", {
+    className: "linked-btn components-button is-button dashicons dashicons-".concat(isLinked ? "admin-links is-primary" : "editor-unlink is-default"),
+    onClick: onButtonClick
+  })));
+}
+
+/***/ }),
+
+/***/ "./util/dimensions-control-v2/index.js":
+/*!*********************************************!*\
+  !*** ./util/dimensions-control-v2/index.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ResponsiveDimensionsControl; });
+/* harmony import */ var _dimensions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dimensions */ "./util/dimensions-control-v2/dimensions.js");
+/* harmony import */ var _unit_control__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../unit-control */ "./util/unit-control/index.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+function ResponsiveDimensionsControl(_ref) {
+  var resRequiredProps = _ref.resRequiredProps,
+      controlName = _ref.controlName,
+      baseLabel = _ref.baseLabel,
+      forBorderRadius = _ref.forBorderRadius;
+  var attributes = resRequiredProps.attributes,
+      setAttributes = resRequiredProps.setAttributes,
+      resOption = resRequiredProps.resOption;
+  var dimensionUnit = attributes["".concat(controlName, "Unit")],
+      dimensionTop = attributes["".concat(controlName, "Top")],
+      dimensionRight = attributes["".concat(controlName, "Right")],
+      dimensionBottom = attributes["".concat(controlName, "Bottom")],
+      dimensionLeft = attributes["".concat(controlName, "Left")],
+      TABdimensionUnit = attributes["TAB".concat(controlName, "Unit")],
+      TABdimensionTop = attributes["TAB".concat(controlName, "Top")],
+      TABdimensionRight = attributes["TAB".concat(controlName, "Right")],
+      TABdimensionBottom = attributes["TAB".concat(controlName, "Bottom")],
+      TABdimensionLeft = attributes["TAB".concat(controlName, "Left")],
+      MOBdimensionUnit = attributes["MOB".concat(controlName, "Unit")],
+      MOBdimensionTop = attributes["MOB".concat(controlName, "Top")],
+      MOBdimensionRight = attributes["MOB".concat(controlName, "Right")],
+      MOBdimensionBottom = attributes["MOB".concat(controlName, "Bottom")],
+      MOBdimensionLeft = attributes["MOB".concat(controlName, "Left")];
+  var UNITS = [{
+    label: "px",
+    value: "px"
+  }, {
+    label: "em",
+    value: "em"
+  }, {
+    label: "%",
+    value: "%"
+  }];
+  var neededProps = {
+    resOption: resOption,
+    baseLabel: baseLabel,
+    forBorderRadius: forBorderRadius,
+    setAttributes: setAttributes
+  };
+  return /*#__PURE__*/React.createElement(React.Fragment, null, resOption == "Desktop" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: dimensionUnit,
+    unitTypes: UNITS,
+    onClick: function onClick(dimensionUnit) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "Unit"), dimensionUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_dimensions__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    top: dimensionTop,
+    right: dimensionRight,
+    bottom: dimensionBottom,
+    left: dimensionLeft,
+    neededProps: neededProps,
+    onChange: function onChange(_ref2) {
+      var _setAttributes2;
+
+      var top = _ref2.top,
+          right = _ref2.right,
+          bottom = _ref2.bottom,
+          left = _ref2.left;
+      return setAttributes((_setAttributes2 = {}, _defineProperty(_setAttributes2, "".concat(controlName, "Top"), top), _defineProperty(_setAttributes2, "".concat(controlName, "Right"), right), _defineProperty(_setAttributes2, "".concat(controlName, "Bottom"), bottom), _defineProperty(_setAttributes2, "".concat(controlName, "Left"), left), _setAttributes2));
+    }
+  })), resOption == "Tablet" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: TABdimensionUnit,
+    unitTypes: UNITS,
+    onClick: function onClick(TABdimensionUnit) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "Unit"), TABdimensionUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_dimensions__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    top: TABdimensionTop,
+    right: TABdimensionRight,
+    bottom: TABdimensionBottom,
+    left: TABdimensionLeft,
+    neededProps: neededProps,
+    onChange: function onChange(_ref3) {
+      var _setAttributes4;
+
+      var top = _ref3.top,
+          right = _ref3.right,
+          bottom = _ref3.bottom,
+          left = _ref3.left;
+      return setAttributes((_setAttributes4 = {}, _defineProperty(_setAttributes4, "TAB".concat(controlName, "Top"), top), _defineProperty(_setAttributes4, "TAB".concat(controlName, "Right"), right), _defineProperty(_setAttributes4, "TAB".concat(controlName, "Bottom"), bottom), _defineProperty(_setAttributes4, "TAB".concat(controlName, "Left"), left), _setAttributes4));
+    }
+  })), resOption == "Mobile" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: MOBdimensionUnit,
+    unitTypes: UNITS,
+    onClick: function onClick(MOBdimensionUnit) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "Unit"), MOBdimensionUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_dimensions__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    top: MOBdimensionTop,
+    right: MOBdimensionRight,
+    bottom: MOBdimensionBottom,
+    left: MOBdimensionLeft,
+    neededProps: neededProps,
+    onChange: function onChange(_ref4) {
+      var _setAttributes6;
+
+      var top = _ref4.top,
+          right = _ref4.right,
+          bottom = _ref4.bottom,
+          left = _ref4.left;
+      return setAttributes((_setAttributes6 = {}, _defineProperty(_setAttributes6, "MOB".concat(controlName, "Top"), top), _defineProperty(_setAttributes6, "MOB".concat(controlName, "Right"), right), _defineProperty(_setAttributes6, "MOB".concat(controlName, "Bottom"), bottom), _defineProperty(_setAttributes6, "MOB".concat(controlName, "Left"), left), _setAttributes6));
+    }
+  })));
+}
+
+/***/ }),
+
 /***/ "./util/dimensions-control/index.js":
 /*!******************************************!*\
   !*** ./util/dimensions-control/index.js ***!
@@ -8746,6 +9135,1077 @@ DimensionsControl.propTypes = {
 __webpack_require__.r(__webpack_exports__);
 var faIcons = ["fab fa-500px", "fab fa-accessible-icon", "fab fa-accusoft", "fas fa-address-book", "far fa-address-book", "fas fa-address-card", "far fa-address-card", "fas fa-adjust", "fab fa-adn", "fab fa-adversal", "fab fa-affiliatetheme", "fab fa-algolia", "fas fa-align-center", "fas fa-align-justify", "fas fa-align-left", "fas fa-align-right", "fab fa-amazon", "fas fa-ambulance", "fas fa-american-sign-language-interpreting", "fab fa-amilia", "fas fa-anchor", "fab fa-android", "fab fa-angellist", "fas fa-angle-double-down", "fas fa-angle-double-left", "fas fa-angle-double-right", "fas fa-angle-double-up", "fas fa-angle-down", "fas fa-angle-left", "fas fa-angle-right", "fas fa-angle-up", "fab fa-angrycreative", "fab fa-angular", "fab fa-app-store", "fab fa-app-store-ios", "fab fa-apper", "fab fa-apple", "fab fa-apple-pay", "fas fa-archive", "fas fa-arrow-alt-circle-down", "far fa-arrow-alt-circle-down", "fas fa-arrow-alt-circle-left", "far fa-arrow-alt-circle-left", "fas fa-arrow-alt-circle-right", "far fa-arrow-alt-circle-right", "fas fa-arrow-alt-circle-up", "far fa-arrow-alt-circle-up", "fas fa-arrow-circle-down", "fas fa-arrow-circle-left", "fas fa-arrow-circle-right", "fas fa-arrow-circle-up", "fas fa-arrow-down", "fas fa-arrow-left", "fas fa-arrow-right", "fas fa-arrow-up", "fas fa-arrows-alt", "fas fa-arrows-alt-h", "fas fa-arrows-alt-v", "fas fa-assistive-listening-systems", "fas fa-asterisk", "fab fa-asymmetrik", "fas fa-at", "fab fa-audible", "fas fa-audio-description", "fab fa-autoprefixer", "fab fa-avianex", "fab fa-aviato", "fab fa-aws", "fas fa-backward", "fas fa-balance-scale", "fas fa-ban", "fab fa-bandcamp", "fas fa-barcode", "fas fa-bars", "fas fa-bath", "fas fa-battery-empty", "fas fa-battery-full", "fas fa-battery-half", "fas fa-battery-quarter", "fas fa-battery-three-quarters", "fas fa-bed", "fas fa-beer", "fab fa-behance", "fab fa-behance-square", "fas fa-bell", "far fa-bell", "fas fa-bell-slash", "far fa-bell-slash", "fas fa-bicycle", "fab fa-bimobject", "fas fa-binoculars", "fas fa-birthday-cake", "fab fa-bitbucket", "fab fa-bitcoin", "fab fa-bity", "fab fa-black-tie", "fab fa-blackberry", "fas fa-blind", "fab fa-blogger", "fab fa-blogger-b", "fab fa-bluetooth", "fab fa-bluetooth-b", "fas fa-bold", "fas fa-bolt", "fas fa-bomb", "fas fa-book", "fas fa-bookmark", "far fa-bookmark", "fas fa-braille", "fas fa-briefcase", "fab fa-btc", "fas fa-bug", "fas fa-building", "far fa-building", "fas fa-bullhorn", "fas fa-bullseye", "fab fa-buromobelexperte", "fas fa-bus", "fab fa-buysellads", "fas fa-calculator", "fas fa-calendar", "far fa-calendar", "fas fa-calendar-alt", "far fa-calendar-alt", "fas fa-calendar-check", "far fa-calendar-check", "fas fa-calendar-minus", "far fa-calendar-minus", "fas fa-calendar-plus", "far fa-calendar-plus", "fas fa-calendar-times", "far fa-calendar-times", "fas fa-camera", "fas fa-camera-retro", "fas fa-car", "fas fa-caret-down", "fas fa-caret-left", "fas fa-caret-right", "fas fa-caret-square-down", "far fa-caret-square-down", "fas fa-caret-square-left", "far fa-caret-square-left", "fas fa-caret-square-right", "far fa-caret-square-right", "fas fa-caret-square-up", "far fa-caret-square-up", "fas fa-caret-up", "fas fa-cart-arrow-down", "fas fa-cart-plus", "fab fa-cc-amex", "fab fa-cc-apple-pay", "fab fa-cc-diners-club", "fab fa-cc-discover", "fab fa-cc-jcb", "fab fa-cc-mastercard", "fab fa-cc-paypal", "fab fa-cc-stripe", "fab fa-cc-visa", "fab fa-centercode", "fas fa-certificate", "fas fa-chart-area", "fas fa-chart-bar", "far fa-chart-bar", "fas fa-chart-line", "fas fa-chart-pie", "fas fa-check", "fas fa-check-circle", "far fa-check-circle", "fas fa-check-square", "far fa-check-square", "fas fa-chevron-circle-down", "fas fa-chevron-circle-left", "fas fa-chevron-circle-right", "fas fa-chevron-circle-up", "fas fa-chevron-down", "fas fa-chevron-left", "fas fa-chevron-right", "fas fa-chevron-up", "fas fa-child", "fab fa-chrome", "fas fa-circle", "far fa-circle", "fas fa-circle-notch", "fas fa-clipboard", "far fa-clipboard", "fas fa-clock", "far fa-clock", "fas fa-clone", "far fa-clone", "fas fa-closed-captioning", "far fa-closed-captioning", "fas fa-cloud", "fas fa-cloud-download-alt", "fas fa-cloud-upload-alt", "fab fa-cloudscale", "fab fa-cloudsmith", "fab fa-cloudversify", "fas fa-code", "fas fa-code-branch", "fab fa-codepen", "fab fa-codiepie", "fas fa-coffee", "fas fa-cog", "fas fa-cogs", "fas fa-columns", "fas fa-comment", "far fa-comment", "fas fa-comment-alt", "far fa-comment-alt", "fas fa-comments", "far fa-comments", "fas fa-compass", "far fa-compass", "fas fa-compress", "fab fa-connectdevelop", "fab fa-contao", "fas fa-copy", "far fa-copy", "fas fa-copyright", "far fa-copyright", "fab fa-cpanel", "fab fa-creative-commons", "fas fa-credit-card", "far fa-credit-card", "fas fa-crop", "fas fa-crosshairs", "fab fa-css3", "fab fa-css3-alt", "fas fa-cube", "fas fa-cubes", "fas fa-cut", "fab fa-cuttlefish", "fab fa-d-and-d", "fab fa-dashcube", "fas fa-database", "fas fa-deaf", "fab fa-delicious", "fab fa-deploydog", "fab fa-deskpro", "fas fa-desktop", "fab fa-deviantart", "fab fa-digg", "fab fa-digital-ocean", "fab fa-discord", "fab fa-discourse", "fab fa-dochub", "fab fa-docker", "fas fa-dollar-sign", "fas fa-dot-circle", "far fa-dot-circle", "fas fa-download", "fab fa-draft2digital", "fab fa-dribbble", "fab fa-dribbble-square", "fab fa-dropbox", "fab fa-drupal", "fab fa-dyalog", "fab fa-earlybirds", "fab fa-edge", "fas fa-edit", "far fa-edit", "fas fa-eject", "fas fa-ellipsis-h", "fas fa-ellipsis-v", "fab fa-ember", "fab fa-empire", "fas fa-envelope", "far fa-envelope", "fas fa-envelope-open", "far fa-envelope-open", "fas fa-envelope-square", "fab fa-envira", "fas fa-eraser", "fab fa-erlang", "fab fa-etsy", "fas fa-euro-sign", "fas fa-exchange-alt", "fas fa-exclamation", "fas fa-exclamation-circle", "fas fa-exclamation-triangle", "fas fa-expand", "fas fa-expand-arrows-alt", "fab fa-expeditedssl", "fas fa-external-link-alt", "fas fa-external-link-square-alt", "fas fa-eye", "fas fa-eye-dropper", "fas fa-eye-slash", "far fa-eye-slash", "fab fa-facebook", "fab fa-facebook-f", "fab fa-facebook-messenger", "fab fa-facebook-square", "fas fa-fast-backward", "fas fa-fast-forward", "fas fa-fax", "fas fa-female", "fas fa-fighter-jet", "fas fa-file", "far fa-file", "fas fa-file-alt", "far fa-file-alt", "fas fa-file-archive", "far fa-file-archive", "fas fa-file-audio", "far fa-file-audio", "fas fa-file-code", "far fa-file-code", "fas fa-file-excel", "far fa-file-excel", "fas fa-file-image", "far fa-file-image", "fas fa-file-pdf", "far fa-file-pdf", "fas fa-file-powerpoint", "far fa-file-powerpoint", "fas fa-file-video", "far fa-file-video", "fas fa-file-word", "far fa-file-word", "fas fa-film", "fas fa-filter", "fas fa-fire", "fas fa-fire-extinguisher", "fab fa-firefox", "fab fa-first-order", "fab fa-firstdraft", "fas fa-flag", "far fa-flag", "fas fa-flag-checkered", "fas fa-flask", "fab fa-flickr", "fab fa-fly", "fas fa-folder", "far fa-folder", "fas fa-folder-open", "far fa-folder-open", "fas fa-font", "fab fa-font-awesome", "fab fa-font-awesome-alt", "fab fa-font-awesome-flag", "fab fa-fonticons", "fab fa-fonticons-fi", "fab fa-fort-awesome", "fab fa-fort-awesome-alt", "fab fa-forumbee", "fas fa-forward", "fab fa-foursquare", "fab fa-free-code-camp", "fab fa-freebsd", "fas fa-frown", "far fa-frown", "fas fa-futbol", "far fa-futbol", "fas fa-gamepad", "fas fa-gavel", "fas fa-gem", "far fa-gem", "fas fa-genderless", "fab fa-get-pocket", "fab fa-gg", "fab fa-gg-circle", "fas fa-gift", "fab fa-git", "fab fa-git-square", "fab fa-github", "fab fa-github-alt", "fab fa-github-square", "fab fa-gitkraken", "fab fa-gitlab", "fab fa-gitter", "fas fa-glass-martini", "fab fa-glide", "fab fa-glide-g", "fas fa-globe", "fab fa-gofore", "fab fa-goodreads", "fab fa-goodreads-g", "fab fa-google", "fab fa-google-drive", "fab fa-google-play", "fab fa-google-plus", "fab fa-google-plus-g", "fab fa-google-plus-square", "fab fa-google-wallet", "fas fa-graduation-cap", "fab fa-gratipay", "fab fa-grav", "fab fa-gripfire", "fab fa-grunt", "fab fa-gulp", "fas fa-h-square", "fab fa-hacker-news", "fab fa-hacker-news-square", "fas fa-hand-lizard", "far fa-hand-lizard", "fas fa-hand-paper", "far fa-hand-paper", "fas fa-hand-peace", "far fa-hand-peace", "fas fa-hand-point-down", "far fa-hand-point-down", "fas fa-hand-point-left", "far fa-hand-point-left", "fas fa-hand-point-right", "far fa-hand-point-right", "fas fa-hand-point-up", "far fa-hand-point-up", "fas fa-hand-pointer", "far fa-hand-pointer", "fas fa-hand-rock", "far fa-hand-rock", "fas fa-hand-scissors", "far fa-hand-scissors", "fas fa-hand-spock", "far fa-hand-spock", "fas fa-handshake", "far fa-handshake", "fas fa-hashtag", "fas fa-hdd", "far fa-hdd", "fas fa-heading", "fas fa-headphones", "fas fa-heart", "far fa-heart", "fas fa-heartbeat", "fab fa-hire-a-helper", "fas fa-history", "fas fa-home", "fab fa-hooli", "fas fa-hospital", "far fa-hospital", "fab fa-hotjar", "fas fa-hourglass", "far fa-hourglass", "fas fa-hourglass-end", "fas fa-hourglass-half", "fas fa-hourglass-start", "fab fa-houzz", "fab fa-html5", "fab fa-hubspot", "fas fa-i-cursor", "fas fa-id-badge", "far fa-id-badge", "fas fa-id-card", "far fa-id-card", "fas fa-image", "far fa-image", "fas fa-images", "far fa-images", "fab fa-imdb", "fas fa-inbox", "fas fa-indent", "fas fa-industry", "fas fa-info", "fas fa-info-circle", "fab fa-instagram", "fab fa-internet-explorer", "fab fa-ioxhost", "fas fa-italic", "fab fa-itunes", "fab fa-itunes-note", "fab fa-jenkins", "fab fa-joget", "fab fa-joomla", "fab fa-js", "fab fa-js-square", "fab fa-jsfiddle", "fas fa-key", "fas fa-keyboard", "far fa-keyboard", "fab fa-keycdn", "fab fa-kickstarter", "fab fa-kickstarter-k", "fas fa-language", "fas fa-laptop", "fab fa-laravel", "fab fa-lastfm", "fab fa-lastfm-square", "fas fa-leaf", "fab fa-leanpub", "fas fa-lemon", "far fa-lemon", "fab fa-less", "fas fa-level-down-alt", "fas fa-level-up-alt", "fas fa-life-ring", "far fa-life-ring", "fas fa-lightbulb", "far fa-lightbulb", "fab fa-line", "fas fa-link", "fab fa-linkedin", "fab fa-linkedin-in", "fab fa-linode", "fab fa-linux", "fas fa-lira-sign", "fas fa-list", "fas fa-list-alt", "far fa-list-alt", "fas fa-list-ol", "fas fa-list-ul", "fas fa-location-arrow", "fas fa-lock", "fas fa-lock-open", "fas fa-long-arrow-alt-down", "fas fa-long-arrow-alt-left", "fas fa-long-arrow-alt-right", "fas fa-long-arrow-alt-up", "fas fa-low-vision", "fab fa-lyft", "fab fa-magento", "fas fa-magic", "fas fa-magnet", "fas fa-male", "fas fa-map", "far fa-map", "fas fa-map-marker", "fas fa-map-marker-alt", "fas fa-map-pin", "fas fa-map-signs", "fas fa-mars", "fas fa-mars-double", "fas fa-mars-stroke", "fas fa-mars-stroke-h", "fas fa-mars-stroke-v", "fab fa-maxcdn", "fab fa-medapps", "fab fa-medium", "fab fa-medium-m", "fas fa-medkit", "fab fa-medrt", "fab fa-meetup", "fas fa-meh", "far fa-meh", "fas fa-mercury", "fas fa-microchip", "fas fa-microphone", "fas fa-microphone-slash", "fab fa-microsoft", "fas fa-minus", "fas fa-minus-circle", "fas fa-minus-square", "far fa-minus-square", "fab fa-mix", "fab fa-mixcloud", "fab fa-mizuni", "fas fa-mobile", "fas fa-mobile-alt", "fab fa-modx", "fab fa-monero", "fas fa-money-bill-alt", "far fa-money-bill-alt", "fas fa-moon", "far fa-moon", "fas fa-motorcycle", "fas fa-mouse-pointer", "fas fa-music", "fab fa-napster", "fas fa-neuter", "fas fa-newspaper", "far fa-newspaper", "fab fa-nintendo-switch", "fab fa-node", "fab fa-node-js", "fab fa-npm", "fab fa-ns8", "fab fa-nutritionix", "fas fa-object-group", "far fa-object-group", "fas fa-object-ungroup", "far fa-object-ungroup", "fab fa-odnoklassniki", "fab fa-odnoklassniki-square", "fab fa-opencart", "fab fa-openid", "fab fa-opera", "fab fa-optin-monster", "fab fa-osi", "fas fa-outdent", "fab fa-page4", "fab fa-pagelines", "fas fa-paint-brush", "fab fa-palfed", "fas fa-paper-plane", "far fa-paper-plane", "fas fa-paperclip", "fas fa-paragraph", "fas fa-paste", "fab fa-patreon", "fas fa-pause", "fas fa-pause-circle", "far fa-pause-circle", "fas fa-paw", "fab fa-paypal", "fas fa-pen-square", "fas fa-pencil-alt", "fas fa-percent", "fab fa-periscope", "fab fa-phabricator", "fab fa-phoenix-framework", "fas fa-phone", "fas fa-phone-square", "fas fa-phone-volume", "fab fa-pied-piper", "fab fa-pied-piper-alt", "fab fa-pied-piper-pp", "fab fa-pinterest", "fab fa-pinterest-p", "fab fa-pinterest-square", "fas fa-plane", "fas fa-play", "fas fa-play-circle", "far fa-play-circle", "fab fa-playstation", "fas fa-plug", "fas fa-plus", "fas fa-plus-circle", "fas fa-plus-square", "far fa-plus-square", "fas fa-podcast", "fas fa-pound-sign", "fas fa-power-off", "fas fa-print", "fab fa-product-hunt", "fab fa-pushed", "fas fa-puzzle-piece", "fab fa-python", "fab fa-qq", "fas fa-qrcode", "fas fa-question", "fas fa-question-circle", "far fa-question-circle", "fab fa-quora", "fas fa-quote-left", "fas fa-quote-right", "fas fa-random", "fab fa-ravelry", "fab fa-react", "fab fa-rebel", "fas fa-recycle", "fab fa-red-river", "fab fa-reddit", "fab fa-reddit-alien", "fab fa-reddit-square", "fas fa-redo", "fas fa-redo-alt", "fas fa-registered", "far fa-registered", "fab fa-rendact", "fab fa-renren", "fas fa-reply", "fas fa-reply-all", "fab fa-replyd", "fab fa-resolving", "fas fa-retweet", "fas fa-road", "fas fa-rocket", "fab fa-rocketchat", "fab fa-rockrms", "fas fa-rss", "fas fa-rss-square", "fas fa-ruble-sign", "fas fa-rupee-sign", "fab fa-safari", "fab fa-sass", "fas fa-save", "far fa-save", "fab fa-schlix", "fab fa-scribd", "fas fa-search", "fas fa-search-minus", "fas fa-search-plus", "fab fa-searchengin", "fab fa-sellcast", "fab fa-sellsy", "fas fa-server", "fab fa-servicestack", "fas fa-share", "fas fa-share-alt", "fas fa-share-alt-square", "fas fa-share-square", "far fa-share-square", "fas fa-shekel-sign", "fas fa-shield-alt", "fas fa-ship", "fab fa-shirtsinbulk", "fas fa-shopping-bag", "fas fa-shopping-basket", "fas fa-shopping-cart", "fas fa-shower", "fas fa-sign-in-alt", "fas fa-sign-language", "fas fa-sign-out-alt", "fas fa-signal", "fab fa-simplybuilt", "fab fa-sistrix", "fas fa-sitemap", "fab fa-skyatlas", "fab fa-skype", "fab fa-slack", "fab fa-slack-hash", "fas fa-sliders-h", "fab fa-slideshare", "fas fa-smile", "far fa-smile", "fab fa-snapchat", "fab fa-snapchat-ghost", "fab fa-snapchat-square", "fas fa-snowflake", "far fa-snowflake", "fas fa-sort", "fas fa-sort-alpha-down", "fas fa-sort-alpha-up", "fas fa-sort-amount-down", "fas fa-sort-amount-up", "fas fa-sort-down", "fas fa-sort-numeric-down", "fas fa-sort-numeric-up", "fas fa-sort-up", "fab fa-soundcloud", "fas fa-space-shuttle", "fab fa-speakap", "fas fa-spinner", "fab fa-spotify", "fas fa-square", "far fa-square", "fab fa-stack-exchange", "fab fa-stack-overflow", "fas fa-star", "far fa-star", "fas fa-star-half", "far fa-star-half", "fab fa-staylinked", "fab fa-steam", "fab fa-steam-square", "fab fa-steam-symbol", "fas fa-step-backward", "fas fa-step-forward", "fas fa-stethoscope", "fab fa-sticker-mule", "fas fa-sticky-note", "far fa-sticky-note", "fas fa-stop", "fas fa-stop-circle", "far fa-stop-circle", "fab fa-strava", "fas fa-street-view", "fas fa-strikethrough", "fab fa-stripe", "fab fa-stripe-s", "fab fa-studiovinari", "fab fa-stumbleupon", "fab fa-stumbleupon-circle", "fas fa-subscript", "fas fa-subway", "fas fa-suitcase", "fas fa-sun", "far fa-sun", "fab fa-superpowers", "fas fa-superscript", "fab fa-supple", "fas fa-sync", "fas fa-sync-alt", "fas fa-table", "fas fa-tablet", "fas fa-tablet-alt", "fas fa-tachometer-alt", "fas fa-tag", "fas fa-tags", "fas fa-tasks", "fas fa-taxi", "fab fa-telegram", "fab fa-telegram-plane", "fab fa-tencent-weibo", "fas fa-terminal", "fas fa-text-height", "fas fa-text-width", "fas fa-th", "fas fa-th-large", "fas fa-th-list", "fab fa-themeisle", "fas fa-thermometer-empty", "fas fa-thermometer-full", "fas fa-thermometer-half", "fas fa-thermometer-quarter", "fas fa-thermometer-three-quarters", "fas fa-thumbs-down", "far fa-thumbs-down", "fas fa-thumbs-up", "far fa-thumbs-up", "fas fa-thumbtack", "fas fa-ticket-alt", "fas fa-times", "fas fa-times-circle", "far fa-times-circle", "fas fa-tint", "fas fa-toggle-off", "fas fa-toggle-on", "fas fa-trademark", "fas fa-train", "fas fa-transgender", "fas fa-transgender-alt", "fas fa-trash", "fas fa-trash-alt", "far fa-trash-alt", "fas fa-tree", "fab fa-trello", "fab fa-tripadvisor", "fas fa-trophy", "fas fa-truck", "fas fa-tty", "fab fa-tumblr", "fab fa-tumblr-square", "fas fa-tv", "fab fa-twitch", "fab fa-twitter", "fab fa-twitter-square", "fab fa-typo3", "fab fa-uber", "fab fa-uikit", "fas fa-umbrella", "fas fa-underline", "fas fa-undo", "fas fa-undo-alt", "fab fa-uniregistry", "fas fa-universal-access", "fas fa-university", "fas fa-unlink", "fas fa-unlock", "fas fa-unlock-alt", "fab fa-untappd", "fas fa-upload", "fab fa-usb", "fas fa-user", "far fa-user", "fas fa-user-circle", "far fa-user-circle", "fas fa-user-md", "fas fa-user-plus", "fas fa-user-secret", "fas fa-user-times", "fas fa-users", "fab fa-ussunnah", "fas fa-utensil-spoon", "fas fa-utensils", "fab fa-vaadin", "fas fa-venus", "fas fa-venus-double", "fas fa-venus-mars", "fab fa-viacoin", "fab fa-viadeo", "fab fa-viadeo-square", "fab fa-viber", "fas fa-video", "fab fa-vimeo", "fab fa-vimeo-square", "fab fa-vimeo-v", "fab fa-vine", "fab fa-vk", "fab fa-vnv", "fas fa-volume-down", "fas fa-volume-off", "fas fa-volume-up", "fab fa-vuejs", "fab fa-weibo", "fab fa-weixin", "fab fa-whatsapp", "fab fa-whatsapp-square", "fas fa-wheelchair", "fab fa-whmcs", "fas fa-wifi", "fab fa-wikipedia-w", "fas fa-window-close", "far fa-window-close", "fas fa-window-maximize", "far fa-window-maximize", "fas fa-window-minimize", "fas fa-window-restore", "far fa-window-restore", "fab fa-windows", "fas fa-won-sign", "fab fa-wordpress", "fab fa-wordpress-simple", "fab fa-wpbeginner", "fab fa-wpexplorer", "fab fa-wpforms", "fas fa-wrench", "fab fa-xbox", "fab fa-xing", "fab fa-xing-square", "fab fa-y-combinator", "fab fa-yahoo", "fab fa-yandex", "fab fa-yandex-international", "fab fa-yelp", "fas fa-yen-sign", "fab fa-yoast", "fab fa-youtube"];
 /* harmony default export */ __webpack_exports__["default"] = (faIcons);
+
+/***/ }),
+
+/***/ "./util/helpers/index.js":
+/*!*******************************!*\
+  !*** ./util/helpers/index.js ***!
+  \*******************************/
+/*! exports provided: hasVal, generateBackgroundAttributes, generateDimensionsAttributes, generateTypographyAttributes, generateBorderShadowAttributes, textInsideForEdit, generateRandomNumber, hardMinifyCssStrings, softMinifyCssStrings, isCssExists, generateTypographyStyles, generateDimensionsControlStyles, generateBorderShadowStyles, generateBackgroundControlStyles, generateResponsiveRangeAttributes, generateResponsiveRangeStyles, getFlipTransform, getButtonClasses, getBackgroundImage, handleDesktopBtnClick, handleTabBtnClick, handleMobileBtnClick, mimmikCssForResBtns, mimmikCssForPreviewBtnClick, mimmikCssOnPreviewBtnClickWhileBlockSelected, duplicateBlockIdFix */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hasVal", function() { return hasVal; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "generateBackgroundAttributes", function() { return generateBackgroundAttributes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "generateDimensionsAttributes", function() { return generateDimensionsAttributes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "generateTypographyAttributes", function() { return generateTypographyAttributes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "generateBorderShadowAttributes", function() { return generateBorderShadowAttributes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "textInsideForEdit", function() { return textInsideForEdit; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "generateRandomNumber", function() { return generateRandomNumber; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hardMinifyCssStrings", function() { return hardMinifyCssStrings; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "softMinifyCssStrings", function() { return softMinifyCssStrings; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isCssExists", function() { return isCssExists; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "generateTypographyStyles", function() { return generateTypographyStyles; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "generateDimensionsControlStyles", function() { return generateDimensionsControlStyles; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "generateBorderShadowStyles", function() { return generateBorderShadowStyles; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "generateBackgroundControlStyles", function() { return generateBackgroundControlStyles; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "generateResponsiveRangeAttributes", function() { return generateResponsiveRangeAttributes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "generateResponsiveRangeStyles", function() { return generateResponsiveRangeStyles; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getFlipTransform", function() { return getFlipTransform; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getButtonClasses", function() { return getButtonClasses; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getBackgroundImage", function() { return getBackgroundImage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "handleDesktopBtnClick", function() { return handleDesktopBtnClick; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "handleTabBtnClick", function() { return handleTabBtnClick; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "handleMobileBtnClick", function() { return handleMobileBtnClick; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mimmikCssForResBtns", function() { return mimmikCssForResBtns; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mimmikCssForPreviewBtnClick", function() { return mimmikCssForPreviewBtnClick; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mimmikCssOnPreviewBtnClickWhileBlockSelected", function() { return mimmikCssOnPreviewBtnClickWhileBlockSelected; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "duplicateBlockIdFix", function() { return duplicateBlockIdFix; });
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+// check if range controller input numbers  has value
+var hasVal = function hasVal(val) {
+  return val || val === 0;
+}; // function to generate Background control's attributes
+
+var generateBackgroundAttributes = function generateBackgroundAttributes(controlName) {
+  var _objectSpread3;
+
+  var defaults = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var isBgDefaultGradient = defaults.isBgDefaultGradient,
+      defaultFillColor = defaults.defaultFillColor,
+      _defaults$defaultBgGr = defaults.defaultBgGradient,
+      defaultBgGradient = _defaults$defaultBgGr === void 0 ? "linear-gradient(45deg,#00000000,#00000000)" : _defaults$defaultBgGr;
+  var bgColorAttr = defaultFillColor ? _defineProperty({}, "".concat(controlName, "backgroundColor"), {
+    type: "string",
+    "default": defaultFillColor
+  }) : _defineProperty({}, "".concat(controlName, "backgroundColor"), {
+    type: "string"
+  });
+  return _objectSpread(_objectSpread(_defineProperty({}, "".concat(controlName, "backgroundType"), {
+    type: "string",
+    "default": isBgDefaultGradient === true ? "gradient" : "fill"
+  }), bgColorAttr), {}, (_objectSpread3 = {}, _defineProperty(_objectSpread3, "".concat(controlName, "gradientColor"), {
+    type: "string",
+    "default": defaultBgGradient
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "bgImageURL"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "bgImageID"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "backgroundSize"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "bgImgCustomSize"), {
+    type: "number",
+    "default": 100
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "bgImgCustomSizeUnit"), {
+    type: "string",
+    "default": "%"
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "bgImgPos"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "bgImgcustomPosX"), {
+    type: "number",
+    "default": 0
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "bgImgcustomPosXUnit"), {
+    type: "string",
+    "default": "px"
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "bgImgcustomPosY"), {
+    type: "number",
+    "default": 0
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "bgImgcustomPosYUnit"), {
+    type: "string",
+    "default": "px"
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "bgImgAttachment"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "bgImgRepeat"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "isBgOverly"), {
+    type: "boolean",
+    "default": false
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "overlyType"), {
+    type: "string",
+    "default": "fill"
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "overlyColor"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "overlyGradient"), {
+    type: "string",
+    "default": "linear-gradient(45deg,#000000cc,#00000000)"
+  }), _defineProperty(_objectSpread3, "TAB".concat(controlName, "backgroundSize"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "TAB".concat(controlName, "bgImgCustomSize"), {
+    type: "number",
+    "default": 100
+  }), _defineProperty(_objectSpread3, "TAB".concat(controlName, "bgImgCustomSizeUnit"), {
+    type: "string",
+    "default": "%"
+  }), _defineProperty(_objectSpread3, "TAB".concat(controlName, "bgImgPos"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "TAB".concat(controlName, "bgImgcustomPosX"), {
+    type: "number",
+    "default": 0
+  }), _defineProperty(_objectSpread3, "TAB".concat(controlName, "bgImgcustomPosXUnit"), {
+    type: "string",
+    "default": "px"
+  }), _defineProperty(_objectSpread3, "TAB".concat(controlName, "bgImgcustomPosY"), {
+    type: "number",
+    "default": 0
+  }), _defineProperty(_objectSpread3, "TAB".concat(controlName, "bgImgcustomPosYUnit"), {
+    type: "string",
+    "default": "px"
+  }), _defineProperty(_objectSpread3, "TAB".concat(controlName, "bgImgRepeat"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "MOB".concat(controlName, "backgroundSize"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "MOB".concat(controlName, "bgImgCustomSize"), {
+    type: "number",
+    "default": 100
+  }), _defineProperty(_objectSpread3, "MOB".concat(controlName, "bgImgCustomSizeUnit"), {
+    type: "string",
+    "default": "%"
+  }), _defineProperty(_objectSpread3, "MOB".concat(controlName, "bgImgPos"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "MOB".concat(controlName, "bgImgcustomPosX"), {
+    type: "number",
+    "default": 0
+  }), _defineProperty(_objectSpread3, "MOB".concat(controlName, "bgImgcustomPosXUnit"), {
+    type: "string",
+    "default": "px"
+  }), _defineProperty(_objectSpread3, "MOB".concat(controlName, "bgImgcustomPosY"), {
+    type: "number",
+    "default": 0
+  }), _defineProperty(_objectSpread3, "MOB".concat(controlName, "bgImgcustomPosYUnit"), {
+    type: "string",
+    "default": "px"
+  }), _defineProperty(_objectSpread3, "MOB".concat(controlName, "bgImgRepeat"), {
+    type: "string"
+  }), _objectSpread3));
+}; // function to generate New Dimensions-Control's attributes for multiple Dimensions control based on the array of values(prefixs)
+
+var generateDimensionsAttributes = function generateDimensionsAttributes(controlName) {
+  var _objectSpread5;
+
+  var defaults = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var top = defaults.top,
+      right = defaults.right,
+      bottom = defaults.bottom,
+      left = defaults.left;
+  var desktopTop = hasVal(top) ? _defineProperty({}, "".concat(controlName, "Top"), {
+    type: "string",
+    "default": "".concat(top)
+  }) : _defineProperty({}, "".concat(controlName, "Top"), {
+    type: "string"
+  });
+  var desktopRight = hasVal(right) ? _defineProperty({}, "".concat(controlName, "Right"), {
+    type: "string",
+    "default": "".concat(right)
+  }) : _defineProperty({}, "".concat(controlName, "Right"), {
+    type: "string"
+  });
+  var desktopBottom = hasVal(bottom) ? _defineProperty({}, "".concat(controlName, "Bottom"), {
+    type: "string",
+    "default": "".concat(bottom)
+  }) : _defineProperty({}, "".concat(controlName, "Bottom"), {
+    type: "string"
+  });
+  var desktopLeft = hasVal(left) ? _defineProperty({}, "".concat(controlName, "Left"), {
+    type: "string",
+    "default": "".concat(left)
+  }) : _defineProperty({}, "".concat(controlName, "Left"), {
+    type: "string"
+  });
+  return _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_defineProperty({}, "".concat(controlName, "Unit"), {
+    type: "string",
+    "default": "px"
+  }), desktopTop), desktopRight), desktopBottom), desktopLeft), {}, (_objectSpread5 = {}, _defineProperty(_objectSpread5, "TAB".concat(controlName, "Unit"), {
+    type: "string",
+    "default": "px"
+  }), _defineProperty(_objectSpread5, "TAB".concat(controlName, "Top"), {
+    type: "string"
+  }), _defineProperty(_objectSpread5, "TAB".concat(controlName, "Right"), {
+    type: "string"
+  }), _defineProperty(_objectSpread5, "TAB".concat(controlName, "Bottom"), {
+    type: "string"
+  }), _defineProperty(_objectSpread5, "TAB".concat(controlName, "Left"), {
+    type: "string"
+  }), _defineProperty(_objectSpread5, "MOB".concat(controlName, "Unit"), {
+    type: "string",
+    "default": "px"
+  }), _defineProperty(_objectSpread5, "MOB".concat(controlName, "Top"), {
+    type: "string"
+  }), _defineProperty(_objectSpread5, "MOB".concat(controlName, "Right"), {
+    type: "string"
+  }), _defineProperty(_objectSpread5, "MOB".concat(controlName, "Bottom"), {
+    type: "string"
+  }), _defineProperty(_objectSpread5, "MOB".concat(controlName, "Left"), {
+    type: "string"
+  }), _objectSpread5));
+}; // function to generate typography attributes for multiple typography control based on the array of prefix
+
+var generateTypographyAttributes = function generateTypographyAttributes(prefixArray) {
+  var typoAttrs = prefixArray.reduce(function (total, current) {
+    var _result;
+
+    var result = (_result = {}, _defineProperty(_result, "".concat(current, "FontFamily"), {
+      type: "string"
+    }), _defineProperty(_result, "".concat(current, "SizeUnit"), {
+      type: "string",
+      "default": "px"
+    }), _defineProperty(_result, "".concat(current, "FontSize"), {
+      type: "number"
+    }), _defineProperty(_result, "".concat(current, "FontWeight"), {
+      type: "string"
+    }), _defineProperty(_result, "".concat(current, "TextTransform"), {
+      type: "string"
+    }), _defineProperty(_result, "".concat(current, "TextDecoration"), {
+      type: "string"
+    }), _defineProperty(_result, "".concat(current, "LetterSpacingUnit"), {
+      type: "string",
+      "default": "px"
+    }), _defineProperty(_result, "".concat(current, "LetterSpacing"), {
+      type: "number"
+    }), _defineProperty(_result, "".concat(current, "LineHeightUnit"), {
+      type: "string",
+      "default": "em"
+    }), _defineProperty(_result, "".concat(current, "LineHeight"), {
+      type: "number"
+    }), _defineProperty(_result, "TAB".concat(current, "SizeUnit"), {
+      type: "string",
+      "default": "px"
+    }), _defineProperty(_result, "TAB".concat(current, "FontSize"), {
+      type: "number"
+    }), _defineProperty(_result, "TAB".concat(current, "LetterSpacingUnit"), {
+      type: "string",
+      "default": "px"
+    }), _defineProperty(_result, "TAB".concat(current, "LetterSpacing"), {
+      type: "number"
+    }), _defineProperty(_result, "TAB".concat(current, "LineHeightUnit"), {
+      type: "string",
+      "default": "em"
+    }), _defineProperty(_result, "TAB".concat(current, "LineHeight"), {
+      type: "number"
+    }), _defineProperty(_result, "MOB".concat(current, "SizeUnit"), {
+      type: "string",
+      "default": "px"
+    }), _defineProperty(_result, "MOB".concat(current, "FontSize"), {
+      type: "number"
+    }), _defineProperty(_result, "MOB".concat(current, "LetterSpacingUnit"), {
+      type: "string",
+      "default": "px"
+    }), _defineProperty(_result, "MOB".concat(current, "LetterSpacing"), {
+      type: "number"
+    }), _defineProperty(_result, "MOB".concat(current, "LineHeightUnit"), {
+      type: "string",
+      "default": "em"
+    }), _defineProperty(_result, "MOB".concat(current, "LineHeight"), {
+      type: "number"
+    }), _result);
+    return _objectSpread(_objectSpread({}, total), result);
+  }, {}); //
+  // console.log({ typoAttrs });
+
+  return typoAttrs;
+}; // Important: the following "generateBorderShadowAttributes" function must be declared below the "generateDimensionsAttributes" function declaration
+// function to generate BorderShadow control's attributes
+
+var generateBorderShadowAttributes = function generateBorderShadowAttributes(controlName) {
+  var _objectSpread6, _shdAttrs;
+
+  var defaults = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var _defaults$bdrDefaults = defaults.bdrDefaults,
+      bdrDefaults = _defaults$bdrDefaults === void 0 ? {
+    top: 1,
+    right: 1,
+    bottom: 1,
+    left: 1
+  } : _defaults$bdrDefaults,
+      _defaults$rdsDefaults = defaults.rdsDefaults,
+      rdsDefaults = _defaults$rdsDefaults === void 0 ? {} : _defaults$rdsDefaults,
+      _defaults$noBorder = defaults.noBorder,
+      noBorder = _defaults$noBorder === void 0 ? false : _defaults$noBorder,
+      _defaults$noShadow = defaults.noShadow,
+      noShadow = _defaults$noShadow === void 0 ? false : _defaults$noShadow;
+
+  var bdrAttrs = _objectSpread(_objectSpread(_objectSpread(_objectSpread((_objectSpread6 = {}, _defineProperty(_objectSpread6, "".concat(controlName, "BorderType"), {
+    type: "string",
+    "default": "normal"
+  }), _defineProperty(_objectSpread6, "".concat(controlName, "borderColor"), {
+    type: "string"
+  }), _defineProperty(_objectSpread6, "".concat(controlName, "borderStyle"), {
+    type: "string",
+    "default": "none"
+  }), _defineProperty(_objectSpread6, "".concat(controlName, "HborderColor"), {
+    type: "string"
+  }), _defineProperty(_objectSpread6, "".concat(controlName, "HborderStyle"), {
+    type: "string",
+    "default": "none"
+  }), _objectSpread6), generateDimensionsAttributes("".concat(controlName, "Bdr_"), bdrDefaults)), generateDimensionsAttributes("".concat(controlName, "Rds_"), rdsDefaults)), generateDimensionsAttributes("".concat(controlName, "HBdr_"))), generateDimensionsAttributes("".concat(controlName, "HRds_")));
+
+  var shdAttrs = (_shdAttrs = {}, _defineProperty(_shdAttrs, "".concat(controlName, "hOffset"), {
+    type: "number"
+  }), _defineProperty(_shdAttrs, "".concat(controlName, "vOffset"), {
+    type: "number"
+  }), _defineProperty(_shdAttrs, "".concat(controlName, "blur"), {
+    type: "number"
+  }), _defineProperty(_shdAttrs, "".concat(controlName, "spread"), {
+    type: "number"
+  }), _defineProperty(_shdAttrs, "".concat(controlName, "shadowColor"), {
+    type: "string"
+  }), _defineProperty(_shdAttrs, "".concat(controlName, "inset"), {
+    type: "boolean",
+    "default": false
+  }), _defineProperty(_shdAttrs, "".concat(controlName, "shadowType"), {
+    type: "string",
+    "default": "normal"
+  }), _defineProperty(_shdAttrs, "".concat(controlName, "hoverHOffset"), {
+    type: "number"
+  }), _defineProperty(_shdAttrs, "".concat(controlName, "hoverVOffset"), {
+    type: "number"
+  }), _defineProperty(_shdAttrs, "".concat(controlName, "hoverBlur"), {
+    type: "number"
+  }), _defineProperty(_shdAttrs, "".concat(controlName, "hoverSpread"), {
+    type: "number"
+  }), _defineProperty(_shdAttrs, "".concat(controlName, "hoverShadowColor"), {
+    type: "string"
+  }), _defineProperty(_shdAttrs, "".concat(controlName, "hoverInset"), {
+    type: "boolean",
+    "default": false
+  }), _shdAttrs);
+
+  if (noBorder === true) {
+    return _objectSpread(_objectSpread({}, shdAttrs), {}, _defineProperty({}, "".concat(controlName, "transitionTime"), {
+      type: "string",
+      "default": "500"
+    }));
+  } else if (noShadow === true) {
+    return _objectSpread(_objectSpread({}, bdrAttrs), {}, _defineProperty({}, "".concat(controlName, "transitionTime"), {
+      type: "string",
+      "default": "500"
+    }));
+  } else {
+    return _objectSpread(_objectSpread(_objectSpread({}, bdrAttrs), shdAttrs), {}, _defineProperty({}, "".concat(controlName, "transitionTime"), {
+      type: "string",
+      "default": "500"
+    }));
+  } // const result = {
+  //   // Border Shadow attributes ⬇
+  //   // border attributes ⬇
+  //   [`${controlName}BorderType`]: {
+  //     type: "string",
+  //     default: "normal",
+  //   },
+  //   [`${controlName}borderColor`]: {
+  //     type: "string",
+  //   },
+  //   [`${controlName}borderStyle`]: {
+  //     type: "string",
+  //     default: "none",
+  //   },
+  //   [`${controlName}HborderColor`]: {
+  //     type: "string",
+  //   },
+  //   [`${controlName}HborderStyle`]: {
+  //     type: "string",
+  //     default: "none",
+  //   },
+  //   // shadow attributes  ⬇
+  //   [`${controlName}hOffset`]: {
+  //     type: "number",
+  //   },
+  //   [`${controlName}vOffset`]: {
+  //     type: "number",
+  //   },
+  //   [`${controlName}blur`]: {
+  //     type: "number",
+  //   },
+  //   [`${controlName}spread`]: {
+  //     type: "number",
+  //   },
+  //   [`${controlName}shadowColor`]: {
+  //     type: "string",
+  //   },
+  //   [`${controlName}inset`]: {
+  //     type: "boolean",
+  //     default: false,
+  //   },
+  //   [`${controlName}shadowType`]: {
+  //     type: "string",
+  //     default: "normal",
+  //   },
+  //   [`${controlName}hoverHOffset`]: {
+  //     type: "number",
+  //   },
+  //   [`${controlName}hoverVOffset`]: {
+  //     type: "number",
+  //   },
+  //   [`${controlName}hoverBlur`]: {
+  //     type: "number",
+  //   },
+  //   [`${controlName}hoverSpread`]: {
+  //     type: "number",
+  //   },
+  //   [`${controlName}hoverShadowColor`]: {
+  //     type: "string",
+  //   },
+  //   [`${controlName}hoverInset`]: {
+  //     type: "boolean",
+  //     default: false,
+  //   },
+  //   [`${controlName}transitionTime`]: {
+  //     type: "string",
+  //     default: "500",
+  //   },
+  //   ...generateDimensionsAttributes(`${controlName}Bdr_`, bdrDefaults),
+  //   ...generateDimensionsAttributes(`${controlName}Rds_`, rdsDefaults),
+  //   ...generateDimensionsAttributes(`${controlName}HBdr_`),
+  //   ...generateDimensionsAttributes(`${controlName}HRds_`),
+  // };
+  // console.log("---generateBorderShadowAttributes:", { result });
+  // return result;
+
+}; // helper Functions: function 'textInsideForEdit' is for setting the innertext depending on whether separator should be shown and which separator should be shown
+
+var textInsideForEdit = function textInsideForEdit(value, isShowSeparator, separator) {
+  return isShowSeparator ? value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, separator) : value.toString();
+}; // generateRandomNumber function is for generating a random number
+
+var generateRandomNumber = function generateRandomNumber() {
+  return Math.floor(Math.random() * 1000000000);
+}; // hardMinifyCssStrings is for minifying the css which is in the style tag as a string  for view.js
+
+var hardMinifyCssStrings = function hardMinifyCssStrings(cssString) {
+  // console.log({ cssString });
+  return cssString.replace(/\s+/g, " ").replace(/(?<=\:).+(?=\;)/g, function (match) {
+    // console.log({ match, g1, offset, string });
+    return match.trim().replace(/\s+/g, "__s_p_a_c_e__");
+  }) // .replace(/\s+(?!(?:[\w\d\.\-\#]+\{))/g, "")
+  .replace(/\s+(?![\w\d\.\-\#]+\{)/g, "").replace(/\s+/g, " ").replace(/__s_p_a_c_e__/g, " ");
+}; // softMinifyCssStrings is for minifying the css which is in the style tag as a string  for view.js
+
+var softMinifyCssStrings = function softMinifyCssStrings(cssString) {
+  return cssString.replace(/\s+/g, " ");
+}; // check if css string is empty or not.
+
+var isCssExists = function isCssExists(cssString) {
+  return /.+(?=\:(?!hover)(?!focus))/.test(cssString);
+}; //
+// function to generate typography styles for an element based on it's prefix
+
+var generateTypographyStyles = function generateTypographyStyles(_ref11) {
+  var prefixConstant = _ref11.prefixConstant,
+      defaultFontSize = _ref11.defaultFontSize,
+      attributes = _ref11.attributes;
+  var fontFamily = attributes["".concat(prefixConstant, "FontFamily")],
+      fontWeight = attributes["".concat(prefixConstant, "FontWeight")],
+      textTransform = attributes["".concat(prefixConstant, "TextTransform")],
+      textDecoration = attributes["".concat(prefixConstant, "TextDecoration")],
+      _attributes$ = attributes["".concat(prefixConstant, "FontSize")],
+      fontSize = _attributes$ === void 0 ? defaultFontSize : _attributes$,
+      sizeUnit = attributes["".concat(prefixConstant, "SizeUnit")],
+      letterSpacing = attributes["".concat(prefixConstant, "LetterSpacing")],
+      letterSpacingUnit = attributes["".concat(prefixConstant, "LetterSpacingUnit")],
+      lineHeight = attributes["".concat(prefixConstant, "LineHeight")],
+      lineHeightUnit = attributes["".concat(prefixConstant, "LineHeightUnit")],
+      TABsizeUnit = attributes["TAB".concat(prefixConstant, "SizeUnit")],
+      TABletterSpacingUnit = attributes["TAB".concat(prefixConstant, "LetterSpacingUnit")],
+      TABlineHeightUnit = attributes["TAB".concat(prefixConstant, "LineHeightUnit")],
+      TABfontSize = attributes["TAB".concat(prefixConstant, "FontSize")],
+      TABletterSpacing = attributes["TAB".concat(prefixConstant, "LetterSpacing")],
+      TABlineHeight = attributes["TAB".concat(prefixConstant, "LineHeight")],
+      MOBsizeUnit = attributes["MOB".concat(prefixConstant, "SizeUnit")],
+      MOBletterSpacingUnit = attributes["MOB".concat(prefixConstant, "LetterSpacingUnit")],
+      MOBlineHeightUnit = attributes["MOB".concat(prefixConstant, "LineHeightUnit")],
+      MOBfontSize = attributes["MOB".concat(prefixConstant, "FontSize")],
+      MOBletterSpacing = attributes["MOB".concat(prefixConstant, "LetterSpacing")],
+      MOBlineHeight = attributes["MOB".concat(prefixConstant, "LineHeight")];
+  var typoStylesDesktop = "\n\t\t\t".concat(fontFamily ? "font-family: ".concat(fontFamily, ";") : " ", "\n\t\t\t").concat(hasVal(fontSize) ? "font-size: ".concat(fontSize).concat(sizeUnit, ";") : " ", "\n\t\t\t").concat(hasVal(lineHeight) ? "line-height: ".concat(lineHeight).concat(lineHeightUnit, ";") : " ", "\n\t\t\t").concat(fontWeight ? "font-weight: ".concat(fontWeight, ";") : " ", "\n\t\t\t").concat(textDecoration ? "text-decoration: ".concat(textDecoration, ";") : " ", "\n\t\t\t").concat(textTransform ? "text-transform: ".concat(textTransform, ";") : " ", "\n\t\t\t").concat(hasVal(letterSpacing) ? "letter-spacing: ".concat(letterSpacing).concat(letterSpacingUnit, ";") : " ", "\n\t\t");
+  var typoStylesTab = "\n\t\t\t".concat(hasVal(TABfontSize) ? "font-size: ".concat(TABfontSize).concat(TABsizeUnit, ";") : " ", "\n\t\t\t").concat(hasVal(TABlineHeight) ? "line-height: ".concat(TABlineHeight).concat(TABlineHeightUnit, ";") : " ", "\n\t\t\t").concat(hasVal(TABletterSpacing) ? "letter-spacing: ".concat(TABletterSpacing).concat(TABletterSpacingUnit, ";") : " ", "\n\t\t");
+  var typoStylesMobile = "\n\t\t\t".concat(hasVal(MOBfontSize) ? "font-size: ".concat(MOBfontSize).concat(MOBsizeUnit, ";") : " ", "\n\t\t\t").concat(hasVal(MOBlineHeight) ? "line-height: ".concat(MOBlineHeight).concat(MOBlineHeightUnit, ";") : " ", "\n\t\t\t").concat(hasVal(MOBletterSpacing) ? "letter-spacing: ".concat(MOBletterSpacing).concat(MOBletterSpacingUnit, ";") : " ", "\n\t\t");
+  return {
+    typoStylesDesktop: typoStylesDesktop,
+    typoStylesTab: typoStylesTab,
+    typoStylesMobile: typoStylesMobile
+  };
+}; //
+// function to generate dimensions-controls styles for an element based on it's controlName(prefix)
+
+var generateDimensionsControlStyles = function generateDimensionsControlStyles(_ref12) {
+  var controlName = _ref12.controlName,
+      styleFor = _ref12.styleFor,
+      attributes = _ref12.attributes;
+  var dimensionUnit = attributes["".concat(controlName, "Unit")],
+      dimensionTop = attributes["".concat(controlName, "Top")],
+      dimensionRight = attributes["".concat(controlName, "Right")],
+      dimensionBottom = attributes["".concat(controlName, "Bottom")],
+      dimensionLeft = attributes["".concat(controlName, "Left")],
+      TABdimensionUnit = attributes["TAB".concat(controlName, "Unit")],
+      TABdimensionTop = attributes["TAB".concat(controlName, "Top")],
+      TABdimensionRight = attributes["TAB".concat(controlName, "Right")],
+      TABdimensionBottom = attributes["TAB".concat(controlName, "Bottom")],
+      TABdimensionLeft = attributes["TAB".concat(controlName, "Left")],
+      MOBdimensionUnit = attributes["MOB".concat(controlName, "Unit")],
+      MOBdimensionTop = attributes["MOB".concat(controlName, "Top")],
+      MOBdimensionRight = attributes["MOB".concat(controlName, "Right")],
+      MOBdimensionBottom = attributes["MOB".concat(controlName, "Bottom")],
+      MOBdimensionLeft = attributes["MOB".concat(controlName, "Left")]; // console.log({ controlName, attributes });
+
+  var dimensionStylesDesktop = " ";
+  var dimensionStylesTab = " ";
+  var dimensionStylesMobile = " ";
+
+  if (styleFor === "border") {
+    dimensionStylesDesktop = "\n\t\t".concat(dimensionTop ? "border-top-width: ".concat(parseFloat(dimensionTop)).concat(dimensionUnit, "; z-index:999;") : " ", "\n\t\t").concat(dimensionRight ? "border-right-width: ".concat(parseFloat(dimensionRight)).concat(dimensionUnit, ";") : " ", "\n\t\t").concat(dimensionLeft ? "border-left-width: ".concat(parseFloat(dimensionLeft)).concat(dimensionUnit, ";") : " ", "\n\t\t").concat(dimensionBottom ? "border-bottom-width: ".concat(parseFloat(dimensionBottom)).concat(dimensionUnit, ";") : " ", "\n\t\n\t\t");
+    dimensionStylesTab = "\n\t\t\t".concat(TABdimensionTop ? "border-top-width: ".concat(parseFloat(TABdimensionTop)).concat(TABdimensionUnit, ";") : " ", "\n\t\t\t").concat(TABdimensionRight ? "border-right-width: ".concat(parseFloat(TABdimensionRight)).concat(TABdimensionUnit, ";") : " ", "\n\t\t\t").concat(TABdimensionLeft ? "border-left-width: ".concat(parseFloat(TABdimensionLeft)).concat(TABdimensionUnit, ";") : " ", "\n\t\t\t").concat(TABdimensionBottom ? "border-bottom-width: ".concat(parseFloat(TABdimensionBottom)).concat(TABdimensionUnit, ";") : " ", "\n\n\t\t");
+    dimensionStylesMobile = "\n\t\t\t".concat(MOBdimensionTop ? "border-top-width: ".concat(parseFloat(MOBdimensionTop)).concat(MOBdimensionUnit, ";") : " ", "\n\t\t\t").concat(MOBdimensionRight ? "border-right-width: ".concat(parseFloat(MOBdimensionRight)).concat(MOBdimensionUnit, ";") : " ", "\n\t\t\t").concat(MOBdimensionLeft ? "border-left-width: ".concat(parseFloat(MOBdimensionLeft)).concat(MOBdimensionUnit, ";") : " ", "\n\t\t\t").concat(MOBdimensionBottom ? "border-bottom-width: ".concat(parseFloat(MOBdimensionBottom)).concat(MOBdimensionUnit, ";") : " ", "\n\n\t\t");
+  } else if (styleFor === "border-radius") {
+    dimensionStylesDesktop = "\n\t\t\t".concat(dimensionTop ? "border-top-left-radius: ".concat(parseFloat(dimensionTop)).concat(dimensionUnit, ";") : " ", "\n\t\t\t").concat(dimensionRight ? "border-top-right-radius: ".concat(parseFloat(dimensionRight)).concat(dimensionUnit, ";") : " ", "\n\t\t\t").concat(dimensionLeft ? "border-bottom-left-radius: ".concat(parseFloat(dimensionLeft)).concat(dimensionUnit, ";") : " ", "\n\t\t\t").concat(dimensionBottom ? "border-bottom-right-radius: ".concat(parseFloat(dimensionBottom)).concat(dimensionUnit, ";") : " ", "\n\t\n\t\t");
+    dimensionStylesTab = "\n\t\t\t".concat(TABdimensionTop ? "border-top-left-radius: ".concat(parseFloat(TABdimensionTop)).concat(TABdimensionUnit, ";") : " ", "\n\t\t\t").concat(TABdimensionRight ? "border-top-right-radius: ".concat(parseFloat(TABdimensionRight)).concat(TABdimensionUnit, ";") : " ", "\n\t\t\t").concat(TABdimensionLeft ? "border-bottom-left-radius: ".concat(parseFloat(TABdimensionLeft)).concat(TABdimensionUnit, ";") : " ", "\n\t\t\t").concat(TABdimensionBottom ? "border-bottom-right-radius: ".concat(parseFloat(TABdimensionBottom)).concat(TABdimensionUnit, ";") : " ", "\n\n\t\t");
+    dimensionStylesMobile = "\n\t\t\t".concat(MOBdimensionTop ? "border-top-left-radius: ".concat(parseFloat(MOBdimensionTop)).concat(MOBdimensionUnit, ";") : " ", "\n\t\t\t").concat(MOBdimensionRight ? "border-top-right-radius: ".concat(parseFloat(MOBdimensionRight)).concat(MOBdimensionUnit, ";") : " ", "\n\t\t\t").concat(MOBdimensionLeft ? "border-bottom-left-radius: ".concat(parseFloat(MOBdimensionLeft)).concat(MOBdimensionUnit, ";") : " ", "\n\t\t\t").concat(MOBdimensionBottom ? "border-bottom-right-radius: ".concat(parseFloat(MOBdimensionBottom)).concat(MOBdimensionUnit, ";") : " ", "\n\n\t\t");
+  } else {
+    dimensionStylesDesktop = "\n\t\t".concat(dimensionTop ? "".concat(styleFor, "-top: ").concat(parseFloat(dimensionTop)).concat(dimensionUnit, ";") : " ", "\n\t\t").concat(dimensionRight ? "".concat(styleFor, "-right: ").concat(parseFloat(dimensionRight)).concat(dimensionUnit, ";") : " ", "\n\t\t").concat(dimensionLeft ? "".concat(styleFor, "-left: ").concat(parseFloat(dimensionLeft)).concat(dimensionUnit, ";") : " ", "\n\t\t").concat(dimensionBottom ? "".concat(styleFor, "-bottom: ").concat(parseFloat(dimensionBottom)).concat(dimensionUnit, ";") : " ", "\n\t\n\t\t");
+    dimensionStylesTab = "\n\t\t\t".concat(TABdimensionTop ? "".concat(styleFor, "-top: ").concat(parseFloat(TABdimensionTop)).concat(TABdimensionUnit, ";") : " ", "\n\t\t\t").concat(TABdimensionRight ? "".concat(styleFor, "-right: ").concat(parseFloat(TABdimensionRight)).concat(TABdimensionUnit, ";") : " ", "\n\t\t\t").concat(TABdimensionLeft ? "".concat(styleFor, "-left: ").concat(parseFloat(TABdimensionLeft)).concat(TABdimensionUnit, ";") : " ", "\n\t\t\t").concat(TABdimensionBottom ? "".concat(styleFor, "-bottom: ").concat(parseFloat(TABdimensionBottom)).concat(TABdimensionUnit, ";") : " ", "\n\n\t\t");
+    dimensionStylesMobile = "\n\t\t\t".concat(MOBdimensionTop ? "".concat(styleFor, "-top: ").concat(parseFloat(MOBdimensionTop)).concat(MOBdimensionUnit, ";") : " ", "\n\t\t\t").concat(MOBdimensionRight ? "".concat(styleFor, "-right: ").concat(parseFloat(MOBdimensionRight)).concat(MOBdimensionUnit, ";") : " ", "\n\t\t\t").concat(MOBdimensionLeft ? "".concat(styleFor, "-left: ").concat(parseFloat(MOBdimensionLeft)).concat(MOBdimensionUnit, ";") : " ", "\n\t\t\t").concat(MOBdimensionBottom ? "".concat(styleFor, "-bottom: ").concat(parseFloat(MOBdimensionBottom)).concat(MOBdimensionUnit, ";") : " ", "\n\n\t\t");
+  } // console.log({
+  //   dimensionStylesDesktop,
+  //   // dimensionStylesTab,
+  //   // dimensionStylesMobile,
+  // });
+
+
+  return {
+    dimensionStylesDesktop: dimensionStylesDesktop,
+    dimensionStylesTab: dimensionStylesTab,
+    dimensionStylesMobile: dimensionStylesMobile
+  };
+}; // Important: the following "generateBorderShadowStyles" function must be declared below the "generateDimensionsControlStyles" function declaration
+// function to generate BorderShadow control's Styles for an element based on it's controlName(prefix)
+
+var generateBorderShadowStyles = function generateBorderShadowStyles(_ref13) {
+  var controlName = _ref13.controlName,
+      attributes = _ref13.attributes,
+      noBorder = _ref13.noBorder,
+      noShadow = _ref13.noShadow;
+  var borderStylesDesktop = "";
+  var borderStylesTab = "";
+  var borderStylesMobile = "";
+  var radiusStylesDesktop = "";
+  var radiusStylesTab = "";
+  var radiusStylesMobile = "";
+  var HborderStylesDesktop = "";
+  var HborderStylesTab = "";
+  var HborderStylesMobile = "";
+  var HradiusStylesDesktop = "";
+  var HradiusStylesTab = "";
+  var HradiusStylesMobile = "";
+
+  if (noBorder !== true) {
+    var _generateDimensionsCo = generateDimensionsControlStyles({
+      controlName: "".concat(controlName, "Bdr_"),
+      styleFor: "border",
+      attributes: attributes
+    }),
+        F_borderStylesDesktop = _generateDimensionsCo.dimensionStylesDesktop,
+        F_borderStylesTab = _generateDimensionsCo.dimensionStylesTab,
+        F_borderStylesMobile = _generateDimensionsCo.dimensionStylesMobile;
+
+    var _generateDimensionsCo2 = generateDimensionsControlStyles({
+      controlName: "".concat(controlName, "Rds_"),
+      styleFor: "border-radius",
+      attributes: attributes
+    }),
+        F_radiusStylesDesktop = _generateDimensionsCo2.dimensionStylesDesktop,
+        F_radiusStylesTab = _generateDimensionsCo2.dimensionStylesTab,
+        F_radiusStylesMobile = _generateDimensionsCo2.dimensionStylesMobile;
+
+    var _generateDimensionsCo3 = generateDimensionsControlStyles({
+      controlName: "".concat(controlName, "HBdr_"),
+      styleFor: "border",
+      attributes: attributes
+    }),
+        F_HborderStylesDesktop = _generateDimensionsCo3.dimensionStylesDesktop,
+        F_HborderStylesTab = _generateDimensionsCo3.dimensionStylesTab,
+        F_HborderStylesMobile = _generateDimensionsCo3.dimensionStylesMobile;
+
+    var _generateDimensionsCo4 = generateDimensionsControlStyles({
+      controlName: "".concat(controlName, "HRds_"),
+      styleFor: "border-radius",
+      attributes: attributes
+    }),
+        F_HradiusStylesDesktop = _generateDimensionsCo4.dimensionStylesDesktop,
+        F_HradiusStylesTab = _generateDimensionsCo4.dimensionStylesTab,
+        F_HradiusStylesMobile = _generateDimensionsCo4.dimensionStylesMobile;
+
+    borderStylesDesktop = F_borderStylesDesktop;
+    borderStylesTab = F_borderStylesTab;
+    borderStylesMobile = F_borderStylesMobile;
+    radiusStylesDesktop = F_radiusStylesDesktop;
+    radiusStylesTab = F_radiusStylesTab;
+    radiusStylesMobile = F_radiusStylesMobile;
+    HborderStylesDesktop = F_HborderStylesDesktop;
+    HborderStylesTab = F_HborderStylesTab;
+    HborderStylesMobile = F_HborderStylesMobile;
+    HradiusStylesDesktop = F_HradiusStylesDesktop;
+    HradiusStylesTab = F_HradiusStylesTab;
+    HradiusStylesMobile = F_HradiusStylesMobile;
+  } // const {
+  //   dimensionStylesDesktop: borderStylesDesktop,
+  //   dimensionStylesTab: borderStylesTab,
+  //   dimensionStylesMobile: borderStylesMobile,
+  // } = generateDimensionsControlStyles({
+  //   controlName: `${controlName}Bdr_`,
+  //   styleFor: "border",
+  //   attributes,
+  // });
+  // const {
+  //   dimensionStylesDesktop: radiusStylesDesktop,
+  //   dimensionStylesTab: radiusStylesTab,
+  //   dimensionStylesMobile: radiusStylesMobile,
+  // } = generateDimensionsControlStyles({
+  //   controlName: `${controlName}Rds_`,
+  //   styleFor: "border-radius",
+  //   attributes,
+  // });
+  // const {
+  //   dimensionStylesDesktop: HborderStylesDesktop,
+  //   dimensionStylesTab: HborderStylesTab,
+  //   dimensionStylesMobile: HborderStylesMobile,
+  // } = generateDimensionsControlStyles({
+  //   controlName: `${controlName}HBdr_`,
+  //   styleFor: "border",
+  //   attributes,
+  // });
+  // const {
+  //   dimensionStylesDesktop: HradiusStylesDesktop,
+  //   dimensionStylesTab: HradiusStylesTab,
+  //   dimensionStylesMobile: HradiusStylesMobile,
+  // } = generateDimensionsControlStyles({
+  //   controlName: `${controlName}HRds_`,
+  //   styleFor: "border-radius",
+  //   attributes,
+  // });
+
+
+  var borderStyle = attributes["".concat(controlName, "borderStyle")],
+      _attributes$2 = attributes["".concat(controlName, "borderColor")],
+      borderColor = _attributes$2 === void 0 ? "#333333" : _attributes$2,
+      HborderStyle = attributes["".concat(controlName, "HborderStyle")],
+      _attributes$3 = attributes["".concat(controlName, "HborderColor")],
+      HborderColor = _attributes$3 === void 0 ? borderColor : _attributes$3,
+      shadowColor = attributes["".concat(controlName, "shadowColor")],
+      _attributes$4 = attributes["".concat(controlName, "hOffset")],
+      hOffset = _attributes$4 === void 0 ? 0 : _attributes$4,
+      _attributes$5 = attributes["".concat(controlName, "vOffset")],
+      vOffset = _attributes$5 === void 0 ? 0 : _attributes$5,
+      _attributes$6 = attributes["".concat(controlName, "blur")],
+      blur = _attributes$6 === void 0 ? 0 : _attributes$6,
+      _attributes$7 = attributes["".concat(controlName, "spread")],
+      spread = _attributes$7 === void 0 ? 0 : _attributes$7,
+      inset = attributes["".concat(controlName, "inset")],
+      _attributes$8 = attributes["".concat(controlName, "hoverShadowColor")],
+      hoverShadowColor = _attributes$8 === void 0 ? shadowColor : _attributes$8,
+      _attributes$9 = attributes["".concat(controlName, "hoverHOffset")],
+      hoverHOffset = _attributes$9 === void 0 ? hOffset : _attributes$9,
+      _attributes$10 = attributes["".concat(controlName, "hoverVOffset")],
+      hoverVOffset = _attributes$10 === void 0 ? vOffset : _attributes$10,
+      _attributes$11 = attributes["".concat(controlName, "hoverBlur")],
+      hoverBlur = _attributes$11 === void 0 ? blur : _attributes$11,
+      _attributes$12 = attributes["".concat(controlName, "hoverSpread")],
+      hoverSpread = _attributes$12 === void 0 ? spread : _attributes$12,
+      transitionTime = attributes["".concat(controlName, "transitionTime")];
+  var styesDesktop = "  \n    ".concat(noBorder !== true ? "\n        ".concat(radiusStylesDesktop, "\n        ").concat(borderStyle !== "none" && borderColor ? "\n            ".concat(borderStylesDesktop, "\n            border-color: ").concat(borderColor, ";\n            border-style: ").concat(borderStyle, ";\n            ") : " ", "\n        ") : " ", "\n  \n    ").concat(noShadow !== true ? shadowColor ? "box-shadow: ".concat(shadowColor, " ").concat(hOffset, "px ").concat(vOffset, "px ").concat(blur, "px ").concat(spread, "px ").concat(inset ? "inset" : "", ";") : " " : " ", "\n\n    transition: ").concat(transitionTime ? "".concat(transitionTime / 1000, "s") : ".5s", ";\n\n  ");
+  var styesTab = "  \n  ".concat(noBorder !== true ? "\n      ".concat(borderColor ? borderStylesTab : " ", "\n      ").concat(radiusStylesTab, "\n      ") : " ", "\n    \n  ");
+  var styesMobile = "\n  ".concat(noBorder !== true ? "\n      ".concat(borderColor ? borderStylesMobile : " ", "\n      ").concat(radiusStylesMobile, "\n      ") : " ", "\n  ");
+  var stylesHoverDesktop = "\n  ".concat(noBorder !== true ? "\n      ".concat(HborderStyle !== "none" ? "\n            ".concat(HborderColor !== borderColor ? "border-color: ".concat(HborderColor, ";") : " ", " \n            ").concat(HborderStyle !== borderStyle ? "border-style: ".concat(HborderStyle, ";") : " ", "\n            ").concat(HborderStylesDesktop, "\n          ") : " ", "\n\n      ").concat(HradiusStylesDesktop, "    \n      ") : " ", "   \n   \n  ").concat(noShadow !== true ? hoverShadowColor ? "box-shadow: ".concat(hoverShadowColor, " ").concat(hoverHOffset, "px ").concat(hoverVOffset, "px ").concat(hoverBlur, "px ").concat(hoverSpread, "px ").concat(inset ? "inset" : " ", ";") : " " : " ", "\n\n  ");
+  var stylesHoverTab = "\n  ".concat(noBorder !== true ? "\n      ".concat(HborderStyle !== "none" ? HborderStylesTab : " ", "\n      ").concat(HradiusStylesTab, "  \n      ") : " ", "\n  ");
+  var stylesHoverMobile = "\n  ".concat(noBorder !== true ? "\n      ".concat(HborderStyle !== "none" ? HborderStylesMobile : " ", "\n      ").concat(HradiusStylesMobile, "\n      ") : " ", "\n   \n  ");
+  return {
+    styesDesktop: styesDesktop,
+    styesTab: styesTab,
+    styesMobile: styesMobile,
+    stylesHoverDesktop: stylesHoverDesktop,
+    stylesHoverTab: stylesHoverTab,
+    stylesHoverMobile: stylesHoverMobile
+  };
+}; // function to generate Background control styles based on the unique controlName(prefix)
+
+var generateBackgroundControlStyles = function generateBackgroundControlStyles(_ref14) {
+  var controlName = _ref14.controlName,
+      attributes = _ref14.attributes;
+  var backgroundType = attributes["".concat(controlName, "backgroundType")],
+      backgroundColor = attributes["".concat(controlName, "backgroundColor")],
+      gradientColor = attributes["".concat(controlName, "gradientColor")],
+      bgImageURL = attributes["".concat(controlName, "bgImageURL")],
+      backgroundSize = attributes["".concat(controlName, "backgroundSize")],
+      bgImgCustomSize = attributes["".concat(controlName, "bgImgCustomSize")],
+      bgImgCustomSizeUnit = attributes["".concat(controlName, "bgImgCustomSizeUnit")],
+      bgImgPos = attributes["".concat(controlName, "bgImgPos")],
+      bgImgcustomPosX = attributes["".concat(controlName, "bgImgcustomPosX")],
+      bgImgcustomPosXUnit = attributes["".concat(controlName, "bgImgcustomPosXUnit")],
+      bgImgcustomPosY = attributes["".concat(controlName, "bgImgcustomPosY")],
+      bgImgcustomPosYUnit = attributes["".concat(controlName, "bgImgcustomPosYUnit")],
+      bgImgAttachment = attributes["".concat(controlName, "bgImgAttachment")],
+      bgImgRepeat = attributes["".concat(controlName, "bgImgRepeat")],
+      _attributes$13 = attributes["".concat(controlName, "overlyColor")],
+      overlyColor = _attributes$13 === void 0 ? "#00000080" : _attributes$13,
+      overlyType = attributes["".concat(controlName, "overlyType")],
+      isBgOverly = attributes["".concat(controlName, "isBgOverly")],
+      overlyGradient = attributes["".concat(controlName, "overlyGradient")],
+      TABbackgroundSize = attributes["TAB".concat(controlName, "backgroundSize")],
+      TABbgImgCustomSize = attributes["TAB".concat(controlName, "bgImgCustomSize")],
+      TABbgImgCustomSizeUnit = attributes["TAB".concat(controlName, "bgImgCustomSizeUnit")],
+      TABbgImgPos = attributes["TAB".concat(controlName, "bgImgPos")],
+      TABbgImgcustomPosX = attributes["TAB".concat(controlName, "bgImgcustomPosX")],
+      TABbgImgcustomPosXUnit = attributes["TAB".concat(controlName, "bgImgcustomPosXUnit")],
+      TABbgImgcustomPosY = attributes["TAB".concat(controlName, "bgImgcustomPosY")],
+      TABbgImgcustomPosYUnit = attributes["TAB".concat(controlName, "bgImgcustomPosYUnit")],
+      TABbgImgRepeat = attributes["TAB".concat(controlName, "bgImgRepeat")],
+      MOBbackgroundSize = attributes["MOB".concat(controlName, "backgroundSize")],
+      MOBbgImgCustomSize = attributes["MOB".concat(controlName, "bgImgCustomSize")],
+      MOBbgImgCustomSizeUnit = attributes["MOB".concat(controlName, "bgImgCustomSizeUnit")],
+      MOBbgImgPos = attributes["MOB".concat(controlName, "bgImgPos")],
+      MOBbgImgcustomPosX = attributes["MOB".concat(controlName, "bgImgcustomPosX")],
+      MOBbgImgcustomPosXUnit = attributes["MOB".concat(controlName, "bgImgcustomPosXUnit")],
+      MOBbgImgcustomPosY = attributes["MOB".concat(controlName, "bgImgcustomPosY")],
+      MOBbgImgcustomPosYUnit = attributes["MOB".concat(controlName, "bgImgcustomPosYUnit")],
+      MOBbgImgRepeat = attributes["MOB".concat(controlName, "bgImgRepeat")];
+  var backgroundStylesDesktop = "\n    background-image: ".concat(backgroundType === "image" && bgImageURL ? "url(\"".concat(bgImageURL, "\")") : backgroundType === "gradient" ? gradientColor : "none", ";\n\n    ").concat(backgroundType === "image" && bgImageURL ? "\n        ".concat(backgroundSize && backgroundSize !== "custom" ? "background-size: ".concat(backgroundSize, ";") : backgroundSize === "custom" ? "background-size: ".concat(bgImgCustomSize).concat(bgImgCustomSizeUnit, " auto;") : " ", "\n\n        ").concat(bgImgPos && bgImgPos !== "custom" ? "background-position: ".concat(bgImgPos, ";") : bgImgPos === "custom" ? "background-position: ".concat(bgImgcustomPosX).concat(bgImgcustomPosXUnit, " ").concat(bgImgcustomPosY).concat(bgImgcustomPosYUnit, ";") : " ", "\n\n        ").concat(bgImgAttachment ? "background-attachment: ".concat(bgImgAttachment, ";") : " ", "\n\n        ").concat(bgImgRepeat ? "background-repeat: ".concat(bgImgRepeat, ";") : " ", "\n        \n        ").concat(isBgOverly ? "\n              z-index: 2;\n              position: relative;\n            " : " ", "\t\n        ") : " ", "\n  \n\t\t").concat(backgroundColor ? "background-color: ".concat(backgroundColor, ";") : " ", "\n\n  ");
+  var backgroundStylesTab = "\n    ".concat(backgroundType === "image" && bgImageURL ? "\n        ".concat(TABbackgroundSize && TABbackgroundSize !== "custom" ? "background-size: ".concat(TABbackgroundSize, ";") : TABbackgroundSize === "custom" ? "background-size: ".concat(TABbgImgCustomSize).concat(TABbgImgCustomSizeUnit, " auto;") : " ", "\n\n        ").concat(TABbgImgPos && TABbgImgPos !== "custom" ? "background-position: ".concat(TABbgImgPos, ";") : TABbgImgPos === "custom" ? "background-position: ".concat(TABbgImgcustomPosX).concat(TABbgImgcustomPosXUnit, " ").concat(TABbgImgcustomPosY).concat(TABbgImgcustomPosYUnit, ";") : " ", "\n\n        ").concat(TABbgImgRepeat ? "background-repeat: ".concat(TABbgImgRepeat, ";") : " ", "\n\n        ") : " ", "\n\n    ").concat(backgroundType === "image" ? "background-attachment: scroll;" : " ", "\n\n  ");
+  var backgroundStylesMobile = "\n    ".concat(backgroundType === "image" && bgImageURL ? "\n        ".concat(MOBbackgroundSize && MOBbackgroundSize !== "custom" ? "background-size: ".concat(MOBbackgroundSize, ";") : MOBbackgroundSize === "custom" ? "background-size: ".concat(MOBbgImgCustomSize).concat(MOBbgImgCustomSizeUnit, " auto;") : " ", "\n\n        ").concat(MOBbgImgPos && MOBbgImgPos !== "custom" ? "background-position: ".concat(MOBbgImgPos, ";") : MOBbgImgPos === "custom" ? "background-position: ".concat(MOBbgImgcustomPosX).concat(MOBbgImgcustomPosXUnit, " ").concat(MOBbgImgcustomPosY).concat(MOBbgImgcustomPosYUnit, ";") : " ", "\n\n        ").concat(MOBbgImgRepeat ? "background-repeat: ".concat(MOBbgImgRepeat, ";") : " ", "\n\n        ") : " ", "\n\n  ");
+  var overlyStyles = "\n  \n    ".concat(backgroundType === "image" && isBgOverly ? "\n          content: \"\";\n          position: absolute;\n          top: 0;\n          bottom: 0;\n          right: 0;\n          left: 0;\n          z-index: -1;\n\n          ".concat(overlyType === "fill" ? "background-color: ".concat(overlyColor, ";") : overlyType === "gradient" ? "background-image: ".concat(overlyGradient, ";") : " ", "\n      ") : " ", "\n  \n  \n  ");
+  return {
+    backgroundStylesDesktop: backgroundStylesDesktop,
+    backgroundStylesTab: backgroundStylesTab,
+    backgroundStylesMobile: backgroundStylesMobile,
+    overlyStyles: overlyStyles
+  };
+}; // function to generate responsive range controller attributes for multiple range control based on the array of prefix
+
+var generateResponsiveRangeAttributes = function generateResponsiveRangeAttributes(controlName) {
+  var _ref17, _objectSpread10;
+
+  var defaults = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var defaultRange = defaults.defaultRange,
+      noUnits = defaults.noUnits;
+  var desktop = defaultRange ? _defineProperty({}, "".concat(controlName, "Range"), {
+    type: "number",
+    "default": defaultRange
+  }) : _defineProperty({}, "".concat(controlName, "Range"), {
+    type: "number"
+  });
+  var units = noUnits === true ? {} : (_ref17 = {}, _defineProperty(_ref17, "".concat(controlName, "Unit"), {
+    type: "string",
+    "default": "px"
+  }), _defineProperty(_ref17, "TAB".concat(controlName, "Unit"), {
+    type: "string",
+    "default": "px"
+  }), _defineProperty(_ref17, "MOB".concat(controlName, "Unit"), {
+    type: "string",
+    "default": "px"
+  }), _ref17);
+  return _objectSpread(_objectSpread({}, desktop), {}, (_objectSpread10 = {}, _defineProperty(_objectSpread10, "TAB".concat(controlName, "Range"), {
+    type: "number"
+  }), _defineProperty(_objectSpread10, "MOB".concat(controlName, "Range"), {
+    type: "number"
+  }), _objectSpread10), units);
+}; // function to generate responsive range control styles for an element based on it's prefix
+
+var generateResponsiveRangeStyles = function generateResponsiveRangeStyles(_ref18) {
+  var controlName = _ref18.controlName,
+      property = _ref18.property,
+      attributes = _ref18.attributes,
+      customUnit = _ref18.customUnit;
+  console.log({
+    controlName: controlName,
+    property: property,
+    attributes: attributes,
+    customUnit: customUnit
+  });
+  var desktopSizeUnit;
+  var TABsizeUnit;
+  var MOBsizeUnit;
+
+  if (!customUnit) {
+    desktopSizeUnit = attributes["".concat(controlName, "Unit")];
+    TABsizeUnit = attributes["TAB".concat(controlName, "Unit")];
+    MOBsizeUnit = attributes["MOB".concat(controlName, "Unit")];
+  } else {
+    desktopSizeUnit = TABsizeUnit = MOBsizeUnit = customUnit;
+  }
+
+  var desktopRange = attributes["".concat(controlName, "Range")],
+      TABrange = attributes["TAB".concat(controlName, "Range")],
+      MOBrange = attributes["MOB".concat(controlName, "Range")];
+  var rangeStylesDesktop = desktopRange || desktopRange === 0 ? property + ":" + desktopRange + (customUnit || desktopSizeUnit) + ";" : "";
+  var rangeStylesTab = TABrange || TABrange === 0 ? property + ":" + TABrange + (customUnit || TABsizeUnit) + ";" : "";
+  var rangeStylesMobile = MOBrange || MOBrange === 0 ? property + ":" + MOBrange + (customUnit || MOBsizeUnit) + ";" : "";
+  return {
+    rangeStylesDesktop: rangeStylesDesktop,
+    rangeStylesTab: rangeStylesTab,
+    rangeStylesMobile: rangeStylesMobile
+  };
+}; // Return flilp value based on type
+
+var getFlipTransform = function getFlipTransform(flipType) {
+  switch (flipType) {
+    case "flip-left":
+      return "rotateY(-180deg)";
+
+    case "flip-right":
+      return "rotateY(180deg)";
+
+    case "flip-up":
+      return "rotateX(180deg)";
+
+    case "flip-bottom":
+      return "rotateX(-180deg)";
+
+    case "zoom-in":
+      return "scale(1.1)";
+
+    case "zoom-out":
+      return "scale(0.8)";
+  }
+}; // Return css class names based on button style name
+
+var getButtonClasses = function getButtonClasses(buttonStyle) {
+  switch (buttonStyle) {
+    case "styleOne":
+      return "btn-gradient blue";
+
+    case "styleTwo":
+      return "btn-gradient purple";
+
+    case "styleThree":
+      return "btn-gradient orange";
+
+    case "custom":
+      return "";
+  }
+};
+var getBackgroundImage = function getBackgroundImage(type, gradientValue, imageURL) {
+  switch (type) {
+    case "fill":
+      return "none";
+
+    case "gradient":
+      return gradientValue;
+
+    case "image":
+      if (imageURL) {
+        return "url(".concat(imageURL, ")");
+      }
+
+      return "none";
+  }
+}; //
+// These following 3 functions to handle the resBtns click
+// function 1: to handle desktop button click
+
+var handleDesktopBtnClick = function handleDesktopBtnClick(_ref19) {
+  var setPreviewDeviceType = _ref19.setPreviewDeviceType,
+      setAttributes = _ref19.setAttributes;
+  setAttributes({
+    resOption: "Desktop"
+  });
+  setPreviewDeviceType("Desktop");
+}; // function 2: to handle Tab button click
+
+var handleTabBtnClick = function handleTabBtnClick(_ref20) {
+  var setPreviewDeviceType = _ref20.setPreviewDeviceType,
+      setAttributes = _ref20.setAttributes;
+  setAttributes({
+    resOption: "Tablet"
+  });
+  setPreviewDeviceType("Tablet");
+}; // function 3: to handle Mobile button click
+
+var handleMobileBtnClick = function handleMobileBtnClick(_ref21) {
+  var setPreviewDeviceType = _ref21.setPreviewDeviceType,
+      setAttributes = _ref21.setAttributes;
+  setAttributes({
+    resOption: "Mobile"
+  });
+  setPreviewDeviceType("Mobile");
+}; //
+// function to mimmik css when clicking the responsive buttons in the inspector panel
+
+var mimmikCssForResBtns = function mimmikCssForResBtns(_ref22) {
+  var _ref22$isForPreviewBu = _ref22.isForPreviewButton,
+      isForPreviewButton = _ref22$isForPreviewBu === void 0 ? false : _ref22$isForPreviewBu,
+      domObj = _ref22.domObj,
+      resOption = _ref22.resOption;
+  var allEbBlocksWrapper;
+
+  if (isForPreviewButton) {
+    allEbBlocksWrapper = domObj.querySelectorAll(".eb-guten-block-main-parent-wrapper > style");
+  } else {
+    allEbBlocksWrapper = domObj.querySelectorAll(".eb-guten-block-main-parent-wrapper:not(.is-selected) > style");
+  }
+
+  if (allEbBlocksWrapper.length < 1) return;
+  allEbBlocksWrapper.forEach(function (styleTag) {
+    var cssStrings = styleTag.textContent;
+    var minCss = cssStrings.replace(/\s+/g, " "); // console.log({ minCss });
+
+    var regexCssMimmikSpace = /(mimmikcssStart\s\*\/)(.+)(\/\*\smimmikcssEnd)/i;
+    var newCssStrings = " ";
+
+    if (resOption === "Tablet") {
+      var tabCssStrings = (minCss.match(/tabcssStart\s\*\/(.+)(?=\/\*\stabcssEnd)/i) || [, " "])[1]; // console.log({ tabCssStrings });
+
+      newCssStrings = minCss.replace(regexCssMimmikSpace, "$1 ".concat(tabCssStrings, " $3"));
+    } else if (resOption === "Mobile") {
+      var _tabCssStrings = (minCss.match(/tabcssStart\s\*\/(.+)(?=\/\*\stabcssEnd)/i) || [, " "])[1];
+      var mobCssStrings = (minCss.match( // /(?<=mobcssStart\s\*\/).+(?=\/\*\smobcssEnd)/i
+      /mobcssStart\s\*\/(.+)(?=\/\*\smobcssEnd)/i) || [, " "])[1]; // console.log({ tabCssStrings, mobCssStrings });
+
+      newCssStrings = minCss.replace(regexCssMimmikSpace, "$1 ".concat(_tabCssStrings, " ").concat(mobCssStrings, " $3"));
+    } else {
+      newCssStrings = minCss.replace(regexCssMimmikSpace, "$1  $3");
+    }
+
+    styleTag.textContent = newCssStrings;
+  });
+}; //
+// IMPORTANT: The following fuction declaration must be below the 'mimmikCssForResBtns' function declaration
+// function to mimmik css for responsive preview when clicking the buttons in the 'Preview button of wordpress' located beside the 'update' button
+
+var mimmikCssForPreviewBtnClick = function mimmikCssForPreviewBtnClick(_ref23) {
+  var domObj = _ref23.domObj,
+      select = _ref23.select;
+  var bodyClasses = domObj.body.className;
+  if (/eb\-mimmik\-added/i.test(bodyClasses)) return;
+  domObj.body.classList.add("eb-mimmik-added");
+  var wpResBtnsWrap = domObj.querySelector("#editor .edit-post-layout + .popover-slot");
+  wpResBtnsWrap.addEventListener("click", function (e) {
+    if (/block\-editor\-post\-preview__button\-resize|components\-menu\-item__item/i.test(e.target.className)) {
+      setTimeout(function () {
+        var resOption = select("core/edit-post").__experimentalGetPreviewDeviceType(); // console.log("---mimmikCssForPreviewBtnClick", { resOption });
+
+
+        mimmikCssForResBtns({
+          isForPreviewButton: true,
+          domObj: domObj,
+          resOption: resOption
+        });
+      }, 0);
+    }
+  });
+}; // IMPORTANT: The following fuction declaration must be below the 'mimmikCssForResBtns' function declaration
+// function to mimmik css for responsive preview when clicking the buttons in the 'Preview button of wordpress' located beside the 'update' button while any block is selected and it's inspector panel is mounted in the DOM
+
+var mimmikCssOnPreviewBtnClickWhileBlockSelected = function mimmikCssOnPreviewBtnClickWhileBlockSelected(_ref24) {
+  var domObj = _ref24.domObj,
+      select = _ref24.select,
+      setAttributes = _ref24.setAttributes;
+  var wpResBtnsWrap = domObj.querySelector("#editor .edit-post-layout + .popover-slot");
+
+  var handleCLick = function handleCLick(e) {
+    if (/block\-editor\-post\-preview__button\-resize|components\-menu\-item__item/i.test(e.target.className)) {
+      setTimeout(function () {
+        var resOption = select("core/edit-post").__experimentalGetPreviewDeviceType(); // console.log("---resoption from setTimeout", { resOption });
+
+
+        mimmikCssForResBtns({
+          isForPreviewButton: true,
+          domObj: domObj,
+          resOption: resOption
+        });
+        setAttributes({
+          resOption: resOption
+        });
+      }, 0);
+    }
+  };
+
+  wpResBtnsWrap.addEventListener("click", handleCLick);
+  return function () {
+    wpResBtnsWrap.removeEventListener("click", handleCLick);
+  };
+}; //
+// this function is for creating a unique blockId for each block's unique className
+
+var duplicateBlockIdFix = function duplicateBlockIdFix(_ref25) {
+  var BLOCK_PREFIX = _ref25.BLOCK_PREFIX,
+      blockId = _ref25.blockId,
+      setAttributes = _ref25.setAttributes,
+      select = _ref25.select,
+      clientId = _ref25.clientId;
+  var unique_id = BLOCK_PREFIX + "-" + Math.random().toString(36).substr(2, 7);
+  /**
+   * Define and Generate Unique Block ID
+   */
+
+  if (!blockId) {
+    setAttributes({
+      blockId: unique_id
+    });
+  }
+  /**
+   * Assign New Unique ID when duplicate BlockId found
+   * Mostly happens when User Duplicate a Block
+   */
+
+
+  var all_blocks = select("core/block-editor").getBlocks(); // console.log({ all_blocks });
+
+  var duplicateFound = false;
+
+  var fixDuplicateBlockId = function fixDuplicateBlockId(blocks) {
+    if (duplicateFound) return;
+
+    var _iterator = _createForOfIteratorHelper(blocks),
+        _step;
+
+    try {
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        var item = _step.value;
+        var innerBlocks = item.innerBlocks;
+
+        if (item.attributes.blockId === blockId) {
+          if (item.clientId !== clientId) {
+            setAttributes({
+              blockId: unique_id
+            }); // console.log("found a duplicate");
+
+            duplicateFound = true;
+            return;
+          } else if (innerBlocks.length > 0) {
+            fixDuplicateBlockId(innerBlocks);
+          }
+        } else if (innerBlocks.length > 0) {
+          fixDuplicateBlockId(innerBlocks);
+        }
+      }
+    } catch (err) {
+      _iterator.e(err);
+    } finally {
+      _iterator.f();
+    }
+  };
+
+  fixDuplicateBlockId(all_blocks);
+};
 
 /***/ }),
 
@@ -11477,6 +12937,230 @@ var ResetControl = function ResetControl(_ref) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ResetControl);
+
+/***/ }),
+
+/***/ "./util/responsive-range-control/index.js":
+/*!************************************************!*\
+  !*** ./util/responsive-range-control/index.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _responsive_btn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./responsive-btn */ "./util/responsive-range-control/responsive-btn.js");
+/* harmony import */ var _unit_control__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../unit-control */ "./util/unit-control/index.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var __ = wp.i18n.__;
+var RangeControl = wp.components.RangeControl;
+
+
+
+var ResponsiveRangeController = function ResponsiveRangeController(_ref) {
+  var baseLabel = _ref.baseLabel,
+      controlName = _ref.controlName,
+      resRequiredProps = _ref.resRequiredProps,
+      units = _ref.units,
+      min = _ref.min,
+      max = _ref.max,
+      step = _ref.step,
+      noUnits = _ref.noUnits;
+  var attributes = resRequiredProps.attributes,
+      setAttributes = resRequiredProps.setAttributes,
+      resOption = resRequiredProps.resOption;
+  var desktopSizeUnit;
+  var TABsizeUnit;
+  var MOBsizeUnit;
+  var defaultUnits;
+  var desktopRange = attributes["".concat(controlName, "Range")],
+      TABrange = attributes["TAB".concat(controlName, "Range")],
+      MOBrange = attributes["MOB".concat(controlName, "Range")];
+
+  if (!noUnits) {
+    desktopSizeUnit = attributes["".concat(controlName, "Unit")];
+    TABsizeUnit = attributes["TAB".concat(controlName, "Unit")];
+    MOBsizeUnit = attributes["MOB".concat(controlName, "Unit")];
+    defaultUnits = [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }];
+  }
+
+  return /*#__PURE__*/React.createElement(React.Fragment, null, noUnits ? /*#__PURE__*/React.createElement(React.Fragment, null, resOption == "Desktop" && /*#__PURE__*/React.createElement(_responsive_btn__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    label: baseLabel,
+    resRequiredProps: resRequiredProps,
+    controlName: controlName
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: desktopRange,
+    onChange: function onChange(desktopRange) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "Range"), desktopRange));
+    },
+    step: step || 1,
+    min: min || 0,
+    max: max || 2000
+  })), resOption == "Tablet" && /*#__PURE__*/React.createElement(_responsive_btn__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    label: baseLabel,
+    resRequiredProps: resRequiredProps,
+    controlName: controlName
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: TABrange,
+    onChange: function onChange(TABrange) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "Range"), TABrange));
+    },
+    step: step || 1,
+    min: min || 0,
+    max: max || 2000
+  })), resOption == "Mobile" && /*#__PURE__*/React.createElement(_responsive_btn__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    label: baseLabel,
+    resRequiredProps: resRequiredProps,
+    controlName: controlName
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: MOBrange,
+    onChange: function onChange(MOBrange) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "Range"), MOBrange));
+    },
+    step: step || 1,
+    min: min || 0,
+    max: max || 2000
+  }))) : /*#__PURE__*/React.createElement(React.Fragment, null, resOption == "Desktop" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: desktopSizeUnit,
+    unitTypes: units || defaultUnits,
+    onClick: function onClick(desktopSizeUnit) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "Unit"), desktopSizeUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_responsive_btn__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    label: baseLabel,
+    resRequiredProps: resRequiredProps,
+    controlName: controlName
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: desktopRange,
+    onChange: function onChange(desktopRange) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "Range"), desktopRange));
+    },
+    step: step || (desktopSizeUnit !== "em" ? 1 : 0.1),
+    min: min || 0,
+    max: max || (desktopSizeUnit === "px" ? 2000 : 100)
+  }))), resOption == "Tablet" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: TABsizeUnit,
+    unitTypes: units || defaultUnits,
+    onClick: function onClick(TABsizeUnit) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "Unit"), TABsizeUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_responsive_btn__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    label: baseLabel,
+    resRequiredProps: resRequiredProps,
+    controlName: controlName
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: TABrange,
+    onChange: function onChange(TABrange) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "Range"), TABrange));
+    },
+    step: step || (TABsizeUnit !== "em" ? 1 : 0.1),
+    min: min || 0,
+    max: max || (TABsizeUnit === "px" ? 2000 : 100)
+  }))), resOption == "Mobile" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: MOBsizeUnit,
+    unitTypes: units || defaultUnits,
+    onClick: function onClick(MOBsizeUnit) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "Unit"), MOBsizeUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_responsive_btn__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    label: baseLabel,
+    resRequiredProps: resRequiredProps,
+    controlName: controlName
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: MOBrange,
+    onChange: function onChange(MOBrange) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "Range"), MOBrange));
+    },
+    step: step || (MOBsizeUnit !== "em" ? 1 : 0.1),
+    min: min || 0,
+    max: max || (MOBsizeUnit === "px" ? 2000 : 100)
+  })))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ResponsiveRangeController);
+
+/***/ }),
+
+/***/ "./util/responsive-range-control/responsive-btn.js":
+/*!*********************************************************!*\
+  !*** ./util/responsive-range-control/responsive-btn.js ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return WithResBtns; });
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helpers */ "./util/helpers/index.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var dispatch = wp.data.dispatch;
+
+function WithResBtns(_ref) {
+  var children = _ref.children,
+      resRequiredProps = _ref.resRequiredProps,
+      label = _ref.label,
+      controlName = _ref.controlName,
+      onReset = _ref.onReset;
+  var setAttributes = resRequiredProps.setAttributes,
+      resOption = resRequiredProps.resOption,
+      objAttributes = resRequiredProps.objAttributes;
+
+  onReset = function onReset() {
+    resOption == "Desktop" ? setAttributes(_defineProperty({}, "".concat(controlName, "Range"), objAttributes["".concat(controlName, "Range")]["default"])) : "";
+    resOption == "Tablet" ? setAttributes(_defineProperty({}, "TAB".concat(controlName, "Range"), objAttributes["TAB".concat(controlName, "Range")]["default"])) : "";
+    resOption == "Mobile" ? setAttributes(_defineProperty({}, "MOB".concat(controlName, "Range"), objAttributes["MOB".concat(controlName, "Range")]["default"])) : "";
+  };
+
+  return /*#__PURE__*/React.createElement("div", {
+    className: "responsive-btn-wrapper"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "responsive-btn"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "responsive-btn-label"
+  }, label), /*#__PURE__*/React.createElement("span", {
+    onClick: function onClick() {
+      return Object(_helpers__WEBPACK_IMPORTED_MODULE_0__["handleDesktopBtnClick"])({
+        setPreviewDeviceType: dispatch("core/edit-post").__experimentalSetPreviewDeviceType,
+        setAttributes: setAttributes
+      });
+    },
+    "class": "typoResButton dashicons dashicons-desktop ".concat(resOption === "Desktop" ? "active" : " ")
+  }), /*#__PURE__*/React.createElement("span", {
+    onClick: function onClick() {
+      return Object(_helpers__WEBPACK_IMPORTED_MODULE_0__["handleTabBtnClick"])({
+        setPreviewDeviceType: dispatch("core/edit-post").__experimentalSetPreviewDeviceType,
+        setAttributes: setAttributes
+      });
+    },
+    "class": "typoResButton dashicons dashicons-tablet ".concat(resOption === "Tablet" ? "active" : " ")
+  }), /*#__PURE__*/React.createElement("span", {
+    onClick: function onClick() {
+      return Object(_helpers__WEBPACK_IMPORTED_MODULE_0__["handleMobileBtnClick"])({
+        setPreviewDeviceType: dispatch("core/edit-post").__experimentalSetPreviewDeviceType,
+        setAttributes: setAttributes
+      });
+    },
+    "class": "typoResButton dashicons dashicons-smartphone ".concat(resOption === "Mobile" ? "active" : " ")
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "eb-component-wrapper"
+  }, children, /*#__PURE__*/React.createElement("button", {
+    className: "eb-range-reset-button",
+    onClick: onReset
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "dashicon dashicons dashicons-image-rotate"
+  }))));
+}
 
 /***/ }),
 

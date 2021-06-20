@@ -16,6 +16,14 @@ const save = ({ attributes }) => {
 		currencyPlacement,
 		pricePeriod,
 		periodSeparator,
+		features,
+		showButton,
+		buttonIcon,
+		buttonIconPosition,
+		buttonText,
+		buttonURL,
+
+		// new attributes
 
 		displaySubtitle,
 		titleBackgroundColor,
@@ -25,15 +33,12 @@ const save = ({ attributes }) => {
 		priceDetails,
 		priceBackgroundColor,
 		priceTextColor,
-		features,
 		featuresBackgroundColor,
 		featuresTextColor,
 		buttonBackground,
 		buttonTextColor,
-		buttonText,
 		hoverBackgroundColor,
 		hoverTextColor,
-		buttonURL,
 		priceboxBackground,
 		shadowColor,
 		shadowHOffset,
@@ -104,6 +109,8 @@ const save = ({ attributes }) => {
 		buttonLetterSpacing,
 		buttonLetterSpacingUnit,
 	} = attributes;
+
+	console.log(features);
 
 	const wrapperStyles = {
 		margin: `${marginTop || 0}${marginUnit} ${marginRight || 0}${marginUnit} ${
@@ -284,7 +291,7 @@ const save = ({ attributes }) => {
 						</span>
 					</div>
 					<div className="body">
-						<ul className="ebgb-pricebox-features" style={featureStyles}>
+						<ul className="ebgb-pricebox-features">
 							{features.map(({ icon, text, color, clickable, link }) => (
 								<li
 									className="ebgb-pricebox-feature-item"
@@ -294,58 +301,39 @@ const save = ({ attributes }) => {
 									data-clickable={clickable}
 									data-link={link}
 								>
-									<span
-										className={`ebgb-pricebox-icon ${icon}`}
-										style={{ color: color }}
-									/>
-									<span className="ebgb-pricebox-feature-text">{text}</span>
+									{clickable && link ? (
+										<a href={link}>
+											<span className={`ebgb-pricebox-icon ${icon}`} />
+											<span className="ebgb-pricebox-feature-text">{text}</span>
+										</a>
+									) : (
+										<>
+											<span className={`ebgb-pricebox-icon ${icon}`} />
+											<span className="ebgb-pricebox-feature-text">{text}</span>
+										</>
+									)}
 								</li>
 							))}
 						</ul>
-						{/* <ul>
-							<li>
-								<span className="li-icon" style={colorStyles}>
-									<i className="fas fa-check"></i>
-								</span>
-								Unlimited calls
-							</li>
-							<li>
-								<span className="li-icon" style={colorStyles}>
-									<i className="fas fa-check"></i>
-								</span>
-								Free hosting
-							</li>
-							<li>
-								<span className="li-icon" style={colorStyles}>
-									<i className="fas fa-check"></i>
-								</span>
-								500 MB of storage space
-							</li>
-							<li>
-								<span className="li-icon" style={colorStyles}>
-									<i className="fas fa-check"></i>
-								</span>
-								500 MB Bandwidth
-							</li>
-							<li>
-								<span className="li-icon" style={colorStyles}>
-									<i className="fas fa-check"></i>
-								</span>
-								24/7 support
-							</li>
-						</ul> */}
 					</div>
-					<div className="footer">
-						<a
-							href="#"
-							target="_blank"
-							rel="nofollow noopener"
-							className="ebgb-pricing-button"
-						>
-							<i className=" fa-icon-left"></i>
-							Choose Plan{" "}
-						</a>
-					</div>
+					{showButton && (
+						<div className="footer" data-icon={buttonIcon}>
+							<a
+								href={buttonURL}
+								// target="_blank"
+								// rel="nofollow noopener"
+								className="ebgb-pricing-button"
+							>
+								{buttonIconPosition === "left" && (
+									<i className={buttonIcon}></i>
+								)}
+								<span className="ebgb-button-text">{buttonText}</span>
+								{buttonIconPosition === "right" && (
+									<i className={buttonIcon}></i>
+								)}
+							</a>
+						</div>
+					)}
 				</div>
 			</div>
 		</>

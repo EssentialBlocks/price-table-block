@@ -32,3 +32,9 @@ export const TEXT_DECORATION = [
 	{ label: __("Underline"), value: "underline" },
 	{ label: __("Underline Oveline"), value: "underline overline" },
 ];
+
+// Responsive Range Controller
+export const buttonIconSpacing = "btnIconSpace";
+
+// dimension controls
+export const buttonMargin = "btnMargin";

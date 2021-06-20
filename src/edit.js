@@ -23,18 +23,22 @@ const edit = (props) => {
 		currencyPlacement,
 		pricePeriod,
 		periodSeparator,
+		features,
+		showButton,
+		buttonIcon,
+		buttonIconPosition,
+		buttonText,
+		buttonURL,
 
 		displaySubtitle,
 		titleBackgroundColor,
 		titleTextColor,
 		priceBackgroundColor,
 		priceTextColor,
-		features,
 		featuresBackgroundColor,
 		featuresTextColor,
 		buttonBackground,
 		buttonTextColor,
-		buttonText,
 		isHover,
 		hoverBackgroundColor,
 		hoverTextColor,
@@ -298,63 +302,46 @@ const edit = (props) => {
 						{periodSeparator} {pricePeriod}
 					</span>
 				</div>
-				{console.log(attributes)}
 				<div className="body">
-					<ul>
-						{features.map(({ icon, text, color }) => (
-							<li data-icon={icon} data-color={color}>
-								<span
-									className={`ebgb-pricebox-icon ${icon}`}
-									style={{ color: color }}
-								/>
-								<span className="ebgb-pricebox-text">{text}</span>
+					<ul className="ebgb-pricebox-features">
+						{features.map(({ icon, text, color, clickable, link }) => (
+							<li
+								className="ebgb-pricebox-feature-item"
+								style={featureListStyle}
+								data-icon={icon}
+								data-color={color}
+								data-clickable={clickable}
+								data-link={link}
+							>
+								{clickable && link ? (
+									<a href={link}>
+										<span className={`ebgb-pricebox-icon ${icon}`} />
+										<span className="ebgb-pricebox-feature-text">{text}</span>
+									</a>
+								) : (
+									<>
+										<span className={`ebgb-pricebox-icon ${icon}`} />
+										<span className="ebgb-pricebox-feature-text">{text}</span>
+									</>
+								)}
 							</li>
 						))}
-						{/* <li>
-							<span className="li-icon" style={colorStyles}>
-								<i className="fas fa-check"></i>
-							</span>
-							<span className="ebgb-pricebox-feature-text">
-								Unlimited calls
-							</span>
-						</li>
-						<li>
-							<span className="li-icon" style={colorStyles}>
-								<i className="fas fa-check"></i>
-							</span>
-							Free hosting
-						</li>
-						<li>
-							<span className="li-icon" style={colorStyles}>
-								<i className="fas fa-check"></i>
-							</span>
-							500 MB of storage space
-						</li>
-						<li>
-							<span className="li-icon" style={colorStyles}>
-								<i className="fas fa-check"></i>
-							</span>
-							500 MB Bandwidth
-						</li>
-						<li>
-							<span className="li-icon" style={colorStyles}>
-								<i className="fas fa-check"></i>
-							</span>
-							24/7 support
-						</li> */}
 					</ul>
 				</div>
-				<div className="footer">
-					<a
-						href="#"
-						target="_blank"
-						rel="nofollow noopener"
-						className="ebgb-pricing-button"
-					>
-						<i className=" fa-icon-left"></i>
-						Choose Plan{" "}
-					</a>
-				</div>
+				{showButton && (
+					<div className="footer" data-icon={buttonIcon}>
+						<a
+							href={buttonURL}
+							// target="_blank"
+							// rel="nofollow noopener"
+							className="ebgb-pricing-button"
+						>
+							{buttonIconPosition === "left" && <i className={buttonIcon}></i>}
+							<span className="ebgb-button-text">{buttonText}</span>
+							{buttonIconPosition === "right" && <i className={buttonIcon}></i>}
+						</a>
+					</div>
+				)}
 			</div>
 		</div>,
 		// edit view end

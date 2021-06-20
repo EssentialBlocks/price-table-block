@@ -1,9 +1,32 @@
+import {
+	generateResponsiveRangeAttributes,
+	generateDimensionsAttributes,
+} from "../util/helpers";
+import { buttonIconSpacing, buttonMargin } from "./constants";
+
 const attributes = {
+	// the following 4 attributes is must required for responsive options and asset generation for frontend
+	// responsive control attributes ⬇
+	resOption: {
+		type: "string",
+		default: "Desktop",
+	},
+	// blockId attribute for making unique className and other uniqueness ⬇
+	blockId: {
+		type: "string",
+	},
+	blockRoot: {
+		type: "string",
+		default: "essential_block",
+	},
+	// blockMeta is for keeping all the styles ⬇
+	blockMeta: {
+		type: "object",
+	},
 	pricingStyle: {
 		type: "string",
 		default: "style-1",
 	},
-
 	title: {
 		type: "string",
 		source: "text",
@@ -64,49 +87,6 @@ const attributes = {
 		attribute: "data-period-separator",
 		default: "/",
 	},
-
-	priceboxBackground: {
-		type: "string",
-	},
-	titleTag: {
-		type: "string",
-		default: "h3",
-	},
-	displaySubtitle: {
-		type: "boolean",
-		default: false,
-	},
-
-	titleBackgroundColor: {
-		type: "string",
-	},
-	titleTextColor: {
-		type: "string",
-	},
-	price: {
-		type: "string",
-		source: "text",
-		selector: ".eb-pricebox-price",
-		default: "$99",
-	},
-	priceValueSize: {
-		type: "number",
-	},
-	displayPriceDetails: {
-		type: "boolean",
-		default: false,
-	},
-	priceDetails: {
-		type: "string",
-		source: "text",
-		selector: ".eb-pricebox-price-details",
-	},
-	priceBackgroundColor: {
-		type: "string",
-	},
-	priceTextColor: {
-		type: "string",
-	},
 	features: {
 		type: "array",
 		source: "query",
@@ -115,7 +95,7 @@ const attributes = {
 			text: {
 				type: "string",
 				source: "text",
-				selector: ".ebgb-pricebox-feature-item",
+				selector: ".ebgb-pricebox-feature-text",
 			},
 			icon: {
 				type: "string",
@@ -169,16 +149,79 @@ const attributes = {
 			},
 		],
 	},
+	showButton: {
+		type: "boolean",
+		default: true,
+	},
+	buttonIcon: {
+		type: "attribute",
+		selector: ".ebgb-pricing .footer",
+		attribute: "data-icon",
+	},
+	buttonIconPosition: {
+		type: "string",
+		default: "left",
+	},
+	buttonText: {
+		type: "string",
+		default: "Choose Plan",
+	},
+	...generateResponsiveRangeAttributes(buttonIconSpacing, {
+		defaultRange: 0,
+		noUnits: true,
+	}),
+	...generateDimensionsAttributes(buttonMargin),
+	// new attributes end
+
+	priceboxBackground: {
+		type: "string",
+	},
+	titleTag: {
+		type: "string",
+		default: "h3",
+	},
+	displaySubtitle: {
+		type: "boolean",
+		default: false,
+	},
+
+	titleBackgroundColor: {
+		type: "string",
+	},
+	titleTextColor: {
+		type: "string",
+	},
+	price: {
+		type: "string",
+		source: "text",
+		selector: ".eb-pricebox-price",
+		default: "$99",
+	},
+	priceValueSize: {
+		type: "number",
+	},
+	displayPriceDetails: {
+		type: "boolean",
+		default: false,
+	},
+	priceDetails: {
+		type: "string",
+		source: "text",
+		selector: ".eb-pricebox-price-details",
+	},
+	priceBackgroundColor: {
+		type: "string",
+	},
+	priceTextColor: {
+		type: "string",
+	},
 	featuresBackgroundColor: {
 		type: "string",
 	},
 	featuresTextColor: {
 		type: "string",
 	},
-	buttonText: {
-		type: "string",
-		default: "Choose Plan",
-	},
+
 	buttonSize: {
 		type: "string",
 	},
