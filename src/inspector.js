@@ -20,7 +20,7 @@ const {
  * Internal dependencies
  */
 import {
-	BORDER_STYLES,
+	TWOUNITS,
 	FONT_WEIGHT,
 	TEXT_TRANSFORM,
 	TEXT_DECORATION,
@@ -28,8 +28,32 @@ import {
 	buttonIconSize,
 	buttonPadding,
 	buttonMargin,
+	wrapperPadding,
+	wrapperMargin,
+	priceCurrencyMargin,
 	buttonBorderShadow,
+	buttonBackgroundControl,
+	priceTableBackground,
+	wrapperBorderShadow,
+	iconBorderShadow,
+	headerIconSize,
+	headerIconWidth,
+	headerIconHeight,
+	salepriceCurrencyMargin,
+	featuresIconSize,
 } from "./constants";
+
+import {
+	typoPrefix_button,
+	typoPrefix_title,
+	typoPrefix_subtitle,
+	typoPrefix_saleprice_currency,
+	typoPrefix_price_title,
+	typoPrefix_price_currency,
+	typoPrefix_saleprice,
+	typoPrefix_pricing_period,
+	typoPrefix_features_text,
+} from "./constants/typographyPrefixConstants";
 
 import objAttributes from "./attributes";
 import faIcons from "../util/faIcons";
@@ -44,7 +68,6 @@ import FontIconPicker from "@fonticonpicker/react-fonticonpicker";
 import ResponsiveRangeController from "../util/responsive-range-control";
 import ResponsiveDimensionsControl from "../util/dimensions-control-v2";
 import TypographyDropdown from "../util/typography-control-v2";
-import { typoPrefix_button } from "./constants/typographyPrefixConstants";
 import BackgroundControl from "../util/background-control";
 import BorderShadowControl from "../util/border-shadow-control";
 import {
@@ -74,57 +97,32 @@ const Inspector = ({ attributes, setAttributes }) => {
 		buttonURL,
 		buttonTextColor,
 		hoverTextColor,
-		buttonBackground,
+		titleTextColor,
+		titleLineColor,
+		titleBackgroundColor,
+		subtitleTextColor,
+		showIconBackground,
+		iconBackgroundColor,
+		iconBackgroundHoverColor,
+		iconColor,
+		iconHoverColor,
+		priceTextColor,
+		priceCurrencyTextColor,
+		salePriceTextColor,
+		salepriceCurrencyTextColor,
+		pricingPeriodTextColor,
+		featuresTextColor,
 		// new attributes
 
 		displaySubtitle,
-		titleBackgroundColor,
-		titleTextColor,
-		displayPriceDetails,
-		priceDetails,
 		priceBackgroundColor,
-		priceTextColor,
 		featuresBackgroundColor,
-		featuresTextColor,
 		hoverBackgroundColor,
 		priceboxBackground,
-		shadowColor,
-		shadowHOffset,
-		shadowVOffset,
-		shadowBlur,
-		shadowSpread,
-		borderWidth,
-		borderStyle,
-		borderColor,
-		linkedMargin,
-		marginTop,
-		marginRight,
-		marginBottom,
-		marginLeft,
-		linkedPadding,
-		paddingTop,
-		paddingRight,
-		paddingBottom,
-		paddingLeft,
-		priceIcon,
-		marginUnit,
-		paddingUnit,
-		iconSizeUnit,
-		buttonHeight,
-		buttonHeightUnit,
-		buttonWidth,
-		buttonWidthUnit,
-		buttonBorderStyle,
-		buttonBorderWidth,
-		buttonBorderColor,
-		hoverBorderColor,
-		buttonBorderRadius,
-		buttonBorderRadiusUnit,
 		subtitleFontFamily,
 		subtitleFontSize,
 		subtitleSizeUnit,
 		subtitleFontWeight,
-		subtitleTextTransform,
 		subtitleTextDecoration,
 		subtitleLineHeight,
 		subtitleLineHeightUnit,
@@ -251,8 +249,83 @@ const Inspector = ({ attributes, setAttributes }) => {
 							/>
 						</BaseControl>
 					)}
+					<PanelBody title={__("Styles")}>
+						<BackgroundControl
+							controlName={priceTableBackground}
+							resRequiredProps={resRequiredProps}
+						/>
+						<ResponsiveDimensionsControl
+							resRequiredProps={resRequiredProps}
+							controlName={wrapperPadding}
+							baseLabel={__("Padding")}
+						/>
+						<ResponsiveDimensionsControl
+							resRequiredProps={resRequiredProps}
+							controlName={wrapperMargin}
+							baseLabel={__("Margin")}
+						/>
+						<BaseControl>
+							<h3 className="eb-control-title">Border</h3>
+						</BaseControl>
+
+						<BorderShadowControl
+							controlName={wrapperBorderShadow}
+							resRequiredProps={resRequiredProps}
+						/>
+					</PanelBody>
 				</PanelBody>
 
+				<PanelBody title={__("Header")} initialOpen={false}>
+					<BaseControl>
+						<h3 className="eb-control-title">{__("Title Style")}</h3>
+					</BaseControl>
+					<ColorControl
+						label={__("Color")}
+						color={titleTextColor}
+						onChange={(titleTextColor) => setAttributes({ titleTextColor })}
+					/>
+					{pricingStyle === "style-1" && (
+						<ColorControl
+							label={__("Line Color")}
+							color={titleLineColor}
+							onChange={(titleLineColor) => setAttributes({ titleLineColor })}
+						/>
+					)}
+					{pricingStyle === "style-2" && (
+						<ColorControl
+							label={__("Background Color")}
+							color={titleBackgroundColor}
+							onChange={(titleBackgroundColor) =>
+								setAttributes({ titleBackgroundColor })
+							}
+						/>
+					)}
+					<TypographyDropdown
+						baseLabel={__("Typography")}
+						typographyPrefixConstant={typoPrefix_title}
+						resRequiredProps={resRequiredProps}
+					/>
+					<hr />
+					{pricingStyle === "style-2" && (
+						<>
+							<BaseControl>
+								<h3 className="eb-control-title">{__("Subtitle Style")}</h3>
+							</BaseControl>
+							<ColorControl
+								label={__("Color")}
+								color={subtitleTextColor}
+								onChange={(subtitleTextColor) =>
+									setAttributes({ subtitleTextColor })
+								}
+							/>
+							<TypographyDropdown
+								baseLabel={__("Typography")}
+								typographyPrefixConstant={typoPrefix_subtitle}
+								resRequiredProps={resRequiredProps}
+							/>
+						</>
+					)}
+				</PanelBody>
 				<PanelBody title={__("Price")} initialOpen={false}>
 					<TextControl
 						label={__("Price")}
@@ -303,6 +376,97 @@ const Inspector = ({ attributes, setAttributes }) => {
 						value={periodSeparator}
 						onChange={(periodSeparator) => setAttributes({ periodSeparator })}
 					/>
+					<hr />
+					<BaseControl>
+						<h3 className="eb-control-title">{__("Original Price")}</h3>
+					</BaseControl>
+					<ColorControl
+						label={__("Color")}
+						color={priceTextColor}
+						onChange={(priceTextColor) => setAttributes({ priceTextColor })}
+					/>
+					<TypographyDropdown
+						baseLabel={__("Typography")}
+						typographyPrefixConstant={typoPrefix_price_title}
+						resRequiredProps={resRequiredProps}
+					/>
+					<hr />
+					<BaseControl>
+						<h3 className="eb-control-title">
+							{__("Original Price Currency")}
+						</h3>
+					</BaseControl>
+					<ColorControl
+						label={__("Color")}
+						color={priceCurrencyTextColor}
+						onChange={(priceCurrencyTextColor) =>
+							setAttributes({ priceCurrencyTextColor })
+						}
+					/>
+					<TypographyDropdown
+						baseLabel={__("Typography")}
+						typographyPrefixConstant={typoPrefix_price_currency}
+						resRequiredProps={resRequiredProps}
+					/>
+					<ResponsiveDimensionsControl
+						resRequiredProps={resRequiredProps}
+						controlName={priceCurrencyMargin}
+						baseLabel={__("Margin")}
+					/>
+					<hr />
+					<BaseControl>
+						<h3 className="eb-control-title">{__("Sale Price")}</h3>
+					</BaseControl>
+					<ColorControl
+						label={__("Color")}
+						color={salePriceTextColor}
+						onChange={(salePriceTextColor) =>
+							setAttributes({ salePriceTextColor })
+						}
+					/>
+					<TypographyDropdown
+						baseLabel={__("Typography")}
+						typographyPrefixConstant={typoPrefix_saleprice}
+						resRequiredProps={resRequiredProps}
+					/>
+					<hr />
+					<BaseControl>
+						<h3 className="eb-control-title">{__("Sale Price Currency")}</h3>
+					</BaseControl>
+					<ColorControl
+						label={__("Color")}
+						color={salepriceCurrencyTextColor}
+						onChange={(salepriceCurrencyTextColor) =>
+							setAttributes({ salepriceCurrencyTextColor })
+						}
+					/>
+					<TypographyDropdown
+						baseLabel={__("Typography")}
+						typographyPrefixConstant={typoPrefix_saleprice_currency}
+						resRequiredProps={resRequiredProps}
+					/>
+					<ResponsiveDimensionsControl
+						resRequiredProps={resRequiredProps}
+						controlName={salepriceCurrencyMargin}
+						baseLabel={__("Margin")}
+					/>
+					<hr />
+					<BaseControl>
+						<h3 className="eb-control-title">{__("Pricing Period")}</h3>
+					</BaseControl>
+					<ColorControl
+						label={__("Color")}
+						color={pricingPeriodTextColor}
+						F
+						onChange={(pricingPeriodTextColor) =>
+							setAttributes({ pricingPeriodTextColor })
+						}
+					/>
+					<TypographyDropdown
+						baseLabel={__("Typography")}
+						typographyPrefixConstant={typoPrefix_pricing_period}
+						resRequiredProps={resRequiredProps}
+					/>
 				</PanelBody>
 
 				<PanelBody title={__("Features")} initialOpen={false}>
@@ -318,6 +482,28 @@ const Inspector = ({ attributes, setAttributes }) => {
 					>
 						<span className="eb-pricebox-add-button-label">Add Feature</span>
 					</Button>
+					<hr />
+					<ColorControl
+						label={__("Color")}
+						color={featuresTextColor}
+						onChange={(featuresTextColor) =>
+							setAttributes({ featuresTextColor })
+						}
+					/>
+					<ResponsiveRangeController
+						baseLabel={__("Icon Size")}
+						controlName={featuresIconSize}
+						resRequiredProps={resRequiredProps}
+						min={0}
+						max={50}
+						step={1}
+						noUnits
+					/>
+					<TypographyDropdown
+						baseLabel={__("Typography")}
+						typographyPrefixConstant={typoPrefix_features_text}
+						resRequiredProps={resRequiredProps}
+					/>
 				</PanelBody>
 
 				<PanelBody title={__("Button")} initialOpen={false}>
@@ -401,9 +587,11 @@ const Inspector = ({ attributes, setAttributes }) => {
 						color={hoverTextColor}
 						onChange={(hoverTextColor) => setAttributes({ hoverTextColor })}
 					/>
-					<BaseControl label="Button Background"></BaseControl>
+					<BaseControl>
+						<h3 className="eb-control-title">{__("Button Background")}</h3>
+					</BaseControl>
 					<BackgroundControl
-						controlName={buttonBackground}
+						controlName={buttonBackgroundControl}
 						resRequiredProps={resRequiredProps}
 					/>
 					<ColorControl
@@ -413,662 +601,90 @@ const Inspector = ({ attributes, setAttributes }) => {
 							setAttributes({ hoverBackgroundColor })
 						}
 					/>
-					<BaseControl label="Button Border Style"></BaseControl>
+					<BaseControl>
+						<h3 className="eb-control-title">{__("Button Border Style")}</h3>
+					</BaseControl>
 					<BorderShadowControl
 						controlName={buttonBorderShadow}
 						resRequiredProps={resRequiredProps}
 					/>
-
-					<ColorControl
-						label={__("Border Color")}
-						color={buttonBorderColor}
-						onChange={(buttonBorderColor) =>
-							setAttributes({ buttonBorderColor })
-						}
-					/>
 				</PanelBody>
 
-				<PanelBody title={__("Margin & Padding")} initialOpen={false}>
-					<UnitControl
-						selectedUnit={marginUnit}
-						unitTypes={[
-							{ label: "px", value: "px" },
-							{ label: "em", value: "em" },
-							{ label: "%", value: "%" },
-						]}
-						onClick={(marginUnit) => setAttributes({ marginUnit })}
-					/>
-
-					<DimensionsControl
-						label={__("Margin")}
-						top={marginTop}
-						right={marginRight}
-						bottom={marginBottom}
-						left={marginLeft}
-						onChange={({ top, right, bottom, left }) =>
-							setAttributes({
-								marginTop: top,
-								marginRight: right,
-								marginBottom: bottom,
-								marginLeft: left,
-							})
-						}
-					/>
-
-					<UnitControl
-						selectedUnit={paddingUnit}
-						unitTypes={[
-							{ label: "px", value: "px" },
-							{ label: "em", value: "em" },
-							{ label: "%", value: "%" },
-						]}
-						onClick={(paddingUnit) => setAttributes({ paddingUnit })}
-					/>
-
-					<DimensionsControl
-						label={__("Padding")}
-						top={paddingTop}
-						right={paddingRight}
-						bottom={paddingBottom}
-						left={paddingLeft}
-						onChange={({ top, right, bottom, left }) =>
-							setAttributes({
-								paddingTop: top,
-								paddingRight: right,
-								paddingBottom: bottom,
-								paddingLeft: left,
-							})
-						}
-					/>
-				</PanelBody>
-
-				<PanelBody title={__("Typography")} initialOpen={false}>
-					{displaySubtitle && (
-						<BaseControl label={__("Subtitle")} className="eb-typography-base">
-							<Dropdown
-								className="eb-typography-dropdown"
-								contentClassName="my-popover-content-classname"
-								position="bottom right"
-								renderToggle={({ isOpen, onToggle }) => (
-									<Button isSmall onClick={onToggle} aria-expanded={isOpen}>
-										<TypographyIcon />
-									</Button>
-								)}
-								renderContent={() => (
-									<div
-										className="eb-panel-control"
-										style={{ padding: "0.2rem" }}
-									>
-										<FontPicker
-											label={__("Font Family")}
-											value={subtitleFontFamily}
-											onChange={(subtitleFontFamily) =>
-												setAttributes({ subtitleFontFamily })
-											}
-										/>
-
-										<UnitControl
-											selectedUnit={subtitleSizeUnit}
-											unitTypes={[
-												{ label: "px", value: "px" },
-												{ label: "%", value: "%" },
-												{ label: "em", value: "em" },
-											]}
-											onClick={(subtitleSizeUnit) =>
-												setAttributes({ subtitleSizeUnit })
-											}
-										/>
-
-										<RangeControl
-											label={__("Font Size")}
-											value={subtitleFontSize}
-											onChange={(subtitleFontSize) =>
-												setAttributes({ subtitleFontSize })
-											}
-											step={SUBTITLE_SIZE_STEP}
-											min={0}
-											max={SUBTITLE_SIZE_MAX}
-										/>
-
-										<SelectControl
-											label={__("Font Weight")}
-											value={subtitleFontWeight}
-											options={FONT_WEIGHT}
-											onChange={(subtitleFontWeight) =>
-												setAttributes({ subtitleFontWeight })
-											}
-										/>
-
-										<SelectControl
-											label={__("Text Decoration")}
-											value={subtitleTextDecoration}
-											options={TEXT_DECORATION}
-											onChange={(subtitleTextDecoration) =>
-												setAttributes({ subtitleTextDecoration })
-											}
-										/>
-
-										<UnitControl
-											selectedUnit={subtitleLetterSpacingUnit}
-											unitTypes={[
-												{ label: "px", value: "px" },
-												{ label: "em", value: "em" },
-											]}
-											onClick={(subtitleLetterSpacingUnit) =>
-												setAttributes({ subtitleLetterSpacingUnit })
-											}
-										/>
-
-										<RangeControl
-											label={__("Letter Spacing")}
-											value={subtitleLetterSpacing}
-											onChange={(subtitleLetterSpacing) =>
-												setAttributes({ subtitleLetterSpacing })
-											}
-											min={0}
-											max={SUBTITLE_SPACING_MAX}
-											step={SUBTITLE_SPACING_STEP}
-										/>
-
-										<UnitControl
-											selectedUnit={subtitleLineHeightUnit}
-											unitTypes={[
-												{ label: "px", value: "px" },
-												{ label: "em", value: "em" },
-											]}
-											onClick={(subtitleLineHeightUnit) =>
-												setAttributes({ subtitleLineHeightUnit })
-											}
-										/>
-
-										<RangeControl
-											label={__("Line Height")}
-											value={subtitleLineHeight}
-											onChange={(subtitleLineHeight) =>
-												setAttributes({ subtitleLineHeight })
-											}
-											min={0}
-											max={SUBTITLE_LINE_HEIGHT_MAX}
-											step={SUBTITLE_LINE_HEIGHT_STEP}
-										/>
-									</div>
-								)}
-							/>
+				{pricingStyle === "style-2" && (
+					<PanelBody title={__("Icon Settings")} initialOpen={false}>
+						<ToggleControl
+							label={__("Show Background")}
+							checked={showIconBackground}
+							onChange={() => {
+								setAttributes({ showIconBackground: !showIconBackground });
+							}}
+						/>
+						{showIconBackground && (
+							<>
+								<ColorControl
+									label={__("Background Color")}
+									color={iconBackgroundColor}
+									onChange={(iconBackgroundColor) =>
+										setAttributes({ iconBackgroundColor })
+									}
+								/>
+								<ColorControl
+									label={__("Background Hover Color")}
+									color={iconBackgroundHoverColor}
+									onChange={(iconBackgroundHoverColor) =>
+										setAttributes({ iconBackgroundHoverColor })
+									}
+								/>
+								<hr />
+							</>
+						)}
+						<ResponsiveRangeController
+							baseLabel={__("Icon Size")}
+							controlName={headerIconSize}
+							resRequiredProps={resRequiredProps}
+							min={0}
+							max={200}
+							step={1}
+						/>
+						<ResponsiveRangeController
+							baseLabel={__("Icon Area Width")}
+							controlName={headerIconWidth}
+							resRequiredProps={resRequiredProps}
+							units={TWOUNITS}
+							min={0}
+							max={500}
+							step={1}
+						/>
+						<ResponsiveRangeController
+							baseLabel={__("Icon Area Height")}
+							controlName={headerIconHeight}
+							resRequiredProps={resRequiredProps}
+							units={TWOUNITS}
+							min={0}
+							max={500}
+							step={1}
+						/>
+						<ColorControl
+							label={__("Icon Color")}
+							color={iconColor}
+							onChange={(iconColor) => setAttributes({ iconColor })}
+						/>
+						<ColorControl
+							label={__("Icon Hover Color")}
+							color={iconHoverColor}
+							onChange={(iconHoverColor) => setAttributes({ iconHoverColor })}
+						/>
+						<hr />
+						<BaseControl>
+							<h3 className="eb-control-title">Border</h3>
 						</BaseControl>
-					)}
-
-					<BaseControl label={__("Price")} className="eb-typography-base">
-						<Dropdown
-							className="eb-typography-dropdown"
-							contentClassName="my-popover-content-classname"
-							position="bottom right"
-							renderToggle={({ isOpen, onToggle }) => (
-								<Button isSmall onClick={onToggle} aria-expanded={isOpen}>
-									<TypographyIcon />
-								</Button>
-							)}
-							renderContent={() => (
-								<div className="eb-panel-control" style={{ padding: "0.2rem" }}>
-									<FontPicker
-										label={__("Font Family")}
-										value={priceFontFamily}
-										onChange={(priceFontFamily) =>
-											setAttributes({ priceFontFamily })
-										}
-									/>
-
-									<UnitControl
-										selectedUnit={priceSizeUnit}
-										unitTypes={[
-											{ label: "px", value: "px" },
-											{ label: "%", value: "%" },
-											{ label: "em", value: "em" },
-										]}
-										onClick={(priceSizeUnit) =>
-											setAttributes({ priceSizeUnit })
-										}
-									/>
-
-									<RangeControl
-										label={__("Font Size")}
-										value={priceFontSize}
-										onChange={(priceFontSize) =>
-											setAttributes({ priceFontSize })
-										}
-										step={PRICE_SIZE_STEP}
-										min={0}
-										max={PRICE_SIZE_MAX}
-									/>
-
-									<SelectControl
-										label={__("Font Weight")}
-										value={priceFontWeight}
-										options={FONT_WEIGHT}
-										onChange={(priceFontWeight) =>
-											setAttributes({ priceFontWeight })
-										}
-									/>
-
-									<SelectControl
-										label={__("Text Decoration")}
-										value={priceTextDecoration}
-										options={TEXT_DECORATION}
-										onChange={(priceTextDecoration) =>
-											setAttributes({ priceTextDecoration })
-										}
-									/>
-
-									<UnitControl
-										selectedUnit={priceLetterSpacingUnit}
-										unitTypes={[
-											{ label: "px", value: "px" },
-											{ label: "em", value: "em" },
-										]}
-										onClick={(priceLetterSpacingUnit) =>
-											setAttributes({ priceLetterSpacingUnit })
-										}
-									/>
-
-									<RangeControl
-										label={__("Letter Spacing")}
-										value={priceLetterSpacing}
-										onChange={(priceLetterSpacing) =>
-											setAttributes({ priceLetterSpacing })
-										}
-										min={0}
-										max={PRICE_SPACING_MAX}
-										step={PRICE_SPACING_STEP}
-									/>
-
-									<UnitControl
-										selectedUnit={priceLineHeightUnit}
-										unitTypes={[
-											{ label: "px", value: "px" },
-											{ label: "em", value: "em" },
-										]}
-										onClick={(priceLineHeightUnit) =>
-											setAttributes({ priceLineHeightUnit })
-										}
-									/>
-
-									<RangeControl
-										label={__("Line Height")}
-										value={priceLineHeight}
-										onChange={(priceLineHeight) =>
-											setAttributes({ priceLineHeight })
-										}
-										min={0}
-										max={PRICE_LINE_HEIGHT_MAX}
-										step={PRICE_LINE_HEIGHT_STEP}
-									/>
-								</div>
-							)}
+						<BorderShadowControl
+							controlName={iconBorderShadow}
+							resRequiredProps={resRequiredProps}
+							noShadow
 						/>
-					</BaseControl>
-
-					<BaseControl label={__("Feauture")} className="eb-typography-base">
-						<Dropdown
-							className="eb-typography-dropdown"
-							contentClassName="my-popover-content-classname"
-							position="bottom right"
-							renderToggle={({ isOpen, onToggle }) => (
-								<Button isSmall onClick={onToggle} aria-expanded={isOpen}>
-									<TypographyIcon />
-								</Button>
-							)}
-							renderContent={() => (
-								<div className="eb-panel-control" style={{ padding: "0.2rem" }}>
-									<FontPicker
-										label={__("Font Family")}
-										value={featureFontFamily}
-										onChange={(featureFontFamily) =>
-											setAttributes({ featureFontFamily })
-										}
-									/>
-
-									<UnitControl
-										selectedUnit={featureSizeUnit}
-										unitTypes={[
-											{ label: "px", value: "px" },
-											{ label: "%", value: "%" },
-											{ label: "em", value: "em" },
-										]}
-										onClick={(featureSizeUnit) =>
-											setAttributes({ featureSizeUnit })
-										}
-									/>
-
-									<RangeControl
-										label={__("Font Size")}
-										value={featureFontSize}
-										onChange={(featureFontSize) =>
-											setAttributes({ featureFontSize })
-										}
-										step={FEATURE_SIZE_STEP}
-										min={0}
-										max={FEATURE_SIZE_MAX}
-									/>
-
-									<SelectControl
-										label={__("Font Weight")}
-										value={featureFontWeight}
-										options={FONT_WEIGHT}
-										onChange={(featureFontWeight) =>
-											setAttributes({ featureFontWeight })
-										}
-									/>
-
-									<SelectControl
-										label={__("Text Transform")}
-										value={featureTextTransform}
-										options={TEXT_TRANSFORM}
-										onChange={(featureTextTransform) =>
-											setAttributes({ featureTextTransform })
-										}
-									/>
-
-									<SelectControl
-										label={__("Text Decoration")}
-										value={featureTextDecoration}
-										options={TEXT_DECORATION}
-										onChange={(featureTextDecoration) =>
-											setAttributes({ featureTextDecoration })
-										}
-									/>
-
-									<UnitControl
-										selectedUnit={featureLetterSpacingUnit}
-										unitTypes={[
-											{ label: "px", value: "px" },
-											{ label: "em", value: "em" },
-										]}
-										onClick={(featureLetterSpacingUnit) =>
-											setAttributes({ featureLetterSpacingUnit })
-										}
-									/>
-
-									<RangeControl
-										label={__("Letter Spacing")}
-										value={featureLetterSpacing}
-										onChange={(featureLetterSpacing) =>
-											setAttributes({ featureLetterSpacing })
-										}
-										min={0}
-										max={FEATURE_SPACING_MAX}
-										step={FEATURE_SPACING_STEP}
-									/>
-
-									<UnitControl
-										selectedUnit={featureLineHeightUnit}
-										unitTypes={[
-											{ label: "px", value: "px" },
-											{ label: "em", value: "em" },
-										]}
-										onClick={(featureLineHeightUnit) =>
-											setAttributes({ featureLineHeightUnit })
-										}
-									/>
-
-									<RangeControl
-										label={__("Line Height")}
-										value={featureLineHeight}
-										onChange={(featureLineHeight) =>
-											setAttributes({ featureLineHeight })
-										}
-										min={0}
-										max={FEATURE_LINE_HEIGHT_MAX}
-										step={FEATURE_LINE_HEIGHT_STEP}
-									/>
-								</div>
-							)}
-						/>
-					</BaseControl>
-
-					<BaseControl label={__("Button")} className="eb-typography-base">
-						<Dropdown
-							className="eb-typography-dropdown"
-							contentClassName="my-popover-content-classname"
-							position="bottom right"
-							renderToggle={({ isOpen, onToggle }) => (
-								<Button isSmall onClick={onToggle} aria-expanded={isOpen}>
-									<TypographyIcon />
-								</Button>
-							)}
-							renderContent={() => (
-								<div className="eb-panel-control" style={{ padding: "0.2rem" }}>
-									<FontPicker
-										label={__("Font Family")}
-										value={buttonFontFamily}
-										onChange={(buttonFontFamily) =>
-											setAttributes({ buttonFontFamily })
-										}
-									/>
-
-									<UnitControl
-										selectedUnit={buttonSizeUnit}
-										unitTypes={[
-											{ label: "px", value: "px" },
-											{ label: "%", value: "%" },
-											{ label: "em", value: "em" },
-										]}
-										onClick={(buttonSizeUnit) =>
-											setAttributes({ buttonSizeUnit })
-										}
-									/>
-
-									<RangeControl
-										label={__("Font Size")}
-										value={buttonFontSize}
-										onChange={(buttonFontSize) =>
-											setAttributes({ buttonFontSize })
-										}
-										step={BUTTON_SIZE_STEP}
-										min={0}
-										max={BUTTON_SIZE_MAX}
-									/>
-
-									<SelectControl
-										label={__("Font Weight")}
-										value={buttonFontWeight}
-										options={FONT_WEIGHT}
-										onChange={(buttonFontWeight) =>
-											setAttributes({ buttonFontWeight })
-										}
-									/>
-
-									<SelectControl
-										label={__("Text Decoration")}
-										value={buttonTextDecoration}
-										options={TEXT_DECORATION}
-										onChange={(buttonTextDecoration) =>
-											setAttributes({ buttonTextDecoration })
-										}
-									/>
-
-									<UnitControl
-										selectedUnit={buttonLetterSpacingUnit}
-										unitTypes={[
-											{ label: "px", value: "px" },
-											{ label: "em", value: "em" },
-										]}
-										onClick={(buttonLetterSpacingUnit) =>
-											setAttributes({ buttonLetterSpacingUnit })
-										}
-									/>
-
-									<RangeControl
-										label={__("Letter Spacing")}
-										value={buttonLetterSpacing}
-										onChange={(buttonLetterSpacing) =>
-											setAttributes({ buttonLetterSpacing })
-										}
-										min={0}
-										max={BUTTON_SPACING_MAX}
-										step={BUTTON_SPACING_STEP}
-									/>
-
-									<UnitControl
-										selectedUnit={buttonLineHeightUnit}
-										unitTypes={[
-											{ label: "px", value: "px" },
-											{ label: "em", value: "em" },
-										]}
-										onClick={(buttonLineHeightUnit) =>
-											setAttributes({ buttonLineHeightUnit })
-										}
-									/>
-
-									<RangeControl
-										label={__("Line Height")}
-										value={buttonLineHeight}
-										onChange={(buttonLineHeight) =>
-											setAttributes({ buttonLineHeight })
-										}
-										min={0}
-										max={BUTTON_LINE_HEIGHT_MAX}
-										step={BUTTON_LINE_HEIGHT_STEP}
-									/>
-								</div>
-							)}
-						/>
-					</BaseControl>
-				</PanelBody>
-
-				<PanelBody title={__("Colors")} initialOpen={false}>
-					<ColorControl
-						label={__("Background Color")}
-						color={priceboxBackground}
-						onChange={(priceboxBackground) =>
-							setAttributes({ priceboxBackground })
-						}
-					/>
-
-					<ColorControl
-						label={__("Title Background")}
-						color={titleBackgroundColor}
-						onChange={(titleBackgroundColor) =>
-							setAttributes({ titleBackgroundColor })
-						}
-					/>
-
-					<ColorControl
-						label={__("Title Text")}
-						color={titleTextColor}
-						onChange={(titleTextColor) => setAttributes({ titleTextColor })}
-					/>
-
-					<ColorControl
-						label={__("Price Background")}
-						color={priceBackgroundColor}
-						onChange={(priceBackgroundColor) =>
-							setAttributes({ priceBackgroundColor })
-						}
-					/>
-
-					<ColorControl
-						label={__("Price Text")}
-						color={priceTextColor}
-						onChange={(priceTextColor) => setAttributes({ priceTextColor })}
-					/>
-
-					<ColorControl
-						label={__("Features Background")}
-						color={featuresBackgroundColor}
-						onChange={(featuresBackgroundColor) =>
-							setAttributes({ featuresBackgroundColor })
-						}
-					/>
-
-					<ColorControl
-						label={__("Features Text")}
-						color={featuresTextColor}
-						onChange={(featuresTextColor) =>
-							setAttributes({ featuresTextColor })
-						}
-					/>
-				</PanelBody>
-
-				<PanelBody title={__("Border")} initialOpen={false}>
-					<ColorControl
-						label={__("Border Color")}
-						color={borderColor}
-						onChange={(borderColor) => setAttributes({ borderColor })}
-					/>
-
-					<ResetControl
-						onReset={() => setAttributes({ borderWidth: undefined })}
-					>
-						<RangeControl
-							label={__("Border Width")}
-							initialOpen={false}
-							value={borderWidth}
-							onChange={(borderWidth) => setAttributes({ borderWidth })}
-						/>
-					</ResetControl>
-
-					<SelectControl
-						label={__("Border Style")}
-						value={borderStyle}
-						options={BORDER_STYLES}
-						onChange={(newStyle) => setAttributes({ borderStyle: newStyle })}
-					/>
-				</PanelBody>
-
-				<PanelBody title={__("Shadow")} initialOpen={false}>
-					<ColorControl
-						label={__("Shadow Color")}
-						color={shadowColor}
-						onChange={(shadowColor) => setAttributes({ shadowColor })}
-					/>
-
-					<ResetControl
-						onReset={() => setAttributes({ shadowHOffset: undefined })}
-					>
-						<RangeControl
-							label={__("Horizontal Offset")}
-							value={shadowHOffset}
-							onChange={(shadowHOffset) => setAttributes({ shadowHOffset })}
-							min={0}
-							max={200}
-						/>
-					</ResetControl>
-
-					<ResetControl
-						onReset={() => setAttributes({ shadowVOffset: undefined })}
-					>
-						<RangeControl
-							label={__("Vertical Offset")}
-							value={shadowVOffset}
-							onChange={(shadowVOffset) => setAttributes({ shadowVOffset })}
-							min={0}
-							max={200}
-						/>
-					</ResetControl>
-
-					<ResetControl
-						onReset={() => setAttributes({ shadowBlur: undefined })}
-					>
-						<RangeControl
-							label={__("Blur")}
-							value={shadowBlur}
-							onChange={(shadowBlur) => setAttributes({ shadowBlur })}
-							min={0}
-							max={200}
-						/>
-					</ResetControl>
-
-					<ResetControl
-						onReset={() => setAttributes({ shadowSpread: undefined })}
-					>
-						<RangeControl
-							label={__("Spread")}
-							value={shadowSpread}
-							onChange={(shadowSpread) => setAttributes({ shadowSpread })}
-							min={0}
-							max={200}
-						/>
-					</ResetControl>
-				</PanelBody>
+					</PanelBody>
+				)}
 			</span>
 		</InspectorControls>
 	);

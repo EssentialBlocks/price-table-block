@@ -33,16 +33,32 @@ export const TEXT_DECORATION = [
 	{ label: __("Underline Oveline"), value: "underline overline" },
 ];
 
+export const TWOUNITS = [
+	{ label: __("px"), value: "px" },
+	{ label: __("%"), value: "%" },
+];
+
 // Responsive Range Controller
 export const buttonIconSpacing = "btnIconSpace";
 export const buttonIconSize = "btnIconSize";
+export const headerIconSize = "headerIconSize";
+export const headerIconWidth = "headerIconWidth";
+export const headerIconHeight = "headerIconHeight";
+export const featuresIconSize = "featuresIconSize";
 
 // dimension controls
 export const buttonPadding = "btnPadding";
 export const buttonMargin = "btnMargin";
+export const wrapperMargin = "wrapperMargin";
+export const wrapperPadding = "wrapperPadding";
+export const priceCurrencyMargin = "priceCurrencyMargin";
+export const salepriceCurrencyMargin = "salepriceCurrencyMargin";
 
 // background controls
-export const buttonBackground = "btnBg";
+export const buttonBackgroundControl = "btnBg";
+export const priceTableBackground = "priceTableBg";
 
 // border shadow controller
 export const buttonBorderShadow = "btnBrdSdw";
+export const wrapperBorderShadow = "wrpBrdSdw";
+export const iconBorderShadow = "iconBrdSdw";

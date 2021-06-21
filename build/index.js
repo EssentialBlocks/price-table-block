@@ -5659,7 +5659,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({
+var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({
   // the following 4 attributes is must required for responsive options and asset generation for frontend
   // responsive control attributes ⬇
   resOption: {
@@ -5815,6 +5815,60 @@ var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_object
   buttonText: {
     type: "string",
     "default": "Choose Plan"
+  },
+  titleTextColor: {
+    type: "string",
+    "default": "blue"
+  },
+  titleLineColor: {
+    type: "string",
+    "default": "#dbdbdb"
+  },
+  titleBackgroundColor: {
+    type: "string",
+    "default": "#C8E6C9"
+  },
+  subtitleTextColor: {
+    type: "string",
+    "default": "blue"
+  },
+  showIconBackground: {
+    type: "boolean",
+    "default": true
+  },
+  iconBackgroundColor: {
+    type: "string",
+    "default": "#C8E6C9"
+  },
+  iconBackgroundHoverColor: {
+    type: "string",
+    "default": "#C8E6C9"
+  },
+  iconColor: {
+    type: "string",
+    "default": "#ffffff"
+  },
+  iconHoverColor: {
+    type: "string",
+    "default": "#ffffff"
+  },
+  priceTextColor: {
+    type: "string"
+  },
+  priceCurrencyTextColor: {
+    type: "string"
+  },
+  salePriceTextColor: {
+    type: "string"
+  },
+  salepriceCurrencyTextColor: {
+    type: "string"
+  },
+  pricingPeriodTextColor: {
+    type: "string"
+  },
+  featuresTextColor: {
+    type: "string"
   }
 }, Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateResponsiveRangeAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["buttonIconSpacing"], {
   defaultRange: 0,
@@ -5822,9 +5876,17 @@ var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_object
 })), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateResponsiveRangeAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["buttonIconSize"], {
   defaultRange: 20,
   noUnits: true
-})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["buttonPadding"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["buttonMargin"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateTypographyAttributes"])(Object.values(_constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_0__))), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBackgroundAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["buttonBackground"], {
-  defaultFillColor: "#7967ff"
-})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBorderShadowAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["buttonBorderShadow"])), {}, {
+})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateResponsiveRangeAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["headerIconSize"], {
+  defaultRange: 30
+})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateResponsiveRangeAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["headerIconWidth"], {
+  defaultRange: 80
+})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateResponsiveRangeAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["headerIconHeight"], {
+  defaultRange: 80
+})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateResponsiveRangeAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["featuresIconSize"], {
+  defaultRange: 20
+})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["buttonPadding"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["buttonMargin"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["wrapperMargin"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["wrapperPadding"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["priceCurrencyMargin"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["salepriceCurrencyMargin"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateTypographyAttributes"])(Object.values(_constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_0__))), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBackgroundAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["buttonBackgroundControl"], {
+  defaultFillColor: "#00c853"
+})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBackgroundAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["priceTableBackground"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBorderShadowAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["buttonBorderShadow"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBorderShadowAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["wrapperBorderShadow"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBorderShadowAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["iconBorderShadow"])), {}, {
   // new attributes end
   priceboxBackground: {
     type: "string"
@@ -5837,21 +5899,6 @@ var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_object
     type: "boolean",
     "default": false
   },
-  titleBackgroundColor: {
-    type: "string"
-  },
-  titleTextColor: {
-    type: "string"
-  },
-  price: {
-    type: "string",
-    source: "text",
-    selector: ".eb-pricebox-price",
-    "default": "$99"
-  },
-  priceValueSize: {
-    type: "number"
-  },
   displayPriceDetails: {
     type: "boolean",
     "default": false
@@ -5862,9 +5909,6 @@ var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_object
     selector: ".eb-pricebox-price-details"
   },
   priceBackgroundColor: {
-    type: "string"
-  },
-  priceTextColor: {
     type: "string"
   },
   featuresBackgroundColor: {
@@ -5897,31 +5941,6 @@ var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_object
   },
   featureFontSize: {
     type: "number"
-  },
-  shadowColor: {
-    type: "string"
-  },
-  shadowHOffset: {
-    type: "number"
-  },
-  shadowVOffset: {
-    type: "number"
-  },
-  shadowSpread: {
-    type: "number"
-  },
-  shadowBlur: {
-    type: "number"
-  },
-  borderWidth: {
-    type: "number"
-  },
-  borderStyle: {
-    type: "string",
-    "default": "solid"
-  },
-  borderColor: {
-    type: "string"
   },
   linkedMargin: {
     type: "boolean",
@@ -6003,9 +6022,6 @@ var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_object
   },
   buttonBorderWidth: {
     type: "number"
-  },
-  buttonBorderColor: {
-    type: "string"
   },
   hoverBorderColor: {
     type: "string"
@@ -6139,7 +6155,7 @@ var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_object
 /*!********************************!*\
   !*** ./src/constants/index.js ***!
   \********************************/
-/*! exports provided: BORDER_STYLES, TEXT_TRANSFORM, FONT_WEIGHT, TEXT_DECORATION, buttonIconSpacing, buttonIconSize, buttonPadding, buttonMargin, buttonBackground, buttonBorderShadow */
+/*! exports provided: BORDER_STYLES, TEXT_TRANSFORM, FONT_WEIGHT, TEXT_DECORATION, TWOUNITS, buttonIconSpacing, buttonIconSize, headerIconSize, headerIconWidth, headerIconHeight, featuresIconSize, buttonPadding, buttonMargin, wrapperMargin, wrapperPadding, priceCurrencyMargin, salepriceCurrencyMargin, buttonBackgroundControl, priceTableBackground, buttonBorderShadow, wrapperBorderShadow, iconBorderShadow */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6148,12 +6164,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TEXT_TRANSFORM", function() { return TEXT_TRANSFORM; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FONT_WEIGHT", function() { return FONT_WEIGHT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TEXT_DECORATION", function() { return TEXT_DECORATION; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TWOUNITS", function() { return TWOUNITS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buttonIconSpacing", function() { return buttonIconSpacing; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buttonIconSize", function() { return buttonIconSize; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "headerIconSize", function() { return headerIconSize; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "headerIconWidth", function() { return headerIconWidth; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "headerIconHeight", function() { return headerIconHeight; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "featuresIconSize", function() { return featuresIconSize; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buttonPadding", function() { return buttonPadding; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buttonMargin", function() { return buttonMargin; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buttonBackground", function() { return buttonBackground; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "wrapperMargin", function() { return wrapperMargin; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "wrapperPadding", function() { return wrapperPadding; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "priceCurrencyMargin", function() { return priceCurrencyMargin; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "salepriceCurrencyMargin", function() { return salepriceCurrencyMargin; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buttonBackgroundControl", function() { return buttonBackgroundControl; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "priceTableBackground", function() { return priceTableBackground; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buttonBorderShadow", function() { return buttonBorderShadow; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "wrapperBorderShadow", function() { return wrapperBorderShadow; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "iconBorderShadow", function() { return iconBorderShadow; });
 var __ = wp.i18n.__;
 var BORDER_STYLES = [{
   label: __("Dashed"),
@@ -6221,17 +6249,35 @@ var TEXT_DECORATION = [{
 }, {
   label: __("Underline Oveline"),
   value: "underline overline"
+}];
+var TWOUNITS = [{
+  label: __("px"),
+  value: "px"
+}, {
+  label: __("%"),
+  value: "%"
 }]; // Responsive Range Controller
 
 var buttonIconSpacing = "btnIconSpace";
-var buttonIconSize = "btnIconSize"; // dimension controls
+var buttonIconSize = "btnIconSize";
+var headerIconSize = "headerIconSize";
+var headerIconWidth = "headerIconWidth";
+var headerIconHeight = "headerIconHeight";
+var featuresIconSize = "featuresIconSize"; // dimension controls
 
 var buttonPadding = "btnPadding";
-var buttonMargin = "btnMargin"; // background controls
+var buttonMargin = "btnMargin";
+var wrapperMargin = "wrapperMargin";
+var wrapperPadding = "wrapperPadding";
+var priceCurrencyMargin = "priceCurrencyMargin";
+var salepriceCurrencyMargin = "salepriceCurrencyMargin"; // background controls
 
-var buttonBackground = "btnBg"; // border shadow controller
+var buttonBackgroundControl = "btnBg";
+var priceTableBackground = "priceTableBg"; // border shadow controller
 
 var buttonBorderShadow = "btnBrdSdw";
+var wrapperBorderShadow = "wrpBrdSdw";
+var iconBorderShadow = "iconBrdSdw";
 
 /***/ }),
 
@@ -6239,13 +6285,29 @@ var buttonBorderShadow = "btnBrdSdw";
 /*!****************************************************!*\
   !*** ./src/constants/typographyPrefixConstants.js ***!
   \****************************************************/
-/*! exports provided: typoPrefix_button */
+/*! exports provided: typoPrefix_button, typoPrefix_title, typoPrefix_subtitle, typoPrefix_price_title, typoPrefix_price_currency, typoPrefix_saleprice, typoPrefix_saleprice_currency, typoPrefix_pricing_period, typoPrefix_features_text */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "typoPrefix_button", function() { return typoPrefix_button; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "typoPrefix_title", function() { return typoPrefix_title; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "typoPrefix_subtitle", function() { return typoPrefix_subtitle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "typoPrefix_price_title", function() { return typoPrefix_price_title; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "typoPrefix_price_currency", function() { return typoPrefix_price_currency; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "typoPrefix_saleprice", function() { return typoPrefix_saleprice; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "typoPrefix_saleprice_currency", function() { return typoPrefix_saleprice_currency; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "typoPrefix_pricing_period", function() { return typoPrefix_pricing_period; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "typoPrefix_features_text", function() { return typoPrefix_features_text; });
 var typoPrefix_button = "btnText";
+var typoPrefix_title = "titleText";
+var typoPrefix_subtitle = "subtitleText";
+var typoPrefix_price_title = "priceTitleText";
+var typoPrefix_price_currency = "priceCurrencyText";
+var typoPrefix_saleprice = "salepriceText";
+var typoPrefix_saleprice_currency = "salepriceCurrencyText";
+var typoPrefix_pricing_period = "pricingPeriodText";
+var typoPrefix_features_text = "featuresText";
 
 /***/ }),
 
@@ -6677,21 +6739,21 @@ registerBlockType("pricing-table-block/pricing-table", {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./constants */ "./src/constants/index.js");
-/* harmony import */ var _attributes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./attributes */ "./src/attributes.js");
-/* harmony import */ var _util_faIcons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../util/faIcons */ "./util/faIcons.js");
-/* harmony import */ var _util_dimensions_control__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../util/dimensions-control */ "./util/dimensions-control/index.js");
-/* harmony import */ var _util_unit_control__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../util/unit-control */ "./util/unit-control/index.js");
-/* harmony import */ var _sortable_features__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./sortable-features */ "./src/sortable-features.js");
-/* harmony import */ var _util_typography_control_FontPicker__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../util/typography-control/FontPicker */ "./util/typography-control/FontPicker.js");
-/* harmony import */ var _util_color_control__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../util/color-control */ "./util/color-control/index.js");
-/* harmony import */ var _util_icons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../util/icons */ "./util/icons.js");
-/* harmony import */ var _util_reset_control__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../util/reset-control */ "./util/reset-control/index.js");
-/* harmony import */ var _fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fonticonpicker/react-fonticonpicker */ "./node_modules/@fonticonpicker/react-fonticonpicker/dist/fonticonpicker.react.js");
-/* harmony import */ var _fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _util_responsive_range_control__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../util/responsive-range-control */ "./util/responsive-range-control/index.js");
-/* harmony import */ var _util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../util/dimensions-control-v2 */ "./util/dimensions-control-v2/index.js");
-/* harmony import */ var _util_typography_control_v2__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../util/typography-control-v2 */ "./util/typography-control-v2/index.js");
-/* harmony import */ var _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./constants/typographyPrefixConstants */ "./src/constants/typographyPrefixConstants.js");
+/* harmony import */ var _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./constants/typographyPrefixConstants */ "./src/constants/typographyPrefixConstants.js");
+/* harmony import */ var _attributes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./attributes */ "./src/attributes.js");
+/* harmony import */ var _util_faIcons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../util/faIcons */ "./util/faIcons.js");
+/* harmony import */ var _util_dimensions_control__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../util/dimensions-control */ "./util/dimensions-control/index.js");
+/* harmony import */ var _util_unit_control__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../util/unit-control */ "./util/unit-control/index.js");
+/* harmony import */ var _sortable_features__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./sortable-features */ "./src/sortable-features.js");
+/* harmony import */ var _util_typography_control_FontPicker__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../util/typography-control/FontPicker */ "./util/typography-control/FontPicker.js");
+/* harmony import */ var _util_color_control__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../util/color-control */ "./util/color-control/index.js");
+/* harmony import */ var _util_icons__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../util/icons */ "./util/icons.js");
+/* harmony import */ var _util_reset_control__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../util/reset-control */ "./util/reset-control/index.js");
+/* harmony import */ var _fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fonticonpicker/react-fonticonpicker */ "./node_modules/@fonticonpicker/react-fonticonpicker/dist/fonticonpicker.react.js");
+/* harmony import */ var _fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _util_responsive_range_control__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../util/responsive-range-control */ "./util/responsive-range-control/index.js");
+/* harmony import */ var _util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../util/dimensions-control-v2 */ "./util/dimensions-control-v2/index.js");
+/* harmony import */ var _util_typography_control_v2__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../util/typography-control-v2 */ "./util/typography-control-v2/index.js");
 /* harmony import */ var _util_background_control__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../util/background-control */ "./util/background-control/index.js");
 /* harmony import */ var _util_border_shadow_control__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../util/border-shadow-control */ "./util/border-shadow-control/index.js");
 /* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../util/helpers */ "./util/helpers/index.js");
@@ -6773,55 +6835,30 @@ var Inspector = function Inspector(_ref) {
       buttonURL = attributes.buttonURL,
       buttonTextColor = attributes.buttonTextColor,
       hoverTextColor = attributes.hoverTextColor,
-      buttonBackground = attributes.buttonBackground,
-      displaySubtitle = attributes.displaySubtitle,
-      titleBackgroundColor = attributes.titleBackgroundColor,
       titleTextColor = attributes.titleTextColor,
-      displayPriceDetails = attributes.displayPriceDetails,
-      priceDetails = attributes.priceDetails,
-      priceBackgroundColor = attributes.priceBackgroundColor,
+      titleLineColor = attributes.titleLineColor,
+      titleBackgroundColor = attributes.titleBackgroundColor,
+      subtitleTextColor = attributes.subtitleTextColor,
+      showIconBackground = attributes.showIconBackground,
+      iconBackgroundColor = attributes.iconBackgroundColor,
+      iconBackgroundHoverColor = attributes.iconBackgroundHoverColor,
+      iconColor = attributes.iconColor,
+      iconHoverColor = attributes.iconHoverColor,
       priceTextColor = attributes.priceTextColor,
-      featuresBackgroundColor = attributes.featuresBackgroundColor,
+      priceCurrencyTextColor = attributes.priceCurrencyTextColor,
+      salePriceTextColor = attributes.salePriceTextColor,
+      salepriceCurrencyTextColor = attributes.salepriceCurrencyTextColor,
+      pricingPeriodTextColor = attributes.pricingPeriodTextColor,
       featuresTextColor = attributes.featuresTextColor,
+      displaySubtitle = attributes.displaySubtitle,
+      priceBackgroundColor = attributes.priceBackgroundColor,
+      featuresBackgroundColor = attributes.featuresBackgroundColor,
       hoverBackgroundColor = attributes.hoverBackgroundColor,
       priceboxBackground = attributes.priceboxBackground,
-      shadowColor = attributes.shadowColor,
-      shadowHOffset = attributes.shadowHOffset,
-      shadowVOffset = attributes.shadowVOffset,
-      shadowBlur = attributes.shadowBlur,
-      shadowSpread = attributes.shadowSpread,
-      borderWidth = attributes.borderWidth,
-      borderStyle = attributes.borderStyle,
-      borderColor = attributes.borderColor,
-      linkedMargin = attributes.linkedMargin,
-      marginTop = attributes.marginTop,
-      marginRight = attributes.marginRight,
-      marginBottom = attributes.marginBottom,
-      marginLeft = attributes.marginLeft,
-      linkedPadding = attributes.linkedPadding,
-      paddingTop = attributes.paddingTop,
-      paddingRight = attributes.paddingRight,
-      paddingBottom = attributes.paddingBottom,
-      paddingLeft = attributes.paddingLeft,
-      priceIcon = attributes.priceIcon,
-      marginUnit = attributes.marginUnit,
-      paddingUnit = attributes.paddingUnit,
-      iconSizeUnit = attributes.iconSizeUnit,
-      buttonHeight = attributes.buttonHeight,
-      buttonHeightUnit = attributes.buttonHeightUnit,
-      buttonWidth = attributes.buttonWidth,
-      buttonWidthUnit = attributes.buttonWidthUnit,
-      buttonBorderStyle = attributes.buttonBorderStyle,
-      buttonBorderWidth = attributes.buttonBorderWidth,
-      buttonBorderColor = attributes.buttonBorderColor,
-      hoverBorderColor = attributes.hoverBorderColor,
-      buttonBorderRadius = attributes.buttonBorderRadius,
-      buttonBorderRadiusUnit = attributes.buttonBorderRadiusUnit,
       subtitleFontFamily = attributes.subtitleFontFamily,
       subtitleFontSize = attributes.subtitleFontSize,
       subtitleSizeUnit = attributes.subtitleSizeUnit,
       subtitleFontWeight = attributes.subtitleFontWeight,
-      subtitleTextTransform = attributes.subtitleTextTransform,
       subtitleTextDecoration = attributes.subtitleTextDecoration,
       subtitleLineHeight = attributes.subtitleLineHeight,
       subtitleLineHeightUnit = attributes.subtitleLineHeightUnit,
@@ -6883,7 +6920,7 @@ var Inspector = function Inspector(_ref) {
     setAttributes: setAttributes,
     resOption: resOption,
     attributes: attributes,
-    objAttributes: _attributes__WEBPACK_IMPORTED_MODULE_1__["default"]
+    objAttributes: _attributes__WEBPACK_IMPORTED_MODULE_2__["default"]
   };
 
   var onFeatureAdd = function onFeatureAdd() {
@@ -6940,8 +6977,8 @@ var Inspector = function Inspector(_ref) {
     }
   }), pricingStyle === "style-2" && /*#__PURE__*/React.createElement(BaseControl, {
     label: __("Icon")
-  }, /*#__PURE__*/React.createElement(_fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_10___default.a, {
-    icons: _util_faIcons__WEBPACK_IMPORTED_MODULE_2__["default"],
+  }, /*#__PURE__*/React.createElement(_fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_11___default.a, {
+    icons: _util_faIcons__WEBPACK_IMPORTED_MODULE_3__["default"],
     value: headerIcon,
     onChange: function onChange(headerIcon) {
       return setAttributes({
@@ -6950,6 +6987,71 @@ var Inspector = function Inspector(_ref) {
     },
     appendTo: "body",
     closeOnSelect: true
+  })), /*#__PURE__*/React.createElement(PanelBody, {
+    title: __("Styles")
+  }, /*#__PURE__*/React.createElement(_util_background_control__WEBPACK_IMPORTED_MODULE_15__["default"], {
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_0__["priceTableBackground"],
+    resRequiredProps: resRequiredProps
+  }), /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_13__["default"], {
+    resRequiredProps: resRequiredProps,
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_0__["wrapperPadding"],
+    baseLabel: __("Padding")
+  }), /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_13__["default"], {
+    resRequiredProps: resRequiredProps,
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_0__["wrapperMargin"],
+    baseLabel: __("Margin")
+  }), /*#__PURE__*/React.createElement(BaseControl, null, /*#__PURE__*/React.createElement("h3", {
+    className: "eb-control-title"
+  }, "Border")), /*#__PURE__*/React.createElement(_util_border_shadow_control__WEBPACK_IMPORTED_MODULE_16__["default"], {
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_0__["wrapperBorderShadow"],
+    resRequiredProps: resRequiredProps
+  }))), /*#__PURE__*/React.createElement(PanelBody, {
+    title: __("Header"),
+    initialOpen: false
+  }, /*#__PURE__*/React.createElement(BaseControl, null, /*#__PURE__*/React.createElement("h3", {
+    className: "eb-control-title"
+  }, __("Title Style"))), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    label: __("Color"),
+    color: titleTextColor,
+    onChange: function onChange(titleTextColor) {
+      return setAttributes({
+        titleTextColor: titleTextColor
+      });
+    }
+  }), pricingStyle === "style-1" && /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    label: __("Line Color"),
+    color: titleLineColor,
+    onChange: function onChange(titleLineColor) {
+      return setAttributes({
+        titleLineColor: titleLineColor
+      });
+    }
+  }), pricingStyle === "style-2" && /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    label: __("Background Color"),
+    color: titleBackgroundColor,
+    onChange: function onChange(titleBackgroundColor) {
+      return setAttributes({
+        titleBackgroundColor: titleBackgroundColor
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_typography_control_v2__WEBPACK_IMPORTED_MODULE_14__["default"], {
+    baseLabel: __("Typography"),
+    typographyPrefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_1__["typoPrefix_title"],
+    resRequiredProps: resRequiredProps
+  }), /*#__PURE__*/React.createElement("hr", null), pricingStyle === "style-2" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(BaseControl, null, /*#__PURE__*/React.createElement("h3", {
+    className: "eb-control-title"
+  }, __("Subtitle Style"))), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    label: __("Color"),
+    color: subtitleTextColor,
+    onChange: function onChange(subtitleTextColor) {
+      return setAttributes({
+        subtitleTextColor: subtitleTextColor
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_typography_control_v2__WEBPACK_IMPORTED_MODULE_14__["default"], {
+    baseLabel: __("Typography"),
+    typographyPrefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_1__["typoPrefix_subtitle"],
+    resRequiredProps: resRequiredProps
   }))), /*#__PURE__*/React.createElement(PanelBody, {
     title: __("Price"),
     initialOpen: false
@@ -7016,10 +7118,89 @@ var Inspector = function Inspector(_ref) {
         periodSeparator: periodSeparator
       });
     }
+  }), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement(BaseControl, null, /*#__PURE__*/React.createElement("h3", {
+    className: "eb-control-title"
+  }, __("Original Price"))), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    label: __("Color"),
+    color: priceTextColor,
+    onChange: function onChange(priceTextColor) {
+      return setAttributes({
+        priceTextColor: priceTextColor
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_typography_control_v2__WEBPACK_IMPORTED_MODULE_14__["default"], {
+    baseLabel: __("Typography"),
+    typographyPrefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_1__["typoPrefix_price_title"],
+    resRequiredProps: resRequiredProps
+  }), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement(BaseControl, null, /*#__PURE__*/React.createElement("h3", {
+    className: "eb-control-title"
+  }, __("Original Price Currency"))), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    label: __("Color"),
+    color: priceCurrencyTextColor,
+    onChange: function onChange(priceCurrencyTextColor) {
+      return setAttributes({
+        priceCurrencyTextColor: priceCurrencyTextColor
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_typography_control_v2__WEBPACK_IMPORTED_MODULE_14__["default"], {
+    baseLabel: __("Typography"),
+    typographyPrefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_1__["typoPrefix_price_currency"],
+    resRequiredProps: resRequiredProps
+  }), /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_13__["default"], {
+    resRequiredProps: resRequiredProps,
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_0__["priceCurrencyMargin"],
+    baseLabel: __("Margin")
+  }), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement(BaseControl, null, /*#__PURE__*/React.createElement("h3", {
+    className: "eb-control-title"
+  }, __("Sale Price"))), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    label: __("Color"),
+    color: salePriceTextColor,
+    onChange: function onChange(salePriceTextColor) {
+      return setAttributes({
+        salePriceTextColor: salePriceTextColor
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_typography_control_v2__WEBPACK_IMPORTED_MODULE_14__["default"], {
+    baseLabel: __("Typography"),
+    typographyPrefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_1__["typoPrefix_saleprice"],
+    resRequiredProps: resRequiredProps
+  }), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement(BaseControl, null, /*#__PURE__*/React.createElement("h3", {
+    className: "eb-control-title"
+  }, __("Sale Price Currency"))), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    label: __("Color"),
+    color: salepriceCurrencyTextColor,
+    onChange: function onChange(salepriceCurrencyTextColor) {
+      return setAttributes({
+        salepriceCurrencyTextColor: salepriceCurrencyTextColor
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_typography_control_v2__WEBPACK_IMPORTED_MODULE_14__["default"], {
+    baseLabel: __("Typography"),
+    typographyPrefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_1__["typoPrefix_saleprice_currency"],
+    resRequiredProps: resRequiredProps
+  }), /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_13__["default"], {
+    resRequiredProps: resRequiredProps,
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_0__["salepriceCurrencyMargin"],
+    baseLabel: __("Margin")
+  }), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement(BaseControl, null, /*#__PURE__*/React.createElement("h3", {
+    className: "eb-control-title"
+  }, __("Pricing Period"))), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    label: __("Color"),
+    color: pricingPeriodTextColor,
+    F: true,
+    onChange: function onChange(pricingPeriodTextColor) {
+      return setAttributes({
+        pricingPeriodTextColor: pricingPeriodTextColor
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_typography_control_v2__WEBPACK_IMPORTED_MODULE_14__["default"], {
+    baseLabel: __("Typography"),
+    typographyPrefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_1__["typoPrefix_pricing_period"],
+    resRequiredProps: resRequiredProps
   })), /*#__PURE__*/React.createElement(PanelBody, {
     title: __("Features"),
     initialOpen: false
-  }, /*#__PURE__*/React.createElement(_sortable_features__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, /*#__PURE__*/React.createElement(_sortable_features__WEBPACK_IMPORTED_MODULE_6__["default"], {
     features: attributes.features,
     setAttributes: setAttributes
   }), /*#__PURE__*/React.createElement(Button, {
@@ -7029,7 +7210,27 @@ var Inspector = function Inspector(_ref) {
     onClick: onFeatureAdd
   }, /*#__PURE__*/React.createElement("span", {
     className: "eb-pricebox-add-button-label"
-  }, "Add Feature"))), /*#__PURE__*/React.createElement(PanelBody, {
+  }, "Add Feature")), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    label: __("Color"),
+    color: featuresTextColor,
+    onChange: function onChange(featuresTextColor) {
+      return setAttributes({
+        featuresTextColor: featuresTextColor
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_responsive_range_control__WEBPACK_IMPORTED_MODULE_12__["default"], {
+    baseLabel: __("Icon Size"),
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_0__["featuresIconSize"],
+    resRequiredProps: resRequiredProps,
+    min: 0,
+    max: 50,
+    step: 1,
+    noUnits: true
+  }), /*#__PURE__*/React.createElement(_util_typography_control_v2__WEBPACK_IMPORTED_MODULE_14__["default"], {
+    baseLabel: __("Typography"),
+    typographyPrefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_1__["typoPrefix_features_text"],
+    resRequiredProps: resRequiredProps
+  })), /*#__PURE__*/React.createElement(PanelBody, {
     title: __("Button"),
     initialOpen: false
   }, /*#__PURE__*/React.createElement(ToggleControl, {
@@ -7042,8 +7243,8 @@ var Inspector = function Inspector(_ref) {
     }
   }), /*#__PURE__*/React.createElement(BaseControl, {
     label: __("Button Icon")
-  }, /*#__PURE__*/React.createElement(_fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_10___default.a, {
-    icons: _util_faIcons__WEBPACK_IMPORTED_MODULE_2__["default"],
+  }, /*#__PURE__*/React.createElement(_fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_11___default.a, {
+    icons: _util_faIcons__WEBPACK_IMPORTED_MODULE_3__["default"],
     value: buttonIcon,
     onChange: function onChange(buttonIcon) {
       return setAttributes({
@@ -7067,7 +7268,7 @@ var Inspector = function Inspector(_ref) {
         buttonIconPosition: buttonIconPosition
       });
     }
-  }), /*#__PURE__*/React.createElement(_util_responsive_range_control__WEBPACK_IMPORTED_MODULE_11__["default"], {
+  }), /*#__PURE__*/React.createElement(_util_responsive_range_control__WEBPACK_IMPORTED_MODULE_12__["default"], {
     baseLabel: __("Icon Spacing"),
     controlName: _constants__WEBPACK_IMPORTED_MODULE_0__["buttonIconSpacing"],
     resRequiredProps: resRequiredProps,
@@ -7091,15 +7292,15 @@ var Inspector = function Inspector(_ref) {
         buttonURL: link
       });
     }
-  }), /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_12__["default"], {
+  }), /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_13__["default"], {
     resRequiredProps: resRequiredProps,
     controlName: _constants__WEBPACK_IMPORTED_MODULE_0__["buttonPadding"],
     baseLabel: __("Padding")
-  }), /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_12__["default"], {
+  }), /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_13__["default"], {
     resRequiredProps: resRequiredProps,
     controlName: _constants__WEBPACK_IMPORTED_MODULE_0__["buttonMargin"],
     baseLabel: __("Margin")
-  }), /*#__PURE__*/React.createElement(_util_responsive_range_control__WEBPACK_IMPORTED_MODULE_11__["default"], {
+  }), /*#__PURE__*/React.createElement(_util_responsive_range_control__WEBPACK_IMPORTED_MODULE_12__["default"], {
     baseLabel: __("Icon Size"),
     controlName: _constants__WEBPACK_IMPORTED_MODULE_0__["buttonIconSize"],
     resRequiredProps: resRequiredProps,
@@ -7107,11 +7308,11 @@ var Inspector = function Inspector(_ref) {
     max: 50,
     step: 1,
     noUnits: true
-  }), /*#__PURE__*/React.createElement(_util_typography_control_v2__WEBPACK_IMPORTED_MODULE_13__["default"], {
+  }), /*#__PURE__*/React.createElement(_util_typography_control_v2__WEBPACK_IMPORTED_MODULE_14__["default"], {
     baseLabel: __("Typography"),
-    typographyPrefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_14__["typoPrefix_button"],
+    typographyPrefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_1__["typoPrefix_button"],
     resRequiredProps: resRequiredProps
-  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
     label: __("Text Color"),
     color: buttonTextColor,
     onChange: function onChange(buttonTextColor) {
@@ -7119,7 +7320,7 @@ var Inspector = function Inspector(_ref) {
         buttonTextColor: buttonTextColor
       });
     }
-  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
     label: __("Text Hover Color"),
     color: hoverTextColor,
     onChange: function onChange(hoverTextColor) {
@@ -7127,12 +7328,12 @@ var Inspector = function Inspector(_ref) {
         hoverTextColor: hoverTextColor
       });
     }
-  }), /*#__PURE__*/React.createElement(BaseControl, {
-    label: "Button Background"
-  }), /*#__PURE__*/React.createElement(_util_background_control__WEBPACK_IMPORTED_MODULE_15__["default"], {
-    controlName: buttonBackground,
+  }), /*#__PURE__*/React.createElement(BaseControl, null, /*#__PURE__*/React.createElement("h3", {
+    className: "eb-control-title"
+  }, __("Button Background"))), /*#__PURE__*/React.createElement(_util_background_control__WEBPACK_IMPORTED_MODULE_15__["default"], {
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_0__["buttonBackgroundControl"],
     resRequiredProps: resRequiredProps
-  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
     label: __("Hover Background"),
     color: hoverBackgroundColor,
     onChange: function onChange(hoverBackgroundColor) {
@@ -7140,786 +7341,84 @@ var Inspector = function Inspector(_ref) {
         hoverBackgroundColor: hoverBackgroundColor
       });
     }
-  }), /*#__PURE__*/React.createElement(BaseControl, {
-    label: "Button Border Style"
-  }), /*#__PURE__*/React.createElement(_util_border_shadow_control__WEBPACK_IMPORTED_MODULE_16__["default"], {
+  }), /*#__PURE__*/React.createElement(BaseControl, null, /*#__PURE__*/React.createElement("h3", {
+    className: "eb-control-title"
+  }, __("Button Border Style"))), /*#__PURE__*/React.createElement(_util_border_shadow_control__WEBPACK_IMPORTED_MODULE_16__["default"], {
     controlName: _constants__WEBPACK_IMPORTED_MODULE_0__["buttonBorderShadow"],
     resRequiredProps: resRequiredProps
-  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    label: __("Border Color"),
-    color: buttonBorderColor,
-    onChange: function onChange(buttonBorderColor) {
-      return setAttributes({
-        buttonBorderColor: buttonBorderColor
-      });
-    }
-  })), /*#__PURE__*/React.createElement(PanelBody, {
-    title: __("Margin & Padding"),
+  })), pricingStyle === "style-2" && /*#__PURE__*/React.createElement(PanelBody, {
+    title: __("Icon Settings"),
     initialOpen: false
-  }, /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    selectedUnit: marginUnit,
-    unitTypes: [{
-      label: "px",
-      value: "px"
-    }, {
-      label: "em",
-      value: "em"
-    }, {
-      label: "%",
-      value: "%"
-    }],
-    onClick: function onClick(marginUnit) {
-      return setAttributes({
-        marginUnit: marginUnit
+  }, /*#__PURE__*/React.createElement(ToggleControl, {
+    label: __("Show Background"),
+    checked: showIconBackground,
+    onChange: function onChange() {
+      setAttributes({
+        showIconBackground: !showIconBackground
       });
     }
-  }), /*#__PURE__*/React.createElement(_util_dimensions_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    label: __("Margin"),
-    top: marginTop,
-    right: marginRight,
-    bottom: marginBottom,
-    left: marginLeft,
-    onChange: function onChange(_ref2) {
-      var top = _ref2.top,
-          right = _ref2.right,
-          bottom = _ref2.bottom,
-          left = _ref2.left;
-      return setAttributes({
-        marginTop: top,
-        marginRight: right,
-        marginBottom: bottom,
-        marginLeft: left
-      });
-    }
-  }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    selectedUnit: paddingUnit,
-    unitTypes: [{
-      label: "px",
-      value: "px"
-    }, {
-      label: "em",
-      value: "em"
-    }, {
-      label: "%",
-      value: "%"
-    }],
-    onClick: function onClick(paddingUnit) {
-      return setAttributes({
-        paddingUnit: paddingUnit
-      });
-    }
-  }), /*#__PURE__*/React.createElement(_util_dimensions_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    label: __("Padding"),
-    top: paddingTop,
-    right: paddingRight,
-    bottom: paddingBottom,
-    left: paddingLeft,
-    onChange: function onChange(_ref3) {
-      var top = _ref3.top,
-          right = _ref3.right,
-          bottom = _ref3.bottom,
-          left = _ref3.left;
-      return setAttributes({
-        paddingTop: top,
-        paddingRight: right,
-        paddingBottom: bottom,
-        paddingLeft: left
-      });
-    }
-  })), /*#__PURE__*/React.createElement(PanelBody, {
-    title: __("Typography"),
-    initialOpen: false
-  }, displaySubtitle && /*#__PURE__*/React.createElement(BaseControl, {
-    label: __("Subtitle"),
-    className: "eb-typography-base"
-  }, /*#__PURE__*/React.createElement(Dropdown, {
-    className: "eb-typography-dropdown",
-    contentClassName: "my-popover-content-classname",
-    position: "bottom right",
-    renderToggle: function renderToggle(_ref4) {
-      var isOpen = _ref4.isOpen,
-          onToggle = _ref4.onToggle;
-      return /*#__PURE__*/React.createElement(Button, {
-        isSmall: true,
-        onClick: onToggle,
-        "aria-expanded": isOpen
-      }, /*#__PURE__*/React.createElement(_util_icons__WEBPACK_IMPORTED_MODULE_8__["TypographyIcon"], null));
-    },
-    renderContent: function renderContent() {
-      return /*#__PURE__*/React.createElement("div", {
-        className: "eb-panel-control",
-        style: {
-          padding: "0.2rem"
-        }
-      }, /*#__PURE__*/React.createElement(_util_typography_control_FontPicker__WEBPACK_IMPORTED_MODULE_6__["default"], {
-        label: __("Font Family"),
-        value: subtitleFontFamily,
-        onChange: function onChange(subtitleFontFamily) {
-          return setAttributes({
-            subtitleFontFamily: subtitleFontFamily
-          });
-        }
-      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        selectedUnit: subtitleSizeUnit,
-        unitTypes: [{
-          label: "px",
-          value: "px"
-        }, {
-          label: "%",
-          value: "%"
-        }, {
-          label: "em",
-          value: "em"
-        }],
-        onClick: function onClick(subtitleSizeUnit) {
-          return setAttributes({
-            subtitleSizeUnit: subtitleSizeUnit
-          });
-        }
-      }), /*#__PURE__*/React.createElement(RangeControl, {
-        label: __("Font Size"),
-        value: subtitleFontSize,
-        onChange: function onChange(subtitleFontSize) {
-          return setAttributes({
-            subtitleFontSize: subtitleFontSize
-          });
-        },
-        step: SUBTITLE_SIZE_STEP,
-        min: 0,
-        max: SUBTITLE_SIZE_MAX
-      }), /*#__PURE__*/React.createElement(SelectControl, {
-        label: __("Font Weight"),
-        value: subtitleFontWeight,
-        options: _constants__WEBPACK_IMPORTED_MODULE_0__["FONT_WEIGHT"],
-        onChange: function onChange(subtitleFontWeight) {
-          return setAttributes({
-            subtitleFontWeight: subtitleFontWeight
-          });
-        }
-      }), /*#__PURE__*/React.createElement(SelectControl, {
-        label: __("Text Decoration"),
-        value: subtitleTextDecoration,
-        options: _constants__WEBPACK_IMPORTED_MODULE_0__["TEXT_DECORATION"],
-        onChange: function onChange(subtitleTextDecoration) {
-          return setAttributes({
-            subtitleTextDecoration: subtitleTextDecoration
-          });
-        }
-      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        selectedUnit: subtitleLetterSpacingUnit,
-        unitTypes: [{
-          label: "px",
-          value: "px"
-        }, {
-          label: "em",
-          value: "em"
-        }],
-        onClick: function onClick(subtitleLetterSpacingUnit) {
-          return setAttributes({
-            subtitleLetterSpacingUnit: subtitleLetterSpacingUnit
-          });
-        }
-      }), /*#__PURE__*/React.createElement(RangeControl, {
-        label: __("Letter Spacing"),
-        value: subtitleLetterSpacing,
-        onChange: function onChange(subtitleLetterSpacing) {
-          return setAttributes({
-            subtitleLetterSpacing: subtitleLetterSpacing
-          });
-        },
-        min: 0,
-        max: SUBTITLE_SPACING_MAX,
-        step: SUBTITLE_SPACING_STEP
-      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        selectedUnit: subtitleLineHeightUnit,
-        unitTypes: [{
-          label: "px",
-          value: "px"
-        }, {
-          label: "em",
-          value: "em"
-        }],
-        onClick: function onClick(subtitleLineHeightUnit) {
-          return setAttributes({
-            subtitleLineHeightUnit: subtitleLineHeightUnit
-          });
-        }
-      }), /*#__PURE__*/React.createElement(RangeControl, {
-        label: __("Line Height"),
-        value: subtitleLineHeight,
-        onChange: function onChange(subtitleLineHeight) {
-          return setAttributes({
-            subtitleLineHeight: subtitleLineHeight
-          });
-        },
-        min: 0,
-        max: SUBTITLE_LINE_HEIGHT_MAX,
-        step: SUBTITLE_LINE_HEIGHT_STEP
-      }));
-    }
-  })), /*#__PURE__*/React.createElement(BaseControl, {
-    label: __("Price"),
-    className: "eb-typography-base"
-  }, /*#__PURE__*/React.createElement(Dropdown, {
-    className: "eb-typography-dropdown",
-    contentClassName: "my-popover-content-classname",
-    position: "bottom right",
-    renderToggle: function renderToggle(_ref5) {
-      var isOpen = _ref5.isOpen,
-          onToggle = _ref5.onToggle;
-      return /*#__PURE__*/React.createElement(Button, {
-        isSmall: true,
-        onClick: onToggle,
-        "aria-expanded": isOpen
-      }, /*#__PURE__*/React.createElement(_util_icons__WEBPACK_IMPORTED_MODULE_8__["TypographyIcon"], null));
-    },
-    renderContent: function renderContent() {
-      return /*#__PURE__*/React.createElement("div", {
-        className: "eb-panel-control",
-        style: {
-          padding: "0.2rem"
-        }
-      }, /*#__PURE__*/React.createElement(_util_typography_control_FontPicker__WEBPACK_IMPORTED_MODULE_6__["default"], {
-        label: __("Font Family"),
-        value: priceFontFamily,
-        onChange: function onChange(priceFontFamily) {
-          return setAttributes({
-            priceFontFamily: priceFontFamily
-          });
-        }
-      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        selectedUnit: priceSizeUnit,
-        unitTypes: [{
-          label: "px",
-          value: "px"
-        }, {
-          label: "%",
-          value: "%"
-        }, {
-          label: "em",
-          value: "em"
-        }],
-        onClick: function onClick(priceSizeUnit) {
-          return setAttributes({
-            priceSizeUnit: priceSizeUnit
-          });
-        }
-      }), /*#__PURE__*/React.createElement(RangeControl, {
-        label: __("Font Size"),
-        value: priceFontSize,
-        onChange: function onChange(priceFontSize) {
-          return setAttributes({
-            priceFontSize: priceFontSize
-          });
-        },
-        step: PRICE_SIZE_STEP,
-        min: 0,
-        max: PRICE_SIZE_MAX
-      }), /*#__PURE__*/React.createElement(SelectControl, {
-        label: __("Font Weight"),
-        value: priceFontWeight,
-        options: _constants__WEBPACK_IMPORTED_MODULE_0__["FONT_WEIGHT"],
-        onChange: function onChange(priceFontWeight) {
-          return setAttributes({
-            priceFontWeight: priceFontWeight
-          });
-        }
-      }), /*#__PURE__*/React.createElement(SelectControl, {
-        label: __("Text Decoration"),
-        value: priceTextDecoration,
-        options: _constants__WEBPACK_IMPORTED_MODULE_0__["TEXT_DECORATION"],
-        onChange: function onChange(priceTextDecoration) {
-          return setAttributes({
-            priceTextDecoration: priceTextDecoration
-          });
-        }
-      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        selectedUnit: priceLetterSpacingUnit,
-        unitTypes: [{
-          label: "px",
-          value: "px"
-        }, {
-          label: "em",
-          value: "em"
-        }],
-        onClick: function onClick(priceLetterSpacingUnit) {
-          return setAttributes({
-            priceLetterSpacingUnit: priceLetterSpacingUnit
-          });
-        }
-      }), /*#__PURE__*/React.createElement(RangeControl, {
-        label: __("Letter Spacing"),
-        value: priceLetterSpacing,
-        onChange: function onChange(priceLetterSpacing) {
-          return setAttributes({
-            priceLetterSpacing: priceLetterSpacing
-          });
-        },
-        min: 0,
-        max: PRICE_SPACING_MAX,
-        step: PRICE_SPACING_STEP
-      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        selectedUnit: priceLineHeightUnit,
-        unitTypes: [{
-          label: "px",
-          value: "px"
-        }, {
-          label: "em",
-          value: "em"
-        }],
-        onClick: function onClick(priceLineHeightUnit) {
-          return setAttributes({
-            priceLineHeightUnit: priceLineHeightUnit
-          });
-        }
-      }), /*#__PURE__*/React.createElement(RangeControl, {
-        label: __("Line Height"),
-        value: priceLineHeight,
-        onChange: function onChange(priceLineHeight) {
-          return setAttributes({
-            priceLineHeight: priceLineHeight
-          });
-        },
-        min: 0,
-        max: PRICE_LINE_HEIGHT_MAX,
-        step: PRICE_LINE_HEIGHT_STEP
-      }));
-    }
-  })), /*#__PURE__*/React.createElement(BaseControl, {
-    label: __("Feauture"),
-    className: "eb-typography-base"
-  }, /*#__PURE__*/React.createElement(Dropdown, {
-    className: "eb-typography-dropdown",
-    contentClassName: "my-popover-content-classname",
-    position: "bottom right",
-    renderToggle: function renderToggle(_ref6) {
-      var isOpen = _ref6.isOpen,
-          onToggle = _ref6.onToggle;
-      return /*#__PURE__*/React.createElement(Button, {
-        isSmall: true,
-        onClick: onToggle,
-        "aria-expanded": isOpen
-      }, /*#__PURE__*/React.createElement(_util_icons__WEBPACK_IMPORTED_MODULE_8__["TypographyIcon"], null));
-    },
-    renderContent: function renderContent() {
-      return /*#__PURE__*/React.createElement("div", {
-        className: "eb-panel-control",
-        style: {
-          padding: "0.2rem"
-        }
-      }, /*#__PURE__*/React.createElement(_util_typography_control_FontPicker__WEBPACK_IMPORTED_MODULE_6__["default"], {
-        label: __("Font Family"),
-        value: featureFontFamily,
-        onChange: function onChange(featureFontFamily) {
-          return setAttributes({
-            featureFontFamily: featureFontFamily
-          });
-        }
-      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        selectedUnit: featureSizeUnit,
-        unitTypes: [{
-          label: "px",
-          value: "px"
-        }, {
-          label: "%",
-          value: "%"
-        }, {
-          label: "em",
-          value: "em"
-        }],
-        onClick: function onClick(featureSizeUnit) {
-          return setAttributes({
-            featureSizeUnit: featureSizeUnit
-          });
-        }
-      }), /*#__PURE__*/React.createElement(RangeControl, {
-        label: __("Font Size"),
-        value: featureFontSize,
-        onChange: function onChange(featureFontSize) {
-          return setAttributes({
-            featureFontSize: featureFontSize
-          });
-        },
-        step: FEATURE_SIZE_STEP,
-        min: 0,
-        max: FEATURE_SIZE_MAX
-      }), /*#__PURE__*/React.createElement(SelectControl, {
-        label: __("Font Weight"),
-        value: featureFontWeight,
-        options: _constants__WEBPACK_IMPORTED_MODULE_0__["FONT_WEIGHT"],
-        onChange: function onChange(featureFontWeight) {
-          return setAttributes({
-            featureFontWeight: featureFontWeight
-          });
-        }
-      }), /*#__PURE__*/React.createElement(SelectControl, {
-        label: __("Text Transform"),
-        value: featureTextTransform,
-        options: _constants__WEBPACK_IMPORTED_MODULE_0__["TEXT_TRANSFORM"],
-        onChange: function onChange(featureTextTransform) {
-          return setAttributes({
-            featureTextTransform: featureTextTransform
-          });
-        }
-      }), /*#__PURE__*/React.createElement(SelectControl, {
-        label: __("Text Decoration"),
-        value: featureTextDecoration,
-        options: _constants__WEBPACK_IMPORTED_MODULE_0__["TEXT_DECORATION"],
-        onChange: function onChange(featureTextDecoration) {
-          return setAttributes({
-            featureTextDecoration: featureTextDecoration
-          });
-        }
-      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        selectedUnit: featureLetterSpacingUnit,
-        unitTypes: [{
-          label: "px",
-          value: "px"
-        }, {
-          label: "em",
-          value: "em"
-        }],
-        onClick: function onClick(featureLetterSpacingUnit) {
-          return setAttributes({
-            featureLetterSpacingUnit: featureLetterSpacingUnit
-          });
-        }
-      }), /*#__PURE__*/React.createElement(RangeControl, {
-        label: __("Letter Spacing"),
-        value: featureLetterSpacing,
-        onChange: function onChange(featureLetterSpacing) {
-          return setAttributes({
-            featureLetterSpacing: featureLetterSpacing
-          });
-        },
-        min: 0,
-        max: FEATURE_SPACING_MAX,
-        step: FEATURE_SPACING_STEP
-      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        selectedUnit: featureLineHeightUnit,
-        unitTypes: [{
-          label: "px",
-          value: "px"
-        }, {
-          label: "em",
-          value: "em"
-        }],
-        onClick: function onClick(featureLineHeightUnit) {
-          return setAttributes({
-            featureLineHeightUnit: featureLineHeightUnit
-          });
-        }
-      }), /*#__PURE__*/React.createElement(RangeControl, {
-        label: __("Line Height"),
-        value: featureLineHeight,
-        onChange: function onChange(featureLineHeight) {
-          return setAttributes({
-            featureLineHeight: featureLineHeight
-          });
-        },
-        min: 0,
-        max: FEATURE_LINE_HEIGHT_MAX,
-        step: FEATURE_LINE_HEIGHT_STEP
-      }));
-    }
-  })), /*#__PURE__*/React.createElement(BaseControl, {
-    label: __("Button"),
-    className: "eb-typography-base"
-  }, /*#__PURE__*/React.createElement(Dropdown, {
-    className: "eb-typography-dropdown",
-    contentClassName: "my-popover-content-classname",
-    position: "bottom right",
-    renderToggle: function renderToggle(_ref7) {
-      var isOpen = _ref7.isOpen,
-          onToggle = _ref7.onToggle;
-      return /*#__PURE__*/React.createElement(Button, {
-        isSmall: true,
-        onClick: onToggle,
-        "aria-expanded": isOpen
-      }, /*#__PURE__*/React.createElement(_util_icons__WEBPACK_IMPORTED_MODULE_8__["TypographyIcon"], null));
-    },
-    renderContent: function renderContent() {
-      return /*#__PURE__*/React.createElement("div", {
-        className: "eb-panel-control",
-        style: {
-          padding: "0.2rem"
-        }
-      }, /*#__PURE__*/React.createElement(_util_typography_control_FontPicker__WEBPACK_IMPORTED_MODULE_6__["default"], {
-        label: __("Font Family"),
-        value: buttonFontFamily,
-        onChange: function onChange(buttonFontFamily) {
-          return setAttributes({
-            buttonFontFamily: buttonFontFamily
-          });
-        }
-      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        selectedUnit: buttonSizeUnit,
-        unitTypes: [{
-          label: "px",
-          value: "px"
-        }, {
-          label: "%",
-          value: "%"
-        }, {
-          label: "em",
-          value: "em"
-        }],
-        onClick: function onClick(buttonSizeUnit) {
-          return setAttributes({
-            buttonSizeUnit: buttonSizeUnit
-          });
-        }
-      }), /*#__PURE__*/React.createElement(RangeControl, {
-        label: __("Font Size"),
-        value: buttonFontSize,
-        onChange: function onChange(buttonFontSize) {
-          return setAttributes({
-            buttonFontSize: buttonFontSize
-          });
-        },
-        step: BUTTON_SIZE_STEP,
-        min: 0,
-        max: BUTTON_SIZE_MAX
-      }), /*#__PURE__*/React.createElement(SelectControl, {
-        label: __("Font Weight"),
-        value: buttonFontWeight,
-        options: _constants__WEBPACK_IMPORTED_MODULE_0__["FONT_WEIGHT"],
-        onChange: function onChange(buttonFontWeight) {
-          return setAttributes({
-            buttonFontWeight: buttonFontWeight
-          });
-        }
-      }), /*#__PURE__*/React.createElement(SelectControl, {
-        label: __("Text Decoration"),
-        value: buttonTextDecoration,
-        options: _constants__WEBPACK_IMPORTED_MODULE_0__["TEXT_DECORATION"],
-        onChange: function onChange(buttonTextDecoration) {
-          return setAttributes({
-            buttonTextDecoration: buttonTextDecoration
-          });
-        }
-      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        selectedUnit: buttonLetterSpacingUnit,
-        unitTypes: [{
-          label: "px",
-          value: "px"
-        }, {
-          label: "em",
-          value: "em"
-        }],
-        onClick: function onClick(buttonLetterSpacingUnit) {
-          return setAttributes({
-            buttonLetterSpacingUnit: buttonLetterSpacingUnit
-          });
-        }
-      }), /*#__PURE__*/React.createElement(RangeControl, {
-        label: __("Letter Spacing"),
-        value: buttonLetterSpacing,
-        onChange: function onChange(buttonLetterSpacing) {
-          return setAttributes({
-            buttonLetterSpacing: buttonLetterSpacing
-          });
-        },
-        min: 0,
-        max: BUTTON_SPACING_MAX,
-        step: BUTTON_SPACING_STEP
-      }), /*#__PURE__*/React.createElement(_util_unit_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        selectedUnit: buttonLineHeightUnit,
-        unitTypes: [{
-          label: "px",
-          value: "px"
-        }, {
-          label: "em",
-          value: "em"
-        }],
-        onClick: function onClick(buttonLineHeightUnit) {
-          return setAttributes({
-            buttonLineHeightUnit: buttonLineHeightUnit
-          });
-        }
-      }), /*#__PURE__*/React.createElement(RangeControl, {
-        label: __("Line Height"),
-        value: buttonLineHeight,
-        onChange: function onChange(buttonLineHeight) {
-          return setAttributes({
-            buttonLineHeight: buttonLineHeight
-          });
-        },
-        min: 0,
-        max: BUTTON_LINE_HEIGHT_MAX,
-        step: BUTTON_LINE_HEIGHT_STEP
-      }));
-    }
-  }))), /*#__PURE__*/React.createElement(PanelBody, {
-    title: __("Colors"),
-    initialOpen: false
-  }, /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }), showIconBackground && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
     label: __("Background Color"),
-    color: priceboxBackground,
-    onChange: function onChange(priceboxBackground) {
+    color: iconBackgroundColor,
+    onChange: function onChange(iconBackgroundColor) {
       return setAttributes({
-        priceboxBackground: priceboxBackground
+        iconBackgroundColor: iconBackgroundColor
       });
     }
-  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    label: __("Title Background"),
-    color: titleBackgroundColor,
-    onChange: function onChange(titleBackgroundColor) {
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    label: __("Background Hover Color"),
+    color: iconBackgroundHoverColor,
+    onChange: function onChange(iconBackgroundHoverColor) {
       return setAttributes({
-        titleBackgroundColor: titleBackgroundColor
+        iconBackgroundHoverColor: iconBackgroundHoverColor
       });
     }
-  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    label: __("Title Text"),
-    color: titleTextColor,
-    onChange: function onChange(titleTextColor) {
-      return setAttributes({
-        titleTextColor: titleTextColor
-      });
-    }
-  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    label: __("Price Background"),
-    color: priceBackgroundColor,
-    onChange: function onChange(priceBackgroundColor) {
-      return setAttributes({
-        priceBackgroundColor: priceBackgroundColor
-      });
-    }
-  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    label: __("Price Text"),
-    color: priceTextColor,
-    onChange: function onChange(priceTextColor) {
-      return setAttributes({
-        priceTextColor: priceTextColor
-      });
-    }
-  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    label: __("Features Background"),
-    color: featuresBackgroundColor,
-    onChange: function onChange(featuresBackgroundColor) {
-      return setAttributes({
-        featuresBackgroundColor: featuresBackgroundColor
-      });
-    }
-  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    label: __("Features Text"),
-    color: featuresTextColor,
-    onChange: function onChange(featuresTextColor) {
-      return setAttributes({
-        featuresTextColor: featuresTextColor
-      });
-    }
-  })), /*#__PURE__*/React.createElement(PanelBody, {
-    title: __("Border"),
-    initialOpen: false
-  }, /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    label: __("Border Color"),
-    color: borderColor,
-    onChange: function onChange(borderColor) {
-      return setAttributes({
-        borderColor: borderColor
-      });
-    }
-  }), /*#__PURE__*/React.createElement(_util_reset_control__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    onReset: function onReset() {
-      return setAttributes({
-        borderWidth: undefined
-      });
-    }
-  }, /*#__PURE__*/React.createElement(RangeControl, {
-    label: __("Border Width"),
-    initialOpen: false,
-    value: borderWidth,
-    onChange: function onChange(borderWidth) {
-      return setAttributes({
-        borderWidth: borderWidth
-      });
-    }
-  })), /*#__PURE__*/React.createElement(SelectControl, {
-    label: __("Border Style"),
-    value: borderStyle,
-    options: _constants__WEBPACK_IMPORTED_MODULE_0__["BORDER_STYLES"],
-    onChange: function onChange(newStyle) {
-      return setAttributes({
-        borderStyle: newStyle
-      });
-    }
-  })), /*#__PURE__*/React.createElement(PanelBody, {
-    title: __("Shadow"),
-    initialOpen: false
-  }, /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    label: __("Shadow Color"),
-    color: shadowColor,
-    onChange: function onChange(shadowColor) {
-      return setAttributes({
-        shadowColor: shadowColor
-      });
-    }
-  }), /*#__PURE__*/React.createElement(_util_reset_control__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    onReset: function onReset() {
-      return setAttributes({
-        shadowHOffset: undefined
-      });
-    }
-  }, /*#__PURE__*/React.createElement(RangeControl, {
-    label: __("Horizontal Offset"),
-    value: shadowHOffset,
-    onChange: function onChange(shadowHOffset) {
-      return setAttributes({
-        shadowHOffset: shadowHOffset
-      });
-    },
+  }), /*#__PURE__*/React.createElement("hr", null)), /*#__PURE__*/React.createElement(_util_responsive_range_control__WEBPACK_IMPORTED_MODULE_12__["default"], {
+    baseLabel: __("Icon Size"),
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_0__["headerIconSize"],
+    resRequiredProps: resRequiredProps,
     min: 0,
-    max: 200
-  })), /*#__PURE__*/React.createElement(_util_reset_control__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    onReset: function onReset() {
+    max: 200,
+    step: 1
+  }), /*#__PURE__*/React.createElement(_util_responsive_range_control__WEBPACK_IMPORTED_MODULE_12__["default"], {
+    baseLabel: __("Icon Area Width"),
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_0__["headerIconWidth"],
+    resRequiredProps: resRequiredProps,
+    units: _constants__WEBPACK_IMPORTED_MODULE_0__["TWOUNITS"],
+    min: 0,
+    max: 500,
+    step: 1
+  }), /*#__PURE__*/React.createElement(_util_responsive_range_control__WEBPACK_IMPORTED_MODULE_12__["default"], {
+    baseLabel: __("Icon Area Height"),
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_0__["headerIconHeight"],
+    resRequiredProps: resRequiredProps,
+    units: _constants__WEBPACK_IMPORTED_MODULE_0__["TWOUNITS"],
+    min: 0,
+    max: 500,
+    step: 1
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    label: __("Icon Color"),
+    color: iconColor,
+    onChange: function onChange(iconColor) {
       return setAttributes({
-        shadowVOffset: undefined
+        iconColor: iconColor
       });
     }
-  }, /*#__PURE__*/React.createElement(RangeControl, {
-    label: __("Vertical Offset"),
-    value: shadowVOffset,
-    onChange: function onChange(shadowVOffset) {
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    label: __("Icon Hover Color"),
+    color: iconHoverColor,
+    onChange: function onChange(iconHoverColor) {
       return setAttributes({
-        shadowVOffset: shadowVOffset
-      });
-    },
-    min: 0,
-    max: 200
-  })), /*#__PURE__*/React.createElement(_util_reset_control__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    onReset: function onReset() {
-      return setAttributes({
-        shadowBlur: undefined
+        iconHoverColor: iconHoverColor
       });
     }
-  }, /*#__PURE__*/React.createElement(RangeControl, {
-    label: __("Blur"),
-    value: shadowBlur,
-    onChange: function onChange(shadowBlur) {
-      return setAttributes({
-        shadowBlur: shadowBlur
-      });
-    },
-    min: 0,
-    max: 200
-  })), /*#__PURE__*/React.createElement(_util_reset_control__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    onReset: function onReset() {
-      return setAttributes({
-        shadowSpread: undefined
-      });
-    }
-  }, /*#__PURE__*/React.createElement(RangeControl, {
-    label: __("Spread"),
-    value: shadowSpread,
-    onChange: function onChange(shadowSpread) {
-      return setAttributes({
-        shadowSpread: shadowSpread
-      });
-    },
-    min: 0,
-    max: 200
-  })))));
+  }), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement(BaseControl, null, /*#__PURE__*/React.createElement("h3", {
+    className: "eb-control-title"
+  }, "Border")), /*#__PURE__*/React.createElement(_util_border_shadow_control__WEBPACK_IMPORTED_MODULE_16__["default"], {
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_0__["iconBorderShadow"],
+    resRequiredProps: resRequiredProps,
+    noShadow: true
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Inspector);

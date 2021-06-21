@@ -9,10 +9,21 @@ import {
 import {
 	buttonIconSpacing,
 	buttonIconSize,
+	headerIconSize,
+	headerIconWidth,
+	headerIconHeight,
 	buttonPadding,
 	buttonMargin,
-	buttonBackground,
+	wrapperMargin,
+	wrapperPadding,
+	priceCurrencyMargin,
+	buttonBackgroundControl,
+	priceTableBackground,
 	buttonBorderShadow,
+	wrapperBorderShadow,
+	iconBorderShadow,
+	salepriceCurrencyMargin,
+	featuresIconSize,
 } from "./constants";
 
 const attributes = {
@@ -177,6 +188,60 @@ const attributes = {
 		type: "string",
 		default: "Choose Plan",
 	},
+	titleTextColor: {
+		type: "string",
+		default: "blue",
+	},
+	titleLineColor: {
+		type: "string",
+		default: "#dbdbdb",
+	},
+	titleBackgroundColor: {
+		type: "string",
+		default: "#C8E6C9",
+	},
+	subtitleTextColor: {
+		type: "string",
+		default: "blue",
+	},
+	showIconBackground: {
+		type: "boolean",
+		default: true,
+	},
+	iconBackgroundColor: {
+		type: "string",
+		default: "#C8E6C9",
+	},
+	iconBackgroundHoverColor: {
+		type: "string",
+		default: "#C8E6C9",
+	},
+	iconColor: {
+		type: "string",
+		default: "#ffffff",
+	},
+	iconHoverColor: {
+		type: "string",
+		default: "#ffffff",
+	},
+	priceTextColor: {
+		type: "string",
+	},
+	priceCurrencyTextColor: {
+		type: "string",
+	},
+	salePriceTextColor: {
+		type: "string",
+	},
+	salepriceCurrencyTextColor: {
+		type: "string",
+	},
+	pricingPeriodTextColor: {
+		type: "string",
+	},
+	featuresTextColor: {
+		type: "string",
+	},
 	...generateResponsiveRangeAttributes(buttonIconSpacing, {
 		defaultRange: 0,
 		noUnits: true,
@@ -185,16 +250,35 @@ const attributes = {
 		defaultRange: 20,
 		noUnits: true,
 	}),
+	...generateResponsiveRangeAttributes(headerIconSize, {
+		defaultRange: 30,
+	}),
+	...generateResponsiveRangeAttributes(headerIconWidth, {
+		defaultRange: 80,
+	}),
+	...generateResponsiveRangeAttributes(headerIconHeight, {
+		defaultRange: 80,
+	}),
+	...generateResponsiveRangeAttributes(featuresIconSize, {
+		defaultRange: 20,
+	}),
 	...generateDimensionsAttributes(buttonPadding),
 	...generateDimensionsAttributes(buttonMargin),
+	...generateDimensionsAttributes(wrapperMargin),
+	...generateDimensionsAttributes(wrapperPadding),
+	...generateDimensionsAttributes(priceCurrencyMargin),
+	...generateDimensionsAttributes(salepriceCurrencyMargin),
 	// typography attributes
 	...generateTypographyAttributes(Object.values(typoPrefixs)),
 	// background attributes
-	...generateBackgroundAttributes(buttonBackground, {
-		defaultFillColor: "#7967ff",
+	...generateBackgroundAttributes(buttonBackgroundControl, {
+		defaultFillColor: "#00c853",
 	}),
+	...generateBackgroundAttributes(priceTableBackground),
 	// border shadow attriubtes
 	...generateBorderShadowAttributes(buttonBorderShadow),
+	...generateBorderShadowAttributes(wrapperBorderShadow),
+	...generateBorderShadowAttributes(iconBorderShadow),
 	// new attributes end
 
 	priceboxBackground: {
@@ -208,22 +292,6 @@ const attributes = {
 		type: "boolean",
 		default: false,
 	},
-
-	titleBackgroundColor: {
-		type: "string",
-	},
-	titleTextColor: {
-		type: "string",
-	},
-	price: {
-		type: "string",
-		source: "text",
-		selector: ".eb-pricebox-price",
-		default: "$99",
-	},
-	priceValueSize: {
-		type: "number",
-	},
 	displayPriceDetails: {
 		type: "boolean",
 		default: false,
@@ -234,9 +302,6 @@ const attributes = {
 		selector: ".eb-pricebox-price-details",
 	},
 	priceBackgroundColor: {
-		type: "string",
-	},
-	priceTextColor: {
 		type: "string",
 	},
 	featuresBackgroundColor: {
@@ -270,31 +335,6 @@ const attributes = {
 	},
 	featureFontSize: {
 		type: "number",
-	},
-	shadowColor: {
-		type: "string",
-	},
-	shadowHOffset: {
-		type: "number",
-	},
-	shadowVOffset: {
-		type: "number",
-	},
-	shadowSpread: {
-		type: "number",
-	},
-	shadowBlur: {
-		type: "number",
-	},
-	borderWidth: {
-		type: "number",
-	},
-	borderStyle: {
-		type: "string",
-		default: "solid",
-	},
-	borderColor: {
-		type: "string",
 	},
 	linkedMargin: {
 		type: "boolean",
@@ -376,9 +416,6 @@ const attributes = {
 	},
 	buttonBorderWidth: {
 		type: "number",
-	},
-	buttonBorderColor: {
-		type: "string",
 	},
 	hoverBorderColor: {
 		type: "string",
