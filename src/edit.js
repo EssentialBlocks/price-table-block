@@ -53,6 +53,8 @@ const edit = (props) => {
 		resOption,
 		pricingStyle,
 		title,
+		defaultSubtitle,
+		showSubtitle,
 		subtitle,
 		headerIcon,
 		mainPrice,
@@ -257,16 +259,16 @@ const edit = (props) => {
 
 			<div className={`ebgb-pricing ${blockId} ${pricingStyle}`}>
 				<div className="ebgb-pricing-item">
-					{pricingStyle === "style-2" && headerIcon && (
+					{/* {pricingStyle === "style-2" && headerIcon && (
 						<div className="ebgb-pricing-icon" data-icon={headerIcon}>
 							<span className="icon">
 								<i class={headerIcon}></i>
 							</span>
 						</div>
-					)}
+					)} */}
 					<div className="header">
 						<h2 className="ebgb-pricing-title">{title}</h2>
-						{pricingStyle !== "style-1" && (
+						{showSubtitle && (
 							<span className="ebgb-pricing-subtitle">{subtitle}</span>
 						)}
 					</div>

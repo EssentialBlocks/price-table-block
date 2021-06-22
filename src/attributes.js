@@ -55,6 +55,14 @@ const attributes = {
 		selector: ".ebgb-pricing .header .ebgb-pricing-title",
 		default: "Startup",
 	},
+	defaultSubtitle: {
+		type: "boolean",
+		default: false,
+	},
+	showSubtitle: {
+		type: "boolean",
+		default: false,
+	},
 	subtitle: {
 		type: "string",
 		source: "text",

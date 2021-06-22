@@ -21,9 +21,6 @@ const {
  */
 import {
 	TWOUNITS,
-	FONT_WEIGHT,
-	TEXT_TRANSFORM,
-	TEXT_DECORATION,
 	buttonIconSpacing,
 	buttonIconSize,
 	buttonPadding,
@@ -57,13 +54,8 @@ import {
 
 import objAttributes from "./attributes";
 import faIcons from "../util/faIcons";
-import DimensionsControl from "../util/dimensions-control";
-import UnitControl from "../util/unit-control";
 import SortableFeatures from "./sortable-features";
-import FontPicker from "../util/typography-control/FontPicker";
 import ColorControl from "../util/color-control";
-import { TypographyIcon } from "../util/icons";
-import ResetControl from "../util/reset-control";
 import FontIconPicker from "@fonticonpicker/react-fonticonpicker";
 import ResponsiveRangeController from "../util/responsive-range-control";
 import ResponsiveDimensionsControl from "../util/dimensions-control-v2";
@@ -80,6 +72,8 @@ const Inspector = ({ attributes, setAttributes }) => {
 		resOption,
 		pricingStyle,
 		title,
+		defaultSubtitle,
+		showSubtitle,
 		subtitle,
 		headerIcon,
 		mainPrice,
@@ -165,6 +159,30 @@ const Inspector = ({ attributes, setAttributes }) => {
 		setAttributes({ features });
 	};
 
+	useEffect(() => {
+		switch (pricingStyle) {
+			case "style-1":
+				setAttributes({
+					showSubtitle: false,
+				});
+				if (defaultSubtitle) {
+					setAttributes({
+						showSubtitle: true,
+					});
+				}
+				break;
+
+			case "style-2":
+				setAttributes({
+					showSubtitle: true,
+					// defaultSubtitle: true,
+				});
+				break;
+			default:
+				showSubtitle: false;
+		}
+	}, [pricingStyle]);
+	console.log("show", showSubtitle, "default", defaultSubtitle);
 	return (
 		<InspectorControls key="controls">
 			<span className="eb-panel-control">
@@ -187,7 +205,18 @@ const Inspector = ({ attributes, setAttributes }) => {
 						onChange={(newTitle) => setAttributes({ title: newTitle })}
 					/>
 
-					{pricingStyle !== "style-1" && (
+					<ToggleControl
+						label={__("Show Subtitle?")}
+						checked={showSubtitle}
+						onChange={() => {
+							setAttributes({
+								showSubtitle: !showSubtitle,
+								defaultSubtitle: !showSubtitle,
+							});
+						}}
+					/>
+
+					{showSubtitle && (
 						<TextControl
 							label={__("Sub Title")}
 							value={subtitle}
