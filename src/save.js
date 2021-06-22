@@ -236,8 +236,8 @@ const save = ({ attributes }) => {
 
 	return (
 		<>
-			<div className={`ebgb-pricing ${pricingStyle}`} style={wrapperStylesNew}>
-				<div className="ebgb-pricing-item featured ribbon-4">
+			<div className={`ebgb-pricing ${pricingStyle}`}>
+				<div className="ebgb-pricing-item">
 					{pricingStyle === "style-2" && headerIcon && (
 						<div className="ebgb-pricing-icon" data-icon={headerIcon}>
 							<span className="icon">

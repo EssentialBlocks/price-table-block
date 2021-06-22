@@ -6322,13 +6322,15 @@ var typoPrefix_features_text = "featuresText";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
 /* harmony import */ var _inspector__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./inspector */ "./src/inspector.js");
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./constants */ "./src/constants/index.js");
+/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../util/helpers */ "./util/helpers/index.js");
 /**
  * WordPress dependencies
  */
 var __ = wp.i18n.__;
 var RichText = wp.blockEditor.RichText;
+var useEffect = wp.element.useEffect;
+var select = wp.data.select;
 /**
  * Internal dependencies
  */
@@ -6336,13 +6338,17 @@ var RichText = wp.blockEditor.RichText;
 
 
 
-var edit = function edit(props) {
-  var _buttonStyles;
 
+
+var edit = function edit(props) {
   var attributes = props.attributes,
       isSelected = props.isSelected,
-      setAttributes = props.setAttributes;
-  var pricingStyle = attributes.pricingStyle,
+      setAttributes = props.setAttributes,
+      clientId = props.clientId;
+  var blockId = attributes.blockId,
+      blockMeta = attributes.blockMeta,
+      resOption = attributes.resOption,
+      pricingStyle = attributes.pricingStyle,
       title = attributes.title,
       subtitle = attributes.subtitle,
       headerIcon = attributes.headerIcon,
@@ -6371,25 +6377,6 @@ var edit = function edit(props) {
       isHover = attributes.isHover,
       hoverBackgroundColor = attributes.hoverBackgroundColor,
       hoverTextColor = attributes.hoverTextColor,
-      priceboxBackground = attributes.priceboxBackground,
-      shadowColor = attributes.shadowColor,
-      shadowHOffset = attributes.shadowHOffset,
-      shadowVOffset = attributes.shadowVOffset,
-      shadowBlur = attributes.shadowBlur,
-      shadowSpread = attributes.shadowSpread,
-      borderWidth = attributes.borderWidth,
-      borderStyle = attributes.borderStyle,
-      borderColor = attributes.borderColor,
-      marginTop = attributes.marginTop,
-      marginRight = attributes.marginRight,
-      marginBottom = attributes.marginBottom,
-      marginLeft = attributes.marginLeft,
-      paddingTop = attributes.paddingTop,
-      paddingRight = attributes.paddingRight,
-      paddingBottom = attributes.paddingBottom,
-      paddingLeft = attributes.paddingLeft,
-      marginUnit = attributes.marginUnit,
-      paddingUnit = attributes.paddingUnit,
       buttonHeight = attributes.buttonHeight,
       buttonHeightUnit = attributes.buttonHeightUnit,
       buttonWidth = attributes.buttonWidth,
@@ -6437,97 +6424,77 @@ var edit = function edit(props) {
       buttonLineHeight = attributes.buttonLineHeight,
       buttonLineHeightUnit = attributes.buttonLineHeightUnit,
       buttonLetterSpacing = attributes.buttonLetterSpacing,
-      buttonLetterSpacingUnit = attributes.buttonLetterSpacingUnit;
-  var wrapperStyles = {
-    margin: "".concat(marginTop || 0).concat(marginUnit, " ").concat(marginRight || 0).concat(marginUnit, " ").concat(marginBottom || 0).concat(marginUnit, " ").concat(marginLeft || 0).concat(marginUnit),
-    padding: "".concat(paddingTop || 0).concat(paddingUnit, " ").concat(paddingRight || 0).concat(paddingUnit, " ").concat(paddingBottom || 0).concat(paddingUnit, " ").concat(paddingLeft || 0).concat(paddingUnit),
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    background: priceboxBackground || "#fff",
-    boxShadow: "".concat(shadowHOffset || 0, "px ").concat(shadowVOffset || 0, "px ").concat(shadowBlur || 0, "px ").concat(shadowSpread || 0, "px ").concat(shadowColor || "#000000"),
-    border: "".concat(borderWidth || 0, "px ").concat(borderStyle, " ").concat(borderColor || "#000000")
-  };
-  var titleWrapperStyles = {
-    width: "100%",
-    background: titleBackgroundColor || "transparent",
-    textAlign: "center"
-  };
-  var titleStyles = {
-    color: titleTextColor || "#4a5059"
-  };
-  var subtitleStyles = {
-    fontSize: "".concat(subtitleFontSize || 24).concat(subtitleSizeUnit),
-    fontFamily: subtitleFontFamily,
-    fontWeight: subtitleFontWeight,
-    textDecoration: subtitleTextDecoration,
-    letterSpacing: subtitleLetterSpacing ? "".concat(subtitleLetterSpacing).concat(subtitleLetterSpacingUnit) : undefined,
-    lineHeight: subtitleLineHeight ? "".concat(subtitleLineHeight).concat(subtitleLineHeightUnit) : undefined
-  };
-  var priceWrapperStyles = {
-    display: "flex",
-    justifyContent: "center",
-    width: "100%",
-    background: priceBackgroundColor || "#3074ff",
-    color: priceTextColor || "#edf1f7",
-    lineHeight: priceLineHeight ? "".concat(priceLineHeight).concat(priceLineHeightUnit) : undefined
-  };
-  var priceStyles = {
-    fontSize: "".concat(priceFontSize || 48).concat(priceSizeUnit),
-    fontFamily: priceFontFamily,
-    fontWeight: priceFontWeight,
-    textDecoration: priceTextDecoration,
-    letterSpacing: priceLetterSpacing ? "".concat(priceLetterSpacing).concat(priceLetterSpacingUnit) : undefined,
-    margin: 0
-  };
-  var featuresWrapperStyles = {
-    background: featuresBackgroundColor,
-    width: "100%",
-    textAlign: "center"
-  };
-  var featureListStyle = {
-    lineHeight: featureLineHeight ? "".concat(featureLineHeight).concat(featureLineHeightUnit) : undefined
-  };
-  var featureStyles = {
-    color: featuresTextColor || "#767676",
-    listStyle: "none",
-    fontSize: "".concat(featureFontSize || 18).concat(featureSizeUnit),
-    fontFamily: featureFontFamily,
-    fontWeight: featureFontWeight,
-    textDecoration: featureTextDecoration,
-    textTransform: featureTextTransform,
-    letterSpacing: featureLetterSpacing ? "".concat(featureLetterSpacing).concat(featureLetterSpacingUnit) : undefined,
-    marginLeft: 0,
-    paddingLeft: 0
-  };
-  var buttonStyles = (_buttonStyles = {
-    height: buttonHeight ? "".concat(buttonHeight).concat(buttonHeightUnit) : undefined,
-    width: buttonWidth ? "".concat(buttonWidth).concat(buttonWidthUnit) : undefined,
-    borderWidth: "".concat(buttonBorderWidth || 0, "px"),
-    borderStyle: buttonBorderStyle,
-    borderColor: isHover ? hoverBorderColor || "#000000" : buttonBorderColor || "#000000",
-    textAlign: "center",
-    background: isHover ? hoverBackgroundColor || "#7967ff" : buttonBackground || "#3074ff",
-    color: isHover ? hoverTextColor || "#ffffff" : buttonTextColor || "#edf1f7",
-    margin: 10
-  }, _defineProperty(_buttonStyles, "textAlign", "center"), _defineProperty(_buttonStyles, "padding", "8px 26px"), _defineProperty(_buttonStyles, "display", "inline-block"), _defineProperty(_buttonStyles, "borderRadius", "".concat(buttonBorderRadius || 0).concat(buttonBorderRadiusUnit)), _defineProperty(_buttonStyles, "fontSize", "".concat(buttonFontSize || 16).concat(buttonSizeUnit)), _defineProperty(_buttonStyles, "fontFamily", buttonFontFamily), _defineProperty(_buttonStyles, "fontWeight", buttonFontWeight), _defineProperty(_buttonStyles, "textDecoration", buttonTextDecoration), _defineProperty(_buttonStyles, "textTransform", buttonTextTransform), _defineProperty(_buttonStyles, "letterSpacing", buttonLetterSpacing ? "".concat(buttonLetterSpacing).concat(buttonLetterSpacingUnit) : undefined), _defineProperty(_buttonStyles, "lineHeight", buttonLineHeight ? "".concat(buttonLineHeight).concat(buttonLineHeightUnit) : undefined), _defineProperty(_buttonStyles, "cursor", isHover ? "pointer" : "default"), _buttonStyles);
+      buttonLetterSpacingUnit = attributes.buttonLetterSpacingUnit; // wrapper styles css in strings
+
+  var _generateDimensionsCo = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["generateDimensionsControlStyles"])({
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_2__["wrapperPadding"],
+    styleFor: "padding",
+    attributes: attributes
+  }),
+      wrapperPaddingStylesDesktop = _generateDimensionsCo.dimensionStylesDesktop,
+      wrapperPaddingStylesTab = _generateDimensionsCo.dimensionStylesTab,
+      wrapperPaddingStylesMobile = _generateDimensionsCo.dimensionStylesMobile;
+
+  var wrapperStyles = "\n\t\t.".concat(blockId, ".ebgb-pricing.style-1 .ebgb-pricing-item {\n\t\t\t").concat(wrapperPaddingStylesDesktop, "\n\t\t}\n\t");
+  var wrapperStylesTab = "\n\t\t.".concat(blockId, ".ebgb-pricing.style-1 .ebgb-pricing-item {\n\t\t\t").concat(wrapperPaddingStylesTab, "\n\t\t}\n\t");
+  var wrapperStylesMobile = "\n\t\t.".concat(blockId, ".ebgb-pricing.style-1 .ebgb-pricing-item {\n\t\t\t").concat(wrapperPaddingStylesMobile, "\n\t\t}\n\t");
   var colorStyles = {
     color: "#00C853"
   };
   var wrapperStylesNew = {
     overflow: "hidden"
-  };
+  }; // all css styles for large screen width (desktop/laptop) in strings ⬇
+
+  var desktopAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["softMinifyCssStrings"])("\n\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["isCssExists"])(wrapperStyles) ? wrapperStyles : " ", "\n\t")); // all css styles for Tab in strings ⬇
+
+  var tabAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["softMinifyCssStrings"])("\n\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["isCssExists"])(wrapperPaddingStylesTab) ? wrapperPaddingStylesTab : " ", "\n\t")); // all css styles for Mobile in strings ⬇
+
+  var mobileAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["softMinifyCssStrings"])("\n\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["isCssExists"])(wrapperPaddingStylesMobile) ? wrapperPaddingStylesMobile : " ", "\n\t")); // Set All Style in "blockMeta" Attribute
+
+  useEffect(function () {
+    var styleObject = {
+      desktop: desktopAllStyles,
+      tab: tabAllStyles,
+      mobile: mobileAllStyles
+    };
+
+    if (JSON.stringify(blockMeta) != JSON.stringify(styleObject)) {
+      setAttributes({
+        blockMeta: styleObject
+      });
+    }
+  }, [attributes]); // this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class
+
+  useEffect(function () {
+    setAttributes({
+      resOption: select("core/edit-post").__experimentalGetPreviewDeviceType()
+    });
+  }, []); // this useEffect is for creating an unique id for each block's unique className by a random unique number
+
+  useEffect(function () {
+    var BLOCK_PREFIX = "ebgb-pricing";
+    Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["duplicateBlockIdFix"])({
+      BLOCK_PREFIX: BLOCK_PREFIX,
+      blockId: blockId,
+      setAttributes: setAttributes,
+      select: select,
+      clientId: clientId
+    });
+  }, []); // this useEffect is for mimmiking css when responsive options clicked from wordpress's 'preview' button
+
+  useEffect(function () {
+    Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["mimmikCssForPreviewBtnClick"])({
+      domObj: document,
+      select: select
+    });
+  }, []);
   return [isSelected && /*#__PURE__*/React.createElement(_inspector__WEBPACK_IMPORTED_MODULE_1__["default"], {
     attributes: attributes,
     setAttributes: setAttributes
-  }),
-  /*#__PURE__*/
-  // Edit view here
-  React.createElement("div", {
-    className: "ebgb-pricing ".concat(pricingStyle),
-    style: wrapperStylesNew
+  }), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("style", null, "\n\t\t\t\t ".concat(desktopAllStyles, "\n \n\t\t\t\t /* mimmikcssStart */\n \n\t\t\t\t ").concat(resOption === "Tablet" ? tabAllStyles : " ", "\n\t\t\t\t ").concat(resOption === "Mobile" ? tabAllStyles + mobileAllStyles : " ", "\n \n\t\t\t\t /* mimmikcssEnd */\n \n\t\t\t\t @media all and (max-width: 1024px) {\t\n \n\t\t\t\t\t /* tabcssStart */\t\t\t\n\t\t\t\t\t ").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["softMinifyCssStrings"])(tabAllStyles), "\n\t\t\t\t\t /* tabcssEnd */\t\t\t\n\t\t\t\t \n\t\t\t\t }\n\t\t\t\t \n\t\t\t\t @media all and (max-width: 767px) {\n\t\t\t\t\t \n\t\t\t\t\t /* mobcssStart */\t\t\t\n\t\t\t\t\t ").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["softMinifyCssStrings"])(mobileAllStyles), "\n\t\t\t\t\t /* mobcssEnd */\t\t\t\n\t\t\t\t \n\t\t\t\t }\n\t\t\t\t ")), /*#__PURE__*/React.createElement("div", {
+    className: "ebgb-pricing ".concat(blockId, " ").concat(pricingStyle)
   }, /*#__PURE__*/React.createElement("div", {
-    className: "ebgb-pricing-item featured ribbon-4"
+    className: "ebgb-pricing-item"
   }, pricingStyle === "style-2" && headerIcon && /*#__PURE__*/React.createElement("div", {
     className: "ebgb-pricing-icon",
     "data-icon": headerIcon
@@ -6574,8 +6541,8 @@ var edit = function edit(props) {
         clickable = _ref.clickable,
         link = _ref.link;
     return /*#__PURE__*/React.createElement("li", {
-      className: "ebgb-pricebox-feature-item",
-      style: featureListStyle,
+      className: "ebgb-pricebox-feature-item" // style={featureListStyle}
+      ,
       "data-icon": icon,
       "data-color": color,
       "data-clickable": clickable,
@@ -6605,7 +6572,7 @@ var edit = function edit(props) {
     className: "ebgb-button-text"
   }, buttonText), buttonIconPosition === "right" && /*#__PURE__*/React.createElement("i", {
     className: buttonIcon
-  }))))) // edit view end
+  })))))) // edit view end
   ];
 };
 
@@ -6850,48 +6817,7 @@ var Inspector = function Inspector(_ref) {
       salepriceCurrencyTextColor = attributes.salepriceCurrencyTextColor,
       pricingPeriodTextColor = attributes.pricingPeriodTextColor,
       featuresTextColor = attributes.featuresTextColor,
-      displaySubtitle = attributes.displaySubtitle,
-      priceBackgroundColor = attributes.priceBackgroundColor,
-      featuresBackgroundColor = attributes.featuresBackgroundColor,
-      hoverBackgroundColor = attributes.hoverBackgroundColor,
-      priceboxBackground = attributes.priceboxBackground,
-      subtitleFontFamily = attributes.subtitleFontFamily,
-      subtitleFontSize = attributes.subtitleFontSize,
-      subtitleSizeUnit = attributes.subtitleSizeUnit,
-      subtitleFontWeight = attributes.subtitleFontWeight,
-      subtitleTextDecoration = attributes.subtitleTextDecoration,
-      subtitleLineHeight = attributes.subtitleLineHeight,
-      subtitleLineHeightUnit = attributes.subtitleLineHeightUnit,
-      subtitleLetterSpacing = attributes.subtitleLetterSpacing,
-      subtitleLetterSpacingUnit = attributes.subtitleLetterSpacingUnit,
-      featureFontFamily = attributes.featureFontFamily,
-      featureFontSize = attributes.featureFontSize,
-      featureSizeUnit = attributes.featureSizeUnit,
-      featureFontWeight = attributes.featureFontWeight,
-      featureTextTransform = attributes.featureTextTransform,
-      featureTextDecoration = attributes.featureTextDecoration,
-      featureLineHeight = attributes.featureLineHeight,
-      featureLineHeightUnit = attributes.featureLineHeightUnit,
-      featureLetterSpacing = attributes.featureLetterSpacing,
-      featureLetterSpacingUnit = attributes.featureLetterSpacingUnit,
-      priceFontFamily = attributes.priceFontFamily,
-      priceFontSize = attributes.priceFontSize,
-      priceSizeUnit = attributes.priceSizeUnit,
-      priceFontWeight = attributes.priceFontWeight,
-      priceTextDecoration = attributes.priceTextDecoration,
-      priceLineHeight = attributes.priceLineHeight,
-      priceLineHeightUnit = attributes.priceLineHeightUnit,
-      priceLetterSpacing = attributes.priceLetterSpacing,
-      priceLetterSpacingUnit = attributes.priceLetterSpacingUnit,
-      buttonFontFamily = attributes.buttonFontFamily,
-      buttonFontSize = attributes.buttonFontSize,
-      buttonSizeUnit = attributes.buttonSizeUnit,
-      buttonFontWeight = attributes.buttonFontWeight,
-      buttonTextDecoration = attributes.buttonTextDecoration,
-      buttonLineHeight = attributes.buttonLineHeight,
-      buttonLineHeightUnit = attributes.buttonLineHeightUnit,
-      buttonLetterSpacing = attributes.buttonLetterSpacing,
-      buttonLetterSpacingUnit = attributes.buttonLetterSpacingUnit; // this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class only the first time once
+      hoverBackgroundColor = attributes.hoverBackgroundColor; // this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class only the first time once
 
   useEffect(function () {
     setAttributes({
@@ -7630,10 +7556,9 @@ var save = function save(_ref) {
     overflow: "hidden"
   };
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
-    className: "ebgb-pricing ".concat(pricingStyle),
-    style: wrapperStylesNew
+    className: "ebgb-pricing ".concat(pricingStyle)
   }, /*#__PURE__*/React.createElement("div", {
-    className: "ebgb-pricing-item featured ribbon-4"
+    className: "ebgb-pricing-item"
   }, pricingStyle === "style-2" && headerIcon && /*#__PURE__*/React.createElement("div", {
     className: "ebgb-pricing-icon",
     "data-icon": headerIcon
