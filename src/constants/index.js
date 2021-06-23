@@ -51,6 +51,8 @@ export const buttonPadding = "btnPadding";
 export const buttonMargin = "btnMargin";
 export const wrapperMargin = "wrapperMargin";
 export const wrapperPadding = "wrapperPadding";
+export const titlePadding = "titlePadding";
+export const titleMargin = "titleMargin";
 export const priceCurrencyMargin = "priceCurrencyMargin";
 export const salepriceCurrencyMargin = "salepriceCurrencyMargin";
 

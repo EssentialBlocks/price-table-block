@@ -16,6 +16,8 @@ import {
 	buttonMargin,
 	wrapperMargin,
 	wrapperPadding,
+	titleMargin,
+	titlePadding,
 	priceCurrencyMargin,
 	buttonBackgroundControl,
 	priceTableBackground,
@@ -69,11 +71,27 @@ const attributes = {
 		selector: ".ebgb-pricing .header .ebgb-pricing-subtitle",
 		default: "A tagline here.",
 	},
+	defaultHeaderIcon: {
+		type: "boolean",
+		default: false,
+	},
+	showHeaderIcon: {
+		type: "boolean",
+		default: false,
+	},
 	headerIcon: {
 		type: "attribute",
 		selector: ".ebgb-pricing-icon",
 		attribute: "data-icon",
 		default: "fas fa-home",
+	},
+	defaultTitleLine: {
+		type: "boolean",
+		default: false,
+	},
+	showTitleLine: {
+		type: "boolean",
+		default: true,
 	},
 	mainPrice: {
 		type: "string",
@@ -206,11 +224,11 @@ const attributes = {
 	},
 	titleBackgroundColor: {
 		type: "string",
-		default: "#C8E6C9",
+		// default: "#C8E6C9",
 	},
 	subtitleTextColor: {
 		type: "string",
-		default: "blue",
+		default: "#6d6d6d",
 	},
 	showIconBackground: {
 		type: "boolean",
@@ -274,6 +292,8 @@ const attributes = {
 	...generateDimensionsAttributes(buttonMargin),
 	...generateDimensionsAttributes(wrapperMargin),
 	...generateDimensionsAttributes(wrapperPadding),
+	...generateDimensionsAttributes(titlePadding),
+	...generateDimensionsAttributes(titleMargin),
 	...generateDimensionsAttributes(priceCurrencyMargin),
 	...generateDimensionsAttributes(salepriceCurrencyMargin),
 	// typography attributes

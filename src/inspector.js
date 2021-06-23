@@ -27,6 +27,8 @@ import {
 	buttonMargin,
 	wrapperPadding,
 	wrapperMargin,
+	titlePadding,
+	titleMargin,
 	priceCurrencyMargin,
 	buttonBorderShadow,
 	buttonBackgroundControl,
@@ -75,7 +77,11 @@ const Inspector = ({ attributes, setAttributes }) => {
 		defaultSubtitle,
 		showSubtitle,
 		subtitle,
+		showHeaderIcon,
+		defaultHeaderIcon,
 		headerIcon,
+		defaultTitleLine,
+		showTitleLine,
 		mainPrice,
 		showOnSale,
 		salePrice,
@@ -164,25 +170,23 @@ const Inspector = ({ attributes, setAttributes }) => {
 			case "style-1":
 				setAttributes({
 					showSubtitle: false,
+					showHeaderIcon: false,
+					showTitleLine: true,
 				});
-				if (defaultSubtitle) {
-					setAttributes({
-						showSubtitle: true,
-					});
-				}
+				defaultSubtitle ? setAttributes({ showSubtitle: true }) : "";
+				defaultHeaderIcon ? setAttributes({ showHeaderIcon: true }) : "";
 				break;
 
 			case "style-2":
 				setAttributes({
 					showSubtitle: true,
-					// defaultSubtitle: true,
+					showHeaderIcon: true,
+					showTitleLine: false,
 				});
+				defaultTitleLine ? setAttributes({ showTitleLine: false }) : "";
 				break;
-			default:
-				showSubtitle: false;
 		}
 	}, [pricingStyle]);
-	console.log("show", showSubtitle, "default", defaultSubtitle);
 	return (
 		<InspectorControls key="controls">
 			<span className="eb-panel-control">
@@ -226,7 +230,18 @@ const Inspector = ({ attributes, setAttributes }) => {
 						/>
 					)}
 
-					{pricingStyle === "style-2" && (
+					<ToggleControl
+						label={__("Show Icon?")}
+						checked={showHeaderIcon}
+						onChange={() => {
+							setAttributes({
+								showHeaderIcon: !showHeaderIcon,
+								defaultHeaderIcon: !showHeaderIcon,
+							});
+						}}
+					/>
+
+					{showHeaderIcon && (
 						<BaseControl label={__("Icon")}>
 							<FontIconPicker
 								icons={faIcons}
@@ -237,6 +252,16 @@ const Inspector = ({ attributes, setAttributes }) => {
 							/>
 						</BaseControl>
 					)}
+					<ToggleControl
+						label={__("Show title line?")}
+						checked={showTitleLine}
+						onChange={() => {
+							setAttributes({
+								showTitleLine: !showTitleLine,
+								defaultTitleLine: !showTitleLine,
+							});
+						}}
+					/>
 					<PanelBody title={__("Styles")}>
 						<BackgroundControl
 							controlName={priceTableBackground}
@@ -272,29 +297,28 @@ const Inspector = ({ attributes, setAttributes }) => {
 						color={titleTextColor}
 						onChange={(titleTextColor) => setAttributes({ titleTextColor })}
 					/>
-					{pricingStyle === "style-1" && (
+					{showTitleLine && (
 						<ColorControl
 							label={__("Line Color")}
 							color={titleLineColor}
 							onChange={(titleLineColor) => setAttributes({ titleLineColor })}
 						/>
 					)}
-					{pricingStyle === "style-2" && (
-						<ColorControl
-							label={__("Background Color")}
-							color={titleBackgroundColor}
-							onChange={(titleBackgroundColor) =>
-								setAttributes({ titleBackgroundColor })
-							}
-						/>
-					)}
+
+					<ColorControl
+						label={__("Background Color")}
+						color={titleBackgroundColor}
+						onChange={(titleBackgroundColor) =>
+							setAttributes({ titleBackgroundColor })
+						}
+					/>
 					<TypographyDropdown
 						baseLabel={__("Typography")}
 						typographyPrefixConstant={typoPrefix_title}
 						resRequiredProps={resRequiredProps}
 					/>
 					<hr />
-					{pricingStyle === "style-2" && (
+					{showSubtitle && (
 						<>
 							<BaseControl>
 								<h3 className="eb-control-title">{__("Subtitle Style")}</h3>
@@ -313,6 +337,20 @@ const Inspector = ({ attributes, setAttributes }) => {
 							/>
 						</>
 					)}
+					<hr />
+					<BaseControl>
+						<h3 className="eb-control-title">{__("Margin & Padding")}</h3>
+					</BaseControl>
+					<ResponsiveDimensionsControl
+						resRequiredProps={resRequiredProps}
+						controlName={titlePadding}
+						baseLabel={__("Padding")}
+					/>
+					<ResponsiveDimensionsControl
+						resRequiredProps={resRequiredProps}
+						controlName={titleMargin}
+						baseLabel={__("Margin")}
+					/>
 				</PanelBody>
 				<PanelBody title={__("Price")} initialOpen={false}>
 					<TextControl
@@ -598,7 +636,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 					/>
 				</PanelBody>
 
-				{pricingStyle === "style-2" && (
+				{showHeaderIcon && (
 					<PanelBody title={__("Icon Settings")} initialOpen={false}>
 						<ToggleControl
 							label={__("Show Background")}

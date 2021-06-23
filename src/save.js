@@ -1,10 +1,11 @@
 /**
  * WordPress dependencies
  */
-const { RichText } = wp.blockEditor;
+const { useBlockProps } = wp.blockEditor;
 
 const save = ({ attributes }) => {
 	const {
+		blockId,
 		pricingStyle,
 		title,
 		subtitle,
@@ -236,104 +237,116 @@ const save = ({ attributes }) => {
 
 	return (
 		<>
-			<div className={`ebgb-pricing ${pricingStyle}`}>
-				<div className="ebgb-pricing-item">
-					{pricingStyle === "style-2" && headerIcon && (
-						<div className="ebgb-pricing-icon" data-icon={headerIcon}>
-							<span className="icon">
-								<i class={headerIcon}></i>
-							</span>
-						</div>
-					)}
-					<div className="header">
-						<h2 className="ebgb-pricing-title">{title}</h2>
-						{pricingStyle !== "style-1" && (
-							<span className="ebgb-pricing-subtitle">{subtitle}</span>
-						)}
-					</div>
-					<div className="ebgb-pricing-tag">
-						<span className="price-tag">
-							<span
-								className={`original-price${
-									showOnSale === true ? " line-through" : ""
-								}`}
-								data-price={mainPrice}
-							>
-								{currencyPlacement === "left" && (
-									<span className="price-currency">{priceCurrency}</span>
+			<div {...useBlockProps.save()}>
+				<div className={blockId}>
+					<div className={`ebgb-pricing ${pricingStyle}`}>
+						<div className="ebgb-pricing-item">
+							{pricingStyle === "style-2" && headerIcon && (
+								<div className="ebgb-pricing-icon" data-icon={headerIcon}>
+									<span className="icon">
+										<i class={headerIcon}></i>
+									</span>
+								</div>
+							)}
+							<div className="header">
+								<h2 className="ebgb-pricing-title">{title}</h2>
+								{pricingStyle !== "style-1" && (
+									<span className="ebgb-pricing-subtitle">{subtitle}</span>
 								)}
-								{mainPrice}
-								{currencyPlacement === "right" && (
-									<span className="price-currency">{priceCurrency}</span>
-								)}
-							</span>
-
-							{showOnSale && (
-								<>
-									<span className="sale-price" data-sale-price={salePrice}>
+							</div>
+							<div className="ebgb-pricing-tag">
+								<span className="price-tag">
+									<span
+										className={`original-price${
+											showOnSale === true ? " line-through" : ""
+										}`}
+										data-price={mainPrice}
+									>
 										{currencyPlacement === "left" && (
 											<span className="price-currency">{priceCurrency}</span>
 										)}
-										{salePrice}
+										{mainPrice}
 										{currencyPlacement === "right" && (
 											<span className="price-currency">{priceCurrency}</span>
 										)}
 									</span>
-								</>
-							)}
-						</span>
-						<span
-							className="price-period"
-							data-period-separator={periodSeparator}
-							data-price-period={pricePeriod}
-						>
-							{periodSeparator} {pricePeriod}
-						</span>
-					</div>
-					<div className="body">
-						<ul className="ebgb-pricebox-features">
-							{features.map(({ icon, text, color, clickable, link }) => (
-								<li
-									className="ebgb-pricebox-feature-item"
-									style={featureListStyle}
-									data-icon={icon}
-									data-color={color}
-									data-clickable={clickable}
-									data-link={link}
-								>
-									{clickable && link ? (
-										<a href={link}>
-											<span className={`ebgb-pricebox-icon ${icon}`} />
-											<span className="ebgb-pricebox-feature-text">{text}</span>
-										</a>
-									) : (
+
+									{showOnSale && (
 										<>
-											<span className={`ebgb-pricebox-icon ${icon}`} />
-											<span className="ebgb-pricebox-feature-text">{text}</span>
+											<span className="sale-price" data-sale-price={salePrice}>
+												{currencyPlacement === "left" && (
+													<span className="price-currency">
+														{priceCurrency}
+													</span>
+												)}
+												{salePrice}
+												{currencyPlacement === "right" && (
+													<span className="price-currency">
+														{priceCurrency}
+													</span>
+												)}
+											</span>
 										</>
 									)}
-								</li>
-							))}
-						</ul>
-					</div>
-					{showButton && (
-						<div className="footer" data-icon={buttonIcon}>
-							<a
-								href={buttonURL}
-								// target="_blank"
-								// rel="nofollow noopener"
-								className="ebgb-pricing-button"
-							>
-								{buttonIconPosition === "left" && (
-									<i className={buttonIcon}></i>
-								)}
-								<span className="ebgb-button-text">{buttonText}</span>
-								{buttonIconPosition === "right" && (
-									<i className={buttonIcon}></i>
-								)}
-							</a>
+								</span>
+								<span
+									className="price-period"
+									data-period-separator={periodSeparator}
+									data-price-period={pricePeriod}
+								>
+									{periodSeparator} {pricePeriod}
+								</span>
+							</div>
+							<div className="body">
+								<ul className="ebgb-pricebox-features">
+									{features.map(({ icon, text, color, clickable, link }) => (
+										<li
+											className="ebgb-pricebox-feature-item"
+											style={featureListStyle}
+											data-icon={icon}
+											data-color={color}
+											data-clickable={clickable}
+											data-link={link}
+										>
+											{clickable && link ? (
+												<a href={link}>
+													<span className={`ebgb-pricebox-icon ${icon}`} />
+													<span className="ebgb-pricebox-feature-text">
+														{text}
+													</span>
+												</a>
+											) : (
+												<>
+													<span className={`ebgb-pricebox-icon ${icon}`} />
+													<span className="ebgb-pricebox-feature-text">
+														{text}
+													</span>
+												</>
+											)}
+										</li>
+									))}
+								</ul>
+							</div>
+							{showButton && (
+								<div className="footer" data-icon={buttonIcon}>
+									<a
+										href={buttonURL}
+										// target="_blank"
+										// rel="nofollow noopener"
+										className="ebgb-pricing-button"
+									>
+										{buttonIconPosition === "left" && (
+											<i className={buttonIcon}></i>
+										)}
+										<span className="ebgb-button-text">{buttonText}</span>
+										{buttonIconPosition === "right" && (
+											<i className={buttonIcon}></i>
+										)}
+									</a>
+								</div>
+							)}
 						</div>
-					)}
+					</div>
 				</div>
 			</div>
 		</>

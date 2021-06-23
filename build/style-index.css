@@ -52,6 +52,35 @@
   padding-right: 8px;
 }
 
+.ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border: 2px solid #333333;
+  border-radius: 50%;
+  margin-bottom: 30px;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon,
+.ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon i {
+  font-size: 30px;
+  color: #333;
+  transition: 0.5s;
+}
+
+.ebgb-pricing .ebgb-pricing-item:hover .ebgb-pricing-icon .icon i {
+  color: #333;
+}
+
 /*--- Pricing Table: Style 1 ---*/
 .ebgb-pricing.style-1 {
   position: relative;
@@ -162,19 +191,6 @@
   z-index: 0;
   padding-bottom: 15px;
   margin-bottom: 15px;
-}
-
-.ebgb-pricing.style-1 .ebgb-pricing-item .header:after {
-  content: "";
-  position: absolute;
-  width: 140px;
-  height: 1px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  margin: 0 auto;
-  z-index: 1;
-  background: rgba(9, 9, 9, 0.1);
 }
 
 .ebgb-pricing.style-1 .ebgb-pricing-item .header .ebgb-pricing-title {
@@ -326,6 +342,7 @@
   height: 80px;
   background: #00c853;
   border-radius: 50%;
+  border: none;
   margin-bottom: 30px;
   transition: 0.5s;
   overflow: hidden;

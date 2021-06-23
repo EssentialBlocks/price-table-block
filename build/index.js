@@ -5659,7 +5659,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({
+var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({
   // the following 4 attributes is must required for responsive options and asset generation for frontend
   // responsive control attributes ⬇
   resOption: {
@@ -5702,11 +5702,27 @@ var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_object
     selector: ".ebgb-pricing .header .ebgb-pricing-subtitle",
     "default": "A tagline here."
   },
+  defaultHeaderIcon: {
+    type: "boolean",
+    "default": false
+  },
+  showHeaderIcon: {
+    type: "boolean",
+    "default": false
+  },
   headerIcon: {
     type: "attribute",
     selector: ".ebgb-pricing-icon",
     attribute: "data-icon",
     "default": "fas fa-home"
+  },
+  defaultTitleLine: {
+    type: "boolean",
+    "default": false
+  },
+  showTitleLine: {
+    type: "boolean",
+    "default": true
   },
   mainPrice: {
     type: "string",
@@ -5833,12 +5849,12 @@ var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_object
     "default": "#dbdbdb"
   },
   titleBackgroundColor: {
-    type: "string",
-    "default": "#C8E6C9"
+    type: "string" // default: "#C8E6C9",
+
   },
   subtitleTextColor: {
     type: "string",
-    "default": "blue"
+    "default": "#6d6d6d"
   },
   showIconBackground: {
     type: "boolean",
@@ -5892,7 +5908,7 @@ var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_object
   defaultRange: 80
 })), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateResponsiveRangeAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["featuresIconSize"], {
   defaultRange: 20
-})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["buttonPadding"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["buttonMargin"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["wrapperMargin"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["wrapperPadding"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["priceCurrencyMargin"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["salepriceCurrencyMargin"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateTypographyAttributes"])(Object.values(_constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_0__))), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBackgroundAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["buttonBackgroundControl"], {
+})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["buttonPadding"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["buttonMargin"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["wrapperMargin"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["wrapperPadding"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["titlePadding"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["titleMargin"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["priceCurrencyMargin"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["salepriceCurrencyMargin"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateTypographyAttributes"])(Object.values(_constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_0__))), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBackgroundAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["buttonBackgroundControl"], {
   defaultFillColor: "#00c853"
 })), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBackgroundAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["priceTableBackground"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBorderShadowAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["buttonBorderShadow"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBorderShadowAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["wrapperBorderShadow"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBorderShadowAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["iconBorderShadow"])), {}, {
   // new attributes end
@@ -6163,7 +6179,7 @@ var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_object
 /*!********************************!*\
   !*** ./src/constants/index.js ***!
   \********************************/
-/*! exports provided: BORDER_STYLES, TEXT_TRANSFORM, FONT_WEIGHT, TEXT_DECORATION, TWOUNITS, buttonIconSpacing, buttonIconSize, headerIconSize, headerIconWidth, headerIconHeight, featuresIconSize, buttonPadding, buttonMargin, wrapperMargin, wrapperPadding, priceCurrencyMargin, salepriceCurrencyMargin, buttonBackgroundControl, priceTableBackground, buttonBorderShadow, wrapperBorderShadow, iconBorderShadow */
+/*! exports provided: BORDER_STYLES, TEXT_TRANSFORM, FONT_WEIGHT, TEXT_DECORATION, TWOUNITS, buttonIconSpacing, buttonIconSize, headerIconSize, headerIconWidth, headerIconHeight, featuresIconSize, buttonPadding, buttonMargin, wrapperMargin, wrapperPadding, titlePadding, titleMargin, priceCurrencyMargin, salepriceCurrencyMargin, buttonBackgroundControl, priceTableBackground, buttonBorderShadow, wrapperBorderShadow, iconBorderShadow */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6183,6 +6199,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buttonMargin", function() { return buttonMargin; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "wrapperMargin", function() { return wrapperMargin; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "wrapperPadding", function() { return wrapperPadding; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "titlePadding", function() { return titlePadding; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "titleMargin", function() { return titleMargin; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "priceCurrencyMargin", function() { return priceCurrencyMargin; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "salepriceCurrencyMargin", function() { return salepriceCurrencyMargin; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buttonBackgroundControl", function() { return buttonBackgroundControl; });
@@ -6277,6 +6295,8 @@ var buttonPadding = "btnPadding";
 var buttonMargin = "btnMargin";
 var wrapperMargin = "wrapperMargin";
 var wrapperPadding = "wrapperPadding";
+var titlePadding = "titlePadding";
+var titleMargin = "titleMargin";
 var priceCurrencyMargin = "priceCurrencyMargin";
 var salepriceCurrencyMargin = "salepriceCurrencyMargin"; // background controls
 
@@ -6331,17 +6351,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
 /* harmony import */ var _inspector__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./inspector */ "./src/inspector.js");
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./constants */ "./src/constants/index.js");
-/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../util/helpers */ "./util/helpers/index.js");
+/* harmony import */ var _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./constants/typographyPrefixConstants */ "./src/constants/typographyPrefixConstants.js");
+/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../util/helpers */ "./util/helpers/index.js");
 /**
  * WordPress dependencies
  */
 var __ = wp.i18n.__;
-var RichText = wp.blockEditor.RichText;
+var useBlockProps = wp.blockEditor.useBlockProps;
 var useEffect = wp.element.useEffect;
 var select = wp.data.select;
 /**
  * Internal dependencies
  */
+
 
 
 
@@ -6358,10 +6380,11 @@ var edit = function edit(props) {
       resOption = attributes.resOption,
       pricingStyle = attributes.pricingStyle,
       title = attributes.title,
-      defaultSubtitle = attributes.defaultSubtitle,
       showSubtitle = attributes.showSubtitle,
       subtitle = attributes.subtitle,
+      showHeaderIcon = attributes.showHeaderIcon,
       headerIcon = attributes.headerIcon,
+      showTitleLine = attributes.showTitleLine,
       mainPrice = attributes.mainPrice,
       showOnSale = attributes.showOnSale,
       salePrice = attributes.salePrice,
@@ -6375,11 +6398,13 @@ var edit = function edit(props) {
       buttonIconPosition = attributes.buttonIconPosition,
       buttonText = attributes.buttonText,
       buttonURL = attributes.buttonURL,
-      displaySubtitle = attributes.displaySubtitle,
       titleBackgroundColor = attributes.titleBackgroundColor,
       titleTextColor = attributes.titleTextColor,
+      titleLineColor = attributes.titleLineColor,
+      subtitleTextColor = attributes.subtitleTextColor,
       priceBackgroundColor = attributes.priceBackgroundColor,
       priceTextColor = attributes.priceTextColor,
+      priceCurrencyTextColor = attributes.priceCurrencyTextColor,
       featuresBackgroundColor = attributes.featuresBackgroundColor,
       featuresTextColor = attributes.featuresTextColor,
       buttonBackground = attributes.buttonBackground,
@@ -6436,7 +6461,7 @@ var edit = function edit(props) {
       buttonLetterSpacing = attributes.buttonLetterSpacing,
       buttonLetterSpacingUnit = attributes.buttonLetterSpacingUnit; // wrapper styles css in strings
 
-  var _generateDimensionsCo = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["generateDimensionsControlStyles"])({
+  var _generateDimensionsCo = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateDimensionsControlStyles"])({
     controlName: _constants__WEBPACK_IMPORTED_MODULE_2__["wrapperPadding"],
     styleFor: "padding",
     attributes: attributes
@@ -6445,21 +6470,88 @@ var edit = function edit(props) {
       wrapperPaddingStylesTab = _generateDimensionsCo.dimensionStylesTab,
       wrapperPaddingStylesMobile = _generateDimensionsCo.dimensionStylesMobile;
 
-  var wrapperStyles = "\n\t\t.".concat(blockId, ".ebgb-pricing.style-1 .ebgb-pricing-item {\n\t\t\t").concat(wrapperPaddingStylesDesktop, "\n\t\t}\n\t");
-  var wrapperStylesTab = "\n\t\t.".concat(blockId, ".ebgb-pricing.style-1 .ebgb-pricing-item {\n\t\t\t").concat(wrapperPaddingStylesTab, "\n\t\t}\n\t");
-  var wrapperStylesMobile = "\n\t\t.".concat(blockId, ".ebgb-pricing.style-1 .ebgb-pricing-item {\n\t\t\t").concat(wrapperPaddingStylesMobile, "\n\t\t}\n\t");
-  var colorStyles = {
-    color: "#00C853"
-  };
+  var _generateDimensionsCo2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateDimensionsControlStyles"])({
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_2__["wrapperMargin"],
+    styleFor: "margin",
+    attributes: attributes
+  }),
+      wrapperMarginStylesDesktop = _generateDimensionsCo2.dimensionStylesDesktop,
+      wrapperMarginStylesTab = _generateDimensionsCo2.dimensionStylesTab,
+      wrapperMarginStylesMobile = _generateDimensionsCo2.dimensionStylesMobile;
+
+  var _generateBackgroundCo = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateBackgroundControlStyles"])({
+    attributes: attributes,
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_2__["priceTableBackground"]
+  }),
+      backgroundStylesDesktop = _generateBackgroundCo.backgroundStylesDesktop,
+      backgroundStylesTab = _generateBackgroundCo.backgroundStylesTab,
+      backgroundStylesMobile = _generateBackgroundCo.backgroundStylesMobile,
+      overlyStyles = _generateBackgroundCo.overlyStyles;
+
+  var _generateBorderShadow = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateBorderShadowStyles"])({
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_2__["wrapperBorderShadow"],
+    attributes: attributes
+  }),
+      bdShadowStyesDesktop = _generateBorderShadow.styesDesktop,
+      bdShadowStyesTab = _generateBorderShadow.styesTab,
+      bdShadowStyesMobile = _generateBorderShadow.styesMobile,
+      bdShadowStylesHoverDesktop = _generateBorderShadow.stylesHoverDesktop,
+      bdShadowStylesHoverTab = _generateBorderShadow.stylesHoverTab,
+      bdShadowStylesHoverMobile = _generateBorderShadow.stylesHoverMobile;
+
+  var _generateTypographySt = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateTypographyStyles"])({
+    attributes: attributes,
+    prefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_3__["typoPrefix_title"],
+    defaultFontSize: 28
+  }),
+      titleTypoStylesDesktop = _generateTypographySt.typoStylesDesktop,
+      titleTypoStylesTab = _generateTypographySt.typoStylesTab,
+      titleTypoStylesMobile = _generateTypographySt.typoStylesMobile;
+
+  var _generateTypographySt2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateTypographyStyles"])({
+    attributes: attributes,
+    prefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_3__["typoPrefix_subtitle"]
+  }),
+      subtitleTypoStylesDesktop = _generateTypographySt2.typoStylesDesktop,
+      subtitleTypoStylesTab = _generateTypographySt2.typoStylesTab,
+      subtitleTypoStylesMobile = _generateTypographySt2.typoStylesMobile;
+
+  var _generateDimensionsCo3 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateDimensionsControlStyles"])({
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_2__["titlePadding"],
+    styleFor: "padding",
+    attributes: attributes
+  }),
+      titlePaddingStylesDesktop = _generateDimensionsCo3.dimensionStylesDesktop,
+      titlePaddingStylesTab = _generateDimensionsCo3.dimensionStylesTab,
+      titlePaddingStylesMobile = _generateDimensionsCo3.dimensionStylesMobile;
+
+  var _generateDimensionsCo4 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateDimensionsControlStyles"])({
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_2__["titleMargin"],
+    styleFor: "margin",
+    attributes: attributes
+  }),
+      titleMarginStylesDesktop = _generateDimensionsCo4.dimensionStylesDesktop,
+      titleMarginStylesTab = _generateDimensionsCo4.dimensionStylesTab,
+      titleMarginStylesMobile = _generateDimensionsCo4.dimensionStylesMobile;
+
+  var wrapperStyles = "\n\t\t.".concat(blockId, " .ebgb-pricing .ebgb-pricing-item {\n\t\t\t").concat(wrapperPaddingStylesDesktop, "\n\t\t\t").concat(wrapperMarginStylesDesktop, "\n\t\t\t").concat(backgroundStylesDesktop, "\n\t\t\t").concat(bdShadowStyesDesktop, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item:before {\n\t\t\t").concat(overlyStyles, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item:hover {\n\t\t\t").concat(bdShadowStylesHoverDesktop, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header {\n\t\t\t").concat(titlePaddingStylesDesktop, "\n\t\t\t").concat(titleMarginStylesDesktop, "\n\t\t\tbackground: ").concat(titleBackgroundColor, ";\n\t\t\tposition: relative;\n\t\t\tz-index: 0;\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-title {\n\t\t\t").concat(titleTypoStylesDesktop, "\n\t\t\tcolor: ").concat(titleTextColor, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-subtitle {\n\t\t\t").concat(subtitleTypoStylesDesktop, "\n\t\t\tcolor: ").concat(subtitleTextColor, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .original-price {\n\t\t\tcolor: ").concat(priceTextColor, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-currency {\n\t\t\tcolor: ").concat(priceCurrencyTextColor, "\n\t\t}\n \t\t\n\t");
+  var wrapperStylesTab = "\n\t\t.".concat(blockId, " .ebgb-pricing .ebgb-pricing-item {\n\t\t\t").concat(wrapperPaddingStylesTab, "\n\t\t\t").concat(wrapperMarginStylesTab, "\n\t\t\t").concat(backgroundStylesTab, "\n\t\t\t").concat(bdShadowStyesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item:hover {\n\t\t\t").concat(bdShadowStylesHoverTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header {\n\t\t\t").concat(titlePaddingStylesTab, "\n\t\t\t").concat(titleMarginStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-title {\n\t\t\t").concat(titleTypoStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-subtitle {\n\t\t\t").concat(subtitleTypoStylesTab, "\n\t\t}\n\t");
+  var wrapperStylesMobile = "\n\t\t.".concat(blockId, " .ebgb-pricing .ebgb-pricing-item {\n\t\t\t").concat(wrapperPaddingStylesMobile, "\n\t\t\t").concat(wrapperMarginStylesMobile, "\n\t\t\t").concat(backgroundStylesMobile, "\n\t\t\t").concat(bdShadowStyesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item:hover {\n\t\t\t").concat(bdShadowStylesHoverMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header {\n\t\t\t").concat(titlePaddingStylesMobile, "\n\t\t\t").concat(titleMarginStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-title {\n\t\t\t").concat(titleTypoStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-subtitle {\n\t\t\t").concat(subtitleTypoStylesMobile, "\n\t\t}\n\t");
+  var titleLineStyle = "";
+
+  if (showTitleLine) {
+    titleLineStyle = "\n\t\t.".concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header::after {\n\t\t\tbackground: ").concat(titleLineColor, "\n\t\t}\n\n\t\t.ebgb-pricing .ebgb-pricing-item .header::after {\n\t\t\tcontent: \"\";\n\t\t\tposition: absolute;\n\t\t\twidth: 140px;\n\t\t\theight: 1px;\n\t\t\tbottom: 0px;\n\t\t\tleft: 0px;\n\t\t\tright: 0px;\n\t\t\tmargin: 0 auto;\n\t\t\tz-index: 1;\n\t\t\tbackground: rgba(9, 9, 9, 0.1);\n\t\t}\n\t");
+  }
+
   var wrapperStylesNew = {
     overflow: "hidden"
   }; // all css styles for large screen width (desktop/laptop) in strings ⬇
 
-  var desktopAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["softMinifyCssStrings"])("\n\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["isCssExists"])(wrapperStyles) ? wrapperStyles : " ", "\n\t")); // all css styles for Tab in strings ⬇
+  var desktopAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["softMinifyCssStrings"])("\n\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(wrapperStyles) ? wrapperStyles : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(titleLineStyle) ? titleLineStyle : " ", "\n\t")); // all css styles for Tab in strings ⬇
 
-  var tabAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["softMinifyCssStrings"])("\n\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["isCssExists"])(wrapperPaddingStylesTab) ? wrapperPaddingStylesTab : " ", "\n\t")); // all css styles for Mobile in strings ⬇
+  var tabAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["softMinifyCssStrings"])("\n\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(wrapperStylesTab) ? wrapperStylesTab : " ", "\n\t")); // all css styles for Mobile in strings ⬇
 
-  var mobileAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["softMinifyCssStrings"])("\n\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["isCssExists"])(wrapperPaddingStylesMobile) ? wrapperPaddingStylesMobile : " ", "\n\t")); // Set All Style in "blockMeta" Attribute
+  var mobileAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["softMinifyCssStrings"])("\n\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(wrapperStylesMobile) ? wrapperStylesMobile : " ", "\n\t")); // Set All Style in "blockMeta" Attribute
 
   useEffect(function () {
     var styleObject = {
@@ -6483,7 +6575,7 @@ var edit = function edit(props) {
 
   useEffect(function () {
     var BLOCK_PREFIX = "ebgb-pricing";
-    Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["duplicateBlockIdFix"])({
+    Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["duplicateBlockIdFix"])({
       BLOCK_PREFIX: BLOCK_PREFIX,
       blockId: blockId,
       setAttributes: setAttributes,
@@ -6493,19 +6585,31 @@ var edit = function edit(props) {
   }, []); // this useEffect is for mimmiking css when responsive options clicked from wordpress's 'preview' button
 
   useEffect(function () {
-    Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["mimmikCssForPreviewBtnClick"])({
+    Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["mimmikCssForPreviewBtnClick"])({
       domObj: document,
       select: select
     });
   }, []);
+  var blockProps = useBlockProps({
+    className: "eb-guten-block-main-parent-wrapper"
+  });
   return [isSelected && /*#__PURE__*/React.createElement(_inspector__WEBPACK_IMPORTED_MODULE_1__["default"], {
     attributes: attributes,
     setAttributes: setAttributes
-  }), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("style", null, "\n\t\t\t\t ".concat(desktopAllStyles, "\n \n\t\t\t\t /* mimmikcssStart */\n \n\t\t\t\t ").concat(resOption === "Tablet" ? tabAllStyles : " ", "\n\t\t\t\t ").concat(resOption === "Mobile" ? tabAllStyles + mobileAllStyles : " ", "\n \n\t\t\t\t /* mimmikcssEnd */\n \n\t\t\t\t @media all and (max-width: 1024px) {\t\n \n\t\t\t\t\t /* tabcssStart */\t\t\t\n\t\t\t\t\t ").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["softMinifyCssStrings"])(tabAllStyles), "\n\t\t\t\t\t /* tabcssEnd */\t\t\t\n\t\t\t\t \n\t\t\t\t }\n\t\t\t\t \n\t\t\t\t @media all and (max-width: 767px) {\n\t\t\t\t\t \n\t\t\t\t\t /* mobcssStart */\t\t\t\n\t\t\t\t\t ").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["softMinifyCssStrings"])(mobileAllStyles), "\n\t\t\t\t\t /* mobcssEnd */\t\t\t\n\t\t\t\t \n\t\t\t\t }\n\t\t\t\t ")), /*#__PURE__*/React.createElement("div", {
-    className: "ebgb-pricing ".concat(blockId, " ").concat(pricingStyle)
+  }), /*#__PURE__*/React.createElement("div", blockProps, /*#__PURE__*/React.createElement("style", null, "\n\t\t\t\t ".concat(desktopAllStyles, "\n \n\t\t\t\t /* mimmikcssStart */\n \n\t\t\t\t ").concat(resOption === "Tablet" ? tabAllStyles : " ", "\n\t\t\t\t ").concat(resOption === "Mobile" ? tabAllStyles + mobileAllStyles : " ", "\n \n\t\t\t\t /* mimmikcssEnd */\n \n\t\t\t\t @media all and (max-width: 1024px) {\t\n \n\t\t\t\t\t /* tabcssStart */\t\t\t\n\t\t\t\t\t ").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["softMinifyCssStrings"])(tabAllStyles), "\n\t\t\t\t\t /* tabcssEnd */\t\t\t\n\t\t\t\t \n\t\t\t\t }\n\t\t\t\t \n\t\t\t\t @media all and (max-width: 767px) {\n\t\t\t\t\t \n\t\t\t\t\t /* mobcssStart */\t\t\t\n\t\t\t\t\t ").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["softMinifyCssStrings"])(mobileAllStyles), "\n\t\t\t\t\t /* mobcssEnd */\t\t\t\n\t\t\t\t \n\t\t\t\t }\n\t\t\t\t ")), /*#__PURE__*/React.createElement("div", {
+    className: blockId
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "ebgb-pricing ".concat(pricingStyle)
   }, /*#__PURE__*/React.createElement("div", {
     className: "ebgb-pricing-item"
-  }, /*#__PURE__*/React.createElement("div", {
+  }, showHeaderIcon && /*#__PURE__*/React.createElement("div", {
+    className: "ebgb-pricing-icon",
+    "data-icon": headerIcon
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "icon"
+  }, /*#__PURE__*/React.createElement("i", {
+    "class": headerIcon
+  }))), /*#__PURE__*/React.createElement("div", {
     className: "header"
   }, /*#__PURE__*/React.createElement("h2", {
     className: "ebgb-pricing-title"
@@ -6575,7 +6679,7 @@ var edit = function edit(props) {
     className: "ebgb-button-text"
   }, buttonText), buttonIconPosition === "right" && /*#__PURE__*/React.createElement("i", {
     className: buttonIcon
-  })))))) // edit view end
+  }))))))) // edit view end
   ];
 };
 
@@ -6781,7 +6885,11 @@ var Inspector = function Inspector(_ref) {
       defaultSubtitle = attributes.defaultSubtitle,
       showSubtitle = attributes.showSubtitle,
       subtitle = attributes.subtitle,
+      showHeaderIcon = attributes.showHeaderIcon,
+      defaultHeaderIcon = attributes.defaultHeaderIcon,
       headerIcon = attributes.headerIcon,
+      defaultTitleLine = attributes.defaultTitleLine,
+      showTitleLine = attributes.showTitleLine,
       mainPrice = attributes.mainPrice,
       showOnSale = attributes.showOnSale,
       salePrice = attributes.salePrice,
@@ -6860,30 +6968,30 @@ var Inspector = function Inspector(_ref) {
     switch (pricingStyle) {
       case "style-1":
         setAttributes({
-          showSubtitle: false
+          showSubtitle: false,
+          showHeaderIcon: false,
+          showTitleLine: true
         });
-
-        if (defaultSubtitle) {
-          setAttributes({
-            showSubtitle: true
-          });
-        }
-
+        defaultSubtitle ? setAttributes({
+          showSubtitle: true
+        }) : "";
+        defaultHeaderIcon ? setAttributes({
+          showHeaderIcon: true
+        }) : "";
         break;
 
       case "style-2":
         setAttributes({
-          showSubtitle: true // defaultSubtitle: true,
-
+          showSubtitle: true,
+          showHeaderIcon: true,
+          showTitleLine: false
         });
+        defaultTitleLine ? setAttributes({
+          showTitleLine: false
+        }) : "";
         break;
-
-      default:
-        showSubtitle: false;
-
     }
   }, [pricingStyle]);
-  console.log("show", showSubtitle, "default", defaultSubtitle);
   return /*#__PURE__*/React.createElement(InspectorControls, {
     key: "controls"
   }, /*#__PURE__*/React.createElement("span", {
@@ -6933,7 +7041,16 @@ var Inspector = function Inspector(_ref) {
         subtitle: newSubtitle
       });
     }
-  }), pricingStyle === "style-2" && /*#__PURE__*/React.createElement(BaseControl, {
+  }), /*#__PURE__*/React.createElement(ToggleControl, {
+    label: __("Show Icon?"),
+    checked: showHeaderIcon,
+    onChange: function onChange() {
+      setAttributes({
+        showHeaderIcon: !showHeaderIcon,
+        defaultHeaderIcon: !showHeaderIcon
+      });
+    }
+  }), showHeaderIcon && /*#__PURE__*/React.createElement(BaseControl, {
     label: __("Icon")
   }, /*#__PURE__*/React.createElement(_fonticonpicker_react_fonticonpicker__WEBPACK_IMPORTED_MODULE_6___default.a, {
     icons: _util_faIcons__WEBPACK_IMPORTED_MODULE_3__["default"],
@@ -6945,7 +7062,16 @@ var Inspector = function Inspector(_ref) {
     },
     appendTo: "body",
     closeOnSelect: true
-  })), /*#__PURE__*/React.createElement(PanelBody, {
+  })), /*#__PURE__*/React.createElement(ToggleControl, {
+    label: __("Show title line?"),
+    checked: showTitleLine,
+    onChange: function onChange() {
+      setAttributes({
+        showTitleLine: !showTitleLine,
+        defaultTitleLine: !showTitleLine
+      });
+    }
+  }), /*#__PURE__*/React.createElement(PanelBody, {
     title: __("Styles")
   }, /*#__PURE__*/React.createElement(_util_background_control__WEBPACK_IMPORTED_MODULE_10__["default"], {
     controlName: _constants__WEBPACK_IMPORTED_MODULE_0__["priceTableBackground"],
@@ -6976,7 +7102,7 @@ var Inspector = function Inspector(_ref) {
         titleTextColor: titleTextColor
       });
     }
-  }), pricingStyle === "style-1" && /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }), showTitleLine && /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_5__["default"], {
     label: __("Line Color"),
     color: titleLineColor,
     onChange: function onChange(titleLineColor) {
@@ -6984,7 +7110,7 @@ var Inspector = function Inspector(_ref) {
         titleLineColor: titleLineColor
       });
     }
-  }), pricingStyle === "style-2" && /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_5__["default"], {
     label: __("Background Color"),
     color: titleBackgroundColor,
     onChange: function onChange(titleBackgroundColor) {
@@ -6996,7 +7122,7 @@ var Inspector = function Inspector(_ref) {
     baseLabel: __("Typography"),
     typographyPrefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_1__["typoPrefix_title"],
     resRequiredProps: resRequiredProps
-  }), /*#__PURE__*/React.createElement("hr", null), pricingStyle === "style-2" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(BaseControl, null, /*#__PURE__*/React.createElement("h3", {
+  }), /*#__PURE__*/React.createElement("hr", null), showSubtitle && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(BaseControl, null, /*#__PURE__*/React.createElement("h3", {
     className: "eb-control-title"
   }, __("Subtitle Style"))), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_5__["default"], {
     label: __("Color"),
@@ -7010,7 +7136,17 @@ var Inspector = function Inspector(_ref) {
     baseLabel: __("Typography"),
     typographyPrefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_1__["typoPrefix_subtitle"],
     resRequiredProps: resRequiredProps
-  }))), /*#__PURE__*/React.createElement(PanelBody, {
+  })), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement(BaseControl, null, /*#__PURE__*/React.createElement("h3", {
+    className: "eb-control-title"
+  }, __("Margin & Padding"))), /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    resRequiredProps: resRequiredProps,
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_0__["titlePadding"],
+    baseLabel: __("Padding")
+  }), /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    resRequiredProps: resRequiredProps,
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_0__["titleMargin"],
+    baseLabel: __("Margin")
+  })), /*#__PURE__*/React.createElement(PanelBody, {
     title: __("Price"),
     initialOpen: false
   }, /*#__PURE__*/React.createElement(TextControl, {
@@ -7304,7 +7440,7 @@ var Inspector = function Inspector(_ref) {
   }, __("Button Border Style"))), /*#__PURE__*/React.createElement(_util_border_shadow_control__WEBPACK_IMPORTED_MODULE_11__["default"], {
     controlName: _constants__WEBPACK_IMPORTED_MODULE_0__["buttonBorderShadow"],
     resRequiredProps: resRequiredProps
-  })), pricingStyle === "style-2" && /*#__PURE__*/React.createElement(PanelBody, {
+  })), showHeaderIcon && /*#__PURE__*/React.createElement(PanelBody, {
     title: __("Icon Settings"),
     initialOpen: false
   }, /*#__PURE__*/React.createElement(ToggleControl, {
@@ -7397,13 +7533,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /**
  * WordPress dependencies
  */
-var RichText = wp.blockEditor.RichText;
+var useBlockProps = wp.blockEditor.useBlockProps;
 
 var save = function save(_ref) {
   var _buttonStyles;
 
   var attributes = _ref.attributes;
-  var pricingStyle = attributes.pricingStyle,
+  var blockId = attributes.blockId,
+      pricingStyle = attributes.pricingStyle,
       title = attributes.title,
       subtitle = attributes.subtitle,
       headerIcon = attributes.headerIcon,
@@ -7587,7 +7724,9 @@ var save = function save(_ref) {
   var wrapperStylesNew = {
     overflow: "hidden"
   };
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", useBlockProps.save(), /*#__PURE__*/React.createElement("div", {
+    className: blockId
+  }, /*#__PURE__*/React.createElement("div", {
     className: "ebgb-pricing ".concat(pricingStyle)
   }, /*#__PURE__*/React.createElement("div", {
     className: "ebgb-pricing-item"
@@ -7668,7 +7807,7 @@ var save = function save(_ref) {
     className: "ebgb-button-text"
   }, buttonText), buttonIconPosition === "right" && /*#__PURE__*/React.createElement("i", {
     className: buttonIcon
-  }))))));
+  }))))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (save);
