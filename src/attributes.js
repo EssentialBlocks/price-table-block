@@ -335,9 +335,6 @@ const attributes = {
 	featuresBackgroundColor: {
 		type: "string",
 	},
-	featuresTextColor: {
-		type: "string",
-	},
 
 	buttonSize: {
 		type: "string",

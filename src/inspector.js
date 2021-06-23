@@ -440,43 +440,49 @@ const Inspector = ({ attributes, setAttributes }) => {
 						baseLabel={__("Margin")}
 					/>
 					<hr />
-					<BaseControl>
-						<h3 className="eb-control-title">{__("Sale Price")}</h3>
-					</BaseControl>
-					<ColorControl
-						label={__("Color")}
-						color={salePriceTextColor}
-						onChange={(salePriceTextColor) =>
-							setAttributes({ salePriceTextColor })
-						}
-					/>
-					<TypographyDropdown
-						baseLabel={__("Typography")}
-						typographyPrefixConstant={typoPrefix_saleprice}
-						resRequiredProps={resRequiredProps}
-					/>
-					<hr />
-					<BaseControl>
-						<h3 className="eb-control-title">{__("Sale Price Currency")}</h3>
-					</BaseControl>
-					<ColorControl
-						label={__("Color")}
-						color={salepriceCurrencyTextColor}
-						onChange={(salepriceCurrencyTextColor) =>
-							setAttributes({ salepriceCurrencyTextColor })
-						}
-					/>
-					<TypographyDropdown
-						baseLabel={__("Typography")}
-						typographyPrefixConstant={typoPrefix_saleprice_currency}
-						resRequiredProps={resRequiredProps}
-					/>
-					<ResponsiveDimensionsControl
-						resRequiredProps={resRequiredProps}
-						controlName={salepriceCurrencyMargin}
-						baseLabel={__("Margin")}
-					/>
-					<hr />
+					{showOnSale && (
+						<>
+							<BaseControl>
+								<h3 className="eb-control-title">{__("Sale Price")}</h3>
+							</BaseControl>
+							<ColorControl
+								label={__("Color")}
+								color={salePriceTextColor}
+								onChange={(salePriceTextColor) =>
+									setAttributes({ salePriceTextColor })
+								}
+							/>
+							<TypographyDropdown
+								baseLabel={__("Typography")}
+								typographyPrefixConstant={typoPrefix_saleprice}
+								resRequiredProps={resRequiredProps}
+							/>
+							<hr />
+							<BaseControl>
+								<h3 className="eb-control-title">
+									{__("Sale Price Currency")}
+								</h3>
+							</BaseControl>
+							<ColorControl
+								label={__("Color")}
+								color={salepriceCurrencyTextColor}
+								onChange={(salepriceCurrencyTextColor) =>
+									setAttributes({ salepriceCurrencyTextColor })
+								}
+							/>
+							<TypographyDropdown
+								baseLabel={__("Typography")}
+								typographyPrefixConstant={typoPrefix_saleprice_currency}
+								resRequiredProps={resRequiredProps}
+							/>
+							<ResponsiveDimensionsControl
+								resRequiredProps={resRequiredProps}
+								controlName={salepriceCurrencyMargin}
+								baseLabel={__("Margin")}
+							/>
+							<hr />
+						</>
+					)}
 					<BaseControl>
 						<h3 className="eb-control-title">{__("Pricing Period")}</h3>
 					</BaseControl>

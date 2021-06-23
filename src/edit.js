@@ -40,6 +40,12 @@ import {
 import {
 	typoPrefix_title,
 	typoPrefix_subtitle,
+	typoPrefix_price_title,
+	typoPrefix_price_currency,
+	typoPrefix_pricing_period,
+	typoPrefix_saleprice,
+	typoPrefix_saleprice_currency,
+	typoPrefix_features_text,
 } from "./constants/typographyPrefixConstants";
 
 import {
@@ -51,6 +57,7 @@ import {
 	generateBackgroundControlStyles,
 	generateBorderShadowStyles,
 	generateTypographyStyles,
+	generateResponsiveRangeStyles,
 } from "../util/helpers";
 
 const edit = (props) => {
@@ -70,6 +77,8 @@ const edit = (props) => {
 		mainPrice,
 		showOnSale,
 		salePrice,
+		salePriceTextColor,
+		salepriceCurrencyTextColor,
 		priceCurrency,
 		currencyPlacement,
 		pricePeriod,
@@ -80,7 +89,7 @@ const edit = (props) => {
 		buttonIconPosition,
 		buttonText,
 		buttonURL,
-
+		featuresTextColor,
 		titleBackgroundColor,
 		titleTextColor,
 		titleLineColor,
@@ -88,8 +97,8 @@ const edit = (props) => {
 		priceBackgroundColor,
 		priceTextColor,
 		priceCurrencyTextColor,
+		pricingPeriodTextColor,
 		featuresBackgroundColor,
-		featuresTextColor,
 		buttonBackground,
 		buttonTextColor,
 		isHover,
@@ -227,6 +236,90 @@ const edit = (props) => {
 		attributes,
 	});
 
+	const {
+		typoStylesDesktop: priceTextTypoStylesDesktop,
+		typoStylesTab: priceTextTypoStylesTab,
+		typoStylesMobile: priceTextTypoStylesMobile,
+	} = generateTypographyStyles({
+		attributes,
+		prefixConstant: typoPrefix_price_title,
+	});
+
+	const {
+		typoStylesDesktop: priceCurrencyTypoStylesDesktop,
+		typoStylesTab: priceCurrencyTypoStylesTab,
+		typoStylesMobile: priceCurrencyTypoStylesMobile,
+	} = generateTypographyStyles({
+		attributes,
+		prefixConstant: typoPrefix_price_currency,
+	});
+
+	const {
+		dimensionStylesDesktop: priceCurrencyMarginStylesDesktop,
+		dimensionStylesTab: priceCurrencyMarginStylesTab,
+		dimensionStylesMobile: priceCurrencyMarginStylesMobile,
+	} = generateDimensionsControlStyles({
+		controlName: priceCurrencyMargin,
+		styleFor: "margin",
+		attributes,
+	});
+
+	const {
+		typoStylesDesktop: pricePeriodTypoStylesDesktop,
+		typoStylesTab: pricePeriodTypoStylesTab,
+		typoStylesMobile: pricePeriodTypoStylesMobile,
+	} = generateTypographyStyles({
+		attributes,
+		prefixConstant: typoPrefix_pricing_period,
+	});
+
+	const {
+		typoStylesDesktop: salePriceTypoStylesDesktop,
+		typoStylesTab: salePriceTypoStylesTab,
+		typoStylesMobile: salePriceTypoStylesMobile,
+	} = generateTypographyStyles({
+		attributes,
+		prefixConstant: typoPrefix_saleprice,
+	});
+
+	const {
+		typoStylesDesktop: salePriceCurrencyTypoStylesDesktop,
+		typoStylesTab: salePriceCurrencyTypoStylesTab,
+		typoStylesMobile: salePriceCurrencyTypoStylesMobile,
+	} = generateTypographyStyles({
+		attributes,
+		prefixConstant: typoPrefix_saleprice_currency,
+	});
+
+	const {
+		dimensionStylesDesktop: salePriceMarginStylesDesktop,
+		dimensionStylesTab: salePriceMarginStylesTab,
+		dimensionStylesMobile: salePriceMarginStylesMobile,
+	} = generateDimensionsControlStyles({
+		controlName: salepriceCurrencyMargin,
+		styleFor: "margin",
+		attributes,
+	});
+
+	const {
+		typoStylesDesktop: featuresTypoStylesDesktop,
+		typoStylesTab: featuresTypoStylesTab,
+		typoStylesMobile: featuresTypoStylesMobile,
+	} = generateTypographyStyles({
+		attributes,
+		prefixConstant: typoPrefix_features_text,
+	});
+
+	const {
+		rangeStylesDesktop: featuresIconSizeDesktop,
+		rangeStylesTab: featuresIconSizeTab,
+		rangeStylesMobile: featuresIconSizeMobile,
+	} = generateResponsiveRangeStyles({
+		control: featuresIconSize,
+		property: "font-size",
+		attributes,
+	});
+
 	const wrapperStyles = `
 		.${blockId} .ebgb-pricing .ebgb-pricing-item {
 			${wrapperPaddingStylesDesktop}
@@ -253,20 +346,48 @@ const edit = (props) => {
 
 		.${blockId} .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-title {
 			${titleTypoStylesDesktop}
-			color: ${titleTextColor}
+			color: ${titleTextColor};
 		}
 
 		.${blockId} .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-subtitle {
 			${subtitleTypoStylesDesktop}
-			color: ${subtitleTextColor}
+			color: ${subtitleTextColor};
 		}
 
 		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .original-price {
-			color: ${priceTextColor}
+			${priceTextTypoStylesDesktop}
+			color: ${priceTextColor};
 		}
 
 		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-currency {
-			color: ${priceCurrencyTextColor}
+			${priceCurrencyTypoStylesDesktop}
+			${priceCurrencyMarginStylesDesktop}
+			color: ${priceCurrencyTextColor};
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-period {
+			${pricePeriodTypoStylesDesktop}
+			color: ${pricingPeriodTextColor};
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price {
+			${salePriceTypoStylesDesktop}
+			color: ${salePriceTextColor};
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price .price-currency {
+			${salePriceCurrencyTypoStylesDesktop}
+			${salePriceMarginStylesDesktop}
+			color: ${salepriceCurrencyTextColor};
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .body ul li {
+			${featuresTypoStylesDesktop}
+			color: ${featuresTextColor};
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .body ul li .ebgb-pricebox-icon {
+			${featuresIconSizeDesktop}
 		}
  		
 	`;
@@ -295,6 +416,36 @@ const edit = (props) => {
 		.${blockId} .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-subtitle {
 			${subtitleTypoStylesTab}
 		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .original-price {
+			${priceTextTypoStylesTab}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-currency {
+			${priceCurrencyTypoStylesTab}
+			${priceCurrencyMarginStylesTab}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-period {
+			${pricePeriodTypoStylesTab}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price {
+			${salePriceTypoStylesTab}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price .price-currency {
+			${salePriceCurrencyTypoStylesTab}
+			${salePriceMarginStylesTab}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .body ul li {
+			${featuresTypoStylesTab}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .body ul li .ebgb-pricebox-icon {
+			${featuresIconSizeTab}
+		}
 	`;
 
 	const wrapperStylesMobile = `
@@ -320,6 +471,36 @@ const edit = (props) => {
 
 		.${blockId} .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-subtitle {
 			${subtitleTypoStylesMobile}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .original-price {
+			${priceTextTypoStylesMobile}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-currency {
+			${priceCurrencyTypoStylesMobile}
+			${priceCurrencyMarginStylesMobile}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-period {
+			${pricePeriodTypoStylesMobile}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price {
+			${salePriceTypoStylesMobile}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price .price-currency {
+			${salePriceCurrencyTypoStylesMobile}
+			${salePriceMarginStylesMobile}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .body ul li {
+			${featuresTypoStylesMobile}
+		}
+		
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .body ul li .ebgb-pricebox-icon {
+			${featuresIconSizeMobile}
 		}
 	`;
 	var titleLineStyle = "";
