@@ -6601,17 +6601,94 @@ var edit = function edit(props) {
       featuresTypoStylesMobile = _generateTypographySt8.typoStylesMobile;
 
   var _generateResponsiveRa = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateResponsiveRangeStyles"])({
-    control: _constants__WEBPACK_IMPORTED_MODULE_2__["featuresIconSize"],
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_2__["featuresIconSize"],
     property: "font-size",
-    attributes: attributes
+    attributes: attributes,
+    customUnit: "px"
   }),
       featuresIconSizeDesktop = _generateResponsiveRa.rangeStylesDesktop,
       featuresIconSizeTab = _generateResponsiveRa.rangeStylesTab,
       featuresIconSizeMobile = _generateResponsiveRa.rangeStylesMobile;
 
-  var wrapperStyles = "\n\t\t.".concat(blockId, " .ebgb-pricing .ebgb-pricing-item {\n\t\t\t").concat(wrapperPaddingStylesDesktop, "\n\t\t\t").concat(wrapperMarginStylesDesktop, "\n\t\t\t").concat(backgroundStylesDesktop, "\n\t\t\t").concat(bdShadowStyesDesktop, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item:before {\n\t\t\t").concat(overlyStyles, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item:hover {\n\t\t\t").concat(bdShadowStylesHoverDesktop, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header {\n\t\t\t").concat(titlePaddingStylesDesktop, "\n\t\t\t").concat(titleMarginStylesDesktop, "\n\t\t\tbackground: ").concat(titleBackgroundColor, ";\n\t\t\tposition: relative;\n\t\t\tz-index: 0;\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-title {\n\t\t\t").concat(titleTypoStylesDesktop, "\n\t\t\tcolor: ").concat(titleTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-subtitle {\n\t\t\t").concat(subtitleTypoStylesDesktop, "\n\t\t\tcolor: ").concat(subtitleTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .original-price {\n\t\t\t").concat(priceTextTypoStylesDesktop, "\n\t\t\tcolor: ").concat(priceTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-currency {\n\t\t\t").concat(priceCurrencyTypoStylesDesktop, "\n\t\t\t").concat(priceCurrencyMarginStylesDesktop, "\n\t\t\tcolor: ").concat(priceCurrencyTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-period {\n\t\t\t").concat(pricePeriodTypoStylesDesktop, "\n\t\t\tcolor: ").concat(pricingPeriodTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price {\n\t\t\t").concat(salePriceTypoStylesDesktop, "\n\t\t\tcolor: ").concat(salePriceTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price .price-currency {\n\t\t\t").concat(salePriceCurrencyTypoStylesDesktop, "\n\t\t\t").concat(salePriceMarginStylesDesktop, "\n\t\t\tcolor: ").concat(salepriceCurrencyTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li {\n\t\t\t").concat(featuresTypoStylesDesktop, "\n\t\t\tcolor: ").concat(featuresTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li .ebgb-pricebox-icon {\n\t\t\t").concat(featuresIconSizeDesktop, "\n\t\t}\n \t\t\n\t");
-  var wrapperStylesTab = "\n\t\t.".concat(blockId, " .ebgb-pricing .ebgb-pricing-item {\n\t\t\t").concat(wrapperPaddingStylesTab, "\n\t\t\t").concat(wrapperMarginStylesTab, "\n\t\t\t").concat(backgroundStylesTab, "\n\t\t\t").concat(bdShadowStyesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item:hover {\n\t\t\t").concat(bdShadowStylesHoverTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header {\n\t\t\t").concat(titlePaddingStylesTab, "\n\t\t\t").concat(titleMarginStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-title {\n\t\t\t").concat(titleTypoStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-subtitle {\n\t\t\t").concat(subtitleTypoStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .original-price {\n\t\t\t").concat(priceTextTypoStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-currency {\n\t\t\t").concat(priceCurrencyTypoStylesTab, "\n\t\t\t").concat(priceCurrencyMarginStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-period {\n\t\t\t").concat(pricePeriodTypoStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price {\n\t\t\t").concat(salePriceTypoStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price .price-currency {\n\t\t\t").concat(salePriceCurrencyTypoStylesTab, "\n\t\t\t").concat(salePriceMarginStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li {\n\t\t\t").concat(featuresTypoStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li .ebgb-pricebox-icon {\n\t\t\t").concat(featuresIconSizeTab, "\n\t\t}\n\t");
-  var wrapperStylesMobile = "\n\t\t.".concat(blockId, " .ebgb-pricing .ebgb-pricing-item {\n\t\t\t").concat(wrapperPaddingStylesMobile, "\n\t\t\t").concat(wrapperMarginStylesMobile, "\n\t\t\t").concat(backgroundStylesMobile, "\n\t\t\t").concat(bdShadowStyesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item:hover {\n\t\t\t").concat(bdShadowStylesHoverMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header {\n\t\t\t").concat(titlePaddingStylesMobile, "\n\t\t\t").concat(titleMarginStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-title {\n\t\t\t").concat(titleTypoStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-subtitle {\n\t\t\t").concat(subtitleTypoStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .original-price {\n\t\t\t").concat(priceTextTypoStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-currency {\n\t\t\t").concat(priceCurrencyTypoStylesMobile, "\n\t\t\t").concat(priceCurrencyMarginStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-period {\n\t\t\t").concat(pricePeriodTypoStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price {\n\t\t\t").concat(salePriceTypoStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price .price-currency {\n\t\t\t").concat(salePriceCurrencyTypoStylesMobile, "\n\t\t\t").concat(salePriceMarginStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li {\n\t\t\t").concat(featuresTypoStylesMobile, "\n\t\t}\n\t\t\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li .ebgb-pricebox-icon {\n\t\t\t").concat(featuresIconSizeMobile, "\n\t\t}\n\t");
+  var _generateResponsiveRa2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateResponsiveRangeStyles"])({
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_2__["buttonIconSpacing"],
+    property: "margin-right",
+    attributes: attributes,
+    customUnit: "px"
+  }),
+      buttonIconSpaceRightDesktop = _generateResponsiveRa2.rangeStylesDesktop,
+      buttonIconSpaceRightTab = _generateResponsiveRa2.rangeStylesTab,
+      buttonIconSpaceRightMobile = _generateResponsiveRa2.rangeStylesMobile;
+
+  var _generateResponsiveRa3 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateResponsiveRangeStyles"])({
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_2__["buttonIconSpacing"],
+    property: "margin-left",
+    attributes: attributes,
+    customUnit: "px"
+  }),
+      buttonIconSpaceLeftDesktop = _generateResponsiveRa3.rangeStylesDesktop,
+      buttonIconSpaceLeftTab = _generateResponsiveRa3.rangeStylesTab,
+      buttonIconSpaceLeftMobile = _generateResponsiveRa3.rangeStylesMobile;
+
+  var _generateDimensionsCo7 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateDimensionsControlStyles"])({
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_2__["buttonPadding"],
+    styleFor: "padding",
+    attributes: attributes
+  }),
+      buttonPaddingStylesDesktop = _generateDimensionsCo7.dimensionStylesDesktop,
+      buttonPaddingStylesTab = _generateDimensionsCo7.dimensionStylesTab,
+      buttonPaddingStylesMobile = _generateDimensionsCo7.dimensionStylesMobile;
+
+  var _generateDimensionsCo8 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateDimensionsControlStyles"])({
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_2__["buttonMargin"],
+    styleFor: "margin",
+    attributes: attributes
+  }),
+      buttonMarginStylesDesktop = _generateDimensionsCo8.dimensionStylesDesktop,
+      buttonMarginStylesTab = _generateDimensionsCo8.dimensionStylesTab,
+      buttonMarginStylesMobile = _generateDimensionsCo8.dimensionStylesMobile;
+
+  var _generateResponsiveRa4 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateResponsiveRangeStyles"])({
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_2__["buttonIconSize"],
+    property: "font-size",
+    attributes: attributes,
+    customUnit: "px"
+  }),
+      buttonIconSizeDesktop = _generateResponsiveRa4.rangeStylesDesktop,
+      buttonIconSizeTab = _generateResponsiveRa4.rangeStylesTab,
+      buttonIconSizeMobile = _generateResponsiveRa4.rangeStylesMobile;
+
+  var _generateTypographySt9 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateTypographyStyles"])({
+    attributes: attributes,
+    prefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_3__["typoPrefix_button"]
+  }),
+      buttonTypoStylesDesktop = _generateTypographySt9.typoStylesDesktop,
+      buttonTypoStylesTab = _generateTypographySt9.typoStylesTab,
+      buttonTypoStylesMobile = _generateTypographySt9.typoStylesMobile;
+
+  var _generateBackgroundCo2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateBackgroundControlStyles"])({
+    attributes: attributes,
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_2__["buttonBackgroundControl"]
+  }),
+      buttonBackgroundStyleDesktop = _generateBackgroundCo2.backgroundStylesDesktop,
+      buttonBackgroundStyleTab = _generateBackgroundCo2.backgroundStylesTab,
+      buttonBackgroundStyleMobile = _generateBackgroundCo2.backgroundStylesMobile,
+      buttonBackgroundStyleOverlay = _generateBackgroundCo2.overlyStyles;
+
+  var _generateBorderShadow2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateBorderShadowStyles"])({
+    controlName: _constants__WEBPACK_IMPORTED_MODULE_2__["buttonBorderShadow"],
+    attributes: attributes
+  }),
+      btnShadowStyesDesktop = _generateBorderShadow2.styesDesktop,
+      btnShadowStyesTab = _generateBorderShadow2.styesTab,
+      btnShadowStyesMobile = _generateBorderShadow2.styesMobile,
+      btnShadowStylesHoverDesktop = _generateBorderShadow2.stylesHoverDesktop,
+      btnShadowStylesHoverTab = _generateBorderShadow2.stylesHoverTab,
+      btnShadowStylesHoverMobile = _generateBorderShadow2.stylesHoverMobile;
+
+  var wrapperStyles = "\n\t\t.".concat(blockId, " .ebgb-pricing .ebgb-pricing-item {\n\t\t\t").concat(wrapperPaddingStylesDesktop, "\n\t\t\t").concat(wrapperMarginStylesDesktop, "\n\t\t\t").concat(backgroundStylesDesktop, "\n\t\t\t").concat(bdShadowStyesDesktop, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item:before {\n\t\t\t").concat(overlyStyles, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item:hover {\n\t\t\t").concat(bdShadowStylesHoverDesktop, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header {\n\t\t\t").concat(titlePaddingStylesDesktop, "\n\t\t\t").concat(titleMarginStylesDesktop, "\n\t\t\tbackground: ").concat(titleBackgroundColor, ";\n\t\t\tposition: relative;\n\t\t\tz-index: 0;\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-title {\n\t\t\t").concat(titleTypoStylesDesktop, "\n\t\t\tcolor: ").concat(titleTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-subtitle {\n\t\t\t").concat(subtitleTypoStylesDesktop, "\n\t\t\tcolor: ").concat(subtitleTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .original-price {\n\t\t\t").concat(priceTextTypoStylesDesktop, "\n\t\t\tcolor: ").concat(priceTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-currency {\n\t\t\t").concat(priceCurrencyTypoStylesDesktop, "\n\t\t\t").concat(priceCurrencyMarginStylesDesktop, "\n\t\t\tcolor: ").concat(priceCurrencyTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-period {\n\t\t\t").concat(pricePeriodTypoStylesDesktop, "\n\t\t\tcolor: ").concat(pricingPeriodTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price {\n\t\t\t").concat(salePriceTypoStylesDesktop, "\n\t\t\tcolor: ").concat(salePriceTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price .price-currency {\n\t\t\t").concat(salePriceCurrencyTypoStylesDesktop, "\n\t\t\t").concat(salePriceMarginStylesDesktop, "\n\t\t\tcolor: ").concat(salepriceCurrencyTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li, .").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li a {\n\t\t\t").concat(featuresTypoStylesDesktop, "\n\t\t\tcolor: ").concat(featuresTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li .ebgb-pricebox-icon {\n\t\t\t").concat(featuresIconSizeDesktop, "\n\t\t\tmargin-right: 8px;\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button-wrapper {\n\t\t\t").concat(buttonMarginStylesDesktop, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button {\n\t\t\t").concat(buttonPaddingStylesDesktop, "\n\t\t\t").concat(buttonTypoStylesDesktop, "\n\t\t\t").concat(buttonBackgroundStyleDesktop, "\n\t\t\t").concat(btnShadowStyesDesktop, "\n\t\t\tcolor: ").concat(buttonTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button:hover {\n\t\t\t").concat(btnShadowStylesHoverDesktop, "\n\t\t\tcolor: ").concat(hoverTextColor, ";\n\t\t\tbackground-color: ").concat(hoverBackgroundColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button i {\n\t\t\t").concat(buttonIconPosition === "left" ? buttonIconSpaceRightDesktop : buttonIconSpaceLeftDesktop, "\n\t\t\t").concat(buttonIconSizeDesktop, "\n\t\t}\n \t\t\n\t");
+  var wrapperStylesTab = "\n\t\t.".concat(blockId, " .ebgb-pricing .ebgb-pricing-item {\n\t\t\t").concat(wrapperPaddingStylesTab, "\n\t\t\t").concat(wrapperMarginStylesTab, "\n\t\t\t").concat(backgroundStylesTab, "\n\t\t\t").concat(bdShadowStyesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item:hover {\n\t\t\t").concat(bdShadowStylesHoverTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header {\n\t\t\t").concat(titlePaddingStylesTab, "\n\t\t\t").concat(titleMarginStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-title {\n\t\t\t").concat(titleTypoStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-subtitle {\n\t\t\t").concat(subtitleTypoStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .original-price {\n\t\t\t").concat(priceTextTypoStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-currency {\n\t\t\t").concat(priceCurrencyTypoStylesTab, "\n\t\t\t").concat(priceCurrencyMarginStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-period {\n\t\t\t").concat(pricePeriodTypoStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price {\n\t\t\t").concat(salePriceTypoStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price .price-currency {\n\t\t\t").concat(salePriceCurrencyTypoStylesTab, "\n\t\t\t").concat(salePriceMarginStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li {\n\t\t\t").concat(featuresTypoStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li .ebgb-pricebox-icon {\n\t\t\t").concat(featuresIconSizeTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button-wrapper {\n\t\t\t").concat(buttonMarginStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button {\n\t\t\t").concat(buttonPaddingStylesTab, "\n\t\t\t").concat(buttonTypoStylesTab, "\n\t\t\t").concat(buttonBackgroundStyleTab, "\n\t\t\t").concat(btnShadowStyesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button:hover {\n\t\t\t").concat(btnShadowStylesHoverTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button i {\n\t\t\t").concat(buttonIconPosition === "left" ? buttonIconSpaceRightTab : buttonIconSpaceLeftTab, "\n\t\t\t").concat(buttonIconSizeTab, "\n\t\t}\n\t");
+  var wrapperStylesMobile = "\n\t\t.".concat(blockId, " .ebgb-pricing .ebgb-pricing-item {\n\t\t\t").concat(wrapperPaddingStylesMobile, "\n\t\t\t").concat(wrapperMarginStylesMobile, "\n\t\t\t").concat(backgroundStylesMobile, "\n\t\t\t").concat(bdShadowStyesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item:hover {\n\t\t\t").concat(bdShadowStylesHoverMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header {\n\t\t\t").concat(titlePaddingStylesMobile, "\n\t\t\t").concat(titleMarginStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-title {\n\t\t\t").concat(titleTypoStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-subtitle {\n\t\t\t").concat(subtitleTypoStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .original-price {\n\t\t\t").concat(priceTextTypoStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-currency {\n\t\t\t").concat(priceCurrencyTypoStylesMobile, "\n\t\t\t").concat(priceCurrencyMarginStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-period {\n\t\t\t").concat(pricePeriodTypoStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price {\n\t\t\t").concat(salePriceTypoStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price .price-currency {\n\t\t\t").concat(salePriceCurrencyTypoStylesMobile, "\n\t\t\t").concat(salePriceMarginStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li {\n\t\t\t").concat(featuresTypoStylesMobile, "\n\t\t}\n\t\t\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li .ebgb-pricebox-icon {\n\t\t\t").concat(featuresIconSizeMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button-wrapper {\n\t\t\t").concat(buttonMarginStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button {\n\t\t\t").concat(buttonPaddingStylesMobile, "\n\t\t\t").concat(buttonTypoStylesMobile, "\n\t\t\t").concat(buttonBackgroundStyleMobile, "\n\t\t\t").concat(btnShadowStyesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button:hover {\n\t\t\t").concat(btnShadowStylesHoverMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button i {\n\t\t\t").concat(buttonIconPosition === "left" ? buttonIconSpaceRightMobile : buttonIconSpaceLeftMobile, "\n\t\t\t").concat(buttonIconSizeMobile, "\n\t\t}\n\t");
   var titleLineStyle = "";
 
   if (showTitleLine) {
@@ -6723,8 +6800,7 @@ var edit = function edit(props) {
         clickable = _ref.clickable,
         link = _ref.link;
     return /*#__PURE__*/React.createElement("li", {
-      className: "ebgb-pricebox-feature-item" // style={featureListStyle}
-      ,
+      className: "ebgb-pricebox-feature-item",
       "data-icon": icon,
       "data-color": color,
       "data-clickable": clickable,
@@ -6732,21 +6808,27 @@ var edit = function edit(props) {
     }, clickable && link ? /*#__PURE__*/React.createElement("a", {
       href: link
     }, /*#__PURE__*/React.createElement("span", {
-      className: "ebgb-pricebox-icon ".concat(icon)
+      className: "ebgb-pricebox-icon ".concat(icon),
+      style: {
+        color: color
+      }
     }), /*#__PURE__*/React.createElement("span", {
       className: "ebgb-pricebox-feature-text"
     }, text)) : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("span", {
-      className: "ebgb-pricebox-icon ".concat(icon)
+      className: "ebgb-pricebox-icon ".concat(icon),
+      style: {
+        color: color
+      }
     }), /*#__PURE__*/React.createElement("span", {
       className: "ebgb-pricebox-feature-text"
     }, text)));
   }))), showButton && /*#__PURE__*/React.createElement("div", {
     className: "footer",
     "data-icon": buttonIcon
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "ebgb-pricing-button-wrapper"
   }, /*#__PURE__*/React.createElement("a", {
-    href: buttonURL // target="_blank"
-    // rel="nofollow noopener"
-    ,
+    href: buttonURL,
     className: "ebgb-pricing-button"
   }, buttonIconPosition === "left" && /*#__PURE__*/React.createElement("i", {
     className: buttonIcon
@@ -6754,7 +6836,7 @@ var edit = function edit(props) {
     className: "ebgb-button-text"
   }, buttonText), buttonIconPosition === "right" && /*#__PURE__*/React.createElement("i", {
     className: buttonIcon
-  }))))))) // edit view end
+  })))))))) // edit view end
   ];
 };
 
@@ -9575,9 +9657,11 @@ function DimensionsControl(_ref) {
   var baseLabel = neededProps.baseLabel,
       resOption = neededProps.resOption,
       forBorderRadius = neededProps.forBorderRadius,
-      setAttributes = neededProps.setAttributes;
+      setAttributes = neededProps.setAttributes,
+      dimensionIsLinked = neededProps.dimensionIsLinked,
+      controlName = neededProps.controlName;
 
-  var _useState3 = useState(false),
+  var _useState3 = useState(dimensionIsLinked),
       _useState4 = _slicedToArray(_useState3, 2),
       isLinked = _useState4[0],
       setIsLinked = _useState4[1];
@@ -9608,6 +9692,9 @@ function DimensionsControl(_ref) {
   useEffect(function () {
     onChange(dimensions);
   }, [dimensions]);
+  useEffect(function () {
+    setAttributes(_defineProperty({}, "".concat(controlName, "isLinked"), isLinked)); // console.log({ isLinked });
+  }, [isLinked]);
   return /*#__PURE__*/React.createElement("div", {
     className: "dimention-container"
   }, /*#__PURE__*/React.createElement("div", {
@@ -9708,7 +9795,8 @@ function ResponsiveDimensionsControl(_ref) {
   var attributes = resRequiredProps.attributes,
       setAttributes = resRequiredProps.setAttributes,
       resOption = resRequiredProps.resOption;
-  var dimensionUnit = attributes["".concat(controlName, "Unit")],
+  var dimensionIsLinked = attributes["".concat(controlName, "isLinked")],
+      dimensionUnit = attributes["".concat(controlName, "Unit")],
       dimensionTop = attributes["".concat(controlName, "Top")],
       dimensionRight = attributes["".concat(controlName, "Right")],
       dimensionBottom = attributes["".concat(controlName, "Bottom")],
@@ -9737,7 +9825,9 @@ function ResponsiveDimensionsControl(_ref) {
     resOption: resOption,
     baseLabel: baseLabel,
     forBorderRadius: forBorderRadius,
-    setAttributes: setAttributes
+    setAttributes: setAttributes,
+    dimensionIsLinked: dimensionIsLinked,
+    controlName: controlName
   };
   return /*#__PURE__*/React.createElement(React.Fragment, null, resOption == "Desktop" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
     selectedUnit: dimensionUnit,
@@ -10371,13 +10461,15 @@ var generateBackgroundAttributes = function generateBackgroundAttributes(control
 }; // function to generate New Dimensions-Control's attributes for multiple Dimensions control based on the array of values(prefixs)
 
 var generateDimensionsAttributes = function generateDimensionsAttributes(controlName) {
-  var _objectSpread5;
+  var _objectSpread4, _objectSpread5;
 
   var defaults = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   var top = defaults.top,
       right = defaults.right,
       bottom = defaults.bottom,
-      left = defaults.left;
+      left = defaults.left,
+      _defaults$isLinked = defaults.isLinked,
+      isLinked = _defaults$isLinked === void 0 ? true : _defaults$isLinked;
   var desktopTop = hasVal(top) ? _defineProperty({}, "".concat(controlName, "Top"), {
     type: "string",
     "default": "".concat(top)
@@ -10402,10 +10494,13 @@ var generateDimensionsAttributes = function generateDimensionsAttributes(control
   }) : _defineProperty({}, "".concat(controlName, "Left"), {
     type: "string"
   });
-  return _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_defineProperty({}, "".concat(controlName, "Unit"), {
+  return _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread((_objectSpread4 = {}, _defineProperty(_objectSpread4, "".concat(controlName, "isLinked"), {
+    type: "boolean",
+    "default": isLinked
+  }), _defineProperty(_objectSpread4, "".concat(controlName, "Unit"), {
     type: "string",
     "default": "px"
-  }), desktopTop), desktopRight), desktopBottom), desktopLeft), {}, (_objectSpread5 = {}, _defineProperty(_objectSpread5, "TAB".concat(controlName, "Unit"), {
+  }), _objectSpread4), desktopTop), desktopRight), desktopBottom), desktopLeft), {}, (_objectSpread5 = {}, _defineProperty(_objectSpread5, "TAB".concat(controlName, "Unit"), {
     type: "string",
     "default": "px"
   }), _defineProperty(_objectSpread5, "TAB".concat(controlName, "Top"), {
@@ -11372,7 +11467,7 @@ var ResponsiveRangeController = function ResponsiveRangeController(_ref) {
     },
     step: step || 1,
     min: min || 0,
-    max: max || 2000
+    max: max || 100
   })), resOption == "Tablet" && /*#__PURE__*/React.createElement(_responsive_btn__WEBPACK_IMPORTED_MODULE_0__["default"], {
     label: baseLabel,
     resRequiredProps: resRequiredProps,
@@ -11384,7 +11479,7 @@ var ResponsiveRangeController = function ResponsiveRangeController(_ref) {
     },
     step: step || 1,
     min: min || 0,
-    max: max || 2000
+    max: max || 100
   })), resOption == "Mobile" && /*#__PURE__*/React.createElement(_responsive_btn__WEBPACK_IMPORTED_MODULE_0__["default"], {
     label: baseLabel,
     resRequiredProps: resRequiredProps,
@@ -11396,7 +11491,7 @@ var ResponsiveRangeController = function ResponsiveRangeController(_ref) {
     },
     step: step || 1,
     min: min || 0,
-    max: max || 2000
+    max: max || 100
   }))) : /*#__PURE__*/React.createElement(React.Fragment, null, resOption == "Desktop" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
     selectedUnit: desktopSizeUnit,
     unitTypes: units || defaultUnits,
@@ -11412,9 +11507,9 @@ var ResponsiveRangeController = function ResponsiveRangeController(_ref) {
     onChange: function onChange(desktopRange) {
       return setAttributes(_defineProperty({}, "".concat(controlName, "Range"), desktopRange));
     },
-    step: step || (desktopSizeUnit !== "em" ? 1 : 0.1),
-    min: min || 0,
-    max: max || (desktopSizeUnit === "px" ? 2000 : 100)
+    step: desktopSizeUnit === "em" ? 0.1 : step,
+    min: desktopSizeUnit === "px" ? min : 0,
+    max: desktopSizeUnit === "px" ? max : 100
   }))), resOption == "Tablet" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
     selectedUnit: TABsizeUnit,
     unitTypes: units || defaultUnits,
@@ -11430,9 +11525,9 @@ var ResponsiveRangeController = function ResponsiveRangeController(_ref) {
     onChange: function onChange(TABrange) {
       return setAttributes(_defineProperty({}, "TAB".concat(controlName, "Range"), TABrange));
     },
-    step: step || (TABsizeUnit !== "em" ? 1 : 0.1),
-    min: min || 0,
-    max: max || (TABsizeUnit === "px" ? 2000 : 100)
+    step: TABsizeUnit === "em" ? 0.1 : step,
+    min: TABsizeUnit === "px" ? min : 0,
+    max: TABsizeUnit === "px" ? max : 100
   }))), resOption == "Mobile" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
     selectedUnit: MOBsizeUnit,
     unitTypes: units || defaultUnits,
@@ -11448,9 +11543,9 @@ var ResponsiveRangeController = function ResponsiveRangeController(_ref) {
     onChange: function onChange(MOBrange) {
       return setAttributes(_defineProperty({}, "MOB".concat(controlName, "Range"), MOBrange));
     },
-    step: step || (MOBsizeUnit !== "em" ? 1 : 0.1),
-    min: min || 0,
-    max: max || (MOBsizeUnit === "px" ? 2000 : 100)
+    step: MOBsizeUnit === "em" ? 0.1 : step,
+    min: MOBsizeUnit === "px" ? min : 0,
+    max: MOBsizeUnit === "px" ? max : 100
   })))));
 };
 

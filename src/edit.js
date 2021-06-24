@@ -46,6 +46,7 @@ import {
 	typoPrefix_saleprice,
 	typoPrefix_saleprice_currency,
 	typoPrefix_features_text,
+	typoPrefix_button,
 } from "./constants/typographyPrefixConstants";
 
 import {
@@ -315,8 +316,93 @@ const edit = (props) => {
 		rangeStylesTab: featuresIconSizeTab,
 		rangeStylesMobile: featuresIconSizeMobile,
 	} = generateResponsiveRangeStyles({
-		control: featuresIconSize,
+		controlName: featuresIconSize,
 		property: "font-size",
+		attributes,
+		customUnit: "px",
+	});
+
+	const {
+		rangeStylesDesktop: buttonIconSpaceRightDesktop,
+		rangeStylesTab: buttonIconSpaceRightTab,
+		rangeStylesMobile: buttonIconSpaceRightMobile,
+	} = generateResponsiveRangeStyles({
+		controlName: buttonIconSpacing,
+		property: "margin-right",
+		attributes,
+		customUnit: "px",
+	});
+
+	const {
+		rangeStylesDesktop: buttonIconSpaceLeftDesktop,
+		rangeStylesTab: buttonIconSpaceLeftTab,
+		rangeStylesMobile: buttonIconSpaceLeftMobile,
+	} = generateResponsiveRangeStyles({
+		controlName: buttonIconSpacing,
+		property: "margin-left",
+		attributes,
+		customUnit: "px",
+	});
+
+	const {
+		dimensionStylesDesktop: buttonPaddingStylesDesktop,
+		dimensionStylesTab: buttonPaddingStylesTab,
+		dimensionStylesMobile: buttonPaddingStylesMobile,
+	} = generateDimensionsControlStyles({
+		controlName: buttonPadding,
+		styleFor: "padding",
+		attributes,
+	});
+
+	const {
+		dimensionStylesDesktop: buttonMarginStylesDesktop,
+		dimensionStylesTab: buttonMarginStylesTab,
+		dimensionStylesMobile: buttonMarginStylesMobile,
+	} = generateDimensionsControlStyles({
+		controlName: buttonMargin,
+		styleFor: "margin",
+		attributes,
+	});
+
+	const {
+		rangeStylesDesktop: buttonIconSizeDesktop,
+		rangeStylesTab: buttonIconSizeTab,
+		rangeStylesMobile: buttonIconSizeMobile,
+	} = generateResponsiveRangeStyles({
+		controlName: buttonIconSize,
+		property: "font-size",
+		attributes,
+		customUnit: "px",
+	});
+
+	const {
+		typoStylesDesktop: buttonTypoStylesDesktop,
+		typoStylesTab: buttonTypoStylesTab,
+		typoStylesMobile: buttonTypoStylesMobile,
+	} = generateTypographyStyles({
+		attributes,
+		prefixConstant: typoPrefix_button,
+	});
+
+	const {
+		backgroundStylesDesktop: buttonBackgroundStyleDesktop,
+		backgroundStylesTab: buttonBackgroundStyleTab,
+		backgroundStylesMobile: buttonBackgroundStyleMobile,
+		overlyStyles: buttonBackgroundStyleOverlay,
+	} = generateBackgroundControlStyles({
+		attributes,
+		controlName: buttonBackgroundControl,
+	});
+
+	const {
+		styesDesktop: btnShadowStyesDesktop,
+		styesTab: btnShadowStyesTab,
+		styesMobile: btnShadowStyesMobile,
+		stylesHoverDesktop: btnShadowStylesHoverDesktop,
+		stylesHoverTab: btnShadowStylesHoverTab,
+		stylesHoverMobile: btnShadowStylesHoverMobile,
+	} = generateBorderShadowStyles({
+		controlName: buttonBorderShadow,
 		attributes,
 	});
 
@@ -381,13 +467,41 @@ const edit = (props) => {
 			color: ${salepriceCurrencyTextColor};
 		}
 
-		.${blockId} .ebgb-pricing .ebgb-pricing-item .body ul li {
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .body ul li, .${blockId} .ebgb-pricing .ebgb-pricing-item .body ul li a {
 			${featuresTypoStylesDesktop}
 			color: ${featuresTextColor};
 		}
 
 		.${blockId} .ebgb-pricing .ebgb-pricing-item .body ul li .ebgb-pricebox-icon {
 			${featuresIconSizeDesktop}
+			margin-right: 8px;
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button-wrapper {
+			${buttonMarginStylesDesktop}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button {
+			${buttonPaddingStylesDesktop}
+			${buttonTypoStylesDesktop}
+			${buttonBackgroundStyleDesktop}
+			${btnShadowStyesDesktop}
+			color: ${buttonTextColor};
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button:hover {
+			${btnShadowStylesHoverDesktop}
+			color: ${hoverTextColor};
+			background-color: ${hoverBackgroundColor};
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button i {
+			${
+				buttonIconPosition === "left"
+					? buttonIconSpaceRightDesktop
+					: buttonIconSpaceLeftDesktop
+			}
+			${buttonIconSizeDesktop}
 		}
  		
 	`;
@@ -446,6 +560,30 @@ const edit = (props) => {
 		.${blockId} .ebgb-pricing .ebgb-pricing-item .body ul li .ebgb-pricebox-icon {
 			${featuresIconSizeTab}
 		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button-wrapper {
+			${buttonMarginStylesTab}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button {
+			${buttonPaddingStylesTab}
+			${buttonTypoStylesTab}
+			${buttonBackgroundStyleTab}
+			${btnShadowStyesTab}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button:hover {
+			${btnShadowStylesHoverTab}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button i {
+			${
+				buttonIconPosition === "left"
+					? buttonIconSpaceRightTab
+					: buttonIconSpaceLeftTab
+			}
+			${buttonIconSizeTab}
+		}
 	`;
 
 	const wrapperStylesMobile = `
@@ -501,6 +639,30 @@ const edit = (props) => {
 		
 		.${blockId} .ebgb-pricing .ebgb-pricing-item .body ul li .ebgb-pricebox-icon {
 			${featuresIconSizeMobile}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button-wrapper {
+			${buttonMarginStylesMobile}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button {
+			${buttonPaddingStylesMobile}
+			${buttonTypoStylesMobile}
+			${buttonBackgroundStyleMobile}
+			${btnShadowStyesMobile}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button:hover {
+			${btnShadowStylesHoverMobile}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button i {
+			${
+				buttonIconPosition === "left"
+					? buttonIconSpaceRightMobile
+					: buttonIconSpaceLeftMobile
+			}
+			${buttonIconSizeMobile}
 		}
 	`;
 	var titleLineStyle = "";
@@ -680,7 +842,6 @@ const edit = (props) => {
 								{features.map(({ icon, text, color, clickable, link }) => (
 									<li
 										className="ebgb-pricebox-feature-item"
-										// style={featureListStyle}
 										data-icon={icon}
 										data-color={color}
 										data-clickable={clickable}
@@ -688,14 +849,20 @@ const edit = (props) => {
 									>
 										{clickable && link ? (
 											<a href={link}>
-												<span className={`ebgb-pricebox-icon ${icon}`} />
+												<span
+													className={`ebgb-pricebox-icon ${icon}`}
+													style={{ color: color }}
+												/>
 												<span className="ebgb-pricebox-feature-text">
 													{text}
 												</span>
 											</a>
 										) : (
 											<>
-												<span className={`ebgb-pricebox-icon ${icon}`} />
+												<span
+													className={`ebgb-pricebox-icon ${icon}`}
+													style={{ color: color }}
+												/>
 												<span className="ebgb-pricebox-feature-text">
 													{text}
 												</span>
@@ -707,20 +874,17 @@ const edit = (props) => {
 						</div>
 						{showButton && (
 							<div className="footer" data-icon={buttonIcon}>
-								<a
-									href={buttonURL}
-									// target="_blank"
-									// rel="nofollow noopener"
-									className="ebgb-pricing-button"
-								>
-									{buttonIconPosition === "left" && (
-										<i className={buttonIcon}></i>
-									)}
-									<span className="ebgb-button-text">{buttonText}</span>
-									{buttonIconPosition === "right" && (
-										<i className={buttonIcon}></i>
-									)}
-								</a>
+								<div className="ebgb-pricing-button-wrapper">
+									<a href={buttonURL} className="ebgb-pricing-button">
+										{buttonIconPosition === "left" && (
+											<i className={buttonIcon}></i>
+										)}
+										<span className="ebgb-button-text">{buttonText}</span>
+										{buttonIconPosition === "right" && (
+											<i className={buttonIcon}></i>
+										)}
+									</a>
+								</div>
 							</div>
 						)}
 					</div>

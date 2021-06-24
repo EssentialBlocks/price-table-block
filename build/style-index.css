@@ -52,6 +52,10 @@
   padding-right: 8px;
 }
 
+.ebgb-pricing .ebgb-pricing-item ul li a {
+  text-decoration: none;
+}
+
 .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon {
   display: inline-block;
   position: relative;
