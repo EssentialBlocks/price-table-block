@@ -101,6 +101,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 		titleLineColor,
 		titleBackgroundColor,
 		subtitleTextColor,
+		defaultIconBackground,
 		showIconBackground,
 		iconBackgroundColor,
 		iconBackgroundHoverColor,
@@ -172,9 +173,13 @@ const Inspector = ({ attributes, setAttributes }) => {
 					showSubtitle: false,
 					showHeaderIcon: false,
 					showTitleLine: true,
+					showIconBackground: false,
 				});
 				defaultSubtitle ? setAttributes({ showSubtitle: true }) : "";
 				defaultHeaderIcon ? setAttributes({ showHeaderIcon: true }) : "";
+				defaultIconBackground
+					? setAttributes({ showIconBackground: true })
+					: "";
 				break;
 
 			case "style-2":
@@ -182,6 +187,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 					showSubtitle: true,
 					showHeaderIcon: true,
 					showTitleLine: false,
+					showIconBackground: true,
 				});
 				defaultTitleLine ? setAttributes({ showTitleLine: false }) : "";
 				break;
@@ -192,7 +198,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 			<span className="eb-panel-control">
 				<PanelBody title={__("Settings")}>
 					<SelectControl
-						label={__("Pricing Style")}
+						label={__("Pricing Preset")}
 						value={pricingStyle}
 						options={[
 							{ label: "Default", value: "style-1" },
@@ -648,7 +654,10 @@ const Inspector = ({ attributes, setAttributes }) => {
 							label={__("Show Background")}
 							checked={showIconBackground}
 							onChange={() => {
-								setAttributes({ showIconBackground: !showIconBackground });
+								setAttributes({
+									showIconBackground: !showIconBackground,
+									defaultIconBackground: !showIconBackground,
+								});
 							}}
 						/>
 						{showIconBackground && (

@@ -105,6 +105,11 @@ const edit = (props) => {
 		isHover,
 		hoverBackgroundColor,
 		hoverTextColor,
+		iconBackgroundColor,
+		iconBackgroundHoverColor,
+		showIconBackground,
+		iconColor,
+		iconHoverColor,
 		buttonHeight,
 		buttonHeightUnit,
 		buttonWidth,
@@ -406,6 +411,48 @@ const edit = (props) => {
 		attributes,
 	});
 
+	const {
+		rangeStylesDesktop: headerIconSizeDesktop,
+		rangeStylesTab: headerIconSizeTab,
+		rangeStylesMobile: headerIconSizeMobile,
+	} = generateResponsiveRangeStyles({
+		controlName: headerIconSize,
+		property: "font-size",
+		attributes,
+	});
+
+	const {
+		rangeStylesDesktop: headerIconWidthDesktop,
+		rangeStylesTab: headerIconWidthTab,
+		rangeStylesMobile: headerIconWidthMobile,
+	} = generateResponsiveRangeStyles({
+		controlName: headerIconWidth,
+		property: "width",
+		attributes,
+	});
+
+	const {
+		rangeStylesDesktop: headerIconHeightDesktop,
+		rangeStylesTab: headerIconHeightTab,
+		rangeStylesMobile: headerIconHeightMobile,
+	} = generateResponsiveRangeStyles({
+		controlName: headerIconHeight,
+		property: "height",
+		attributes,
+	});
+
+	const {
+		styesDesktop: iconBorderShadowDesktop,
+		styesTab: iconBorderShadowTab,
+		styesMobile: iconBorderShadowMobile,
+		stylesHoverDesktop: iconBorderShadowHoverDesktop,
+		stylesHoverTab: iconBorderShadowHoverTab,
+		stylesHoverMobile: iconBorderShadowHoverMobile,
+	} = generateBorderShadowStyles({
+		controlName: iconBorderShadow,
+		attributes,
+	});
+
 	const wrapperStyles = `
 		.${blockId} .ebgb-pricing .ebgb-pricing-item {
 			${wrapperPaddingStylesDesktop}
@@ -503,6 +550,37 @@ const edit = (props) => {
 			}
 			${buttonIconSizeDesktop}
 		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon {
+			${headerIconWidthDesktop}
+			${headerIconHeightDesktop}
+			${iconBorderShadowDesktop}
+			${
+				showIconBackground
+					? "background-color: " + iconBackgroundColor + ";"
+					: "background-color: transparent;"
+			}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon:hover {
+			${iconBorderShadowHoverDesktop}
+			${
+				showIconBackground
+					? "background-color: " + iconBackgroundHoverColor + ";"
+					: "background-color: transparent;"
+			}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon i {
+			${headerIconSizeDesktop}
+			color: ${iconColor};
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon i:hover {
+			color: ${iconHoverColor};
+		}
+
+		
  		
 	`;
 
@@ -584,6 +662,20 @@ const edit = (props) => {
 			}
 			${buttonIconSizeTab}
 		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon {
+			${headerIconWidthTab}
+			${headerIconHeightTab}
+			${iconBorderShadowTab}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon:hover {
+			${iconBorderShadowHoverTab}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon i {
+			${headerIconSizeTab}
+		}
 	`;
 
 	const wrapperStylesMobile = `
@@ -663,6 +755,20 @@ const edit = (props) => {
 					: buttonIconSpaceLeftMobile
 			}
 			${buttonIconSizeMobile}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon {
+			${headerIconWidthMobile}
+			${headerIconHeightMobile}
+			${iconBorderShadowMobile}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon:hover {
+			${iconBorderShadowHoverMobile}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon i {
+			${headerIconSizeMobile}
 		}
 	`;
 	var titleLineStyle = "";
@@ -798,45 +904,51 @@ const edit = (props) => {
 								<span className="ebgb-pricing-subtitle">{subtitle}</span>
 							)}
 						</div>
-						<div className="ebgb-pricing-tag">
-							<span className="price-tag">
-								<span
-									className={`original-price${
-										showOnSale === true ? " line-through" : ""
-									}`}
-									data-price={mainPrice}
-								>
-									{currencyPlacement === "left" && (
-										<span className="price-currency">{priceCurrency}</span>
-									)}
-									{mainPrice}
-									{currencyPlacement === "right" && (
-										<span className="price-currency">{priceCurrency}</span>
+						{pricingStyle !== "style-3" && (
+							<div className="ebgb-pricing-tag">
+								<span className="price-tag">
+									<span
+										className={`original-price${
+											showOnSale === true ? " line-through" : ""
+										}`}
+										data-price={mainPrice}
+									>
+										{currencyPlacement === "left" && (
+											<span className="price-currency">{priceCurrency}</span>
+										)}
+										{mainPrice}
+										{currencyPlacement === "right" && (
+											<span className="price-currency">{priceCurrency}</span>
+										)}
+									</span>
+
+									{showOnSale && (
+										<>
+											<span className="sale-price" data-sale-price={salePrice}>
+												{currencyPlacement === "left" && (
+													<span className="price-currency">
+														{priceCurrency}
+													</span>
+												)}
+												{salePrice}
+												{currencyPlacement === "right" && (
+													<span className="price-currency">
+														{priceCurrency}
+													</span>
+												)}
+											</span>
+										</>
 									)}
 								</span>
-
-								{showOnSale && (
-									<>
-										<span className="sale-price" data-sale-price={salePrice}>
-											{currencyPlacement === "left" && (
-												<span className="price-currency">{priceCurrency}</span>
-											)}
-											{salePrice}
-											{currencyPlacement === "right" && (
-												<span className="price-currency">{priceCurrency}</span>
-											)}
-										</span>
-									</>
-								)}
-							</span>
-							<span
-								className="price-period"
-								data-period-separator={periodSeparator}
-								data-price-period={pricePeriod}
-							>
-								{periodSeparator} {pricePeriod}
-							</span>
-						</div>
+								<span
+									className="price-period"
+									data-period-separator={periodSeparator}
+									data-price-period={pricePeriod}
+								>
+									{periodSeparator} {pricePeriod}
+								</span>
+							</div>
+						)}
 						<div className="body">
 							<ul className="ebgb-pricebox-features">
 								{features.map(({ icon, text, color, clickable, link }) => (
@@ -872,6 +984,51 @@ const edit = (props) => {
 								))}
 							</ul>
 						</div>
+						{pricingStyle === "style-3" && (
+							<div className="ebgb-pricing-tag">
+								<span className="price-tag">
+									<span
+										className={`original-price${
+											showOnSale === true ? " line-through" : ""
+										}`}
+										data-price={mainPrice}
+									>
+										{currencyPlacement === "left" && (
+											<span className="price-currency">{priceCurrency}</span>
+										)}
+										{mainPrice}
+										{currencyPlacement === "right" && (
+											<span className="price-currency">{priceCurrency}</span>
+										)}
+									</span>
+
+									{showOnSale && (
+										<>
+											<span className="sale-price" data-sale-price={salePrice}>
+												{currencyPlacement === "left" && (
+													<span className="price-currency">
+														{priceCurrency}
+													</span>
+												)}
+												{salePrice}
+												{currencyPlacement === "right" && (
+													<span className="price-currency">
+														{priceCurrency}
+													</span>
+												)}
+											</span>
+										</>
+									)}
+								</span>
+								<span
+									className="price-period"
+									data-period-separator={periodSeparator}
+									data-price-period={pricePeriod}
+								>
+									{periodSeparator} {pricePeriod}
+								</span>
+							</div>
+						)}
 						{showButton && (
 							<div className="footer" data-icon={buttonIcon}>
 								<div className="ebgb-pricing-button-wrapper">

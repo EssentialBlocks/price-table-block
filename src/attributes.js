@@ -230,25 +230,29 @@ const attributes = {
 		type: "string",
 		default: "#6d6d6d",
 	},
+	defaultIconBackground: {
+		type: "boolean",
+		default: false,
+	},
 	showIconBackground: {
 		type: "boolean",
 		default: true,
 	},
 	iconBackgroundColor: {
 		type: "string",
-		default: "#C8E6C9",
+		// default: "#C8E6C9",
 	},
 	iconBackgroundHoverColor: {
 		type: "string",
-		default: "#C8E6C9",
+		// default: "#C8E6C9",
 	},
 	iconColor: {
 		type: "string",
-		default: "#ffffff",
+		default: "#333",
 	},
 	iconHoverColor: {
 		type: "string",
-		default: "#ffffff",
+		default: "#333",
 	},
 	priceTextColor: {
 		type: "string",
@@ -347,6 +351,7 @@ const attributes = {
 	},
 	buttonTextColor: {
 		type: "string",
+		default: "#ffffff",
 	},
 	hoverBackgroundColor: {
 		type: "string",

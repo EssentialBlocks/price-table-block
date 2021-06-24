@@ -59,44 +59,48 @@
 	text-decoration: line-through;
 	padding-right: 8px;
 }
+
 .ebgb-pricing .ebgb-pricing-item ul li a {
 	text-decoration: none;
 }
-// .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon {
-// 	display: inline-block;
-// 	position: relative;
-// 	width: 80px;
-// 	height: 80px;
-// 	border: 2px solid #333333;
-// 	border-radius: 50%;
-// 	margin-bottom: 30px;
-// 	-webkit-transition: 0.5s;
-// 	-o-transition: 0.5s;
-// 	transition: 0.5s;
-// 	overflow: hidden;
-// }
-// .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon,
-// .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon {
-// 	display: -webkit-box;
-// 	display: -ms-flexbox;
-// 	display: flex;
-// 	-webkit-box-align: center;
-// 	-ms-flex-align: center;
-// 	align-items: center;
-// 	-webkit-box-pack: center;
-// 	-ms-flex-pack: center;
-// 	justify-content: center;
-// }
-// .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon i {
-// 	font-size: 30px;
-// 	color: #333;
-// 	-webkit-transition: 0.5s;
-// 	-o-transition: 0.5s;
-// 	transition: 0.5s;
-// }
-// .ebgb-pricing .ebgb-pricing-item:hover .ebgb-pricing-icon .icon i {
-// 	color: #333;
-// }
+.ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon {
+	display: inline-block;
+	position: relative;
+	width: 80px;
+	height: 80px;
+	border: 2px solid #333333;
+	border-radius: 50%;
+	margin-bottom: 30px;
+	-webkit-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
+	overflow: hidden;
+}
+
+.ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon,
+.ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+
+.ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon i {
+	font-size: 30px;
+	color: #333;
+	-webkit-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
+}
+
+.ebgb-pricing .ebgb-pricing-item:hover .ebgb-pricing-icon .icon i {
+	color: #333;
+}
 
 /*--- Pricing Table: Style 1 ---*/
 
@@ -386,6 +390,7 @@
 	height: 80px;
 	background: #00c853;
 	border-radius: 50%;
+	border: none;
 	margin-bottom: 30px;
 	-webkit-transition: 0.5s;
 	-o-transition: 0.5s;
@@ -450,7 +455,7 @@
 	margin: 0px;
 }
 
-.ebgb-pricing.style-2 .ebgb-pricing-item .header .ebgb-princing-subititle {
+.ebgb-pricing.style-2 .ebgb-pricing-item .header .subititle {
 	font-size: 14px;
 	font-weight: 600;
 	color: #6d6d6d;
@@ -544,13 +549,210 @@
 	}
 }
 
-/*--- Pricing Table: Style 3 ---*/
-.ebgb-pricing.style-3 {
-	position: relative;
-	z-index: 0;
+/*--- Page Builder Related Style ---*/
+
+.ebgb-pricing-content-align-center .ebgb-pricing {
 	text-align: center;
 }
 
+.ebgb-pricing-content-align-left .ebgb-pricing {
+	text-align: left;
+}
+
+.ebgb-pricing-content-align-right .ebgb-pricing {
+	text-align: right;
+}
+
+.ebgb-pricing-content-align-left
+	.ebgb-pricing.style-2
+	.ebgb-pricing-item
+	.price-tag {
+	padding-left: 45px;
+}
+
+.ebgb-pricing-content-align-left
+	.ebgb-pricing.style-2
+	.ebgb-pricing-item
+	.price-tag:before {
+	left: 30px;
+}
+
+.ebgb-pricing-content-align-right
+	.ebgb-pricing.style-2
+	.ebgb-pricing-item
+	.ebgb-pricing-tag {
+	padding-right: 30px;
+}
+
+.ebgb-pricing-content-align-left
+	.ebgb-pricing.style-2
+	.ebgb-pricing-item
+	.header,
+.ebgb-pricing-content-align-left
+	.ebgb-pricing.style-2
+	.ebgb-pricing-item
+	.footer,
+.ebgb-pricing-content-align-left .ebgb-pricing-item .header,
+.ebgb-pricing-content-align-left .ebgb-pricing-item .footer {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.ebgb-pricing-content-align-right
+	.ebgb-pricing.style-2
+	.ebgb-pricing-item
+	.header,
+.ebgb-pricing-content-align-right
+	.ebgb-pricing.style-2
+	.ebgb-pricing-item
+	.footer,
+.ebgb-pricing-content-align-right .ebgb-pricing-item .header,
+.ebgb-pricing-content-align-right .ebgb-pricing-item .footer {
+	padding-right: 30px;
+	padding-left: 30px;
+}
+
+.ebgb-pricing-content-align-left
+	.ebgb-pricing.style-2
+	.ebgb-pricing-item
+	.body
+	ul
+	li,
+.ebgb-pricing-content-align-left .ebgb-pricing-item .body ul li {
+	padding-left: 30px;
+}
+
+.ebgb-pricing-content-align-right
+	.ebgb-pricing.style-2
+	.ebgb-pricing-item
+	.body
+	ul
+	li {
+	padding-right: 30px;
+}
+
+.ebgb-pricing-content-align-left
+	.ebgb-pricing.style-3
+	.ebgb-pricing-item
+	.header:after {
+	-webkit-transform: translateX(-80%);
+	-ms-transform: translateX(-80%);
+	transform: translateX(-80%);
+}
+
+.ebgb-pricing-content-align-right
+	.ebgb-pricing.style-3
+	.ebgb-pricing-item
+	.header:after {
+	-webkit-transform: translateX(80%);
+	-ms-transform: translateX(80%);
+	transform: translateX(80%);
+}
+
+.ebgb-pricing-content-align-left
+	.ebgb-pricing.style-3
+	.ebgb-pricing-item:hover
+	.header:after,
+.ebgb-pricing-content-align-right
+	.ebgb-pricing.style-3
+	.ebgb-pricing-item:hover
+	.header:after {
+	-webkit-transform: translateX(0%);
+	-ms-transform: translateX(0%);
+	transform: translateX(0%);
+}
+
+.ebgb-pricing-content-align-left
+	.ebgb-pricing.style-1
+	.ebgb-pricing-item
+	.header:after,
+.ebgb-pricing-content-align-right
+	.ebgb-pricing.style-1
+	.ebgb-pricing-item
+	.header:after,
+.ebgb-pricing-content-align-left
+	.ebgb-pricing.style-1
+	.ebgb-pricing-item
+	.ebgb-pricing-tag:after,
+.ebgb-pricing-content-align-right
+	.ebgb-pricing.style-1
+	.ebgb-pricing-item
+	.ebgb-pricing-tag:after,
+.ebgb-pricing-content-align-left
+	.ebgb-pricing.style-2
+	.ebgb-pricing-item
+	.ebgb-pricing-tag:after,
+.ebgb-pricing-content-align-right
+	.ebgb-pricing.style-2
+	.ebgb-pricing-item
+	.ebgb-pricing-tag:after {
+	margin: 0;
+	width: 100%;
+}
+
+/*--- Button Alignment ---*/
+
+.ebgb-pricing-button-align-right .ebgb-pricing.style-1 .footer,
+.ebgb-pricing-button-align-right .ebgb-pricing.style-2 .footer,
+.ebgb-pricing-button-align-right .ebgb-pricing.style-3 .footer {
+	text-align: right;
+}
+
+.ebgb-pricing-button-align-center .ebgb-pricing.style-1 .footer,
+.ebgb-pricing-button-align-center .ebgb-pricing.style-2 .footer,
+.ebgb-pricing-button-align-center .ebgb-pricing.style-3 .footer {
+	text-align: center;
+}
+
+.ebgb-pricing-button-align-left .ebgb-pricing.style-1 .footer,
+.ebgb-pricing-button-align-left .ebgb-pricing.style-2 .footer,
+.ebgb-pricing-button-align-left .ebgb-pricing.style-3 .footer {
+	text-align: left;
+}
+
+.ebgb-pricing-content-align-center.ebgb-pricing-button-align-right
+	.ebgb-pricing.style-2
+	.footer,
+.ebgb-pricing-content-align-center.ebgb-pricing-button-align-right .footer {
+	padding-right: 30px;
+}
+
+.ebgb-pricing-content-align-center.ebgb-pricing-button-align-left
+	.ebgb-pricing.style-2
+	.footer,
+.ebgb-pricing-content-align-center.ebgb-pricing-button-align-left .footer {
+	padding-left: 30px;
+}
+
+/*--- Only In Pro Alert ---*/
+
+.only-in-pro {
+	width: 100%;
+	-webkit-display: flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	padding: 15px;
+	min-width: 200px;
+	background: #ef5350;
+	color: #fff;
+	text-align: center;
+}
+
+.only-in-pro .ebgb-pricing-title {
+	font-family: "Roboto", sans-serif;
+	font-size: 24px;
+	line-height: 40px;
+	margin: 0px;
+}
+
+/*--- Pricing Table: Style 3 ---*/
 .ebgb-pricing.style-3 .ebgb-pricing-item {
 	background: #262c37;
 	padding: 30px;
@@ -649,7 +851,7 @@
 	line-height: 40px;
 	margin: 0px;
 }
-.ebgb-pricing.style-3 .ebgb-pricing-item .header .ebgb-princing-subititle {
+.ebgb-pricing.style-3 .ebgb-pricing-item .header .ebgb-pricing-subtitle {
 	font-size: 14px;
 	color: rgba(255, 255, 255, 0.5);
 }
@@ -719,19 +921,24 @@
 /**
  * old css
  */
+
 .eb-pricebox-features li {
 	margin: 10px auto;
 	border-bottom: 1px solid #eee;
 }
+
 .eb-pricebox-price {
 	margin: 0;
 }
+
 .eb-pricebox-feature-button {
 	margin: 0 auto;
 }
+
 .eb-pricebox-icon {
 	padding-right: 10px;
 }
+
 // Sortable Styles
 .eb-pricebox-sortable-item {
 	display: flex;
@@ -741,6 +948,7 @@
 	border: 1px solid;
 	line-height: 2.5em;
 }
+
 .eb-pricebox-sortable-title {
 	flex: 12;
 	padding-left: 5px;
@@ -749,6 +957,7 @@
 	width: 200px;
 	white-space: nowrap;
 }
+
 .eb-pricebox-sortable-trash {
 	font-size: 16px;
 	border-left: 1px solid gray;
@@ -762,19 +971,24 @@
 	color: #ffffff;
 	cursor: pointer;
 }
+
 .eb-pricebox-sortable-title:hover {
 	cursor: pointer;
 }
+
 .eb-pricebox-button {
 	line-height: inherit;
 }
+
 .eb-pricebox-add-button-label {
 	margin-left: 10px;
 }
+
 .eb-pricebox-features {
 	margin: 0;
 	padding: 0;
 }
+
 .eb-pricebox-wrapper p {
 	margin-bottom: 0;
 }
