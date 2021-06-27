@@ -59,7 +59,7 @@ const attributes = {
 	},
 	defaultSubtitle: {
 		type: "boolean",
-		default: false,
+		// default: false,
 	},
 	showSubtitle: {
 		type: "boolean",
@@ -73,7 +73,7 @@ const attributes = {
 	},
 	defaultHeaderIcon: {
 		type: "boolean",
-		default: false,
+		// default: false,
 	},
 	showHeaderIcon: {
 		type: "boolean",
@@ -87,7 +87,7 @@ const attributes = {
 	},
 	defaultTitleLine: {
 		type: "boolean",
-		default: false,
+		// default: false,
 	},
 	showTitleLine: {
 		type: "boolean",
@@ -271,6 +271,30 @@ const attributes = {
 	},
 	featuresTextColor: {
 		type: "string",
+	},
+	contentAlign: {
+		type: "String",
+		default: "center",
+	},
+	showRibbon: {
+		type: "boolean",
+		default: false,
+	},
+	ribbonStyle: {
+		type: "string",
+		default: "ribbon-1",
+	},
+	ribbonText: {
+		type: "string",
+		default: "featured",
+	},
+	ribbonColor: {
+		type: "string",
+		default: "#ffffff",
+	},
+	ribbonBackgroundColor: {
+		type: "string",
+		default: "#00c853",
 	},
 	...generateResponsiveRangeAttributes(buttonIconSpacing, {
 		defaultRange: 0,

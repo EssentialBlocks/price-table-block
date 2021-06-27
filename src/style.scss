@@ -62,41 +62,6 @@
 .ebgb-pricing .ebgb-pricing-item ul li a {
 	text-decoration: none;
 }
-// .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon {
-// 	display: inline-block;
-// 	position: relative;
-// 	width: 80px;
-// 	height: 80px;
-// 	border: 2px solid #333333;
-// 	border-radius: 50%;
-// 	margin-bottom: 30px;
-// 	-webkit-transition: 0.5s;
-// 	-o-transition: 0.5s;
-// 	transition: 0.5s;
-// 	overflow: hidden;
-// }
-// .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon,
-// .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon {
-// 	display: -webkit-box;
-// 	display: -ms-flexbox;
-// 	display: flex;
-// 	-webkit-box-align: center;
-// 	-ms-flex-align: center;
-// 	align-items: center;
-// 	-webkit-box-pack: center;
-// 	-ms-flex-pack: center;
-// 	justify-content: center;
-// }
-// .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon i {
-// 	font-size: 30px;
-// 	color: #333;
-// 	-webkit-transition: 0.5s;
-// 	-o-transition: 0.5s;
-// 	transition: 0.5s;
-// }
-// .ebgb-pricing .ebgb-pricing-item:hover .ebgb-pricing-icon .icon i {
-// 	color: #333;
-// }
 
 /*--- Pricing Table: Style 1 ---*/
 
@@ -142,7 +107,6 @@
 	content: "Featured";
 	position: absolute;
 	width: auto;
-	background: #00c853;
 	color: #fff;
 	top: 35px;
 	right: -15px;
@@ -160,7 +124,6 @@
 	right: -15px;
 	width: 0;
 	height: 0;
-	border-bottom: 15px solid #00c853;
 	border-right: 15px solid transparent;
 	z-index: 9;
 	opacity: 0.9;
@@ -186,8 +149,6 @@
 	content: "Featured";
 	position: absolute;
 	width: auto;
-	background: #00c853;
-	color: #fff;
 	top: 30px;
 	right: -55px;
 	z-index: 10;
@@ -220,19 +181,6 @@
 	padding-bottom: 15px;
 	margin-bottom: 15px;
 }
-
-// .ebgb-pricing.style-1 .ebgb-pricing-item .header:after {
-// 	content: "";
-// 	position: absolute;
-// 	width: 140px;
-// 	height: 1px;
-// 	bottom: 0px;
-// 	left: 0px;
-// 	right: 0px;
-// 	margin: 0 auto;
-// 	z-index: 1;
-// 	background: rgba(9, 9, 9, 0.1);
-// }
 
 .ebgb-pricing.style-1 .ebgb-pricing-item .header .ebgb-pricing-title {
 	font-weight: 700;
@@ -358,7 +306,6 @@
 	right: -15px;
 	width: 0;
 	height: 0;
-	border-bottom: 15px solid #00c853;
 	border-right: 15px solid transparent;
 	z-index: 9;
 	opacity: 0.9;
@@ -488,7 +435,6 @@
 .ebgb-pricing.style-2 .ebgb-pricing-item .price-tag .price-currency {
 	font-size: 24px;
 	font-weight: 700;
-	color: #00c853;
 }
 
 .ebgb-pricing.style-2 .ebgb-pricing-item .price-period {
@@ -576,7 +522,6 @@
 	content: "Featured";
 	position: absolute;
 	width: auto;
-	background: #e25a77;
 	color: #fff;
 	top: 35px;
 	right: -15px;
@@ -602,7 +547,6 @@
 	content: "Featured";
 	position: absolute;
 	width: auto;
-	background: #e25a77;
 	color: #fff;
 	top: 15px;
 	right: 15px;
@@ -619,28 +563,10 @@
 	z-index: 0;
 	overflow: hidden;
 }
-.ebgb-pricing.style-3 .ebgb-pricing-item .header:after {
-	position: absolute;
-	content: "";
-	width: 100%;
-	height: 1px;
-	bottom: 0px;
-	left: 0px;
-	right: 0px;
-	margin: 0 auto;
-	z-index: 1;
-	-webkit-transition: 1s;
-	-o-transition: 1s;
-	transition: 1s;
-	-webkit-transform: scaleX(0.4);
-	-ms-transform: scaleX(0.4);
-	transform: scaleX(0.4);
-	background: #e25a77;
-}
 .ebgb-pricing.style-3 .ebgb-pricing-item:hover .header:after {
 	-webkit-transform: scaleX(1);
 	-ms-transform: scaleX(1);
-	transform: scaleX(1);
+	transform: scaleX(1) !important;
 }
 .ebgb-pricing.style-3 .ebgb-pricing-item .header .ebgb-pricing-title {
 	font-family: "Raleway", sans-serif;

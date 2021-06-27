@@ -2,18 +2,16 @@
  * WordPress dependencies
  */
 const { __ } = wp.i18n;
-const { Component, useEffect } = wp.element;
-const { InspectorControls, PanelColorSettings } = wp.blockEditor;
+const { useEffect } = wp.element;
+const { InspectorControls } = wp.blockEditor;
 const { select } = wp.data;
 const {
 	PanelBody,
 	ToggleControl,
-	RangeControl,
 	SelectControl,
 	TextControl,
 	Button,
 	BaseControl,
-	Dropdown,
 } = wp.components;
 
 /**
@@ -113,9 +111,13 @@ const Inspector = ({ attributes, setAttributes }) => {
 		salepriceCurrencyTextColor,
 		pricingPeriodTextColor,
 		featuresTextColor,
-		// new attributes
-
+		showRibbon,
+		ribbonStyle,
+		ribbonText,
+		ribbonColor,
+		ribbonBackgroundColor,
 		hoverBackgroundColor,
+		// new attributes
 	} = attributes;
 
 	// this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class only the first time once
@@ -166,33 +168,112 @@ const Inspector = ({ attributes, setAttributes }) => {
 		setAttributes({ features });
 	};
 
-	useEffect(() => {
+	console.log("normal", pricingStyle, showSubtitle, defaultSubtitle);
+
+	// useEffect(() => {
+	// 	console.log(
+	// 		"pricing style changed!!!",
+	// 		pricingStyle,
+	// 		showSubtitle,
+	// 		defaultSubtitle
+	// 	);
+	// 	switch (pricingStyle) {
+	// 		case "style-1":
+	// 			setAttributes({
+	// 				showSubtitle: false,
+	// 				showHeaderIcon: false,
+	// 				// showTitleLine: true,
+	// 				// showIconBackground: false,
+	// 			});
+	// 			defaultSubtitle ? setAttributes({ showSubtitle: true }) : "";
+	// 			defaultHeaderIcon
+	// 				? setAttributes({ showHeaderIcon: true })
+	// 				: setAttributes({ showHeaderIcon: false });
+	// 			// defaultTitleLine ? setAttributes({ showTitleLine: false }) : "";
+	// 			// defaultIconBackground
+	// 			// 	? setAttributes({ showIconBackground: true })
+	// 			// 	: "";
+	// 			break;
+
+	// 		case "style-2":
+	// 			setAttributes({
+	// 				showSubtitle: true,
+	// 				showHeaderIcon: true,
+	// 				// showTitleLine: false,
+	// 				// showIconBackground: true,
+	// 			});
+	// 			// defaultSubtitle ? setAttributes({ showSubtitle: true }) : "";
+	// 			defaultHeaderIcon
+	// 				? setAttributes({ showHeaderIcon: true })
+	// 				: setAttributes({ showHeaderIcon: false });
+	// 			// defaultTitleLine ? setAttributes({ showTitleLine: false }) : "";
+	// 			// defaultIconBackground
+	// 			// 	? setAttributes({ showIconBackground: true })
+	// 			// 	: "";
+	// 			break;
+
+	// 		case "style-3":
+	// 			setAttributes({
+	// 				showSubtitle: false,
+	// 				showHeaderIcon: false,
+	// 				// showTitleLine: true,
+	// 				// showIconBackground: false,
+	// 			});
+	// 			defaultSubtitle ? setAttributes({ showSubtitle: true }) : "";
+	// 			defaultHeaderIcon
+	// 				? setAttributes({ showHeaderIcon: true })
+	// 				: setAttributes({ showHeaderIcon: false });
+	// 			// defaultTitleLine ? setAttributes({ showTitleLine: false }) : "";
+	// 			// defaultIconBackground
+	// 			// 	? setAttributes({ showIconBackground: true })
+	// 			// 	: "";
+	// 			break;
+	// 	}
+	// }, [pricingStyle]);
+
+	const handlePricingStyle = (pricingStyle) => {
+		console.log("pricing style changed!!!", showSubtitle, defaultSubtitle);
+		setAttributes({ pricingStyle });
 		switch (pricingStyle) {
 			case "style-1":
 				setAttributes({
 					showSubtitle: false,
 					showHeaderIcon: false,
-					showTitleLine: true,
-					showIconBackground: false,
+					// showTitleLine: true,
 				});
 				defaultSubtitle ? setAttributes({ showSubtitle: true }) : "";
 				defaultHeaderIcon ? setAttributes({ showHeaderIcon: true }) : "";
-				defaultIconBackground
-					? setAttributes({ showIconBackground: true })
+				defaultTitleLine === undefined
+					? setAttributes({ showTitleLine: true })
 					: "";
 				break;
 
 			case "style-2":
+				defaultSubtitle === undefined
+					? setAttributes({ showSubtitle: true })
+					: "";
+				defaultHeaderIcon === undefined
+					? setAttributes({ showHeaderIcon: true })
+					: "";
+				defaultTitleLine === undefined
+					? setAttributes({ showTitleLine: false })
+					: "";
+				break;
+
+			case "style-3":
 				setAttributes({
-					showSubtitle: true,
-					showHeaderIcon: true,
-					showTitleLine: false,
-					showIconBackground: true,
+					showSubtitle: false,
+					showHeaderIcon: false,
+					// showTitleLine: true,
 				});
-				defaultTitleLine ? setAttributes({ showTitleLine: false }) : "";
+				defaultSubtitle ? setAttributes({ showSubtitle: true }) : "";
+				defaultHeaderIcon ? setAttributes({ showHeaderIcon: true }) : "";
+				defaultTitleLine === undefined
+					? setAttributes({ showTitleLine: true })
+					: "";
 				break;
 		}
-	}, [pricingStyle]);
+	};
 	return (
 		<InspectorControls key="controls">
 			<span className="eb-panel-control">
@@ -205,16 +286,16 @@ const Inspector = ({ attributes, setAttributes }) => {
 							{ label: "Style 2", value: "style-2" },
 							{ label: "Style 3", value: "style-3" },
 						]}
-						onChange={(pricingStyle) => {
-							setAttributes({ pricingStyle });
-						}}
+						// onChange={(pricingStyle) => {
+						// 	setAttributes({ pricingStyle });
+						// }}
+						onChange={(pricingStyle) => handlePricingStyle(pricingStyle)}
 					/>
 					<TextControl
 						label={__("Title")}
 						value={title}
 						onChange={(newTitle) => setAttributes({ title: newTitle })}
 					/>
-
 					<ToggleControl
 						label={__("Show Subtitle?")}
 						checked={showSubtitle}
@@ -726,6 +807,53 @@ const Inspector = ({ attributes, setAttributes }) => {
 						/>
 					</PanelBody>
 				)}
+				<PanelBody title={__("Ribbon")} initialOpen={false}>
+					<ToggleControl
+						label={__("Featured")}
+						checked={showRibbon}
+						onChange={() => {
+							setAttributes({
+								showRibbon: !showRibbon,
+							});
+						}}
+					/>
+					{showRibbon && (
+						<>
+							<SelectControl
+								label={__("Ribbon Style")}
+								value={ribbonStyle}
+								options={[
+									{ label: "Style 1", value: "ribbon-1" },
+									{ label: "Style 2", value: "ribbon-2" },
+									{ label: "Style 3", value: "ribbon-3" },
+									{ label: "Style 4", value: "ribbon-4" },
+								]}
+								onChange={(ribbonStyle) => {
+									setAttributes({ ribbonStyle });
+								}}
+							/>
+							{ribbonStyle !== "ribbon-1" && (
+								<TextControl
+									label={__("Featured Tag Text")}
+									value={ribbonText}
+									onChange={(ribbonText) => setAttributes({ ribbonText })}
+								/>
+							)}
+							<ColorControl
+								label={__("Color")}
+								color={ribbonColor}
+								onChange={(ribbonColor) => setAttributes({ ribbonColor })}
+							/>
+							<ColorControl
+								label={__("Background Color")}
+								color={ribbonBackgroundColor}
+								onChange={(ribbonBackgroundColor) =>
+									setAttributes({ ribbonBackgroundColor })
+								}
+							/>
+						</>
+					)}
+				</PanelBody>
 			</span>
 		</InspectorControls>
 	);

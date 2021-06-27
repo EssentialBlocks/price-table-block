@@ -2,7 +2,7 @@
  * WordPress dependencies
  */
 const { __ } = wp.i18n;
-const { useBlockProps } = wp.blockEditor;
+const { useBlockProps, BlockControls, AlignmentToolbar } = wp.blockEditor;
 const { useEffect } = wp.element;
 const { select } = wp.data;
 /**
@@ -110,6 +110,12 @@ const edit = (props) => {
 		showIconBackground,
 		iconColor,
 		iconHoverColor,
+		contentAlign,
+		showRibbon,
+		ribbonStyle,
+		ribbonText,
+		ribbonColor,
+		ribbonBackgroundColor,
 		buttonHeight,
 		buttonHeightUnit,
 		buttonWidth,
@@ -454,6 +460,37 @@ const edit = (props) => {
 	});
 
 	const wrapperStyles = `
+		.${blockId} .ebgb-pricing {
+			text-align: ${contentAlign};
+			${ribbonStyle === "ribbon-4" ? "overflow: hidden;" : ""}
+		}
+
+		.${blockId}.ebgb-pricing-content-left .ebgb-pricing.style-3 .ebgb-pricing-item .header:after, .${blockId}.ebgb-pricing-content-left .ebgb-pricing.style-3 .ebgb-pricing-item .ebgb-pricing-tag:after {
+			transform: translateX(-80%);
+		}
+
+		.${blockId}.ebgb-pricing-content-right .ebgb-pricing.style-3 .ebgb-pricing-item .header:after, .${blockId}.ebgb-pricing-content-right .ebgb-pricing.style-3 .ebgb-pricing-item .ebgb-pricing-tag:after {
+			transform: translateX(80%);
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item.ribbon-1::before {
+			content: "";
+			color: ${ribbonColor};
+			background: ${ribbonBackgroundColor};
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item.ribbon-2::before,
+		.${blockId} .ebgb-pricing .ebgb-pricing-item.ribbon-3::before,
+		.${blockId} .ebgb-pricing .ebgb-pricing-item.ribbon-4::before {
+			content: "${ribbonText}";
+			color: ${ribbonColor};
+			background: ${ribbonBackgroundColor};
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item.ribbon-2::after {
+			border-bottom: 15px solid ${ribbonBackgroundColor};
+		}
+
 		.${blockId} .ebgb-pricing .ebgb-pricing-item {
 			${wrapperPaddingStylesDesktop}
 			${wrapperMarginStylesDesktop}
@@ -461,7 +498,7 @@ const edit = (props) => {
 			${bdShadowStyesDesktop}
 		}
 
-		.${blockId} .ebgb-pricing .ebgb-pricing-item:before {
+		.${blockId} .ebgb-pricing .ebgb-pricing-item::before {
 			${overlyStyles}
 		}
 
@@ -788,7 +825,24 @@ const edit = (props) => {
 			right: 0px;
 			margin: 0 auto;
 			z-index: 1;
-			background: rgba(9, 9, 9, 0.1);
+		}
+
+		.ebgb-pricing.style-3 .ebgb-pricing-item .header:after {
+			position: absolute;
+			content: "";
+			width: 100%;
+			height: 1px;
+			bottom: 0px;
+			left: 0px;
+			right: 0px;
+			margin: 0 auto;
+			z-index: 1;
+			-webkit-transition: 1s;
+			-o-transition: 1s;
+			transition: 1s;
+			-webkit-transform: scaleX(0.4);
+			-ms-transform: scaleX(0.4);
+			transform: scaleX(0.4);
 		}
 	`;
 	}
@@ -796,6 +850,8 @@ const edit = (props) => {
 	const wrapperStylesNew = {
 		overflow: "hidden",
 	};
+	// featured Class
+	const ribbonClass = showRibbon ? ` featured ${ribbonStyle}` : "";
 
 	// all css styles for large screen width (desktop/laptop) in strings ⬇
 	const desktopAllStyles = softMinifyCssStrings(`
@@ -856,6 +912,12 @@ const edit = (props) => {
 	});
 
 	return [
+		<BlockControls>
+			<AlignmentToolbar
+				value={contentAlign}
+				onChange={(contentAlign) => setAttributes({ contentAlign })}
+			/>
+		</BlockControls>,
 		isSelected && (
 			<Inspector attributes={attributes} setAttributes={setAttributes} />
 		),
@@ -888,9 +950,9 @@ const edit = (props) => {
 				 }
 				 `}
 			</style>
-			<div className={blockId}>
+			<div className={`${blockId} ebgb-pricing-content-${contentAlign}`}>
 				<div className={`ebgb-pricing ${pricingStyle}`}>
-					<div className="ebgb-pricing-item">
+					<div className={`ebgb-pricing-item${ribbonClass}`}>
 						{showHeaderIcon && (
 							<div className="ebgb-pricing-icon" data-icon={headerIcon}>
 								<span className="icon">

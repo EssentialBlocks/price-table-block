@@ -5689,8 +5689,8 @@ var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_object
     "default": "Startup"
   },
   defaultSubtitle: {
-    type: "boolean",
-    "default": false
+    type: "boolean" // default: false,
+
   },
   showSubtitle: {
     type: "boolean",
@@ -5703,8 +5703,8 @@ var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_object
     "default": "A tagline here."
   },
   defaultHeaderIcon: {
-    type: "boolean",
-    "default": false
+    type: "boolean" // default: false,
+
   },
   showHeaderIcon: {
     type: "boolean",
@@ -5717,8 +5717,8 @@ var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_object
     "default": "fas fa-home"
   },
   defaultTitleLine: {
-    type: "boolean",
-    "default": false
+    type: "boolean" // default: false,
+
   },
   showTitleLine: {
     type: "boolean",
@@ -5897,6 +5897,30 @@ var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_object
   },
   featuresTextColor: {
     type: "string"
+  },
+  contentAlign: {
+    type: "String",
+    "default": "center"
+  },
+  showRibbon: {
+    type: "boolean",
+    "default": false
+  },
+  ribbonStyle: {
+    type: "string",
+    "default": "ribbon-1"
+  },
+  ribbonText: {
+    type: "string",
+    "default": "featured"
+  },
+  ribbonColor: {
+    type: "string",
+    "default": "#ffffff"
+  },
+  ribbonBackgroundColor: {
+    type: "string",
+    "default": "#00c853"
   }
 }, Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateResponsiveRangeAttributes"])(_constants__WEBPACK_IMPORTED_MODULE_2__["buttonIconSpacing"], {
   defaultRange: 0,
@@ -6359,7 +6383,10 @@ __webpack_require__.r(__webpack_exports__);
  * WordPress dependencies
  */
 var __ = wp.i18n.__;
-var useBlockProps = wp.blockEditor.useBlockProps;
+var _wp$blockEditor = wp.blockEditor,
+    useBlockProps = _wp$blockEditor.useBlockProps,
+    BlockControls = _wp$blockEditor.BlockControls,
+    AlignmentToolbar = _wp$blockEditor.AlignmentToolbar;
 var useEffect = wp.element.useEffect;
 var select = wp.data.select;
 /**
@@ -6422,6 +6449,12 @@ var edit = function edit(props) {
       showIconBackground = attributes.showIconBackground,
       iconColor = attributes.iconColor,
       iconHoverColor = attributes.iconHoverColor,
+      contentAlign = attributes.contentAlign,
+      showRibbon = attributes.showRibbon,
+      ribbonStyle = attributes.ribbonStyle,
+      ribbonText = attributes.ribbonText,
+      ribbonColor = attributes.ribbonColor,
+      ribbonBackgroundColor = attributes.ribbonBackgroundColor,
       buttonHeight = attributes.buttonHeight,
       buttonHeightUnit = attributes.buttonHeightUnit,
       buttonWidth = attributes.buttonWidth,
@@ -6734,18 +6767,20 @@ var edit = function edit(props) {
       iconBorderShadowHoverTab = _generateBorderShadow3.stylesHoverTab,
       iconBorderShadowHoverMobile = _generateBorderShadow3.stylesHoverMobile;
 
-  var wrapperStyles = "\n\t\t.".concat(blockId, " .ebgb-pricing .ebgb-pricing-item {\n\t\t\t").concat(wrapperPaddingStylesDesktop, "\n\t\t\t").concat(wrapperMarginStylesDesktop, "\n\t\t\t").concat(backgroundStylesDesktop, "\n\t\t\t").concat(bdShadowStyesDesktop, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item:before {\n\t\t\t").concat(overlyStyles, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item:hover {\n\t\t\t").concat(bdShadowStylesHoverDesktop, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header {\n\t\t\t").concat(titlePaddingStylesDesktop, "\n\t\t\t").concat(titleMarginStylesDesktop, "\n\t\t\tbackground: ").concat(titleBackgroundColor, ";\n\t\t\tposition: relative;\n\t\t\tz-index: 0;\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-title {\n\t\t\t").concat(titleTypoStylesDesktop, "\n\t\t\tcolor: ").concat(titleTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-subtitle {\n\t\t\t").concat(subtitleTypoStylesDesktop, "\n\t\t\tcolor: ").concat(subtitleTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .original-price {\n\t\t\t").concat(priceTextTypoStylesDesktop, "\n\t\t\tcolor: ").concat(priceTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-currency {\n\t\t\t").concat(priceCurrencyTypoStylesDesktop, "\n\t\t\t").concat(priceCurrencyMarginStylesDesktop, "\n\t\t\tcolor: ").concat(priceCurrencyTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-period {\n\t\t\t").concat(pricePeriodTypoStylesDesktop, "\n\t\t\tcolor: ").concat(pricingPeriodTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price {\n\t\t\t").concat(salePriceTypoStylesDesktop, "\n\t\t\tcolor: ").concat(salePriceTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price .price-currency {\n\t\t\t").concat(salePriceCurrencyTypoStylesDesktop, "\n\t\t\t").concat(salePriceMarginStylesDesktop, "\n\t\t\tcolor: ").concat(salepriceCurrencyTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li, .").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li a {\n\t\t\t").concat(featuresTypoStylesDesktop, "\n\t\t\tcolor: ").concat(featuresTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li .ebgb-pricebox-icon {\n\t\t\t").concat(featuresIconSizeDesktop, "\n\t\t\tmargin-right: 8px;\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button-wrapper {\n\t\t\t").concat(buttonMarginStylesDesktop, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button {\n\t\t\t").concat(buttonPaddingStylesDesktop, "\n\t\t\t").concat(buttonTypoStylesDesktop, "\n\t\t\t").concat(buttonBackgroundStyleDesktop, "\n\t\t\t").concat(btnShadowStyesDesktop, "\n\t\t\tcolor: ").concat(buttonTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button:hover {\n\t\t\t").concat(btnShadowStylesHoverDesktop, "\n\t\t\tcolor: ").concat(hoverTextColor, ";\n\t\t\tbackground-color: ").concat(hoverBackgroundColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button i {\n\t\t\t").concat(buttonIconPosition === "left" ? buttonIconSpaceRightDesktop : buttonIconSpaceLeftDesktop, "\n\t\t\t").concat(buttonIconSizeDesktop, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon {\n\t\t\t").concat(headerIconWidthDesktop, "\n\t\t\t").concat(headerIconHeightDesktop, "\n\t\t\t").concat(iconBorderShadowDesktop, "\n\t\t\t").concat(showIconBackground ? "background-color: " + iconBackgroundColor + ";" : "background-color: transparent;", "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon:hover {\n\t\t\t").concat(iconBorderShadowHoverDesktop, "\n\t\t\t").concat(showIconBackground ? "background-color: " + iconBackgroundHoverColor + ";" : "background-color: transparent;", "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon i {\n\t\t\t").concat(headerIconSizeDesktop, "\n\t\t\tcolor: ").concat(iconColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon i:hover {\n\t\t\tcolor: ").concat(iconHoverColor, ";\n\t\t}\n\n\t\t\n \t\t\n\t");
+  var wrapperStyles = "\n\t\t.".concat(blockId, " .ebgb-pricing {\n\t\t\ttext-align: ").concat(contentAlign, ";\n\t\t\t").concat(ribbonStyle === "ribbon-4" ? "overflow: hidden;" : "", "\n\t\t}\n\n\t\t.").concat(blockId, ".ebgb-pricing-content-left .ebgb-pricing.style-3 .ebgb-pricing-item .header:after, .").concat(blockId, ".ebgb-pricing-content-left .ebgb-pricing.style-3 .ebgb-pricing-item .ebgb-pricing-tag:after {\n\t\t\ttransform: translateX(-80%);\n\t\t}\n\n\t\t.").concat(blockId, ".ebgb-pricing-content-right .ebgb-pricing.style-3 .ebgb-pricing-item .header:after, .").concat(blockId, ".ebgb-pricing-content-right .ebgb-pricing.style-3 .ebgb-pricing-item .ebgb-pricing-tag:after {\n\t\t\ttransform: translateX(80%);\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item.ribbon-1::before {\n\t\t\tcontent: \"\";\n\t\t\tcolor: ").concat(ribbonColor, ";\n\t\t\tbackground: ").concat(ribbonBackgroundColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item.ribbon-2::before,\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item.ribbon-3::before,\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item.ribbon-4::before {\n\t\t\tcontent: \"").concat(ribbonText, "\";\n\t\t\tcolor: ").concat(ribbonColor, ";\n\t\t\tbackground: ").concat(ribbonBackgroundColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item.ribbon-2::after {\n\t\t\tborder-bottom: 15px solid ").concat(ribbonBackgroundColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item {\n\t\t\t").concat(wrapperPaddingStylesDesktop, "\n\t\t\t").concat(wrapperMarginStylesDesktop, "\n\t\t\t").concat(backgroundStylesDesktop, "\n\t\t\t").concat(bdShadowStyesDesktop, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item::before {\n\t\t\t").concat(overlyStyles, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item:hover {\n\t\t\t").concat(bdShadowStylesHoverDesktop, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header {\n\t\t\t").concat(titlePaddingStylesDesktop, "\n\t\t\t").concat(titleMarginStylesDesktop, "\n\t\t\tbackground: ").concat(titleBackgroundColor, ";\n\t\t\tposition: relative;\n\t\t\tz-index: 0;\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-title {\n\t\t\t").concat(titleTypoStylesDesktop, "\n\t\t\tcolor: ").concat(titleTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-subtitle {\n\t\t\t").concat(subtitleTypoStylesDesktop, "\n\t\t\tcolor: ").concat(subtitleTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .original-price {\n\t\t\t").concat(priceTextTypoStylesDesktop, "\n\t\t\tcolor: ").concat(priceTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-currency {\n\t\t\t").concat(priceCurrencyTypoStylesDesktop, "\n\t\t\t").concat(priceCurrencyMarginStylesDesktop, "\n\t\t\tcolor: ").concat(priceCurrencyTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-period {\n\t\t\t").concat(pricePeriodTypoStylesDesktop, "\n\t\t\tcolor: ").concat(pricingPeriodTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price {\n\t\t\t").concat(salePriceTypoStylesDesktop, "\n\t\t\tcolor: ").concat(salePriceTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price .price-currency {\n\t\t\t").concat(salePriceCurrencyTypoStylesDesktop, "\n\t\t\t").concat(salePriceMarginStylesDesktop, "\n\t\t\tcolor: ").concat(salepriceCurrencyTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li, .").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li a {\n\t\t\t").concat(featuresTypoStylesDesktop, "\n\t\t\tcolor: ").concat(featuresTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li .ebgb-pricebox-icon {\n\t\t\t").concat(featuresIconSizeDesktop, "\n\t\t\tmargin-right: 8px;\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button-wrapper {\n\t\t\t").concat(buttonMarginStylesDesktop, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button {\n\t\t\t").concat(buttonPaddingStylesDesktop, "\n\t\t\t").concat(buttonTypoStylesDesktop, "\n\t\t\t").concat(buttonBackgroundStyleDesktop, "\n\t\t\t").concat(btnShadowStyesDesktop, "\n\t\t\tcolor: ").concat(buttonTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button:hover {\n\t\t\t").concat(btnShadowStylesHoverDesktop, "\n\t\t\tcolor: ").concat(hoverTextColor, ";\n\t\t\tbackground-color: ").concat(hoverBackgroundColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button i {\n\t\t\t").concat(buttonIconPosition === "left" ? buttonIconSpaceRightDesktop : buttonIconSpaceLeftDesktop, "\n\t\t\t").concat(buttonIconSizeDesktop, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon {\n\t\t\t").concat(headerIconWidthDesktop, "\n\t\t\t").concat(headerIconHeightDesktop, "\n\t\t\t").concat(iconBorderShadowDesktop, "\n\t\t\t").concat(showIconBackground ? "background-color: " + iconBackgroundColor + ";" : "background-color: transparent;", "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon:hover {\n\t\t\t").concat(iconBorderShadowHoverDesktop, "\n\t\t\t").concat(showIconBackground ? "background-color: " + iconBackgroundHoverColor + ";" : "background-color: transparent;", "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon i {\n\t\t\t").concat(headerIconSizeDesktop, "\n\t\t\tcolor: ").concat(iconColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon i:hover {\n\t\t\tcolor: ").concat(iconHoverColor, ";\n\t\t}\n\n\t\t\n \t\t\n\t");
   var wrapperStylesTab = "\n\t\t.".concat(blockId, " .ebgb-pricing .ebgb-pricing-item {\n\t\t\t").concat(wrapperPaddingStylesTab, "\n\t\t\t").concat(wrapperMarginStylesTab, "\n\t\t\t").concat(backgroundStylesTab, "\n\t\t\t").concat(bdShadowStyesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item:hover {\n\t\t\t").concat(bdShadowStylesHoverTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header {\n\t\t\t").concat(titlePaddingStylesTab, "\n\t\t\t").concat(titleMarginStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-title {\n\t\t\t").concat(titleTypoStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-subtitle {\n\t\t\t").concat(subtitleTypoStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .original-price {\n\t\t\t").concat(priceTextTypoStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-currency {\n\t\t\t").concat(priceCurrencyTypoStylesTab, "\n\t\t\t").concat(priceCurrencyMarginStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-period {\n\t\t\t").concat(pricePeriodTypoStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price {\n\t\t\t").concat(salePriceTypoStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price .price-currency {\n\t\t\t").concat(salePriceCurrencyTypoStylesTab, "\n\t\t\t").concat(salePriceMarginStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li {\n\t\t\t").concat(featuresTypoStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li .ebgb-pricebox-icon {\n\t\t\t").concat(featuresIconSizeTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button-wrapper {\n\t\t\t").concat(buttonMarginStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button {\n\t\t\t").concat(buttonPaddingStylesTab, "\n\t\t\t").concat(buttonTypoStylesTab, "\n\t\t\t").concat(buttonBackgroundStyleTab, "\n\t\t\t").concat(btnShadowStyesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button:hover {\n\t\t\t").concat(btnShadowStylesHoverTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button i {\n\t\t\t").concat(buttonIconPosition === "left" ? buttonIconSpaceRightTab : buttonIconSpaceLeftTab, "\n\t\t\t").concat(buttonIconSizeTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon {\n\t\t\t").concat(headerIconWidthTab, "\n\t\t\t").concat(headerIconHeightTab, "\n\t\t\t").concat(iconBorderShadowTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon:hover {\n\t\t\t").concat(iconBorderShadowHoverTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon i {\n\t\t\t").concat(headerIconSizeTab, "\n\t\t}\n\t");
   var wrapperStylesMobile = "\n\t\t.".concat(blockId, " .ebgb-pricing .ebgb-pricing-item {\n\t\t\t").concat(wrapperPaddingStylesMobile, "\n\t\t\t").concat(wrapperMarginStylesMobile, "\n\t\t\t").concat(backgroundStylesMobile, "\n\t\t\t").concat(bdShadowStyesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item:hover {\n\t\t\t").concat(bdShadowStylesHoverMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header {\n\t\t\t").concat(titlePaddingStylesMobile, "\n\t\t\t").concat(titleMarginStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-title {\n\t\t\t").concat(titleTypoStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-subtitle {\n\t\t\t").concat(subtitleTypoStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .original-price {\n\t\t\t").concat(priceTextTypoStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-currency {\n\t\t\t").concat(priceCurrencyTypoStylesMobile, "\n\t\t\t").concat(priceCurrencyMarginStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-period {\n\t\t\t").concat(pricePeriodTypoStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price {\n\t\t\t").concat(salePriceTypoStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price .price-currency {\n\t\t\t").concat(salePriceCurrencyTypoStylesMobile, "\n\t\t\t").concat(salePriceMarginStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li {\n\t\t\t").concat(featuresTypoStylesMobile, "\n\t\t}\n\t\t\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li .ebgb-pricebox-icon {\n\t\t\t").concat(featuresIconSizeMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button-wrapper {\n\t\t\t").concat(buttonMarginStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button {\n\t\t\t").concat(buttonPaddingStylesMobile, "\n\t\t\t").concat(buttonTypoStylesMobile, "\n\t\t\t").concat(buttonBackgroundStyleMobile, "\n\t\t\t").concat(btnShadowStyesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button:hover {\n\t\t\t").concat(btnShadowStylesHoverMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button i {\n\t\t\t").concat(buttonIconPosition === "left" ? buttonIconSpaceRightMobile : buttonIconSpaceLeftMobile, "\n\t\t\t").concat(buttonIconSizeMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon {\n\t\t\t").concat(headerIconWidthMobile, "\n\t\t\t").concat(headerIconHeightMobile, "\n\t\t\t").concat(iconBorderShadowMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon:hover {\n\t\t\t").concat(iconBorderShadowHoverMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon i {\n\t\t\t").concat(headerIconSizeMobile, "\n\t\t}\n\t");
   var titleLineStyle = "";
 
   if (showTitleLine) {
-    titleLineStyle = "\n\t\t.".concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header::after {\n\t\t\tbackground: ").concat(titleLineColor, "\n\t\t}\n\n\t\t.ebgb-pricing .ebgb-pricing-item .header::after {\n\t\t\tcontent: \"\";\n\t\t\tposition: absolute;\n\t\t\twidth: 140px;\n\t\t\theight: 1px;\n\t\t\tbottom: 0px;\n\t\t\tleft: 0px;\n\t\t\tright: 0px;\n\t\t\tmargin: 0 auto;\n\t\t\tz-index: 1;\n\t\t\tbackground: rgba(9, 9, 9, 0.1);\n\t\t}\n\t");
+    titleLineStyle = "\n\t\t.".concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header::after {\n\t\t\tbackground: ").concat(titleLineColor, "\n\t\t}\n\n\t\t.ebgb-pricing .ebgb-pricing-item .header::after {\n\t\t\tcontent: \"\";\n\t\t\tposition: absolute;\n\t\t\twidth: 140px;\n\t\t\theight: 1px;\n\t\t\tbottom: 0px;\n\t\t\tleft: 0px;\n\t\t\tright: 0px;\n\t\t\tmargin: 0 auto;\n\t\t\tz-index: 1;\n\t\t}\n\n\t\t.ebgb-pricing.style-3 .ebgb-pricing-item .header:after {\n\t\t\tposition: absolute;\n\t\t\tcontent: \"\";\n\t\t\twidth: 100%;\n\t\t\theight: 1px;\n\t\t\tbottom: 0px;\n\t\t\tleft: 0px;\n\t\t\tright: 0px;\n\t\t\tmargin: 0 auto;\n\t\t\tz-index: 1;\n\t\t\t-webkit-transition: 1s;\n\t\t\t-o-transition: 1s;\n\t\t\ttransition: 1s;\n\t\t\t-webkit-transform: scaleX(0.4);\n\t\t\t-ms-transform: scaleX(0.4);\n\t\t\ttransform: scaleX(0.4);\n\t\t}\n\t");
   }
 
   var wrapperStylesNew = {
     overflow: "hidden"
-  }; // all css styles for large screen width (desktop/laptop) in strings ⬇
+  }; // featured Class
+
+  var ribbonClass = showRibbon ? " featured ".concat(ribbonStyle) : ""; // all css styles for large screen width (desktop/laptop) in strings ⬇
 
   var desktopAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["softMinifyCssStrings"])("\n\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(wrapperStyles) ? wrapperStyles : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(titleLineStyle) ? titleLineStyle : " ", "\n\t")); // all css styles for Tab in strings ⬇
 
@@ -6793,15 +6828,22 @@ var edit = function edit(props) {
   var blockProps = useBlockProps({
     className: "eb-guten-block-main-parent-wrapper"
   });
-  return [isSelected && /*#__PURE__*/React.createElement(_inspector__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return [/*#__PURE__*/React.createElement(BlockControls, null, /*#__PURE__*/React.createElement(AlignmentToolbar, {
+    value: contentAlign,
+    onChange: function onChange(contentAlign) {
+      return setAttributes({
+        contentAlign: contentAlign
+      });
+    }
+  })), isSelected && /*#__PURE__*/React.createElement(_inspector__WEBPACK_IMPORTED_MODULE_1__["default"], {
     attributes: attributes,
     setAttributes: setAttributes
   }), /*#__PURE__*/React.createElement("div", blockProps, /*#__PURE__*/React.createElement("style", null, "\n\t\t\t\t ".concat(desktopAllStyles, "\n \n\t\t\t\t /* mimmikcssStart */\n \n\t\t\t\t ").concat(resOption === "Tablet" ? tabAllStyles : " ", "\n\t\t\t\t ").concat(resOption === "Mobile" ? tabAllStyles + mobileAllStyles : " ", "\n \n\t\t\t\t /* mimmikcssEnd */\n \n\t\t\t\t @media all and (max-width: 1024px) {\t\n \n\t\t\t\t\t /* tabcssStart */\t\t\t\n\t\t\t\t\t ").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["softMinifyCssStrings"])(tabAllStyles), "\n\t\t\t\t\t /* tabcssEnd */\t\t\t\n\t\t\t\t \n\t\t\t\t }\n\t\t\t\t \n\t\t\t\t @media all and (max-width: 767px) {\n\t\t\t\t\t \n\t\t\t\t\t /* mobcssStart */\t\t\t\n\t\t\t\t\t ").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["softMinifyCssStrings"])(mobileAllStyles), "\n\t\t\t\t\t /* mobcssEnd */\t\t\t\n\t\t\t\t \n\t\t\t\t }\n\t\t\t\t ")), /*#__PURE__*/React.createElement("div", {
-    className: blockId
+    className: "".concat(blockId, " ebgb-pricing-content-").concat(contentAlign)
   }, /*#__PURE__*/React.createElement("div", {
     className: "ebgb-pricing ".concat(pricingStyle)
   }, /*#__PURE__*/React.createElement("div", {
-    className: "ebgb-pricing-item"
+    className: "ebgb-pricing-item".concat(ribbonClass)
   }, showHeaderIcon && /*#__PURE__*/React.createElement("div", {
     className: "ebgb-pricing-icon",
     "data-icon": headerIcon
@@ -7069,22 +7111,16 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
  * WordPress dependencies
  */
 var __ = wp.i18n.__;
-var _wp$element = wp.element,
-    Component = _wp$element.Component,
-    useEffect = _wp$element.useEffect;
-var _wp$blockEditor = wp.blockEditor,
-    InspectorControls = _wp$blockEditor.InspectorControls,
-    PanelColorSettings = _wp$blockEditor.PanelColorSettings;
+var useEffect = wp.element.useEffect;
+var InspectorControls = wp.blockEditor.InspectorControls;
 var select = wp.data.select;
 var _wp$components = wp.components,
     PanelBody = _wp$components.PanelBody,
     ToggleControl = _wp$components.ToggleControl,
-    RangeControl = _wp$components.RangeControl,
     SelectControl = _wp$components.SelectControl,
     TextControl = _wp$components.TextControl,
     Button = _wp$components.Button,
-    BaseControl = _wp$components.BaseControl,
-    Dropdown = _wp$components.Dropdown;
+    BaseControl = _wp$components.BaseControl;
 /**
  * Internal dependencies
  */
@@ -7148,6 +7184,11 @@ var Inspector = function Inspector(_ref) {
       salepriceCurrencyTextColor = attributes.salepriceCurrencyTextColor,
       pricingPeriodTextColor = attributes.pricingPeriodTextColor,
       featuresTextColor = attributes.featuresTextColor,
+      showRibbon = attributes.showRibbon,
+      ribbonStyle = attributes.ribbonStyle,
+      ribbonText = attributes.ribbonText,
+      ribbonColor = attributes.ribbonColor,
+      ribbonBackgroundColor = attributes.ribbonBackgroundColor,
       hoverBackgroundColor = attributes.hoverBackgroundColor; // this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class only the first time once
 
   useEffect(function () {
@@ -7192,14 +7233,77 @@ var Inspector = function Inspector(_ref) {
     });
   };
 
-  useEffect(function () {
+  console.log("normal", pricingStyle, showSubtitle, defaultSubtitle); // useEffect(() => {
+  // 	console.log(
+  // 		"pricing style changed!!!",
+  // 		pricingStyle,
+  // 		showSubtitle,
+  // 		defaultSubtitle
+  // 	);
+  // 	switch (pricingStyle) {
+  // 		case "style-1":
+  // 			setAttributes({
+  // 				showSubtitle: false,
+  // 				showHeaderIcon: false,
+  // 				// showTitleLine: true,
+  // 				// showIconBackground: false,
+  // 			});
+  // 			defaultSubtitle ? setAttributes({ showSubtitle: true }) : "";
+  // 			defaultHeaderIcon
+  // 				? setAttributes({ showHeaderIcon: true })
+  // 				: setAttributes({ showHeaderIcon: false });
+  // 			// defaultTitleLine ? setAttributes({ showTitleLine: false }) : "";
+  // 			// defaultIconBackground
+  // 			// 	? setAttributes({ showIconBackground: true })
+  // 			// 	: "";
+  // 			break;
+  // 		case "style-2":
+  // 			setAttributes({
+  // 				showSubtitle: true,
+  // 				showHeaderIcon: true,
+  // 				// showTitleLine: false,
+  // 				// showIconBackground: true,
+  // 			});
+  // 			// defaultSubtitle ? setAttributes({ showSubtitle: true }) : "";
+  // 			defaultHeaderIcon
+  // 				? setAttributes({ showHeaderIcon: true })
+  // 				: setAttributes({ showHeaderIcon: false });
+  // 			// defaultTitleLine ? setAttributes({ showTitleLine: false }) : "";
+  // 			// defaultIconBackground
+  // 			// 	? setAttributes({ showIconBackground: true })
+  // 			// 	: "";
+  // 			break;
+  // 		case "style-3":
+  // 			setAttributes({
+  // 				showSubtitle: false,
+  // 				showHeaderIcon: false,
+  // 				// showTitleLine: true,
+  // 				// showIconBackground: false,
+  // 			});
+  // 			defaultSubtitle ? setAttributes({ showSubtitle: true }) : "";
+  // 			defaultHeaderIcon
+  // 				? setAttributes({ showHeaderIcon: true })
+  // 				: setAttributes({ showHeaderIcon: false });
+  // 			// defaultTitleLine ? setAttributes({ showTitleLine: false }) : "";
+  // 			// defaultIconBackground
+  // 			// 	? setAttributes({ showIconBackground: true })
+  // 			// 	: "";
+  // 			break;
+  // 	}
+  // }, [pricingStyle]);
+
+  var handlePricingStyle = function handlePricingStyle(pricingStyle) {
+    console.log("pricing style changed!!!", showSubtitle, defaultSubtitle);
+    setAttributes({
+      pricingStyle: pricingStyle
+    });
+
     switch (pricingStyle) {
       case "style-1":
         setAttributes({
           showSubtitle: false,
-          showHeaderIcon: false,
-          showTitleLine: true,
-          showIconBackground: false
+          showHeaderIcon: false // showTitleLine: true,
+
         });
         defaultSubtitle ? setAttributes({
           showSubtitle: true
@@ -7207,24 +7311,42 @@ var Inspector = function Inspector(_ref) {
         defaultHeaderIcon ? setAttributes({
           showHeaderIcon: true
         }) : "";
-        defaultIconBackground ? setAttributes({
-          showIconBackground: true
+        defaultTitleLine === undefined ? setAttributes({
+          showTitleLine: true
         }) : "";
         break;
 
       case "style-2":
-        setAttributes({
-          showSubtitle: true,
-          showHeaderIcon: true,
-          showTitleLine: false,
-          showIconBackground: true
-        });
-        defaultTitleLine ? setAttributes({
+        defaultSubtitle === undefined ? setAttributes({
+          showSubtitle: true
+        }) : "";
+        defaultHeaderIcon === undefined ? setAttributes({
+          showHeaderIcon: true
+        }) : "";
+        defaultTitleLine === undefined ? setAttributes({
           showTitleLine: false
         }) : "";
         break;
+
+      case "style-3":
+        setAttributes({
+          showSubtitle: false,
+          showHeaderIcon: false // showTitleLine: true,
+
+        });
+        defaultSubtitle ? setAttributes({
+          showSubtitle: true
+        }) : "";
+        defaultHeaderIcon ? setAttributes({
+          showHeaderIcon: true
+        }) : "";
+        defaultTitleLine === undefined ? setAttributes({
+          showTitleLine: true
+        }) : "";
+        break;
     }
-  }, [pricingStyle]);
+  };
+
   return /*#__PURE__*/React.createElement(InspectorControls, {
     key: "controls"
   }, /*#__PURE__*/React.createElement("span", {
@@ -7243,11 +7365,12 @@ var Inspector = function Inspector(_ref) {
     }, {
       label: "Style 3",
       value: "style-3"
-    }],
+    }] // onChange={(pricingStyle) => {
+    // 	setAttributes({ pricingStyle });
+    // }}
+    ,
     onChange: function onChange(pricingStyle) {
-      setAttributes({
-        pricingStyle: pricingStyle
-      });
+      return handlePricingStyle(pricingStyle);
     }
   }), /*#__PURE__*/React.createElement(TextControl, {
     label: __("Title"),
@@ -7746,7 +7869,63 @@ var Inspector = function Inspector(_ref) {
     controlName: _constants__WEBPACK_IMPORTED_MODULE_0__["iconBorderShadow"],
     resRequiredProps: resRequiredProps,
     noShadow: true
-  }))));
+  })), /*#__PURE__*/React.createElement(PanelBody, {
+    title: __("Ribbon"),
+    initialOpen: false
+  }, /*#__PURE__*/React.createElement(ToggleControl, {
+    label: __("Featured"),
+    checked: showRibbon,
+    onChange: function onChange() {
+      setAttributes({
+        showRibbon: !showRibbon
+      });
+    }
+  }), showRibbon && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(SelectControl, {
+    label: __("Ribbon Style"),
+    value: ribbonStyle,
+    options: [{
+      label: "Style 1",
+      value: "ribbon-1"
+    }, {
+      label: "Style 2",
+      value: "ribbon-2"
+    }, {
+      label: "Style 3",
+      value: "ribbon-3"
+    }, {
+      label: "Style 4",
+      value: "ribbon-4"
+    }],
+    onChange: function onChange(ribbonStyle) {
+      setAttributes({
+        ribbonStyle: ribbonStyle
+      });
+    }
+  }), ribbonStyle !== "ribbon-1" && /*#__PURE__*/React.createElement(TextControl, {
+    label: __("Featured Tag Text"),
+    value: ribbonText,
+    onChange: function onChange(ribbonText) {
+      return setAttributes({
+        ribbonText: ribbonText
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    label: __("Color"),
+    color: ribbonColor,
+    onChange: function onChange(ribbonColor) {
+      return setAttributes({
+        ribbonColor: ribbonColor
+      });
+    }
+  }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    label: __("Background Color"),
+    color: ribbonBackgroundColor,
+    onChange: function onChange(ribbonBackgroundColor) {
+      return setAttributes({
+        ribbonBackgroundColor: ribbonBackgroundColor
+      });
+    }
+  })))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Inspector);
