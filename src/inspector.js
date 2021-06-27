@@ -168,78 +168,13 @@ const Inspector = ({ attributes, setAttributes }) => {
 		setAttributes({ features });
 	};
 
-	console.log("normal", pricingStyle, showSubtitle, defaultSubtitle);
-
-	// useEffect(() => {
-	// 	console.log(
-	// 		"pricing style changed!!!",
-	// 		pricingStyle,
-	// 		showSubtitle,
-	// 		defaultSubtitle
-	// 	);
-	// 	switch (pricingStyle) {
-	// 		case "style-1":
-	// 			setAttributes({
-	// 				showSubtitle: false,
-	// 				showHeaderIcon: false,
-	// 				// showTitleLine: true,
-	// 				// showIconBackground: false,
-	// 			});
-	// 			defaultSubtitle ? setAttributes({ showSubtitle: true }) : "";
-	// 			defaultHeaderIcon
-	// 				? setAttributes({ showHeaderIcon: true })
-	// 				: setAttributes({ showHeaderIcon: false });
-	// 			// defaultTitleLine ? setAttributes({ showTitleLine: false }) : "";
-	// 			// defaultIconBackground
-	// 			// 	? setAttributes({ showIconBackground: true })
-	// 			// 	: "";
-	// 			break;
-
-	// 		case "style-2":
-	// 			setAttributes({
-	// 				showSubtitle: true,
-	// 				showHeaderIcon: true,
-	// 				// showTitleLine: false,
-	// 				// showIconBackground: true,
-	// 			});
-	// 			// defaultSubtitle ? setAttributes({ showSubtitle: true }) : "";
-	// 			defaultHeaderIcon
-	// 				? setAttributes({ showHeaderIcon: true })
-	// 				: setAttributes({ showHeaderIcon: false });
-	// 			// defaultTitleLine ? setAttributes({ showTitleLine: false }) : "";
-	// 			// defaultIconBackground
-	// 			// 	? setAttributes({ showIconBackground: true })
-	// 			// 	: "";
-	// 			break;
-
-	// 		case "style-3":
-	// 			setAttributes({
-	// 				showSubtitle: false,
-	// 				showHeaderIcon: false,
-	// 				// showTitleLine: true,
-	// 				// showIconBackground: false,
-	// 			});
-	// 			defaultSubtitle ? setAttributes({ showSubtitle: true }) : "";
-	// 			defaultHeaderIcon
-	// 				? setAttributes({ showHeaderIcon: true })
-	// 				: setAttributes({ showHeaderIcon: false });
-	// 			// defaultTitleLine ? setAttributes({ showTitleLine: false }) : "";
-	// 			// defaultIconBackground
-	// 			// 	? setAttributes({ showIconBackground: true })
-	// 			// 	: "";
-	// 			break;
-	// 	}
-	// }, [pricingStyle]);
-
 	const handlePricingStyle = (pricingStyle) => {
-		console.log("pricing style changed!!!", showSubtitle, defaultSubtitle);
 		setAttributes({ pricingStyle });
 		switch (pricingStyle) {
 			case "style-1":
 				setAttributes({
 					showSubtitle: false,
 					showHeaderIcon: false,
-					// showTitleLine: true,
 				});
 				defaultSubtitle ? setAttributes({ showSubtitle: true }) : "";
 				defaultHeaderIcon ? setAttributes({ showHeaderIcon: true }) : "";
@@ -264,7 +199,6 @@ const Inspector = ({ attributes, setAttributes }) => {
 				setAttributes({
 					showSubtitle: false,
 					showHeaderIcon: false,
-					// showTitleLine: true,
 				});
 				defaultSubtitle ? setAttributes({ showSubtitle: true }) : "";
 				defaultHeaderIcon ? setAttributes({ showHeaderIcon: true }) : "";
@@ -286,9 +220,6 @@ const Inspector = ({ attributes, setAttributes }) => {
 							{ label: "Style 2", value: "style-2" },
 							{ label: "Style 3", value: "style-3" },
 						]}
-						// onChange={(pricingStyle) => {
-						// 	setAttributes({ pricingStyle });
-						// }}
 						onChange={(pricingStyle) => handlePricingStyle(pricingStyle)}
 					/>
 					<TextControl

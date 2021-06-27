@@ -12,10 +12,6 @@ import "./editor.scss";
 import Inspector from "./inspector";
 
 import {
-	TWOUNITS,
-	FONT_WEIGHT,
-	TEXT_TRANSFORM,
-	TEXT_DECORATION,
 	buttonIconSpacing,
 	buttonIconSize,
 	buttonPadding,
@@ -95,14 +91,10 @@ const edit = (props) => {
 		titleTextColor,
 		titleLineColor,
 		subtitleTextColor,
-		priceBackgroundColor,
 		priceTextColor,
 		priceCurrencyTextColor,
 		pricingPeriodTextColor,
-		featuresBackgroundColor,
-		buttonBackground,
 		buttonTextColor,
-		isHover,
 		hoverBackgroundColor,
 		hoverTextColor,
 		iconBackgroundColor,
@@ -116,54 +108,6 @@ const edit = (props) => {
 		ribbonText,
 		ribbonColor,
 		ribbonBackgroundColor,
-		buttonHeight,
-		buttonHeightUnit,
-		buttonWidth,
-		buttonWidthUnit,
-		buttonBorderStyle,
-		buttonBorderWidth,
-		buttonBorderColor,
-		hoverBorderColor,
-		buttonBorderRadius,
-		buttonBorderRadiusUnit,
-		subtitleFontFamily,
-		subtitleFontSize,
-		subtitleSizeUnit,
-		subtitleFontWeight,
-		subtitleTextDecoration,
-		subtitleLineHeight,
-		subtitleLineHeightUnit,
-		subtitleLetterSpacing,
-		subtitleLetterSpacingUnit,
-		priceFontFamily,
-		priceFontSize,
-		priceSizeUnit,
-		priceFontWeight,
-		priceTextDecoration,
-		priceLineHeight,
-		priceLineHeightUnit,
-		priceLetterSpacing,
-		priceLetterSpacingUnit,
-		featureFontFamily,
-		featureFontSize,
-		featureSizeUnit,
-		featureFontWeight,
-		featureTextTransform,
-		featureTextDecoration,
-		featureLineHeight,
-		featureLineHeightUnit,
-		featureLetterSpacing,
-		featureLetterSpacingUnit,
-		buttonFontFamily,
-		buttonFontSize,
-		buttonSizeUnit,
-		buttonFontWeight,
-		buttonTextDecoration,
-		buttonTextTransform,
-		buttonLineHeight,
-		buttonLineHeightUnit,
-		buttonLetterSpacing,
-		buttonLetterSpacingUnit,
 	} = attributes;
 
 	// wrapper styles css in strings
@@ -588,7 +532,16 @@ const edit = (props) => {
 			${buttonIconSizeDesktop}
 		}
 
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		
 		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon {
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			${headerIconWidthDesktop}
 			${headerIconHeightDesktop}
 			${iconBorderShadowDesktop}
@@ -616,9 +569,6 @@ const edit = (props) => {
 		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon i:hover {
 			color: ${iconHoverColor};
 		}
-
-		
- 		
 	`;
 
 	const wrapperStylesTab = `
@@ -815,7 +765,7 @@ const edit = (props) => {
 			background: ${titleLineColor}
 		}
 
-		.ebgb-pricing .ebgb-pricing-item .header::after {
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .header::after {
 			content: "";
 			position: absolute;
 			width: 140px;
@@ -825,6 +775,16 @@ const edit = (props) => {
 			right: 0px;
 			margin: 0 auto;
 			z-index: 1;
+		}
+
+		.${blockId}.ebgb-pricing-content-left .ebgb-pricing-item .header::after,
+		.${blockId}.ebgb-pricing-content-left .ebgb-pricing-item .ebgb-pricing-tag::after {
+			margin: 0;
+		}
+
+		.${blockId}.ebgb-pricing-content-right .ebgb-pricing-item .header::after,
+		.${blockId}.ebgb-pricing-content-right .ebgb-pricing-item .ebgb-pricing-tag::after {
+			margin: 0 0 0 auto;
 		}
 
 		.ebgb-pricing.style-3 .ebgb-pricing-item .header:after {
@@ -847,10 +807,7 @@ const edit = (props) => {
 	`;
 	}
 
-	const wrapperStylesNew = {
-		overflow: "hidden",
-	};
-	// featured Class
+	// ribbon Class
 	const ribbonClass = showRibbon ? ` featured ${ribbonStyle}` : "";
 
 	// all css styles for large screen width (desktop/laptop) in strings ⬇

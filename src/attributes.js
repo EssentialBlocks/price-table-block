@@ -59,7 +59,6 @@ const attributes = {
 	},
 	defaultSubtitle: {
 		type: "boolean",
-		// default: false,
 	},
 	showSubtitle: {
 		type: "boolean",
@@ -73,7 +72,6 @@ const attributes = {
 	},
 	defaultHeaderIcon: {
 		type: "boolean",
-		// default: false,
 	},
 	showHeaderIcon: {
 		type: "boolean",
@@ -87,7 +85,6 @@ const attributes = {
 	},
 	defaultTitleLine: {
 		type: "boolean",
-		// default: false,
 	},
 	showTitleLine: {
 		type: "boolean",
@@ -224,7 +221,6 @@ const attributes = {
 	},
 	titleBackgroundColor: {
 		type: "string",
-		// default: "#C8E6C9",
 	},
 	subtitleTextColor: {
 		type: "string",
@@ -240,11 +236,9 @@ const attributes = {
 	},
 	iconBackgroundColor: {
 		type: "string",
-		// default: "#C8E6C9",
 	},
 	iconBackgroundHoverColor: {
 		type: "string",
-		// default: "#C8E6C9",
 	},
 	iconColor: {
 		type: "string",
@@ -296,6 +290,20 @@ const attributes = {
 		type: "string",
 		default: "#00c853",
 	},
+	buttonTextColor: {
+		type: "string",
+		default: "#ffffff",
+	},
+	hoverBackgroundColor: {
+		type: "string",
+	},
+	hoverTextColor: {
+		type: "string",
+	},
+	buttonURL: {
+		type: "string",
+		default: "#",
+	},
 	...generateResponsiveRangeAttributes(buttonIconSpacing, {
 		defaultRange: 0,
 		noUnits: true,
@@ -336,263 +344,6 @@ const attributes = {
 	...generateBorderShadowAttributes(wrapperBorderShadow),
 	...generateBorderShadowAttributes(iconBorderShadow),
 	// new attributes end
-
-	priceboxBackground: {
-		type: "string",
-	},
-	titleTag: {
-		type: "string",
-		default: "h3",
-	},
-	displaySubtitle: {
-		type: "boolean",
-		default: false,
-	},
-	displayPriceDetails: {
-		type: "boolean",
-		default: false,
-	},
-	priceDetails: {
-		type: "string",
-		source: "text",
-		selector: ".eb-pricebox-price-details",
-	},
-	priceBackgroundColor: {
-		type: "string",
-	},
-	featuresBackgroundColor: {
-		type: "string",
-	},
-
-	buttonSize: {
-		type: "string",
-	},
-	buttonFontSize: {
-		type: "number",
-	},
-	buttonBackground: {
-		type: "string",
-	},
-	buttonTextColor: {
-		type: "string",
-		default: "#ffffff",
-	},
-	hoverBackgroundColor: {
-		type: "string",
-	},
-	hoverTextColor: {
-		type: "string",
-	},
-	buttonURL: {
-		type: "string",
-		default: "#",
-	},
-	featureFontSize: {
-		type: "number",
-	},
-	linkedMargin: {
-		type: "boolean",
-		default: false,
-	},
-	marginTop: {
-		type: "number",
-	},
-	marginRight: {
-		type: "number",
-	},
-	marginBottom: {
-		type: "number",
-	},
-	marginLeft: {
-		type: "number",
-	},
-	linkedPadding: {
-		type: "boolean",
-		default: false,
-	},
-	paddingTop: {
-		type: "number",
-	},
-	paddingRight: {
-		type: "number",
-	},
-	paddingBottom: {
-		type: "number",
-	},
-	paddingLeft: {
-		type: "number",
-	},
-	isHover: {
-		type: "boolean",
-		default: false,
-	},
-	marginUnit: {
-		type: "string",
-		default: "px",
-	},
-	paddingUnit: {
-		type: "string",
-		default: "px",
-	},
-	iconSizeUnit: {
-		type: "string",
-		default: "px",
-	},
-	priceSizeUnit: {
-		type: "string",
-		default: "px",
-	},
-	featureSizeUnit: {
-		type: "string",
-		default: "px",
-	},
-	buttonSizeUnit: {
-		type: "string",
-		default: "px",
-	},
-	buttonHeight: {
-		type: "number",
-	},
-	buttonHeightUnit: {
-		type: "string",
-		default: "px",
-	},
-	buttonWidth: {
-		type: "number",
-	},
-	buttonWidthUnit: {
-		type: "string",
-		default: "px",
-	},
-	buttonBorderStyle: {
-		type: "string",
-		default: "solid",
-	},
-	buttonBorderWidth: {
-		type: "number",
-	},
-	hoverBorderColor: {
-		type: "string",
-	},
-	buttonBorderRadius: {
-		type: "number",
-	},
-	buttonBorderRadiusUnit: {
-		type: "string",
-		default: "px",
-	},
-	subtitleFontFamily: {
-		type: "string",
-	},
-	subtitleFontSize: {
-		type: "number",
-	},
-	subtitleSizeUnit: {
-		type: "string",
-		default: "px",
-	},
-	subtitleFontWeight: {
-		type: "string",
-		default: "normal",
-	},
-	subtitleTextTransform: {
-		type: "string",
-	},
-	subtitleTextDecoration: {
-		type: "string",
-	},
-	subtitleLineHeight: {
-		type: "number",
-	},
-	subtitleLineHeightUnit: {
-		type: "string",
-		default: "px",
-	},
-	subtitleLetterSpacing: {
-		type: "number",
-	},
-	subtitleLetterSpacingUnit: {
-		type: "string",
-		default: "px",
-	},
-	priceFontFamily: {
-		type: "string",
-	},
-	priceFontWeight: {
-		type: "string",
-		default: "normal",
-	},
-	priceTextDecoration: {
-		type: "string",
-	},
-	priceLineHeight: {
-		type: "number",
-	},
-	priceLineHeightUnit: {
-		type: "string",
-		default: "px",
-	},
-	priceLetterSpacing: {
-		type: "number",
-	},
-	priceLetterSpacingUnit: {
-		type: "string",
-		default: "px",
-	},
-	featureFontFamily: {
-		type: "string",
-	},
-	featureFontWeight: {
-		type: "string",
-		default: "normal",
-	},
-	featureTextTransform: {
-		type: "string",
-	},
-	featureTextDecoration: {
-		type: "string",
-	},
-	featureLineHeight: {
-		type: "number",
-	},
-	featureLineHeightUnit: {
-		type: "string",
-		default: "px",
-	},
-	featureLetterSpacing: {
-		type: "number",
-	},
-	featureLetterSpacingUnit: {
-		type: "string",
-		default: "px",
-	},
-	buttonFontFamily: {
-		type: "string",
-	},
-	buttonFontWeight: {
-		type: "string",
-		default: "normal",
-	},
-	buttonTextTransform: {
-		type: "string",
-	},
-	buttonTextDecoration: {
-		type: "string",
-	},
-	buttonLineHeight: {
-		type: "number",
-	},
-	buttonLineHeightUnit: {
-		type: "string",
-		default: "px",
-	},
-	buttonLetterSpacing: {
-		type: "number",
-	},
-	buttonLetterSpacingUnit: {
-		type: "string",
-		default: "px",
-	},
 };
 
 export default attributes;
