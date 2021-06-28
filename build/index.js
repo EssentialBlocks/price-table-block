@@ -6225,10 +6225,18 @@ var edit = function edit(props) {
     attributes: attributes,
     controlName: _constants__WEBPACK_IMPORTED_MODULE_2__["priceTableBackground"]
   }),
-      backgroundStylesDesktop = _generateBackgroundCo.backgroundStylesDesktop,
-      backgroundStylesTab = _generateBackgroundCo.backgroundStylesTab,
-      backgroundStylesMobile = _generateBackgroundCo.backgroundStylesMobile,
-      overlyStyles = _generateBackgroundCo.overlyStyles;
+      priceTableBackgroundStylesDesktop = _generateBackgroundCo.backgroundStylesDesktop,
+      priceTableHoverBackgroundStylesDesktop = _generateBackgroundCo.hoverBackgroundStylesDesktop,
+      priceTableBackgroundStylesTab = _generateBackgroundCo.backgroundStylesTab,
+      priceTableHoverBackgroundStylesTab = _generateBackgroundCo.hoverBackgroundStylesTab,
+      priceTableBackgroundStylesMobile = _generateBackgroundCo.backgroundStylesMobile,
+      priceTableHoverBackgroundStylesMobile = _generateBackgroundCo.hoverBackgroundStylesMobile,
+      priceTableOverlayStylesDesktop = _generateBackgroundCo.overlayStylesDesktop,
+      priceTableHoverOverlayStylesDesktop = _generateBackgroundCo.hoverOverlayStylesDesktop,
+      priceTableOverlayStylesTab = _generateBackgroundCo.overlayStylesTab,
+      priceTableHoverOverlayStylesTab = _generateBackgroundCo.hoverOverlayStylesTab,
+      priceTableOverlayStylesMobile = _generateBackgroundCo.overlayStylesMobile,
+      priceTableHoverOverlayStylesMobile = _generateBackgroundCo.hoverOverlayStylesMobile;
 
   var _generateBorderShadow = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateBorderShadowStyles"])({
     controlName: _constants__WEBPACK_IMPORTED_MODULE_2__["wrapperBorderShadow"],
@@ -6466,9 +6474,9 @@ var edit = function edit(props) {
       iconBorderShadowHoverTab = _generateBorderShadow3.stylesHoverTab,
       iconBorderShadowHoverMobile = _generateBorderShadow3.stylesHoverMobile;
 
-  var wrapperStyles = "\n\t\t.".concat(blockId, " .ebgb-pricing {\n\t\t\ttext-align: ").concat(contentAlign, ";\n\t\t\t").concat(ribbonStyle === "ribbon-4" ? "overflow: hidden;" : "", "\n\t\t}\n\n\t\t.").concat(blockId, ".ebgb-pricing-content-left .ebgb-pricing.style-3 .ebgb-pricing-item .header:after, .").concat(blockId, ".ebgb-pricing-content-left .ebgb-pricing.style-3 .ebgb-pricing-item .ebgb-pricing-tag:after {\n\t\t\ttransform: translateX(-80%);\n\t\t}\n\n\t\t.").concat(blockId, ".ebgb-pricing-content-right .ebgb-pricing.style-3 .ebgb-pricing-item .header:after, .").concat(blockId, ".ebgb-pricing-content-right .ebgb-pricing.style-3 .ebgb-pricing-item .ebgb-pricing-tag:after {\n\t\t\ttransform: translateX(80%);\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item.ribbon-1::before {\n\t\t\tcontent: \"\";\n\t\t\tcolor: ").concat(ribbonColor, ";\n\t\t\tbackground: ").concat(ribbonBackgroundColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item.ribbon-2::before,\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item.ribbon-3::before,\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item.ribbon-4::before {\n\t\t\tcontent: \"").concat(ribbonText, "\";\n\t\t\tcolor: ").concat(ribbonColor, ";\n\t\t\tbackground: ").concat(ribbonBackgroundColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item.ribbon-2::after {\n\t\t\tborder-bottom: 15px solid ").concat(ribbonBackgroundColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item {\n\t\t\t").concat(wrapperPaddingStylesDesktop, "\n\t\t\t").concat(wrapperMarginStylesDesktop, "\n\t\t\t").concat(backgroundStylesDesktop, "\n\t\t\t").concat(bdShadowStyesDesktop, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item::before {\n\t\t\t").concat(overlyStyles, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item:hover {\n\t\t\t").concat(bdShadowStylesHoverDesktop, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header {\n\t\t\t").concat(titlePaddingStylesDesktop, "\n\t\t\t").concat(titleMarginStylesDesktop, "\n\t\t\tbackground: ").concat(titleBackgroundColor, ";\n\t\t\tposition: relative;\n\t\t\tz-index: 0;\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-title {\n\t\t\t").concat(titleTypoStylesDesktop, "\n\t\t\tcolor: ").concat(titleTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-subtitle {\n\t\t\t").concat(subtitleTypoStylesDesktop, "\n\t\t\tcolor: ").concat(subtitleTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .original-price {\n\t\t\t").concat(priceTextTypoStylesDesktop, "\n\t\t\tcolor: ").concat(priceTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-currency {\n\t\t\t").concat(priceCurrencyTypoStylesDesktop, "\n\t\t\t").concat(priceCurrencyMarginStylesDesktop, "\n\t\t\tcolor: ").concat(priceCurrencyTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-period {\n\t\t\t").concat(pricePeriodTypoStylesDesktop, "\n\t\t\tcolor: ").concat(pricingPeriodTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price {\n\t\t\t").concat(salePriceTypoStylesDesktop, "\n\t\t\tcolor: ").concat(salePriceTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price .price-currency {\n\t\t\t").concat(salePriceCurrencyTypoStylesDesktop, "\n\t\t\t").concat(salePriceMarginStylesDesktop, "\n\t\t\tcolor: ").concat(salepriceCurrencyTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li, .").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li a {\n\t\t\t").concat(featuresTypoStylesDesktop, "\n\t\t\tcolor: ").concat(featuresTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li .ebgb-pricebox-icon {\n\t\t\t").concat(featuresIconSizeDesktop, "\n\t\t\tmargin-right: 8px;\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button-wrapper {\n\t\t\t").concat(buttonMarginStylesDesktop, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button {\n\t\t\t").concat(buttonPaddingStylesDesktop, "\n\t\t\t").concat(buttonTypoStylesDesktop, "\n\t\t\t").concat(buttonBackgroundStyleDesktop, "\n\t\t\t").concat(btnShadowStyesDesktop, "\n\t\t\tcolor: ").concat(buttonTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button:hover {\n\t\t\t").concat(btnShadowStylesHoverDesktop, "\n\t\t\tcolor: ").concat(hoverTextColor, ";\n\t\t\tbackground-color: ").concat(hoverBackgroundColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button i {\n\t\t\t").concat(buttonIconPosition === "left" ? buttonIconSpaceRightDesktop : buttonIconSpaceLeftDesktop, "\n\t\t\t").concat(buttonIconSizeDesktop, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon {\n\t\t\tdisplay: flex;\n\t\t\talign-items: center;\n\t\t\tjustify-content: center;\n\t\t}\n\t\t\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon {\n\t\t\tdisplay: flex;\n\t\t\talign-items: center;\n\t\t\tjustify-content: center;\n\t\t\t").concat(headerIconWidthDesktop, "\n\t\t\t").concat(headerIconHeightDesktop, "\n\t\t\t").concat(iconBorderShadowDesktop, "\n\t\t\t").concat(showIconBackground ? "background-color: " + iconBackgroundColor + ";" : "background-color: transparent;", "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon:hover {\n\t\t\t").concat(iconBorderShadowHoverDesktop, "\n\t\t\t").concat(showIconBackground ? "background-color: " + iconBackgroundHoverColor + ";" : "background-color: transparent;", "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon i {\n\t\t\t").concat(headerIconSizeDesktop, "\n\t\t\tcolor: ").concat(iconColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon i:hover {\n\t\t\tcolor: ").concat(iconHoverColor, ";\n\t\t}\n\t");
-  var wrapperStylesTab = "\n\t\t.".concat(blockId, " .ebgb-pricing .ebgb-pricing-item {\n\t\t\t").concat(wrapperPaddingStylesTab, "\n\t\t\t").concat(wrapperMarginStylesTab, "\n\t\t\t").concat(backgroundStylesTab, "\n\t\t\t").concat(bdShadowStyesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item:hover {\n\t\t\t").concat(bdShadowStylesHoverTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header {\n\t\t\t").concat(titlePaddingStylesTab, "\n\t\t\t").concat(titleMarginStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-title {\n\t\t\t").concat(titleTypoStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-subtitle {\n\t\t\t").concat(subtitleTypoStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .original-price {\n\t\t\t").concat(priceTextTypoStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-currency {\n\t\t\t").concat(priceCurrencyTypoStylesTab, "\n\t\t\t").concat(priceCurrencyMarginStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-period {\n\t\t\t").concat(pricePeriodTypoStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price {\n\t\t\t").concat(salePriceTypoStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price .price-currency {\n\t\t\t").concat(salePriceCurrencyTypoStylesTab, "\n\t\t\t").concat(salePriceMarginStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li {\n\t\t\t").concat(featuresTypoStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li .ebgb-pricebox-icon {\n\t\t\t").concat(featuresIconSizeTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button-wrapper {\n\t\t\t").concat(buttonMarginStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button {\n\t\t\t").concat(buttonPaddingStylesTab, "\n\t\t\t").concat(buttonTypoStylesTab, "\n\t\t\t").concat(buttonBackgroundStyleTab, "\n\t\t\t").concat(btnShadowStyesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button:hover {\n\t\t\t").concat(btnShadowStylesHoverTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button i {\n\t\t\t").concat(buttonIconPosition === "left" ? buttonIconSpaceRightTab : buttonIconSpaceLeftTab, "\n\t\t\t").concat(buttonIconSizeTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon {\n\t\t\t").concat(headerIconWidthTab, "\n\t\t\t").concat(headerIconHeightTab, "\n\t\t\t").concat(iconBorderShadowTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon:hover {\n\t\t\t").concat(iconBorderShadowHoverTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon i {\n\t\t\t").concat(headerIconSizeTab, "\n\t\t}\n\t");
-  var wrapperStylesMobile = "\n\t\t.".concat(blockId, " .ebgb-pricing .ebgb-pricing-item {\n\t\t\t").concat(wrapperPaddingStylesMobile, "\n\t\t\t").concat(wrapperMarginStylesMobile, "\n\t\t\t").concat(backgroundStylesMobile, "\n\t\t\t").concat(bdShadowStyesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item:hover {\n\t\t\t").concat(bdShadowStylesHoverMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header {\n\t\t\t").concat(titlePaddingStylesMobile, "\n\t\t\t").concat(titleMarginStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-title {\n\t\t\t").concat(titleTypoStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-subtitle {\n\t\t\t").concat(subtitleTypoStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .original-price {\n\t\t\t").concat(priceTextTypoStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-currency {\n\t\t\t").concat(priceCurrencyTypoStylesMobile, "\n\t\t\t").concat(priceCurrencyMarginStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-period {\n\t\t\t").concat(pricePeriodTypoStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price {\n\t\t\t").concat(salePriceTypoStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price .price-currency {\n\t\t\t").concat(salePriceCurrencyTypoStylesMobile, "\n\t\t\t").concat(salePriceMarginStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li {\n\t\t\t").concat(featuresTypoStylesMobile, "\n\t\t}\n\t\t\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li .ebgb-pricebox-icon {\n\t\t\t").concat(featuresIconSizeMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button-wrapper {\n\t\t\t").concat(buttonMarginStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button {\n\t\t\t").concat(buttonPaddingStylesMobile, "\n\t\t\t").concat(buttonTypoStylesMobile, "\n\t\t\t").concat(buttonBackgroundStyleMobile, "\n\t\t\t").concat(btnShadowStyesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button:hover {\n\t\t\t").concat(btnShadowStylesHoverMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button i {\n\t\t\t").concat(buttonIconPosition === "left" ? buttonIconSpaceRightMobile : buttonIconSpaceLeftMobile, "\n\t\t\t").concat(buttonIconSizeMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon {\n\t\t\t").concat(headerIconWidthMobile, "\n\t\t\t").concat(headerIconHeightMobile, "\n\t\t\t").concat(iconBorderShadowMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon:hover {\n\t\t\t").concat(iconBorderShadowHoverMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon i {\n\t\t\t").concat(headerIconSizeMobile, "\n\t\t}\n\t");
+  var wrapperStyles = "\n\t\t.".concat(blockId, " .ebgb-pricing {\n\t\t\ttext-align: ").concat(contentAlign, ";\n\t\t\t").concat(ribbonStyle === "ribbon-4" ? "overflow: hidden;" : "", "\n\t\t}\n\n\t\t.").concat(blockId, ".ebgb-pricing-content-left .ebgb-pricing.style-3 .ebgb-pricing-item .header:after, .").concat(blockId, ".ebgb-pricing-content-left .ebgb-pricing.style-3 .ebgb-pricing-item .ebgb-pricing-tag:after {\n\t\t\ttransform: translateX(-80%);\n\t\t}\n\n\t\t.").concat(blockId, ".ebgb-pricing-content-right .ebgb-pricing.style-3 .ebgb-pricing-item .header:after, .").concat(blockId, ".ebgb-pricing-content-right .ebgb-pricing.style-3 .ebgb-pricing-item .ebgb-pricing-tag:after {\n\t\t\ttransform: translateX(80%);\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item.ribbon-1::before {\n\t\t\tcontent: \"\";\n\t\t\tcolor: ").concat(ribbonColor, ";\n\t\t\tbackground: ").concat(ribbonBackgroundColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item.ribbon-2::before,\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item.ribbon-3::before,\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item.ribbon-4::before {\n\t\t\tcontent: \"").concat(ribbonText, "\";\n\t\t\tcolor: ").concat(ribbonColor, ";\n\t\t\tbackground: ").concat(ribbonBackgroundColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item.ribbon-2::after {\n\t\t\tborder-bottom: 15px solid ").concat(ribbonBackgroundColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item {\n\t\t\t").concat(wrapperPaddingStylesDesktop, "\n\t\t\t").concat(wrapperMarginStylesDesktop, "\n\t\t\t").concat(priceTableBackgroundStylesDesktop, "\n\t\t\t").concat(bdShadowStyesDesktop, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item::before {\n\t\t\t").concat(priceTableOverlayStylesDesktop, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item:hover {\n\t\t\t").concat(priceTableHoverBackgroundStylesDesktop, "\n\t\t\t").concat(bdShadowStylesHoverDesktop, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item:hover:before {\n\t\t\t").concat(priceTableHoverOverlayStylesDesktop, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header {\n\t\t\t").concat(titlePaddingStylesDesktop, "\n\t\t\t").concat(titleMarginStylesDesktop, "\n\t\t\tbackground: ").concat(titleBackgroundColor, ";\n\t\t\tposition: relative;\n\t\t\tz-index: 0;\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-title {\n\t\t\t").concat(titleTypoStylesDesktop, "\n\t\t\tcolor: ").concat(titleTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-subtitle {\n\t\t\t").concat(subtitleTypoStylesDesktop, "\n\t\t\tcolor: ").concat(subtitleTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .original-price {\n\t\t\t").concat(priceTextTypoStylesDesktop, "\n\t\t\tcolor: ").concat(priceTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-currency {\n\t\t\t").concat(priceCurrencyTypoStylesDesktop, "\n\t\t\t").concat(priceCurrencyMarginStylesDesktop, "\n\t\t\tcolor: ").concat(priceCurrencyTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-period {\n\t\t\t").concat(pricePeriodTypoStylesDesktop, "\n\t\t\tcolor: ").concat(pricingPeriodTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price {\n\t\t\t").concat(salePriceTypoStylesDesktop, "\n\t\t\tcolor: ").concat(salePriceTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price .price-currency {\n\t\t\t").concat(salePriceCurrencyTypoStylesDesktop, "\n\t\t\t").concat(salePriceMarginStylesDesktop, "\n\t\t\tcolor: ").concat(salepriceCurrencyTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li, .").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li a {\n\t\t\t").concat(featuresTypoStylesDesktop, "\n\t\t\tcolor: ").concat(featuresTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li .ebgb-pricebox-icon {\n\t\t\t").concat(featuresIconSizeDesktop, "\n\t\t\tmargin-right: 8px;\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button-wrapper {\n\t\t\t").concat(buttonMarginStylesDesktop, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button {\n\t\t\t").concat(buttonPaddingStylesDesktop, "\n\t\t\t").concat(buttonTypoStylesDesktop, "\n\t\t\t").concat(buttonBackgroundStyleDesktop, "\n\t\t\t").concat(btnShadowStyesDesktop, "\n\t\t\tcolor: ").concat(buttonTextColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button:hover {\n\t\t\t").concat(btnShadowStylesHoverDesktop, "\n\t\t\tcolor: ").concat(hoverTextColor, ";\n\t\t\tbackground-color: ").concat(hoverBackgroundColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button i {\n\t\t\t").concat(buttonIconPosition === "left" ? buttonIconSpaceRightDesktop : buttonIconSpaceLeftDesktop, "\n\t\t\t").concat(buttonIconSizeDesktop, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon {\n\t\t\tdisplay: flex;\n\t\t\talign-items: center;\n\t\t\tjustify-content: center;\n\t\t}\n\t\t\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon {\n\t\t\tdisplay: flex;\n\t\t\talign-items: center;\n\t\t\tjustify-content: center;\n\t\t\t").concat(headerIconWidthDesktop, "\n\t\t\t").concat(headerIconHeightDesktop, "\n\t\t\t").concat(iconBorderShadowDesktop, "\n\t\t\t").concat(showIconBackground ? "background-color: " + iconBackgroundColor + ";" : "background-color: transparent;", "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon:hover {\n\t\t\t").concat(iconBorderShadowHoverDesktop, "\n\t\t\t").concat(showIconBackground ? "background-color: " + iconBackgroundHoverColor + ";" : "background-color: transparent;", "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon i {\n\t\t\t").concat(headerIconSizeDesktop, "\n\t\t\tcolor: ").concat(iconColor, ";\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon i:hover {\n\t\t\tcolor: ").concat(iconHoverColor, ";\n\t\t}\n\t");
+  var wrapperStylesTab = "\n\t\t.".concat(blockId, " .ebgb-pricing .ebgb-pricing-item {\n\t\t\t").concat(wrapperPaddingStylesTab, "\n\t\t\t").concat(wrapperMarginStylesTab, "\n\t\t\t").concat(priceTableBackgroundStylesTab, "\n\t\t\t").concat(bdShadowStyesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item:before {\n\t\t\t").concat(priceTableOverlayStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item:hover {\n\t\t\t").concat(priceTableHoverBackgroundStylesTab, "\n\t\t\t").concat(bdShadowStylesHoverTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item:hover:before {\n\t\t\t").concat(priceTableHoverOverlayStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header {\n\t\t\t").concat(titlePaddingStylesTab, "\n\t\t\t").concat(titleMarginStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-title {\n\t\t\t").concat(titleTypoStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-subtitle {\n\t\t\t").concat(subtitleTypoStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .original-price {\n\t\t\t").concat(priceTextTypoStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-currency {\n\t\t\t").concat(priceCurrencyTypoStylesTab, "\n\t\t\t").concat(priceCurrencyMarginStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-period {\n\t\t\t").concat(pricePeriodTypoStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price {\n\t\t\t").concat(salePriceTypoStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price .price-currency {\n\t\t\t").concat(salePriceCurrencyTypoStylesTab, "\n\t\t\t").concat(salePriceMarginStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li {\n\t\t\t").concat(featuresTypoStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li .ebgb-pricebox-icon {\n\t\t\t").concat(featuresIconSizeTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button-wrapper {\n\t\t\t").concat(buttonMarginStylesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button {\n\t\t\t").concat(buttonPaddingStylesTab, "\n\t\t\t").concat(buttonTypoStylesTab, "\n\t\t\t").concat(buttonBackgroundStyleTab, "\n\t\t\t").concat(btnShadowStyesTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button:hover {\n\t\t\t").concat(btnShadowStylesHoverTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button i {\n\t\t\t").concat(buttonIconPosition === "left" ? buttonIconSpaceRightTab : buttonIconSpaceLeftTab, "\n\t\t\t").concat(buttonIconSizeTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon {\n\t\t\t").concat(headerIconWidthTab, "\n\t\t\t").concat(headerIconHeightTab, "\n\t\t\t").concat(iconBorderShadowTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon:hover {\n\t\t\t").concat(iconBorderShadowHoverTab, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon i {\n\t\t\t").concat(headerIconSizeTab, "\n\t\t}\n\t");
+  var wrapperStylesMobile = "\n\t\t.".concat(blockId, " .ebgb-pricing .ebgb-pricing-item {\n\t\t\t").concat(wrapperPaddingStylesMobile, "\n\t\t\t").concat(wrapperMarginStylesMobile, "\n\t\t\t").concat(priceTableBackgroundStylesMobile, "\n\t\t\t").concat(bdShadowStyesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item:before {\n\t\t\t").concat(priceTableOverlayStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item:hover {\n\t\t\t").concat(priceTableHoverBackgroundStylesMobile, "\n\t\t\t").concat(bdShadowStylesHoverMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item:hover:before {\n\t\t\t").concat(priceTableHoverOverlayStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header {\n\t\t\t").concat(titlePaddingStylesMobile, "\n\t\t\t").concat(titleMarginStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-title {\n\t\t\t").concat(titleTypoStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .header .ebgb-pricing-subtitle {\n\t\t\t").concat(subtitleTypoStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .original-price {\n\t\t\t").concat(priceTextTypoStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-currency {\n\t\t\t").concat(priceCurrencyTypoStylesMobile, "\n\t\t\t").concat(priceCurrencyMarginStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-period {\n\t\t\t").concat(pricePeriodTypoStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price {\n\t\t\t").concat(salePriceTypoStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .sale-price .price-currency {\n\t\t\t").concat(salePriceCurrencyTypoStylesMobile, "\n\t\t\t").concat(salePriceMarginStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li {\n\t\t\t").concat(featuresTypoStylesMobile, "\n\t\t}\n\t\t\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .body ul li .ebgb-pricebox-icon {\n\t\t\t").concat(featuresIconSizeMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button-wrapper {\n\t\t\t").concat(buttonMarginStylesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button {\n\t\t\t").concat(buttonPaddingStylesMobile, "\n\t\t\t").concat(buttonTypoStylesMobile, "\n\t\t\t").concat(buttonBackgroundStyleMobile, "\n\t\t\t").concat(btnShadowStyesMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button:hover {\n\t\t\t").concat(btnShadowStylesHoverMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button i {\n\t\t\t").concat(buttonIconPosition === "left" ? buttonIconSpaceRightMobile : buttonIconSpaceLeftMobile, "\n\t\t\t").concat(buttonIconSizeMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon {\n\t\t\t").concat(headerIconWidthMobile, "\n\t\t\t").concat(headerIconHeightMobile, "\n\t\t\t").concat(iconBorderShadowMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon:hover {\n\t\t\t").concat(iconBorderShadowHoverMobile, "\n\t\t}\n\n\t\t.").concat(blockId, " .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon i {\n\t\t\t").concat(headerIconSizeMobile, "\n\t\t}\n\t");
   var titleLineStyle = "";
 
   if (showTitleLine) {
@@ -7060,7 +7068,9 @@ var Inspector = function Inspector(_ref) {
     }
   }), /*#__PURE__*/React.createElement(PanelBody, {
     title: __("Styles")
-  }, /*#__PURE__*/React.createElement(_util_background_control__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, /*#__PURE__*/React.createElement(BaseControl, null, /*#__PURE__*/React.createElement("h3", {
+    className: "eb-control-title"
+  }, __("Background"))), /*#__PURE__*/React.createElement(_util_background_control__WEBPACK_IMPORTED_MODULE_10__["default"], {
     controlName: _constants__WEBPACK_IMPORTED_MODULE_0__["priceTableBackground"],
     resRequiredProps: resRequiredProps
   }), /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -8193,11 +8203,13 @@ function BackgroundControl(_ref3) {
   var setAttributes = resRequiredProps.setAttributes,
       attributes = resRequiredProps.attributes,
       resOption = resRequiredProps.resOption;
-  var backgroundType = attributes["".concat(controlName, "backgroundType")],
+  var bg_hoverType = attributes["".concat(controlName, "bg_hoverType")],
+      backgroundType = attributes["".concat(controlName, "backgroundType")],
       backgroundColor = attributes["".concat(controlName, "backgroundColor")],
       gradientColor = attributes["".concat(controlName, "gradientColor")],
       bgImageURL = attributes["".concat(controlName, "bgImageURL")],
       bgImageID = attributes["".concat(controlName, "bgImageID")],
+      bgImgAttachment = attributes["".concat(controlName, "bgImgAttachment")],
       backgroundSize = attributes["".concat(controlName, "backgroundSize")],
       bgImgCustomSize = attributes["".concat(controlName, "bgImgCustomSize")],
       bgImgCustomSizeUnit = attributes["".concat(controlName, "bgImgCustomSizeUnit")],
@@ -8206,13 +8218,7 @@ function BackgroundControl(_ref3) {
       bgImgcustomPosXUnit = attributes["".concat(controlName, "bgImgcustomPosXUnit")],
       bgImgcustomPosY = attributes["".concat(controlName, "bgImgcustomPosY")],
       bgImgcustomPosYUnit = attributes["".concat(controlName, "bgImgcustomPosYUnit")],
-      bgImgAttachment = attributes["".concat(controlName, "bgImgAttachment")],
       bgImgRepeat = attributes["".concat(controlName, "bgImgRepeat")],
-      isBgOverly = attributes["".concat(controlName, "isBgOverly")],
-      overlyType = attributes["".concat(controlName, "overlyType")],
-      _attributes$ = attributes["".concat(controlName, "overlyColor")],
-      overlyColor = _attributes$ === void 0 ? "#00000080" : _attributes$,
-      overlyGradient = attributes["".concat(controlName, "overlyGradient")],
       TABbackgroundSize = attributes["TAB".concat(controlName, "backgroundSize")],
       TABbgImgCustomSize = attributes["TAB".concat(controlName, "bgImgCustomSize")],
       TABbgImgCustomSizeUnit = attributes["TAB".concat(controlName, "bgImgCustomSizeUnit")],
@@ -8230,56 +8236,182 @@ function BackgroundControl(_ref3) {
       MOBbgImgcustomPosXUnit = attributes["MOB".concat(controlName, "bgImgcustomPosXUnit")],
       MOBbgImgcustomPosY = attributes["MOB".concat(controlName, "bgImgcustomPosY")],
       MOBbgImgcustomPosYUnit = attributes["MOB".concat(controlName, "bgImgcustomPosYUnit")],
-      MOBbgImgRepeat = attributes["MOB".concat(controlName, "bgImgRepeat")];
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(BaseControl, {
-    label: __("Background Type")
-  }, /*#__PURE__*/React.createElement(ButtonGroup, null, [{
-    label: __("Fill"),
-    value: "fill"
+      MOBbgImgRepeat = attributes["MOB".concat(controlName, "bgImgRepeat")],
+      hov_backgroundType = attributes["hov_".concat(controlName, "backgroundType")],
+      hov_backgroundColor = attributes["hov_".concat(controlName, "backgroundColor")],
+      hov_gradientColor = attributes["hov_".concat(controlName, "gradientColor")],
+      hov_bgImageURL = attributes["hov_".concat(controlName, "bgImageURL")],
+      hov_bgImageID = attributes["hov_".concat(controlName, "bgImageID")],
+      hov_bgImgAttachment = attributes["hov_".concat(controlName, "bgImgAttachment")],
+      hov_backgroundSize = attributes["hov_".concat(controlName, "backgroundSize")],
+      hov_bgImgCustomSize = attributes["hov_".concat(controlName, "bgImgCustomSize")],
+      hov_bgImgCustomSizeUnit = attributes["hov_".concat(controlName, "bgImgCustomSizeUnit")],
+      hov_bgImgPos = attributes["hov_".concat(controlName, "bgImgPos")],
+      hov_bgImgcustomPosX = attributes["hov_".concat(controlName, "bgImgcustomPosX")],
+      hov_bgImgcustomPosXUnit = attributes["hov_".concat(controlName, "bgImgcustomPosXUnit")],
+      hov_bgImgcustomPosY = attributes["hov_".concat(controlName, "bgImgcustomPosY")],
+      hov_bgImgcustomPosYUnit = attributes["hov_".concat(controlName, "bgImgcustomPosYUnit")],
+      hov_bgImgRepeat = attributes["hov_".concat(controlName, "bgImgRepeat")],
+      hov_TABbackgroundSize = attributes["hov_TAB".concat(controlName, "backgroundSize")],
+      hov_TABbgImgCustomSize = attributes["hov_TAB".concat(controlName, "bgImgCustomSize")],
+      hov_TABbgImgCustomSizeUnit = attributes["hov_TAB".concat(controlName, "bgImgCustomSizeUnit")],
+      hov_TABbgImgPos = attributes["hov_TAB".concat(controlName, "bgImgPos")],
+      hov_TABbgImgcustomPosX = attributes["hov_TAB".concat(controlName, "bgImgcustomPosX")],
+      hov_TABbgImgcustomPosXUnit = attributes["hov_TAB".concat(controlName, "bgImgcustomPosXUnit")],
+      hov_TABbgImgcustomPosY = attributes["hov_TAB".concat(controlName, "bgImgcustomPosY")],
+      hov_TABbgImgcustomPosYUnit = attributes["hov_TAB".concat(controlName, "bgImgcustomPosYUnit")],
+      hov_TABbgImgRepeat = attributes["hov_TAB".concat(controlName, "bgImgRepeat")],
+      hov_MOBbackgroundSize = attributes["hov_MOB".concat(controlName, "backgroundSize")],
+      hov_MOBbgImgCustomSize = attributes["hov_MOB".concat(controlName, "bgImgCustomSize")],
+      hov_MOBbgImgCustomSizeUnit = attributes["hov_MOB".concat(controlName, "bgImgCustomSizeUnit")],
+      hov_MOBbgImgPos = attributes["hov_MOB".concat(controlName, "bgImgPos")],
+      hov_MOBbgImgcustomPosX = attributes["hov_MOB".concat(controlName, "bgImgcustomPosX")],
+      hov_MOBbgImgcustomPosXUnit = attributes["hov_MOB".concat(controlName, "bgImgcustomPosXUnit")],
+      hov_MOBbgImgcustomPosY = attributes["hov_MOB".concat(controlName, "bgImgcustomPosY")],
+      hov_MOBbgImgcustomPosYUnit = attributes["hov_MOB".concat(controlName, "bgImgcustomPosYUnit")],
+      hov_MOBbgImgRepeat = attributes["hov_MOB".concat(controlName, "bgImgRepeat")],
+      isBgOverlay = attributes["".concat(controlName, "isBgOverlay")],
+      ovl_hoverType = attributes["".concat(controlName, "ovl_hoverType")],
+      overlayType = attributes["".concat(controlName, "overlayType")],
+      overlayColor = attributes["".concat(controlName, "overlayColor")],
+      overlayGradient = attributes["".concat(controlName, "overlayGradient")],
+      ovl_bgImageURL = attributes["".concat(controlName, "ovl_bgImageURL")],
+      ovl_bgImageID = attributes["".concat(controlName, "ovl_bgImageID")],
+      ovl_bgImgAttachment = attributes["".concat(controlName, "ovl_bgImgAttachment")],
+      ovl_opacity = attributes["".concat(controlName, "ovl_opacity")],
+      ovl_blendMode = attributes["".concat(controlName, "ovl_blendMode")],
+      ovl_allowFilters = attributes["".concat(controlName, "ovl_allowFilters")],
+      ovl_fltrBrightness = attributes["".concat(controlName, "ovl_fltrBrightness")],
+      ovl_fltrContrast = attributes["".concat(controlName, "ovl_fltrContrast")],
+      ovl_fltrSaturation = attributes["".concat(controlName, "ovl_fltrSaturation")],
+      ovl_fltrBlur = attributes["".concat(controlName, "ovl_fltrBlur")],
+      ovl_fltrHue = attributes["".concat(controlName, "ovl_fltrHue")],
+      ovl_backgroundSize = attributes["".concat(controlName, "ovl_backgroundSize")],
+      ovl_bgImgCustomSize = attributes["".concat(controlName, "ovl_bgImgCustomSize")],
+      ovl_bgImgCustomSizeUnit = attributes["".concat(controlName, "ovl_bgImgCustomSizeUnit")],
+      ovl_bgImgPos = attributes["".concat(controlName, "ovl_bgImgPos")],
+      ovl_bgImgcustomPosX = attributes["".concat(controlName, "ovl_bgImgcustomPosX")],
+      ovl_bgImgcustomPosXUnit = attributes["".concat(controlName, "ovl_bgImgcustomPosXUnit")],
+      ovl_bgImgcustomPosY = attributes["".concat(controlName, "ovl_bgImgcustomPosY")],
+      ovl_bgImgcustomPosYUnit = attributes["".concat(controlName, "ovl_bgImgcustomPosYUnit")],
+      ovl_bgImgRepeat = attributes["".concat(controlName, "ovl_bgImgRepeat")],
+      TABovl_backgroundSize = attributes["TAB".concat(controlName, "ovl_backgroundSize")],
+      TABovl_bgImgCustomSize = attributes["TAB".concat(controlName, "ovl_bgImgCustomSize")],
+      TABovl_bgImgCustomSizeUnit = attributes["TAB".concat(controlName, "ovl_bgImgCustomSizeUnit")],
+      TABovl_bgImgPos = attributes["TAB".concat(controlName, "ovl_bgImgPos")],
+      TABovl_bgImgcustomPosX = attributes["TAB".concat(controlName, "ovl_bgImgcustomPosX")],
+      TABovl_bgImgcustomPosXUnit = attributes["TAB".concat(controlName, "ovl_bgImgcustomPosXUnit")],
+      TABovl_bgImgcustomPosY = attributes["TAB".concat(controlName, "ovl_bgImgcustomPosY")],
+      TABovl_bgImgcustomPosYUnit = attributes["TAB".concat(controlName, "ovl_bgImgcustomPosYUnit")],
+      TABovl_bgImgRepeat = attributes["TAB".concat(controlName, "ovl_bgImgRepeat")],
+      MOBovl_backgroundSize = attributes["MOB".concat(controlName, "ovl_backgroundSize")],
+      MOBovl_bgImgCustomSize = attributes["MOB".concat(controlName, "ovl_bgImgCustomSize")],
+      MOBovl_bgImgCustomSizeUnit = attributes["MOB".concat(controlName, "ovl_bgImgCustomSizeUnit")],
+      MOBovl_bgImgPos = attributes["MOB".concat(controlName, "ovl_bgImgPos")],
+      MOBovl_bgImgcustomPosX = attributes["MOB".concat(controlName, "ovl_bgImgcustomPosX")],
+      MOBovl_bgImgcustomPosXUnit = attributes["MOB".concat(controlName, "ovl_bgImgcustomPosXUnit")],
+      MOBovl_bgImgcustomPosY = attributes["MOB".concat(controlName, "ovl_bgImgcustomPosY")],
+      MOBovl_bgImgcustomPosYUnit = attributes["MOB".concat(controlName, "ovl_bgImgcustomPosYUnit")],
+      MOBovl_bgImgRepeat = attributes["MOB".concat(controlName, "ovl_bgImgRepeat")],
+      hov_overlayType = attributes["hov_".concat(controlName, "overlayType")],
+      hov_overlayColor = attributes["hov_".concat(controlName, "overlayColor")],
+      hov_overlayGradient = attributes["hov_".concat(controlName, "overlayGradient")],
+      hov_ovl_bgImageURL = attributes["hov_".concat(controlName, "ovl_bgImageURL")],
+      hov_ovl_bgImageID = attributes["hov_".concat(controlName, "ovl_bgImageID")],
+      hov_ovl_bgImgAttachment = attributes["hov_".concat(controlName, "ovl_bgImgAttachment")],
+      hov_ovl_opacity = attributes["hov_".concat(controlName, "ovl_opacity")],
+      hov_ovl_blendMode = attributes["hov_".concat(controlName, "ovl_blendMode")],
+      hov_ovl_allowFilters = attributes["hov_".concat(controlName, "ovl_allowFilters")],
+      hov_ovl_fltrBrightness = attributes["hov_".concat(controlName, "ovl_fltrBrightness")],
+      hov_ovl_fltrContrast = attributes["hov_".concat(controlName, "ovl_fltrContrast")],
+      hov_ovl_fltrSaturation = attributes["hov_".concat(controlName, "ovl_fltrSaturation")],
+      hov_ovl_fltrBlur = attributes["hov_".concat(controlName, "ovl_fltrBlur")],
+      hov_ovl_fltrHue = attributes["hov_".concat(controlName, "ovl_fltrHue")],
+      hov_ovl_backgroundSize = attributes["hov_".concat(controlName, "ovl_backgroundSize")],
+      hov_ovl_bgImgCustomSize = attributes["hov_".concat(controlName, "ovl_bgImgCustomSize")],
+      hov_ovl_bgImgCustomSizeUnit = attributes["hov_".concat(controlName, "ovl_bgImgCustomSizeUnit")],
+      hov_ovl_bgImgPos = attributes["hov_".concat(controlName, "ovl_bgImgPos")],
+      hov_ovl_bgImgcustomPosX = attributes["hov_".concat(controlName, "ovl_bgImgcustomPosX")],
+      hov_ovl_bgImgcustomPosXUnit = attributes["hov_".concat(controlName, "ovl_bgImgcustomPosXUnit")],
+      hov_ovl_bgImgcustomPosY = attributes["hov_".concat(controlName, "ovl_bgImgcustomPosY")],
+      hov_ovl_bgImgcustomPosYUnit = attributes["hov_".concat(controlName, "ovl_bgImgcustomPosYUnit")],
+      hov_ovl_bgImgRepeat = attributes["hov_".concat(controlName, "ovl_bgImgRepeat")],
+      hov_TABovl_backgroundSize = attributes["hov_TAB".concat(controlName, "ovl_backgroundSize")],
+      hov_TABovl_bgImgCustomSize = attributes["hov_TAB".concat(controlName, "ovl_bgImgCustomSize")],
+      hov_TABovl_bgImgCustomSizeUnit = attributes["hov_TAB".concat(controlName, "ovl_bgImgCustomSizeUnit")],
+      hov_TABovl_bgImgPos = attributes["hov_TAB".concat(controlName, "ovl_bgImgPos")],
+      hov_TABovl_bgImgcustomPosX = attributes["hov_TAB".concat(controlName, "ovl_bgImgcustomPosX")],
+      hov_TABovl_bgImgcustomPosXUnit = attributes["hov_TAB".concat(controlName, "ovl_bgImgcustomPosXUnit")],
+      hov_TABovl_bgImgcustomPosY = attributes["hov_TAB".concat(controlName, "ovl_bgImgcustomPosY")],
+      hov_TABovl_bgImgcustomPosYUnit = attributes["hov_TAB".concat(controlName, "ovl_bgImgcustomPosYUnit")],
+      hov_TABovl_bgImgRepeat = attributes["hov_TAB".concat(controlName, "ovl_bgImgRepeat")],
+      hov_MOBovl_backgroundSize = attributes["hov_MOB".concat(controlName, "ovl_backgroundSize")],
+      hov_MOBovl_bgImgCustomSize = attributes["hov_MOB".concat(controlName, "ovl_bgImgCustomSize")],
+      hov_MOBovl_bgImgCustomSizeUnit = attributes["hov_MOB".concat(controlName, "ovl_bgImgCustomSizeUnit")],
+      hov_MOBovl_bgImgPos = attributes["hov_MOB".concat(controlName, "ovl_bgImgPos")],
+      hov_MOBovl_bgImgcustomPosX = attributes["hov_MOB".concat(controlName, "ovl_bgImgcustomPosX")],
+      hov_MOBovl_bgImgcustomPosXUnit = attributes["hov_MOB".concat(controlName, "ovl_bgImgcustomPosXUnit")],
+      hov_MOBovl_bgImgcustomPosY = attributes["hov_MOB".concat(controlName, "ovl_bgImgcustomPosY")],
+      hov_MOBovl_bgImgcustomPosYUnit = attributes["hov_MOB".concat(controlName, "ovl_bgImgcustomPosYUnit")],
+      hov_MOBovl_bgImgRepeat = attributes["hov_MOB".concat(controlName, "ovl_bgImgRepeat")];
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(BaseControl, null, /*#__PURE__*/React.createElement(ButtonGroup, null, [{
+    label: __("Normal"),
+    value: "normal"
   }, {
-    label: __("Gradient"),
-    value: "gradient"
-  }, {
-    label: __("Image"),
-    value: "image"
+    label: __("Hover"),
+    value: "hover"
   }].map(function (_ref4) {
     var value = _ref4.value,
         label = _ref4.label;
-    return /*#__PURE__*/React.createElement(Button, {
+    return /*#__PURE__*/React.createElement(Button // isSmall
+    // isLarge
+    , {
+      isPrimary: bg_hoverType === value,
+      isSecondary: bg_hoverType !== value,
+      onClick: function onClick() {
+        return setAttributes(_defineProperty({}, "".concat(controlName, "bg_hoverType"), value));
+      }
+    }, label);
+  }))), bg_hoverType === "normal" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(BaseControl, {
+    label: __("Background Type")
+  }, /*#__PURE__*/React.createElement(ButtonGroup, null, [{
+    label: __("Classic"),
+    value: "classic"
+  }, {
+    label: __("Gradient"),
+    value: "gradient"
+  }].map(function (_ref5) {
+    var value = _ref5.value,
+        label = _ref5.label;
+    return /*#__PURE__*/React.createElement(Button // isSmall
+    // isLarge
+    , {
       isPrimary: backgroundType === value,
       isSecondary: backgroundType !== value,
       onClick: function onClick() {
         return setAttributes(_defineProperty({}, "".concat(controlName, "backgroundType"), value));
       }
     }, label);
-  }))), backgroundType === "fill" && /*#__PURE__*/React.createElement(_color_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }))), backgroundType === "classic" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_color_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
     label: __("Background Color"),
     color: backgroundColor,
     onChange: function onChange(backgroundColor) {
       return setAttributes(_defineProperty({}, "".concat(controlName, "backgroundColor"), backgroundColor));
     }
-  }), backgroundType === "gradient" && /*#__PURE__*/React.createElement(PanelBody, {
-    title: __("Gradient"),
-    initialOpen: false
-  }, /*#__PURE__*/React.createElement(_gradient_color_controller__WEBPACK_IMPORTED_MODULE_0__["default"], {
-    gradientColor: gradientColor,
-    onChange: function onChange(gradientColor) {
-      return setAttributes(_defineProperty({}, "".concat(controlName, "gradientColor"), gradientColor));
-    }
-  })), backgroundType === "image" && /*#__PURE__*/React.createElement(PanelBody, {
-    title: __("Background Image")
-  }, /*#__PURE__*/React.createElement(MediaUpload, {
-    onSelect: function onSelect(_ref5) {
+  }), /*#__PURE__*/React.createElement(BaseControl, {
+    label: __("Background Image")
+  }), /*#__PURE__*/React.createElement(MediaUpload, {
+    onSelect: function onSelect(_ref6) {
       var _setAttributes4;
 
-      var url = _ref5.url,
-          id = _ref5.id;
+      var url = _ref6.url,
+          id = _ref6.id;
       return setAttributes((_setAttributes4 = {}, _defineProperty(_setAttributes4, "".concat(controlName, "bgImageURL"), url), _defineProperty(_setAttributes4, "".concat(controlName, "bgImageID"), id), _setAttributes4));
     },
     type: "image",
     value: bgImageID,
-    render: function render(_ref6) {
-      var open = _ref6.open;
+    render: function render(_ref7) {
+      var open = _ref7.open;
       return !bgImageURL && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Button, {
         className: "eb-background-control-inspector-panel-img-btn components-button",
         label: __("Upload Image"),
@@ -8861,47 +8993,2115 @@ function BackgroundControl(_ref3) {
     onChange: function onChange(MOBbgImgCustomSize) {
       return setAttributes(_defineProperty({}, "MOB".concat(controlName, "bgImgCustomSize"), MOBbgImgCustomSize));
     }
-  }))))), /*#__PURE__*/React.createElement(ToggleControl, {
-    label: __("Enable Overly"),
-    checked: isBgOverly,
-    onChange: function onChange() {
-      return setAttributes(_defineProperty({}, "".concat(controlName, "isBgOverly"), !isBgOverly));
+  })))))), backgroundType === "gradient" && /*#__PURE__*/React.createElement(_gradient_color_controller__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    gradientColor: gradientColor,
+    onChange: function onChange(gradientColor) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "gradientColor"), gradientColor));
     }
-  }), isBgOverly && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(BaseControl, {
-    label: __("Overly Type")
+  })), bg_hoverType === "hover" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(BaseControl, {
+    label: __("Background Type")
+  }, /*#__PURE__*/React.createElement(ButtonGroup, null, [{
+    label: __("Classic"),
+    value: "classic"
+  }, {
+    label: __("Gradient"),
+    value: "gradient"
+  }].map(function (_ref8) {
+    var value = _ref8.value,
+        label = _ref8.label;
+    return /*#__PURE__*/React.createElement(Button // isSmall
+    // isLarge
+    , {
+      isPrimary: hov_backgroundType === value,
+      isSecondary: hov_backgroundType !== value,
+      onClick: function onClick() {
+        return setAttributes(_defineProperty({}, "hov_".concat(controlName, "backgroundType"), value));
+      }
+    }, label);
+  }))), hov_backgroundType === "classic" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_color_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    label: __("Background Color"),
+    color: hov_backgroundColor,
+    onChange: function onChange(hov_backgroundColor) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "backgroundColor"), hov_backgroundColor));
+    }
+  }), /*#__PURE__*/React.createElement(BaseControl, {
+    label: __("Background Image")
+  }), /*#__PURE__*/React.createElement(MediaUpload, {
+    onSelect: function onSelect(_ref9) {
+      var _setAttributes39;
+
+      var url = _ref9.url,
+          id = _ref9.id;
+      return setAttributes((_setAttributes39 = {}, _defineProperty(_setAttributes39, "hov_".concat(controlName, "bgImageURL"), url), _defineProperty(_setAttributes39, "hov_".concat(controlName, "bgImageID"), id), _setAttributes39));
+    },
+    type: "image",
+    value: hov_bgImageID,
+    render: function render(_ref10) {
+      var open = _ref10.open;
+      return !hov_bgImageURL && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Button, {
+        className: "eb-background-control-inspector-panel-img-btn components-button",
+        label: __("Upload Image"),
+        icon: "format-image",
+        onClick: open
+      }), /*#__PURE__*/React.createElement("span", {
+        style: {
+          padding: "10px 0",
+          display: "block"
+        }
+      }));
+    }
+  }), hov_bgImageURL && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(ImageAvatar, {
+    imageUrl: hov_bgImageURL,
+    onDeleteImage: function onDeleteImage() {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "bgImageURL"), null));
+    }
+  }), resOption === "Desktop" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Position"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_bgImgPos,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Center Center"),
+      value: "center center"
+    }, {
+      label: __("Center Left"),
+      value: "center left"
+    }, {
+      label: __("Center Right"),
+      value: "center right"
+    }, {
+      label: __("Top Center"),
+      value: "top center"
+    }, {
+      label: __("Top Left"),
+      value: "top left"
+    }, {
+      label: __("Top Right"),
+      value: "top right"
+    }, {
+      label: __("Bottom Center"),
+      value: "bottom center"
+    }, {
+      label: __("Bottom Left"),
+      value: "bottom left"
+    }, {
+      label: __("Bottom Right"),
+      value: "bottom right"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(hov_bgImgPos) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "bgImgPos"), hov_bgImgPos));
+    }
+  })), hov_bgImgPos === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_bgImgcustomPosXUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_bgImgcustomPosXUnit) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "bgImgcustomPosXUnit"), hov_bgImgcustomPosXUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "X Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_bgImgcustomPosX,
+    min: 0,
+    max: hov_bgImgcustomPosXUnit === "px" ? 2000 : 100,
+    onChange: function onChange(hov_bgImgcustomPosX) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "bgImgcustomPosX"), hov_bgImgcustomPosX));
+    }
+  })), /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_bgImgcustomPosYUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_bgImgcustomPosYUnit) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "bgImgcustomPosYUnit"), hov_bgImgcustomPosYUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Y Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_bgImgcustomPosY,
+    min: 0,
+    max: hov_bgImgcustomPosYUnit === "px" ? 2000 : 100,
+    step: hov_bgImgcustomPosYUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(hov_bgImgcustomPosY) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "bgImgcustomPosY"), hov_bgImgcustomPosY));
+    }
+  }))), /*#__PURE__*/React.createElement(SelectControl, {
+    label: "Attachment",
+    value: hov_bgImgAttachment,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Scroll"),
+      value: "scroll"
+    }, {
+      label: __("Fixed"),
+      value: "fixed"
+    }],
+    onChange: function onChange(hov_bgImgAttachment) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "bgImgAttachment"), hov_bgImgAttachment));
+    }
+  }), hov_bgImgAttachment === "fixed" && /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: "-10px",
+      paddingBottom: "10px"
+    }
+  }, /*#__PURE__*/React.createElement("i", null, "Note: Attachment Fixed works only on desktop.")), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Repeat"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_bgImgRepeat,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("No-repeat"),
+      value: "no-repeat"
+    }, {
+      label: __("Repeat"),
+      value: "repeat"
+    }, {
+      label: __("Repeat-x"),
+      value: "repeat-x"
+    }, {
+      label: __("Repeat-y"),
+      value: "repeat-y"
+    }],
+    onChange: function onChange(hov_bgImgRepeat) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "bgImgRepeat"), hov_bgImgRepeat));
+    }
+  })), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Size"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_backgroundSize,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Auto"),
+      value: "auto"
+    }, {
+      label: __("Cover"),
+      value: "cover"
+    }, {
+      label: __("Contain"),
+      value: "contain"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(hov_backgroundSize) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "backgroundSize"), hov_backgroundSize));
+    }
+  })), hov_backgroundSize === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_bgImgCustomSizeUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_bgImgCustomSizeUnit) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "bgImgCustomSizeUnit"), hov_bgImgCustomSizeUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Width"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_bgImgCustomSize,
+    min: 0,
+    max: hov_bgImgCustomSizeUnit === "px" ? 2000 : 100,
+    step: hov_bgImgCustomSizeUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(hov_bgImgCustomSize) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "bgImgCustomSize"), hov_bgImgCustomSize));
+    }
+  })))), resOption === "Tablet" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Position"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_TABbgImgPos,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Center Center"),
+      value: "center center"
+    }, {
+      label: __("Center Left"),
+      value: "center left"
+    }, {
+      label: __("Center Right"),
+      value: "center right"
+    }, {
+      label: __("Top Center"),
+      value: "top center"
+    }, {
+      label: __("Top Left"),
+      value: "top left"
+    }, {
+      label: __("Top Right"),
+      value: "top right"
+    }, {
+      label: __("Bottom Center"),
+      value: "bottom center"
+    }, {
+      label: __("Bottom Left"),
+      value: "bottom left"
+    }, {
+      label: __("Bottom Right"),
+      value: "bottom right"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(hov_TABbgImgPos) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "bgImgPos"), hov_TABbgImgPos));
+    }
+  })), hov_TABbgImgPos === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_TABbgImgcustomPosXUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_TABbgImgcustomPosXUnit) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "bgImgcustomPosXUnit"), hov_TABbgImgcustomPosXUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "X Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_TABbgImgcustomPosX,
+    min: 0,
+    max: hov_TABbgImgcustomPosXUnit === "px" ? 2000 : 100,
+    onChange: function onChange(hov_TABbgImgcustomPosX) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "bgImgcustomPosX"), hov_TABbgImgcustomPosX));
+    }
+  })), /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_TABbgImgcustomPosYUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_TABbgImgcustomPosYUnit) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "bgImgcustomPosYUnit"), hov_TABbgImgcustomPosYUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Y Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_TABbgImgcustomPosY,
+    min: 0,
+    max: hov_TABbgImgcustomPosYUnit === "px" ? 2000 : 100,
+    step: hov_TABbgImgcustomPosYUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(hov_TABbgImgcustomPosY) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "bgImgcustomPosY"), hov_TABbgImgcustomPosY));
+    }
+  }))), /*#__PURE__*/React.createElement(SelectControl, {
+    label: "Attachment",
+    value: hov_bgImgAttachment,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Scroll"),
+      value: "scroll"
+    }, {
+      label: __("Fixed"),
+      value: "fixed"
+    }],
+    onChange: function onChange(hov_bgImgAttachment) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "bgImgAttachment"), hov_bgImgAttachment));
+    }
+  }), hov_bgImgAttachment === "fixed" && /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: "-10px",
+      paddingBottom: "10px"
+    }
+  }, /*#__PURE__*/React.createElement("i", null, "Note: Attachment Fixed works only on desktop.")), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Repeat"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_TABbgImgRepeat,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("No-repeat"),
+      value: "no-repeat"
+    }, {
+      label: __("Repeat"),
+      value: "repeat"
+    }, {
+      label: __("Repeat-x"),
+      value: "repeat-x"
+    }, {
+      label: __("Repeat-y"),
+      value: "repeat-y"
+    }],
+    onChange: function onChange(hov_TABbgImgRepeat) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "bgImgRepeat"), hov_TABbgImgRepeat));
+    }
+  })), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Size"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_TABbackgroundSize,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Auto"),
+      value: "auto"
+    }, {
+      label: __("Cover"),
+      value: "cover"
+    }, {
+      label: __("Contain"),
+      value: "contain"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(hov_TABbackgroundSize) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "backgroundSize"), hov_TABbackgroundSize));
+    }
+  })), hov_TABbackgroundSize === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_TABbgImgCustomSizeUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_TABbgImgCustomSizeUnit) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "bgImgCustomSizeUnit"), hov_TABbgImgCustomSizeUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Width"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_TABbgImgCustomSize,
+    min: 0,
+    max: hov_TABbgImgCustomSizeUnit === "px" ? 2000 : 100,
+    step: hov_TABbgImgCustomSizeUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(hov_TABbgImgCustomSize) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "bgImgCustomSize"), hov_TABbgImgCustomSize));
+    }
+  })))), resOption === "Mobile" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Position"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_MOBbgImgPos,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Center Center"),
+      value: "center center"
+    }, {
+      label: __("Center Left"),
+      value: "center left"
+    }, {
+      label: __("Center Right"),
+      value: "center right"
+    }, {
+      label: __("Top Center"),
+      value: "top center"
+    }, {
+      label: __("Top Left"),
+      value: "top left"
+    }, {
+      label: __("Top Right"),
+      value: "top right"
+    }, {
+      label: __("Bottom Center"),
+      value: "bottom center"
+    }, {
+      label: __("Bottom Left"),
+      value: "bottom left"
+    }, {
+      label: __("Bottom Right"),
+      value: "bottom right"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(hov_MOBbgImgPos) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "bgImgPos"), hov_MOBbgImgPos));
+    }
+  })), hov_MOBbgImgPos === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_MOBbgImgcustomPosXUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_MOBbgImgcustomPosXUnit) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "bgImgcustomPosXUnit"), hov_MOBbgImgcustomPosXUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "X Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_MOBbgImgcustomPosX,
+    min: 0,
+    max: hov_MOBbgImgcustomPosXUnit === "px" ? 2000 : 100,
+    onChange: function onChange(hov_MOBbgImgcustomPosX) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "bgImgcustomPosX"), hov_MOBbgImgcustomPosX));
+    }
+  })), /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_MOBbgImgcustomPosYUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_MOBbgImgcustomPosYUnit) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "bgImgcustomPosYUnit"), hov_MOBbgImgcustomPosYUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Y Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_MOBbgImgcustomPosY,
+    min: 0,
+    max: hov_MOBbgImgcustomPosYUnit === "px" ? 2000 : 100,
+    step: hov_MOBbgImgcustomPosYUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(hov_MOBbgImgcustomPosY) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "bgImgcustomPosY"), hov_MOBbgImgcustomPosY));
+    }
+  }))), /*#__PURE__*/React.createElement(SelectControl, {
+    label: "Attachment",
+    value: hov_bgImgAttachment,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Scroll"),
+      value: "scroll"
+    }, {
+      label: __("Fixed"),
+      value: "fixed"
+    }],
+    onChange: function onChange(hov_bgImgAttachment) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "bgImgAttachment"), hov_bgImgAttachment));
+    }
+  }), hov_bgImgAttachment === "fixed" && /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: "-10px",
+      paddingBottom: "10px"
+    }
+  }, /*#__PURE__*/React.createElement("i", null, "Note: Attachment Fixed works only on desktop.")), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Repeat"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_MOBbgImgRepeat,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("No-repeat"),
+      value: "no-repeat"
+    }, {
+      label: __("Repeat"),
+      value: "repeat"
+    }, {
+      label: __("Repeat-x"),
+      value: "repeat-x"
+    }, {
+      label: __("Repeat-y"),
+      value: "repeat-y"
+    }],
+    onChange: function onChange(hov_MOBbgImgRepeat) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "bgImgRepeat"), hov_MOBbgImgRepeat));
+    }
+  })), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Size"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_MOBbackgroundSize,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Auto"),
+      value: "auto"
+    }, {
+      label: __("Cover"),
+      value: "cover"
+    }, {
+      label: __("Contain"),
+      value: "contain"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(hov_MOBbackgroundSize) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "backgroundSize"), hov_MOBbackgroundSize));
+    }
+  })), hov_MOBbackgroundSize === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_MOBbgImgCustomSizeUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_MOBbgImgCustomSizeUnit) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "bgImgCustomSizeUnit"), hov_MOBbgImgCustomSizeUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Width"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_MOBbgImgCustomSize,
+    min: 0,
+    max: hov_MOBbgImgCustomSizeUnit === "px" ? 2000 : 100,
+    step: hov_MOBbgImgCustomSizeUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(hov_MOBbgImgCustomSize) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "bgImgCustomSize"), hov_MOBbgImgCustomSize));
+    }
+  })))))), hov_backgroundType === "gradient" && /*#__PURE__*/React.createElement(PanelBody, {
+    title: __("Gradient"),
+    initialOpen: false
+  }, /*#__PURE__*/React.createElement(_gradient_color_controller__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    gradientColor: hov_gradientColor,
+    onChange: function onChange(hov_gradientColor) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "gradientColor"), hov_gradientColor));
+    }
+  }))), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement(ToggleControl, {
+    label: __("Enable Overlay"),
+    checked: isBgOverlay,
+    onChange: function onChange() {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "isBgOverlay"), !isBgOverlay));
+    }
+  }), isBgOverlay && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(BaseControl, {
+    label: __("Background Overlay")
+  }), /*#__PURE__*/React.createElement(BaseControl, null, /*#__PURE__*/React.createElement(ButtonGroup, null, [{
+    label: __("Normal"),
+    value: "normal"
+  }, {
+    label: __("Hover"),
+    value: "hover"
+  }].map(function (_ref11) {
+    var value = _ref11.value,
+        label = _ref11.label;
+    return /*#__PURE__*/React.createElement(Button // isSmall
+    // isLarge
+    , {
+      isPrimary: ovl_hoverType === value,
+      isSecondary: ovl_hoverType !== value,
+      onClick: function onClick() {
+        return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_hoverType"), value));
+      }
+    }, label);
+  }))), ovl_hoverType === "normal" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(BaseControl, {
+    label: __("Overlay Type")
   }, /*#__PURE__*/React.createElement(ButtonGroup, {
     id: "eb-background-control-new"
   }, [{
-    label: "Fill",
-    value: "fill"
+    label: "Classic",
+    value: "classic"
   }, {
     label: "Gradient",
     value: "gradient"
-  }].map(function (_ref7) {
-    var value = _ref7.value,
-        label = _ref7.label;
+  }].map(function (_ref12) {
+    var value = _ref12.value,
+        label = _ref12.label;
     return /*#__PURE__*/React.createElement(Button, {
       isLarge: true,
-      isPrimary: overlyType === value,
-      isSecondary: overlyType !== value,
+      isPrimary: overlayType === value,
+      isSecondary: overlayType !== value,
       onClick: function onClick() {
-        return setAttributes(_defineProperty({}, "".concat(controlName, "overlyType"), value));
+        return setAttributes(_defineProperty({}, "".concat(controlName, "overlayType"), value));
       }
     }, label);
-  }))), overlyType === "fill" && /*#__PURE__*/React.createElement(_color_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    label: __("Overly"),
-    color: overlyColor,
-    onChange: function onChange(overlyColor) {
-      return setAttributes(_defineProperty({}, "".concat(controlName, "overlyColor"), overlyColor));
+  }))), overlayType === "classic" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_color_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    label: __("Overlay Color"),
+    color: overlayColor,
+    onChange: function onChange(overlayColor) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "overlayColor"), overlayColor));
     }
-  }), overlyType === "gradient" && /*#__PURE__*/React.createElement(_gradient_color_controller__WEBPACK_IMPORTED_MODULE_0__["default"], {
-    gradientColor: overlyGradient,
-    onChange: function onChange(overlyGradient) {
-      return setAttributes(_defineProperty({}, "".concat(controlName, "overlyGradient"), overlyGradient));
+  }), /*#__PURE__*/React.createElement(BaseControl, {
+    label: __("Overlay Image")
+  }), /*#__PURE__*/React.createElement(MediaUpload, {
+    onSelect: function onSelect(_ref13) {
+      var _setAttributes76;
+
+      var url = _ref13.url,
+          id = _ref13.id;
+      return setAttributes((_setAttributes76 = {}, _defineProperty(_setAttributes76, "".concat(controlName, "ovl_bgImageURL"), url), _defineProperty(_setAttributes76, "".concat(controlName, "ovl_bgImageID"), id), _setAttributes76));
+    },
+    type: "image",
+    value: ovl_bgImageID,
+    render: function render(_ref14) {
+      var open = _ref14.open;
+      return !ovl_bgImageURL && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Button, {
+        className: "eb-background-control-inspector-panel-img-btn components-button",
+        label: __("Upload Image"),
+        icon: "format-image",
+        onClick: open
+      }), /*#__PURE__*/React.createElement("span", {
+        style: {
+          padding: "10px 0",
+          display: "block"
+        }
+      }));
     }
-  }) //   <PanelBody title={__("Gradient")} initialOpen={false}>
-  // </PanelBody>
-  )));
+  }), ovl_bgImageURL && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(ImageAvatar, {
+    imageUrl: ovl_bgImageURL,
+    onDeleteImage: function onDeleteImage() {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_bgImageURL"), null));
+    }
+  }), resOption === "Desktop" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Position"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: ovl_bgImgPos,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Center Center"),
+      value: "center center"
+    }, {
+      label: __("Center Left"),
+      value: "center left"
+    }, {
+      label: __("Center Right"),
+      value: "center right"
+    }, {
+      label: __("Top Center"),
+      value: "top center"
+    }, {
+      label: __("Top Left"),
+      value: "top left"
+    }, {
+      label: __("Top Right"),
+      value: "top right"
+    }, {
+      label: __("Bottom Center"),
+      value: "bottom center"
+    }, {
+      label: __("Bottom Left"),
+      value: "bottom left"
+    }, {
+      label: __("Bottom Right"),
+      value: "bottom right"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(ovl_bgImgPos) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_bgImgPos"), ovl_bgImgPos));
+    }
+  })), ovl_bgImgPos === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: ovl_bgImgcustomPosXUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(ovl_bgImgcustomPosXUnit) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_bgImgcustomPosXUnit"), ovl_bgImgcustomPosXUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "X Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: ovl_bgImgcustomPosX,
+    min: 0,
+    max: ovl_bgImgcustomPosXUnit === "px" ? 2000 : 100,
+    onChange: function onChange(ovl_bgImgcustomPosX) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_bgImgcustomPosX"), ovl_bgImgcustomPosX));
+    }
+  })), /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: ovl_bgImgcustomPosYUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(ovl_bgImgcustomPosYUnit) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_bgImgcustomPosYUnit"), ovl_bgImgcustomPosYUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Y Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: ovl_bgImgcustomPosY,
+    min: 0,
+    max: ovl_bgImgcustomPosYUnit === "px" ? 2000 : 100,
+    step: ovl_bgImgcustomPosYUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(ovl_bgImgcustomPosY) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_bgImgcustomPosY"), ovl_bgImgcustomPosY));
+    }
+  }))), /*#__PURE__*/React.createElement(SelectControl, {
+    label: "Attachment",
+    value: ovl_bgImgAttachment,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Scroll"),
+      value: "scroll"
+    }, {
+      label: __("Fixed"),
+      value: "fixed"
+    }],
+    onChange: function onChange(ovl_bgImgAttachment) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_bgImgAttachment"), ovl_bgImgAttachment));
+    }
+  }), ovl_bgImgAttachment === "fixed" && /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: "-10px",
+      paddingBottom: "10px"
+    }
+  }, /*#__PURE__*/React.createElement("i", null, "Note: Attachment Fixed works only on desktop.")), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Repeat"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: ovl_bgImgRepeat,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("No-repeat"),
+      value: "no-repeat"
+    }, {
+      label: __("Repeat"),
+      value: "repeat"
+    }, {
+      label: __("Repeat-x"),
+      value: "repeat-x"
+    }, {
+      label: __("Repeat-y"),
+      value: "repeat-y"
+    }],
+    onChange: function onChange(ovl_bgImgRepeat) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_bgImgRepeat"), ovl_bgImgRepeat));
+    }
+  })), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Size"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: ovl_backgroundSize,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Auto"),
+      value: "auto"
+    }, {
+      label: __("Cover"),
+      value: "cover"
+    }, {
+      label: __("Contain"),
+      value: "contain"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(ovl_backgroundSize) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_backgroundSize"), ovl_backgroundSize));
+    }
+  })), ovl_backgroundSize === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: ovl_bgImgCustomSizeUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(ovl_bgImgCustomSizeUnit) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_bgImgCustomSizeUnit"), ovl_bgImgCustomSizeUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Width"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: ovl_bgImgCustomSize,
+    min: 0,
+    max: ovl_bgImgCustomSizeUnit === "px" ? 2000 : 100,
+    step: ovl_bgImgCustomSizeUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(ovl_bgImgCustomSize) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_bgImgCustomSize"), ovl_bgImgCustomSize));
+    }
+  })))), resOption === "Tablet" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Position"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: TABovl_bgImgPos,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Center Center"),
+      value: "center center"
+    }, {
+      label: __("Center Left"),
+      value: "center left"
+    }, {
+      label: __("Center Right"),
+      value: "center right"
+    }, {
+      label: __("Top Center"),
+      value: "top center"
+    }, {
+      label: __("Top Left"),
+      value: "top left"
+    }, {
+      label: __("Top Right"),
+      value: "top right"
+    }, {
+      label: __("Bottom Center"),
+      value: "bottom center"
+    }, {
+      label: __("Bottom Left"),
+      value: "bottom left"
+    }, {
+      label: __("Bottom Right"),
+      value: "bottom right"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(TABovl_bgImgPos) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "ovl_bgImgPos"), TABovl_bgImgPos));
+    }
+  })), TABovl_bgImgPos === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: TABovl_bgImgcustomPosXUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(TABovl_bgImgcustomPosXUnit) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "ovl_bgImgcustomPosXUnit"), TABovl_bgImgcustomPosXUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "X Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: TABovl_bgImgcustomPosX,
+    min: 0,
+    max: TABovl_bgImgcustomPosXUnit === "px" ? 2000 : 100,
+    onChange: function onChange(TABovl_bgImgcustomPosX) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "ovl_bgImgcustomPosX"), TABovl_bgImgcustomPosX));
+    }
+  })), /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: TABovl_bgImgcustomPosYUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(TABovl_bgImgcustomPosYUnit) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "ovl_bgImgcustomPosYUnit"), TABovl_bgImgcustomPosYUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Y Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: TABovl_bgImgcustomPosY,
+    min: 0,
+    max: TABovl_bgImgcustomPosYUnit === "px" ? 2000 : 100,
+    step: TABovl_bgImgcustomPosYUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(TABovl_bgImgcustomPosY) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "ovl_bgImgcustomPosY"), TABovl_bgImgcustomPosY));
+    }
+  }))), /*#__PURE__*/React.createElement(SelectControl, {
+    label: "Attachment",
+    value: ovl_bgImgAttachment,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Scroll"),
+      value: "scroll"
+    }, {
+      label: __("Fixed"),
+      value: "fixed"
+    }],
+    onChange: function onChange(ovl_bgImgAttachment) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_bgImgAttachment"), ovl_bgImgAttachment));
+    }
+  }), ovl_bgImgAttachment === "fixed" && /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: "-10px",
+      paddingBottom: "10px"
+    }
+  }, /*#__PURE__*/React.createElement("i", null, "Note: Attachment Fixed works only on desktop.")), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Repeat"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: TABovl_bgImgRepeat,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("No-repeat"),
+      value: "no-repeat"
+    }, {
+      label: __("Repeat"),
+      value: "repeat"
+    }, {
+      label: __("Repeat-x"),
+      value: "repeat-x"
+    }, {
+      label: __("Repeat-y"),
+      value: "repeat-y"
+    }],
+    onChange: function onChange(TABovl_bgImgRepeat) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "ovl_bgImgRepeat"), TABovl_bgImgRepeat));
+    }
+  })), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Size"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: TABovl_backgroundSize,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Auto"),
+      value: "auto"
+    }, {
+      label: __("Cover"),
+      value: "cover"
+    }, {
+      label: __("Contain"),
+      value: "contain"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(TABovl_backgroundSize) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "ovl_backgroundSize"), TABovl_backgroundSize));
+    }
+  })), TABovl_backgroundSize === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: TABovl_bgImgCustomSizeUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(TABovl_bgImgCustomSizeUnit) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "ovl_bgImgCustomSizeUnit"), TABovl_bgImgCustomSizeUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Width"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: TABovl_bgImgCustomSize,
+    min: 0,
+    max: TABovl_bgImgCustomSizeUnit === "px" ? 2000 : 100,
+    step: TABovl_bgImgCustomSizeUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(TABovl_bgImgCustomSize) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "ovl_bgImgCustomSize"), TABovl_bgImgCustomSize));
+    }
+  })))), resOption === "Mobile" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Position"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: MOBovl_bgImgPos,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Center Center"),
+      value: "center center"
+    }, {
+      label: __("Center Left"),
+      value: "center left"
+    }, {
+      label: __("Center Right"),
+      value: "center right"
+    }, {
+      label: __("Top Center"),
+      value: "top center"
+    }, {
+      label: __("Top Left"),
+      value: "top left"
+    }, {
+      label: __("Top Right"),
+      value: "top right"
+    }, {
+      label: __("Bottom Center"),
+      value: "bottom center"
+    }, {
+      label: __("Bottom Left"),
+      value: "bottom left"
+    }, {
+      label: __("Bottom Right"),
+      value: "bottom right"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(MOBovl_bgImgPos) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "ovl_bgImgPos"), MOBovl_bgImgPos));
+    }
+  })), MOBovl_bgImgPos === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: MOBovl_bgImgcustomPosXUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(MOBovl_bgImgcustomPosXUnit) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "ovl_bgImgcustomPosXUnit"), MOBovl_bgImgcustomPosXUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "X Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: MOBovl_bgImgcustomPosX,
+    min: 0,
+    max: MOBovl_bgImgcustomPosXUnit === "px" ? 2000 : 100,
+    onChange: function onChange(MOBovl_bgImgcustomPosX) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "ovl_bgImgcustomPosX"), MOBovl_bgImgcustomPosX));
+    }
+  })), /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: MOBovl_bgImgcustomPosYUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(MOBovl_bgImgcustomPosYUnit) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "ovl_bgImgcustomPosYUnit"), MOBovl_bgImgcustomPosYUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Y Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: MOBovl_bgImgcustomPosY,
+    min: 0,
+    max: MOBovl_bgImgcustomPosYUnit === "px" ? 2000 : 100,
+    step: MOBovl_bgImgcustomPosYUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(MOBovl_bgImgcustomPosY) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "ovl_bgImgcustomPosY"), MOBovl_bgImgcustomPosY));
+    }
+  }))), /*#__PURE__*/React.createElement(SelectControl, {
+    label: "Attachment",
+    value: ovl_bgImgAttachment,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Scroll"),
+      value: "scroll"
+    }, {
+      label: __("Fixed"),
+      value: "fixed"
+    }],
+    onChange: function onChange(ovl_bgImgAttachment) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_bgImgAttachment"), ovl_bgImgAttachment));
+    }
+  }), ovl_bgImgAttachment === "fixed" && /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: "-10px",
+      paddingBottom: "10px"
+    }
+  }, /*#__PURE__*/React.createElement("i", null, "Note: Attachment Fixed works only on desktop.")), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Repeat"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: MOBovl_bgImgRepeat,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("No-repeat"),
+      value: "no-repeat"
+    }, {
+      label: __("Repeat"),
+      value: "repeat"
+    }, {
+      label: __("Repeat-x"),
+      value: "repeat-x"
+    }, {
+      label: __("Repeat-y"),
+      value: "repeat-y"
+    }],
+    onChange: function onChange(MOBovl_bgImgRepeat) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "ovl_bgImgRepeat"), MOBovl_bgImgRepeat));
+    }
+  })), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Size"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: MOBovl_backgroundSize,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Auto"),
+      value: "auto"
+    }, {
+      label: __("Cover"),
+      value: "cover"
+    }, {
+      label: __("Contain"),
+      value: "contain"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(MOBovl_backgroundSize) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "ovl_backgroundSize"), MOBovl_backgroundSize));
+    }
+  })), MOBovl_backgroundSize === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: MOBovl_bgImgCustomSizeUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(MOBovl_bgImgCustomSizeUnit) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "ovl_bgImgCustomSizeUnit"), MOBovl_bgImgCustomSizeUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Width"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: MOBovl_bgImgCustomSize,
+    min: 0,
+    max: MOBovl_bgImgCustomSizeUnit === "px" ? 2000 : 100,
+    step: MOBovl_bgImgCustomSizeUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(MOBovl_bgImgCustomSize) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "ovl_bgImgCustomSize"), MOBovl_bgImgCustomSize));
+    }
+  }))))), /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Opacity"),
+    value: ovl_opacity,
+    onChange: function onChange(ovl_opacity) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_opacity"), ovl_opacity));
+    },
+    step: 0.01,
+    min: 0,
+    max: 1
+  }), /*#__PURE__*/React.createElement(SelectControl, {
+    label: __("Blend Mode"),
+    value: ovl_blendMode,
+    options: [{
+      label: __("Normal"),
+      value: ""
+    }, {
+      label: __("Multiply"),
+      value: "multiply"
+    }, {
+      label: __("Screen"),
+      value: "screen"
+    }, {
+      label: __("Overlay"),
+      value: "overlay"
+    }, {
+      label: __("Darken"),
+      value: "darken"
+    }, {
+      label: __("Lighten"),
+      value: "lighten"
+    }, {
+      label: __("Color Dodge"),
+      value: "color-dodge"
+    }, {
+      label: __("Saturation"),
+      value: "saturation"
+    }, {
+      label: __("Color"),
+      value: "color"
+    }, {
+      label: __("Luminosity"),
+      value: "luminosity"
+    }],
+    onChange: function onChange(ovl_blendMode) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_blendMode"), ovl_blendMode));
+    }
+  }), /*#__PURE__*/React.createElement(ToggleControl, {
+    label: __("Use CSS Filters"),
+    checked: ovl_allowFilters,
+    onChange: function onChange() {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_allowFilters"), !ovl_allowFilters));
+    }
+  }), ovl_allowFilters && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Blur"),
+    value: ovl_fltrBlur,
+    onChange: function onChange(ovl_fltrBlur) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_fltrBlur"), ovl_fltrBlur));
+    },
+    step: 0.1,
+    min: 0,
+    max: 10
+  }), /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Brightness"),
+    value: ovl_fltrBrightness,
+    onChange: function onChange(ovl_fltrBrightness) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_fltrBrightness"), ovl_fltrBrightness));
+    },
+    step: 1,
+    min: 0,
+    max: 200
+  }), /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Contrast"),
+    value: ovl_fltrContrast,
+    onChange: function onChange(ovl_fltrContrast) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_fltrContrast"), ovl_fltrContrast));
+    },
+    step: 1,
+    min: 0,
+    max: 200
+  }), /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Saturation"),
+    value: ovl_fltrSaturation,
+    onChange: function onChange(ovl_fltrSaturation) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_fltrSaturation"), ovl_fltrSaturation));
+    },
+    step: 1,
+    min: 0,
+    max: 200
+  }), /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Hue"),
+    value: ovl_fltrHue,
+    onChange: function onChange(ovl_fltrHue) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_fltrHue"), ovl_fltrHue));
+    },
+    step: 1,
+    min: 0,
+    max: 360
+  }))), overlayType === "gradient" && /*#__PURE__*/React.createElement(_gradient_color_controller__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    gradientColor: overlayGradient,
+    onChange: function onChange(overlayGradient) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "overlayGradient"), overlayGradient));
+    }
+  })), ovl_hoverType === "hover" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(BaseControl, {
+    label: __("Overlay Type")
+  }, /*#__PURE__*/React.createElement(ButtonGroup, {
+    id: "eb-background-control-new"
+  }, [{
+    label: "Classic",
+    value: "classic"
+  }, {
+    label: "Gradient",
+    value: "gradient"
+  }].map(function (_ref15) {
+    var value = _ref15.value,
+        label = _ref15.label;
+    return /*#__PURE__*/React.createElement(Button, {
+      isLarge: true,
+      isPrimary: hov_overlayType === value,
+      isSecondary: hov_overlayType !== value,
+      onClick: function onClick() {
+        return setAttributes(_defineProperty({}, "hov_".concat(controlName, "overlayType"), value));
+      }
+    }, label);
+  }))), hov_overlayType === "classic" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_color_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    label: __("Overlay Color"),
+    color: hov_overlayColor,
+    onChange: function onChange(hov_overlayColor) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "overlayColor"), hov_overlayColor));
+    }
+  }), /*#__PURE__*/React.createElement(BaseControl, {
+    label: __("Overlay Image")
+  }), /*#__PURE__*/React.createElement(MediaUpload, {
+    onSelect: function onSelect(_ref16) {
+      var _setAttributes119;
+
+      var url = _ref16.url,
+          id = _ref16.id;
+      return setAttributes((_setAttributes119 = {}, _defineProperty(_setAttributes119, "hov_".concat(controlName, "ovl_bgImageURL"), url), _defineProperty(_setAttributes119, "hov_".concat(controlName, "ovl_bgImageID"), id), _setAttributes119));
+    },
+    type: "image",
+    value: hov_ovl_bgImageID,
+    render: function render(_ref17) {
+      var open = _ref17.open;
+      return !hov_ovl_bgImageURL && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Button, {
+        className: "eb-background-control-inspector-panel-img-btn components-button",
+        label: __("Upload Image"),
+        icon: "format-image",
+        onClick: open
+      }), /*#__PURE__*/React.createElement("span", {
+        style: {
+          padding: "10px 0",
+          display: "block"
+        }
+      }));
+    }
+  }), hov_ovl_bgImageURL && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(ImageAvatar, {
+    imageUrl: hov_ovl_bgImageURL,
+    onDeleteImage: function onDeleteImage() {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_bgImageURL"), null));
+    }
+  }), resOption === "Desktop" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Position"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_ovl_bgImgPos,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Center Center"),
+      value: "center center"
+    }, {
+      label: __("Center Left"),
+      value: "center left"
+    }, {
+      label: __("Center Right"),
+      value: "center right"
+    }, {
+      label: __("Top Center"),
+      value: "top center"
+    }, {
+      label: __("Top Left"),
+      value: "top left"
+    }, {
+      label: __("Top Right"),
+      value: "top right"
+    }, {
+      label: __("Bottom Center"),
+      value: "bottom center"
+    }, {
+      label: __("Bottom Left"),
+      value: "bottom left"
+    }, {
+      label: __("Bottom Right"),
+      value: "bottom right"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(hov_ovl_bgImgPos) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_bgImgPos"), hov_ovl_bgImgPos));
+    }
+  })), hov_ovl_bgImgPos === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_ovl_bgImgcustomPosXUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_ovl_bgImgcustomPosXUnit) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_bgImgcustomPosXUnit"), hov_ovl_bgImgcustomPosXUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "X Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_ovl_bgImgcustomPosX,
+    min: 0,
+    max: hov_ovl_bgImgcustomPosXUnit === "px" ? 2000 : 100,
+    onChange: function onChange(hov_ovl_bgImgcustomPosX) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_bgImgcustomPosX"), hov_ovl_bgImgcustomPosX));
+    }
+  })), /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_ovl_bgImgcustomPosYUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_ovl_bgImgcustomPosYUnit) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_bgImgcustomPosYUnit"), hov_ovl_bgImgcustomPosYUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Y Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_ovl_bgImgcustomPosY,
+    min: 0,
+    max: hov_ovl_bgImgcustomPosYUnit === "px" ? 2000 : 100,
+    step: hov_ovl_bgImgcustomPosYUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(hov_ovl_bgImgcustomPosY) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_bgImgcustomPosY"), hov_ovl_bgImgcustomPosY));
+    }
+  }))), /*#__PURE__*/React.createElement(SelectControl, {
+    label: "Attachment",
+    value: hov_ovl_bgImgAttachment,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Scroll"),
+      value: "scroll"
+    }, {
+      label: __("Fixed"),
+      value: "fixed"
+    }],
+    onChange: function onChange(hov_ovl_bgImgAttachment) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_bgImgAttachment"), hov_ovl_bgImgAttachment));
+    }
+  }), hov_ovl_bgImgAttachment === "fixed" && /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: "-10px",
+      paddingBottom: "10px"
+    }
+  }, /*#__PURE__*/React.createElement("i", null, "Note: Attachment Fixed works only on desktop.")), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Repeat"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_ovl_bgImgRepeat,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("No-repeat"),
+      value: "no-repeat"
+    }, {
+      label: __("Repeat"),
+      value: "repeat"
+    }, {
+      label: __("Repeat-x"),
+      value: "repeat-x"
+    }, {
+      label: __("Repeat-y"),
+      value: "repeat-y"
+    }],
+    onChange: function onChange(hov_ovl_bgImgRepeat) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_bgImgRepeat"), hov_ovl_bgImgRepeat));
+    }
+  })), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Size"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_ovl_backgroundSize,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Auto"),
+      value: "auto"
+    }, {
+      label: __("Cover"),
+      value: "cover"
+    }, {
+      label: __("Contain"),
+      value: "contain"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(hov_ovl_backgroundSize) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_backgroundSize"), hov_ovl_backgroundSize));
+    }
+  })), hov_ovl_backgroundSize === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_ovl_bgImgCustomSizeUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_ovl_bgImgCustomSizeUnit) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_bgImgCustomSizeUnit"), hov_ovl_bgImgCustomSizeUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Width"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_ovl_bgImgCustomSize,
+    min: 0,
+    max: hov_ovl_bgImgCustomSizeUnit === "px" ? 2000 : 100,
+    step: hov_ovl_bgImgCustomSizeUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(hov_ovl_bgImgCustomSize) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_bgImgCustomSize"), hov_ovl_bgImgCustomSize));
+    }
+  })))), resOption === "Tablet" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Position"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_TABovl_bgImgPos,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Center Center"),
+      value: "center center"
+    }, {
+      label: __("Center Left"),
+      value: "center left"
+    }, {
+      label: __("Center Right"),
+      value: "center right"
+    }, {
+      label: __("Top Center"),
+      value: "top center"
+    }, {
+      label: __("Top Left"),
+      value: "top left"
+    }, {
+      label: __("Top Right"),
+      value: "top right"
+    }, {
+      label: __("Bottom Center"),
+      value: "bottom center"
+    }, {
+      label: __("Bottom Left"),
+      value: "bottom left"
+    }, {
+      label: __("Bottom Right"),
+      value: "bottom right"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(hov_TABovl_bgImgPos) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "ovl_bgImgPos"), hov_TABovl_bgImgPos));
+    }
+  })), hov_TABovl_bgImgPos === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_TABovl_bgImgcustomPosXUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_TABovl_bgImgcustomPosXUnit) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "ovl_bgImgcustomPosXUnit"), hov_TABovl_bgImgcustomPosXUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "X Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_TABovl_bgImgcustomPosX,
+    min: 0,
+    max: hov_TABovl_bgImgcustomPosXUnit === "px" ? 2000 : 100,
+    onChange: function onChange(hov_TABovl_bgImgcustomPosX) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "ovl_bgImgcustomPosX"), hov_TABovl_bgImgcustomPosX));
+    }
+  })), /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_TABovl_bgImgcustomPosYUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_TABovl_bgImgcustomPosYUnit) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "ovl_bgImgcustomPosYUnit"), hov_TABovl_bgImgcustomPosYUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Y Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_TABovl_bgImgcustomPosY,
+    min: 0,
+    max: hov_TABovl_bgImgcustomPosYUnit === "px" ? 2000 : 100,
+    step: hov_TABovl_bgImgcustomPosYUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(hov_TABovl_bgImgcustomPosY) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "ovl_bgImgcustomPosY"), hov_TABovl_bgImgcustomPosY));
+    }
+  }))), /*#__PURE__*/React.createElement(SelectControl, {
+    label: "Attachment",
+    value: hov_ovl_bgImgAttachment,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Scroll"),
+      value: "scroll"
+    }, {
+      label: __("Fixed"),
+      value: "fixed"
+    }],
+    onChange: function onChange(hov_ovl_bgImgAttachment) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_bgImgAttachment"), hov_ovl_bgImgAttachment));
+    }
+  }), hov_ovl_bgImgAttachment === "fixed" && /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: "-10px",
+      paddingBottom: "10px"
+    }
+  }, /*#__PURE__*/React.createElement("i", null, "Note: Attachment Fixed works only on desktop.")), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Repeat"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_TABovl_bgImgRepeat,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("No-repeat"),
+      value: "no-repeat"
+    }, {
+      label: __("Repeat"),
+      value: "repeat"
+    }, {
+      label: __("Repeat-x"),
+      value: "repeat-x"
+    }, {
+      label: __("Repeat-y"),
+      value: "repeat-y"
+    }],
+    onChange: function onChange(hov_TABovl_bgImgRepeat) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "ovl_bgImgRepeat"), hov_TABovl_bgImgRepeat));
+    }
+  })), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Size"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_TABovl_backgroundSize,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Auto"),
+      value: "auto"
+    }, {
+      label: __("Cover"),
+      value: "cover"
+    }, {
+      label: __("Contain"),
+      value: "contain"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(hov_TABovl_backgroundSize) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "ovl_backgroundSize"), hov_TABovl_backgroundSize));
+    }
+  })), hov_TABovl_backgroundSize === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_TABovl_bgImgCustomSizeUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_TABovl_bgImgCustomSizeUnit) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "ovl_bgImgCustomSizeUnit"), hov_TABovl_bgImgCustomSizeUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Width"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_TABovl_bgImgCustomSize,
+    min: 0,
+    max: hov_TABovl_bgImgCustomSizeUnit === "px" ? 2000 : 100,
+    step: hov_TABovl_bgImgCustomSizeUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(hov_TABovl_bgImgCustomSize) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "ovl_bgImgCustomSize"), hov_TABovl_bgImgCustomSize));
+    }
+  })))), resOption === "Mobile" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Position"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_MOBovl_bgImgPos,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Center Center"),
+      value: "center center"
+    }, {
+      label: __("Center Left"),
+      value: "center left"
+    }, {
+      label: __("Center Right"),
+      value: "center right"
+    }, {
+      label: __("Top Center"),
+      value: "top center"
+    }, {
+      label: __("Top Left"),
+      value: "top left"
+    }, {
+      label: __("Top Right"),
+      value: "top right"
+    }, {
+      label: __("Bottom Center"),
+      value: "bottom center"
+    }, {
+      label: __("Bottom Left"),
+      value: "bottom left"
+    }, {
+      label: __("Bottom Right"),
+      value: "bottom right"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(hov_MOBovl_bgImgPos) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "ovl_bgImgPos"), hov_MOBovl_bgImgPos));
+    }
+  })), hov_MOBovl_bgImgPos === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_MOBovl_bgImgcustomPosXUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_MOBovl_bgImgcustomPosXUnit) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "ovl_bgImgcustomPosXUnit"), hov_MOBovl_bgImgcustomPosXUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "X Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_MOBovl_bgImgcustomPosX,
+    min: 0,
+    max: hov_MOBovl_bgImgcustomPosXUnit === "px" ? 2000 : 100,
+    onChange: function onChange(hov_MOBovl_bgImgcustomPosX) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "ovl_bgImgcustomPosX"), hov_MOBovl_bgImgcustomPosX));
+    }
+  })), /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_MOBovl_bgImgcustomPosYUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_MOBovl_bgImgcustomPosYUnit) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "ovl_bgImgcustomPosYUnit"), hov_MOBovl_bgImgcustomPosYUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Y Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_MOBovl_bgImgcustomPosY,
+    min: 0,
+    max: hov_MOBovl_bgImgcustomPosYUnit === "px" ? 2000 : 100,
+    step: hov_MOBovl_bgImgcustomPosYUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(hov_MOBovl_bgImgcustomPosY) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "ovl_bgImgcustomPosY"), hov_MOBovl_bgImgcustomPosY));
+    }
+  }))), /*#__PURE__*/React.createElement(SelectControl, {
+    label: "Attachment",
+    value: hov_ovl_bgImgAttachment,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Scroll"),
+      value: "scroll"
+    }, {
+      label: __("Fixed"),
+      value: "fixed"
+    }],
+    onChange: function onChange(hov_ovl_bgImgAttachment) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_bgImgAttachment"), hov_ovl_bgImgAttachment));
+    }
+  }), hov_ovl_bgImgAttachment === "fixed" && /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: "-10px",
+      paddingBottom: "10px"
+    }
+  }, /*#__PURE__*/React.createElement("i", null, "Note: Attachment Fixed works only on desktop.")), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Repeat"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_MOBovl_bgImgRepeat,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("No-repeat"),
+      value: "no-repeat"
+    }, {
+      label: __("Repeat"),
+      value: "repeat"
+    }, {
+      label: __("Repeat-x"),
+      value: "repeat-x"
+    }, {
+      label: __("Repeat-y"),
+      value: "repeat-y"
+    }],
+    onChange: function onChange(hov_MOBovl_bgImgRepeat) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "ovl_bgImgRepeat"), hov_MOBovl_bgImgRepeat));
+    }
+  })), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Size"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_MOBovl_backgroundSize,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Auto"),
+      value: "auto"
+    }, {
+      label: __("Cover"),
+      value: "cover"
+    }, {
+      label: __("Contain"),
+      value: "contain"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(hov_MOBovl_backgroundSize) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "ovl_backgroundSize"), hov_MOBovl_backgroundSize));
+    }
+  })), hov_MOBovl_backgroundSize === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_MOBovl_bgImgCustomSizeUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_MOBovl_bgImgCustomSizeUnit) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "ovl_bgImgCustomSizeUnit"), hov_MOBovl_bgImgCustomSizeUnit));
+    }
+  }), /*#__PURE__*/React.createElement(WithResBtns, {
+    resRequiredProps: resRequiredProps,
+    label: "Width"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_MOBovl_bgImgCustomSize,
+    min: 0,
+    max: hov_MOBovl_bgImgCustomSizeUnit === "px" ? 2000 : 100,
+    step: hov_MOBovl_bgImgCustomSizeUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(hov_MOBovl_bgImgCustomSize) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "ovl_bgImgCustomSize"), hov_MOBovl_bgImgCustomSize));
+    }
+  }))))), /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Opacity"),
+    value: hov_ovl_opacity,
+    onChange: function onChange(hov_ovl_opacity) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_opacity"), hov_ovl_opacity));
+    },
+    step: 0.01,
+    min: 0,
+    max: 1
+  }), /*#__PURE__*/React.createElement(SelectControl, {
+    label: __("Blend Mode"),
+    value: hov_ovl_blendMode,
+    options: [{
+      label: __("Normal"),
+      value: ""
+    }, {
+      label: __("multiply"),
+      value: "multiply"
+    }, {
+      label: __("screen"),
+      value: "screen"
+    }, {
+      label: __("overlay"),
+      value: "overlay"
+    }, {
+      label: __("darken"),
+      value: "darken"
+    }, {
+      label: __("lighten"),
+      value: "lighten"
+    }, {
+      label: __("color-dodge"),
+      value: "Color Dodge"
+    }, {
+      label: __("saturation"),
+      value: "saturation"
+    }, {
+      label: __("color"),
+      value: "color"
+    }, {
+      label: __("luminosity"),
+      value: "luminosity"
+    }],
+    onChange: function onChange(hov_ovl_blendMode) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_blendMode"), hov_ovl_blendMode));
+    }
+  }), /*#__PURE__*/React.createElement(ToggleControl, {
+    label: __("use CSS Filters"),
+    checked: hov_ovl_allowFilters,
+    onChange: function onChange() {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_allowFilters"), !hov_ovl_allowFilters));
+    }
+  }), hov_ovl_allowFilters && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Blur"),
+    value: hov_ovl_fltrBlur,
+    onChange: function onChange(hov_ovl_fltrBlur) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_fltrBlur"), hov_ovl_fltrBlur));
+    },
+    step: 0.1,
+    min: 0,
+    max: 10
+  }), /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Brightness"),
+    value: hov_ovl_fltrBrightness,
+    onChange: function onChange(hov_ovl_fltrBrightness) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_fltrBrightness"), hov_ovl_fltrBrightness));
+    },
+    step: 1,
+    min: 0,
+    max: 200
+  }), /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Contrast"),
+    value: hov_ovl_fltrContrast,
+    onChange: function onChange(hov_ovl_fltrContrast) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_fltrContrast"), hov_ovl_fltrContrast));
+    },
+    step: 1,
+    min: 0,
+    max: 200
+  }), /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Saturation"),
+    value: hov_ovl_fltrSaturation,
+    onChange: function onChange(hov_ovl_fltrSaturation) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_fltrSaturation"), hov_ovl_fltrSaturation));
+    },
+    step: 1,
+    min: 0,
+    max: 200
+  }), /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Hue"),
+    value: hov_ovl_fltrHue,
+    onChange: function onChange(hov_ovl_fltrHue) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_fltrHue"), hov_ovl_fltrHue));
+    },
+    step: 1,
+    min: 0,
+    max: 360
+  }))), hov_overlayType === "gradient" && /*#__PURE__*/React.createElement(_gradient_color_controller__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    gradientColor: hov_overlayGradient,
+    onChange: function onChange(hov_overlayGradient) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "overlayGradient"), hov_overlayGradient));
+    }
+  }))));
 }
 
 /***/ }),
@@ -9852,7 +12052,8 @@ var colorStyles = {
 };
 
 var GradientColorControl = function GradientColorControl(_ref) {
-  var gradientColor = _ref.gradientColor,
+  var _ref$gradientColor = _ref.gradientColor,
+      gradientColor = _ref$gradientColor === void 0 ? "linear-gradient(45deg,#000000cc,#00000088)" : _ref$gradientColor,
       onChange = _ref.onChange;
 
   var _useState = useState("linear"),
@@ -10122,7 +12323,7 @@ var hasVal = function hasVal(val) {
 }; // function to generate Background control's attributes
 
 var generateBackgroundAttributes = function generateBackgroundAttributes(controlName) {
-  var _objectSpread3;
+  var _objectSpread2, _objectSpread3;
 
   var defaults = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   var isBgDefaultGradient = defaults.isBgDefaultGradient,
@@ -10135,15 +12336,20 @@ var generateBackgroundAttributes = function generateBackgroundAttributes(control
   }) : _defineProperty({}, "".concat(controlName, "backgroundColor"), {
     type: "string"
   });
-  return _objectSpread(_objectSpread(_defineProperty({}, "".concat(controlName, "backgroundType"), {
+  return _objectSpread(_objectSpread((_objectSpread2 = {}, _defineProperty(_objectSpread2, "".concat(controlName, "bg_hoverType"), {
     type: "string",
-    "default": isBgDefaultGradient === true ? "gradient" : "fill"
-  }), bgColorAttr), {}, (_objectSpread3 = {}, _defineProperty(_objectSpread3, "".concat(controlName, "gradientColor"), {
+    "default": "normal"
+  }), _defineProperty(_objectSpread2, "".concat(controlName, "backgroundType"), {
+    type: "string",
+    "default": isBgDefaultGradient === true ? "gradient" : "classic"
+  }), _objectSpread2), bgColorAttr), {}, (_objectSpread3 = {}, _defineProperty(_objectSpread3, "".concat(controlName, "gradientColor"), {
     type: "string",
     "default": defaultBgGradient
   }), _defineProperty(_objectSpread3, "".concat(controlName, "bgImageURL"), {
     type: "string"
   }), _defineProperty(_objectSpread3, "".concat(controlName, "bgImageID"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "bgImgAttachment"), {
     type: "string"
   }), _defineProperty(_objectSpread3, "".concat(controlName, "backgroundSize"), {
     type: "string"
@@ -10167,21 +12373,95 @@ var generateBackgroundAttributes = function generateBackgroundAttributes(control
   }), _defineProperty(_objectSpread3, "".concat(controlName, "bgImgcustomPosYUnit"), {
     type: "string",
     "default": "px"
-  }), _defineProperty(_objectSpread3, "".concat(controlName, "bgImgAttachment"), {
-    type: "string"
   }), _defineProperty(_objectSpread3, "".concat(controlName, "bgImgRepeat"), {
     type: "string"
-  }), _defineProperty(_objectSpread3, "".concat(controlName, "isBgOverly"), {
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "isBgOverlay"), {
     type: "boolean",
     "default": false
-  }), _defineProperty(_objectSpread3, "".concat(controlName, "overlyType"), {
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "overlayType"), {
     type: "string",
-    "default": "fill"
-  }), _defineProperty(_objectSpread3, "".concat(controlName, "overlyColor"), {
+    "default": "classic"
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "overlayColor"), {
     type: "string"
-  }), _defineProperty(_objectSpread3, "".concat(controlName, "overlyGradient"), {
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "overlayGradient"), {
     type: "string",
-    "default": "linear-gradient(45deg,#000000cc,#00000000)"
+    "default": "linear-gradient(45deg,#000000cc,#00000099)"
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "ovl_bgImageURL"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "ovl_bgImageID"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "ovl_bgImgAttachment"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "ovl_backgroundSize"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "ovl_bgImgCustomSize"), {
+    type: "number",
+    "default": 100
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "ovl_bgImgCustomSizeUnit"), {
+    type: "string",
+    "default": "%"
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "ovl_bgImgPos"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "ovl_bgImgcustomPosX"), {
+    type: "number",
+    "default": 0
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "ovl_bgImgcustomPosXUnit"), {
+    type: "string",
+    "default": "px"
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "ovl_bgImgcustomPosY"), {
+    type: "number",
+    "default": 0
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "ovl_bgImgcustomPosYUnit"), {
+    type: "string",
+    "default": "px"
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "ovl_bgImgRepeat"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "ovl_opacity"), {
+    type: "number",
+    "default": 0.5
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "ovl_blendMode"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "ovl_allowFilters"), {
+    type: "boolean",
+    "default": false
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "ovl_fltrBrightness"), {
+    type: "number",
+    "default": 100
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "ovl_fltrContrast"), {
+    type: "number",
+    "default": 100
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "ovl_fltrSaturation"), {
+    type: "number",
+    "default": 100
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "ovl_fltrBlur"), {
+    type: "number",
+    "default": 0
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "ovl_fltrHue"), {
+    type: "number",
+    "default": 0
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "ovl_opacity"), {
+    type: "number",
+    "default": 0.5
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "ovl_blendMode"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "ovl_allowFilters"), {
+    type: "boolean",
+    "default": false
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "ovl_fltrBrightness"), {
+    type: "number",
+    "default": 100
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "ovl_fltrContrast"), {
+    type: "number",
+    "default": 100
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "ovl_fltrSaturation"), {
+    type: "number",
+    "default": 100
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "ovl_fltrBlur"), {
+    type: "number",
+    "default": 0
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "ovl_fltrHue"), {
+    type: "number",
+    "default": 0
   }), _defineProperty(_objectSpread3, "TAB".concat(controlName, "backgroundSize"), {
     type: "string"
   }), _defineProperty(_objectSpread3, "TAB".concat(controlName, "bgImgCustomSize"), {
@@ -10206,6 +12486,30 @@ var generateBackgroundAttributes = function generateBackgroundAttributes(control
     "default": "px"
   }), _defineProperty(_objectSpread3, "TAB".concat(controlName, "bgImgRepeat"), {
     type: "string"
+  }), _defineProperty(_objectSpread3, "TAB".concat(controlName, "ovl_backgroundSize"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "TAB".concat(controlName, "ovl_bgImgCustomSize"), {
+    type: "number",
+    "default": 100
+  }), _defineProperty(_objectSpread3, "TAB".concat(controlName, "ovl_bgImgCustomSizeUnit"), {
+    type: "string",
+    "default": "%"
+  }), _defineProperty(_objectSpread3, "TAB".concat(controlName, "ovl_bgImgPos"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "TAB".concat(controlName, "ovl_bgImgcustomPosX"), {
+    type: "number",
+    "default": 0
+  }), _defineProperty(_objectSpread3, "TAB".concat(controlName, "ovl_bgImgcustomPosXUnit"), {
+    type: "string",
+    "default": "px"
+  }), _defineProperty(_objectSpread3, "TAB".concat(controlName, "ovl_bgImgcustomPosY"), {
+    type: "number",
+    "default": 0
+  }), _defineProperty(_objectSpread3, "TAB".concat(controlName, "ovl_bgImgcustomPosYUnit"), {
+    type: "string",
+    "default": "px"
+  }), _defineProperty(_objectSpread3, "TAB".concat(controlName, "ovl_bgImgRepeat"), {
+    type: "string"
   }), _defineProperty(_objectSpread3, "MOB".concat(controlName, "backgroundSize"), {
     type: "string"
   }), _defineProperty(_objectSpread3, "MOB".concat(controlName, "bgImgCustomSize"), {
@@ -10229,6 +12533,211 @@ var generateBackgroundAttributes = function generateBackgroundAttributes(control
     type: "string",
     "default": "px"
   }), _defineProperty(_objectSpread3, "MOB".concat(controlName, "bgImgRepeat"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "MOB".concat(controlName, "ovl_backgroundSize"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "MOB".concat(controlName, "ovl_bgImgCustomSize"), {
+    type: "number",
+    "default": 100
+  }), _defineProperty(_objectSpread3, "MOB".concat(controlName, "ovl_bgImgCustomSizeUnit"), {
+    type: "string",
+    "default": "%"
+  }), _defineProperty(_objectSpread3, "MOB".concat(controlName, "ovl_bgImgPos"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "MOB".concat(controlName, "ovl_bgImgcustomPosX"), {
+    type: "number",
+    "default": 0
+  }), _defineProperty(_objectSpread3, "MOB".concat(controlName, "ovl_bgImgcustomPosXUnit"), {
+    type: "string",
+    "default": "px"
+  }), _defineProperty(_objectSpread3, "MOB".concat(controlName, "ovl_bgImgcustomPosY"), {
+    type: "number",
+    "default": 0
+  }), _defineProperty(_objectSpread3, "MOB".concat(controlName, "ovl_bgImgcustomPosYUnit"), {
+    type: "string",
+    "default": "px"
+  }), _defineProperty(_objectSpread3, "MOB".concat(controlName, "ovl_bgImgRepeat"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "bg_hoverType"), {
+    type: "string",
+    "default": "normal"
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "backgroundType"), {
+    type: "string",
+    "default": "classic"
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "backgroundColor"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "gradientColor"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "bgImageURL"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "bgImageID"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "bgImgAttachment"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "backgroundSize"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "bgImgCustomSize"), {
+    type: "number",
+    "default": 100
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "bgImgCustomSizeUnit"), {
+    type: "string",
+    "default": "%"
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "bgImgPos"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "bgImgcustomPosX"), {
+    type: "number",
+    "default": 0
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "bgImgcustomPosXUnit"), {
+    type: "string",
+    "default": "px"
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "bgImgcustomPosY"), {
+    type: "number",
+    "default": 0
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "bgImgcustomPosYUnit"), {
+    type: "string",
+    "default": "px"
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "bgImgRepeat"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "hov_TAB".concat(controlName, "backgroundSize"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "hov_TAB".concat(controlName, "bgImgCustomSize"), {
+    type: "number"
+  }), _defineProperty(_objectSpread3, "hov_TAB".concat(controlName, "bgImgCustomSizeUnit"), {
+    type: "string",
+    "default": "%"
+  }), _defineProperty(_objectSpread3, "hov_TAB".concat(controlName, "bgImgPos"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "hov_TAB".concat(controlName, "bgImgcustomPosX"), {
+    type: "number"
+  }), _defineProperty(_objectSpread3, "hov_TAB".concat(controlName, "bgImgcustomPosXUnit"), {
+    type: "string",
+    "default": "px"
+  }), _defineProperty(_objectSpread3, "hov_TAB".concat(controlName, "bgImgcustomPosY"), {
+    type: "number"
+  }), _defineProperty(_objectSpread3, "hov_TAB".concat(controlName, "bgImgcustomPosYUnit"), {
+    type: "string",
+    "default": "px"
+  }), _defineProperty(_objectSpread3, "hov_TAB".concat(controlName, "bgImgRepeat"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "hov_MOB".concat(controlName, "backgroundSize"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "hov_MOB".concat(controlName, "bgImgCustomSize"), {
+    type: "number"
+  }), _defineProperty(_objectSpread3, "hov_MOB".concat(controlName, "bgImgCustomSizeUnit"), {
+    type: "string",
+    "default": "%"
+  }), _defineProperty(_objectSpread3, "hov_MOB".concat(controlName, "bgImgPos"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "hov_MOB".concat(controlName, "bgImgcustomPosX"), {
+    type: "number"
+  }), _defineProperty(_objectSpread3, "hov_MOB".concat(controlName, "bgImgcustomPosXUnit"), {
+    type: "string",
+    "default": "px"
+  }), _defineProperty(_objectSpread3, "hov_MOB".concat(controlName, "bgImgcustomPosY"), {
+    type: "number"
+  }), _defineProperty(_objectSpread3, "hov_MOB".concat(controlName, "bgImgcustomPosYUnit"), {
+    type: "string",
+    "default": "px"
+  }), _defineProperty(_objectSpread3, "hov_MOB".concat(controlName, "bgImgRepeat"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "".concat(controlName, "ovl_hoverType"), {
+    type: "string",
+    "default": "normal"
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "overlayType"), {
+    type: "string",
+    "default": "classic"
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "overlayColor"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "overlayGradient"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "ovl_bgImageURL"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "ovl_bgImageID"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "ovl_bgImgAttachment"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "ovl_opacity"), {
+    type: "number"
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "ovl_blendMode"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "ovl_allowFilters"), {
+    type: "boolean",
+    "default": false
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "ovl_fltrBrightness"), {
+    type: "number"
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "ovl_fltrContrast"), {
+    type: "number"
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "ovl_fltrSaturation"), {
+    type: "number"
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "ovl_fltrBlur"), {
+    type: "number"
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "ovl_fltrHue"), {
+    type: "number"
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "ovl_backgroundSize"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "ovl_bgImgCustomSize"), {
+    type: "number",
+    "default": 100
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "ovl_bgImgCustomSizeUnit"), {
+    type: "string",
+    "default": "%"
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "ovl_bgImgPos"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "ovl_bgImgcustomPosX"), {
+    type: "number",
+    "default": 0
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "ovl_bgImgcustomPosXUnit"), {
+    type: "string",
+    "default": "px"
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "ovl_bgImgcustomPosY"), {
+    type: "number",
+    "default": 0
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "ovl_bgImgcustomPosYUnit"), {
+    type: "string",
+    "default": "px"
+  }), _defineProperty(_objectSpread3, "hov_".concat(controlName, "ovl_bgImgRepeat"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "hov_TAB".concat(controlName, "ovl_backgroundSize"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "hov_TAB".concat(controlName, "ovl_bgImgCustomSize"), {
+    type: "number"
+  }), _defineProperty(_objectSpread3, "hov_TAB".concat(controlName, "ovl_bgImgCustomSizeUnit"), {
+    type: "string",
+    "default": "%"
+  }), _defineProperty(_objectSpread3, "hov_TAB".concat(controlName, "ovl_bgImgPos"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "hov_TAB".concat(controlName, "ovl_bgImgcustomPosX"), {
+    type: "number"
+  }), _defineProperty(_objectSpread3, "hov_TAB".concat(controlName, "ovl_bgImgcustomPosXUnit"), {
+    type: "string",
+    "default": "px"
+  }), _defineProperty(_objectSpread3, "hov_TAB".concat(controlName, "ovl_bgImgcustomPosY"), {
+    type: "number"
+  }), _defineProperty(_objectSpread3, "hov_TAB".concat(controlName, "ovl_bgImgcustomPosYUnit"), {
+    type: "string",
+    "default": "px"
+  }), _defineProperty(_objectSpread3, "hov_TAB".concat(controlName, "ovl_bgImgRepeat"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "hov_MOB".concat(controlName, "ovl_backgroundSize"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "hov_MOB".concat(controlName, "ovl_bgImgCustomSize"), {
+    type: "number"
+  }), _defineProperty(_objectSpread3, "hov_MOB".concat(controlName, "ovl_bgImgCustomSizeUnit"), {
+    type: "string",
+    "default": "%"
+  }), _defineProperty(_objectSpread3, "hov_MOB".concat(controlName, "ovl_bgImgPos"), {
+    type: "string"
+  }), _defineProperty(_objectSpread3, "hov_MOB".concat(controlName, "ovl_bgImgcustomPosX"), {
+    type: "number"
+  }), _defineProperty(_objectSpread3, "hov_MOB".concat(controlName, "ovl_bgImgcustomPosXUnit"), {
+    type: "string",
+    "default": "px"
+  }), _defineProperty(_objectSpread3, "hov_MOB".concat(controlName, "ovl_bgImgcustomPosY"), {
+    type: "number"
+  }), _defineProperty(_objectSpread3, "hov_MOB".concat(controlName, "ovl_bgImgcustomPosYUnit"), {
+    type: "string",
+    "default": "px"
+  }), _defineProperty(_objectSpread3, "hov_MOB".concat(controlName, "ovl_bgImgRepeat"), {
     type: "string"
   }), _objectSpread3));
 }; // function to generate New Dimensions-Control's attributes for multiple Dimensions control based on the array of values(prefixs)
@@ -10787,7 +13296,8 @@ var generateBorderShadowStyles = function generateBorderShadowStyles(_ref13) {
 var generateBackgroundControlStyles = function generateBackgroundControlStyles(_ref14) {
   var controlName = _ref14.controlName,
       attributes = _ref14.attributes;
-  var backgroundType = attributes["".concat(controlName, "backgroundType")],
+  var bg_hoverType = attributes["".concat(controlName, "bg_hoverType")],
+      backgroundType = attributes["".concat(controlName, "backgroundType")],
       backgroundColor = attributes["".concat(controlName, "backgroundColor")],
       gradientColor = attributes["".concat(controlName, "gradientColor")],
       bgImageURL = attributes["".concat(controlName, "bgImageURL")],
@@ -10801,11 +13311,6 @@ var generateBackgroundControlStyles = function generateBackgroundControlStyles(_
       bgImgcustomPosYUnit = attributes["".concat(controlName, "bgImgcustomPosYUnit")],
       bgImgAttachment = attributes["".concat(controlName, "bgImgAttachment")],
       bgImgRepeat = attributes["".concat(controlName, "bgImgRepeat")],
-      _attributes$13 = attributes["".concat(controlName, "overlyColor")],
-      overlyColor = _attributes$13 === void 0 ? "#00000080" : _attributes$13,
-      overlyType = attributes["".concat(controlName, "overlyType")],
-      isBgOverly = attributes["".concat(controlName, "isBgOverly")],
-      overlyGradient = attributes["".concat(controlName, "overlyGradient")],
       TABbackgroundSize = attributes["TAB".concat(controlName, "backgroundSize")],
       TABbgImgCustomSize = attributes["TAB".concat(controlName, "bgImgCustomSize")],
       TABbgImgCustomSizeUnit = attributes["TAB".concat(controlName, "bgImgCustomSizeUnit")],
@@ -10823,16 +13328,147 @@ var generateBackgroundControlStyles = function generateBackgroundControlStyles(_
       MOBbgImgcustomPosXUnit = attributes["MOB".concat(controlName, "bgImgcustomPosXUnit")],
       MOBbgImgcustomPosY = attributes["MOB".concat(controlName, "bgImgcustomPosY")],
       MOBbgImgcustomPosYUnit = attributes["MOB".concat(controlName, "bgImgcustomPosYUnit")],
-      MOBbgImgRepeat = attributes["MOB".concat(controlName, "bgImgRepeat")];
-  var backgroundStylesDesktop = "\n    background-image: ".concat(backgroundType === "image" && bgImageURL ? "url(\"".concat(bgImageURL, "\")") : backgroundType === "gradient" ? gradientColor : "none", ";\n\n    ").concat(backgroundType === "image" && bgImageURL ? "\n        ".concat(backgroundSize && backgroundSize !== "custom" ? "background-size: ".concat(backgroundSize, ";") : backgroundSize === "custom" ? "background-size: ".concat(bgImgCustomSize).concat(bgImgCustomSizeUnit, " auto;") : " ", "\n\n        ").concat(bgImgPos && bgImgPos !== "custom" ? "background-position: ".concat(bgImgPos, ";") : bgImgPos === "custom" ? "background-position: ".concat(bgImgcustomPosX).concat(bgImgcustomPosXUnit, " ").concat(bgImgcustomPosY).concat(bgImgcustomPosYUnit, ";") : " ", "\n\n        ").concat(bgImgAttachment ? "background-attachment: ".concat(bgImgAttachment, ";") : " ", "\n\n        ").concat(bgImgRepeat ? "background-repeat: ".concat(bgImgRepeat, ";") : " ", "\n        \n        ").concat(isBgOverly ? "\n              z-index: 2;\n              position: relative;\n            " : " ", "\t\n        ") : " ", "\n  \n\t\t").concat(backgroundColor ? "background-color: ".concat(backgroundColor, ";") : " ", "\n\n  ");
-  var backgroundStylesTab = "\n    ".concat(backgroundType === "image" && bgImageURL ? "\n        ".concat(TABbackgroundSize && TABbackgroundSize !== "custom" ? "background-size: ".concat(TABbackgroundSize, ";") : TABbackgroundSize === "custom" ? "background-size: ".concat(TABbgImgCustomSize).concat(TABbgImgCustomSizeUnit, " auto;") : " ", "\n\n        ").concat(TABbgImgPos && TABbgImgPos !== "custom" ? "background-position: ".concat(TABbgImgPos, ";") : TABbgImgPos === "custom" ? "background-position: ".concat(TABbgImgcustomPosX).concat(TABbgImgcustomPosXUnit, " ").concat(TABbgImgcustomPosY).concat(TABbgImgcustomPosYUnit, ";") : " ", "\n\n        ").concat(TABbgImgRepeat ? "background-repeat: ".concat(TABbgImgRepeat, ";") : " ", "\n\n        ") : " ", "\n\n    ").concat(backgroundType === "image" ? "background-attachment: scroll;" : " ", "\n\n  ");
-  var backgroundStylesMobile = "\n    ".concat(backgroundType === "image" && bgImageURL ? "\n        ".concat(MOBbackgroundSize && MOBbackgroundSize !== "custom" ? "background-size: ".concat(MOBbackgroundSize, ";") : MOBbackgroundSize === "custom" ? "background-size: ".concat(MOBbgImgCustomSize).concat(MOBbgImgCustomSizeUnit, " auto;") : " ", "\n\n        ").concat(MOBbgImgPos && MOBbgImgPos !== "custom" ? "background-position: ".concat(MOBbgImgPos, ";") : MOBbgImgPos === "custom" ? "background-position: ".concat(MOBbgImgcustomPosX).concat(MOBbgImgcustomPosXUnit, " ").concat(MOBbgImgcustomPosY).concat(MOBbgImgcustomPosYUnit, ";") : " ", "\n\n        ").concat(MOBbgImgRepeat ? "background-repeat: ".concat(MOBbgImgRepeat, ";") : " ", "\n\n        ") : " ", "\n\n  ");
-  var overlyStyles = "\n  \n    ".concat(backgroundType === "image" && isBgOverly ? "\n          content: \"\";\n          position: absolute;\n          top: 0;\n          bottom: 0;\n          right: 0;\n          left: 0;\n          z-index: -1;\n\n          ".concat(overlyType === "fill" ? "background-color: ".concat(overlyColor, ";") : overlyType === "gradient" ? "background-image: ".concat(overlyGradient, ";") : " ", "\n      ") : " ", "\n  \n  \n  ");
+      MOBbgImgRepeat = attributes["MOB".concat(controlName, "bgImgRepeat")],
+      hov_backgroundType = attributes["hov_".concat(controlName, "backgroundType")],
+      hov_backgroundColor = attributes["hov_".concat(controlName, "backgroundColor")],
+      hov_gradientColor = attributes["hov_".concat(controlName, "gradientColor")],
+      hov_bgImageURL = attributes["hov_".concat(controlName, "bgImageURL")],
+      hov_bgImgAttachment = attributes["hov_".concat(controlName, "bgImgAttachment")],
+      hov_backgroundSize = attributes["hov_".concat(controlName, "backgroundSize")],
+      hov_bgImgCustomSize = attributes["hov_".concat(controlName, "bgImgCustomSize")],
+      hov_bgImgCustomSizeUnit = attributes["hov_".concat(controlName, "bgImgCustomSizeUnit")],
+      hov_bgImgPos = attributes["hov_".concat(controlName, "bgImgPos")],
+      hov_bgImgcustomPosX = attributes["hov_".concat(controlName, "bgImgcustomPosX")],
+      hov_bgImgcustomPosXUnit = attributes["hov_".concat(controlName, "bgImgcustomPosXUnit")],
+      hov_bgImgcustomPosY = attributes["hov_".concat(controlName, "bgImgcustomPosY")],
+      hov_bgImgcustomPosYUnit = attributes["hov_".concat(controlName, "bgImgcustomPosYUnit")],
+      hov_bgImgRepeat = attributes["hov_".concat(controlName, "bgImgRepeat")],
+      hov_TABbackgroundSize = attributes["hov_TAB".concat(controlName, "backgroundSize")],
+      hov_TABbgImgCustomSize = attributes["hov_TAB".concat(controlName, "bgImgCustomSize")],
+      hov_TABbgImgCustomSizeUnit = attributes["hov_TAB".concat(controlName, "bgImgCustomSizeUnit")],
+      hov_TABbgImgPos = attributes["hov_TAB".concat(controlName, "bgImgPos")],
+      hov_TABbgImgcustomPosX = attributes["hov_TAB".concat(controlName, "bgImgcustomPosX")],
+      hov_TABbgImgcustomPosXUnit = attributes["hov_TAB".concat(controlName, "bgImgcustomPosXUnit")],
+      hov_TABbgImgcustomPosY = attributes["hov_TAB".concat(controlName, "bgImgcustomPosY")],
+      hov_TABbgImgcustomPosYUnit = attributes["hov_TAB".concat(controlName, "bgImgcustomPosYUnit")],
+      hov_TABbgImgRepeat = attributes["hov_TAB".concat(controlName, "bgImgRepeat")],
+      hov_MOBbackgroundSize = attributes["hov_MOB".concat(controlName, "backgroundSize")],
+      hov_MOBbgImgCustomSize = attributes["hov_MOB".concat(controlName, "bgImgCustomSize")],
+      hov_MOBbgImgCustomSizeUnit = attributes["hov_MOB".concat(controlName, "bgImgCustomSizeUnit")],
+      hov_MOBbgImgPos = attributes["hov_MOB".concat(controlName, "bgImgPos")],
+      hov_MOBbgImgcustomPosX = attributes["hov_MOB".concat(controlName, "bgImgcustomPosX")],
+      hov_MOBbgImgcustomPosXUnit = attributes["hov_MOB".concat(controlName, "bgImgcustomPosXUnit")],
+      hov_MOBbgImgcustomPosY = attributes["hov_MOB".concat(controlName, "bgImgcustomPosY")],
+      hov_MOBbgImgcustomPosYUnit = attributes["hov_MOB".concat(controlName, "bgImgcustomPosYUnit")],
+      hov_MOBbgImgRepeat = attributes["hov_MOB".concat(controlName, "bgImgRepeat")],
+      isBgOverlay = attributes["".concat(controlName, "isBgOverlay")],
+      ovl_hoverType = attributes["".concat(controlName, "ovl_hoverType")],
+      overlayType = attributes["".concat(controlName, "overlayType")],
+      overlayColor = attributes["".concat(controlName, "overlayColor")],
+      overlayGradient = attributes["".concat(controlName, "overlayGradient")],
+      ovl_bgImageURL = attributes["".concat(controlName, "ovl_bgImageURL")],
+      ovl_bgImgAttachment = attributes["".concat(controlName, "ovl_bgImgAttachment")],
+      ovl_opacity = attributes["".concat(controlName, "ovl_opacity")],
+      ovl_blendMode = attributes["".concat(controlName, "ovl_blendMode")],
+      ovl_allowFilters = attributes["".concat(controlName, "ovl_allowFilters")],
+      ovl_fltrBrightness = attributes["".concat(controlName, "ovl_fltrBrightness")],
+      ovl_fltrContrast = attributes["".concat(controlName, "ovl_fltrContrast")],
+      ovl_fltrSaturation = attributes["".concat(controlName, "ovl_fltrSaturation")],
+      ovl_fltrBlur = attributes["".concat(controlName, "ovl_fltrBlur")],
+      ovl_fltrHue = attributes["".concat(controlName, "ovl_fltrHue")],
+      ovl_backgroundSize = attributes["".concat(controlName, "ovl_backgroundSize")],
+      ovl_bgImgCustomSize = attributes["".concat(controlName, "ovl_bgImgCustomSize")],
+      ovl_bgImgCustomSizeUnit = attributes["".concat(controlName, "ovl_bgImgCustomSizeUnit")],
+      ovl_bgImgPos = attributes["".concat(controlName, "ovl_bgImgPos")],
+      ovl_bgImgcustomPosX = attributes["".concat(controlName, "ovl_bgImgcustomPosX")],
+      ovl_bgImgcustomPosXUnit = attributes["".concat(controlName, "ovl_bgImgcustomPosXUnit")],
+      ovl_bgImgcustomPosY = attributes["".concat(controlName, "ovl_bgImgcustomPosY")],
+      ovl_bgImgcustomPosYUnit = attributes["".concat(controlName, "ovl_bgImgcustomPosYUnit")],
+      ovl_bgImgRepeat = attributes["".concat(controlName, "ovl_bgImgRepeat")],
+      TABovl_backgroundSize = attributes["TAB".concat(controlName, "ovl_backgroundSize")],
+      TABovl_bgImgCustomSize = attributes["TAB".concat(controlName, "ovl_bgImgCustomSize")],
+      TABovl_bgImgCustomSizeUnit = attributes["TAB".concat(controlName, "ovl_bgImgCustomSizeUnit")],
+      TABovl_bgImgPos = attributes["TAB".concat(controlName, "ovl_bgImgPos")],
+      TABovl_bgImgcustomPosX = attributes["TAB".concat(controlName, "ovl_bgImgcustomPosX")],
+      TABovl_bgImgcustomPosXUnit = attributes["TAB".concat(controlName, "ovl_bgImgcustomPosXUnit")],
+      TABovl_bgImgcustomPosY = attributes["TAB".concat(controlName, "ovl_bgImgcustomPosY")],
+      TABovl_bgImgcustomPosYUnit = attributes["TAB".concat(controlName, "ovl_bgImgcustomPosYUnit")],
+      TABovl_bgImgRepeat = attributes["TAB".concat(controlName, "ovl_bgImgRepeat")],
+      MOBovl_backgroundSize = attributes["MOB".concat(controlName, "ovl_backgroundSize")],
+      MOBovl_bgImgCustomSize = attributes["MOB".concat(controlName, "ovl_bgImgCustomSize")],
+      MOBovl_bgImgCustomSizeUnit = attributes["MOB".concat(controlName, "ovl_bgImgCustomSizeUnit")],
+      MOBovl_bgImgPos = attributes["MOB".concat(controlName, "ovl_bgImgPos")],
+      MOBovl_bgImgcustomPosX = attributes["MOB".concat(controlName, "ovl_bgImgcustomPosX")],
+      MOBovl_bgImgcustomPosXUnit = attributes["MOB".concat(controlName, "ovl_bgImgcustomPosXUnit")],
+      MOBovl_bgImgcustomPosY = attributes["MOB".concat(controlName, "ovl_bgImgcustomPosY")],
+      MOBovl_bgImgcustomPosYUnit = attributes["MOB".concat(controlName, "ovl_bgImgcustomPosYUnit")],
+      MOBovl_bgImgRepeat = attributes["MOB".concat(controlName, "ovl_bgImgRepeat")],
+      hov_overlayType = attributes["hov_".concat(controlName, "overlayType")],
+      hov_overlayColor = attributes["hov_".concat(controlName, "overlayColor")],
+      hov_overlayGradient = attributes["hov_".concat(controlName, "overlayGradient")],
+      hov_ovl_bgImageURL = attributes["hov_".concat(controlName, "ovl_bgImageURL")],
+      hov_ovl_bgImgAttachment = attributes["hov_".concat(controlName, "ovl_bgImgAttachment")],
+      hov_ovl_opacity = attributes["hov_".concat(controlName, "ovl_opacity")],
+      hov_ovl_blendMode = attributes["hov_".concat(controlName, "ovl_blendMode")],
+      hov_ovl_allowFilters = attributes["hov_".concat(controlName, "ovl_allowFilters")],
+      hov_ovl_fltrBrightness = attributes["hov_".concat(controlName, "ovl_fltrBrightness")],
+      hov_ovl_fltrContrast = attributes["hov_".concat(controlName, "ovl_fltrContrast")],
+      hov_ovl_fltrSaturation = attributes["hov_".concat(controlName, "ovl_fltrSaturation")],
+      hov_ovl_fltrBlur = attributes["hov_".concat(controlName, "ovl_fltrBlur")],
+      hov_ovl_fltrHue = attributes["hov_".concat(controlName, "ovl_fltrHue")],
+      hov_ovl_backgroundSize = attributes["hov_".concat(controlName, "ovl_backgroundSize")],
+      hov_ovl_bgImgCustomSize = attributes["hov_".concat(controlName, "ovl_bgImgCustomSize")],
+      hov_ovl_bgImgCustomSizeUnit = attributes["hov_".concat(controlName, "ovl_bgImgCustomSizeUnit")],
+      hov_ovl_bgImgPos = attributes["hov_".concat(controlName, "ovl_bgImgPos")],
+      hov_ovl_bgImgcustomPosX = attributes["hov_".concat(controlName, "ovl_bgImgcustomPosX")],
+      hov_ovl_bgImgcustomPosXUnit = attributes["hov_".concat(controlName, "ovl_bgImgcustomPosXUnit")],
+      hov_ovl_bgImgcustomPosY = attributes["hov_".concat(controlName, "ovl_bgImgcustomPosY")],
+      hov_ovl_bgImgcustomPosYUnit = attributes["hov_".concat(controlName, "ovl_bgImgcustomPosYUnit")],
+      hov_ovl_bgImgRepeat = attributes["hov_".concat(controlName, "ovl_bgImgRepeat")],
+      hov_TABovl_backgroundSize = attributes["hov_TAB".concat(controlName, "ovl_backgroundSize")],
+      hov_TABovl_bgImgCustomSize = attributes["hov_TAB".concat(controlName, "ovl_bgImgCustomSize")],
+      hov_TABovl_bgImgCustomSizeUnit = attributes["hov_TAB".concat(controlName, "ovl_bgImgCustomSizeUnit")],
+      hov_TABovl_bgImgPos = attributes["hov_TAB".concat(controlName, "ovl_bgImgPos")],
+      hov_TABovl_bgImgcustomPosX = attributes["hov_TAB".concat(controlName, "ovl_bgImgcustomPosX")],
+      hov_TABovl_bgImgcustomPosXUnit = attributes["hov_TAB".concat(controlName, "ovl_bgImgcustomPosXUnit")],
+      hov_TABovl_bgImgcustomPosY = attributes["hov_TAB".concat(controlName, "ovl_bgImgcustomPosY")],
+      hov_TABovl_bgImgcustomPosYUnit = attributes["hov_TAB".concat(controlName, "ovl_bgImgcustomPosYUnit")],
+      hov_TABovl_bgImgRepeat = attributes["hov_TAB".concat(controlName, "ovl_bgImgRepeat")],
+      hov_MOBovl_backgroundSize = attributes["hov_MOB".concat(controlName, "ovl_backgroundSize")],
+      hov_MOBovl_bgImgCustomSize = attributes["hov_MOB".concat(controlName, "ovl_bgImgCustomSize")],
+      hov_MOBovl_bgImgCustomSizeUnit = attributes["hov_MOB".concat(controlName, "ovl_bgImgCustomSizeUnit")],
+      hov_MOBovl_bgImgPos = attributes["hov_MOB".concat(controlName, "ovl_bgImgPos")],
+      hov_MOBovl_bgImgcustomPosX = attributes["hov_MOB".concat(controlName, "ovl_bgImgcustomPosX")],
+      hov_MOBovl_bgImgcustomPosXUnit = attributes["hov_MOB".concat(controlName, "ovl_bgImgcustomPosXUnit")],
+      hov_MOBovl_bgImgcustomPosY = attributes["hov_MOB".concat(controlName, "ovl_bgImgcustomPosY")],
+      hov_MOBovl_bgImgcustomPosYUnit = attributes["hov_MOB".concat(controlName, "ovl_bgImgcustomPosYUnit")],
+      hov_MOBovl_bgImgRepeat = attributes["hov_MOB".concat(controlName, "ovl_bgImgRepeat")];
+  var backgroundStylesDesktop = "\n    background-image: ".concat(backgroundType === "classic" && bgImageURL ? "url(\"".concat(bgImageURL, "\")") : backgroundType === "gradient" ? gradientColor : "none", ";\n\n    ").concat(backgroundType === "classic" && bgImageURL ? "\n        ".concat(backgroundSize && backgroundSize !== "custom" ? "background-size: ".concat(backgroundSize, ";") : backgroundSize === "custom" ? "background-size: ".concat(bgImgCustomSize).concat(bgImgCustomSizeUnit, " auto;") : " ", "\n\n        ").concat(bgImgPos && bgImgPos !== "custom" ? "background-position: ".concat(bgImgPos, ";") : bgImgPos === "custom" ? "background-position: ".concat(bgImgcustomPosX).concat(bgImgcustomPosXUnit, " ").concat(bgImgcustomPosY).concat(bgImgcustomPosYUnit, ";") : " ", "\n\n        ").concat(bgImgAttachment ? "background-attachment: ".concat(bgImgAttachment, ";") : " ", "\n\n        ").concat(bgImgRepeat ? "background-repeat: ".concat(bgImgRepeat, ";") : " ", "\n        \n        ").concat(isBgOverlay ? "\n              z-index: 2;\n              position: relative;\n            " : " ", "\t\n        ") : " ", "\n  \n\t\t").concat(backgroundColor ? "background-color: ".concat(backgroundColor, ";") : " ", "\n\n  ");
+  var hoverBackgroundStylesDesktop = "\n\n  ".concat(hov_backgroundType === "classic" && hov_bgImageURL || hov_backgroundType === "gradient" && hov_gradientColor ? "\n      background-image: ".concat(hov_backgroundType === "classic" && hov_bgImageURL ? "url(\"".concat(hov_bgImageURL, "\")") : hov_backgroundType === "gradient" && hov_gradientColor ? hov_gradientColor : "none", ";    \n      ") : " ", "\n\n \n\n  ").concat(hov_backgroundType === "classic" && hov_bgImageURL ? "\n      ".concat(hov_backgroundSize && hov_backgroundSize !== "custom" ? "background-size: ".concat(hov_backgroundSize, ";") : hov_backgroundSize === "custom" ? "background-size: ".concat(hov_bgImgCustomSize).concat(hov_bgImgCustomSizeUnit, " auto;") : " ", "\n\n      ").concat(hov_bgImgPos && hov_bgImgPos !== "custom" ? "background-position: ".concat(hov_bgImgPos, ";") : hov_bgImgPos === "custom" ? "background-position: ".concat(hov_bgImgcustomPosX).concat(hov_bgImgcustomPosXUnit, " ").concat(hov_bgImgcustomPosY).concat(hov_bgImgcustomPosYUnit, ";") : " ", "\n\n      ").concat(hov_bgImgAttachment ? "background-attachment: ".concat(hov_bgImgAttachment, ";") : " ", "\n\n      ").concat(hov_bgImgRepeat ? "background-repeat: ".concat(hov_bgImgRepeat, ";") : " ", "\n      \n      ") : " ", "\n\n      ").concat(hov_backgroundColor ? "background-color: ".concat(hov_backgroundColor, ";") : " ", "\n\n");
+  var backgroundStylesTab = "\n    ".concat(backgroundType === "classic" && bgImageURL ? "\n        ".concat(TABbackgroundSize && TABbackgroundSize !== "custom" ? "background-size: ".concat(TABbackgroundSize, ";") : TABbackgroundSize === "custom" ? "background-size: ".concat(TABbgImgCustomSize).concat(TABbgImgCustomSizeUnit, " auto;") : " ", "\n\n        ").concat(TABbgImgPos && TABbgImgPos !== "custom" ? "background-position: ".concat(TABbgImgPos, ";") : TABbgImgPos === "custom" ? "background-position: ".concat(TABbgImgcustomPosX).concat(TABbgImgcustomPosXUnit, " ").concat(TABbgImgcustomPosY).concat(TABbgImgcustomPosYUnit, ";") : " ", "\n\n        ").concat(TABbgImgRepeat ? "background-repeat: ".concat(TABbgImgRepeat, ";") : " ", "\n        background-attachment: scroll;\n        ") : " ", "\n\n  ");
+  var hoverBackgroundStylesTab = "\n  ".concat(hov_backgroundType === "classic" && hov_bgImageURL ? "\n      ".concat(hov_TABbackgroundSize && hov_TABbackgroundSize !== "custom" ? "background-size: ".concat(hov_TABbackgroundSize, ";") : hov_TABbackgroundSize === "custom" ? "background-size: ".concat(hov_TABbgImgCustomSize).concat(hov_TABbgImgCustomSizeUnit, " auto;") : " ", "\n\n      ").concat(hov_TABbgImgPos && hov_TABbgImgPos !== "custom" ? "background-position: ".concat(hov_TABbgImgPos, ";") : hov_TABbgImgPos === "custom" ? "background-position: ".concat(hov_TABbgImgcustomPosX).concat(hov_TABbgImgcustomPosXUnit, " ").concat(hov_TABbgImgcustomPosY).concat(hov_TABbgImgcustomPosYUnit, ";") : " ", "\n\n      ").concat(hov_TABbgImgRepeat ? "background-repeat: ".concat(hov_TABbgImgRepeat, ";") : " ", "\n      background-attachment: scroll;\n      ") : " ", "\n\n");
+  var backgroundStylesMobile = "\n    ".concat(backgroundType === "classic" && bgImageURL ? "\n        ".concat(MOBbackgroundSize && MOBbackgroundSize !== "custom" ? "background-size: ".concat(MOBbackgroundSize, ";") : MOBbackgroundSize === "custom" ? "background-size: ".concat(MOBbgImgCustomSize).concat(MOBbgImgCustomSizeUnit, " auto;") : " ", "\n\n        ").concat(MOBbgImgPos && MOBbgImgPos !== "custom" ? "background-position: ".concat(MOBbgImgPos, ";") : MOBbgImgPos === "custom" ? "background-position: ".concat(MOBbgImgcustomPosX).concat(MOBbgImgcustomPosXUnit, " ").concat(MOBbgImgcustomPosY).concat(MOBbgImgcustomPosYUnit, ";") : " ", "\n\n        ").concat(MOBbgImgRepeat ? "background-repeat: ".concat(MOBbgImgRepeat, ";") : " ", "\n\n        ") : " ", "\n\n  ");
+  var hoverBackgroundStylesMobile = "\n  ".concat(hov_backgroundType === "classic" && hov_bgImageURL ? "\n      ".concat(hov_MOBbackgroundSize && hov_MOBbackgroundSize !== "custom" ? "background-size: ".concat(hov_MOBbackgroundSize, ";") : hov_MOBbackgroundSize === "custom" ? "background-size: ".concat(hov_MOBbgImgCustomSize).concat(hov_MOBbgImgCustomSizeUnit, " auto;") : " ", "\n  \n      ").concat(hov_MOBbgImgPos && hov_MOBbgImgPos !== "custom" ? "background-position: ".concat(hov_MOBbgImgPos, ";") : hov_MOBbgImgPos === "custom" ? "background-position: ".concat(hov_MOBbgImgcustomPosX).concat(hov_MOBbgImgcustomPosXUnit, " ").concat(hov_MOBbgImgcustomPosY).concat(hov_MOBbgImgcustomPosYUnit, ";") : " ", "\n  \n      ").concat(hov_MOBbgImgRepeat ? "background-repeat: ".concat(hov_MOBbgImgRepeat, ";") : " ", "\n  \n      ") : " ", "\n  \n  "); // console.log({ ovl_blendMode });
+
+  var overlayStylesDesktop = "\n  \n    ".concat(isBgOverlay ? "\n          content: \"\";\n          position: absolute;\n          top: 0;\n          bottom: 0;\n          right: 0;\n          left: 0;\n          z-index: 0;\n          background-image: ".concat(overlayType === "classic" && ovl_bgImageURL ? "url(\"".concat(ovl_bgImageURL, "\")") : overlayType === "gradient" ? overlayGradient : "none", ";\n\t\t      ").concat(overlayColor ? "background-color: ".concat(overlayColor, ";") : " ", "\n\t\t      ").concat(ovl_opacity || ovl_opacity === 0 ? "opacity: ".concat(ovl_opacity, ";") : " ", "\n\t\t      ").concat(ovl_blendMode ? "mix-blend-mode: ".concat(ovl_blendMode, ";") : " ", "\n          ").concat(ovl_allowFilters ? "filter: brightness( ".concat(ovl_fltrBrightness, "% ) contrast( ").concat(ovl_fltrContrast, "% ) saturate( ").concat(ovl_fltrSaturation, "% ) blur( ").concat(ovl_fltrBlur, "px ) hue-rotate( \n            ").concat(ovl_fltrHue, "deg );") : " ", "\n\n      ").concat(overlayType === "classic" && ovl_bgImageURL ? "\n          ".concat(ovl_backgroundSize && ovl_backgroundSize !== "custom" ? "background-size: ".concat(ovl_backgroundSize, ";") : ovl_backgroundSize === "custom" ? "background-size: ".concat(ovl_bgImgCustomSize).concat(ovl_bgImgCustomSizeUnit, " auto;") : " ", "\n\n          ").concat(ovl_bgImgPos && ovl_bgImgPos !== "custom" ? "background-position: ".concat(ovl_bgImgPos, ";") : ovl_bgImgPos === "custom" ? "background-position: ".concat(ovl_bgImgcustomPosX).concat(ovl_bgImgcustomPosXUnit, " ").concat(ovl_bgImgcustomPosY).concat(ovl_bgImgcustomPosYUnit, ";") : " ", "\n\n          ").concat(ovl_bgImgAttachment ? "background-attachment: ".concat(ovl_bgImgAttachment, ";") : " ", "\n\n          ").concat(ovl_bgImgRepeat ? "background-repeat: ".concat(ovl_bgImgRepeat, ";") : " ", "\n          \n          ") : " ", "\n\n      ") : " ", "\n  \n  \n  ");
+  var hoverOverlayStylesDesktop = "\n  \n  ".concat(isBgOverlay ? "\n      ".concat(hov_overlayType === "classic" && hov_ovl_bgImageURL || hov_overlayType === "gradient" && hov_overlayGradient ? "\n        background-image: ".concat(hov_overlayType === "classic" && hov_ovl_bgImageURL ? "url(\"".concat(hov_ovl_bgImageURL, "\")") : hov_overlayType === "gradient" && hov_overlayGradient ? hov_overlayGradient : "none", ";\n        ") : " ", "\n\n      ").concat(hov_overlayColor ? "background-color: ".concat(hov_overlayColor, ";") : " ", "\n      ").concat(hov_ovl_opacity || hov_ovl_opacity === 0 ? "opacity: ".concat(hov_ovl_opacity, ";") : " ", "\n      ").concat(hov_ovl_blendMode ? "mix-blend-mode: ".concat(hov_ovl_blendMode, ";") : " ", "\n      ").concat(hov_ovl_allowFilters ? "filter: brightness( ".concat(hov_ovl_fltrBrightness, "% ) contrast( ").concat(hov_ovl_fltrContrast, "% ) saturate( ").concat(hov_ovl_fltrSaturation, "% ) blur( ").concat(hov_ovl_fltrBlur, "px ) hue-rotate( \n        ").concat(hov_ovl_fltrHue, "deg );") : " ", "\n  \n    ").concat(hov_overlayType === "classic" && hov_ovl_bgImageURL ? "\n        ".concat(hov_ovl_backgroundSize && hov_ovl_backgroundSize !== "custom" ? "background-size: ".concat(hov_ovl_backgroundSize, ";") : hov_ovl_backgroundSize === "custom" ? "background-size: ".concat(hov_ovl_bgImgCustomSize).concat(hov_ovl_bgImgCustomSizeUnit, " auto;") : " ", "\n  \n        ").concat(hov_ovl_bgImgPos && hov_ovl_bgImgPos !== "custom" ? "background-position: ".concat(hov_ovl_bgImgPos, ";") : hov_ovl_bgImgPos === "custom" ? "background-position: ".concat(hov_ovl_bgImgcustomPosX).concat(hov_ovl_bgImgcustomPosXUnit, " ").concat(hov_ovl_bgImgcustomPosY).concat(hov_ovl_bgImgcustomPosYUnit, ";") : " ", "\n  \n        ").concat(hov_ovl_bgImgAttachment ? "background-attachment: ".concat(hov_ovl_bgImgAttachment, ";") : " ", "\n  \n        ").concat(hov_ovl_bgImgRepeat ? "background-repeat: ".concat(hov_ovl_bgImgRepeat, ";") : " ", "\n        \n        ") : " ", "\n  \n    ") : " ", "\n  \n  \n  ");
+  var overlayStylesTab = "\n  ".concat(isBgOverlay && overlayType === "classic" && ovl_bgImageURL ? "\n      ".concat(TABovl_backgroundSize && TABovl_backgroundSize !== "custom" ? "background-size: ".concat(TABovl_backgroundSize, ";") : TABovl_backgroundSize === "custom" ? "background-size: ".concat(TABovl_bgImgCustomSize).concat(TABovl_bgImgCustomSizeUnit, " auto;") : " ", "\n\n        ").concat(TABovl_bgImgPos && TABovl_bgImgPos !== "custom" ? "background-position: ".concat(TABovl_bgImgPos, ";") : TABovl_bgImgPos === "custom" ? "background-position: ".concat(TABovl_bgImgcustomPosX).concat(TABovl_bgImgcustomPosXUnit, " ").concat(TABovl_bgImgcustomPosY).concat(TABovl_bgImgcustomPosYUnit, ";") : " ", "\n\n        ").concat(TABovl_bgImgRepeat ? "background-repeat: ".concat(TABovl_bgImgRepeat, ";") : " ", "\n        background-attachment: scroll;\n      ") : " ", "\n  \n  ");
+  var hoverOverlayStylesTab = "\n".concat(isBgOverlay && hov_overlayType === "classic" && hov_ovl_bgImageURL ? "\n    ".concat(hov_TABovl_backgroundSize && hov_TABovl_backgroundSize !== "custom" ? "background-size: ".concat(hov_TABovl_backgroundSize, ";") : hov_TABovl_backgroundSize === "custom" ? "background-size: ".concat(hov_TABovl_bgImgCustomSize).concat(hov_TABovl_bgImgCustomSizeUnit, " auto;") : " ", "\n\n      ").concat(hov_TABovl_bgImgPos && hov_TABovl_bgImgPos !== "custom" ? "background-position: ".concat(hov_TABovl_bgImgPos, ";") : hov_TABovl_bgImgPos === "custom" ? "background-position: ".concat(hov_TABovl_bgImgcustomPosX).concat(hov_TABovl_bgImgcustomPosXUnit, " ").concat(hov_TABovl_bgImgcustomPosY).concat(hov_TABovl_bgImgcustomPosYUnit, ";") : " ", "\n\n      ").concat(hov_TABovl_bgImgRepeat ? "background-repeat: ".concat(hov_TABovl_bgImgRepeat, ";") : " ", "\n      background-attachment: scroll;\n    ") : " ", "\n\n");
+  var overlayStylesMobile = "\n  ".concat(isBgOverlay && overlayType === "classic" && ovl_bgImageURL ? "\n      ".concat(MOBovl_backgroundSize && MOBovl_backgroundSize !== "custom" ? "background-size: ".concat(MOBovl_backgroundSize, ";") : MOBovl_backgroundSize === "custom" ? "background-size: ".concat(MOBovl_bgImgCustomSize).concat(MOBovl_bgImgCustomSizeUnit, " auto;") : " ", "\n\n      ").concat(MOBovl_bgImgPos && MOBovl_bgImgPos !== "custom" ? "background-position: ".concat(MOBovl_bgImgPos, ";") : MOBovl_bgImgPos === "custom" ? "background-position: ".concat(MOBovl_bgImgcustomPosX).concat(MOBovl_bgImgcustomPosXUnit, " ").concat(MOBovl_bgImgcustomPosY).concat(MOBovl_bgImgcustomPosYUnit, ";") : " ", "\n\n      ").concat(MOBovl_bgImgRepeat ? "background-repeat: ".concat(MOBovl_bgImgRepeat, ";") : " ", "\n      ") : " ", "\n  \n  ");
+  var hoverOverlayStylesMobile = "\n  ".concat(isBgOverlay && hov_overlayType === "classic" && hov_ovl_bgImageURL ? "\n      ".concat(hov_MOBovl_backgroundSize && hov_MOBovl_backgroundSize !== "custom" ? "background-size: ".concat(hov_MOBovl_backgroundSize, ";") : hov_MOBovl_backgroundSize === "custom" ? "background-size: ".concat(hov_MOBovl_bgImgCustomSize).concat(hov_MOBovl_bgImgCustomSizeUnit, " auto;") : " ", "\n\n      ").concat(hov_MOBovl_bgImgPos && hov_MOBovl_bgImgPos !== "custom" ? "background-position: ".concat(hov_MOBovl_bgImgPos, ";") : hov_MOBovl_bgImgPos === "custom" ? "background-position: ".concat(hov_MOBovl_bgImgcustomPosX).concat(hov_MOBovl_bgImgcustomPosXUnit, " ").concat(hov_MOBovl_bgImgcustomPosY).concat(hov_MOBovl_bgImgcustomPosYUnit, ";") : " ", "\n\n      ").concat(hov_MOBovl_bgImgRepeat ? "background-repeat: ".concat(hov_MOBovl_bgImgRepeat, ";") : " ", "\n      ") : " ", "\n  \n  ");
   return {
     backgroundStylesDesktop: backgroundStylesDesktop,
+    hoverBackgroundStylesDesktop: hoverBackgroundStylesDesktop,
     backgroundStylesTab: backgroundStylesTab,
+    hoverBackgroundStylesTab: hoverBackgroundStylesTab,
     backgroundStylesMobile: backgroundStylesMobile,
-    overlyStyles: overlyStyles
+    hoverBackgroundStylesMobile: hoverBackgroundStylesMobile,
+    overlayStylesDesktop: overlayStylesDesktop,
+    hoverOverlayStylesDesktop: hoverOverlayStylesDesktop,
+    overlayStylesTab: overlayStylesTab,
+    hoverOverlayStylesTab: hoverOverlayStylesTab,
+    overlayStylesMobile: overlayStylesMobile,
+    hoverOverlayStylesMobile: hoverOverlayStylesMobile
   };
 }; // function to generate responsive range controller attributes for multiple range control based on the array of prefix
 
@@ -11224,7 +13860,9 @@ var ResponsiveRangeController = function ResponsiveRangeController(_ref) {
     }];
   }
 
-  return /*#__PURE__*/React.createElement(React.Fragment, null, noUnits ? /*#__PURE__*/React.createElement(React.Fragment, null, resOption == "Desktop" && /*#__PURE__*/React.createElement(_responsive_btn__WEBPACK_IMPORTED_MODULE_0__["default"], {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "responsiveRangeControllerWrapper"
+  }, noUnits ? /*#__PURE__*/React.createElement(React.Fragment, null, resOption == "Desktop" && /*#__PURE__*/React.createElement(_responsive_btn__WEBPACK_IMPORTED_MODULE_0__["default"], {
     label: baseLabel,
     resRequiredProps: resRequiredProps,
     controlName: controlName

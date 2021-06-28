@@ -132,10 +132,18 @@ const edit = (props) => {
 	});
 
 	const {
-		backgroundStylesDesktop,
-		backgroundStylesTab,
-		backgroundStylesMobile,
-		overlyStyles,
+		backgroundStylesDesktop: priceTableBackgroundStylesDesktop,
+		hoverBackgroundStylesDesktop: priceTableHoverBackgroundStylesDesktop,
+		backgroundStylesTab: priceTableBackgroundStylesTab,
+		hoverBackgroundStylesTab: priceTableHoverBackgroundStylesTab,
+		backgroundStylesMobile: priceTableBackgroundStylesMobile,
+		hoverBackgroundStylesMobile: priceTableHoverBackgroundStylesMobile,
+		overlayStylesDesktop: priceTableOverlayStylesDesktop,
+		hoverOverlayStylesDesktop: priceTableHoverOverlayStylesDesktop,
+		overlayStylesTab: priceTableOverlayStylesTab,
+		hoverOverlayStylesTab: priceTableHoverOverlayStylesTab,
+		overlayStylesMobile: priceTableOverlayStylesMobile,
+		hoverOverlayStylesMobile: priceTableHoverOverlayStylesMobile,
 	} = generateBackgroundControlStyles({
 		attributes,
 		controlName: priceTableBackground,
@@ -438,16 +446,21 @@ const edit = (props) => {
 		.${blockId} .ebgb-pricing .ebgb-pricing-item {
 			${wrapperPaddingStylesDesktop}
 			${wrapperMarginStylesDesktop}
-			${backgroundStylesDesktop}
+			${priceTableBackgroundStylesDesktop}
 			${bdShadowStyesDesktop}
 		}
 
 		.${blockId} .ebgb-pricing .ebgb-pricing-item::before {
-			${overlyStyles}
+			${priceTableOverlayStylesDesktop}
 		}
 
 		.${blockId} .ebgb-pricing .ebgb-pricing-item:hover {
+			${priceTableHoverBackgroundStylesDesktop}
 			${bdShadowStylesHoverDesktop}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item:hover:before {
+			${priceTableHoverOverlayStylesDesktop}
 		}
 
 		.${blockId} .ebgb-pricing .ebgb-pricing-item .header {
@@ -575,12 +588,21 @@ const edit = (props) => {
 		.${blockId} .ebgb-pricing .ebgb-pricing-item {
 			${wrapperPaddingStylesTab}
 			${wrapperMarginStylesTab}
-			${backgroundStylesTab}
+			${priceTableBackgroundStylesTab}
 			${bdShadowStyesTab}
 		}
 
+		.${blockId} .ebgb-pricing .ebgb-pricing-item:before {
+			${priceTableOverlayStylesTab}
+		}
+
 		.${blockId} .ebgb-pricing .ebgb-pricing-item:hover {
+			${priceTableHoverBackgroundStylesTab}
 			${bdShadowStylesHoverTab}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item:hover:before {
+			${priceTableHoverOverlayStylesTab}
 		}
 
 		.${blockId} .ebgb-pricing .ebgb-pricing-item .header {
@@ -669,12 +691,21 @@ const edit = (props) => {
 		.${blockId} .ebgb-pricing .ebgb-pricing-item {
 			${wrapperPaddingStylesMobile}
 			${wrapperMarginStylesMobile}
-			${backgroundStylesMobile}
+			${priceTableBackgroundStylesMobile}
 			${bdShadowStyesMobile}
 		}
 
+		.${blockId} .ebgb-pricing .ebgb-pricing-item:before {
+			${priceTableOverlayStylesMobile}
+		}
+
 		.${blockId} .ebgb-pricing .ebgb-pricing-item:hover {
+			${priceTableHoverBackgroundStylesMobile}
 			${bdShadowStylesHoverMobile}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item:hover:before {
+			${priceTableHoverOverlayStylesMobile}
 		}
 
 		.${blockId} .ebgb-pricing .ebgb-pricing-item .header {

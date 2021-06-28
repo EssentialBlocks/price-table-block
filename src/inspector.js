@@ -281,6 +281,9 @@ const Inspector = ({ attributes, setAttributes }) => {
 						}}
 					/>
 					<PanelBody title={__("Styles")}>
+						<BaseControl>
+							<h3 className="eb-control-title">{__("Background")}</h3>
+						</BaseControl>
 						<BackgroundControl
 							controlName={priceTableBackground}
 							resRequiredProps={resRequiredProps}
