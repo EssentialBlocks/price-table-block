@@ -563,7 +563,13 @@ const edit = (props) => {
 		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon {
 			display: flex;
 			align-items: center;
-			justify-content: center;
+			justify-content: ${
+				contentAlign === "left"
+					? "flex-start"
+					: contentAlign === "right"
+					? "flex-end"
+					: "center"
+			};
 		}
 		
 		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon {

@@ -1,4 +1,5 @@
 const { __ } = wp.i18n;
+const { Dashicon } = wp.components;
 
 export const BORDER_STYLES = [
 	{ label: __("Dashed"), value: "dashed" },

@@ -19,6 +19,7 @@ const {
  */
 import {
 	TWOUNITS,
+	ICON_POSITION,
 	buttonIconSpacing,
 	buttonIconSize,
 	buttonPadding,
@@ -99,7 +100,6 @@ const Inspector = ({ attributes, setAttributes }) => {
 		titleLineColor,
 		titleBackgroundColor,
 		subtitleTextColor,
-		defaultIconBackground,
 		showIconBackground,
 		iconBackgroundColor,
 		iconBackgroundHoverColor,
@@ -116,7 +116,6 @@ const Inspector = ({ attributes, setAttributes }) => {
 		ribbonText,
 		ribbonColor,
 		ribbonBackgroundColor,
-		hoverBackgroundColor,
 		// new attributes
 	} = attributes;
 
@@ -536,7 +535,9 @@ const Inspector = ({ attributes, setAttributes }) => {
 						icon="plus-alt"
 						onClick={onFeatureAdd}
 					>
-						<span className="eb-pricebox-add-button-label">Add Feature</span>
+						<span className="eb-pricebox-add-button-label">
+							{__("Add Feature", "price-table-box")}
+						</span>
 					</Button>
 					<hr />
 					<ColorControl
@@ -674,7 +675,6 @@ const Inspector = ({ attributes, setAttributes }) => {
 							onChange={() => {
 								setAttributes({
 									showIconBackground: !showIconBackground,
-									defaultIconBackground: !showIconBackground,
 								});
 							}}
 						/>

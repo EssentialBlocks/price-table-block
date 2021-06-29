@@ -226,10 +226,6 @@ const attributes = {
 		type: "string",
 		default: "#6d6d6d",
 	},
-	defaultIconBackground: {
-		type: "boolean",
-		default: false,
-	},
 	showIconBackground: {
 		type: "boolean",
 		default: true,
