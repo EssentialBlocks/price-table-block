@@ -288,6 +288,9 @@ const Inspector = ({ attributes, setAttributes }) => {
 							controlName={priceTableBackground}
 							resRequiredProps={resRequiredProps}
 						/>
+						<BaseControl>
+							<h3 className="eb-control-title">{__("Padding & Margin")}</h3>
+						</BaseControl>
 						<ResponsiveDimensionsControl
 							resRequiredProps={resRequiredProps}
 							controlName={wrapperPadding}
@@ -647,13 +650,13 @@ const Inspector = ({ attributes, setAttributes }) => {
 						controlName={buttonBackgroundControl}
 						resRequiredProps={resRequiredProps}
 					/>
-					<ColorControl
+					{/* <ColorControl
 						label={__("Hover Background")}
 						color={hoverBackgroundColor}
 						onChange={(hoverBackgroundColor) =>
 							setAttributes({ hoverBackgroundColor })
 						}
-					/>
+					/> */}
 					<BaseControl>
 						<h3 className="eb-control-title">{__("Button Border Style")}</h3>
 					</BaseControl>

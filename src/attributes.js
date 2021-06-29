@@ -294,9 +294,6 @@ const attributes = {
 		type: "string",
 		default: "#ffffff",
 	},
-	hoverBackgroundColor: {
-		type: "string",
-	},
 	hoverTextColor: {
 		type: "string",
 	},
@@ -343,7 +340,6 @@ const attributes = {
 	...generateBorderShadowAttributes(buttonBorderShadow),
 	...generateBorderShadowAttributes(wrapperBorderShadow),
 	...generateBorderShadowAttributes(iconBorderShadow),
-	// new attributes end
 };
 
 export default attributes;

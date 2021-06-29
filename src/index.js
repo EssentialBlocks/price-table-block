@@ -14,15 +14,19 @@ import icon from "./icon";
 import example from "./example";
 import "./style.scss";
 
-registerBlockType("pricing-table-block/pricing-table", {
-	title: __("Pricing Table", "essential-blocks"),
+registerBlockType("price-table-block/pricing-table", {
+	title: __("Pricing Table", "price-table-block"),
+	description: __(
+		"EB Pricing Table will let you create effective product pricing table with perfect styling to get more sales from your prospective buyers.",
+		"price-table-block"
+	),
 	icon,
 	category: "widgets",
 	attributes,
 	keywords: [
-		__("eb price", "essential-blocks"),
-		__("table", "essential-blocks"),
-		__("comparison", "essential-blocks"),
+		__("eb price", "price-table-block"),
+		__("table", "price-table-block"),
+		__("comparison", "price-table-block"),
 	],
 	edit: Edit,
 	save: Save,

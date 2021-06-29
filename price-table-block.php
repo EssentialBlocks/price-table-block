@@ -88,7 +88,7 @@ function create_block_pricing_table_block_init()
 
 
 	if (!WP_Block_Type_Registry::get_instance()->is_registered('essential-blocks/pricing-table')) {
-		register_block_type('pricing-table-block/pricing-table', array(
+		register_block_type('price-table-block/pricing-table', array(
 			'editor_script' => 'create-block-pricing-table-block-editor',
 			'editor_style' => 'create-block-pricing-table-block-editor',
 			'style'         => 'create-block-pricing-table-block',

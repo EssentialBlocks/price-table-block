@@ -95,7 +95,6 @@ const edit = (props) => {
 		priceCurrencyTextColor,
 		pricingPeriodTextColor,
 		buttonTextColor,
-		hoverBackgroundColor,
 		hoverTextColor,
 		iconBackgroundColor,
 		iconBackgroundHoverColor,
@@ -348,10 +347,18 @@ const edit = (props) => {
 	});
 
 	const {
-		backgroundStylesDesktop: buttonBackgroundStyleDesktop,
-		backgroundStylesTab: buttonBackgroundStyleTab,
-		backgroundStylesMobile: buttonBackgroundStyleMobile,
-		overlyStyles: buttonBackgroundStyleOverlay,
+		backgroundStylesDesktop: buttonBackgroundStylesDesktop,
+		hoverBackgroundStylesDesktop: buttonHoverBackgroundStylesDesktop,
+		backgroundStylesTab: buttonBackgroundStylesTab,
+		hoverBackgroundStylesTab: buttonHoverBackgroundStylesTab,
+		backgroundStylesMobile: buttonBackgroundStylesMobile,
+		hoverBackgroundStylesMobile: buttonHoverBackgroundStylesMobile,
+		overlayStylesDesktop: buttonOverlayStylesDesktop,
+		hoverOverlayStylesDesktop: buttonHoverOverlayStylesDesktop,
+		overlayStylesTab: buttonOverlayStylesTab,
+		hoverOverlayStylesTab: buttonHoverOverlayStylesTab,
+		overlayStylesMobile: buttonOverlayStylesMobile,
+		hoverOverlayStylesMobile: buttonHoverOverlayStylesMobile,
 	} = generateBackgroundControlStyles({
 		attributes,
 		controlName: buttonBackgroundControl,
@@ -411,7 +418,7 @@ const edit = (props) => {
 		attributes,
 	});
 
-	const wrapperStyles = `
+	const desktopStyles = `
 		.${blockId} .ebgb-pricing {
 			text-align: ${contentAlign};
 			${ribbonStyle === "ribbon-4" ? "overflow: hidden;" : ""}
@@ -525,15 +532,23 @@ const edit = (props) => {
 		.${blockId} .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button {
 			${buttonPaddingStylesDesktop}
 			${buttonTypoStylesDesktop}
-			${buttonBackgroundStyleDesktop}
+			${buttonBackgroundStylesDesktop}
 			${btnShadowStyesDesktop}
 			color: ${buttonTextColor};
 		}
 
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button:before {
+			${buttonOverlayStylesDesktop}
+		}
+
 		.${blockId} .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button:hover {
 			${btnShadowStylesHoverDesktop}
+			${buttonHoverBackgroundStylesDesktop}
 			color: ${hoverTextColor};
-			background-color: ${hoverBackgroundColor};
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button:hover:before {
+			${buttonHoverOverlayStylesDesktop}
 		}
 
 		.${blockId} .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button i {
@@ -584,7 +599,7 @@ const edit = (props) => {
 		}
 	`;
 
-	const wrapperStylesTab = `
+	const tabStyles = `
 		.${blockId} .ebgb-pricing .ebgb-pricing-item {
 			${wrapperPaddingStylesTab}
 			${wrapperMarginStylesTab}
@@ -655,12 +670,21 @@ const edit = (props) => {
 		.${blockId} .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button {
 			${buttonPaddingStylesTab}
 			${buttonTypoStylesTab}
-			${buttonBackgroundStyleTab}
+			${buttonBackgroundStylesTab}
 			${btnShadowStyesTab}
 		}
 
 		.${blockId} .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button:hover {
+			${buttonHoverBackgroundStylesTab}
 			${btnShadowStylesHoverTab}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button:before {
+			${buttonOverlayStylesTab}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button:hover:before {
+			${buttonHoverOverlayStylesTab}
 		}
 
 		.${blockId} .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button i {
@@ -687,7 +711,7 @@ const edit = (props) => {
 		}
 	`;
 
-	const wrapperStylesMobile = `
+	const mobileStyles = `
 		.${blockId} .ebgb-pricing .ebgb-pricing-item {
 			${wrapperPaddingStylesMobile}
 			${wrapperMarginStylesMobile}
@@ -758,12 +782,20 @@ const edit = (props) => {
 		.${blockId} .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button {
 			${buttonPaddingStylesMobile}
 			${buttonTypoStylesMobile}
-			${buttonBackgroundStyleMobile}
+			${buttonBackgroundStylesMobile}
 			${btnShadowStyesMobile}
 		}
 
 		.${blockId} .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button:hover {
-			${btnShadowStylesHoverMobile}
+			${buttonHoverBackgroundStylesMobile}
+		}
+
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button:before {
+			${buttonOverlayStylesMobile}
+		}
+		
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button:hover:before {
+			${buttonHoverOverlayStylesMobile}
 		}
 
 		.${blockId} .ebgb-pricing .ebgb-pricing-item .footer .ebgb-pricing-button i {
@@ -843,18 +875,18 @@ const edit = (props) => {
 
 	// all css styles for large screen width (desktop/laptop) in strings ⬇
 	const desktopAllStyles = softMinifyCssStrings(`
-		${isCssExists(wrapperStyles) ? wrapperStyles : " "}
+		${isCssExists(desktopStyles) ? desktopStyles : " "}
 		${isCssExists(titleLineStyle) ? titleLineStyle : " "}
 	`);
 
 	// all css styles for Tab in strings ⬇
 	const tabAllStyles = softMinifyCssStrings(`
-		${isCssExists(wrapperStylesTab) ? wrapperStylesTab : " "}
+		${isCssExists(tabStyles) ? tabStyles : " "}
 	`);
 
 	// all css styles for Mobile in strings ⬇
 	const mobileAllStyles = softMinifyCssStrings(`
-		${isCssExists(wrapperStylesMobile) ? wrapperStylesMobile : " "}
+		${isCssExists(mobileStyles) ? mobileStyles : " "}
 	`);
 
 	// Set All Style in "blockMeta" Attribute
