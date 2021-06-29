@@ -12,12 +12,9 @@ const Save = ({ attributes }) => {
 		subtitle,
 		showHeaderIcon,
 		headerIcon,
-		showTitleLine,
 		mainPrice,
 		showOnSale,
 		salePrice,
-		salePriceTextColor,
-		salepriceCurrencyTextColor,
 		priceCurrency,
 		currencyPlacement,
 		pricePeriod,
@@ -28,35 +25,16 @@ const Save = ({ attributes }) => {
 		buttonIconPosition,
 		buttonText,
 		buttonURL,
-		featuresTextColor,
-		titleBackgroundColor,
-		titleTextColor,
-		titleLineColor,
-		subtitleTextColor,
-		priceTextColor,
-		priceCurrencyTextColor,
-		pricingPeriodTextColor,
-		buttonTextColor,
-		hoverBackgroundColor,
-		hoverTextColor,
-		iconBackgroundColor,
-		iconBackgroundHoverColor,
-		showIconBackground,
-		iconColor,
-		iconHoverColor,
 		contentAlign,
 		showRibbon,
 		ribbonStyle,
-		ribbonText,
-		ribbonColor,
-		ribbonBackgroundColor,
 	} = attributes;
 
 	// ribbon Class
 	const ribbonClass = showRibbon ? ` featured ${ribbonStyle}` : "";
 
 	return (
-		<div>
+		<div {...useBlockProps.save()}>
 			<div className={`${blockId} ebgb-pricing-content-${contentAlign}`}>
 				<div className={`ebgb-pricing ${pricingStyle}`}>
 					<div className={`ebgb-pricing-item${ribbonClass}`}>

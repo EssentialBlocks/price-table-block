@@ -7589,12 +7589,9 @@ var Save = function Save(_ref) {
       subtitle = attributes.subtitle,
       showHeaderIcon = attributes.showHeaderIcon,
       headerIcon = attributes.headerIcon,
-      showTitleLine = attributes.showTitleLine,
       mainPrice = attributes.mainPrice,
       showOnSale = attributes.showOnSale,
       salePrice = attributes.salePrice,
-      salePriceTextColor = attributes.salePriceTextColor,
-      salepriceCurrencyTextColor = attributes.salepriceCurrencyTextColor,
       priceCurrency = attributes.priceCurrency,
       currencyPlacement = attributes.currencyPlacement,
       pricePeriod = attributes.pricePeriod,
@@ -7605,31 +7602,12 @@ var Save = function Save(_ref) {
       buttonIconPosition = attributes.buttonIconPosition,
       buttonText = attributes.buttonText,
       buttonURL = attributes.buttonURL,
-      featuresTextColor = attributes.featuresTextColor,
-      titleBackgroundColor = attributes.titleBackgroundColor,
-      titleTextColor = attributes.titleTextColor,
-      titleLineColor = attributes.titleLineColor,
-      subtitleTextColor = attributes.subtitleTextColor,
-      priceTextColor = attributes.priceTextColor,
-      priceCurrencyTextColor = attributes.priceCurrencyTextColor,
-      pricingPeriodTextColor = attributes.pricingPeriodTextColor,
-      buttonTextColor = attributes.buttonTextColor,
-      hoverBackgroundColor = attributes.hoverBackgroundColor,
-      hoverTextColor = attributes.hoverTextColor,
-      iconBackgroundColor = attributes.iconBackgroundColor,
-      iconBackgroundHoverColor = attributes.iconBackgroundHoverColor,
-      showIconBackground = attributes.showIconBackground,
-      iconColor = attributes.iconColor,
-      iconHoverColor = attributes.iconHoverColor,
       contentAlign = attributes.contentAlign,
       showRibbon = attributes.showRibbon,
-      ribbonStyle = attributes.ribbonStyle,
-      ribbonText = attributes.ribbonText,
-      ribbonColor = attributes.ribbonColor,
-      ribbonBackgroundColor = attributes.ribbonBackgroundColor; // ribbon Class
+      ribbonStyle = attributes.ribbonStyle; // ribbon Class
 
   var ribbonClass = showRibbon ? " featured ".concat(ribbonStyle) : "";
-  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", useBlockProps.save(), /*#__PURE__*/React.createElement("div", {
     className: "".concat(blockId, " ebgb-pricing-content-").concat(contentAlign)
   }, /*#__PURE__*/React.createElement("div", {
     className: "ebgb-pricing ".concat(pricingStyle)
