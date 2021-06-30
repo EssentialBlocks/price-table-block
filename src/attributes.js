@@ -54,7 +54,7 @@ const attributes = {
 	title: {
 		type: "string",
 		source: "text",
-		selector: ".ebgb-pricing .header .ebgb-pricing-title",
+		selector: ".eb-pricing .header .eb-pricing-title",
 		default: "Startup",
 	},
 	defaultSubtitle: {
@@ -67,7 +67,7 @@ const attributes = {
 	subtitle: {
 		type: "string",
 		source: "text",
-		selector: ".ebgb-pricing .header .ebgb-pricing-subtitle",
+		selector: ".eb-pricing .header .eb-pricing-subtitle",
 		default: "A tagline here.",
 	},
 	defaultHeaderIcon: {
@@ -79,7 +79,7 @@ const attributes = {
 	},
 	headerIcon: {
 		type: "attribute",
-		selector: ".ebgb-pricing-icon",
+		selector: ".eb-pricing-icon",
 		attribute: "data-icon",
 		default: "fas fa-home",
 	},
@@ -93,7 +93,7 @@ const attributes = {
 	mainPrice: {
 		type: "string",
 		source: "attribute",
-		selector: ".ebgb-pricing-tag .original-price",
+		selector: ".eb-pricing-tag .original-price",
 		attribute: "data-price",
 		default: "99",
 	},
@@ -104,14 +104,14 @@ const attributes = {
 	salePrice: {
 		type: "string",
 		source: "attribute",
-		selector: ".ebgb-pricing-tag .sale-price",
+		selector: ".eb-pricing-tag .sale-price",
 		attribute: "data-sale-price",
 		default: "89",
 	},
 	priceCurrency: {
 		type: "string",
 		source: "text",
-		selector: ".ebgb-pricing-tag .price-currency",
+		selector: ".eb-pricing-tag .price-currency",
 		default: "$",
 	},
 	currencyPlacement: {
@@ -121,26 +121,26 @@ const attributes = {
 	pricePeriod: {
 		type: "string",
 		source: "attribute",
-		selector: ".ebgb-pricing-tag .price-period",
+		selector: ".eb-pricing-tag .price-period",
 		attribute: "data-price-period",
 		default: "month",
 	},
 	periodSeparator: {
 		type: "string",
 		source: "attribute",
-		selector: ".ebgb-pricing-tag .price-period",
+		selector: ".eb-pricing-tag .price-period",
 		attribute: "data-period-separator",
 		default: "/",
 	},
 	features: {
 		type: "array",
 		source: "query",
-		selector: ".ebgb-pricing .body ul li",
+		selector: ".eb-pricing .body ul li",
 		query: {
 			text: {
 				type: "string",
 				source: "text",
-				selector: ".ebgb-pricebox-feature-text",
+				selector: ".eb-pricebox-feature-text",
 			},
 			icon: {
 				type: "string",
@@ -200,7 +200,7 @@ const attributes = {
 	},
 	buttonIcon: {
 		type: "attribute",
-		selector: ".ebgb-pricing .footer",
+		selector: ".eb-pricing .footer",
 		attribute: "data-icon",
 	},
 	buttonIconPosition: {

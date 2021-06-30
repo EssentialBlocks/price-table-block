@@ -35,24 +35,24 @@ const Save = ({ attributes }) => {
 
 	return (
 		<div {...useBlockProps.save()}>
-			<div className={`${blockId} ebgb-pricing-content-${contentAlign}`}>
-				<div className={`ebgb-pricing ${pricingStyle}`}>
-					<div className={`ebgb-pricing-item${ribbonClass}`}>
+			<div className={`${blockId} eb-pricing-content-${contentAlign}`}>
+				<div className={`eb-pricing ${pricingStyle}`}>
+					<div className={`eb-pricing-item${ribbonClass}`}>
 						{showHeaderIcon && (
-							<div className="ebgb-pricing-icon" data-icon={headerIcon}>
+							<div className="eb-pricing-icon" data-icon={headerIcon}>
 								<span className="icon">
 									<i class={headerIcon}></i>
 								</span>
 							</div>
 						)}
 						<div className="header">
-							<h2 className="ebgb-pricing-title">{title}</h2>
+							<h2 className="eb-pricing-title">{title}</h2>
 							{showSubtitle && (
-								<span className="ebgb-pricing-subtitle">{subtitle}</span>
+								<span className="eb-pricing-subtitle">{subtitle}</span>
 							)}
 						</div>
 						{pricingStyle !== "style-3" && (
-							<div className="ebgb-pricing-tag">
+							<div className="eb-pricing-tag">
 								<span className="price-tag">
 									<span
 										className={`original-price${
@@ -97,10 +97,10 @@ const Save = ({ attributes }) => {
 							</div>
 						)}
 						<div className="body">
-							<ul className="ebgb-pricebox-features">
+							<ul className="eb-pricebox-features">
 								{features.map(({ icon, text, color, clickable, link }) => (
 									<li
-										className="ebgb-pricebox-feature-item"
+										className="eb-pricebox-feature-item"
 										data-icon={icon}
 										data-color={color}
 										data-clickable={clickable}
@@ -109,22 +109,18 @@ const Save = ({ attributes }) => {
 										{clickable && link ? (
 											<a href={link}>
 												<span
-													className={`ebgb-pricebox-icon ${icon}`}
+													className={`eb-pricebox-icon ${icon}`}
 													style={{ color: color }}
 												/>
-												<span className="ebgb-pricebox-feature-text">
-													{text}
-												</span>
+												<span className="eb-pricebox-feature-text">{text}</span>
 											</a>
 										) : (
 											<>
 												<span
-													className={`ebgb-pricebox-icon ${icon}`}
+													className={`eb-pricebox-icon ${icon}`}
 													style={{ color: color }}
 												/>
-												<span className="ebgb-pricebox-feature-text">
-													{text}
-												</span>
+												<span className="eb-pricebox-feature-text">{text}</span>
 											</>
 										)}
 									</li>
@@ -132,7 +128,7 @@ const Save = ({ attributes }) => {
 							</ul>
 						</div>
 						{pricingStyle === "style-3" && (
-							<div className="ebgb-pricing-tag">
+							<div className="eb-pricing-tag">
 								<span className="price-tag">
 									<span
 										className={`original-price${
@@ -178,12 +174,12 @@ const Save = ({ attributes }) => {
 						)}
 						{showButton && (
 							<div className="footer" data-icon={buttonIcon}>
-								<div className="ebgb-pricing-button-wrapper">
-									<a href={buttonURL} className="ebgb-pricing-button">
+								<div className="eb-pricing-button-wrapper">
+									<a href={buttonURL} className="eb-pricing-button">
 										{buttonIconPosition === "left" && (
 											<i className={buttonIcon}></i>
 										)}
-										<span className="ebgb-button-text">{buttonText}</span>
+										<span className="eb-button-text">{buttonText}</span>
 										{buttonIconPosition === "right" && (
 											<i className={buttonIcon}></i>
 										)}
