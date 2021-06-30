@@ -421,7 +421,6 @@ const edit = (props) => {
 	const desktopStyles = `
 		.${blockId} .ebgb-pricing {
 			text-align: ${contentAlign};
-			${ribbonStyle === "ribbon-4" ? "overflow: hidden;" : ""}
 		}
 
 		.${blockId}.ebgb-pricing-content-left .ebgb-pricing.style-3 .ebgb-pricing-item .header:after, .${blockId}.ebgb-pricing-content-left .ebgb-pricing.style-3 .ebgb-pricing-item .ebgb-pricing-tag:after {
@@ -455,9 +454,10 @@ const edit = (props) => {
 			${wrapperMarginStylesDesktop}
 			${priceTableBackgroundStylesDesktop}
 			${bdShadowStyesDesktop}
+			${ribbonStyle === "ribbon-4" ? "overflow: hidden;" : ""}
 		}
 
-		.${blockId} .ebgb-pricing .ebgb-pricing-item::before {
+		.${blockId} .ebgb-pricing-item-overlay::before  {
 			${priceTableOverlayStylesDesktop}
 		}
 
@@ -466,7 +466,7 @@ const edit = (props) => {
 			${bdShadowStylesHoverDesktop}
 		}
 
-		.${blockId} .ebgb-pricing .ebgb-pricing-item:hover:before {
+		.${blockId} .ebgb-pricing .ebgb-pricing-item:hover .ebgb-pricing-item-overlay:before {
 			${priceTableHoverOverlayStylesDesktop}
 		}
 
@@ -493,7 +493,7 @@ const edit = (props) => {
 			color: ${priceTextColor};
 		}
 
-		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-currency {
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .original-price .price-currency {
 			${priceCurrencyTypoStylesDesktop}
 			${priceCurrencyMarginStylesDesktop}
 			color: ${priceCurrencyTextColor};
@@ -586,7 +586,7 @@ const edit = (props) => {
 			}
 		}
 
-		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon:hover {
+		.${blockId} .ebgb-pricing .ebgb-pricing-item:hover .ebgb-pricing-icon .icon {
 			${iconBorderShadowHoverDesktop}
 			${
 				showIconBackground
@@ -600,7 +600,7 @@ const edit = (props) => {
 			color: ${iconColor};
 		}
 
-		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-icon .icon i:hover {
+		.${blockId} .ebgb-pricing .ebgb-pricing-item:hover .ebgb-pricing-icon .icon i {
 			color: ${iconHoverColor};
 		}
 	`;
@@ -613,7 +613,7 @@ const edit = (props) => {
 			${bdShadowStyesTab}
 		}
 
-		.${blockId} .ebgb-pricing .ebgb-pricing-item:before {
+		.${blockId} .ebgb-pricing-item-overlay:before {
 			${priceTableOverlayStylesTab}
 		}
 
@@ -622,7 +622,7 @@ const edit = (props) => {
 			${bdShadowStylesHoverTab}
 		}
 
-		.${blockId} .ebgb-pricing .ebgb-pricing-item:hover:before {
+		.${blockId} .ebgb-pricing-item:hover .ebgb-pricing-item-overlay:before {
 			${priceTableHoverOverlayStylesTab}
 		}
 
@@ -643,7 +643,7 @@ const edit = (props) => {
 			${priceTextTypoStylesTab}
 		}
 
-		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-currency {
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .original-price .price-currency {
 			${priceCurrencyTypoStylesTab}
 			${priceCurrencyMarginStylesTab}
 		}
@@ -725,7 +725,7 @@ const edit = (props) => {
 			${bdShadowStyesMobile}
 		}
 
-		.${blockId} .ebgb-pricing .ebgb-pricing-item:before {
+		.${blockId} .ebgb-pricing-item-overlay:before {
 			${priceTableOverlayStylesMobile}
 		}
 
@@ -734,7 +734,7 @@ const edit = (props) => {
 			${bdShadowStylesHoverMobile}
 		}
 
-		.${blockId} .ebgb-pricing .ebgb-pricing-item:hover:before {
+		.${blockId} .ebgb-pricing-item:hover .ebgb-pricing-item-overlay:before {
 			${priceTableHoverOverlayStylesMobile}
 		}
 
@@ -755,7 +755,7 @@ const edit = (props) => {
 			${priceTextTypoStylesMobile}
 		}
 
-		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .price-currency {
+		.${blockId} .ebgb-pricing .ebgb-pricing-item .ebgb-pricing-tag .original-price .price-currency {
 			${priceCurrencyTypoStylesMobile}
 			${priceCurrencyMarginStylesMobile}
 		}
@@ -979,6 +979,7 @@ const edit = (props) => {
 			<div className={`${blockId} ebgb-pricing-content-${contentAlign}`}>
 				<div className={`ebgb-pricing ${pricingStyle}`}>
 					<div className={`ebgb-pricing-item${ribbonClass}`}>
+						<div className="ebgb-pricing-item-overlay"></div>
 						{showHeaderIcon && (
 							<div className="ebgb-pricing-icon" data-icon={headerIcon}>
 								<span className="icon">

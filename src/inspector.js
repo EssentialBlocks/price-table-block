@@ -154,7 +154,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 	};
 
 	const onFeatureAdd = () => {
-		const count = attributes.features.length;
+		const count = attributes.features.length + 1;
 		const features = [
 			...attributes.features,
 			{

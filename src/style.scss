@@ -17,6 +17,19 @@
 	margin: 0;
 }
 
+.ebgb-pricing-item-overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	z-index: 1;
+}
+.ebgb-pricing-item div:not(.ebgb-pricing-item-overlay) {
+	position: relative;
+	z-index: 11 !important;
+}
+
 .ebgb-pricing .ebgb-pricing-button {
 	padding: 12px 25px;
 	background: #00c853;
@@ -218,7 +231,7 @@
 }
 
 .ebgb-pricing.style-1 .ebgb-pricing-item .price-tag .price-currency {
-	font-size: 24px;
+	font-size: 28px;
 	font-weight: 700;
 }
 
@@ -393,7 +406,7 @@
 .ebgb-pricing.style-2 .ebgb-pricing-item .header .ebgb-pricing-title {
 	font-size: 28px;
 	font-weight: 700;
-	line-height: 40px;
+	line-height: 1.5;
 	margin: 0px;
 }
 
