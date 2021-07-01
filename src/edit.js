@@ -26,6 +26,7 @@ import {
 	priceTableBackground,
 	wrapperBorderShadow,
 	iconBorderShadow,
+	ribbonBorderShadow,
 	headerIconSize,
 	headerIconWidth,
 	headerIconHeight,
@@ -43,6 +44,7 @@ import {
 	typoPrefix_saleprice_currency,
 	typoPrefix_features_text,
 	typoPrefix_button,
+	typoPrefix_ribbon,
 } from "./constants/typographyPrefixConstants";
 
 import {
@@ -418,6 +420,27 @@ const edit = (props) => {
 		attributes,
 	});
 
+	const {
+		typoStylesDesktop: ribbonTypoStylesDesktop,
+		typoStylesTab: ribbonTypoStylesTab,
+		typoStylesMobile: ribbonTypoStylesMobile,
+	} = generateTypographyStyles({
+		attributes,
+		prefixConstant: typoPrefix_ribbon,
+	});
+
+	const {
+		styesDesktop: ribbonBorderShadowDesktop,
+		styesTab: ribbonBorderShadowTab,
+		styesMobile: ribbonBorderShadowMobile,
+		stylesHoverDesktop: ribbonBorderShadowHoverDesktop,
+		stylesHoverTab: ribbonBorderShadowHoverTab,
+		stylesHoverMobile: ribbonBorderShadowHoverMobile,
+	} = generateBorderShadowStyles({
+		controlName: ribbonBorderShadow,
+		attributes,
+	});
+
 	const desktopStyles = `
 		.${blockId} .eb-pricing {
 			text-align: ${contentAlign};
@@ -441,10 +464,18 @@ const edit = (props) => {
 		.${blockId} .eb-pricing .eb-pricing-item.ribbon-2::before,
 		.${blockId} .eb-pricing .eb-pricing-item.ribbon-3::before,
 		.${blockId} .eb-pricing .eb-pricing-item.ribbon-4::before {
+			${ribbonTypoStylesDesktop}
+			${ribbonBorderShadowDesktop}
 			content: "${ribbonText}";
 			color: ${ribbonColor};
 			background: ${ribbonBackgroundColor};
 			text-align: center;
+		}
+
+		.${blockId} .eb-pricing:hover .eb-pricing-item.ribbon-2::before,
+		.${blockId} .eb-pricing:hover .eb-pricing-item.ribbon-3::before,
+		.${blockId} .eb-pricing:hover .eb-pricing-item.ribbon-4::before {
+			${ribbonBorderShadowHoverDesktop}
 		}
 
 		.${blockId} .eb-pricing .eb-pricing-item.ribbon-2::after {
@@ -607,6 +638,12 @@ const edit = (props) => {
 	`;
 
 	const tabStyles = `
+		.${blockId} .eb-pricing .eb-pricing-item.ribbon-2::before,
+		.${blockId} .eb-pricing .eb-pricing-item.ribbon-3::before,
+		.${blockId} .eb-pricing .eb-pricing-item.ribbon-4::before {
+			${ribbonTypoStylesTab}
+		}
+
 		.${blockId} .eb-pricing .eb-pricing-item {
 			${wrapperPaddingStylesTab}
 			${wrapperMarginStylesTab}
@@ -719,6 +756,12 @@ const edit = (props) => {
 	`;
 
 	const mobileStyles = `
+		.${blockId} .eb-pricing .eb-pricing-item.ribbon-2::before,
+		.${blockId} .eb-pricing .eb-pricing-item.ribbon-3::before,
+		.${blockId} .eb-pricing .eb-pricing-item.ribbon-4::before {
+			${ribbonTypoStylesMobile}
+		}
+
 		.${blockId} .eb-pricing .eb-pricing-item {
 			${wrapperPaddingStylesMobile}
 			${wrapperMarginStylesMobile}

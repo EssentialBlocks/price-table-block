@@ -65,3 +65,4 @@ export const priceTableBackground = "priceTableBg";
 export const buttonBorderShadow = "btnBrdSdw";
 export const wrapperBorderShadow = "wrpBrdSdw";
 export const iconBorderShadow = "iconBrdSdw";
+export const ribbonBorderShadow = "ribbonBrdSdw";

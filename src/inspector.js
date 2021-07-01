@@ -35,6 +35,7 @@ import {
 	priceTableBackground,
 	wrapperBorderShadow,
 	iconBorderShadow,
+	ribbonBorderShadow,
 	headerIconSize,
 	headerIconWidth,
 	headerIconHeight,
@@ -52,6 +53,7 @@ import {
 	typoPrefix_saleprice,
 	typoPrefix_pricing_period,
 	typoPrefix_features_text,
+	typoPrefix_ribbon,
 } from "./constants/typographyPrefixConstants";
 
 import objAttributes from "./attributes";
@@ -474,7 +476,10 @@ const Inspector = ({ attributes, setAttributes }) => {
 
 							{tab.name === "styles" && (
 								<>
-									<PanelBody title={__("Price Table Box","price-table-block")} initialOpen={false}>
+									<PanelBody
+										title={__("Price Table Box", "price-table-block")}
+										initialOpen={false}
+									>
 										<BaseControl>
 											<h3 className="eb-control-title">{__("Background")}</h3>
 										</BaseControl>
@@ -506,7 +511,10 @@ const Inspector = ({ attributes, setAttributes }) => {
 											resRequiredProps={resRequiredProps}
 										/>
 									</PanelBody>
-									<PanelBody title={__("Header","price-table-block")} initialOpen={false}>
+									<PanelBody
+										title={__("Header", "price-table-block")}
+										initialOpen={false}
+									>
 										<BaseControl>
 											<h3 className="eb-control-title">{__("Title Style")}</h3>
 										</BaseControl>
@@ -578,7 +586,10 @@ const Inspector = ({ attributes, setAttributes }) => {
 											baseLabel={__("Margin")}
 										/>
 									</PanelBody>
-									<PanelBody title={__("Price","price-table-block")} initialOpen={false}>
+									<PanelBody
+										title={__("Price", "price-table-block")}
+										initialOpen={false}
+									>
 										<BaseControl>
 											<h3 className="eb-control-title">
 												{__("Original Price")}
@@ -686,7 +697,10 @@ const Inspector = ({ attributes, setAttributes }) => {
 											resRequiredProps={resRequiredProps}
 										/>
 									</PanelBody>
-									<PanelBody title={__("Features","price-table-block")} initialOpen={false}>
+									<PanelBody
+										title={__("Features", "price-table-block")}
+										initialOpen={false}
+									>
 										<ColorControl
 											label={__("Color")}
 											color={featuresTextColor}
@@ -709,7 +723,10 @@ const Inspector = ({ attributes, setAttributes }) => {
 											resRequiredProps={resRequiredProps}
 										/>
 									</PanelBody>
-									<PanelBody title={__("Button","price-table-block")} initialOpen={false}>
+									<PanelBody
+										title={__("Button", "price-table-block")}
+										initialOpen={false}
+									>
 										<ResponsiveDimensionsControl
 											resRequiredProps={resRequiredProps}
 											controlName={buttonPadding}
@@ -768,7 +785,10 @@ const Inspector = ({ attributes, setAttributes }) => {
 										/>
 									</PanelBody>
 									{showHeaderIcon && (
-										<PanelBody title={__("Icon Settings","price-table-block")} initialOpen={false}>
+										<PanelBody
+											title={__("Icon Settings", "price-table-block")}
+											initialOpen={false}
+										>
 											<ToggleControl
 												label={__("Show Background")}
 												checked={showIconBackground}
@@ -846,21 +866,32 @@ const Inspector = ({ attributes, setAttributes }) => {
 											/>
 										</PanelBody>
 									)}
-									<PanelBody title={__("Ribbon","price-table-block")} initialOpen={false}>
-									<ColorControl
-													label={__("Color")}
-													color={ribbonColor}
-													onChange={(ribbonColor) =>
-														setAttributes({ ribbonColor })
-													}
-												/>
-												<ColorControl
-													label={__("Background Color")}
-													color={ribbonBackgroundColor}
-													onChange={(ribbonBackgroundColor) =>
-														setAttributes({ ribbonBackgroundColor })
-													}
-												/>
+									<PanelBody
+										title={__("Ribbon", "price-table-block")}
+										initialOpen={false}
+									>
+										<TypographyDropdown
+											baseLabel={__("Typography")}
+											typographyPrefixConstant={typoPrefix_ribbon}
+											resRequiredProps={resRequiredProps}
+										/>
+										<ColorControl
+											label={__("Color")}
+											color={ribbonColor}
+											onChange={(ribbonColor) => setAttributes({ ribbonColor })}
+										/>
+										<ColorControl
+											label={__("Background Color")}
+											color={ribbonBackgroundColor}
+											onChange={(ribbonBackgroundColor) =>
+												setAttributes({ ribbonBackgroundColor })
+											}
+										/>
+										<BorderShadowControl
+											controlName={ribbonBorderShadow}
+											resRequiredProps={resRequiredProps}
+											noBorder
+										/>
 									</PanelBody>
 								</>
 							)}

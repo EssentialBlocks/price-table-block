@@ -7,3 +7,4 @@ export const typoPrefix_saleprice = "salepriceText";
 export const typoPrefix_saleprice_currency = "salepriceCurrencyText";
 export const typoPrefix_pricing_period = "pricingPeriodText";
 export const typoPrefix_features_text = "featuresText";
+export const typoPrefix_ribbon = "ribbonText";

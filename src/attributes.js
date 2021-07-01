@@ -24,6 +24,7 @@ import {
 	buttonBorderShadow,
 	wrapperBorderShadow,
 	iconBorderShadow,
+	ribbonBorderShadow,
 	salepriceCurrencyMargin,
 	featuresIconSize,
 } from "./constants";
@@ -336,6 +337,7 @@ const attributes = {
 	...generateBorderShadowAttributes(buttonBorderShadow),
 	...generateBorderShadowAttributes(wrapperBorderShadow),
 	...generateBorderShadowAttributes(iconBorderShadow),
+	...generateBorderShadowAttributes(ribbonBorderShadow),
 };
 
 export default attributes;
