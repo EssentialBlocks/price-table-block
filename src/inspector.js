@@ -12,6 +12,7 @@ const {
 	TextControl,
 	Button,
 	BaseControl,
+	TabPanel,
 } = wp.components;
 
 /**
@@ -209,589 +210,664 @@ const Inspector = ({ attributes, setAttributes }) => {
 	};
 	return (
 		<InspectorControls key="controls">
-			<span className="eb-panel-control">
-				<PanelBody title={__("Settings")}>
-					<SelectControl
-						label={__("Pricing Preset")}
-						value={pricingStyle}
-						options={[
-							{ label: "Default", value: "style-1" },
-							{ label: "Style 2", value: "style-2" },
-							{ label: "Style 3", value: "style-3" },
-						]}
-						onChange={(pricingStyle) => handlePricingStyle(pricingStyle)}
-					/>
-					<TextControl
-						label={__("Title")}
-						value={title}
-						onChange={(newTitle) => setAttributes({ title: newTitle })}
-					/>
-					<ToggleControl
-						label={__("Show Subtitle?")}
-						checked={showSubtitle}
-						onChange={() => {
-							setAttributes({
-								showSubtitle: !showSubtitle,
-								defaultSubtitle: !showSubtitle,
-							});
-						}}
-					/>
+			<div className="eb-panel-control">
+				<TabPanel
+					className="eb-parent-tab-panel"
+					activeClass="active-tab"
+					// onSelect={onSelect}
+					tabs={[
+						{
+							name: "general",
+							title: "General",
+							className: "eb-tab general",
+						},
+						{
+							name: "styles",
+							title: "Styles",
+							className: "eb-tab styles",
+						},
+					]}
+				>
+					{(tab) => (
+						<div className={"eb-tab-controls" + tab.name}>
+							{tab.name === "general" && (
+								<>
+									<PanelBody title={__("Settings")}>
+										<SelectControl
+											label={__("Pricing Preset")}
+											value={pricingStyle}
+											options={[
+												{ label: "Default", value: "style-1" },
+												{ label: "Style 2", value: "style-2" },
+												{ label: "Style 3", value: "style-3" },
+											]}
+											onChange={(pricingStyle) =>
+												handlePricingStyle(pricingStyle)
+											}
+										/>
+										<TextControl
+											label={__("Title")}
+											value={title}
+											onChange={(newTitle) =>
+												setAttributes({ title: newTitle })
+											}
+										/>
+										<ToggleControl
+											label={__("Show Subtitle?")}
+											checked={showSubtitle}
+											onChange={() => {
+												setAttributes({
+													showSubtitle: !showSubtitle,
+													defaultSubtitle: !showSubtitle,
+												});
+											}}
+										/>
 
-					{showSubtitle && (
-						<TextControl
-							label={__("Sub Title")}
-							value={subtitle}
-							onChange={(newSubtitle) =>
-								setAttributes({ subtitle: newSubtitle })
-							}
-						/>
-					)}
+										{showSubtitle && (
+											<TextControl
+												label={__("Sub Title")}
+												value={subtitle}
+												onChange={(newSubtitle) =>
+													setAttributes({ subtitle: newSubtitle })
+												}
+											/>
+										)}
 
-					<ToggleControl
-						label={__("Show Icon?")}
-						checked={showHeaderIcon}
-						onChange={() => {
-							setAttributes({
-								showHeaderIcon: !showHeaderIcon,
-								defaultHeaderIcon: !showHeaderIcon,
-							});
-						}}
-					/>
+										<ToggleControl
+											label={__("Show Icon?")}
+											checked={showHeaderIcon}
+											onChange={() => {
+												setAttributes({
+													showHeaderIcon: !showHeaderIcon,
+													defaultHeaderIcon: !showHeaderIcon,
+												});
+											}}
+										/>
 
-					{showHeaderIcon && (
-						<BaseControl label={__("Icon")}>
-							<FontIconPicker
-								icons={faIcons}
-								value={headerIcon}
-								onChange={(headerIcon) => setAttributes({ headerIcon })}
-								appendTo="body"
-								closeOnSelect
-							/>
-						</BaseControl>
-					)}
-					<ToggleControl
-						label={__("Show title line?")}
-						checked={showTitleLine}
-						onChange={() => {
-							setAttributes({
-								showTitleLine: !showTitleLine,
-								defaultTitleLine: !showTitleLine,
-							});
-						}}
-					/>
-					<PanelBody title={__("Styles")}>
-						<BaseControl>
-							<h3 className="eb-control-title">{__("Background")}</h3>
-						</BaseControl>
-						<BackgroundControl
-							controlName={priceTableBackground}
-							resRequiredProps={resRequiredProps}
-						/>
-						<BaseControl>
-							<h3 className="eb-control-title">{__("Padding & Margin")}</h3>
-						</BaseControl>
-						<ResponsiveDimensionsControl
-							resRequiredProps={resRequiredProps}
-							controlName={wrapperPadding}
-							baseLabel={__("Padding")}
-						/>
-						<ResponsiveDimensionsControl
-							resRequiredProps={resRequiredProps}
-							controlName={wrapperMargin}
-							baseLabel={__("Margin")}
-						/>
-						<BaseControl>
-							<h3 className="eb-control-title">Border</h3>
-						</BaseControl>
+										{showHeaderIcon && (
+											<BaseControl label={__("Icon")}>
+												<FontIconPicker
+													icons={faIcons}
+													value={headerIcon}
+													onChange={(headerIcon) =>
+														setAttributes({ headerIcon })
+													}
+													appendTo="body"
+													closeOnSelect
+												/>
+											</BaseControl>
+										)}
+										<ToggleControl
+											label={__("Show title line?")}
+											checked={showTitleLine}
+											onChange={() => {
+												setAttributes({
+													showTitleLine: !showTitleLine,
+													defaultTitleLine: !showTitleLine,
+												});
+											}}
+										/>
+									</PanelBody>
 
-						<BorderShadowControl
-							controlName={wrapperBorderShadow}
-							resRequiredProps={resRequiredProps}
-						/>
-					</PanelBody>
-				</PanelBody>
+									<PanelBody title={__("Price")} initialOpen={false}>
+										<TextControl
+											label={__("Price")}
+											value={mainPrice}
+											onChange={(newPrice) =>
+												setAttributes({ mainPrice: newPrice })
+											}
+										/>
+										<ToggleControl
+											label={__("On Sale?")}
+											checked={showOnSale}
+											onChange={() => {
+												setAttributes({ showOnSale: !showOnSale });
+											}}
+										/>
+										{showOnSale && (
+											<TextControl
+												label={__("Sale Price")}
+												value={salePrice}
+												onChange={(newsalePrice) =>
+													setAttributes({ salePrice: newsalePrice })
+												}
+											/>
+										)}
+										<TextControl
+											label={__("Price Currency")}
+											value={priceCurrency}
+											onChange={(newPriceCurrency) =>
+												setAttributes({ priceCurrency: newPriceCurrency })
+											}
+										/>
+										<SelectControl
+											label={__("Currency Placement")}
+											value={currencyPlacement}
+											options={[
+												{ label: "Left", value: "left" },
+												{ label: "Right", value: "right" },
+											]}
+											onChange={(currencyPlacement) => {
+												setAttributes({ currencyPlacement });
+											}}
+										/>
+										<TextControl
+											label={__("Price Period (per)")}
+											value={pricePeriod}
+											onChange={(pricePeriod) => setAttributes({ pricePeriod })}
+										/>
+										<TextControl
+											label={__("Period Separator")}
+											value={periodSeparator}
+											onChange={(periodSeparator) =>
+												setAttributes({ periodSeparator })
+											}
+										/>
+										<hr />
+									</PanelBody>
 
-				<PanelBody title={__("Header")} initialOpen={false}>
-					<BaseControl>
-						<h3 className="eb-control-title">{__("Title Style")}</h3>
-					</BaseControl>
-					<ColorControl
-						label={__("Color")}
-						color={titleTextColor}
-						onChange={(titleTextColor) => setAttributes({ titleTextColor })}
-					/>
-					{showTitleLine && (
-						<ColorControl
-							label={__("Line Color")}
-							color={titleLineColor}
-							onChange={(titleLineColor) => setAttributes({ titleLineColor })}
-						/>
-					)}
+									<PanelBody title={__("Features")} initialOpen={false}>
+										<SortableFeatures
+											features={attributes.features}
+											setAttributes={setAttributes}
+										/>
+										<Button
+											className="eb-pricebox-feature-button"
+											label={__("Add feature")}
+											icon="plus-alt"
+											onClick={onFeatureAdd}
+										>
+											<span className="eb-pricebox-add-button-label">
+												{__("Add Feature", "price-table-box")}
+											</span>
+										</Button>
+									</PanelBody>
 
-					<ColorControl
-						label={__("Background Color")}
-						color={titleBackgroundColor}
-						onChange={(titleBackgroundColor) =>
-							setAttributes({ titleBackgroundColor })
-						}
-					/>
-					<TypographyDropdown
-						baseLabel={__("Typography")}
-						typographyPrefixConstant={typoPrefix_title}
-						resRequiredProps={resRequiredProps}
-					/>
-					<hr />
-					{showSubtitle && (
-						<>
-							<BaseControl>
-								<h3 className="eb-control-title">{__("Subtitle Style")}</h3>
-							</BaseControl>
-							<ColorControl
-								label={__("Color")}
-								color={subtitleTextColor}
-								onChange={(subtitleTextColor) =>
-									setAttributes({ subtitleTextColor })
-								}
-							/>
-							<TypographyDropdown
-								baseLabel={__("Typography")}
-								typographyPrefixConstant={typoPrefix_subtitle}
-								resRequiredProps={resRequiredProps}
-							/>
-						</>
-					)}
-					<hr />
-					<BaseControl>
-						<h3 className="eb-control-title">{__("Margin & Padding")}</h3>
-					</BaseControl>
-					<ResponsiveDimensionsControl
-						resRequiredProps={resRequiredProps}
-						controlName={titlePadding}
-						baseLabel={__("Padding")}
-					/>
-					<ResponsiveDimensionsControl
-						resRequiredProps={resRequiredProps}
-						controlName={titleMargin}
-						baseLabel={__("Margin")}
-					/>
-				</PanelBody>
-				<PanelBody title={__("Price")} initialOpen={false}>
-					<TextControl
-						label={__("Price")}
-						value={mainPrice}
-						onChange={(newPrice) => setAttributes({ mainPrice: newPrice })}
-					/>
-					<ToggleControl
-						label={__("On Sale?")}
-						checked={showOnSale}
-						onChange={() => {
-							setAttributes({ showOnSale: !showOnSale });
-						}}
-					/>
-					{showOnSale && (
-						<TextControl
-							label={__("Sale Price")}
-							value={salePrice}
-							onChange={(newsalePrice) =>
-								setAttributes({ salePrice: newsalePrice })
-							}
-						/>
-					)}
-					<TextControl
-						label={__("Price Currency")}
-						value={priceCurrency}
-						onChange={(newPriceCurrency) =>
-							setAttributes({ priceCurrency: newPriceCurrency })
-						}
-					/>
-					<SelectControl
-						label={__("Currency Placement")}
-						value={currencyPlacement}
-						options={[
-							{ label: "Left", value: "left" },
-							{ label: "Right", value: "right" },
-						]}
-						onChange={(currencyPlacement) => {
-							setAttributes({ currencyPlacement });
-						}}
-					/>
-					<TextControl
-						label={__("Price Period (per)")}
-						value={pricePeriod}
-						onChange={(pricePeriod) => setAttributes({ pricePeriod })}
-					/>
-					<TextControl
-						label={__("Period Separator")}
-						value={periodSeparator}
-						onChange={(periodSeparator) => setAttributes({ periodSeparator })}
-					/>
-					<hr />
-					<BaseControl>
-						<h3 className="eb-control-title">{__("Original Price")}</h3>
-					</BaseControl>
-					<ColorControl
-						label={__("Color")}
-						color={priceTextColor}
-						onChange={(priceTextColor) => setAttributes({ priceTextColor })}
-					/>
-					<TypographyDropdown
-						baseLabel={__("Typography")}
-						typographyPrefixConstant={typoPrefix_price_title}
-						resRequiredProps={resRequiredProps}
-					/>
-					<hr />
-					<BaseControl>
-						<h3 className="eb-control-title">
-							{__("Original Price Currency")}
-						</h3>
-					</BaseControl>
-					<ColorControl
-						label={__("Color")}
-						color={priceCurrencyTextColor}
-						onChange={(priceCurrencyTextColor) =>
-							setAttributes({ priceCurrencyTextColor })
-						}
-					/>
-					<TypographyDropdown
-						baseLabel={__("Typography")}
-						typographyPrefixConstant={typoPrefix_price_currency}
-						resRequiredProps={resRequiredProps}
-					/>
-					<ResponsiveDimensionsControl
-						resRequiredProps={resRequiredProps}
-						controlName={priceCurrencyMargin}
-						baseLabel={__("Margin")}
-					/>
-					<hr />
-					{showOnSale && (
-						<>
-							<BaseControl>
-								<h3 className="eb-control-title">{__("Sale Price")}</h3>
-							</BaseControl>
-							<ColorControl
-								label={__("Color")}
-								color={salePriceTextColor}
-								onChange={(salePriceTextColor) =>
-									setAttributes({ salePriceTextColor })
-								}
-							/>
-							<TypographyDropdown
-								baseLabel={__("Typography")}
-								typographyPrefixConstant={typoPrefix_saleprice}
-								resRequiredProps={resRequiredProps}
-							/>
-							<hr />
-							<BaseControl>
-								<h3 className="eb-control-title">
-									{__("Sale Price Currency")}
-								</h3>
-							</BaseControl>
-							<ColorControl
-								label={__("Color")}
-								color={salepriceCurrencyTextColor}
-								onChange={(salepriceCurrencyTextColor) =>
-									setAttributes({ salepriceCurrencyTextColor })
-								}
-							/>
-							<TypographyDropdown
-								baseLabel={__("Typography")}
-								typographyPrefixConstant={typoPrefix_saleprice_currency}
-								resRequiredProps={resRequiredProps}
-							/>
-							<ResponsiveDimensionsControl
-								resRequiredProps={resRequiredProps}
-								controlName={salepriceCurrencyMargin}
-								baseLabel={__("Margin")}
-							/>
-							<hr />
-						</>
-					)}
-					<BaseControl>
-						<h3 className="eb-control-title">{__("Pricing Period")}</h3>
-					</BaseControl>
-					<ColorControl
-						label={__("Color")}
-						color={pricingPeriodTextColor}
-						F
-						onChange={(pricingPeriodTextColor) =>
-							setAttributes({ pricingPeriodTextColor })
-						}
-					/>
-					<TypographyDropdown
-						baseLabel={__("Typography")}
-						typographyPrefixConstant={typoPrefix_pricing_period}
-						resRequiredProps={resRequiredProps}
-					/>
-				</PanelBody>
+									<PanelBody title={__("Button")} initialOpen={false}>
+										<ToggleControl
+											label={__("Display Button?")}
+											checked={showButton}
+											onChange={() => {
+												setAttributes({ showButton: !showButton });
+											}}
+										/>
+										<BaseControl label={__("Button Icon")}>
+											<FontIconPicker
+												icons={faIcons}
+												value={buttonIcon}
+												onChange={(buttonIcon) => setAttributes({ buttonIcon })}
+												appendTo="body"
+												closeOnSelect
+											/>
+										</BaseControl>
+										<SelectControl
+											label={__("Icon Position")}
+											value={buttonIconPosition}
+											options={[
+												{ label: "Left", value: "left" },
+												{ label: "Right", value: "right" },
+											]}
+											onChange={(buttonIconPosition) => {
+												setAttributes({ buttonIconPosition });
+											}}
+										/>
+										<ResponsiveRangeController
+											baseLabel={__("Icon Spacing")}
+											controlName={buttonIconSpacing}
+											resRequiredProps={resRequiredProps}
+											min={1}
+											max={60}
+											step={1}
+											noUnits
+										/>
+										<TextControl
+											label={__("Button Text")}
+											value={buttonText}
+											onChange={(text) => setAttributes({ buttonText: text })}
+										/>
+										<TextControl
+											label={__("Button Link")}
+											value={buttonURL}
+											onChange={(link) => setAttributes({ buttonURL: link })}
+										/>
+									</PanelBody>
 
-				<PanelBody title={__("Features")} initialOpen={false}>
-					<SortableFeatures
-						features={attributes.features}
-						setAttributes={setAttributes}
-					/>
-					<Button
-						className="eb-pricebox-feature-button"
-						label={__("Add feature")}
-						icon="plus-alt"
-						onClick={onFeatureAdd}
-					>
-						<span className="eb-pricebox-add-button-label">
-							{__("Add Feature", "price-table-box")}
-						</span>
-					</Button>
-					<hr />
-					<ColorControl
-						label={__("Color")}
-						color={featuresTextColor}
-						onChange={(featuresTextColor) =>
-							setAttributes({ featuresTextColor })
-						}
-					/>
-					<ResponsiveRangeController
-						baseLabel={__("Icon Size")}
-						controlName={featuresIconSize}
-						resRequiredProps={resRequiredProps}
-						min={0}
-						max={50}
-						step={1}
-						noUnits
-					/>
-					<TypographyDropdown
-						baseLabel={__("Typography")}
-						typographyPrefixConstant={typoPrefix_features_text}
-						resRequiredProps={resRequiredProps}
-					/>
-				</PanelBody>
-
-				<PanelBody title={__("Button")} initialOpen={false}>
-					<ToggleControl
-						label={__("Display Button?")}
-						checked={showButton}
-						onChange={() => {
-							setAttributes({ showButton: !showButton });
-						}}
-					/>
-					<BaseControl label={__("Button Icon")}>
-						<FontIconPicker
-							icons={faIcons}
-							value={buttonIcon}
-							onChange={(buttonIcon) => setAttributes({ buttonIcon })}
-							appendTo="body"
-							closeOnSelect
-						/>
-					</BaseControl>
-					<SelectControl
-						label={__("Icon Position")}
-						value={buttonIconPosition}
-						options={[
-							{ label: "Left", value: "left" },
-							{ label: "Right", value: "right" },
-						]}
-						onChange={(buttonIconPosition) => {
-							setAttributes({ buttonIconPosition });
-						}}
-					/>
-					<ResponsiveRangeController
-						baseLabel={__("Icon Spacing")}
-						controlName={buttonIconSpacing}
-						resRequiredProps={resRequiredProps}
-						min={1}
-						max={60}
-						step={1}
-						noUnits
-					/>
-					<TextControl
-						label={__("Button Text")}
-						value={buttonText}
-						onChange={(text) => setAttributes({ buttonText: text })}
-					/>
-					<TextControl
-						label={__("Button Link")}
-						value={buttonURL}
-						onChange={(link) => setAttributes({ buttonURL: link })}
-					/>
-					<ResponsiveDimensionsControl
-						resRequiredProps={resRequiredProps}
-						controlName={buttonPadding}
-						baseLabel={__("Padding")}
-					/>
-					<ResponsiveDimensionsControl
-						resRequiredProps={resRequiredProps}
-						controlName={buttonMargin}
-						baseLabel={__("Margin")}
-					/>
-					<ResponsiveRangeController
-						baseLabel={__("Icon Size")}
-						controlName={buttonIconSize}
-						resRequiredProps={resRequiredProps}
-						min={0}
-						max={50}
-						step={1}
-						noUnits
-					/>
-					<TypographyDropdown
-						baseLabel={__("Typography")}
-						typographyPrefixConstant={typoPrefix_button}
-						resRequiredProps={resRequiredProps}
-					/>
-					<ColorControl
-						label={__("Text Color")}
-						color={buttonTextColor}
-						onChange={(buttonTextColor) => setAttributes({ buttonTextColor })}
-					/>
-					<ColorControl
-						label={__("Text Hover Color")}
-						color={hoverTextColor}
-						onChange={(hoverTextColor) => setAttributes({ hoverTextColor })}
-					/>
-					<BaseControl>
-						<h3 className="eb-control-title">{__("Button Background")}</h3>
-					</BaseControl>
-					<BackgroundControl
-						controlName={buttonBackgroundControl}
-						resRequiredProps={resRequiredProps}
-					/>
-					{/* <ColorControl
-						label={__("Hover Background")}
-						color={hoverBackgroundColor}
-						onChange={(hoverBackgroundColor) =>
-							setAttributes({ hoverBackgroundColor })
-						}
-					/> */}
-					<BaseControl>
-						<h3 className="eb-control-title">{__("Button Border Style")}</h3>
-					</BaseControl>
-					<BorderShadowControl
-						controlName={buttonBorderShadow}
-						resRequiredProps={resRequiredProps}
-					/>
-				</PanelBody>
-
-				{showHeaderIcon && (
-					<PanelBody title={__("Icon Settings")} initialOpen={false}>
-						<ToggleControl
-							label={__("Show Background")}
-							checked={showIconBackground}
-							onChange={() => {
-								setAttributes({
-									showIconBackground: !showIconBackground,
-								});
-							}}
-						/>
-						{showIconBackground && (
-							<>
-								<ColorControl
-									label={__("Background Color")}
-									color={iconBackgroundColor}
-									onChange={(iconBackgroundColor) =>
-										setAttributes({ iconBackgroundColor })
-									}
-								/>
-								<ColorControl
-									label={__("Background Hover Color")}
-									color={iconBackgroundHoverColor}
-									onChange={(iconBackgroundHoverColor) =>
-										setAttributes({ iconBackgroundHoverColor })
-									}
-								/>
-								<hr />
-							</>
-						)}
-						<ResponsiveRangeController
-							baseLabel={__("Icon Size")}
-							controlName={headerIconSize}
-							resRequiredProps={resRequiredProps}
-							min={0}
-							max={200}
-							step={1}
-						/>
-						<ResponsiveRangeController
-							baseLabel={__("Icon Area Width")}
-							controlName={headerIconWidth}
-							resRequiredProps={resRequiredProps}
-							units={TWOUNITS}
-							min={0}
-							max={500}
-							step={1}
-						/>
-						<ResponsiveRangeController
-							baseLabel={__("Icon Area Height")}
-							controlName={headerIconHeight}
-							resRequiredProps={resRequiredProps}
-							units={TWOUNITS}
-							min={0}
-							max={500}
-							step={1}
-						/>
-						<ColorControl
-							label={__("Icon Color")}
-							color={iconColor}
-							onChange={(iconColor) => setAttributes({ iconColor })}
-						/>
-						<ColorControl
-							label={__("Icon Hover Color")}
-							color={iconHoverColor}
-							onChange={(iconHoverColor) => setAttributes({ iconHoverColor })}
-						/>
-						<hr />
-						<BaseControl>
-							<h3 className="eb-control-title">Border</h3>
-						</BaseControl>
-						<BorderShadowControl
-							controlName={iconBorderShadow}
-							resRequiredProps={resRequiredProps}
-							noShadow
-						/>
-					</PanelBody>
-				)}
-				<PanelBody title={__("Ribbon")} initialOpen={false}>
-					<ToggleControl
-						label={__("Featured")}
-						checked={showRibbon}
-						onChange={() => {
-							setAttributes({
-								showRibbon: !showRibbon,
-							});
-						}}
-					/>
-					{showRibbon && (
-						<>
-							<SelectControl
-								label={__("Ribbon Style")}
-								value={ribbonStyle}
-								options={[
-									{ label: "Style 1", value: "ribbon-1" },
-									{ label: "Style 2", value: "ribbon-2" },
-									{ label: "Style 3", value: "ribbon-3" },
-									{ label: "Style 4", value: "ribbon-4" },
-								]}
-								onChange={(ribbonStyle) => {
-									setAttributes({ ribbonStyle });
-								}}
-							/>
-							{ribbonStyle !== "ribbon-1" && (
-								<TextControl
-									label={__("Featured Tag Text")}
-									value={ribbonText}
-									onChange={(ribbonText) => setAttributes({ ribbonText })}
-								/>
+									<PanelBody title={__("Ribbon")} initialOpen={false}>
+										<ToggleControl
+											label={__("Featured")}
+											checked={showRibbon}
+											onChange={() => {
+												setAttributes({
+													showRibbon: !showRibbon,
+												});
+											}}
+										/>
+										{showRibbon && (
+											<>
+												<SelectControl
+													label={__("Ribbon Style")}
+													value={ribbonStyle}
+													options={[
+														{ label: "Style 1", value: "ribbon-1" },
+														{ label: "Style 2", value: "ribbon-2" },
+														{ label: "Style 3", value: "ribbon-3" },
+														{ label: "Style 4", value: "ribbon-4" },
+													]}
+													onChange={(ribbonStyle) => {
+														setAttributes({ ribbonStyle });
+													}}
+												/>
+												{ribbonStyle !== "ribbon-1" && (
+													<TextControl
+														label={__("Featured Tag Text")}
+														value={ribbonText}
+														onChange={(ribbonText) =>
+															setAttributes({ ribbonText })
+														}
+													/>
+												)}
+											</>
+										)}
+									</PanelBody>
+								</>
 							)}
-							<ColorControl
-								label={__("Color")}
-								color={ribbonColor}
-								onChange={(ribbonColor) => setAttributes({ ribbonColor })}
-							/>
-							<ColorControl
-								label={__("Background Color")}
-								color={ribbonBackgroundColor}
-								onChange={(ribbonBackgroundColor) =>
-									setAttributes({ ribbonBackgroundColor })
-								}
-							/>
-						</>
+
+							{tab.name === "styles" && (
+								<>
+									<PanelBody title={__("Price Table Box","price-table-block")} initialOpen={false}>
+										<BaseControl>
+											<h3 className="eb-control-title">{__("Background")}</h3>
+										</BaseControl>
+										<BackgroundControl
+											controlName={priceTableBackground}
+											resRequiredProps={resRequiredProps}
+										/>
+										<BaseControl>
+											<h3 className="eb-control-title">
+												{__("Padding & Margin")}
+											</h3>
+										</BaseControl>
+										<ResponsiveDimensionsControl
+											resRequiredProps={resRequiredProps}
+											controlName={wrapperPadding}
+											baseLabel={__("Padding")}
+										/>
+										<ResponsiveDimensionsControl
+											resRequiredProps={resRequiredProps}
+											controlName={wrapperMargin}
+											baseLabel={__("Margin")}
+										/>
+										<BaseControl>
+											<h3 className="eb-control-title">Border</h3>
+										</BaseControl>
+
+										<BorderShadowControl
+											controlName={wrapperBorderShadow}
+											resRequiredProps={resRequiredProps}
+										/>
+									</PanelBody>
+									<PanelBody title={__("Header","price-table-block")} initialOpen={false}>
+										<BaseControl>
+											<h3 className="eb-control-title">{__("Title Style")}</h3>
+										</BaseControl>
+										<ColorControl
+											label={__("Color")}
+											color={titleTextColor}
+											onChange={(titleTextColor) =>
+												setAttributes({ titleTextColor })
+											}
+										/>
+										{showTitleLine && (
+											<ColorControl
+												label={__("Line Color")}
+												color={titleLineColor}
+												onChange={(titleLineColor) =>
+													setAttributes({ titleLineColor })
+												}
+											/>
+										)}
+
+										<ColorControl
+											label={__("Background Color")}
+											color={titleBackgroundColor}
+											onChange={(titleBackgroundColor) =>
+												setAttributes({ titleBackgroundColor })
+											}
+										/>
+										<TypographyDropdown
+											baseLabel={__("Typography")}
+											typographyPrefixConstant={typoPrefix_title}
+											resRequiredProps={resRequiredProps}
+										/>
+										<hr />
+										{showSubtitle && (
+											<>
+												<BaseControl>
+													<h3 className="eb-control-title">
+														{__("Subtitle Style")}
+													</h3>
+												</BaseControl>
+												<ColorControl
+													label={__("Color")}
+													color={subtitleTextColor}
+													onChange={(subtitleTextColor) =>
+														setAttributes({ subtitleTextColor })
+													}
+												/>
+												<TypographyDropdown
+													baseLabel={__("Typography")}
+													typographyPrefixConstant={typoPrefix_subtitle}
+													resRequiredProps={resRequiredProps}
+												/>
+											</>
+										)}
+										<hr />
+										<BaseControl>
+											<h3 className="eb-control-title">
+												{__("Margin & Padding")}
+											</h3>
+										</BaseControl>
+										<ResponsiveDimensionsControl
+											resRequiredProps={resRequiredProps}
+											controlName={titlePadding}
+											baseLabel={__("Padding")}
+										/>
+										<ResponsiveDimensionsControl
+											resRequiredProps={resRequiredProps}
+											controlName={titleMargin}
+											baseLabel={__("Margin")}
+										/>
+									</PanelBody>
+									<PanelBody title={__("Price","price-table-block")} initialOpen={false}>
+										<BaseControl>
+											<h3 className="eb-control-title">
+												{__("Original Price")}
+											</h3>
+										</BaseControl>
+										<ColorControl
+											label={__("Color")}
+											color={priceTextColor}
+											onChange={(priceTextColor) =>
+												setAttributes({ priceTextColor })
+											}
+										/>
+										<TypographyDropdown
+											baseLabel={__("Typography")}
+											typographyPrefixConstant={typoPrefix_price_title}
+											resRequiredProps={resRequiredProps}
+										/>
+										<hr />
+										<BaseControl>
+											<h3 className="eb-control-title">
+												{__("Original Price Currency")}
+											</h3>
+										</BaseControl>
+										<ColorControl
+											label={__("Color")}
+											color={priceCurrencyTextColor}
+											onChange={(priceCurrencyTextColor) =>
+												setAttributes({ priceCurrencyTextColor })
+											}
+										/>
+										<TypographyDropdown
+											baseLabel={__("Typography")}
+											typographyPrefixConstant={typoPrefix_price_currency}
+											resRequiredProps={resRequiredProps}
+										/>
+										<ResponsiveDimensionsControl
+											resRequiredProps={resRequiredProps}
+											controlName={priceCurrencyMargin}
+											baseLabel={__("Margin")}
+										/>
+										<hr />
+										{showOnSale && (
+											<>
+												<BaseControl>
+													<h3 className="eb-control-title">
+														{__("Sale Price")}
+													</h3>
+												</BaseControl>
+												<ColorControl
+													label={__("Color")}
+													color={salePriceTextColor}
+													onChange={(salePriceTextColor) =>
+														setAttributes({ salePriceTextColor })
+													}
+												/>
+												<TypographyDropdown
+													baseLabel={__("Typography")}
+													typographyPrefixConstant={typoPrefix_saleprice}
+													resRequiredProps={resRequiredProps}
+												/>
+												<hr />
+												<BaseControl>
+													<h3 className="eb-control-title">
+														{__("Sale Price Currency")}
+													</h3>
+												</BaseControl>
+												<ColorControl
+													label={__("Color")}
+													color={salepriceCurrencyTextColor}
+													onChange={(salepriceCurrencyTextColor) =>
+														setAttributes({ salepriceCurrencyTextColor })
+													}
+												/>
+												<TypographyDropdown
+													baseLabel={__("Typography")}
+													typographyPrefixConstant={
+														typoPrefix_saleprice_currency
+													}
+													resRequiredProps={resRequiredProps}
+												/>
+												<ResponsiveDimensionsControl
+													resRequiredProps={resRequiredProps}
+													controlName={salepriceCurrencyMargin}
+													baseLabel={__("Margin")}
+												/>
+												<hr />
+											</>
+										)}
+										<BaseControl>
+											<h3 className="eb-control-title">
+												{__("Pricing Period")}
+											</h3>
+										</BaseControl>
+										<ColorControl
+											label={__("Color")}
+											color={pricingPeriodTextColor}
+											F
+											onChange={(pricingPeriodTextColor) =>
+												setAttributes({ pricingPeriodTextColor })
+											}
+										/>
+										<TypographyDropdown
+											baseLabel={__("Typography")}
+											typographyPrefixConstant={typoPrefix_pricing_period}
+											resRequiredProps={resRequiredProps}
+										/>
+									</PanelBody>
+									<PanelBody title={__("Features","price-table-block")} initialOpen={false}>
+										<ColorControl
+											label={__("Color")}
+											color={featuresTextColor}
+											onChange={(featuresTextColor) =>
+												setAttributes({ featuresTextColor })
+											}
+										/>
+										<ResponsiveRangeController
+											baseLabel={__("Icon Size")}
+											controlName={featuresIconSize}
+											resRequiredProps={resRequiredProps}
+											min={0}
+											max={50}
+											step={1}
+											noUnits
+										/>
+										<TypographyDropdown
+											baseLabel={__("Typography")}
+											typographyPrefixConstant={typoPrefix_features_text}
+											resRequiredProps={resRequiredProps}
+										/>
+									</PanelBody>
+									<PanelBody title={__("Button","price-table-block")} initialOpen={false}>
+										<ResponsiveDimensionsControl
+											resRequiredProps={resRequiredProps}
+											controlName={buttonPadding}
+											baseLabel={__("Padding")}
+										/>
+										<ResponsiveDimensionsControl
+											resRequiredProps={resRequiredProps}
+											controlName={buttonMargin}
+											baseLabel={__("Margin")}
+										/>
+										<ResponsiveRangeController
+											baseLabel={__("Icon Size")}
+											controlName={buttonIconSize}
+											resRequiredProps={resRequiredProps}
+											min={0}
+											max={50}
+											step={1}
+											noUnits
+										/>
+										<TypographyDropdown
+											baseLabel={__("Typography")}
+											typographyPrefixConstant={typoPrefix_button}
+											resRequiredProps={resRequiredProps}
+										/>
+										<ColorControl
+											label={__("Text Color")}
+											color={buttonTextColor}
+											onChange={(buttonTextColor) =>
+												setAttributes({ buttonTextColor })
+											}
+										/>
+										<ColorControl
+											label={__("Text Hover Color")}
+											color={hoverTextColor}
+											onChange={(hoverTextColor) =>
+												setAttributes({ hoverTextColor })
+											}
+										/>
+										<BaseControl>
+											<h3 className="eb-control-title">
+												{__("Button Background")}
+											</h3>
+										</BaseControl>
+										<BackgroundControl
+											controlName={buttonBackgroundControl}
+											resRequiredProps={resRequiredProps}
+										/>
+										<BaseControl>
+											<h3 className="eb-control-title">
+												{__("Button Border Style")}
+											</h3>
+										</BaseControl>
+										<BorderShadowControl
+											controlName={buttonBorderShadow}
+											resRequiredProps={resRequiredProps}
+										/>
+									</PanelBody>
+									{showHeaderIcon && (
+										<PanelBody title={__("Icon Settings","price-table-block")} initialOpen={false}>
+											<ToggleControl
+												label={__("Show Background")}
+												checked={showIconBackground}
+												onChange={() => {
+													setAttributes({
+														showIconBackground: !showIconBackground,
+													});
+												}}
+											/>
+											{showIconBackground && (
+												<>
+													<ColorControl
+														label={__("Background Color")}
+														color={iconBackgroundColor}
+														onChange={(iconBackgroundColor) =>
+															setAttributes({ iconBackgroundColor })
+														}
+													/>
+													<ColorControl
+														label={__("Background Hover Color")}
+														color={iconBackgroundHoverColor}
+														onChange={(iconBackgroundHoverColor) =>
+															setAttributes({ iconBackgroundHoverColor })
+														}
+													/>
+													<hr />
+												</>
+											)}
+											<ResponsiveRangeController
+												baseLabel={__("Icon Size")}
+												controlName={headerIconSize}
+												resRequiredProps={resRequiredProps}
+												min={0}
+												max={200}
+												step={1}
+											/>
+											<ResponsiveRangeController
+												baseLabel={__("Icon Area Width")}
+												controlName={headerIconWidth}
+												resRequiredProps={resRequiredProps}
+												units={TWOUNITS}
+												min={0}
+												max={500}
+												step={1}
+											/>
+											<ResponsiveRangeController
+												baseLabel={__("Icon Area Height")}
+												controlName={headerIconHeight}
+												resRequiredProps={resRequiredProps}
+												units={TWOUNITS}
+												min={0}
+												max={500}
+												step={1}
+											/>
+											<ColorControl
+												label={__("Icon Color")}
+												color={iconColor}
+												onChange={(iconColor) => setAttributes({ iconColor })}
+											/>
+											<ColorControl
+												label={__("Icon Hover Color")}
+												color={iconHoverColor}
+												onChange={(iconHoverColor) =>
+													setAttributes({ iconHoverColor })
+												}
+											/>
+											<hr />
+											<BaseControl>
+												<h3 className="eb-control-title">Border</h3>
+											</BaseControl>
+											<BorderShadowControl
+												controlName={iconBorderShadow}
+												resRequiredProps={resRequiredProps}
+												noShadow
+											/>
+										</PanelBody>
+									)}
+									<PanelBody title={__("Ribbon","price-table-block")} initialOpen={false}>
+									<ColorControl
+													label={__("Color")}
+													color={ribbonColor}
+													onChange={(ribbonColor) =>
+														setAttributes({ ribbonColor })
+													}
+												/>
+												<ColorControl
+													label={__("Background Color")}
+													color={ribbonBackgroundColor}
+													onChange={(ribbonBackgroundColor) =>
+														setAttributes({ ribbonBackgroundColor })
+													}
+												/>
+									</PanelBody>
+								</>
+							)}
+						</div>
 					)}
-				</PanelBody>
-			</span>
+				</TabPanel>
+			</div>
 		</InspectorControls>
 	);
 };

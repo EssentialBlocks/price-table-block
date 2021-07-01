@@ -421,6 +421,7 @@ const edit = (props) => {
 	const desktopStyles = `
 		.${blockId} .eb-pricing {
 			text-align: ${contentAlign};
+			${ribbonStyle === "ribbon-4" ? "overflow: hidden;" : ""}
 		}
 
 		.${blockId}.eb-pricing-content-left .eb-pricing.style-3 .eb-pricing-item .header:after, .${blockId}.eb-pricing-content-left .eb-pricing.style-3 .eb-pricing-item .eb-pricing-tag:after {
@@ -443,6 +444,7 @@ const edit = (props) => {
 			content: "${ribbonText}";
 			color: ${ribbonColor};
 			background: ${ribbonBackgroundColor};
+			text-align: center;
 		}
 
 		.${blockId} .eb-pricing .eb-pricing-item.ribbon-2::after {
@@ -454,7 +456,6 @@ const edit = (props) => {
 			${wrapperMarginStylesDesktop}
 			${priceTableBackgroundStylesDesktop}
 			${bdShadowStyesDesktop}
-			${ribbonStyle === "ribbon-4" ? "overflow: hidden;" : ""}
 		}
 
 		.${blockId} .eb-pricing-item-overlay::before  {

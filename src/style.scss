@@ -164,7 +164,7 @@
 	width: auto;
 	top: 30px;
 	right: -55px;
-	z-index: 10;
+	z-index: 15;
 	font-size: 13px;
 	font-weight: 600;
 	text-transform: uppercase;
@@ -303,7 +303,7 @@
 	color: #fff;
 	top: 35px;
 	right: -15px;
-	z-index: 10;
+	z-index: 15;
 	font-size: 10px;
 	font-weight: 600;
 	text-transform: uppercase;
@@ -536,7 +536,7 @@
 	color: #fff;
 	top: 35px;
 	right: -15px;
-	z-index: 10;
+	z-index: 15;
 	font-size: 10px;
 	font-weight: 600;
 	text-transform: uppercase;
@@ -561,7 +561,7 @@
 	color: #fff;
 	top: 15px;
 	right: 15px;
-	z-index: 10;
+	z-index: 15;
 	font-size: 11px;
 	font-weight: 600;
 	text-transform: uppercase;
@@ -666,9 +666,7 @@
 .eb-pricebox-feature-button {
 	margin: 0 auto;
 }
-.eb-pricebox-icon {
-	padding-right: 10px;
-}
+
 // Sortable Styles
 .eb-pricebox-sortable-item {
 	display: flex;
