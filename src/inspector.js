@@ -773,6 +773,8 @@ const Inspector = ({ attributes, setAttributes }) => {
 										<BackgroundControl
 											controlName={buttonBackgroundControl}
 											resRequiredProps={resRequiredProps}
+											noOverlay={true}
+											noMainBgi={true}
 										/>
 										<BaseControl>
 											<h3 className="eb-control-title">

@@ -145,6 +145,8 @@ const edit = (props) => {
 		hoverOverlayStylesTab: priceTableHoverOverlayStylesTab,
 		overlayStylesMobile: priceTableOverlayStylesMobile,
 		hoverOverlayStylesMobile: priceTableHoverOverlayStylesMobile,
+		bgTransitionStyle: priceTableBgTransitionStyle,
+		ovlTransitionStyle: priceTableOvlTransitionStyle,
 	} = generateBackgroundControlStyles({
 		attributes,
 		controlName: priceTableBackground,
@@ -157,6 +159,7 @@ const edit = (props) => {
 		stylesHoverDesktop: bdShadowStylesHoverDesktop,
 		stylesHoverTab: bdShadowStylesHoverTab,
 		stylesHoverMobile: bdShadowStylesHoverMobile,
+		transitionStyle: bdShadowTransitionStyle,
 	} = generateBorderShadowStyles({
 		controlName: wrapperBorderShadow,
 		attributes,
@@ -364,6 +367,8 @@ const edit = (props) => {
 	} = generateBackgroundControlStyles({
 		attributes,
 		controlName: buttonBackgroundControl,
+		noOverlay: true,
+		noMainBgi: true,
 	});
 
 	const {
@@ -487,10 +492,12 @@ const edit = (props) => {
 			${wrapperMarginStylesDesktop}
 			${priceTableBackgroundStylesDesktop}
 			${bdShadowStyesDesktop}
+			transition: ${priceTableBgTransitionStyle}, ${bdShadowTransitionStyle};
 		}
 
 		.${blockId} .eb-pricing-item-overlay::before  {
 			${priceTableOverlayStylesDesktop}
+			transition: ${priceTableOvlTransitionStyle};
 		}
 
 		.${blockId} .eb-pricing .eb-pricing-item:hover {

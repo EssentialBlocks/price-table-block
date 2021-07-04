@@ -331,6 +331,8 @@ const attributes = {
 	// background attributes
 	...generateBackgroundAttributes(buttonBackgroundControl, {
 		defaultFillColor: "#00c853",
+		noOverlay: true,
+		noMainBgi: true,
 	}),
 	...generateBackgroundAttributes(priceTableBackground),
 	// border shadow attriubtes
