@@ -66,21 +66,21 @@ function create_block_pricing_table_block_init()
 	);
 
 	$fontpicker_theme = 'src/css/fonticonpicker.base-theme.react.css';
-	wp_enqueue_style(
+	wp_register_style(
 		'fontpicker-default-theme',
 		plugins_url($fontpicker_theme, __FILE__),
 		array()
 	);
 
 	$fontpicker_material_theme = 'src/css/fonticonpicker.material-theme.react.css';
-	wp_enqueue_style(
+	wp_register_style(
 		'fontpicker-matetial-theme',
 		plugins_url($fontpicker_material_theme, __FILE__),
 		array()
 	);
 
 	$fontawesome_css = 'src/css/font-awesome5.css';
-	wp_enqueue_style(
+	wp_register_style(
 		'fontawesome-frontend-css',
 		plugins_url($fontawesome_css, __FILE__),
 		array()

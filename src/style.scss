@@ -667,7 +667,17 @@
 	margin: 0 auto;
 }
 
-// Sortable Styles
+// Sortable Styles.drag-handle {
+.drag-handle {
+	flex: 1;
+	background: #a9a9a9;
+	border-right: 1px solid;
+	cursor: move;
+	color: #fff;
+	align-items: center;
+	display: flex !important;
+	justify-content: center;
+}
 .eb-pricebox-sortable-item {
 	display: flex;
 	justify-content: space-between;
