@@ -868,33 +868,37 @@ const Inspector = ({ attributes, setAttributes }) => {
 											/>
 										</PanelBody>
 									)}
-									<PanelBody
-										title={__("Ribbon", "price-table-block")}
-										initialOpen={false}
-									>
-										<TypographyDropdown
-											baseLabel={__("Typography")}
-											typographyPrefixConstant={typoPrefix_ribbon}
-											resRequiredProps={resRequiredProps}
-										/>
-										<ColorControl
-											label={__("Color")}
-											color={ribbonColor}
-											onChange={(ribbonColor) => setAttributes({ ribbonColor })}
-										/>
-										<ColorControl
-											label={__("Background Color")}
-											color={ribbonBackgroundColor}
-											onChange={(ribbonBackgroundColor) =>
-												setAttributes({ ribbonBackgroundColor })
-											}
-										/>
-										<BorderShadowControl
-											controlName={ribbonBorderShadow}
-											resRequiredProps={resRequiredProps}
-											noBorder
-										/>
-									</PanelBody>
+									{showRibbon && (
+										<PanelBody
+											title={__("Ribbon", "price-table-block")}
+											initialOpen={false}
+										>
+											<TypographyDropdown
+												baseLabel={__("Typography")}
+												typographyPrefixConstant={typoPrefix_ribbon}
+												resRequiredProps={resRequiredProps}
+											/>
+											<ColorControl
+												label={__("Color")}
+												color={ribbonColor}
+												onChange={(ribbonColor) =>
+													setAttributes({ ribbonColor })
+												}
+											/>
+											<ColorControl
+												label={__("Background Color")}
+												color={ribbonBackgroundColor}
+												onChange={(ribbonBackgroundColor) =>
+													setAttributes({ ribbonBackgroundColor })
+												}
+											/>
+											<BorderShadowControl
+												controlName={ribbonBorderShadow}
+												resRequiredProps={resRequiredProps}
+												noBorder
+											/>
+										</PanelBody>
+									)}
 								</>
 							)}
 						</div>
