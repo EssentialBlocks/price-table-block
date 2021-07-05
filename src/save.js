@@ -38,6 +38,7 @@ const Save = ({ attributes }) => {
 			<div className={`${blockId} eb-pricing-content-${contentAlign}`}>
 				<div className={`eb-pricing ${pricingStyle}`}>
 					<div className={`eb-pricing-item${ribbonClass}`}>
+						<div className="eb-pricing-item-overlay"></div>
 						{showHeaderIcon && (
 							<div className="eb-pricing-icon" data-icon={headerIcon}>
 								<span className="icon">

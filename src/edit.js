@@ -354,16 +354,7 @@ const edit = (props) => {
 	const {
 		backgroundStylesDesktop: buttonBackgroundStylesDesktop,
 		hoverBackgroundStylesDesktop: buttonHoverBackgroundStylesDesktop,
-		backgroundStylesTab: buttonBackgroundStylesTab,
-		hoverBackgroundStylesTab: buttonHoverBackgroundStylesTab,
-		backgroundStylesMobile: buttonBackgroundStylesMobile,
-		hoverBackgroundStylesMobile: buttonHoverBackgroundStylesMobile,
-		overlayStylesDesktop: buttonOverlayStylesDesktop,
-		hoverOverlayStylesDesktop: buttonHoverOverlayStylesDesktop,
-		overlayStylesTab: buttonOverlayStylesTab,
-		hoverOverlayStylesTab: buttonHoverOverlayStylesTab,
-		overlayStylesMobile: buttonOverlayStylesMobile,
-		hoverOverlayStylesMobile: buttonHoverOverlayStylesMobile,
+		bgTransitionStyle: buttonBgTransitionStyle,
 	} = generateBackgroundControlStyles({
 		attributes,
 		controlName: buttonBackgroundControl,
@@ -436,11 +427,7 @@ const edit = (props) => {
 
 	const {
 		styesDesktop: ribbonBorderShadowDesktop,
-		styesTab: ribbonBorderShadowTab,
-		styesMobile: ribbonBorderShadowMobile,
 		stylesHoverDesktop: ribbonBorderShadowHoverDesktop,
-		stylesHoverTab: ribbonBorderShadowHoverTab,
-		stylesHoverMobile: ribbonBorderShadowHoverMobile,
 	} = generateBorderShadowStyles({
 		controlName: ribbonBorderShadow,
 		attributes,
@@ -574,20 +561,13 @@ const edit = (props) => {
 			${buttonBackgroundStylesDesktop}
 			${btnShadowStyesDesktop}
 			color: ${buttonTextColor};
-		}
-
-		.${blockId} .eb-pricing .eb-pricing-item .footer .eb-pricing-button:before {
-			${buttonOverlayStylesDesktop}
+			transition: ${buttonBgTransitionStyle};
 		}
 
 		.${blockId} .eb-pricing .eb-pricing-item .footer .eb-pricing-button:hover {
 			${btnShadowStylesHoverDesktop}
 			${buttonHoverBackgroundStylesDesktop}
 			color: ${hoverTextColor};
-		}
-
-		.${blockId} .eb-pricing .eb-pricing-item .footer .eb-pricing-button:hover:before {
-			${buttonHoverOverlayStylesDesktop}
 		}
 
 		.${blockId} .eb-pricing .eb-pricing-item .footer .eb-pricing-button i {
@@ -721,21 +701,11 @@ const edit = (props) => {
 		.${blockId} .eb-pricing .eb-pricing-item .footer .eb-pricing-button {
 			${buttonPaddingStylesTab}
 			${buttonTypoStylesTab}
-			${buttonBackgroundStylesTab}
 			${btnShadowStyesTab}
 		}
 
 		.${blockId} .eb-pricing .eb-pricing-item .footer .eb-pricing-button:hover {
-			${buttonHoverBackgroundStylesTab}
 			${btnShadowStylesHoverTab}
-		}
-
-		.${blockId} .eb-pricing .eb-pricing-item .footer .eb-pricing-button:before {
-			${buttonOverlayStylesTab}
-		}
-
-		.${blockId} .eb-pricing .eb-pricing-item .footer .eb-pricing-button:hover:before {
-			${buttonHoverOverlayStylesTab}
 		}
 
 		.${blockId} .eb-pricing .eb-pricing-item .footer .eb-pricing-button i {
@@ -839,20 +809,11 @@ const edit = (props) => {
 		.${blockId} .eb-pricing .eb-pricing-item .footer .eb-pricing-button {
 			${buttonPaddingStylesMobile}
 			${buttonTypoStylesMobile}
-			${buttonBackgroundStylesMobile}
 			${btnShadowStyesMobile}
 		}
 
 		.${blockId} .eb-pricing .eb-pricing-item .footer .eb-pricing-button:hover {
-			${buttonHoverBackgroundStylesMobile}
-		}
-
-		.${blockId} .eb-pricing .eb-pricing-item .footer .eb-pricing-button:before {
-			${buttonOverlayStylesMobile}
-		}
-		
-		.${blockId} .eb-pricing .eb-pricing-item .footer .eb-pricing-button:hover:before {
-			${buttonHoverOverlayStylesMobile}
+			${btnShadowStylesHoverMobile}
 		}
 
 		.${blockId} .eb-pricing .eb-pricing-item .footer .eb-pricing-button i {
