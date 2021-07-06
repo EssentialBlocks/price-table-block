@@ -63,6 +63,10 @@ Yes, it will work with any standard WordPress theme.
 
 == Changelog ==
 
+== 1.1.0 (dev) =
+* Added: Preset Designs, More flexibility on controls
+* Improved: Inspector panel design
+
 = 1.0.1 =
 * Fix: Missing css, js files
 
