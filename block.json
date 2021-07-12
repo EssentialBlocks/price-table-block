@@ -1,9 +1,7 @@
 {
-	"name": "block/pricing-table",
-	"title": "Pricing Table",
+	"apiVersion": "2",
+	"name": "price-table-block/pricing-table",
 	"category": "widgets",
-	"description": "",
-	"textdomain": "price-table-block",
-	"editorScript": "file:./build/index.js",
-	"style": "file:./build/style-index.css"
+	"description": "EB Pricing Table will let you create effective product pricing table with perfect styling to get more sales from your prospective buyers.",
+	"title": "Pricing Table"
 }
