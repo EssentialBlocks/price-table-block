@@ -3,7 +3,7 @@ Contributors: wpdevteam, re_enter_rupok, Asif2BD, alam789
 Tags: block, blocks, price, pricing, discount, offers, price table, pricing table, gutenberg, gutenberg blocks
 Requires at least: 5.0
 Tested up to: 5.5
-Stable tag: 1.0.1
+Stable tag: 1.1.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -11,17 +11,17 @@ Instantly create beautiful pricing menu for eCommerce website.
 
 == Description ==
 
-With this **Pricing Table** block, you can instantly create a beautiful pricing menu for your eCommerce website within Gutenberg Editor. 
+With this **Pricing Table** block, you can instantly create a beautiful pricing menu for your eCommerce website within Gutenberg Editor.
 
 Without any coding or hassle, it’ll take a few clicks to create a pricing table within Gutenberg block editor using this.
 
-*Completely Customizable:* You can customize Pricing Table based on your product or service categories. 
+*Completely Customizable:* You can customize Pricing Table based on your product or service categories.
 Super Light-weight: No extra resources used and it's highly optimized for super fast loading & instant Live editing.
 
 *Dedicated Support:* We’ve an extraordinary support team ready to help you. Ask your questions in the support forum, we’ll get back to you immediately.
 
 
-## 🚀 BACKED BY A TRUSTED TEAM ## 
+## 🚀 BACKED BY A TRUSTED TEAM ##
 
 This Block is brought to you by [WPDeveloper](https://wpdeveloper.net), the team behind the most popular elements library [Essential Addons for Elementor](https://wordpress.org/plugins/essential-addons-for-elementor-lite/) (used by almost 700,000 happy users from 180+ countries).
 
@@ -43,7 +43,7 @@ This Block is brought to you by [WPDeveloper](https://wpdeveloper.net), the team
 
 = Modern Way: =
 1. Go to the WordPress Block/Gutenberg Editor
-2. Search For "Pricing Table". 
+2. Search For "Pricing Table".
 3. Install in 1-click
 
 = Old Way: =
@@ -63,8 +63,10 @@ Yes, it will work with any standard WordPress theme.
 
 == Changelog ==
 
-== 1.1.0 (dev) =
+== 1.1.0 - 11/07/2021 =
 * Added: Preset Designs, More flexibility on controls
+* Added: Dynamic asset generation for inline styles
+* Added: Responsive control
 * Improved: Inspector panel design
 
 = 1.0.1 =
