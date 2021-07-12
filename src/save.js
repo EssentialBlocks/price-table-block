@@ -1,285 +1,198 @@
 /**
  * WordPress dependencies
  */
-const { RichText } = wp.blockEditor;
+const { useBlockProps } = wp.blockEditor;
 
-const save = ({ attributes }) => {
+const Save = ({ attributes }) => {
 	const {
+		blockId,
+		pricingStyle,
 		title,
-		titleTag,
-		displaySubtitle,
+		showSubtitle,
 		subtitle,
-		titleBackgroundColor,
-		titleTextColor,
-		price,
-		priceValueSize,
-		displayPriceDetails,
-		priceDetails,
-		priceBackgroundColor,
-		priceTextColor,
+		showHeaderIcon,
+		headerIcon,
+		mainPrice,
+		showOnSale,
+		salePrice,
+		priceCurrency,
+		currencyPlacement,
+		pricePeriod,
+		periodSeparator,
 		features,
-		featuresBackgroundColor,
-		featuresTextColor,
-		buttonBackground,
-		buttonTextColor,
+		showButton,
+		buttonIcon,
+		buttonIconPosition,
 		buttonText,
-		hoverBackgroundColor,
-		hoverTextColor,
 		buttonURL,
-		priceboxBackground,
-		shadowColor,
-		shadowHOffset,
-		shadowVOffset,
-		shadowBlur,
-		shadowSpread,
-		borderWidth,
-		borderStyle,
-		borderColor,
-		marginTop,
-		marginRight,
-		marginBottom,
-		marginLeft,
-		paddingTop,
-		paddingRight,
-		paddingBottom,
-		paddingLeft,
-		marginUnit,
-		paddingUnit,
-		iconSizeUnit,
-		buttonHeight,
-		buttonHeightUnit,
-		buttonWidth,
-		buttonWidthUnit,
-		buttonBorderStyle,
-		buttonBorderWidth,
-		buttonBorderColor,
-		hoverBorderColor,
-		buttonBorderRadius,
-		buttonBorderRadiusUnit,
-		subtitleFontFamily,
-		subtitleFontSize,
-		subtitleSizeUnit,
-		subtitleFontWeight,
-		subtitleTextTransform,
-		subtitleTextDecoration,
-		subtitleLineHeight,
-		subtitleLineHeightUnit,
-		subtitleLetterSpacing,
-		subtitleLetterSpacingUnit,
-		priceFontFamily,
-		priceFontSize,
-		priceSizeUnit,
-		priceFontWeight,
-		priceTextDecoration,
-		priceLineHeight,
-		priceLineHeightUnit,
-		priceLetterSpacing,
-		priceLetterSpacingUnit,
-		featureFontFamily,
-		featureFontSize,
-		featureSizeUnit,
-		featureFontWeight,
-		featureTextTransform,
-		featureTextDecoration,
-		featureLineHeight,
-		featureLineHeightUnit,
-		featureLetterSpacing,
-		featureLetterSpacingUnit,
-		buttonFontFamily,
-		buttonFontSize,
-		buttonSizeUnit,
-		buttonFontWeight,
-		buttonTextDecoration,
-		buttonTextTransform,
-		buttonLineHeight,
-		buttonLineHeightUnit,
-		buttonLetterSpacing,
-		buttonLetterSpacingUnit,
+		contentAlign,
+		showRibbon,
+		ribbonStyle,
 	} = attributes;
 
-	const wrapperStyles = {
-		margin: `${marginTop || 0}${marginUnit} ${marginRight || 0}${marginUnit} ${
-			marginBottom || 0
-		}${marginUnit} ${marginLeft || 0}${marginUnit}`,
-		padding: `${paddingTop || 0}${paddingUnit} ${
-			paddingRight || 0
-		}${paddingUnit} ${paddingBottom || 0}${paddingUnit} ${
-			paddingLeft || 0
-		}${paddingUnit}`,
-		display: "flex",
-		flexDirection: "column",
-		alignItems: "center",
-		background: priceboxBackground ? priceboxBackground : "#ffffff",
-		boxShadow: `${shadowHOffset || 0}px ${shadowVOffset || 0}px ${
-			shadowBlur || 0
-		}px ${shadowSpread || 0}px ${shadowColor || "#000000"}`,
-		border: `${borderWidth || 0}px ${borderStyle} ${borderColor || "#000000"}`,
-	};
-
-	const titleWrapperStyles = {
-		width: "100%",
-		background: titleBackgroundColor || "transparent",
-		textAlign: "center",
-	};
-
-	const titleStyles = {
-		color: titleTextColor || "#4a5059",
-	};
-
-	const subtitleStyles = {
-		fontSize: `${subtitleFontSize || 24}${subtitleSizeUnit}`,
-		fontFamily: subtitleFontFamily,
-		fontWeight: subtitleFontWeight,
-		textDecoration: subtitleTextDecoration,
-		letterSpacing: subtitleLetterSpacing
-			? `${subtitleLetterSpacing}${subtitleLetterSpacingUnit}`
-			: undefined,
-		lineHeight: subtitleLineHeight
-			? `${subtitleLineHeight}${subtitleLineHeightUnit}`
-			: undefined,
-	};
-
-	const priceWrapperStyles = {
-		display: "flex",
-		justifyContent: "center",
-		width: "100%",
-		background: priceBackgroundColor || "#3074ff",
-		color: priceTextColor || "#edf1f7",
-		lineHeight: priceLineHeight
-			? `${priceLineHeight}${priceLineHeightUnit}`
-			: undefined,
-	};
-
-	const priceStyles = {
-		fontSize: `${priceValueSize || 48}${priceSizeUnit}`,
-		fontFamily: priceFontFamily,
-		fontWeight: priceFontWeight,
-		textDecoration: priceTextDecoration,
-		letterSpacing: priceLetterSpacing
-			? `${priceLetterSpacing}${priceLetterSpacingUnit}`
-			: undefined,
-	};
-
-	const featuresWrapperStyles = {
-		background: featuresBackgroundColor,
-		width: "100%",
-		textAlign: "center",
-	};
-
-	const featureListStyle = {
-		lineHeight: featureLineHeight
-			? `${featureLineHeight}${featureLineHeightUnit}`
-			: undefined,
-	};
-
-	const featureStyles = {
-		color: featuresTextColor || "#767676",
-		listStyle: "none",
-		fontSize: `${featureFontSize || 18}${featureSizeUnit}`,
-		fontFamily: featureFontFamily,
-		fontWeight: featureFontWeight,
-		textDecoration: featureTextDecoration,
-		textTransform: featureTextTransform,
-		letterSpacing: featureLetterSpacing
-			? `${featureLetterSpacing}${featureLetterSpacingUnit}`
-			: undefined,
-	};
-
-	const buttonStyles = {
-		height: buttonHeight ? `${buttonHeight}${buttonHeightUnit}` : undefined,
-		width: buttonWidth ? `${buttonWidth}${buttonWidthUnit}` : undefined,
-		background: buttonBackground || "#3074ff",
-		borderWidth: `${buttonBorderWidth || 0}px`,
-		borderStyle: buttonBorderStyle,
-		borderColor: buttonBorderColor || "#000000",
-		color: buttonTextColor || "#edf1f7",
-		margin: 10,
-		padding: "8px 26px",
-		textAlign: "center",
-		display: "inline-block",
-		borderRadius: `${buttonBorderRadius || 0}${buttonBorderRadiusUnit}`,
-		textDecoration: "none",
-		fontSize: `${buttonFontSize || 16}${buttonSizeUnit}`,
-		fontFamily: buttonFontFamily,
-		fontWeight: buttonFontWeight,
-		textDecoration: buttonTextDecoration,
-		textTransform: buttonTextTransform,
-		letterSpacing: buttonLetterSpacing
-			? `${buttonLetterSpacing}${buttonLetterSpacingUnit}`
-			: undefined,
-		lineHeight: buttonLineHeight
-			? `${buttonLineHeight}${buttonLineHeightUnit}`
-			: undefined,
-	};
+	// ribbon Class
+	const ribbonClass = showRibbon ? ` featured ${ribbonStyle}` : "";
 
 	return (
-		<div
-			className="eb-pricebox-wrapper"
-			style={wrapperStyles}
-			data-button-background={buttonBackground || "#3074ff"}
-			data-button-text-color={buttonTextColor || "#ffffff"}
-			data-button-border={`${buttonBorderWidth || 0}px ${buttonBorderStyle} ${
-				buttonBorderColor || "#000000"
-			}`}
-			data-hover-background={hoverBackgroundColor || "#7967ff"}
-			data-hover-text-color={hoverTextColor || "#edf1f7"}
-			data-hover-border={`${buttonBorderWidth || 0}px ${buttonBorderStyle} ${
-				hoverBorderColor || "#000000"
-			}`}
-		>
-			<div style={titleWrapperStyles}>
-				<RichText.Content
-					tagName="h3"
-					className="eb-pricebox-title"
-					value={title}
-					style={titleStyles}
-				/>
-				<RichText.Content
-					tagName="p"
-					className="eb-pricebox-subtitle"
-					style={{
-						...titleStyles,
-						...subtitleStyles,
-						display: displaySubtitle ? "block" : "none",
-					}}
-					value={subtitle}
-				/>
-			</div>
+		<div {...useBlockProps.save()}>
+			<div className={`${blockId} eb-pricing-content-${contentAlign}`}>
+				<div className={`eb-pricing ${pricingStyle}`}>
+					<div className={`eb-pricing-item${ribbonClass}`}>
+						<div className="eb-pricing-item-overlay"></div>
+						{showHeaderIcon && (
+							<div className="eb-pricing-icon" data-icon={headerIcon}>
+								<span className="icon">
+									<i class={headerIcon}></i>
+								</span>
+							</div>
+						)}
+						<div className="header">
+							<h2 className="eb-pricing-title">{title}</h2>
+							{showSubtitle && (
+								<span className="eb-pricing-subtitle">{subtitle}</span>
+							)}
+						</div>
+						{pricingStyle !== "style-3" && (
+							<div className="eb-pricing-tag">
+								<span className="price-tag">
+									<span
+										className={`original-price${
+											showOnSale === true ? " line-through" : ""
+										}`}
+										data-price={mainPrice}
+									>
+										{currencyPlacement === "left" && (
+											<span className="price-currency">{priceCurrency}</span>
+										)}
+										{mainPrice}
+										{currencyPlacement === "right" && (
+											<span className="price-currency">{priceCurrency}</span>
+										)}
+									</span>
 
-			<div style={priceWrapperStyles}>
-				<RichText.Content
-					tagName="p"
-					className="eb-pricebox-price"
-					value={price}
-					style={priceStyles}
-				/>
-			</div>
+									{showOnSale && (
+										<>
+											<span className="sale-price" data-sale-price={salePrice}>
+												{currencyPlacement === "left" && (
+													<span className="price-currency">
+														{priceCurrency}
+													</span>
+												)}
+												{salePrice}
+												{currencyPlacement === "right" && (
+													<span className="price-currency">
+														{priceCurrency}
+													</span>
+												)}
+											</span>
+										</>
+									)}
+								</span>
+								<span
+									className="price-period"
+									data-period-separator={periodSeparator}
+									data-price-period={pricePeriod}
+								>
+									{periodSeparator} {pricePeriod}
+								</span>
+							</div>
+						)}
+						<div className="body">
+							<ul className="eb-pricebox-features">
+								{features.map(({ icon, text, color, clickable, link }) => (
+									<li
+										className="eb-pricebox-feature-item"
+										data-icon={icon}
+										data-color={color}
+										data-clickable={clickable}
+										data-link={link}
+									>
+										{clickable && link ? (
+											<a href={link}>
+												<span
+													className={`eb-pricebox-icon ${icon}`}
+													style={{ color: color }}
+												/>
+												<span className="eb-pricebox-feature-text">{text}</span>
+											</a>
+										) : (
+											<>
+												<span
+													className={`eb-pricebox-icon ${icon}`}
+													style={{ color: color }}
+												/>
+												<span className="eb-pricebox-feature-text">{text}</span>
+											</>
+										)}
+									</li>
+								))}
+							</ul>
+						</div>
+						{pricingStyle === "style-3" && (
+							<div className="eb-pricing-tag">
+								<span className="price-tag">
+									<span
+										className={`original-price${
+											showOnSale === true ? " line-through" : ""
+										}`}
+										data-price={mainPrice}
+									>
+										{currencyPlacement === "left" && (
+											<span className="price-currency">{priceCurrency}</span>
+										)}
+										{mainPrice}
+										{currencyPlacement === "right" && (
+											<span className="price-currency">{priceCurrency}</span>
+										)}
+									</span>
 
-			<div style={featuresWrapperStyles}>
-				<ul className="eb-pricebox-features" style={featureStyles}>
-					{features.map(({ icon, text, color, clickable, link }) => (
-						<li
-							className="eb-pricebox-feature-item"
-							style={featureListStyle}
-							data-icon={icon}
-							data-color={color}
-							data-clickable={clickable}
-							data-link={link}
-						>
-							<span
-								className={`eb-pricebox-icon ${icon}`}
-								style={{ color: color }}
-							/>
-							<span className="eb-pricebox-feature-text">{text}</span>
-						</li>
-					))}
-				</ul>
+									{showOnSale && (
+										<>
+											<span className="sale-price" data-sale-price={salePrice}>
+												{currencyPlacement === "left" && (
+													<span className="price-currency">
+														{priceCurrency}
+													</span>
+												)}
+												{salePrice}
+												{currencyPlacement === "right" && (
+													<span className="price-currency">
+														{priceCurrency}
+													</span>
+												)}
+											</span>
+										</>
+									)}
+								</span>
+								<span
+									className="price-period"
+									data-period-separator={periodSeparator}
+									data-price-period={pricePeriod}
+								>
+									{periodSeparator} {pricePeriod}
+								</span>
+							</div>
+						)}
+						{showButton && (
+							<div className="footer" data-icon={buttonIcon}>
+								<div className="eb-pricing-button-wrapper">
+									<a href={buttonURL} className="eb-pricing-button">
+										{buttonIconPosition === "left" && (
+											<i className={buttonIcon}></i>
+										)}
+										<span className="eb-button-text">{buttonText}</span>
+										{buttonIconPosition === "right" && (
+											<i className={buttonIcon}></i>
+										)}
+									</a>
+								</div>
+							</div>
+						)}
+					</div>
+				</div>
 			</div>
-
-			<a className="eb-pricebox-button" href={buttonURL} style={buttonStyles}>
-				{buttonText}
-			</a>
 		</div>
+		// edit view end
 	);
 };
-export default save;
+export default Save;

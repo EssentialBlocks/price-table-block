@@ -1,61 +1,142 @@
+import * as typoPrefixs from "./constants/typographyPrefixConstants";
+import {
+	generateTypographyAttributes,
+	generateResponsiveRangeAttributes,
+	generateDimensionsAttributes,
+	generateBackgroundAttributes,
+	generateBorderShadowAttributes,
+} from "../util/helpers";
+import {
+	buttonIconSpacing,
+	buttonIconSize,
+	headerIconSize,
+	headerIconWidth,
+	headerIconHeight,
+	buttonPadding,
+	buttonMargin,
+	wrapperMargin,
+	wrapperPadding,
+	titleMargin,
+	titlePadding,
+	priceCurrencyMargin,
+	buttonBackgroundControl,
+	priceTableBackground,
+	buttonBorderShadow,
+	wrapperBorderShadow,
+	iconBorderShadow,
+	ribbonBorderShadow,
+	salepriceCurrencyMargin,
+	featuresIconSize,
+} from "./constants";
+
 const attributes = {
-	priceboxBackground: {
+	// the following 4 attributes is must required for responsive options and asset generation for frontend
+	// responsive control attributes ⬇
+	resOption: {
 		type: "string",
+		default: "Desktop",
+	},
+	// blockId attribute for making unique className and other uniqueness ⬇
+	blockId: {
+		type: "string",
+	},
+	blockRoot: {
+		type: "string",
+		default: "essential_block",
+	},
+	// blockMeta is for keeping all the styles ⬇
+	blockMeta: {
+		type: "object",
+	},
+	pricingStyle: {
+		type: "string",
+		default: "style-1",
 	},
 	title: {
 		type: "string",
 		source: "text",
-		selector: ".eb-pricebox-title",
+		selector: ".eb-pricing .header .eb-pricing-title",
 		default: "Startup",
 	},
-	titleTag: {
-		type: "string",
-		default: "h3",
+	defaultSubtitle: {
+		type: "boolean",
 	},
-	displaySubtitle: {
+	showSubtitle: {
 		type: "boolean",
 		default: false,
 	},
 	subtitle: {
 		type: "string",
 		source: "text",
-		selector: ".eb-pricebox-subtitle",
-		default: "Free for 30 days",
+		selector: ".eb-pricing .header .eb-pricing-subtitle",
+		default: "A tagline here.",
 	},
-	titleBackgroundColor: {
-		type: "string",
+	defaultHeaderIcon: {
+		type: "boolean",
 	},
-	titleTextColor: {
-		type: "string",
-	},
-	price: {
-		type: "string",
-		source: "text",
-		selector: ".eb-pricebox-price",
-		default: "$99",
-	},
-	priceValueSize: {
-		type: "number",
-	},
-	displayPriceDetails: {
+	showHeaderIcon: {
 		type: "boolean",
 		default: false,
 	},
-	priceDetails: {
+	headerIcon: {
+		type: "attribute",
+		selector: ".eb-pricing-icon",
+		attribute: "data-icon",
+		default: "fas fa-home",
+	},
+	defaultTitleLine: {
+		type: "boolean",
+	},
+	showTitleLine: {
+		type: "boolean",
+		default: true,
+	},
+	mainPrice: {
+		type: "string",
+		source: "attribute",
+		selector: ".eb-pricing-tag .original-price",
+		attribute: "data-price",
+		default: "99",
+	},
+	showOnSale: {
+		type: "boolean",
+		default: false,
+	},
+	salePrice: {
+		type: "string",
+		source: "attribute",
+		selector: ".eb-pricing-tag .sale-price",
+		attribute: "data-sale-price",
+		default: "89",
+	},
+	priceCurrency: {
 		type: "string",
 		source: "text",
-		selector: ".eb-pricebox-price-details",
+		selector: ".eb-pricing-tag .price-currency",
+		default: "$",
 	},
-	priceBackgroundColor: {
+	currencyPlacement: {
 		type: "string",
+		default: "left",
 	},
-	priceTextColor: {
+	pricePeriod: {
 		type: "string",
+		source: "attribute",
+		selector: ".eb-pricing-tag .price-period",
+		attribute: "data-price-period",
+		default: "month",
+	},
+	periodSeparator: {
+		type: "string",
+		source: "attribute",
+		selector: ".eb-pricing-tag .price-period",
+		attribute: "data-period-separator",
+		default: "/",
 	},
 	features: {
 		type: "array",
 		source: "query",
-		selector: ".eb-pricebox-feature-item",
+		selector: ".eb-pricing .body ul li",
 		query: {
 			text: {
 				type: "string",
@@ -114,30 +195,101 @@ const attributes = {
 			},
 		],
 	},
-	featuresBackgroundColor: {
-		type: "string",
+	showButton: {
+		type: "boolean",
+		default: true,
 	},
-	featuresTextColor: {
+	buttonIcon: {
+		type: "attribute",
+		selector: ".eb-pricing .footer",
+		attribute: "data-icon",
+	},
+	buttonIconPosition: {
 		type: "string",
+		default: "left",
 	},
 	buttonText: {
 		type: "string",
 		default: "Choose Plan",
 	},
-	buttonSize: {
+	titleTextColor: {
+		type: "string",
+		default: "blue",
+	},
+	titleLineColor: {
+		type: "string",
+		default: "#dbdbdb",
+	},
+	titleBackgroundColor: {
 		type: "string",
 	},
-	buttonFontSize: {
-		type: "number",
-	},
-	buttonBackground: {
+	subtitleTextColor: {
 		type: "string",
+		default: "#6d6d6d",
+	},
+	showIconBackground: {
+		type: "boolean",
+		default: true,
+	},
+	iconBackgroundColor: {
+		type: "string",
+	},
+	iconBackgroundHoverColor: {
+		type: "string",
+	},
+	iconColor: {
+		type: "string",
+		default: "#333",
+	},
+	iconHoverColor: {
+		type: "string",
+		default: "#333",
+	},
+	priceTextColor: {
+		type: "string",
+	},
+	priceCurrencyTextColor: {
+		type: "string",
+	},
+	salePriceTextColor: {
+		type: "string",
+	},
+	salepriceCurrencyTextColor: {
+		type: "string",
+	},
+	pricingPeriodTextColor: {
+		type: "string",
+	},
+	featuresTextColor: {
+		type: "string",
+	},
+	contentAlign: {
+		type: "String",
+		default: "center",
+	},
+	showRibbon: {
+		type: "boolean",
+		default: false,
+	},
+	ribbonStyle: {
+		type: "string",
+		default: "ribbon-1",
+	},
+	ribbonText: {
+		type: "string",
+		default: "featured",
+	},
+	ribbonColor: {
+		type: "string",
+		default: "#ffffff",
+	},
+	ribbonBackgroundColor: {
+		type: "string",
+		default: "#00c853",
 	},
 	buttonTextColor: {
 		type: "string",
-	},
-	hoverBackgroundColor: {
-		type: "string",
+		default: "#ffffff",
 	},
 	hoverTextColor: {
 		type: "string",
@@ -146,240 +298,48 @@ const attributes = {
 		type: "string",
 		default: "#",
 	},
-	featureFontSize: {
-		type: "number",
-	},
-	shadowColor: {
-		type: "string",
-	},
-	shadowHOffset: {
-		type: "number",
-	},
-	shadowVOffset: {
-		type: "number",
-	},
-	shadowSpread: {
-		type: "number",
-	},
-	shadowBlur: {
-		type: "number",
-	},
-	borderWidth: {
-		type: "number",
-	},
-	borderStyle: {
-		type: "string",
-		default: "solid",
-	},
-	borderColor: {
-		type: "string",
-	},
-	linkedMargin: {
-		type: "boolean",
-		default: false,
-	},
-	marginTop: {
-		type: "number",
-	},
-	marginRight: {
-		type: "number",
-	},
-	marginBottom: {
-		type: "number",
-	},
-	marginLeft: {
-		type: "number",
-	},
-	linkedPadding: {
-		type: "boolean",
-		default: false,
-	},
-	paddingTop: {
-		type: "number",
-	},
-	paddingRight: {
-		type: "number",
-	},
-	paddingBottom: {
-		type: "number",
-	},
-	paddingLeft: {
-		type: "number",
-	},
-	isHover: {
-		type: "boolean",
-		default: false,
-	},
-	marginUnit: {
-		type: "string",
-		default: "px",
-	},
-	paddingUnit: {
-		type: "string",
-		default: "px",
-	},
-	iconSizeUnit: {
-		type: "string",
-		default: "px",
-	},
-	priceSizeUnit: {
-		type: "string",
-		default: "px",
-	},
-	featureSizeUnit: {
-		type: "string",
-		default: "px",
-	},
-	buttonSizeUnit: {
-		type: "string",
-		default: "px",
-	},
-	buttonHeight: {
-		type: "number",
-	},
-	buttonHeightUnit: {
-		type: "string",
-		default: "px",
-	},
-	buttonWidth: {
-		type: "number",
-	},
-	buttonWidthUnit: {
-		type: "string",
-		default: "px",
-	},
-	buttonBorderStyle: {
-		type: "string",
-		default: "solid",
-	},
-	buttonBorderWidth: {
-		type: "number",
-	},
-	buttonBorderColor: {
-		type: "string",
-	},
-	hoverBorderColor: {
-		type: "string",
-	},
-	buttonBorderRadius: {
-		type: "number",
-	},
-	buttonBorderRadiusUnit: {
-		type: "string",
-		default: "px",
-	},
-	subtitleFontFamily: {
-		type: "string",
-	},
-	subtitleFontSize: {
-		type: "number",
-	},
-	subtitleSizeUnit: {
-		type: "string",
-		default: "px",
-	},
-	subtitleFontWeight: {
-		type: "string",
-		default: "normal",
-	},
-	subtitleTextTransform: {
-		type: "string",
-	},
-	subtitleTextDecoration: {
-		type: "string",
-	},
-	subtitleLineHeight: {
-		type: "number",
-	},
-	subtitleLineHeightUnit: {
-		type: "string",
-		default: "px",
-	},
-	subtitleLetterSpacing: {
-		type: "number",
-	},
-	subtitleLetterSpacingUnit: {
-		type: "string",
-		default: "px",
-	},
-	priceFontFamily: {
-		type: "string",
-	},
-	priceFontWeight: {
-		type: "string",
-		default: "normal",
-	},
-	priceTextDecoration: {
-		type: "string",
-	},
-	priceLineHeight: {
-		type: "number",
-	},
-	priceLineHeightUnit: {
-		type: "string",
-		default: "px",
-	},
-	priceLetterSpacing: {
-		type: "number",
-	},
-	priceLetterSpacingUnit: {
-		type: "string",
-		default: "px",
-	},
-	featureFontFamily: {
-		type: "string",
-	},
-	featureFontWeight: {
-		type: "string",
-		default: "normal",
-	},
-	featureTextTransform: {
-		type: "string",
-	},
-	featureTextDecoration: {
-		type: "string",
-	},
-	featureLineHeight: {
-		type: "number",
-	},
-	featureLineHeightUnit: {
-		type: "string",
-		default: "px",
-	},
-	featureLetterSpacing: {
-		type: "number",
-	},
-	featureLetterSpacingUnit: {
-		type: "string",
-		default: "px",
-	},
-	buttonFontFamily: {
-		type: "string",
-	},
-	buttonFontWeight: {
-		type: "string",
-		default: "normal",
-	},
-	buttonTextTransform: {
-		type: "string",
-	},
-	buttonTextDecoration: {
-		type: "string",
-	},
-	buttonLineHeight: {
-		type: "number",
-	},
-	buttonLineHeightUnit: {
-		type: "string",
-		default: "px",
-	},
-	buttonLetterSpacing: {
-		type: "number",
-	},
-	buttonLetterSpacingUnit: {
-		type: "string",
-		default: "px",
-	},
+	...generateResponsiveRangeAttributes(buttonIconSpacing, {
+		defaultRange: 0,
+		noUnits: true,
+	}),
+	...generateResponsiveRangeAttributes(buttonIconSize, {
+		defaultRange: 20,
+		noUnits: true,
+	}),
+	...generateResponsiveRangeAttributes(headerIconSize, {
+		defaultRange: 30,
+	}),
+	...generateResponsiveRangeAttributes(headerIconWidth, {
+		defaultRange: 80,
+	}),
+	...generateResponsiveRangeAttributes(headerIconHeight, {
+		defaultRange: 80,
+	}),
+	...generateResponsiveRangeAttributes(featuresIconSize, {
+		defaultRange: 20,
+	}),
+	...generateDimensionsAttributes(buttonPadding),
+	...generateDimensionsAttributes(buttonMargin),
+	...generateDimensionsAttributes(wrapperMargin),
+	...generateDimensionsAttributes(wrapperPadding),
+	...generateDimensionsAttributes(titlePadding),
+	...generateDimensionsAttributes(titleMargin),
+	...generateDimensionsAttributes(priceCurrencyMargin),
+	...generateDimensionsAttributes(salepriceCurrencyMargin),
+	// typography attributes
+	...generateTypographyAttributes(Object.values(typoPrefixs)),
+	// background attributes
+	...generateBackgroundAttributes(buttonBackgroundControl, {
+		defaultFillColor: "#00c853",
+		noOverlay: true,
+		noMainBgi: true,
+	}),
+	...generateBackgroundAttributes(priceTableBackground),
+	// border shadow attriubtes
+	...generateBorderShadowAttributes(buttonBorderShadow),
+	...generateBorderShadowAttributes(wrapperBorderShadow),
+	...generateBorderShadowAttributes(iconBorderShadow),
+	...generateBorderShadowAttributes(ribbonBorderShadow),
 };
 
 export default attributes;
