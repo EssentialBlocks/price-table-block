@@ -3,7 +3,7 @@
 	"name": "price-table-block/pricing-table",
 	"title": "Pricing Table",
 	"category": "widgets",
-	"keywords": ["eb price", "table", "comparison"],
+	"keywords": ["price", "table", "comparison", "pricing", "pricing table", "price table", "block", "pricing plan", "pricing menu", "eb", "plan"],
 	"description": "EB Pricing Table will let you create effective product pricing table with perfect styling to get more sales from your prospective buyers.",
 	"textdomain": "price-table-block",
 	"editorScript": "file:./build/index.js",
