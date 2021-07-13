@@ -1,5 +1,5 @@
 === Price Table Block ===
-Contributors: wpdevteam, re_enter_rupok, Asif2BD, alam789
+Contributors: wpdevteam, re_enter_rupok, Asif2BD, alam789, fencermonir
 Tags: block, blocks, price, pricing, discount, offers, price table, pricing table, gutenberg, gutenberg blocks
 Requires at least: 5.0
 Tested up to: 5.5
@@ -62,6 +62,9 @@ Yes, it will work with any standard WordPress theme.
 
 
 == Changelog ==
+
+== 1.1.1 - (dev) =
+* Fixed: naming convention on block.json file
 
 == 1.1.0 - 11/07/2021 =
 * Added: Preset Designs, More flexibility on controls
