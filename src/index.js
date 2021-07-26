@@ -7,6 +7,7 @@ const { registerBlockType } = wp.blocks;
 /**
  * Internal dependencies
  */
+import deprecated from './deprecated';
 import Save from "./save";
 import Edit from "./edit";
 import attributes from "./attributes";
@@ -30,5 +31,6 @@ registerBlockType("price-table-block/pricing-table", {
 	],
 	edit: Edit,
 	save: Save,
+	deprecated,
 	example,
 });
