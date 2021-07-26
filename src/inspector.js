@@ -11,6 +11,7 @@ const {
 	SelectControl,
 	TextControl,
 	Button,
+	ButtonGroup,
 	BaseControl,
 	TabPanel,
 } = wp.components;
@@ -21,6 +22,7 @@ const {
 import {
 	TWOUNITS,
 	ICON_POSITION,
+	ALIGNMENT,
 	buttonIconSpacing,
 	buttonIconSize,
 	buttonPadding,
@@ -119,7 +121,11 @@ const Inspector = ({ attributes, setAttributes }) => {
 		ribbonText,
 		ribbonColor,
 		ribbonBackgroundColor,
-		// new attributes
+		featuresAlignment,
+		buttonAlignment,
+		headerAlignment,
+		priceAlignment,
+		iconAlignment,
 	} = attributes;
 
 	// this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class only the first time once
@@ -516,6 +522,28 @@ const Inspector = ({ attributes, setAttributes }) => {
 										initialOpen={false}
 									>
 										<BaseControl>
+												<h3 className="eb-control-title">
+													{__("Alignment", "price-table-block")}
+												</h3>
+												<ButtonGroup>
+													{ALIGNMENT.map((item) => (
+														<Button
+															isLarge
+															isPrimary={headerAlignment === item.value}
+															isSecondary={headerAlignment !== item.value}
+															onClick={() =>
+																setAttributes({
+																	headerAlignment: item.value,
+																})
+															}
+														>
+															{item.label}
+														</Button>
+													))}
+												</ButtonGroup>
+											</BaseControl>
+											<hr />
+										<BaseControl>
 											<h3 className="eb-control-title">{__("Title Style")}</h3>
 										</BaseControl>
 										<ColorControl
@@ -701,6 +729,26 @@ const Inspector = ({ attributes, setAttributes }) => {
 										title={__("Features", "price-table-block")}
 										initialOpen={false}
 									>
+										<BaseControl>
+											<h3 className="eb-control-title">Alignment</h3>
+											<ButtonGroup>
+												{ALIGNMENT.map((item) => (
+													<Button
+														isLarge
+														isPrimary={featuresAlignment === item.value}
+														isSecondary={featuresAlignment !== item.value}
+														onClick={() =>
+															setAttributes({
+																featuresAlignment: item.value,
+															})
+														}
+													>
+														{item.label}
+													</Button>
+												))}
+											</ButtonGroup>
+										</BaseControl>
+										<hr />
 										<ColorControl
 											label={__("Color")}
 											color={featuresTextColor}
@@ -727,6 +775,26 @@ const Inspector = ({ attributes, setAttributes }) => {
 										title={__("Button", "price-table-block")}
 										initialOpen={false}
 									>
+										<BaseControl>
+											<h3 className="eb-control-title">Alignment</h3>
+											<ButtonGroup>
+												{ALIGNMENT.map((item) => (
+													<Button
+														isLarge
+														isPrimary={buttonAlignment === item.value}
+														isSecondary={buttonAlignment !== item.value}
+														onClick={() =>
+															setAttributes({
+																buttonAlignment: item.value,
+															})
+														}
+													>
+														{item.label}
+													</Button>
+												))}
+											</ButtonGroup>
+										</BaseControl>
+										<hr />
 										<ResponsiveDimensionsControl
 											resRequiredProps={resRequiredProps}
 											controlName={buttonPadding}
@@ -791,6 +859,28 @@ const Inspector = ({ attributes, setAttributes }) => {
 											title={__("Icon Settings", "price-table-block")}
 											initialOpen={false}
 										>
+											<BaseControl>
+												<h3 className="eb-control-title">
+													{__("Alignment", "price-table-block")}
+												</h3>
+												<ButtonGroup>
+													{ALIGNMENT.map((item) => (
+														<Button
+															isLarge
+															isPrimary={iconAlignment === item.value}
+															isSecondary={iconAlignment !== item.value}
+															onClick={() =>
+																setAttributes({
+																	iconAlignment: item.value,
+																})
+															}
+														>
+															{item.label}
+														</Button>
+													))}
+												</ButtonGroup>
+											</BaseControl>
+											<hr />
 											<ToggleControl
 												label={__("Show Background")}
 												checked={showIconBackground}

@@ -109,6 +109,11 @@ const edit = (props) => {
 		ribbonText,
 		ribbonColor,
 		ribbonBackgroundColor,
+		featuresAlignment,
+		buttonAlignment,
+		headerAlignment,
+		priceAlignment,
+		iconAlignment,
 	} = attributes;
 
 	// wrapper styles css in strings
@@ -416,6 +421,9 @@ const edit = (props) => {
 		attributes,
 	});
 
+	const iconAlign = iconAlignment || contentAlign;
+	const headerAlign = headerAlignment || contentAlign;
+
 	const {
 		typoStylesDesktop: ribbonTypoStylesDesktop,
 		typoStylesTab: ribbonTypoStylesTab,
@@ -488,7 +496,7 @@ const edit = (props) => {
 		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header {
 			${titlePaddingStylesDesktop}
 			${titleMarginStylesDesktop}
-			background: ${titleBackgroundColor};
+			background: ${titleBackgroundColor || "none"};
 			position: relative;
 			z-index: 0;
 		}
@@ -524,7 +532,7 @@ const edit = (props) => {
 		}
 		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-body ul li, .${blockId} .eb-pricing .eb-pricing-item .eb-pricing-body ul li a {
 			${featuresTypoStylesDesktop}
-			color: ${featuresTextColor};
+			color: ${featuresTextColor || "#6d6d6d"};
 		}
 		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-body ul li .eb-pricebox-icon {
 			${featuresIconSizeDesktop}
@@ -558,9 +566,9 @@ const edit = (props) => {
 			display: flex;
 			align-items: center;
 			justify-content: ${
-				contentAlign === "left"
+				iconAlign === "left"
 					? "flex-start"
-					: contentAlign === "right"
+					: iconAlign === "right"
 					? "flex-end"
 					: "center"
 			};
@@ -594,7 +602,42 @@ const edit = (props) => {
 		.${blockId} .eb-pricing .eb-pricing-item:hover .eb-pricing-icon .icon i {
 			color: ${iconHoverColor};
 		}
+
+		.${blockId} .eb-pricing-header {
+			text-align: ${headerAlign};
+		}
+
+		${
+			featuresAlignment &&
+			`.${blockId} .eb-pricing-body {
+				text-align: ${featuresAlignment};
+			}`
+		}
+
+		
+
+		${
+			buttonAlignment &&
+			`.${blockId} .eb-pricing-footer {
+				text-align: ${buttonAlignment};
+			}`
+		}
+		
 	`;
+// console.log(headerAlign);
+	// ${
+	// 	headerAlignment &&
+	// 	`.${blockId} .eb-pricing-header {
+	// 		text-align: ${headerAlignment};
+	// 	}`
+	// }
+
+	// ${
+	// 	priceAlignment &&
+	// 	`.${blockId} .eb-pricing-tag {
+	// 		text-align: ${priceAlignment};
+	// 	}`
+	// }
 
 	const tabStyles = `
 		.${blockId} .eb-pricing .eb-pricing-item.ribbon-2::before,
@@ -770,12 +813,17 @@ const edit = (props) => {
 			${headerIconSizeMobile}
 		}
 	`;
+
 	var titleLineStyle = "";
+	var headerAlign2 =
+		headerAlignment === "left"
+			? "margin: 0 !important;"
+			: headerAlignment === "right"
+			? "margin: 0 0 0 auto !important;"
+			: "margin: 0 auto !important;";
+	// 		// console.log(showTitleLine);
 	if (showTitleLine) {
 		titleLineStyle = `
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header::after {
-			background: ${titleLineColor}
-		}
 		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header::after {
 			content: "";
 			position: absolute;
@@ -786,6 +834,7 @@ const edit = (props) => {
 			right: 0px;
 			margin: 0 auto;
 			z-index: 1;
+			background-color: ${titleLineColor};
 		}
 		.${blockId}.eb-pricing-content-left .eb-pricing-item .eb-pricing-header::after,
 		.${blockId}.eb-pricing-content-left .eb-pricing-item .eb-pricing-tag::after {
@@ -794,6 +843,9 @@ const edit = (props) => {
 		.${blockId}.eb-pricing-content-right .eb-pricing-item .eb-pricing-header::after,
 		.${blockId}.eb-pricing-content-right .eb-pricing-item .eb-pricing-tag::after {
 			margin: 0 0 0 auto;
+		}
+		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header::after {
+			${headerAlign2}
 		}
 		.eb-pricing.style-3 .eb-pricing-item .eb-pricing-header:after {
 			position: absolute;
@@ -814,6 +866,8 @@ const edit = (props) => {
 		}
 	`;
 	}
+
+	console.log(titleLineStyle);
 
 	// ribbon Class
 	const ribbonClass = showRibbon ? ` featured ${ribbonStyle}` : "";

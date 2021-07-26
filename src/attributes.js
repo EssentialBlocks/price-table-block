@@ -298,6 +298,21 @@ const attributes = {
 		type: "string",
 		default: "#",
 	},
+	featuresAlignment: {
+		type: "string",
+	},
+	buttonAlignment: {
+		type: "string",
+	},
+	headerAlignment: {
+		type: "string",
+	},
+	priceAlignment: {
+		type: "string",
+	},
+	iconAlignment: {
+		type: "string",
+	},
 	...generateResponsiveRangeAttributes(buttonIconSpacing, {
 		defaultRange: 0,
 		noUnits: true,
