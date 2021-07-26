@@ -46,7 +46,7 @@ const Save = ({ attributes }) => {
 								</span>
 							</div>
 						)}
-						<div className="eb-pricing-header">
+						<div className="header">
 							<h2 className="eb-pricing-title">{title}</h2>
 							{showSubtitle && (
 								<span className="eb-pricing-subtitle">{subtitle}</span>
@@ -97,7 +97,7 @@ const Save = ({ attributes }) => {
 								</span>
 							</div>
 						)}
-						<div className="eb-pricing-body">
+						<div className="body">
 							<ul className="eb-pricebox-features">
 								{features.map(({ icon, text, color, clickable, link }) => (
 									<li
@@ -174,7 +174,7 @@ const Save = ({ attributes }) => {
 							</div>
 						)}
 						{showButton && (
-							<div className="eb-pricing-footer" data-icon={buttonIcon}>
+							<div className="footer" data-icon={buttonIcon}>
 								<div className="eb-pricing-button-wrapper">
 									<a href={buttonURL} className="eb-pricing-button">
 										{buttonIconPosition === "left" && (
