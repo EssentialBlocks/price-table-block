@@ -439,11 +439,11 @@ const edit = (props) => {
 			${ribbonStyle === "ribbon-4" ? "overflow: hidden;" : ""}
 		}
 
-		.${blockId}.eb-pricing-content-left .eb-pricing.style-3 .eb-pricing-item .header:after, .${blockId}.eb-pricing-content-left .eb-pricing.style-3 .eb-pricing-item .eb-pricing-tag:after {
+		.${blockId}.eb-pricing-content-left .eb-pricing.style-3 .eb-pricing-item .eb-pricing-header:after, .${blockId}.eb-pricing-content-left .eb-pricing.style-3 .eb-pricing-item .eb-pricing-tag:after {
 			transform: translateX(-80%);
 		}
 
-		.${blockId}.eb-pricing-content-right .eb-pricing.style-3 .eb-pricing-item .header:after, .${blockId}.eb-pricing-content-right .eb-pricing.style-3 .eb-pricing-item .eb-pricing-tag:after {
+		.${blockId}.eb-pricing-content-right .eb-pricing.style-3 .eb-pricing-item .eb-pricing-header:after, .${blockId}.eb-pricing-content-right .eb-pricing.style-3 .eb-pricing-item .eb-pricing-tag:after {
 			transform: translateX(80%);
 		}
 
@@ -496,7 +496,7 @@ const edit = (props) => {
 			${priceTableHoverOverlayStylesDesktop}
 		}
 
-		.${blockId} .eb-pricing .eb-pricing-item .header {
+		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header {
 			${titlePaddingStylesDesktop}
 			${titleMarginStylesDesktop}
 			background: ${titleBackgroundColor};
@@ -504,12 +504,12 @@ const edit = (props) => {
 			z-index: 0;
 		}
 
-		.${blockId} .eb-pricing .eb-pricing-item .header .eb-pricing-title {
+		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header .eb-pricing-title {
 			${titleTypoStylesDesktop}
 			color: ${titleTextColor};
 		}
 
-		.${blockId} .eb-pricing .eb-pricing-item .header .eb-pricing-subtitle {
+		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header .eb-pricing-subtitle {
 			${subtitleTypoStylesDesktop}
 			color: ${subtitleTextColor};
 		}
@@ -541,21 +541,21 @@ const edit = (props) => {
 			color: ${salepriceCurrencyTextColor};
 		}
 
-		.${blockId} .eb-pricing .eb-pricing-item .body ul li, .${blockId} .eb-pricing .eb-pricing-item .body ul li a {
+		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-body ul li, .${blockId} .eb-pricing .eb-pricing-item .eb-pricing-body ul li a {
 			${featuresTypoStylesDesktop}
 			color: ${featuresTextColor};
 		}
 
-		.${blockId} .eb-pricing .eb-pricing-item .body ul li .eb-pricebox-icon {
+		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-body ul li .eb-pricebox-icon {
 			${featuresIconSizeDesktop}
 			margin-right: 8px;
 		}
 
-		.${blockId} .eb-pricing .eb-pricing-item .footer .eb-pricing-button-wrapper {
+		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button-wrapper {
 			${buttonMarginStylesDesktop}
 		}
 
-		.${blockId} .eb-pricing .eb-pricing-item .footer .eb-pricing-button {
+		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button {
 			${buttonPaddingStylesDesktop}
 			${buttonTypoStylesDesktop}
 			${buttonBackgroundStylesDesktop}
@@ -564,13 +564,13 @@ const edit = (props) => {
 			transition: ${buttonBgTransitionStyle};
 		}
 
-		.${blockId} .eb-pricing .eb-pricing-item .footer .eb-pricing-button:hover {
+		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button:hover {
 			${btnShadowStylesHoverDesktop}
 			${buttonHoverBackgroundStylesDesktop}
 			color: ${hoverTextColor};
 		}
 
-		.${blockId} .eb-pricing .eb-pricing-item .footer .eb-pricing-button i {
+		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button i {
 			${
 				buttonIconPosition === "left"
 					? buttonIconSpaceRightDesktop
@@ -651,16 +651,16 @@ const edit = (props) => {
 			${priceTableHoverOverlayStylesTab}
 		}
 
-		.${blockId} .eb-pricing .eb-pricing-item .header {
+		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header {
 			${titlePaddingStylesTab}
 			${titleMarginStylesTab}
 		}
 
-		.${blockId} .eb-pricing .eb-pricing-item .header .eb-pricing-title {
+		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header .eb-pricing-title {
 			${titleTypoStylesTab}
 		}
 
-		.${blockId} .eb-pricing .eb-pricing-item .header .eb-pricing-subtitle {
+		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header .eb-pricing-subtitle {
 			${subtitleTypoStylesTab}
 		}
 
@@ -686,29 +686,29 @@ const edit = (props) => {
 			${salePriceMarginStylesTab}
 		}
 
-		.${blockId} .eb-pricing .eb-pricing-item .body ul li {
+		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-body ul li {
 			${featuresTypoStylesTab}
 		}
 
-		.${blockId} .eb-pricing .eb-pricing-item .body ul li .eb-pricebox-icon {
+		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-body ul li .eb-pricebox-icon {
 			${featuresIconSizeTab}
 		}
 
-		.${blockId} .eb-pricing .eb-pricing-item .footer .eb-pricing-button-wrapper {
+		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button-wrapper {
 			${buttonMarginStylesTab}
 		}
 
-		.${blockId} .eb-pricing .eb-pricing-item .footer .eb-pricing-button {
+		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button {
 			${buttonPaddingStylesTab}
 			${buttonTypoStylesTab}
 			${btnShadowStyesTab}
 		}
 
-		.${blockId} .eb-pricing .eb-pricing-item .footer .eb-pricing-button:hover {
+		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button:hover {
 			${btnShadowStylesHoverTab}
 		}
 
-		.${blockId} .eb-pricing .eb-pricing-item .footer .eb-pricing-button i {
+		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button i {
 			${
 				buttonIconPosition === "left"
 					? buttonIconSpaceRightTab
@@ -759,16 +759,16 @@ const edit = (props) => {
 			${priceTableHoverOverlayStylesMobile}
 		}
 
-		.${blockId} .eb-pricing .eb-pricing-item .header {
+		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header {
 			${titlePaddingStylesMobile}
 			${titleMarginStylesMobile}
 		}
 
-		.${blockId} .eb-pricing .eb-pricing-item .header .eb-pricing-title {
+		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header .eb-pricing-title {
 			${titleTypoStylesMobile}
 		}
 
-		.${blockId} .eb-pricing .eb-pricing-item .header .eb-pricing-subtitle {
+		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header .eb-pricing-subtitle {
 			${subtitleTypoStylesMobile}
 		}
 
@@ -794,29 +794,29 @@ const edit = (props) => {
 			${salePriceMarginStylesMobile}
 		}
 
-		.${blockId} .eb-pricing .eb-pricing-item .body ul li {
+		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-body ul li {
 			${featuresTypoStylesMobile}
 		}
 		
-		.${blockId} .eb-pricing .eb-pricing-item .body ul li .eb-pricebox-icon {
+		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-body ul li .eb-pricebox-icon {
 			${featuresIconSizeMobile}
 		}
 
-		.${blockId} .eb-pricing .eb-pricing-item .footer .eb-pricing-button-wrapper {
+		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button-wrapper {
 			${buttonMarginStylesMobile}
 		}
 
-		.${blockId} .eb-pricing .eb-pricing-item .footer .eb-pricing-button {
+		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button {
 			${buttonPaddingStylesMobile}
 			${buttonTypoStylesMobile}
 			${btnShadowStyesMobile}
 		}
 
-		.${blockId} .eb-pricing .eb-pricing-item .footer .eb-pricing-button:hover {
+		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button:hover {
 			${btnShadowStylesHoverMobile}
 		}
 
-		.${blockId} .eb-pricing .eb-pricing-item .footer .eb-pricing-button i {
+		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button i {
 			${
 				buttonIconPosition === "left"
 					? buttonIconSpaceRightMobile
@@ -842,11 +842,11 @@ const edit = (props) => {
 	var titleLineStyle = "";
 	if (showTitleLine) {
 		titleLineStyle = `
-		.${blockId} .eb-pricing .eb-pricing-item .header::after {
+		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header::after {
 			background: ${titleLineColor}
 		}
 
-		.${blockId} .eb-pricing .eb-pricing-item .header::after {
+		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header::after {
 			content: "";
 			position: absolute;
 			width: 140px;
@@ -858,17 +858,17 @@ const edit = (props) => {
 			z-index: 1;
 		}
 
-		.${blockId}.eb-pricing-content-left .eb-pricing-item .header::after,
+		.${blockId}.eb-pricing-content-left .eb-pricing-item .eb-pricing-header::after,
 		.${blockId}.eb-pricing-content-left .eb-pricing-item .eb-pricing-tag::after {
 			margin: 0;
 		}
 
-		.${blockId}.eb-pricing-content-right .eb-pricing-item .header::after,
+		.${blockId}.eb-pricing-content-right .eb-pricing-item .eb-pricing-header::after,
 		.${blockId}.eb-pricing-content-right .eb-pricing-item .eb-pricing-tag::after {
 			margin: 0 0 0 auto;
 		}
 
-		.eb-pricing.style-3 .eb-pricing-item .header:after {
+		.eb-pricing.style-3 .eb-pricing-item .eb-pricing-header:after {
 			position: absolute;
 			content: "";
 			width: 100%;
@@ -999,7 +999,7 @@ const edit = (props) => {
 								</span>
 							</div>
 						)}
-						<div className="header">
+						<div className="eb-pricing-header">
 							<h2 className="eb-pricing-title">{title}</h2>
 							{showSubtitle && (
 								<span className="eb-pricing-subtitle">{subtitle}</span>
@@ -1050,7 +1050,7 @@ const edit = (props) => {
 								</span>
 							</div>
 						)}
-						<div className="body">
+						<div className="eb-pricing-body">
 							<ul className="eb-pricebox-features">
 								{features.map(({ icon, text, color, clickable, link }) => (
 									<li
@@ -1127,7 +1127,7 @@ const edit = (props) => {
 							</div>
 						)}
 						{showButton && (
-							<div className="footer" data-icon={buttonIcon}>
+							<div className="eb-pricing-footer" data-icon={buttonIcon}>
 								<div className="eb-pricing-button-wrapper">
 									<a href={buttonURL} className="eb-pricing-button">
 										{buttonIconPosition === "left" && (
