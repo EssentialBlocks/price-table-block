@@ -522,27 +522,27 @@ const Inspector = ({ attributes, setAttributes }) => {
 										initialOpen={false}
 									>
 										<BaseControl>
-												<h3 className="eb-control-title">
-													{__("Alignment", "price-table-block")}
-												</h3>
-												<ButtonGroup>
-													{ALIGNMENT.map((item) => (
-														<Button
-															isLarge
-															isPrimary={headerAlignment === item.value}
-															isSecondary={headerAlignment !== item.value}
-															onClick={() =>
-																setAttributes({
-																	headerAlignment: item.value,
-																})
-															}
-														>
-															{item.label}
-														</Button>
-													))}
-												</ButtonGroup>
-											</BaseControl>
-											<hr />
+											<h3 className="eb-control-title">
+												{__("Alignment", "price-table-block")}
+											</h3>
+											<ButtonGroup>
+												{ALIGNMENT.map((item) => (
+													<Button
+														isLarge
+														isPrimary={headerAlignment === item.value}
+														isSecondary={headerAlignment !== item.value}
+														onClick={() =>
+															setAttributes({
+																headerAlignment: item.value,
+															})
+														}
+													>
+														{item.label}
+													</Button>
+												))}
+											</ButtonGroup>
+										</BaseControl>
+										<hr />
 										<BaseControl>
 											<h3 className="eb-control-title">{__("Title Style")}</h3>
 										</BaseControl>
@@ -595,9 +595,9 @@ const Inspector = ({ attributes, setAttributes }) => {
 													typographyPrefixConstant={typoPrefix_subtitle}
 													resRequiredProps={resRequiredProps}
 												/>
+												<hr />
 											</>
 										)}
-										<hr />
 										<BaseControl>
 											<h3 className="eb-control-title">
 												{__("Margin & Padding")}
@@ -618,6 +618,28 @@ const Inspector = ({ attributes, setAttributes }) => {
 										title={__("Price", "price-table-block")}
 										initialOpen={false}
 									>
+										<BaseControl>
+											<h3 className="eb-control-title">
+												{__("Alignment", "price-table-block")}
+											</h3>
+											<ButtonGroup>
+												{ALIGNMENT.map((item) => (
+													<Button
+														isLarge
+														isPrimary={priceAlignment === item.value}
+														isSecondary={priceAlignment !== item.value}
+														onClick={() =>
+															setAttributes({
+																priceAlignment: item.value,
+															})
+														}
+													>
+														{item.label}
+													</Button>
+												))}
+											</ButtonGroup>
+										</BaseControl>
+										<hr />
 										<BaseControl>
 											<h3 className="eb-control-title">
 												{__("Original Price")}

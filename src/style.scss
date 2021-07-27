@@ -466,7 +466,7 @@
 	display: block;
 	width: 100%;
 	height: auto;
-	padding: 10px 15px;
+	padding: 10px 0px;
 	font-size: 14px;
 	color: #6d6d6d;
 	border-bottom: 1px solid rgba(9, 9, 9, 0.04);
@@ -580,12 +580,7 @@
 	z-index: 0;
 	overflow: hidden;
 }
-.eb-pricing.style-3 .eb-pricing-item:hover .header:after,
-.eb-pricing.style-3 .eb-pricing-item:hover .eb-pricing-header:after {
-	-webkit-transform: scaleX(1);
-	-ms-transform: scaleX(1);
-	transform: scaleX(1) !important;
-}
+
 .eb-pricing.style-3 .eb-pricing-item .header .eb-pricing-title,
 .eb-pricing.style-3 .eb-pricing-item .eb-pricing-header .eb-pricing-title {
 	font-family: "Raleway", sans-serif;

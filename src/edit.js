@@ -422,7 +422,6 @@ const edit = (props) => {
 	});
 
 	const iconAlign = iconAlignment || contentAlign;
-	const headerAlign = headerAlignment || contentAlign;
 
 	const {
 		typoStylesDesktop: ribbonTypoStylesDesktop,
@@ -446,12 +445,7 @@ const edit = (props) => {
 			text-align: ${contentAlign};
 			${ribbonStyle === "ribbon-4" ? "overflow: hidden;" : ""}
 		}
-		.${blockId}.eb-pricing-content-left .eb-pricing.style-3 .eb-pricing-item .eb-pricing-header:after, .${blockId}.eb-pricing-content-left .eb-pricing.style-3 .eb-pricing-item .eb-pricing-tag:after {
-			transform: translateX(-80%);
-		}
-		.${blockId}.eb-pricing-content-right .eb-pricing.style-3 .eb-pricing-item .eb-pricing-header:after, .${blockId}.eb-pricing-content-right .eb-pricing.style-3 .eb-pricing-item .eb-pricing-tag:after {
-			transform: translateX(80%);
-		}
+		
 		.${blockId} .eb-pricing .eb-pricing-item.ribbon-1::before {
 			content: "";
 			color: ${ribbonColor};
@@ -603,41 +597,40 @@ const edit = (props) => {
 			color: ${iconHoverColor};
 		}
 
-		.${blockId} .eb-pricing-header {
-			text-align: ${headerAlign};
-		}
-
 		${
-			featuresAlignment &&
-			`.${blockId} .eb-pricing-body {
+			featuresAlignment
+				? `.${blockId} .eb-pricing-body {
 				text-align: ${featuresAlignment};
 			}`
+				: ""
 		}
 
-		
-
 		${
-			buttonAlignment &&
-			`.${blockId} .eb-pricing-footer {
+			buttonAlignment
+				? `.${blockId} .eb-pricing-footer {
 				text-align: ${buttonAlignment};
 			}`
+				: ""
+		}
+
+		${
+			headerAlignment
+				? `.${blockId} .eb-pricing-header {
+				text-align: ${headerAlignment};
+			}`
+				: ""
+		}
+
+		${
+			priceAlignment
+				? `.${blockId} .eb-pricing-tag {
+				text-align: ${priceAlignment};
+			}`
+				: ""
 		}
 		
 	`;
-// console.log(headerAlign);
-	// ${
-	// 	headerAlignment &&
-	// 	`.${blockId} .eb-pricing-header {
-	// 		text-align: ${headerAlignment};
-	// 	}`
-	// }
-
-	// ${
-	// 	priceAlignment &&
-	// 	`.${blockId} .eb-pricing-tag {
-	// 		text-align: ${priceAlignment};
-	// 	}`
-	// }
+	// console.log(headerAlign);
 
 	const tabStyles = `
 		.${blockId} .eb-pricing .eb-pricing-item.ribbon-2::before,
@@ -815,13 +808,24 @@ const edit = (props) => {
 	`;
 
 	var titleLineStyle = "";
-	var headerAlign2 =
+	var headerAlign =
 		headerAlignment === "left"
 			? "margin: 0 !important;"
 			: headerAlignment === "right"
 			? "margin: 0 0 0 auto !important;"
 			: "margin: 0 auto !important;";
-	// 		// console.log(showTitleLine);
+	var headerAlignStyle3 =
+		headerAlignment === "left"
+			? "transform: translateX(-80%) !important;"
+			: headerAlignment === "right"
+			? "transform: translateX(80%) !important;"
+			: "margin: 0 auto !important;";
+	var priceAlign =
+		priceAlignment === "left"
+			? "margin: 0 !important;"
+			: priceAlignment === "right"
+			? "margin: 0 0 0 auto !important;"
+			: "margin: 0 auto !important;";
 	if (showTitleLine) {
 		titleLineStyle = `
 		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header::after {
@@ -845,7 +849,19 @@ const edit = (props) => {
 			margin: 0 0 0 auto;
 		}
 		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header::after {
-			${headerAlign2}
+			${headerAlign}
+		}
+		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag::after {
+			${priceAlign}
+		}
+		.${blockId}.eb-pricing-content-left .eb-pricing.style-3 .eb-pricing-item .eb-pricing-header:after, .${blockId}.eb-pricing-content-left .eb-pricing.style-3 .eb-pricing-item .eb-pricing-tag:after {
+			transform: translateX(-80%);
+		}
+		.${blockId}.eb-pricing-content-right .eb-pricing.style-3 .eb-pricing-item .eb-pricing-header:after, .${blockId}.eb-pricing-content-right .eb-pricing.style-3 .eb-pricing-item .eb-pricing-tag:after {
+			transform: translateX(80%);
+		}
+		.${blockId} .eb-pricing.style-3 .eb-pricing-item .eb-pricing-header::after {
+			${headerAlignStyle3}
 		}
 		.eb-pricing.style-3 .eb-pricing-item .eb-pricing-header:after {
 			position: absolute;
@@ -863,6 +879,12 @@ const edit = (props) => {
 			-webkit-transform: scaleX(0.4);
 			-ms-transform: scaleX(0.4);
 			transform: scaleX(0.4);
+		}
+		.eb-pricing.style-3 .eb-pricing-item:hover .header:after,
+		.eb-pricing.style-3 .eb-pricing-item:hover .eb-pricing-header:after {
+			-webkit-transform: scaleX(1);
+			-ms-transform: scaleX(1);
+			transform: scaleX(1) !important;
 		}
 	`;
 	}
