@@ -490,7 +490,10 @@ const edit = (props) => {
 		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header {
 			${titlePaddingStylesDesktop}
 			${titleMarginStylesDesktop}
-			background: ${titleBackgroundColor || "none"};
+			background: ${
+				titleBackgroundColor ||
+				(pricingStyle === "style-2" ? "#c8e6c9" : "none")
+			};
 			position: relative;
 			z-index: 0;
 		}
@@ -847,20 +850,34 @@ const edit = (props) => {
 		.${blockId}.eb-pricing-content-right .eb-pricing-item .eb-pricing-tag::after {
 			margin: 0 0 0 auto;
 		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header::after {
-			${headerAlign}
+		${
+			headerAlignment
+				? `.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header::after {
+						${headerAlign}
+					}`
+				: ""
 		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag::after {
-			${priceAlign}
-		}
-		.${blockId}.eb-pricing-content-left .eb-pricing.style-3 .eb-pricing-item .eb-pricing-header:after, .${blockId}.eb-pricing-content-left .eb-pricing.style-3 .eb-pricing-item .eb-pricing-tag:after {
-			transform: translateX(-80%);
-		}
-		.${blockId}.eb-pricing-content-right .eb-pricing.style-3 .eb-pricing-item .eb-pricing-header:after, .${blockId}.eb-pricing-content-right .eb-pricing.style-3 .eb-pricing-item .eb-pricing-tag:after {
-			transform: translateX(80%);
-		}
-		.${blockId} .eb-pricing.style-3 .eb-pricing-item .eb-pricing-header::after {
-			${headerAlignStyle3}
+	 
+	${
+		priceAlignment
+			? `.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag::after {
+					${priceAlign}
+				}`
+			: ""
+	}
+	 
+	 .${blockId}.eb-pricing-content-left .eb-pricing.style-3 .eb-pricing-item .eb-pricing-header:after, .${blockId}.eb-pricing-content-left .eb-pricing.style-3 .eb-pricing-item .eb-pricing-tag:after {
+		 transform: translateX(-80%);
+	 }
+	 .${blockId}.eb-pricing-content-right .eb-pricing.style-3 .eb-pricing-item .eb-pricing-header:after, .${blockId}.eb-pricing-content-right .eb-pricing.style-3 .eb-pricing-item .eb-pricing-tag:after {
+		 transform: translateX(80%);
+	 }
+	 ${
+			headerAlignment
+				? `.${blockId} .eb-pricing.style-3 .eb-pricing-item .eb-pricing-header::after {
+						${headerAlignStyle3}
+					}`
+				: ""
 		}
 		.eb-pricing.style-3 .eb-pricing-item .eb-pricing-header:after {
 			position: absolute;
