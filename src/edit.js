@@ -630,7 +630,6 @@ const edit = (props) => {
 		}
 		
 	`;
-	// console.log(headerAlign);
 
 	const tabStyles = `
 		.${blockId} .eb-pricing .eb-pricing-item.ribbon-2::before,
@@ -888,8 +887,6 @@ const edit = (props) => {
 		}
 	`;
 	}
-
-	console.log(titleLineStyle);
 
 	// ribbon Class
 	const ribbonClass = showRibbon ? ` featured ${ribbonStyle}` : "";
