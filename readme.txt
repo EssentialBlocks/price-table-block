@@ -63,6 +63,10 @@ Yes, it will work with any standard WordPress theme.
 
 == Changelog ==
 
+== 1.1.2 - (dev) =
+* Added: Alignment Option For Every Section
+* Improved: HTML Structure For CSS Issues
+
 == 1.1.1 - 13/07/2021 =
 * Fixed: naming convention on block.json file
 * Fixed: remove extra block.json file
