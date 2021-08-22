@@ -63,8 +63,9 @@ Yes, it will work with any standard WordPress theme.
 
 == Changelog ==
 
-= 1.1.3 - 19/08/2021 =
+= 1.1.3 - 22/08/2021 =
 * Improved: Security for asset generation
+* Fixed: Warning in controls
 
 == 1.1.2 - 28/07/2021 =
 * Added: Alignment Option For Every Section
