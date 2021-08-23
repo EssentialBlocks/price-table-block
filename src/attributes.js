@@ -55,7 +55,7 @@ const attributes = {
 	title: {
 		type: "string",
 		source: "text",
-		selector: ".eb-pricing .header .eb-pricing-title",
+		selector: ".eb-pricing .eb-pricing-header .eb-pricing-title",
 		default: "Startup",
 	},
 	defaultSubtitle: {
@@ -68,7 +68,7 @@ const attributes = {
 	subtitle: {
 		type: "string",
 		source: "text",
-		selector: ".eb-pricing .header .eb-pricing-subtitle",
+		selector: ".eb-pricing .eb-pricing-header .eb-pricing-subtitle",
 		default: "A tagline here.",
 	},
 	defaultHeaderIcon: {
@@ -136,7 +136,7 @@ const attributes = {
 	features: {
 		type: "array",
 		source: "query",
-		selector: ".eb-pricing .body ul li",
+		selector: ".eb-pricing .eb-pricing-body ul li",
 		query: {
 			text: {
 				type: "string",
@@ -201,7 +201,7 @@ const attributes = {
 	},
 	buttonIcon: {
 		type: "attribute",
-		selector: ".eb-pricing .footer",
+		selector: ".eb-pricing .eb-pricing-footer",
 		attribute: "data-icon",
 	},
 	buttonIconPosition: {
@@ -297,6 +297,21 @@ const attributes = {
 	buttonURL: {
 		type: "string",
 		default: "#",
+	},
+	featuresAlignment: {
+		type: "string",
+	},
+	buttonAlignment: {
+		type: "string",
+	},
+	headerAlignment: {
+		type: "string",
+	},
+	priceAlignment: {
+		type: "string",
+	},
+	iconAlignment: {
+		type: "string",
 	},
 	...generateResponsiveRangeAttributes(buttonIconSpacing, {
 		defaultRange: 0,

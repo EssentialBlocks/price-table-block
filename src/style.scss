@@ -11,6 +11,10 @@
 	align-items: center;
 }
 
+.eb-pricing .icon i {
+	font-style: normal;
+}
+
 .eb-pricing .eb-pricing-item {
 	width: 100%;
 	height: auto;
@@ -185,7 +189,8 @@
 	transform: rotate(-45deg);
 }
 
-.eb-pricing.style-1 .eb-pricing-item .header {
+.eb-pricing.style-1 .eb-pricing-item .header,
+.eb-pricing.style-1 .eb-pricing-item .eb-pricing-header {
 	display: block;
 	position: relative;
 	z-index: 0;
@@ -193,7 +198,8 @@
 	margin-bottom: 15px;
 }
 
-.eb-pricing.style-1 .eb-pricing-item .header .eb-pricing-title {
+.eb-pricing.style-1 .eb-pricing-item .header .eb-pricing-title,
+.eb-pricing.style-1 .eb-pricing-item .eb-pricing-header .eb-pricing-title {
 	font-weight: 700;
 	line-height: 30px;
 	margin: 0px;
@@ -237,13 +243,15 @@
 	color: #999;
 }
 
-.eb-pricing.style-1 .eb-pricing-item .body ul {
+.eb-pricing.style-1 .eb-pricing-item .body ul,
+.eb-pricing.style-1 .eb-pricing-item .eb-pricing-body ul {
 	display: block;
 	width: 100%;
 	margin-bottom: 15px;
 }
 
-.eb-pricing.style-1 .eb-pricing-item .body ul li {
+.eb-pricing.style-1 .eb-pricing-item .body ul li,
+.eb-pricing.style-1 .eb-pricing-item .eb-pricing-body ul li {
 	display: block;
 	width: 100%;
 	height: auto;
@@ -253,7 +261,8 @@
 	border-bottom: 1px solid rgba(9, 9, 9, 0.04);
 }
 
-.eb-pricing.style-1 .eb-pricing-item .body ul li:last-child {
+.eb-pricing.style-1 .eb-pricing-item .body ul li:last-child,
+.eb-pricing.style-1 .eb-pricing-item .eb-pricing-body ul li:last-child {
 	border: none;
 }
 
@@ -380,7 +389,8 @@
 	color: #fff;
 }
 
-.eb-pricing.style-2 .eb-pricing-item .header {
+.eb-pricing.style-2 .eb-pricing-item .header,
+.eb-pricing.style-2 .eb-pricing-item .eb-pricing-header {
 	background: #c8e6c9;
 	padding: 25px 30px;
 	margin-bottom: 15px;
@@ -388,7 +398,8 @@
 	z-index: 0;
 }
 
-.eb-pricing.style-2 .eb-pricing-item.featured .header:after {
+.eb-pricing.style-2 .eb-pricing-item.featured .header:after,
+.eb-pricing.style-2 .eb-pricing-item.featured .eb-pricing-header:after {
 	content: "";
 	position: absolute;
 	width: 100%;
@@ -401,14 +412,16 @@
 	background: rgba(255, 255, 255, 0.4);
 }
 
-.eb-pricing.style-2 .eb-pricing-item .header .eb-pricing-title {
+.eb-pricing.style-2 .eb-pricing-item .header .eb-pricing-title,
+.eb-pricing.style-2 .eb-pricing-item .eb-pricing-header .eb-pricing-title {
 	font-size: 28px;
 	font-weight: 700;
 	line-height: 1.5;
 	margin: 0px;
 }
 
-.eb-pricing.style-2 .eb-pricing-item .header .eb-princing-subititle {
+.eb-pricing.style-2 .eb-pricing-item .header .eb-princing-subititle,
+.eb-pricing.style-2 .eb-pricing-item .eb-pricing-header .eb-princing-subititle {
 	font-size: 14px;
 	font-weight: 600;
 	color: #6d6d6d;
@@ -452,23 +465,26 @@
 	color: #999;
 }
 
-.eb-pricing.style-2 .eb-pricing-item .body ul {
+.eb-pricing.style-2 .eb-pricing-item .body ul,
+.eb-pricing.style-2 .eb-pricing-item .eb-pricing-body ul {
 	display: block;
 	width: 100%;
 	margin-bottom: 15px;
 }
 
-.eb-pricing.style-2 .eb-pricing-item .body ul li {
+.eb-pricing.style-2 .eb-pricing-item .body ul li,
+.eb-pricing.style-2 .eb-pricing-item .eb-pricing-body ul li {
 	display: block;
 	width: 100%;
 	height: auto;
-	padding: 10px 15px;
+	padding: 10px 0px;
 	font-size: 14px;
 	color: #6d6d6d;
 	border-bottom: 1px solid rgba(9, 9, 9, 0.04);
 }
 
-.eb-pricing.style-2 .eb-pricing-item .body ul li:last-child {
+.eb-pricing.style-2 .eb-pricing-item .body ul li:last-child,
+.eb-pricing.style-2 .eb-pricing-item .eb-pricing-body ul li:last-child {
 	border: none;
 }
 
@@ -567,26 +583,25 @@
 	text-transform: uppercase;
 	padding: 5px 15px;
 }
-.eb-pricing.style-3 .eb-pricing-item .header {
+.eb-pricing.style-3 .eb-pricing-item .header,
+.eb-pricing.style-3 .eb-pricing-item .eb-pricing-header {
 	position: relative;
 	padding-bottom: 15px;
 	margin-bottom: 15px;
 	z-index: 0;
 	overflow: hidden;
 }
-.eb-pricing.style-3 .eb-pricing-item:hover .header:after {
-	-webkit-transform: scaleX(1);
-	-ms-transform: scaleX(1);
-	transform: scaleX(1) !important;
-}
-.eb-pricing.style-3 .eb-pricing-item .header .eb-pricing-title {
+
+.eb-pricing.style-3 .eb-pricing-item .header .eb-pricing-title,
+.eb-pricing.style-3 .eb-pricing-item .eb-pricing-header .eb-pricing-title {
 	font-family: "Raleway", sans-serif;
 	font-size: 28px;
 	font-weight: 400;
 	line-height: 40px;
 	margin: 0px;
 }
-.eb-pricing.style-3 .eb-pricing-item .header .eb-princing-subititle {
+.eb-pricing.style-3 .eb-pricing-item .header .eb-princing-subititle,
+.eb-pricing.style-3 .eb-pricing-item .eb-pricing-header .eb-princing-subititle {
 	font-size: 14px;
 	color: rgba(255, 255, 255, 0.5);
 }
@@ -606,10 +621,12 @@
 	font-size: 36px;
 	font-weight: 700;
 }
-.eb-pricing.style-3 .eb-pricing-item .body ul {
+.eb-pricing.style-3 .eb-pricing-item .body ul,
+.eb-pricing.style-3 .eb-pricing-item .eb-pricing-body ul {
 	margin-bottom: 30px;
 }
-.eb-pricing.style-3 .eb-pricing-item .body ul li {
+.eb-pricing.style-3 .eb-pricing-item .body ul li,
+.eb-pricing.style-3 .eb-pricing-item .eb-pricing-body ul li {
 	display: block;
 	width: 100%;
 	height: auto;
@@ -618,7 +635,8 @@
 	color: rgba(255, 255, 255, 0.7);
 	border-bottom: 1px solid rgba(9, 9, 9, 0.04);
 }
-.eb-pricing.style-3 .eb-pricing-item .body ul li:last-child {
+.eb-pricing.style-3 .eb-pricing-item .body ul li:last-child,
+.eb-pricing.style-3 .eb-pricing-item .eb-pricing-body ul li:last-child {
 	border: none;
 }
 .eb-pricing.style-3 .eb-pricing-item .eb-pricing-tag.on-top {

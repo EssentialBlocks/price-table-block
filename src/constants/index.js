@@ -39,6 +39,12 @@ export const TWOUNITS = [
 	{ label: __("%"), value: "%" },
 ];
 
+export const ALIGNMENT = [
+	{ label: __(<Dashicon icon={"editor-alignleft"} />), value: "left" },
+	{ label: __(<Dashicon icon={"editor-aligncenter"} />), value: "center" },
+	{ label: __(<Dashicon icon={"editor-alignright"} />), value: "right" }
+];
+
 // Responsive Range Controller
 export const buttonIconSpacing = "btnIconSpace";
 export const buttonIconSize = "btnIconSize";
