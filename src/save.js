@@ -1,7 +1,7 @@
 /**
  * WordPress dependencies
  */
-const { useBlockProps } = wp.blockEditor;
+ import { useBlockProps } from "@wordpress/block-editor";
 
 const Save = ({ attributes }) => {
 	const {
@@ -35,7 +35,9 @@ const Save = ({ attributes }) => {
 
 	return (
 		<div {...useBlockProps.save()}>
-			<div className={`${blockId} eb-pricing-content-${contentAlign}`}>
+			<div
+				className={`${blockId} eb-pricing-wrapper eb-pricing-content-${contentAlign}`}
+			>
 				<div className={`eb-pricing ${pricingStyle}`}>
 					<div className={`eb-pricing-item${ribbonClass}`}>
 						<div className="eb-pricing-item-overlay"></div>
@@ -107,7 +109,7 @@ const Save = ({ attributes }) => {
 										data-clickable={clickable}
 										data-link={link}
 									>
-										{clickable && link ? (	
+										{clickable && link ? (
 											<a href={link}>
 												<span
 													className={`eb-pricebox-icon ${icon}`}

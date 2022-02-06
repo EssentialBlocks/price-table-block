@@ -1,36 +1,32 @@
 /**
  * WordPress dependeincies
  */
-const { __ } = wp.i18n;
-const { registerBlockType } = wp.blocks;
+import { __ } from "@wordpress/i18n";
+import { registerBlockType } from "@wordpress/blocks";
 
 /**
  * Internal dependencies
  */
-import deprecated from './deprecated';
 import Save from "./save";
 import Edit from "./edit";
-import attributes from "./attributes";
-import icon from "./icon";
+import { PricingTableIcon } from "./icon";
 import example from "./example";
+import attributes from "./attributes";
+import deprecated from "./deprecated";
 import "./style.scss";
+import metadata from "../block.json";
+const { ebConditionalRegisterBlockType } = EBPricingTableControls;
 
-registerBlockType("price-table-block/pricing-table", {
-	title: __("Pricing Table", "price-table-block"),
-	description: __(
-		"EB Pricing Table will let you create effective product pricing table with perfect styling to get more sales from your prospective buyers.",
-		"price-table-block"
-	),
-	icon,
-	category: "widgets",
+ebConditionalRegisterBlockType(metadata, {
+	icon: PricingTableIcon,
 	attributes,
 	keywords: [
-		__("eb price", "price-table-block"),
-		__("table", "price-table-block"),
-		__("comparison", "price-table-block"),
+		__("eb price", "essential-blocks"),
+		__("table", "essential-blocks"),
+		__("eb price table", "essential-blocks"),
 	],
 	edit: Edit,
 	save: Save,
-	deprecated,
 	example,
+	deprecated,
 });

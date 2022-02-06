@@ -1,11 +1,20 @@
 import * as typoPrefixs from "./constants/typographyPrefixConstants";
-import {
+// import {
+// 	generateTypographyAttributes,
+// 	generateResponsiveRangeAttributes,
+// 	generateDimensionsAttributes,
+// 	generateBackgroundAttributes,
+// 	generateBorderShadowAttributes,
+// } from "../../../util/helpers";
+
+const {
 	generateTypographyAttributes,
 	generateResponsiveRangeAttributes,
 	generateDimensionsAttributes,
 	generateBackgroundAttributes,
 	generateBorderShadowAttributes,
-} from "../util/helpers";
+} = window.EBPricingTableControls;
+
 import {
 	buttonIconSpacing,
 	buttonIconSize,
@@ -164,36 +173,7 @@ const attributes = {
 				attribute: "data-clickable",
 			},
 		},
-		default: [
-			{
-				icon: "fas fa-check",
-				text: "Unlimited Calls",
-				color: "#03bb89",
-				clickable: "false",
-				link: "",
-			},
-			{
-				icon: "fas fa-check",
-				text: "Free Hosting",
-				color: "#03bb89",
-				clickable: "false",
-				link: "",
-			},
-			{
-				icon: "fas fa-check",
-				text: "500MB free storage",
-				color: "#03bb89",
-				clickable: "false",
-				link: "",
-			},
-			{
-				icon: "fas fa-check",
-				text: "24/7 Support",
-				color: "#03bb89",
-				clickable: "false",
-				link: "",
-			},
-		],
+		default: [],
 	},
 	showButton: {
 		type: "boolean",
