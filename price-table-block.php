@@ -36,7 +36,7 @@ function create_block_pricing_table_block_init()
 	$script_asset_path = PRICE_TABLE_BLOCKS_ADMIN_PATH . "/dist/index.asset.php";
 	if (!file_exists($script_asset_path)) {
 		throw new Error(
-			'You need to run `npm start` or `npm run build` for the "block/pricing-table" block first.'
+			'You need to run `npm start` or `npm run build` for the "price-table-block/pricing-table" block first.'
 		);
 	}
 

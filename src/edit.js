@@ -449,8 +449,6 @@ const edit = (props) => {
 		attributes,
 	});
 
-	console.log("showIconBackground", showIconBackground);
-
 	const desktopStyles = `
 		  .eb-pricing-wrapper.${blockId} .eb-pricing {
 			  text-align: ${contentAlign};

@@ -88,8 +88,6 @@ const {
 	BorderShadowControl,
 } = window.EBPricingTableControls;
 
-console.log("faIcons", faIcons);
-
 const editorStoreForGettingPreivew =
 	eb_style_handler.editor_type === "edit-site"
 		? "core/edit-site"
