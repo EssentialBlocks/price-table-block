@@ -1,4 +1,4 @@
-export default function () {
+export const PricingTableIcon = () => {
 	return (
 		<svg
 			width="256"
@@ -32,4 +32,4 @@ export default function () {
 			</g>
 		</svg>
 	);
-}
+};

@@ -1,14 +1,20 @@
 /**
  * WordPress dependencies
  */
-const { __ } = wp.i18n;
-const { useBlockProps, BlockControls, AlignmentToolbar } = wp.blockEditor;
-const { useEffect } = wp.element;
-const { select } = wp.data;
+import { __ } from "@wordpress/i18n";
+import { useEffect } from "@wordpress/element";
+import {
+	useBlockProps,
+	BlockControls,
+	AlignmentToolbar,
+} from "@wordpress/block-editor";
+import { select } from "@wordpress/data";
+
 /**
  * Internal dependencies
  */
-import "./editor.scss";
+import classnames from "classnames";
+
 import Inspector from "./inspector";
 
 import {
@@ -47,20 +53,23 @@ import {
 	typoPrefix_ribbon,
 } from "./constants/typographyPrefixConstants";
 
-import {
+const {
 	softMinifyCssStrings,
-	isCssExists,
-	mimmikCssForPreviewBtnClick,
 	duplicateBlockIdFix,
 	generateDimensionsControlStyles,
 	generateBackgroundControlStyles,
 	generateBorderShadowStyles,
 	generateTypographyStyles,
 	generateResponsiveRangeStyles,
-} from "../util/helpers";
+} = window.EBPricingTableControls;
+
+const editorStoreForGettingPreivew =
+	eb_style_handler.editor_type === "edit-site"
+		? "core/edit-site"
+		: "core/edit-post";
 
 const edit = (props) => {
-	const { attributes, isSelected, setAttributes, clientId } = props;
+	const { attributes, isSelected, setAttributes, clientId, className } = props;
 	const {
 		blockId,
 		blockMeta,
@@ -441,373 +450,373 @@ const edit = (props) => {
 	});
 
 	const desktopStyles = `
-		.${blockId} .eb-pricing {
-			text-align: ${contentAlign};
-			${ribbonStyle === "ribbon-4" ? "overflow: hidden;" : ""}
-		}
-		
-		.${blockId} .eb-pricing .eb-pricing-item.ribbon-1::before {
-			content: "";
-			color: ${ribbonColor};
-			background: ${ribbonBackgroundColor};
-		}
-		.${blockId} .eb-pricing .eb-pricing-item.ribbon-2::before,
-		.${blockId} .eb-pricing .eb-pricing-item.ribbon-3::before,
-		.${blockId} .eb-pricing .eb-pricing-item.ribbon-4::before {
-			${ribbonTypoStylesDesktop}
-			${ribbonBorderShadowDesktop}
-			content: "${ribbonText}";
-			color: ${ribbonColor};
-			background: ${ribbonBackgroundColor};
-			text-align: center;
-		}
-		.${blockId} .eb-pricing:hover .eb-pricing-item.ribbon-2::before,
-		.${blockId} .eb-pricing:hover .eb-pricing-item.ribbon-3::before,
-		.${blockId} .eb-pricing:hover .eb-pricing-item.ribbon-4::before {
-			${ribbonBorderShadowHoverDesktop}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item.ribbon-2::after {
-			border-bottom: 15px solid ${ribbonBackgroundColor};
-		}
-		.${blockId} .eb-pricing .eb-pricing-item {
-			${wrapperPaddingStylesDesktop}
-			${wrapperMarginStylesDesktop}
-			${priceTableBackgroundStylesDesktop}
-			${bdShadowStyesDesktop}
-			transition: ${priceTableBgTransitionStyle}, ${bdShadowTransitionStyle};
-		}
-		.${blockId} .eb-pricing-item-overlay::before  {
-			${priceTableOverlayStylesDesktop}
-			transition: ${priceTableOvlTransitionStyle};
-		}
-		.${blockId} .eb-pricing .eb-pricing-item:hover {
-			${priceTableHoverBackgroundStylesDesktop}
-			${bdShadowStylesHoverDesktop}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item:hover .eb-pricing-item-overlay:before {
-			${priceTableHoverOverlayStylesDesktop}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header {
-			${titlePaddingStylesDesktop}
-			${titleMarginStylesDesktop}
-			background: ${
-				titleBackgroundColor ||
-				(pricingStyle === "style-2" ? "#c8e6c9" : "none")
-			};
-			position: relative;
-			z-index: 0;
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header .eb-pricing-title {
-			${titleTypoStylesDesktop}
-			color: ${titleTextColor};
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header .eb-pricing-subtitle {
-			${subtitleTypoStylesDesktop}
-			color: ${subtitleTextColor};
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag .original-price {
-			${priceTextTypoStylesDesktop}
-			color: ${priceTextColor};
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag .original-price .price-currency {
-			${priceCurrencyTypoStylesDesktop}
-			${priceCurrencyMarginStylesDesktop}
-			color: ${priceCurrencyTextColor};
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag .price-period {
-			${pricePeriodTypoStylesDesktop}
-			color: ${pricingPeriodTextColor};
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag .sale-price {
-			${salePriceTypoStylesDesktop}
-			color: ${salePriceTextColor};
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag .sale-price .price-currency {
-			${salePriceCurrencyTypoStylesDesktop}
-			${salePriceMarginStylesDesktop}
-			color: ${salepriceCurrencyTextColor};
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-body ul li, .${blockId} .eb-pricing .eb-pricing-item .eb-pricing-body ul li a {
-			${featuresTypoStylesDesktop}
-			color: ${featuresTextColor || "#6d6d6d"};
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-body ul li .eb-pricebox-icon {
-			${featuresIconSizeDesktop}
-			margin-right: 8px;
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button-wrapper {
-			${buttonMarginStylesDesktop}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button {
-			${buttonPaddingStylesDesktop}
-			${buttonTypoStylesDesktop}
-			${buttonBackgroundStylesDesktop}
-			${btnShadowStyesDesktop}
-			color: ${buttonTextColor};
-			transition: ${buttonBgTransitionStyle};
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button:hover {
-			${btnShadowStylesHoverDesktop}
-			${buttonHoverBackgroundStylesDesktop}
-			color: ${hoverTextColor};
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button i {
-			${
-				buttonIconPosition === "left"
-					? buttonIconSpaceRightDesktop
-					: buttonIconSpaceLeftDesktop
+		  .eb-pricing-wrapper.${blockId} .eb-pricing {
+			  text-align: ${contentAlign};
+			  ${ribbonStyle === "ribbon-4" ? "overflow: hidden;" : ""}
+		  }
+		  
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item.ribbon-1::before {
+			  content: "";
+			  color: ${ribbonColor};
+			  background: ${ribbonBackgroundColor};
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item.ribbon-2::before,
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item.ribbon-3::before,
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item.ribbon-4::before {
+			  ${ribbonTypoStylesDesktop}
+			  ${ribbonBorderShadowDesktop}
+			  content: "${ribbonText}";
+			  color: ${ribbonColor};
+			  background: ${ribbonBackgroundColor};
+			  text-align: center;
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing:hover .eb-pricing-item.ribbon-2::before,
+		  .eb-pricing-wrapper.${blockId} .eb-pricing:hover .eb-pricing-item.ribbon-3::before,
+		  .eb-pricing-wrapper.${blockId} .eb-pricing:hover .eb-pricing-item.ribbon-4::before {
+			  ${ribbonBorderShadowHoverDesktop}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item.ribbon-2::after {
+			  border-bottom: 15px solid ${ribbonBackgroundColor};
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item {
+			  ${wrapperPaddingStylesDesktop}
+			  ${wrapperMarginStylesDesktop}
+			  ${priceTableBackgroundStylesDesktop}
+			  ${bdShadowStyesDesktop}
+			  transition: ${priceTableBgTransitionStyle}, ${bdShadowTransitionStyle};
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing-item-overlay::before  {
+			  ${priceTableOverlayStylesDesktop}
+			  transition: ${priceTableOvlTransitionStyle};
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item:hover {
+			  ${priceTableHoverBackgroundStylesDesktop}
+			  ${bdShadowStylesHoverDesktop}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item:hover .eb-pricing-item-overlay:before {
+			  ${priceTableHoverOverlayStylesDesktop}
+		  }
+		  .eb-pricing-wrapper.eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header {
+			  ${titlePaddingStylesDesktop}
+			  ${titleMarginStylesDesktop}
+			  background: ${
+					titleBackgroundColor ||
+					(pricingStyle === "style-2" ? "#c8e6c9" : "none")
+				};
+			  position: relative;
+			  z-index: 0;
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header .eb-pricing-title {
+			  ${titleTypoStylesDesktop}
+			  color: ${titleTextColor};
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header .eb-pricing-subtitle {
+			  ${subtitleTypoStylesDesktop}
+			  color: ${subtitleTextColor};
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag .original-price {
+			  ${priceTextTypoStylesDesktop}
+			  color: ${priceTextColor};
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag .original-price .price-currency {
+			  ${priceCurrencyTypoStylesDesktop}
+			  ${priceCurrencyMarginStylesDesktop}
+			  color: ${priceCurrencyTextColor};
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag .price-period {
+			  ${pricePeriodTypoStylesDesktop}
+			  color: ${pricingPeriodTextColor};
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag .sale-price {
+			  ${salePriceTypoStylesDesktop}
+			  color: ${salePriceTextColor};
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag .sale-price .price-currency {
+			  ${salePriceCurrencyTypoStylesDesktop}
+			  ${salePriceMarginStylesDesktop}
+			  color: ${salepriceCurrencyTextColor};
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-body ul li, .${blockId} .eb-pricing .eb-pricing-item .eb-pricing-body ul li a {
+			  ${featuresTypoStylesDesktop}
+			  color: ${featuresTextColor || "#6d6d6d"};
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-body ul li .eb-pricebox-icon {
+			  ${featuresIconSizeDesktop}
+			  margin-right: 8px;
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button-wrapper {
+			  ${buttonMarginStylesDesktop}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button {
+			  ${buttonPaddingStylesDesktop}
+			  ${buttonTypoStylesDesktop}
+			  ${buttonBackgroundStylesDesktop}
+			  ${btnShadowStyesDesktop}
+			  color: ${buttonTextColor};
+			  transition: ${buttonBgTransitionStyle};
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button:hover {
+			  ${btnShadowStylesHoverDesktop}
+			  ${buttonHoverBackgroundStylesDesktop}
+			  color: ${hoverTextColor};
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button i {
+			  ${
+					buttonIconPosition === "left"
+						? buttonIconSpaceRightDesktop
+						: buttonIconSpaceLeftDesktop
+				}
+			  ${buttonIconSizeDesktop}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-icon {
+			  display: flex;
+			  align-items: center;
+			  justify-content: ${
+					iconAlign === "left"
+						? "flex-start"
+						: iconAlign === "right"
+						? "flex-end"
+						: "center"
+				};
+		  }
+		  
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-icon .icon {
+			  display: flex;
+			  align-items: center;
+			  justify-content: center;
+			  ${headerIconWidthDesktop}
+			  ${headerIconHeightDesktop}
+			  ${iconBorderShadowDesktop}
+			  ${
+					showIconBackground
+						? "background-color: " + iconBackgroundColor + ";"
+						: "background-color: transparent;"
+				}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item:hover .eb-pricing-icon .icon {
+			  ${iconBorderShadowHoverDesktop}
+			  ${
+					showIconBackground
+						? "background-color: " + iconBackgroundHoverColor + ";"
+						: "background-color: transparent;"
+				}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-icon .icon i {
+			  ${headerIconSizeDesktop}
+			  color: ${iconColor};
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item:hover .eb-pricing-icon .icon i {
+			  color: ${iconHoverColor};
+		  }
+  
+		  ${
+				featuresAlignment
+					? `.eb-pricing-wrapper.${blockId} .eb-pricing-body {
+				  text-align: ${featuresAlignment};
+			  }`
+					: ""
 			}
-			${buttonIconSizeDesktop}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-icon {
-			display: flex;
-			align-items: center;
-			justify-content: ${
-				iconAlign === "left"
-					? "flex-start"
-					: iconAlign === "right"
-					? "flex-end"
-					: "center"
-			};
-		}
-		
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-icon .icon {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			${headerIconWidthDesktop}
-			${headerIconHeightDesktop}
-			${iconBorderShadowDesktop}
-			${
-				showIconBackground
-					? "background-color: " + iconBackgroundColor + ";"
-					: "background-color: transparent;"
+  
+		  ${
+				buttonAlignment
+					? `.eb-pricing-wrapper.${blockId} .eb-pricing-footer {
+				  text-align: ${buttonAlignment};
+			  }`
+					: ""
 			}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item:hover .eb-pricing-icon .icon {
-			${iconBorderShadowHoverDesktop}
-			${
-				showIconBackground
-					? "background-color: " + iconBackgroundHoverColor + ";"
-					: "background-color: transparent;"
+  
+		  ${
+				headerAlignment
+					? `.eb-pricing-wrapper.${blockId} .eb-pricing-header {
+				  text-align: ${headerAlignment};
+			  }`
+					: ""
 			}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-icon .icon i {
-			${headerIconSizeDesktop}
-			color: ${iconColor};
-		}
-		.${blockId} .eb-pricing .eb-pricing-item:hover .eb-pricing-icon .icon i {
-			color: ${iconHoverColor};
-		}
-
-		${
-			featuresAlignment
-				? `.${blockId} .eb-pricing-body {
-				text-align: ${featuresAlignment};
-			}`
-				: ""
-		}
-
-		${
-			buttonAlignment
-				? `.${blockId} .eb-pricing-footer {
-				text-align: ${buttonAlignment};
-			}`
-				: ""
-		}
-
-		${
-			headerAlignment
-				? `.${blockId} .eb-pricing-header {
-				text-align: ${headerAlignment};
-			}`
-				: ""
-		}
-
-		${
-			priceAlignment
-				? `.${blockId} .eb-pricing-tag {
-				text-align: ${priceAlignment};
-			}`
-				: ""
-		}
-		
-	`;
+  
+		  ${
+				priceAlignment
+					? `.eb-pricing-wrapper.${blockId} .eb-pricing-tag {
+				  text-align: ${priceAlignment};
+			  }`
+					: ""
+			}
+		  
+	  `;
 
 	const tabStyles = `
-		.${blockId} .eb-pricing .eb-pricing-item.ribbon-2::before,
-		.${blockId} .eb-pricing .eb-pricing-item.ribbon-3::before,
-		.${blockId} .eb-pricing .eb-pricing-item.ribbon-4::before {
-			${ribbonTypoStylesTab}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item {
-			${wrapperPaddingStylesTab}
-			${wrapperMarginStylesTab}
-			${priceTableBackgroundStylesTab}
-			${bdShadowStyesTab}
-		}
-		.${blockId} .eb-pricing-item-overlay:before {
-			${priceTableOverlayStylesTab}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item:hover {
-			${priceTableHoverBackgroundStylesTab}
-			${bdShadowStylesHoverTab}
-		}
-		.${blockId} .eb-pricing-item:hover .eb-pricing-item-overlay:before {
-			${priceTableHoverOverlayStylesTab}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header {
-			${titlePaddingStylesTab}
-			${titleMarginStylesTab}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header .eb-pricing-title {
-			${titleTypoStylesTab}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header .eb-pricing-subtitle {
-			${subtitleTypoStylesTab}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag .original-price {
-			${priceTextTypoStylesTab}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag .original-price .price-currency {
-			${priceCurrencyTypoStylesTab}
-			${priceCurrencyMarginStylesTab}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag .price-period {
-			${pricePeriodTypoStylesTab}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag .sale-price {
-			${salePriceTypoStylesTab}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag .sale-price .price-currency {
-			${salePriceCurrencyTypoStylesTab}
-			${salePriceMarginStylesTab}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-body ul li {
-			${featuresTypoStylesTab}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-body ul li .eb-pricebox-icon {
-			${featuresIconSizeTab}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button-wrapper {
-			${buttonMarginStylesTab}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button {
-			${buttonPaddingStylesTab}
-			${buttonTypoStylesTab}
-			${btnShadowStyesTab}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button:hover {
-			${btnShadowStylesHoverTab}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button i {
-			${
-				buttonIconPosition === "left"
-					? buttonIconSpaceRightTab
-					: buttonIconSpaceLeftTab
-			}
-			${buttonIconSizeTab}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-icon .icon {
-			${headerIconWidthTab}
-			${headerIconHeightTab}
-			${iconBorderShadowTab}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-icon .icon:hover {
-			${iconBorderShadowHoverTab}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-icon .icon i {
-			${headerIconSizeTab}
-		}
-	`;
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item.ribbon-2::before,
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item.ribbon-3::before,
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item.ribbon-4::before {
+			  ${ribbonTypoStylesTab}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item {
+			  ${wrapperPaddingStylesTab}
+			  ${wrapperMarginStylesTab}
+			  ${priceTableBackgroundStylesTab}
+			  ${bdShadowStyesTab}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing-item-overlay:before {
+			  ${priceTableOverlayStylesTab}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item:hover {
+			  ${priceTableHoverBackgroundStylesTab}
+			  ${bdShadowStylesHoverTab}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing-item:hover .eb-pricing-item-overlay:before {
+			  ${priceTableHoverOverlayStylesTab}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header {
+			  ${titlePaddingStylesTab}
+			  ${titleMarginStylesTab}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header .eb-pricing-title {
+			  ${titleTypoStylesTab}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header .eb-pricing-subtitle {
+			  ${subtitleTypoStylesTab}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag .original-price {
+			  ${priceTextTypoStylesTab}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag .original-price .price-currency {
+			  ${priceCurrencyTypoStylesTab}
+			  ${priceCurrencyMarginStylesTab}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag .price-period {
+			  ${pricePeriodTypoStylesTab}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag .sale-price {
+			  ${salePriceTypoStylesTab}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag .sale-price .price-currency {
+			  ${salePriceCurrencyTypoStylesTab}
+			  ${salePriceMarginStylesTab}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-body ul li {
+			  ${featuresTypoStylesTab}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-body ul li .eb-pricebox-icon {
+			  ${featuresIconSizeTab}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button-wrapper {
+			  ${buttonMarginStylesTab}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button {
+			  ${buttonPaddingStylesTab}
+			  ${buttonTypoStylesTab}
+			  ${btnShadowStyesTab}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button:hover {
+			  ${btnShadowStylesHoverTab}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button i {
+			  ${
+					buttonIconPosition === "left"
+						? buttonIconSpaceRightTab
+						: buttonIconSpaceLeftTab
+				}
+			  ${buttonIconSizeTab}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-icon .icon {
+			  ${headerIconWidthTab}
+			  ${headerIconHeightTab}
+			  ${iconBorderShadowTab}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-icon .icon:hover {
+			  ${iconBorderShadowHoverTab}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-icon .icon i {
+			  ${headerIconSizeTab}
+		  }
+	  `;
 
 	const mobileStyles = `
-		.${blockId} .eb-pricing .eb-pricing-item.ribbon-2::before,
-		.${blockId} .eb-pricing .eb-pricing-item.ribbon-3::before,
-		.${blockId} .eb-pricing .eb-pricing-item.ribbon-4::before {
-			${ribbonTypoStylesMobile}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item {
-			${wrapperPaddingStylesMobile}
-			${wrapperMarginStylesMobile}
-			${priceTableBackgroundStylesMobile}
-			${bdShadowStyesMobile}
-		}
-		.${blockId} .eb-pricing-item-overlay:before {
-			${priceTableOverlayStylesMobile}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item:hover {
-			${priceTableHoverBackgroundStylesMobile}
-			${bdShadowStylesHoverMobile}
-		}
-		.${blockId} .eb-pricing-item:hover .eb-pricing-item-overlay:before {
-			${priceTableHoverOverlayStylesMobile}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header {
-			${titlePaddingStylesMobile}
-			${titleMarginStylesMobile}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header .eb-pricing-title {
-			${titleTypoStylesMobile}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header .eb-pricing-subtitle {
-			${subtitleTypoStylesMobile}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag .original-price {
-			${priceTextTypoStylesMobile}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag .original-price .price-currency {
-			${priceCurrencyTypoStylesMobile}
-			${priceCurrencyMarginStylesMobile}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag .price-period {
-			${pricePeriodTypoStylesMobile}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag .sale-price {
-			${salePriceTypoStylesMobile}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag .sale-price .price-currency {
-			${salePriceCurrencyTypoStylesMobile}
-			${salePriceMarginStylesMobile}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-body ul li {
-			${featuresTypoStylesMobile}
-		}
-		
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-body ul li .eb-pricebox-icon {
-			${featuresIconSizeMobile}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button-wrapper {
-			${buttonMarginStylesMobile}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button {
-			${buttonPaddingStylesMobile}
-			${buttonTypoStylesMobile}
-			${btnShadowStyesMobile}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button:hover {
-			${btnShadowStylesHoverMobile}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button i {
-			${
-				buttonIconPosition === "left"
-					? buttonIconSpaceRightMobile
-					: buttonIconSpaceLeftMobile
-			}
-			${buttonIconSizeMobile}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-icon .icon {
-			${headerIconWidthMobile}
-			${headerIconHeightMobile}
-			${iconBorderShadowMobile}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-icon .icon:hover {
-			${iconBorderShadowHoverMobile}
-		}
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-icon .icon i {
-			${headerIconSizeMobile}
-		}
-	`;
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item.ribbon-2::before,
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item.ribbon-3::before,
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item.ribbon-4::before {
+			  ${ribbonTypoStylesMobile}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item {
+			  ${wrapperPaddingStylesMobile}
+			  ${wrapperMarginStylesMobile}
+			  ${priceTableBackgroundStylesMobile}
+			  ${bdShadowStyesMobile}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing-item-overlay:before {
+			  ${priceTableOverlayStylesMobile}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item:hover {
+			  ${priceTableHoverBackgroundStylesMobile}
+			  ${bdShadowStylesHoverMobile}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing-item:hover .eb-pricing-item-overlay:before {
+			  ${priceTableHoverOverlayStylesMobile}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header {
+			  ${titlePaddingStylesMobile}
+			  ${titleMarginStylesMobile}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header .eb-pricing-title {
+			  ${titleTypoStylesMobile}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header .eb-pricing-subtitle {
+			  ${subtitleTypoStylesMobile}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag .original-price {
+			  ${priceTextTypoStylesMobile}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag .original-price .price-currency {
+			  ${priceCurrencyTypoStylesMobile}
+			  ${priceCurrencyMarginStylesMobile}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag .price-period {
+			  ${pricePeriodTypoStylesMobile}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag .sale-price {
+			  ${salePriceTypoStylesMobile}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag .sale-price .price-currency {
+			  ${salePriceCurrencyTypoStylesMobile}
+			  ${salePriceMarginStylesMobile}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-body ul li {
+			  ${featuresTypoStylesMobile}
+		  }
+		  
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-body ul li .eb-pricebox-icon {
+			  ${featuresIconSizeMobile}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button-wrapper {
+			  ${buttonMarginStylesMobile}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button {
+			  ${buttonPaddingStylesMobile}
+			  ${buttonTypoStylesMobile}
+			  ${btnShadowStyesMobile}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button:hover {
+			  ${btnShadowStylesHoverMobile}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button i {
+			  ${
+					buttonIconPosition === "left"
+						? buttonIconSpaceRightMobile
+						: buttonIconSpaceLeftMobile
+				}
+			  ${buttonIconSizeMobile}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-icon .icon {
+			  ${headerIconWidthMobile}
+			  ${headerIconHeightMobile}
+			  ${iconBorderShadowMobile}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-icon .icon:hover {
+			  ${iconBorderShadowHoverMobile}
+		  }
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-icon .icon i {
+			  ${headerIconSizeMobile}
+		  }
+	  `;
 
 	var titleLineStyle = "";
 	var headerAlign =
@@ -830,79 +839,79 @@ const edit = (props) => {
 			: "margin: 0 auto !important;";
 	if (showTitleLine) {
 		titleLineStyle = `
-		.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header::after {
-			content: "";
-			position: absolute;
-			width: 140px;
-			height: 1px;
-			bottom: 0px;
-			left: 0px;
-			right: 0px;
-			margin: 0 auto;
-			z-index: 1;
-			background-color: ${titleLineColor};
-		}
-		.${blockId}.eb-pricing-content-left .eb-pricing-item .eb-pricing-header::after,
-		.${blockId}.eb-pricing-content-left .eb-pricing-item .eb-pricing-tag::after {
-			margin: 0;
-		}
-		.${blockId}.eb-pricing-content-right .eb-pricing-item .eb-pricing-header::after,
-		.${blockId}.eb-pricing-content-right .eb-pricing-item .eb-pricing-tag::after {
-			margin: 0 0 0 auto;
-		}
-		${
-			headerAlignment
-				? `.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header::after {
-						${headerAlign}
-					}`
-				: ""
-		}
-	 
-	${
-		priceAlignment
-			? `.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag::after {
-					${priceAlign}
-				}`
-			: ""
-	}
-	 
-	 .${blockId}.eb-pricing-content-left .eb-pricing.style-3 .eb-pricing-item .eb-pricing-header:after, .${blockId}.eb-pricing-content-left .eb-pricing.style-3 .eb-pricing-item .eb-pricing-tag:after {
-		 transform: translateX(-80%);
-	 }
-	 .${blockId}.eb-pricing-content-right .eb-pricing.style-3 .eb-pricing-item .eb-pricing-header:after, .${blockId}.eb-pricing-content-right .eb-pricing.style-3 .eb-pricing-item .eb-pricing-tag:after {
-		 transform: translateX(80%);
-	 }
-	 ${
-			headerAlignment
-				? `.${blockId} .eb-pricing.style-3 .eb-pricing-item .eb-pricing-header::after {
-						${headerAlignStyle3}
-					}`
-				: ""
-		}
-		.eb-pricing.style-3 .eb-pricing-item .eb-pricing-header:after {
-			position: absolute;
-			content: "";
-			width: 100%;
-			height: 1px;
-			bottom: 0px;
-			left: 0px;
-			right: 0px;
-			margin: 0 auto;
-			z-index: 1;
-			-webkit-transition: 1s;
-			-o-transition: 1s;
-			transition: 1s;
-			-webkit-transform: scaleX(0.4);
-			-ms-transform: scaleX(0.4);
-			transform: scaleX(0.4);
-		}
-		.eb-pricing.style-3 .eb-pricing-item:hover .header:after,
-		.eb-pricing.style-3 .eb-pricing-item:hover .eb-pricing-header:after {
-			-webkit-transform: scaleX(1);
-			-ms-transform: scaleX(1);
-			transform: scaleX(1) !important;
-		}
-	`;
+		  .${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header::after {
+			  content: "";
+			  position: absolute;
+			  width: 140px;
+			  height: 1px;
+			  bottom: 0px;
+			  left: 0px;
+			  right: 0px;
+			  margin: 0 auto;
+			  z-index: 1;
+			  background-color: ${titleLineColor};
+		  }
+		  .${blockId}.eb-pricing-content-left .eb-pricing-item .eb-pricing-header::after,
+		  .${blockId}.eb-pricing-content-left .eb-pricing-item .eb-pricing-tag::after {
+			  margin: 0;
+		  }
+		  .${blockId}.eb-pricing-content-right .eb-pricing-item .eb-pricing-header::after,
+		  .${blockId}.eb-pricing-content-right .eb-pricing-item .eb-pricing-tag::after {
+			  margin: 0 0 0 auto;
+		  }
+		  ${
+				headerAlignment
+					? `.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header::after {
+							 ${headerAlign}
+						 }`
+					: ""
+			}
+		  
+		 ${
+				priceAlignment
+					? `.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag::after {
+						 ${priceAlign}
+					 }`
+					: ""
+			}
+		  
+		  .${blockId}.eb-pricing-content-left .eb-pricing.style-3 .eb-pricing-item .eb-pricing-header:after, .${blockId}.eb-pricing-content-left .eb-pricing.style-3 .eb-pricing-item .eb-pricing-tag:after {
+			  transform: translateX(-80%);
+		  }
+		  .${blockId}.eb-pricing-content-right .eb-pricing.style-3 .eb-pricing-item .eb-pricing-header:after, .${blockId}.eb-pricing-content-right .eb-pricing.style-3 .eb-pricing-item .eb-pricing-tag:after {
+			  transform: translateX(80%);
+		  }
+		  ${
+				headerAlignment
+					? `.${blockId} .eb-pricing.style-3 .eb-pricing-item .eb-pricing-header::after {
+							 ${headerAlignStyle3}
+						 }`
+					: ""
+			}
+		  .eb-pricing.style-3 .eb-pricing-item .eb-pricing-header:after {
+			  position: absolute;
+			  content: "";
+			  width: 100%;
+			  height: 1px;
+			  bottom: 0px;
+			  left: 0px;
+			  right: 0px;
+			  margin: 0 auto;
+			  z-index: 1;
+			  -webkit-transition: 1s;
+			  -o-transition: 1s;
+			  transition: 1s;
+			  -webkit-transform: scaleX(0.4);
+			  -ms-transform: scaleX(0.4);
+			  transform: scaleX(0.4);
+		  }
+		  .eb-pricing.style-3 .eb-pricing-item:hover .header:after,
+		  .eb-pricing.style-3 .eb-pricing-item:hover .eb-pricing-header:after {
+			  -webkit-transform: scaleX(1);
+			  -ms-transform: scaleX(1);
+			  transform: scaleX(1) !important;
+		  }
+	  `;
 	}
 
 	// ribbon Class
@@ -910,19 +919,19 @@ const edit = (props) => {
 
 	// all css styles for large screen width (desktop/laptop) in strings ⬇
 	const desktopAllStyles = softMinifyCssStrings(`
-		${isCssExists(desktopStyles) ? desktopStyles : " "}
-		${isCssExists(titleLineStyle) ? titleLineStyle : " "}
-	`);
+		  ${desktopStyles}
+		  ${titleLineStyle}
+	  `);
 
 	// all css styles for Tab in strings ⬇
 	const tabAllStyles = softMinifyCssStrings(`
-		${isCssExists(tabStyles) ? tabStyles : " "}
-	`);
+		  ${tabStyles}
+	  `);
 
 	// all css styles for Mobile in strings ⬇
 	const mobileAllStyles = softMinifyCssStrings(`
-		${isCssExists(mobileStyles) ? mobileStyles : " "}
-	`);
+		  ${mobileStyles}
+	  `);
 
 	// Set All Style in "blockMeta" Attribute
 	useEffect(() => {
@@ -939,7 +948,9 @@ const edit = (props) => {
 	// this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class
 	useEffect(() => {
 		setAttributes({
-			resOption: select("core/edit-post").__experimentalGetPreviewDeviceType(),
+			resOption: select(
+				editorStoreForGettingPreivew
+			).__experimentalGetPreviewDeviceType(),
 		});
 	}, []);
 	// this useEffect is for creating an unique id for each block's unique className by a random unique number
@@ -954,216 +965,260 @@ const edit = (props) => {
 		});
 	}, []);
 
-	// this useEffect is for mimmiking css when responsive options clicked from wordpress's 'preview' button
-	useEffect(() => {
-		mimmikCssForPreviewBtnClick({
-			domObj: document,
-			select,
-		});
-	}, []);
-
 	const blockProps = useBlockProps({
-		className: `eb-guten-block-main-parent-wrapper`,
+		className: classnames(className, `eb-guten-block-main-parent-wrapper`),
 	});
 
-	return [
-		<BlockControls>
-			<AlignmentToolbar
-				value={contentAlign}
-				onChange={(contentAlign) => setAttributes({ contentAlign })}
-			/>
-		</BlockControls>,
-		isSelected && (
-			<Inspector attributes={attributes} setAttributes={setAttributes} />
-		),
-		<div {...blockProps}>
-			<style>
-				{`
-				 ${desktopAllStyles}
- 
-				 /* mimmikcssStart */
- 
-				 ${resOption === "Tablet" ? tabAllStyles : " "}
-				 ${resOption === "Mobile" ? tabAllStyles + mobileAllStyles : " "}
- 
-				 /* mimmikcssEnd */
- 
-				 @media all and (max-width: 1024px) {	
- 
-					 /* tabcssStart */			
-					 ${softMinifyCssStrings(tabAllStyles)}
-					 /* tabcssEnd */			
-				 
-				 }
-				 
-				 @media all and (max-width: 767px) {
-					 
-					 /* mobcssStart */			
-					 ${softMinifyCssStrings(mobileAllStyles)}
-					 /* mobcssEnd */			
-				 
-				 }
-				 `}
-			</style>
-			<div className={`${blockId} eb-pricing-content-${contentAlign}`}>
-				<div className={`eb-pricing ${pricingStyle}`}>
-					<div className={`eb-pricing-item${ribbonClass}`}>
-						<div className="eb-pricing-item-overlay"></div>
-						{showHeaderIcon && (
-							<div className="eb-pricing-icon" data-icon={headerIcon}>
-								<span className="icon">
-									<i class={headerIcon}></i>
-								</span>
-							</div>
-						)}
-						<div className="eb-pricing-header">
-							<h2 className="eb-pricing-title">{title}</h2>
-							{showSubtitle && (
-								<span className="eb-pricing-subtitle">{subtitle}</span>
-							)}
-						</div>
-						{pricingStyle !== "style-3" && (
-							<div className="eb-pricing-tag">
-								<span className="price-tag">
-									<span
-										className={`original-price${
-											showOnSale === true ? " line-through" : ""
-										}`}
-										data-price={mainPrice}
-									>
-										{currencyPlacement === "left" && (
-											<span className="price-currency">{priceCurrency}</span>
-										)}
-										{mainPrice}
-										{currencyPlacement === "right" && (
-											<span className="price-currency">{priceCurrency}</span>
-										)}
-									</span>
+	useEffect(() => {
+		if (features.length > 0) return;
 
-									{showOnSale && (
-										<>
-											<span className="sale-price" data-sale-price={salePrice}>
-												{currencyPlacement === "left" && (
-													<span className="price-currency">
-														{priceCurrency}
-													</span>
-												)}
-												{salePrice}
-												{currencyPlacement === "right" && (
-													<span className="price-currency">
-														{priceCurrency}
-													</span>
-												)}
-											</span>
-										</>
-									)}
-								</span>
-								<span
-									className="price-period"
-									data-period-separator={periodSeparator}
-									data-price-period={pricePeriod}
-								>
-									{periodSeparator} {pricePeriod}
-								</span>
+		const defaultFeatures = [
+			{
+				icon: "fas fa-check",
+				text: "Unlimited Calls",
+				color: "#03bb89",
+				clickable: "false",
+				link: "",
+			},
+			{
+				icon: "fas fa-check",
+				text: "Free Hosting",
+				color: "#03bb89",
+				clickable: "false",
+				link: "",
+			},
+			{
+				icon: "fas fa-check",
+				text: "500MB Free Storage",
+				color: "#03bb89",
+				clickable: "false",
+				link: "",
+			},
+			{
+				icon: "fas fa-check",
+				text: "24/7 Support",
+				color: "#03bb89",
+				clickable: "false",
+				link: "",
+			},
+		];
+
+		setAttributes({ features: defaultFeatures });
+	}, []);
+
+	return (
+		<>
+			<BlockControls>
+				<AlignmentToolbar
+					value={contentAlign}
+					onChange={(contentAlign) =>
+						setAttributes({ contentAlign: contentAlign || "center" })
+					}
+				/>
+			</BlockControls>
+			{isSelected && (
+				<Inspector attributes={attributes} setAttributes={setAttributes} />
+			)}
+			<div {...blockProps}>
+				<style>
+					{`
+			   ${desktopAllStyles}
+
+			   /* mimmikcssStart */
+
+			   ${resOption === "Tablet" ? tabAllStyles : " "}
+			   ${resOption === "Mobile" ? tabAllStyles + mobileAllStyles : " "}
+
+			   /* mimmikcssEnd */
+
+			   @media all and (max-width: 1024px) {	
+
+				   /* tabcssStart */			
+				   ${softMinifyCssStrings(tabAllStyles)}
+				   /* tabcssEnd */			
+			   
+			   }
+			   
+			   @media all and (max-width: 767px) {
+				   
+				   /* mobcssStart */			
+				   ${softMinifyCssStrings(mobileAllStyles)}
+				   /* mobcssEnd */			
+			   
+			   }
+			   `}
+				</style>
+				<div
+					className={`${blockId} eb-pricing-wrapper eb-pricing-content-${contentAlign}`}
+				>
+					<div className={`eb-pricing ${pricingStyle}`}>
+						<div className={`eb-pricing-item${ribbonClass}`}>
+							<div className="eb-pricing-item-overlay"></div>
+							{showHeaderIcon && (
+								<div className="eb-pricing-icon" data-icon={headerIcon}>
+									<span className="icon">
+										<i class={headerIcon}></i>
+									</span>
+								</div>
+							)}
+							<div className="eb-pricing-header">
+								<h2 className="eb-pricing-title">{title}</h2>
+								{showSubtitle && (
+									<span className="eb-pricing-subtitle">{subtitle}</span>
+								)}
 							</div>
-						)}
-						<div className="eb-pricing-body">
-							<ul className="eb-pricebox-features">
-								{features.map(({ icon, text, color, clickable, link }) => (
-									<li
-										className="eb-pricebox-feature-item"
-										data-icon={icon}
-										data-color={color}
-										data-clickable={clickable}
-										data-link={link}
-									>
-										{clickable && link ? (
-											<a href={link}>
-												<span
-													className={`eb-pricebox-icon ${icon}`}
-													style={{ color: color }}
-												/>
-												<span className="eb-pricebox-feature-text">{text}</span>
-											</a>
-										) : (
+							{pricingStyle !== "style-3" && (
+								<div className="eb-pricing-tag">
+									<span className="price-tag">
+										<span
+											className={`original-price${
+												showOnSale === true ? " line-through" : ""
+											}`}
+											data-price={mainPrice}
+										>
+											{currencyPlacement === "left" && (
+												<span className="price-currency">{priceCurrency}</span>
+											)}
+											{mainPrice}
+											{currencyPlacement === "right" && (
+												<span className="price-currency">{priceCurrency}</span>
+											)}
+										</span>
+
+										{showOnSale && (
 											<>
 												<span
-													className={`eb-pricebox-icon ${icon}`}
-													style={{ color: color }}
-												/>
-												<span className="eb-pricebox-feature-text">{text}</span>
+													className="sale-price"
+													data-sale-price={salePrice}
+												>
+													{currencyPlacement === "left" && (
+														<span className="price-currency">
+															{priceCurrency}
+														</span>
+													)}
+													{salePrice}
+													{currencyPlacement === "right" && (
+														<span className="price-currency">
+															{priceCurrency}
+														</span>
+													)}
+												</span>
 											</>
 										)}
-									</li>
-								))}
-							</ul>
-						</div>
-						{pricingStyle === "style-3" && (
-							<div className="eb-pricing-tag">
-								<span className="price-tag">
+									</span>
 									<span
-										className={`original-price${
-											showOnSale === true ? " line-through" : ""
-										}`}
-										data-price={mainPrice}
+										className="price-period"
+										data-period-separator={periodSeparator}
+										data-price-period={pricePeriod}
 									>
-										{currencyPlacement === "left" && (
-											<span className="price-currency">{priceCurrency}</span>
-										)}
-										{mainPrice}
-										{currencyPlacement === "right" && (
-											<span className="price-currency">{priceCurrency}</span>
+										{periodSeparator} {pricePeriod}
+									</span>
+								</div>
+							)}
+							<div className="eb-pricing-body">
+								<ul className="eb-pricebox-features">
+									{features.map(({ icon, text, color, clickable, link }) => (
+										<li
+											className="eb-pricebox-feature-item"
+											data-icon={icon}
+											data-color={color}
+											data-clickable={clickable}
+											data-link={link}
+										>
+											{clickable && link ? (
+												<a href={link}>
+													<span
+														className={`eb-pricebox-icon ${icon}`}
+														style={{ color: color }}
+													/>
+													<span className="eb-pricebox-feature-text">
+														{text}
+													</span>
+												</a>
+											) : (
+												<>
+													<span
+														className={`eb-pricebox-icon ${icon}`}
+														style={{ color: color }}
+													/>
+													<span className="eb-pricebox-feature-text">
+														{text}
+													</span>
+												</>
+											)}
+										</li>
+									))}
+								</ul>
+							</div>
+							{pricingStyle === "style-3" && (
+								<div className="eb-pricing-tag">
+									<span className="price-tag">
+										<span
+											className={`original-price${
+												showOnSale === true ? " line-through" : ""
+											}`}
+											data-price={mainPrice}
+										>
+											{currencyPlacement === "left" && (
+												<span className="price-currency">{priceCurrency}</span>
+											)}
+											{mainPrice}
+											{currencyPlacement === "right" && (
+												<span className="price-currency">{priceCurrency}</span>
+											)}
+										</span>
+
+										{showOnSale && (
+											<>
+												<span
+													className="sale-price"
+													data-sale-price={salePrice}
+												>
+													{currencyPlacement === "left" && (
+														<span className="price-currency">
+															{priceCurrency}
+														</span>
+													)}
+													{salePrice}
+													{currencyPlacement === "right" && (
+														<span className="price-currency">
+															{priceCurrency}
+														</span>
+													)}
+												</span>
+											</>
 										)}
 									</span>
-
-									{showOnSale && (
-										<>
-											<span className="sale-price" data-sale-price={salePrice}>
-												{currencyPlacement === "left" && (
-													<span className="price-currency">
-														{priceCurrency}
-													</span>
-												)}
-												{salePrice}
-												{currencyPlacement === "right" && (
-													<span className="price-currency">
-														{priceCurrency}
-													</span>
-												)}
-											</span>
-										</>
-									)}
-								</span>
-								<span
-									className="price-period"
-									data-period-separator={periodSeparator}
-									data-price-period={pricePeriod}
-								>
-									{periodSeparator} {pricePeriod}
-								</span>
-							</div>
-						)}
-						{showButton && (
-							<div className="eb-pricing-footer" data-icon={buttonIcon}>
-								<div className="eb-pricing-button-wrapper">
-									<a href={buttonURL} className="eb-pricing-button">
-										{buttonIconPosition === "left" && (
-											<i className={buttonIcon}></i>
-										)}
-										<span className="eb-button-text">{buttonText}</span>
-										{buttonIconPosition === "right" && (
-											<i className={buttonIcon}></i>
-										)}
-									</a>
+									<span
+										className="price-period"
+										data-period-separator={periodSeparator}
+										data-price-period={pricePeriod}
+									>
+										{periodSeparator} {pricePeriod}
+									</span>
 								</div>
-							</div>
-						)}
+							)}
+							{showButton && (
+								<div className="eb-pricing-footer" data-icon={buttonIcon}>
+									<div className="eb-pricing-button-wrapper">
+										<a href={buttonURL} className="eb-pricing-button">
+											{buttonIconPosition === "left" && (
+												<i className={buttonIcon}></i>
+											)}
+											<span className="eb-button-text">{buttonText}</span>
+											{buttonIconPosition === "right" && (
+												<i className={buttonIcon}></i>
+											)}
+										</a>
+									</div>
+								</div>
+							)}
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>,
-		// edit view end
-	];
+		</>
+	);
 };
 
 export default edit;

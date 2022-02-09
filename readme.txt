@@ -1,9 +1,9 @@
 === Price Table Block ===
 Contributors: wpdevteam, re_enter_rupok, Asif2BD, rahat89, fencermonir
 Tags: block, blocks, price, pricing, discount, offers, price table, pricing table, gutenberg, gutenberg blocks
-Requires at least: 5.0
-Tested up to: 5.8
-Stable tag: 1.1.3
+Requires at least: 5.6
+Tested up to: 5.9
+Stable tag: 1.2.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -63,6 +63,11 @@ Yes, it will work with any standard WordPress theme.
 
 == Changelog ==
 
+= 1.2.0 - 09/02/2022 =
+* Added: Full site editing support
+* Improved: Controls and structure
+* Improved: Responsive device preview options synced with the WordPress's default preview button.
+
 = 1.1.3 - 23/08/2021 =
 * Improved: Security for asset generation
 * Fixed: Warning in controls
@@ -88,4 +93,4 @@ Yes, it will work with any standard WordPress theme.
 * Initial Release
 
 == Upgrade Notice ==
-[Minor Update] Bugfix and stability
+[Major Update] Fullsite editing support and improvement in controls and structure. Can break current block.
