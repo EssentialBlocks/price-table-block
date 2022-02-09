@@ -1,11 +1,10 @@
 /**
  * WordPress dependencies
  */
-const { __ } = wp.i18n;
-const { useEffect } = wp.element;
-const { InspectorControls } = wp.blockEditor;
-const { select } = wp.data;
-const {
+import { __ } from "@wordpress/i18n";
+import { useEffect } from "@wordpress/element";
+import { InspectorControls } from "@wordpress/block-editor";
+import {
 	PanelBody,
 	ToggleControl,
 	SelectControl,
@@ -14,7 +13,8 @@ const {
 	ButtonGroup,
 	BaseControl,
 	TabPanel,
-} = wp.components;
+} from "@wordpress/components";
+import { select } from "@wordpress/data";
 
 /**
  * Internal dependencies
@@ -59,19 +59,39 @@ import {
 } from "./constants/typographyPrefixConstants";
 
 import objAttributes from "./attributes";
-import faIcons from "../util/faIcons";
 import SortableFeatures from "./sortable-features";
-import ColorControl from "../util/color-control";
 import FontIconPicker from "@fonticonpicker/react-fonticonpicker";
-import ResponsiveRangeController from "../util/responsive-range-control";
-import ResponsiveDimensionsControl from "../util/dimensions-control-v2";
-import TypographyDropdown from "../util/typography-control-v2";
-import BackgroundControl from "../util/background-control";
-import BorderShadowControl from "../util/border-shadow-control";
-import {
-	mimmikCssForResBtns,
-	mimmikCssOnPreviewBtnClickWhileBlockSelected,
-} from "../util/helpers";
+
+// import faIcons from "../../../util/faIcons";
+// import ColorControl from "../../../util/color-control";
+// import ResponsiveRangeController from "../../../util/responsive-range-control";
+// import ResponsiveDimensionsControl from "../../../util/dimensions-control-v2";
+// import TypographyDropdown from "../../../util/typography-control-v2";
+// import BackgroundControl from "../../../util/background-control";
+// import BorderShadowControl from "../../../util/border-shadow-control";
+// import {
+// 	mimmikCssForResBtns,
+// 	mimmikCssOnPreviewBtnClickWhileBlockSelected,
+// } from "../../../util/helpers";
+
+const {
+	// mimmikCssForResBtns,
+	// mimmikCssOnPreviewBtnClickWhileBlockSelected,
+
+	//
+	faIcons,
+	ColorControl,
+	ResponsiveRangeController,
+	ResponsiveDimensionsControl,
+	TypographyDropdown,
+	BackgroundControl,
+	BorderShadowControl,
+} = window.EBPricingTableControls;
+
+const editorStoreForGettingPreivew =
+	eb_style_handler.editor_type === "edit-site"
+		? "core/edit-site"
+		: "core/edit-post";
 
 const Inspector = ({ attributes, setAttributes }) => {
 	const {
@@ -131,29 +151,31 @@ const Inspector = ({ attributes, setAttributes }) => {
 	// this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class only the first time once
 	useEffect(() => {
 		setAttributes({
-			resOption: select("core/edit-post").__experimentalGetPreviewDeviceType(),
+			resOption: select(
+				editorStoreForGettingPreivew
+			).__experimentalGetPreviewDeviceType(),
 		});
 	}, []);
 
-	// this useEffect is for mimmiking css for all the eb blocks on resOption changing
-	useEffect(() => {
-		mimmikCssForResBtns({
-			domObj: document,
-			resOption,
-		});
-	}, [resOption]);
+	// // this useEffect is for mimmiking css for all the eb blocks on resOption changing
+	// useEffect(() => {
+	// 	mimmikCssForResBtns({
+	// 		domObj: document,
+	// 		resOption,
+	// 	});
+	// }, [resOption]);
 
-	// this useEffect is to mimmik css for responsive preview in the editor page when clicking the buttons in the 'Preview button of wordpress' located beside the 'update' button while any block is selected and it's inspector panel is mounted in the DOM
-	useEffect(() => {
-		const cleanUp = mimmikCssOnPreviewBtnClickWhileBlockSelected({
-			domObj: document,
-			select,
-			setAttributes,
-		});
-		return () => {
-			cleanUp();
-		};
-	}, []);
+	// // this useEffect is to mimmik css for responsive preview in the editor page when clicking the buttons in the 'Preview button of wordpress' located beside the 'update' button while any block is selected and it's inspector panel is mounted in the DOM
+	// useEffect(() => {
+	// 	const cleanUp = mimmikCssOnPreviewBtnClickWhileBlockSelected({
+	// 		domObj: document,
+	// 		select,
+	// 		setAttributes,
+	// 	});
+	// 	return () => {
+	// 		cleanUp();
+	// 	};
+	// }, []);
 
 	const resRequiredProps = {
 		setAttributes,
@@ -222,16 +244,20 @@ const Inspector = ({ attributes, setAttributes }) => {
 				<TabPanel
 					className="eb-parent-tab-panel"
 					activeClass="active-tab"
-					// onSelect={onSelect}
 					tabs={[
 						{
 							name: "general",
-							title: "General",
+							title: __("General", "essential-blocks"),
 							className: "eb-tab general",
 						},
 						{
 							name: "styles",
-							title: "Styles",
+							title: __("Style", "essential-blocks"),
+							className: "eb-tab styles",
+						},
+						{
+							name: "advanced",
+							title: __("Advanced", "essential-blocks"),
 							className: "eb-tab styles",
 						},
 					]}
@@ -240,9 +266,9 @@ const Inspector = ({ attributes, setAttributes }) => {
 						<div className={"eb-tab-controls" + tab.name}>
 							{tab.name === "general" && (
 								<>
-									<PanelBody title={__("Settings")}>
+									<PanelBody title={__("Settings", "essential-blocks")}>
 										<SelectControl
-											label={__("Pricing Preset")}
+											label={__("Pricing Preset", "essential-blocks")}
 											value={pricingStyle}
 											options={[
 												{ label: "Default", value: "style-1" },
@@ -254,7 +280,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											}
 										/>
 										<TextControl
-											label={__("Title")}
+											label={__("Title", "essential-blocks")}
 											value={title}
 											onChange={(newTitle) =>
 												setAttributes({ title: newTitle })
@@ -273,7 +299,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 
 										{showSubtitle && (
 											<TextControl
-												label={__("Sub Title")}
+												label={__("Sub Title", "essential-blocks")}
 												value={subtitle}
 												onChange={(newSubtitle) =>
 													setAttributes({ subtitle: newSubtitle })
@@ -293,7 +319,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 										/>
 
 										{showHeaderIcon && (
-											<BaseControl label={__("Icon")}>
+											<BaseControl label={__("Icon", "essential-blocks")}>
 												<FontIconPicker
 													icons={faIcons}
 													value={headerIcon}
@@ -317,9 +343,12 @@ const Inspector = ({ attributes, setAttributes }) => {
 										/>
 									</PanelBody>
 
-									<PanelBody title={__("Price")} initialOpen={false}>
+									<PanelBody
+										title={__("Price", "essential-blocks")}
+										initialOpen={false}
+									>
 										<TextControl
-											label={__("Price")}
+											label={__("Price", "essential-blocks")}
 											value={mainPrice}
 											onChange={(newPrice) =>
 												setAttributes({ mainPrice: newPrice })
@@ -334,7 +363,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 										/>
 										{showOnSale && (
 											<TextControl
-												label={__("Sale Price")}
+												label={__("Sale Price", "essential-blocks")}
 												value={salePrice}
 												onChange={(newsalePrice) =>
 													setAttributes({ salePrice: newsalePrice })
@@ -342,14 +371,14 @@ const Inspector = ({ attributes, setAttributes }) => {
 											/>
 										)}
 										<TextControl
-											label={__("Price Currency")}
+											label={__("Price Currency", "essential-blocks")}
 											value={priceCurrency}
 											onChange={(newPriceCurrency) =>
 												setAttributes({ priceCurrency: newPriceCurrency })
 											}
 										/>
 										<SelectControl
-											label={__("Currency Placement")}
+											label={__("Currency Placement", "essential-blocks")}
 											value={currencyPlacement}
 											options={[
 												{ label: "Left", value: "left" },
@@ -365,7 +394,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											onChange={(pricePeriod) => setAttributes({ pricePeriod })}
 										/>
 										<TextControl
-											label={__("Period Separator")}
+											label={__("Period Separator", "essential-blocks")}
 											value={periodSeparator}
 											onChange={(periodSeparator) =>
 												setAttributes({ periodSeparator })
@@ -374,24 +403,30 @@ const Inspector = ({ attributes, setAttributes }) => {
 										<hr />
 									</PanelBody>
 
-									<PanelBody title={__("Features")} initialOpen={false}>
+									<PanelBody
+										title={__("Features", "essential-blocks")}
+										initialOpen={false}
+									>
 										<SortableFeatures
 											features={attributes.features}
 											setAttributes={setAttributes}
 										/>
 										<Button
 											className="eb-pricebox-feature-button"
-											label={__("Add feature")}
+											label={__("Add feature", "essential-blocks")}
 											icon="plus-alt"
 											onClick={onFeatureAdd}
 										>
 											<span className="eb-pricebox-add-button-label">
-												{__("Add Feature", "price-table-box")}
+												{__("Add Feature", "essential-blocks")}
 											</span>
 										</Button>
 									</PanelBody>
 
-									<PanelBody title={__("Button")} initialOpen={false}>
+									<PanelBody
+										title={__("Button", "essential-blocks")}
+										initialOpen={false}
+									>
 										<ToggleControl
 											label={__("Display Button?")}
 											checked={showButton}
@@ -399,7 +434,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 												setAttributes({ showButton: !showButton });
 											}}
 										/>
-										<BaseControl label={__("Button Icon")}>
+										<BaseControl label={__("Button Icon", "essential-blocks")}>
 											<FontIconPicker
 												icons={faIcons}
 												value={buttonIcon}
@@ -409,7 +444,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											/>
 										</BaseControl>
 										<SelectControl
-											label={__("Icon Position")}
+											label={__("Icon Position", "essential-blocks")}
 											value={buttonIconPosition}
 											options={[
 												{ label: "Left", value: "left" },
@@ -420,7 +455,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											}}
 										/>
 										<ResponsiveRangeController
-											baseLabel={__("Icon Spacing")}
+											baseLabel={__("Icon Spacing", "essential-blocks")}
 											controlName={buttonIconSpacing}
 											resRequiredProps={resRequiredProps}
 											min={1}
@@ -429,20 +464,23 @@ const Inspector = ({ attributes, setAttributes }) => {
 											noUnits
 										/>
 										<TextControl
-											label={__("Button Text")}
+											label={__("Button Text", "essential-blocks")}
 											value={buttonText}
 											onChange={(text) => setAttributes({ buttonText: text })}
 										/>
 										<TextControl
-											label={__("Button Link")}
+											label={__("Button Link", "essential-blocks")}
 											value={buttonURL}
 											onChange={(link) => setAttributes({ buttonURL: link })}
 										/>
 									</PanelBody>
 
-									<PanelBody title={__("Ribbon")} initialOpen={false}>
+									<PanelBody
+										title={__("Ribbon", "essential-blocks")}
+										initialOpen={false}
+									>
 										<ToggleControl
-											label={__("Featured")}
+											label={__("Featured", "essential-blocks")}
 											checked={showRibbon}
 											onChange={() => {
 												setAttributes({
@@ -453,7 +491,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 										{showRibbon && (
 											<>
 												<SelectControl
-													label={__("Ribbon Style")}
+													label={__("Ribbon Style", "essential-blocks")}
 													value={ribbonStyle}
 													options={[
 														{ label: "Style 1", value: "ribbon-1" },
@@ -467,7 +505,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 												/>
 												{ribbonStyle !== "ribbon-1" && (
 													<TextControl
-														label={__("Featured Tag Text")}
+														label={__("Featured Tag Text", "essential-blocks")}
 														value={ribbonText}
 														onChange={(ribbonText) =>
 															setAttributes({ ribbonText })
@@ -483,11 +521,13 @@ const Inspector = ({ attributes, setAttributes }) => {
 							{tab.name === "styles" && (
 								<>
 									<PanelBody
-										title={__("Price Table Box", "price-table-block")}
+										title={__("Price Table Box", "essential-blocks")}
 										initialOpen={false}
 									>
 										<BaseControl>
-											<h3 className="eb-control-title">{__("Background")}</h3>
+											<h3 className="eb-control-title">
+												{__("Background", "essential-blocks")}
+											</h3>
 										</BaseControl>
 										<BackgroundControl
 											controlName={priceTableBackground}
@@ -501,12 +541,12 @@ const Inspector = ({ attributes, setAttributes }) => {
 										<ResponsiveDimensionsControl
 											resRequiredProps={resRequiredProps}
 											controlName={wrapperPadding}
-											baseLabel={__("Padding")}
+											baseLabel={__("Padding", "essential-blocks")}
 										/>
 										<ResponsiveDimensionsControl
 											resRequiredProps={resRequiredProps}
 											controlName={wrapperMargin}
-											baseLabel={__("Margin")}
+											baseLabel={__("Margin", "essential-blocks")}
 										/>
 										<BaseControl>
 											<h3 className="eb-control-title">Border</h3>
@@ -518,17 +558,17 @@ const Inspector = ({ attributes, setAttributes }) => {
 										/>
 									</PanelBody>
 									<PanelBody
-										title={__("Header", "price-table-block")}
+										title={__("Header", "essential-blocks")}
 										initialOpen={false}
 									>
 										<BaseControl>
 											<h3 className="eb-control-title">
-												{__("Alignment", "price-table-block")}
+												{__("Alignment", "essential-blocks")}
 											</h3>
 											<ButtonGroup>
 												{ALIGNMENT.map((item) => (
 													<Button
-														isLarge
+														// isLarge
 														isPrimary={headerAlignment === item.value}
 														isSecondary={headerAlignment !== item.value}
 														onClick={() =>
@@ -544,10 +584,12 @@ const Inspector = ({ attributes, setAttributes }) => {
 										</BaseControl>
 										<hr />
 										<BaseControl>
-											<h3 className="eb-control-title">{__("Title Style")}</h3>
+											<h3 className="eb-control-title">
+												{__("Title Style", "essential-blocks")}
+											</h3>
 										</BaseControl>
 										<ColorControl
-											label={__("Color")}
+											label={__("Color", "essential-blocks")}
 											color={titleTextColor}
 											onChange={(titleTextColor) =>
 												setAttributes({ titleTextColor })
@@ -555,7 +597,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 										/>
 										{showTitleLine && (
 											<ColorControl
-												label={__("Line Color")}
+												label={__("Line Color", "essential-blocks")}
 												color={titleLineColor}
 												onChange={(titleLineColor) =>
 													setAttributes({ titleLineColor })
@@ -564,14 +606,14 @@ const Inspector = ({ attributes, setAttributes }) => {
 										)}
 
 										<ColorControl
-											label={__("Background Color")}
+											label={__("Background Color", "essential-blocks")}
 											color={titleBackgroundColor}
 											onChange={(titleBackgroundColor) =>
 												setAttributes({ titleBackgroundColor })
 											}
 										/>
 										<TypographyDropdown
-											baseLabel={__("Typography")}
+											baseLabel={__("Typography", "essential-blocks")}
 											typographyPrefixConstant={typoPrefix_title}
 											resRequiredProps={resRequiredProps}
 										/>
@@ -580,18 +622,18 @@ const Inspector = ({ attributes, setAttributes }) => {
 											<>
 												<BaseControl>
 													<h3 className="eb-control-title">
-														{__("Subtitle Style")}
+														{__("Subtitle Style", "essential-blocks")}
 													</h3>
 												</BaseControl>
 												<ColorControl
-													label={__("Color")}
+													label={__("Color", "essential-blocks")}
 													color={subtitleTextColor}
 													onChange={(subtitleTextColor) =>
 														setAttributes({ subtitleTextColor })
 													}
 												/>
 												<TypographyDropdown
-													baseLabel={__("Typography")}
+													baseLabel={__("Typography", "essential-blocks")}
 													typographyPrefixConstant={typoPrefix_subtitle}
 													resRequiredProps={resRequiredProps}
 												/>
@@ -606,26 +648,26 @@ const Inspector = ({ attributes, setAttributes }) => {
 										<ResponsiveDimensionsControl
 											resRequiredProps={resRequiredProps}
 											controlName={titlePadding}
-											baseLabel={__("Padding")}
+											baseLabel={__("Padding", "essential-blocks")}
 										/>
 										<ResponsiveDimensionsControl
 											resRequiredProps={resRequiredProps}
 											controlName={titleMargin}
-											baseLabel={__("Margin")}
+											baseLabel={__("Margin", "essential-blocks")}
 										/>
 									</PanelBody>
 									<PanelBody
-										title={__("Price", "price-table-block")}
+										title={__("Price", "essential-blocks")}
 										initialOpen={false}
 									>
 										<BaseControl>
 											<h3 className="eb-control-title">
-												{__("Alignment", "price-table-block")}
+												{__("Alignment", "essential-blocks")}
 											</h3>
 											<ButtonGroup>
 												{ALIGNMENT.map((item) => (
 													<Button
-														isLarge
+														// isLarge
 														isPrimary={priceAlignment === item.value}
 														isSecondary={priceAlignment !== item.value}
 														onClick={() =>
@@ -642,79 +684,79 @@ const Inspector = ({ attributes, setAttributes }) => {
 										<hr />
 										<BaseControl>
 											<h3 className="eb-control-title">
-												{__("Original Price")}
+												{__("Original Price", "essential-blocks")}
 											</h3>
 										</BaseControl>
 										<ColorControl
-											label={__("Color")}
+											label={__("Color", "essential-blocks")}
 											color={priceTextColor}
 											onChange={(priceTextColor) =>
 												setAttributes({ priceTextColor })
 											}
 										/>
 										<TypographyDropdown
-											baseLabel={__("Typography")}
+											baseLabel={__("Typography", "essential-blocks")}
 											typographyPrefixConstant={typoPrefix_price_title}
 											resRequiredProps={resRequiredProps}
 										/>
 										<hr />
 										<BaseControl>
 											<h3 className="eb-control-title">
-												{__("Original Price Currency")}
+												{__("Original Price Currency", "essential-blocks")}
 											</h3>
 										</BaseControl>
 										<ColorControl
-											label={__("Color")}
+											label={__("Color", "essential-blocks")}
 											color={priceCurrencyTextColor}
 											onChange={(priceCurrencyTextColor) =>
 												setAttributes({ priceCurrencyTextColor })
 											}
 										/>
 										<TypographyDropdown
-											baseLabel={__("Typography")}
+											baseLabel={__("Typography", "essential-blocks")}
 											typographyPrefixConstant={typoPrefix_price_currency}
 											resRequiredProps={resRequiredProps}
 										/>
 										<ResponsiveDimensionsControl
 											resRequiredProps={resRequiredProps}
 											controlName={priceCurrencyMargin}
-											baseLabel={__("Margin")}
+											baseLabel={__("Margin", "essential-blocks")}
 										/>
 										<hr />
 										{showOnSale && (
 											<>
 												<BaseControl>
 													<h3 className="eb-control-title">
-														{__("Sale Price")}
+														{__("Sale Price", "essential-blocks")}
 													</h3>
 												</BaseControl>
 												<ColorControl
-													label={__("Color")}
+													label={__("Color", "essential-blocks")}
 													color={salePriceTextColor}
 													onChange={(salePriceTextColor) =>
 														setAttributes({ salePriceTextColor })
 													}
 												/>
 												<TypographyDropdown
-													baseLabel={__("Typography")}
+													baseLabel={__("Typography", "essential-blocks")}
 													typographyPrefixConstant={typoPrefix_saleprice}
 													resRequiredProps={resRequiredProps}
 												/>
 												<hr />
 												<BaseControl>
 													<h3 className="eb-control-title">
-														{__("Sale Price Currency")}
+														{__("Sale Price Currency", "essential-blocks")}
 													</h3>
 												</BaseControl>
 												<ColorControl
-													label={__("Color")}
+													label={__("Color", "essential-blocks")}
 													color={salepriceCurrencyTextColor}
 													onChange={(salepriceCurrencyTextColor) =>
 														setAttributes({ salepriceCurrencyTextColor })
 													}
 												/>
 												<TypographyDropdown
-													baseLabel={__("Typography")}
+													baseLabel={__("Typography", "essential-blocks")}
 													typographyPrefixConstant={
 														typoPrefix_saleprice_currency
 													}
@@ -723,18 +765,18 @@ const Inspector = ({ attributes, setAttributes }) => {
 												<ResponsiveDimensionsControl
 													resRequiredProps={resRequiredProps}
 													controlName={salepriceCurrencyMargin}
-													baseLabel={__("Margin")}
+													baseLabel={__("Margin", "essential-blocks")}
 												/>
 												<hr />
 											</>
 										)}
 										<BaseControl>
 											<h3 className="eb-control-title">
-												{__("Pricing Period")}
+												{__("Pricing Period", "essential-blocks")}
 											</h3>
 										</BaseControl>
 										<ColorControl
-											label={__("Color")}
+											label={__("Color", "essential-blocks")}
 											color={pricingPeriodTextColor}
 											F
 											onChange={(pricingPeriodTextColor) =>
@@ -742,13 +784,13 @@ const Inspector = ({ attributes, setAttributes }) => {
 											}
 										/>
 										<TypographyDropdown
-											baseLabel={__("Typography")}
+											baseLabel={__("Typography", "essential-blocks")}
 											typographyPrefixConstant={typoPrefix_pricing_period}
 											resRequiredProps={resRequiredProps}
 										/>
 									</PanelBody>
 									<PanelBody
-										title={__("Features", "price-table-block")}
+										title={__("Features", "essential-blocks")}
 										initialOpen={false}
 									>
 										<BaseControl>
@@ -756,7 +798,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											<ButtonGroup>
 												{ALIGNMENT.map((item) => (
 													<Button
-														isLarge
+														// isLarge
 														isPrimary={featuresAlignment === item.value}
 														isSecondary={featuresAlignment !== item.value}
 														onClick={() =>
@@ -772,14 +814,14 @@ const Inspector = ({ attributes, setAttributes }) => {
 										</BaseControl>
 										<hr />
 										<ColorControl
-											label={__("Color")}
+											label={__("Color", "essential-blocks")}
 											color={featuresTextColor}
 											onChange={(featuresTextColor) =>
 												setAttributes({ featuresTextColor })
 											}
 										/>
 										<ResponsiveRangeController
-											baseLabel={__("Icon Size")}
+											baseLabel={__("Icon Size", "essential-blocks")}
 											controlName={featuresIconSize}
 											resRequiredProps={resRequiredProps}
 											min={0}
@@ -788,13 +830,13 @@ const Inspector = ({ attributes, setAttributes }) => {
 											noUnits
 										/>
 										<TypographyDropdown
-											baseLabel={__("Typography")}
+											baseLabel={__("Typography", "essential-blocks")}
 											typographyPrefixConstant={typoPrefix_features_text}
 											resRequiredProps={resRequiredProps}
 										/>
 									</PanelBody>
 									<PanelBody
-										title={__("Button", "price-table-block")}
+										title={__("Button", "essential-blocks")}
 										initialOpen={false}
 									>
 										<BaseControl>
@@ -802,7 +844,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											<ButtonGroup>
 												{ALIGNMENT.map((item) => (
 													<Button
-														isLarge
+														// isLarge
 														isPrimary={buttonAlignment === item.value}
 														isSecondary={buttonAlignment !== item.value}
 														onClick={() =>
@@ -820,15 +862,15 @@ const Inspector = ({ attributes, setAttributes }) => {
 										<ResponsiveDimensionsControl
 											resRequiredProps={resRequiredProps}
 											controlName={buttonPadding}
-											baseLabel={__("Padding")}
+											baseLabel={__("Padding", "essential-blocks")}
 										/>
 										<ResponsiveDimensionsControl
 											resRequiredProps={resRequiredProps}
 											controlName={buttonMargin}
-											baseLabel={__("Margin")}
+											baseLabel={__("Margin", "essential-blocks")}
 										/>
 										<ResponsiveRangeController
-											baseLabel={__("Icon Size")}
+											baseLabel={__("Icon Size", "essential-blocks")}
 											controlName={buttonIconSize}
 											resRequiredProps={resRequiredProps}
 											min={0}
@@ -837,19 +879,19 @@ const Inspector = ({ attributes, setAttributes }) => {
 											noUnits
 										/>
 										<TypographyDropdown
-											baseLabel={__("Typography")}
+											baseLabel={__("Typography", "essential-blocks")}
 											typographyPrefixConstant={typoPrefix_button}
 											resRequiredProps={resRequiredProps}
 										/>
 										<ColorControl
-											label={__("Text Color")}
+											label={__("Text Color", "essential-blocks")}
 											color={buttonTextColor}
 											onChange={(buttonTextColor) =>
 												setAttributes({ buttonTextColor })
 											}
 										/>
 										<ColorControl
-											label={__("Text Hover Color")}
+											label={__("Text Hover Color", "essential-blocks")}
 											color={hoverTextColor}
 											onChange={(hoverTextColor) =>
 												setAttributes({ hoverTextColor })
@@ -857,7 +899,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 										/>
 										<BaseControl>
 											<h3 className="eb-control-title">
-												{__("Button Background")}
+												{__("Button Background", "essential-blocks")}
 											</h3>
 										</BaseControl>
 										<BackgroundControl
@@ -868,7 +910,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 										/>
 										<BaseControl>
 											<h3 className="eb-control-title">
-												{__("Button Border Style")}
+												{__("Button Border Style", "essential-blocks")}
 											</h3>
 										</BaseControl>
 										<BorderShadowControl
@@ -878,17 +920,17 @@ const Inspector = ({ attributes, setAttributes }) => {
 									</PanelBody>
 									{showHeaderIcon && (
 										<PanelBody
-											title={__("Icon Settings", "price-table-block")}
+											title={__("Icon Settings", "essential-blocks")}
 											initialOpen={false}
 										>
 											<BaseControl>
 												<h3 className="eb-control-title">
-													{__("Alignment", "price-table-block")}
+													{__("Alignment", "essential-blocks")}
 												</h3>
 												<ButtonGroup>
 													{ALIGNMENT.map((item) => (
 														<Button
-															isLarge
+															// isLarge
 															isPrimary={iconAlignment === item.value}
 															isSecondary={iconAlignment !== item.value}
 															onClick={() =>
@@ -904,7 +946,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 											</BaseControl>
 											<hr />
 											<ToggleControl
-												label={__("Show Background")}
+												label={__("Show Background", "essential-blocks")}
 												checked={showIconBackground}
 												onChange={() => {
 													setAttributes({
@@ -915,14 +957,17 @@ const Inspector = ({ attributes, setAttributes }) => {
 											{showIconBackground && (
 												<>
 													<ColorControl
-														label={__("Background Color")}
+														label={__("Background Color", "essential-blocks")}
 														color={iconBackgroundColor}
 														onChange={(iconBackgroundColor) =>
 															setAttributes({ iconBackgroundColor })
 														}
 													/>
 													<ColorControl
-														label={__("Background Hover Color")}
+														label={__(
+															"Background Hover Color",
+															"essential-blocks"
+														)}
 														color={iconBackgroundHoverColor}
 														onChange={(iconBackgroundHoverColor) =>
 															setAttributes({ iconBackgroundHoverColor })
@@ -932,7 +977,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 												</>
 											)}
 											<ResponsiveRangeController
-												baseLabel={__("Icon Size")}
+												baseLabel={__("Icon Size", "essential-blocks")}
 												controlName={headerIconSize}
 												resRequiredProps={resRequiredProps}
 												min={0}
@@ -940,7 +985,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 												step={1}
 											/>
 											<ResponsiveRangeController
-												baseLabel={__("Icon Area Width")}
+												baseLabel={__("Icon Area Width", "essential-blocks")}
 												controlName={headerIconWidth}
 												resRequiredProps={resRequiredProps}
 												units={TWOUNITS}
@@ -949,7 +994,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 												step={1}
 											/>
 											<ResponsiveRangeController
-												baseLabel={__("Icon Area Height")}
+												baseLabel={__("Icon Area Height", "essential-blocks")}
 												controlName={headerIconHeight}
 												resRequiredProps={resRequiredProps}
 												units={TWOUNITS}
@@ -958,12 +1003,12 @@ const Inspector = ({ attributes, setAttributes }) => {
 												step={1}
 											/>
 											<ColorControl
-												label={__("Icon Color")}
+												label={__("Icon Color", "essential-blocks")}
 												color={iconColor}
 												onChange={(iconColor) => setAttributes({ iconColor })}
 											/>
 											<ColorControl
-												label={__("Icon Hover Color")}
+												label={__("Icon Hover Color", "essential-blocks")}
 												color={iconHoverColor}
 												onChange={(iconHoverColor) =>
 													setAttributes({ iconHoverColor })
@@ -982,23 +1027,23 @@ const Inspector = ({ attributes, setAttributes }) => {
 									)}
 									{showRibbon && (
 										<PanelBody
-											title={__("Ribbon", "price-table-block")}
+											title={__("Ribbon", "essential-blocks")}
 											initialOpen={false}
 										>
 											<TypographyDropdown
-												baseLabel={__("Typography")}
+												baseLabel={__("Typography", "essential-blocks")}
 												typographyPrefixConstant={typoPrefix_ribbon}
 												resRequiredProps={resRequiredProps}
 											/>
 											<ColorControl
-												label={__("Color")}
+												label={__("Color", "essential-blocks")}
 												color={ribbonColor}
 												onChange={(ribbonColor) =>
 													setAttributes({ ribbonColor })
 												}
 											/>
 											<ColorControl
-												label={__("Background Color")}
+												label={__("Background Color", "essential-blocks")}
 												color={ribbonBackgroundColor}
 												onChange={(ribbonBackgroundColor) =>
 													setAttributes({ ribbonBackgroundColor })
@@ -1011,6 +1056,44 @@ const Inspector = ({ attributes, setAttributes }) => {
 											/>
 										</PanelBody>
 									)}
+								</>
+							)}
+							{tab.name === "advanced" && (
+								<>
+									<PanelBody>
+										<BaseControl>
+											<h3 className="eb-control-title">
+												{__("Background", "essential-blocks")}
+											</h3>
+										</BaseControl>
+										<BackgroundControl
+											controlName={priceTableBackground}
+											resRequiredProps={resRequiredProps}
+										/>
+										<BaseControl>
+											<h3 className="eb-control-title">
+												{__("Padding & Margin")}
+											</h3>
+										</BaseControl>
+										<ResponsiveDimensionsControl
+											resRequiredProps={resRequiredProps}
+											controlName={wrapperPadding}
+											baseLabel={__("Padding", "essential-blocks")}
+										/>
+										<ResponsiveDimensionsControl
+											resRequiredProps={resRequiredProps}
+											controlName={wrapperMargin}
+											baseLabel={__("Margin", "essential-blocks")}
+										/>
+										<BaseControl>
+											<h3 className="eb-control-title">Border</h3>
+										</BaseControl>
+
+										<BorderShadowControl
+											controlName={wrapperBorderShadow}
+											resRequiredProps={resRequiredProps}
+										/>
+									</PanelBody>
 								</>
 							)}
 						</div>

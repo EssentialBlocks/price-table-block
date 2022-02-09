@@ -1,10 +1,9 @@
 /**
  * WordPress dependencies
  */
-const { __ } = wp.i18n;
-const { PanelColorSettings } = wp.blockEditor;
-const { BaseControl, TextControl, ToggleControl } = wp.components;
-const { Component, Fragment } = wp.element;
+import { __ } from "@wordpress/i18n";
+import { Component, Fragment } from "@wordpress/element";
+import { BaseControl, TextControl, ToggleControl } from "@wordpress/components";
 
 /**
  * External dependencies
@@ -16,12 +15,13 @@ import {
 } from "react-sortable-hoc";
 import arrayMove from "array-move";
 import FontIconPicker from "@fonticonpicker/react-fonticonpicker";
-import ColorControl from "../util/color-control";
 
 /**
  * Internal dependencies
  */
-import faIcons from "../util/faIcons";
+// import faIcons from "../../../util/faIcons";
+
+const { faIcons, ColorControl } = window.EBPricingTableControls;
 
 // Style objects
 const trashStyle = {
@@ -113,13 +113,13 @@ const SortableItem = SortableElement(
 				{position === clickedItem && (
 					<Fragment>
 						<TextControl
-							label={__("Text")}
+							label={__("Text", "essential-blocks")}
 							value={feature.text}
 							onChange={(value) => onFeatureChange("text", value, position)}
 						/>
 
 						<ToggleControl
-							label={__("Link")}
+							label={__("Link", "essential-blocks")}
 							checked={feature.clickable === "true"}
 							onChange={(value) =>
 								onFeatureChange("clickable", value.toString(), position)
@@ -128,13 +128,13 @@ const SortableItem = SortableElement(
 
 						{feature.clickable === "true" && (
 							<TextControl
-								label={__("Link")}
+								label={__("Link", "essential-blocks")}
 								value={feature.link}
 								onChange={(value) => onFeatureChange("link", value, position)}
 							/>
 						)}
 
-						<BaseControl label={__("Select Icon")}>
+						<BaseControl label={__("Select Icon", "essential-blocks")}>
 							<FontIconPicker
 								icons={faIcons}
 								onChange={(value) => onFeatureChange("icon", value, position)}
@@ -146,7 +146,7 @@ const SortableItem = SortableElement(
 
 						{feature.icon && (
 							<ColorControl
-								label={__("Icon Color")}
+								label={__("Icon Color", "essential-blocks")}
 								color={feature.color}
 								onChange={(value) => onFeatureChange("color", value, position)}
 							/>
