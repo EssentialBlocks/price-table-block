@@ -4,6 +4,7 @@
 import { __ } from "@wordpress/i18n";
 import { Component, Fragment } from "@wordpress/element";
 import { BaseControl, TextControl, ToggleControl } from "@wordpress/components";
+// import _ from "lodash";
 
 /**
  * External dependencies
@@ -201,10 +202,11 @@ class SortableFeatures extends Component {
 	};
 
 	onFeatureChange = (key, value, position) => {
-		let features = [...this.props.features];
-		features[position][key] = value;
-
-		this.props.setAttributes({ features });
+		const newFeature = { ...this.props.features[position] };
+		const newFeatureList = [...this.props.features];
+		newFeatureList[position] = newFeature;
+		newFeatureList[position][key] = value;
+		this.props.setAttributes({ features: newFeatureList });
 	};
 
 	onDeleteFeature = (position) => {

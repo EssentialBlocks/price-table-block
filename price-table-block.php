@@ -47,7 +47,8 @@ function create_block_pricing_table_block_init()
 		'wp-i18n',
 		'wp-element',
 		'wp-block-editor',
-		'eb-price-table-blocks-controls-util'
+		'eb-price-table-blocks-controls-util',
+		'essential-blocks-eb-animation'
 	));
 
 	wp_register_script(
@@ -55,6 +56,23 @@ function create_block_pricing_table_block_init()
 		$index_js,
 		$all_dependencies,
 		$script_asset['version']
+	);
+
+	$load_animation_js = PRICE_TABLE_BLOCKS_ADMIN_URL . 'assets/js/eb-animation-load.js';
+	wp_register_script(
+		'essential-blocks-eb-animation',
+		$load_animation_js,
+		array(),
+		PRICE_TABLE_BLOCKS_VERSION,
+		true
+	);
+
+	$animate_css = PRICE_TABLE_BLOCKS_ADMIN_URL . 'assets/css/animate.min.css';
+	wp_register_style(
+		'essential-blocks-animation',
+		$animate_css,
+		array(),
+		PRICE_TABLE_BLOCKS_VERSION
 	);
 
 	$fontpicker_theme = 'assets/css/fonticonpicker.base-theme.react.css';
@@ -90,7 +108,7 @@ function create_block_pricing_table_block_init()
 	wp_register_style(
 		'create-block-pricing-table-block',
 		$style_css,
-		array('fontawesome-frontend-css'),
+		array('fontawesome-frontend-css', 'essential-blocks-animation'),
 		filemtime(PRICE_TABLE_BLOCKS_ADMIN_PATH . '/dist/style.css')
 	);
 
@@ -101,6 +119,12 @@ function create_block_pricing_table_block_init()
 				'editor_script' => 'eb-pricing-table-block-editor',
 				'editor_style' => 'eb-pricing-table-block-editor-style',
 				'style'         => 'create-block-pricing-table-block',
+				'render_callback' => function ($attributes, $content) {
+					if (!is_admin()) {
+						wp_enqueue_script('essential-blocks-eb-animation');
+					}
+					return $content;
+				}
 			)
 		);
 	}

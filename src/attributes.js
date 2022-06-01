@@ -37,6 +37,7 @@ import {
 	salepriceCurrencyMargin,
 	featuresIconSize,
 } from "./constants";
+import { truncate } from "lodash";
 
 const attributes = {
 	// the following 4 attributes is must required for responsive options and asset generation for frontend
@@ -141,6 +142,10 @@ const attributes = {
 		selector: ".eb-pricing-tag .price-period",
 		attribute: "data-period-separator",
 		default: "/",
+	},
+	hideFeatures: {
+		type: "boolean",
+		default: false,
 	},
 	features: {
 		type: "array",

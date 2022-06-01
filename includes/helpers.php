@@ -40,13 +40,14 @@ class Price_Table_Helper
      */
     public function enqueues($hook)
     {
+        global $pagenow;
         /**
          * Only for Admin Add/Edit Pages 
          */
-        if ($hook == 'post-new.php' || $hook == 'post.php' || $hook == 'site-editor.php') {
+        if ($hook == 'post-new.php' || $hook == 'post.php' || $hook == 'site-editor.php' || ($pagenow == 'themes.php' && !empty($_SERVER['QUERY_STRING']) && str_contains($_SERVER['QUERY_STRING'], 'gutenberg-edit-site'))) {
+
             $controls_dependencies = include_once PRICE_TABLE_BLOCKS_ADMIN_PATH . '/dist/controls.asset.php';
 
-            // var_dump($controls_dependencies);die;
             wp_register_script(
                 "eb-price-table-blocks-controls-util",
                 PRICE_TABLE_BLOCKS_ADMIN_URL . '/dist/controls.js',
@@ -59,6 +60,16 @@ class Price_Table_Helper
                 'eb_wp_version' => (float) get_bloginfo('version'),
                 'rest_rootURL' => get_rest_url(),
             ));
+
+            if ($hook == 'post-new.php' || $hook == 'post.php') {
+                wp_localize_script('eb-price-table-blocks-controls-util', 'eb_conditional_localize', array(
+                    'editor_type' => 'edit-post'
+                ));
+            } else if ($hook == 'site-editor.php' || $pagenow == 'themes.php') {
+                wp_localize_script('eb-price-table-blocks-controls-util', 'eb_conditional_localize', array(
+                    'editor_type' => 'edit-site'
+                ));
+            }
 
             wp_enqueue_style(
                 'essential-blocks-editor-css',

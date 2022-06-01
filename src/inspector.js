@@ -62,23 +62,7 @@ import objAttributes from "./attributes";
 import SortableFeatures from "./sortable-features";
 import FontIconPicker from "@fonticonpicker/react-fonticonpicker";
 
-// import faIcons from "../../../util/faIcons";
-// import ColorControl from "../../../util/color-control";
-// import ResponsiveRangeController from "../../../util/responsive-range-control";
-// import ResponsiveDimensionsControl from "../../../util/dimensions-control-v2";
-// import TypographyDropdown from "../../../util/typography-control-v2";
-// import BackgroundControl from "../../../util/background-control";
-// import BorderShadowControl from "../../../util/border-shadow-control";
-// import {
-// 	mimmikCssForResBtns,
-// 	mimmikCssOnPreviewBtnClickWhileBlockSelected,
-// } from "../../../util/helpers";
-
 const {
-	// mimmikCssForResBtns,
-	// mimmikCssOnPreviewBtnClickWhileBlockSelected,
-
-	//
 	faIcons,
 	ColorControl,
 	ResponsiveRangeController,
@@ -86,10 +70,11 @@ const {
 	TypographyDropdown,
 	BackgroundControl,
 	BorderShadowControl,
+	AdvancedControls,
 } = window.EBPricingTableControls;
 
 const editorStoreForGettingPreivew =
-	eb_style_handler.editor_type === "edit-site"
+	eb_conditional_localize.editor_type === "edit-site"
 		? "core/edit-site"
 		: "core/edit-post";
 
@@ -113,6 +98,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 		currencyPlacement,
 		pricePeriod,
 		periodSeparator,
+		hideFeatures,
 		features,
 		showButton,
 		buttonIcon,
@@ -156,26 +142,6 @@ const Inspector = ({ attributes, setAttributes }) => {
 			).__experimentalGetPreviewDeviceType(),
 		});
 	}, []);
-
-	// // this useEffect is for mimmiking css for all the eb blocks on resOption changing
-	// useEffect(() => {
-	// 	mimmikCssForResBtns({
-	// 		domObj: document,
-	// 		resOption,
-	// 	});
-	// }, [resOption]);
-
-	// // this useEffect is to mimmik css for responsive preview in the editor page when clicking the buttons in the 'Preview button of wordpress' located beside the 'update' button while any block is selected and it's inspector panel is mounted in the DOM
-	// useEffect(() => {
-	// 	const cleanUp = mimmikCssOnPreviewBtnClickWhileBlockSelected({
-	// 		domObj: document,
-	// 		select,
-	// 		setAttributes,
-	// 	});
-	// 	return () => {
-	// 		cleanUp();
-	// 	};
-	// }, []);
 
 	const resRequiredProps = {
 		setAttributes,
@@ -256,9 +222,9 @@ const Inspector = ({ attributes, setAttributes }) => {
 							className: "eb-tab styles",
 						},
 						{
-							name: "advanced",
+							name: 'advance',
 							title: __("Advanced", "essential-blocks"),
-							className: "eb-tab styles",
+							className: 'eb-tab advance',
 						},
 					]}
 				>
@@ -407,20 +373,33 @@ const Inspector = ({ attributes, setAttributes }) => {
 										title={__("Features", "essential-blocks")}
 										initialOpen={false}
 									>
-										<SortableFeatures
-											features={attributes.features}
-											setAttributes={setAttributes}
+										<ToggleControl
+											label={__("Hide Features?")}
+											checked={hideFeatures}
+											onChange={() => {
+												setAttributes({
+													hideFeatures: !hideFeatures,
+												});
+											}}
 										/>
-										<Button
-											className="eb-pricebox-feature-button"
-											label={__("Add feature", "essential-blocks")}
-											icon="plus-alt"
-											onClick={onFeatureAdd}
-										>
-											<span className="eb-pricebox-add-button-label">
-												{__("Add Feature", "essential-blocks")}
-											</span>
-										</Button>
+										{hideFeatures !== true && (
+											<>
+												<SortableFeatures
+													features={attributes.features}
+													setAttributes={setAttributes}
+												/>
+												<Button
+													className="eb-pricebox-feature-button"
+													label={__("Add feature", "essential-blocks")}
+													icon="plus-alt"
+													onClick={onFeatureAdd}
+												>
+													<span className="eb-pricebox-add-button-label">
+														{__("Add Feature", "essential-blocks")}
+													</span>
+												</Button>
+											</>
+										)}
 									</PanelBody>
 
 									<PanelBody
@@ -534,21 +513,6 @@ const Inspector = ({ attributes, setAttributes }) => {
 											resRequiredProps={resRequiredProps}
 										/>
 										<BaseControl>
-											<h3 className="eb-control-title">
-												{__("Padding & Margin")}
-											</h3>
-										</BaseControl>
-										<ResponsiveDimensionsControl
-											resRequiredProps={resRequiredProps}
-											controlName={wrapperPadding}
-											baseLabel={__("Padding", "essential-blocks")}
-										/>
-										<ResponsiveDimensionsControl
-											resRequiredProps={resRequiredProps}
-											controlName={wrapperMargin}
-											baseLabel={__("Margin", "essential-blocks")}
-										/>
-										<BaseControl>
 											<h3 className="eb-control-title">Border</h3>
 										</BaseControl>
 
@@ -566,9 +530,9 @@ const Inspector = ({ attributes, setAttributes }) => {
 												{__("Alignment", "essential-blocks")}
 											</h3>
 											<ButtonGroup>
-												{ALIGNMENT.map((item) => (
+												{ALIGNMENT.map((item, index) => (
 													<Button
-														// isLarge
+														key={index}
 														isPrimary={headerAlignment === item.value}
 														isSecondary={headerAlignment !== item.value}
 														onClick={() =>
@@ -665,9 +629,9 @@ const Inspector = ({ attributes, setAttributes }) => {
 												{__("Alignment", "essential-blocks")}
 											</h3>
 											<ButtonGroup>
-												{ALIGNMENT.map((item) => (
+												{ALIGNMENT.map((item, index) => (
 													<Button
-														// isLarge
+														key={index}
 														isPrimary={priceAlignment === item.value}
 														isSecondary={priceAlignment !== item.value}
 														onClick={() =>
@@ -796,9 +760,9 @@ const Inspector = ({ attributes, setAttributes }) => {
 										<BaseControl>
 											<h3 className="eb-control-title">Alignment</h3>
 											<ButtonGroup>
-												{ALIGNMENT.map((item) => (
+												{ALIGNMENT.map((item, index) => (
 													<Button
-														// isLarge
+														key={index}
 														isPrimary={featuresAlignment === item.value}
 														isSecondary={featuresAlignment !== item.value}
 														onClick={() =>
@@ -842,9 +806,9 @@ const Inspector = ({ attributes, setAttributes }) => {
 										<BaseControl>
 											<h3 className="eb-control-title">Alignment</h3>
 											<ButtonGroup>
-												{ALIGNMENT.map((item) => (
+												{ALIGNMENT.map((item, index) => (
 													<Button
-														// isLarge
+														key={index}
 														isPrimary={buttonAlignment === item.value}
 														isSecondary={buttonAlignment !== item.value}
 														onClick={() =>
@@ -928,9 +892,9 @@ const Inspector = ({ attributes, setAttributes }) => {
 													{__("Alignment", "essential-blocks")}
 												</h3>
 												<ButtonGroup>
-													{ALIGNMENT.map((item) => (
+													{ALIGNMENT.map((item, index) => (
 														<Button
-															// isLarge
+															key={index}
 															isPrimary={iconAlignment === item.value}
 															isSecondary={iconAlignment !== item.value}
 															onClick={() =>
@@ -1058,23 +1022,9 @@ const Inspector = ({ attributes, setAttributes }) => {
 									)}
 								</>
 							)}
-							{tab.name === "advanced" && (
+							{tab.name === "advance" && (
 								<>
 									<PanelBody>
-										<BaseControl>
-											<h3 className="eb-control-title">
-												{__("Background", "essential-blocks")}
-											</h3>
-										</BaseControl>
-										<BackgroundControl
-											controlName={priceTableBackground}
-											resRequiredProps={resRequiredProps}
-										/>
-										<BaseControl>
-											<h3 className="eb-control-title">
-												{__("Padding & Margin")}
-											</h3>
-										</BaseControl>
 										<ResponsiveDimensionsControl
 											resRequiredProps={resRequiredProps}
 											controlName={wrapperPadding}
@@ -1085,15 +1035,8 @@ const Inspector = ({ attributes, setAttributes }) => {
 											controlName={wrapperMargin}
 											baseLabel={__("Margin", "essential-blocks")}
 										/>
-										<BaseControl>
-											<h3 className="eb-control-title">Border</h3>
-										</BaseControl>
-
-										<BorderShadowControl
-											controlName={wrapperBorderShadow}
-											resRequiredProps={resRequiredProps}
-										/>
 									</PanelBody>
+									<AdvancedControls attributes={attributes} setAttributes={setAttributes} />
 								</>
 							)}
 						</div>
