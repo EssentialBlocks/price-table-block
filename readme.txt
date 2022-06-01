@@ -2,8 +2,8 @@
 Contributors: wpdevteam, re_enter_rupok, Asif2BD, rahat89, fencermonir
 Tags: block, blocks, price, pricing, discount, offers, price table, pricing table, gutenberg, gutenberg blocks
 Requires at least: 5.6
-Tested up to: 5.9
-Stable tag: 1.2.0
+Tested up to: 6.0
+Stable tag: 1.2.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -62,6 +62,11 @@ Yes, it will work with any standard WordPress theme.
 
 
 == Changelog ==
+
+= 1.2.1 - dev =
+* Add: Responsive Controls, Animation Controls, Custom CSS
+* Improved: Controls and structure
+* Fixed: Show block when using Gutenberg Block
 
 = 1.2.0 - 09/02/2022 =
 * Added: Full site editing support
