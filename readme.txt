@@ -63,7 +63,7 @@ Yes, it will work with any standard WordPress theme.
 
 == Changelog ==
 
-= 1.2.1 - dev =
+= 1.2.1 - 02/06/2022 =
 * Add: Responsive Controls, Animation Controls, Custom CSS
 * Improved: Controls and structure
 * Fixed: Show block when using Gutenberg Block
@@ -98,4 +98,3 @@ Yes, it will work with any standard WordPress theme.
 * Initial Release
 
 == Upgrade Notice ==
-[Major Update] Fullsite editing support and improvement in controls and structure. Can break current block.
