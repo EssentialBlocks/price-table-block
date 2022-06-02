@@ -64,7 +64,7 @@ const {
 } = window.EBPricingTableControls;
 
 const editorStoreForGettingPreivew =
-	eb_style_handler.editor_type === "edit-site"
+	eb_conditional_localize.editor_type === "edit-site"
 		? "core/edit-site"
 		: "core/edit-post";
 
@@ -91,6 +91,7 @@ const edit = (props) => {
 		currencyPlacement,
 		pricePeriod,
 		periodSeparator,
+		hideFeatures,
 		features,
 		showButton,
 		buttonIcon,
@@ -123,6 +124,7 @@ const edit = (props) => {
 		headerAlignment,
 		priceAlignment,
 		iconAlignment,
+		classHook,
 	} = attributes;
 
 	// wrapper styles css in strings
@@ -499,10 +501,9 @@ const edit = (props) => {
 		  .eb-pricing-wrapper.eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header {
 			  ${titlePaddingStylesDesktop}
 			  ${titleMarginStylesDesktop}
-			  background: ${
-					titleBackgroundColor ||
-					(pricingStyle === "style-2" ? "#c8e6c9" : "none")
-				};
+			  background: ${titleBackgroundColor ||
+		(pricingStyle === "style-2" ? "#c8e6c9" : "none")
+		};
 			  position: relative;
 			  z-index: 0;
 		  }
@@ -561,23 +562,21 @@ const edit = (props) => {
 			  color: ${hoverTextColor};
 		  }
 		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button i {
-			  ${
-					buttonIconPosition === "left"
-						? buttonIconSpaceRightDesktop
-						: buttonIconSpaceLeftDesktop
-				}
+			  ${buttonIconPosition === "left"
+			? buttonIconSpaceRightDesktop
+			: buttonIconSpaceLeftDesktop
+		}
 			  ${buttonIconSizeDesktop}
 		  }
 		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-icon {
 			  display: flex;
 			  align-items: center;
-			  justify-content: ${
-					iconAlign === "left"
-						? "flex-start"
-						: iconAlign === "right"
-						? "flex-end"
-						: "center"
-				};
+			  justify-content: ${iconAlign === "left"
+			? "flex-start"
+			: iconAlign === "right"
+				? "flex-end"
+				: "center"
+		};
 		  }
 		  
 		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-icon .icon {
@@ -587,19 +586,17 @@ const edit = (props) => {
 			  ${headerIconWidthDesktop}
 			  ${headerIconHeightDesktop}
 			  ${iconBorderShadowDesktop}
-			  ${
-					showIconBackground
-						? "background-color: " + iconBackgroundColor + ";"
-						: "background-color: transparent;"
-				}
+			  ${showIconBackground
+			? "background-color: " + iconBackgroundColor + ";"
+			: "background-color: transparent;"
+		}
 		  }
 		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item:hover .eb-pricing-icon .icon {
 			  ${iconBorderShadowHoverDesktop}
-			  ${
-					showIconBackground
-						? "background-color: " + iconBackgroundHoverColor + ";"
-						: "background-color: transparent;"
-				}
+			  ${showIconBackground
+			? "background-color: " + iconBackgroundHoverColor + ";"
+			: "background-color: transparent;"
+		}
 		  }
 		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-icon .icon i {
 			  ${headerIconSizeDesktop}
@@ -609,37 +606,33 @@ const edit = (props) => {
 			  color: ${iconHoverColor};
 		  }
   
-		  ${
-				featuresAlignment
-					? `.eb-pricing-wrapper.${blockId} .eb-pricing-body {
+		  ${featuresAlignment
+			? `.eb-pricing-wrapper.${blockId} .eb-pricing-body {
 				  text-align: ${featuresAlignment};
 			  }`
-					: ""
-			}
+			: ""
+		}
   
-		  ${
-				buttonAlignment
-					? `.eb-pricing-wrapper.${blockId} .eb-pricing-footer {
+		  ${buttonAlignment
+			? `.eb-pricing-wrapper.${blockId} .eb-pricing-footer {
 				  text-align: ${buttonAlignment};
 			  }`
-					: ""
-			}
+			: ""
+		}
   
-		  ${
-				headerAlignment
-					? `.eb-pricing-wrapper.${blockId} .eb-pricing-header {
+		  ${headerAlignment
+			? `.eb-pricing-wrapper.${blockId} .eb-pricing-header {
 				  text-align: ${headerAlignment};
 			  }`
-					: ""
-			}
+			: ""
+		}
   
-		  ${
-				priceAlignment
-					? `.eb-pricing-wrapper.${blockId} .eb-pricing-tag {
+		  ${priceAlignment
+			? `.eb-pricing-wrapper.${blockId} .eb-pricing-tag {
 				  text-align: ${priceAlignment};
 			  }`
-					: ""
-			}
+			: ""
+		}
 		  
 	  `;
 
@@ -710,11 +703,10 @@ const edit = (props) => {
 			  ${btnShadowStylesHoverTab}
 		  }
 		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button i {
-			  ${
-					buttonIconPosition === "left"
-						? buttonIconSpaceRightTab
-						: buttonIconSpaceLeftTab
-				}
+			  ${buttonIconPosition === "left"
+			? buttonIconSpaceRightTab
+			: buttonIconSpaceLeftTab
+		}
 			  ${buttonIconSizeTab}
 		  }
 		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-icon .icon {
@@ -798,11 +790,10 @@ const edit = (props) => {
 			  ${btnShadowStylesHoverMobile}
 		  }
 		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button i {
-			  ${
-					buttonIconPosition === "left"
-						? buttonIconSpaceRightMobile
-						: buttonIconSpaceLeftMobile
-				}
+			  ${buttonIconPosition === "left"
+			? buttonIconSpaceRightMobile
+			: buttonIconSpaceLeftMobile
+		}
 			  ${buttonIconSizeMobile}
 		  }
 		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-icon .icon {
@@ -823,20 +814,20 @@ const edit = (props) => {
 		headerAlignment === "left"
 			? "margin: 0 !important;"
 			: headerAlignment === "right"
-			? "margin: 0 0 0 auto !important;"
-			: "margin: 0 auto !important;";
+				? "margin: 0 0 0 auto !important;"
+				: "margin: 0 auto !important;";
 	var headerAlignStyle3 =
 		headerAlignment === "left"
 			? "transform: translateX(-80%) !important;"
 			: headerAlignment === "right"
-			? "transform: translateX(80%) !important;"
-			: "margin: 0 auto !important;";
+				? "transform: translateX(80%) !important;"
+				: "margin: 0 auto !important;";
 	var priceAlign =
 		priceAlignment === "left"
 			? "margin: 0 !important;"
 			: priceAlignment === "right"
-			? "margin: 0 0 0 auto !important;"
-			: "margin: 0 auto !important;";
+				? "margin: 0 0 0 auto !important;"
+				: "margin: 0 auto !important;";
 	if (showTitleLine) {
 		titleLineStyle = `
 		  .${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header::after {
@@ -859,20 +850,18 @@ const edit = (props) => {
 		  .${blockId}.eb-pricing-content-right .eb-pricing-item .eb-pricing-tag::after {
 			  margin: 0 0 0 auto;
 		  }
-		  ${
-				headerAlignment
-					? `.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header::after {
+		  ${headerAlignment
+				? `.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-header::after {
 							 ${headerAlign}
 						 }`
-					: ""
+				: ""
 			}
 		  
-		 ${
-				priceAlignment
-					? `.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag::after {
+		 ${priceAlignment
+				? `.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag::after {
 						 ${priceAlign}
 					 }`
-					: ""
+				: ""
 			}
 		  
 		  .${blockId}.eb-pricing-content-left .eb-pricing.style-3 .eb-pricing-item .eb-pricing-header:after, .${blockId}.eb-pricing-content-left .eb-pricing.style-3 .eb-pricing-item .eb-pricing-tag:after {
@@ -881,12 +870,11 @@ const edit = (props) => {
 		  .${blockId}.eb-pricing-content-right .eb-pricing.style-3 .eb-pricing-item .eb-pricing-header:after, .${blockId}.eb-pricing-content-right .eb-pricing.style-3 .eb-pricing-item .eb-pricing-tag:after {
 			  transform: translateX(80%);
 		  }
-		  ${
-				headerAlignment
-					? `.${blockId} .eb-pricing.style-3 .eb-pricing-item .eb-pricing-header::after {
+		  ${headerAlignment
+				? `.${blockId} .eb-pricing.style-3 .eb-pricing-item .eb-pricing-header::after {
 							 ${headerAlignStyle3}
 						 }`
-					: ""
+				: ""
 			}
 		  .eb-pricing.style-3 .eb-pricing-item .eb-pricing-header:after {
 			  position: absolute;
@@ -1022,197 +1010,203 @@ const edit = (props) => {
 			<div {...blockProps}>
 				<style>
 					{`
-			   ${desktopAllStyles}
-
-			   /* mimmikcssStart */
-
-			   ${resOption === "Tablet" ? tabAllStyles : " "}
-			   ${resOption === "Mobile" ? tabAllStyles + mobileAllStyles : " "}
-
-			   /* mimmikcssEnd */
-
-			   @media all and (max-width: 1024px) {	
-
-				   /* tabcssStart */			
-				   ${softMinifyCssStrings(tabAllStyles)}
-				   /* tabcssEnd */			
-			   
-			   }
-			   
-			   @media all and (max-width: 767px) {
+				   ${desktopAllStyles}
+   
+				   /* mimmikcssStart */
+   
+				   ${resOption === "Tablet" ? tabAllStyles : " "}
+				   ${resOption === "Mobile" ? tabAllStyles + mobileAllStyles : " "}
+   
+				   /* mimmikcssEnd */
+   
+				   @media all and (max-width: 1024px) {	
+   
+					   /* tabcssStart */			
+					   ${softMinifyCssStrings(tabAllStyles)}
+					   /* tabcssEnd */			
 				   
-				   /* mobcssStart */			
-				   ${softMinifyCssStrings(mobileAllStyles)}
-				   /* mobcssEnd */			
-			   
-			   }
-			   `}
+				   }
+				   
+				   @media all and (max-width: 767px) {
+					   
+					   /* mobcssStart */			
+					   ${softMinifyCssStrings(mobileAllStyles)}
+					   /* mobcssEnd */			
+				   
+				   }
+				   `}
 				</style>
-				<div
-					className={`${blockId} eb-pricing-wrapper eb-pricing-content-${contentAlign}`}
-				>
-					<div className={`eb-pricing ${pricingStyle}`}>
-						<div className={`eb-pricing-item${ribbonClass}`}>
-							<div className="eb-pricing-item-overlay"></div>
-							{showHeaderIcon && (
-								<div className="eb-pricing-icon" data-icon={headerIcon}>
-									<span className="icon">
-										<i class={headerIcon}></i>
-									</span>
-								</div>
-							)}
-							<div className="eb-pricing-header">
-								<h2 className="eb-pricing-title">{title}</h2>
-								{showSubtitle && (
-									<span className="eb-pricing-subtitle">{subtitle}</span>
-								)}
-							</div>
-							{pricingStyle !== "style-3" && (
-								<div className="eb-pricing-tag">
-									<span className="price-tag">
-										<span
-											className={`original-price${
-												showOnSale === true ? " line-through" : ""
-											}`}
-											data-price={mainPrice}
-										>
-											{currencyPlacement === "left" && (
-												<span className="price-currency">{priceCurrency}</span>
-											)}
-											{mainPrice}
-											{currencyPlacement === "right" && (
-												<span className="price-currency">{priceCurrency}</span>
-											)}
+				<div className={`eb-parent-wrapper eb-parent-${blockId} ${classHook}`}>
+					<div
+						className={`${blockId} eb-pricing-wrapper eb-pricing-content-${contentAlign}`}
+					>
+						<div className={`eb-pricing ${pricingStyle}`}>
+							<div className={`eb-pricing-item${ribbonClass}`}>
+								<div className="eb-pricing-item-overlay"></div>
+								{showHeaderIcon && (
+									<div className="eb-pricing-icon" data-icon={headerIcon}>
+										<span className="icon">
+											<i class={headerIcon}></i>
 										</span>
-
-										{showOnSale && (
-											<>
-												<span
-													className="sale-price"
-													data-sale-price={salePrice}
-												>
-													{currencyPlacement === "left" && (
-														<span className="price-currency">
-															{priceCurrency}
-														</span>
-													)}
-													{salePrice}
-													{currencyPlacement === "right" && (
-														<span className="price-currency">
-															{priceCurrency}
-														</span>
-													)}
-												</span>
-											</>
-										)}
-									</span>
-									<span
-										className="price-period"
-										data-period-separator={periodSeparator}
-										data-price-period={pricePeriod}
-									>
-										{periodSeparator} {pricePeriod}
-									</span>
+									</div>
+								)}
+								<div className="eb-pricing-header">
+									<h2 className="eb-pricing-title">{title}</h2>
+									{showSubtitle && (
+										<span className="eb-pricing-subtitle">{subtitle}</span>
+									)}
 								</div>
-							)}
-							<div className="eb-pricing-body">
-								<ul className="eb-pricebox-features">
-									{features.map(({ icon, text, color, clickable, link }) => (
-										<li
-											className="eb-pricebox-feature-item"
-											data-icon={icon}
-											data-color={color}
-											data-clickable={clickable}
-											data-link={link}
-										>
-											{clickable && link ? (
-												<a href={link}>
-													<span
-														className={`eb-pricebox-icon ${icon}`}
-														style={{ color: color }}
-													/>
-													<span className="eb-pricebox-feature-text">
-														{text}
-													</span>
-												</a>
-											) : (
+								{pricingStyle !== "style-3" && (
+									<div className="eb-pricing-tag">
+										<span className="price-tag">
+											<span
+												className={`original-price${showOnSale === true ? " line-through" : ""
+													}`}
+												data-price={mainPrice}
+											>
+												{currencyPlacement === "left" && (
+													<span className="price-currency">{priceCurrency}</span>
+												)}
+												{mainPrice}
+												{currencyPlacement === "right" && (
+													<span className="price-currency">{priceCurrency}</span>
+												)}
+											</span>
+
+											{showOnSale && (
 												<>
 													<span
-														className={`eb-pricebox-icon ${icon}`}
-														style={{ color: color }}
-													/>
-													<span className="eb-pricebox-feature-text">
-														{text}
+														className="sale-price"
+														data-sale-price={salePrice}
+													>
+														{currencyPlacement === "left" && (
+															<span className="price-currency">
+																{priceCurrency}
+															</span>
+														)}
+														{salePrice}
+														{currencyPlacement === "right" && (
+															<span className="price-currency">
+																{priceCurrency}
+															</span>
+														)}
 													</span>
 												</>
 											)}
-										</li>
-									))}
-								</ul>
-							</div>
-							{pricingStyle === "style-3" && (
-								<div className="eb-pricing-tag">
-									<span className="price-tag">
+										</span>
 										<span
-											className={`original-price${
-												showOnSale === true ? " line-through" : ""
-											}`}
-											data-price={mainPrice}
+											className="price-period"
+											data-period-separator={periodSeparator}
+											data-price-period={pricePeriod}
 										>
-											{currencyPlacement === "left" && (
-												<span className="price-currency">{priceCurrency}</span>
+											{periodSeparator} {pricePeriod}
+										</span>
+									</div>
+								)}
+								{hideFeatures !== true && (
+									<div className="eb-pricing-body">
+										<ul className="eb-pricebox-features">
+											{features.map(
+												({ icon, text, color, clickable, link }, index) => (
+													<li
+														key={index}
+														className="eb-pricebox-feature-item"
+														data-icon={icon}
+														data-color={color}
+														data-clickable={clickable}
+														data-link={link}
+													>
+														{clickable && link ? (
+															<a href={link}>
+																<span
+																	className={`eb-pricebox-icon ${icon}`}
+																	style={{ color: color }}
+																/>
+																<span className="eb-pricebox-feature-text">
+																	{text}
+																</span>
+															</a>
+														) : (
+															<>
+																<span
+																	className={`eb-pricebox-icon ${icon}`}
+																	style={{ color: color }}
+																/>
+																<span className="eb-pricebox-feature-text">
+																	{text}
+																</span>
+															</>
+														)}
+													</li>
+												)
 											)}
-											{mainPrice}
-											{currencyPlacement === "right" && (
-												<span className="price-currency">{priceCurrency}</span>
+										</ul>
+									</div>
+								)}
+
+								{pricingStyle === "style-3" && (
+									<div className="eb-pricing-tag">
+										<span className="price-tag">
+											<span
+												className={`original-price${showOnSale === true ? " line-through" : ""
+													}`}
+												data-price={mainPrice}
+											>
+												{currencyPlacement === "left" && (
+													<span className="price-currency">{priceCurrency}</span>
+												)}
+												{mainPrice}
+												{currencyPlacement === "right" && (
+													<span className="price-currency">{priceCurrency}</span>
+												)}
+											</span>
+
+											{showOnSale && (
+												<>
+													<span
+														className="sale-price"
+														data-sale-price={salePrice}
+													>
+														{currencyPlacement === "left" && (
+															<span className="price-currency">
+																{priceCurrency}
+															</span>
+														)}
+														{salePrice}
+														{currencyPlacement === "right" && (
+															<span className="price-currency">
+																{priceCurrency}
+															</span>
+														)}
+													</span>
+												</>
 											)}
 										</span>
-
-										{showOnSale && (
-											<>
-												<span
-													className="sale-price"
-													data-sale-price={salePrice}
-												>
-													{currencyPlacement === "left" && (
-														<span className="price-currency">
-															{priceCurrency}
-														</span>
-													)}
-													{salePrice}
-													{currencyPlacement === "right" && (
-														<span className="price-currency">
-															{priceCurrency}
-														</span>
-													)}
-												</span>
-											</>
-										)}
-									</span>
-									<span
-										className="price-period"
-										data-period-separator={periodSeparator}
-										data-price-period={pricePeriod}
-									>
-										{periodSeparator} {pricePeriod}
-									</span>
-								</div>
-							)}
-							{showButton && (
-								<div className="eb-pricing-footer" data-icon={buttonIcon}>
-									<div className="eb-pricing-button-wrapper">
-										<a href={buttonURL} className="eb-pricing-button">
-											{buttonIconPosition === "left" && (
-												<i className={buttonIcon}></i>
-											)}
-											<span className="eb-button-text">{buttonText}</span>
-											{buttonIconPosition === "right" && (
-												<i className={buttonIcon}></i>
-											)}
-										</a>
+										<span
+											className="price-period"
+											data-period-separator={periodSeparator}
+											data-price-period={pricePeriod}
+										>
+											{periodSeparator} {pricePeriod}
+										</span>
 									</div>
-								</div>
-							)}
+								)}
+								{showButton && (
+									<div className="eb-pricing-footer" data-icon={buttonIcon}>
+										<div className="eb-pricing-button-wrapper">
+											<a href={buttonURL} className="eb-pricing-button">
+												{buttonIconPosition === "left" && (
+													<i className={buttonIcon}></i>
+												)}
+												<span className="eb-button-text">{buttonText}</span>
+												{buttonIconPosition === "right" && (
+													<i className={buttonIcon}></i>
+												)}
+											</a>
+										</div>
+									</div>
+								)}
+							</div>
 						</div>
 					</div>
 				</div>
