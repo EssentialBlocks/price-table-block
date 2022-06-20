@@ -256,6 +256,14 @@ const attributes = {
 		type: "boolean",
 		default: false,
 	},
+	ribbonAlignHorizontal: {
+		type: "string",
+		default: "right",
+	},
+	ribbonAlignVertical: {
+		type: "string",
+		default: "top",
+	},
 	ribbonStyle: {
 		type: "string",
 		default: "ribbon-1",
@@ -298,6 +306,18 @@ const attributes = {
 	iconAlignment: {
 		type: "string",
 	},
+	newWindow: {
+		type: "boolean",
+		default: false,
+	},
+	showFeatureLine: {
+		type: "boolean",
+		default: true,
+	},
+	pricingTopBgColor: {
+		type: "string",
+		default: "#7967ff",
+	},
 	...generateResponsiveRangeAttributes(buttonIconSpacing, {
 		defaultRange: 0,
 		noUnits: true,
@@ -334,7 +354,10 @@ const attributes = {
 		noOverlay: true,
 		noMainBgi: true,
 	}),
-	...generateBackgroundAttributes(priceTableBackground),
+	...generateBackgroundAttributes(priceTableBackground, {
+		defaultBgGradient:
+			"linear-gradient(45deg, rgba(255,255,255,0.8) 0% , rgba(255,255,255,0.8) 100%)",
+	}),
 	// border shadow attriubtes
 	...generateBorderShadowAttributes(buttonBorderShadow),
 	...generateBorderShadowAttributes(wrapperBorderShadow),

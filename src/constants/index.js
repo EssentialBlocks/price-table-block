@@ -31,7 +31,10 @@ export const TEXT_DECORATION = [
 	{ label: __("Overline", "essential-blocks"), value: "overline" },
 	{ label: __("Line Through", "essential-blocks"), value: "line-through" },
 	{ label: __("Underline", "essential-blocks"), value: "underline" },
-	{ label: __("Underline Oveline", "essential-blocks"), value: "underline overline" },
+	{
+		label: __("Underline Oveline", "essential-blocks"),
+		value: "underline overline",
+	},
 ];
 
 export const TWOUNITS = [
@@ -43,6 +46,15 @@ export const ALIGNMENT = [
 	{ label: __(<Dashicon icon={"editor-alignleft"} />), value: "left" },
 	{ label: __(<Dashicon icon={"editor-aligncenter"} />), value: "center" },
 	{ label: __(<Dashicon icon={"editor-alignright"} />), value: "right" },
+];
+
+export const RIBBON_ALIGNMENT_HORIZONTAL = [
+	{ label: __("Left", "essential-blocks"), value: "left" },
+	{ label: __("Right", "essential-blocks"), value: "right" },
+];
+export const RIBBON_ALIGNMENT_VERTICAL = [
+	{ label: __("Top", "essential-blocks"), value: "top" },
+	{ label: __("Bottom", "essential-blocks"), value: "bottom" },
 ];
 
 // Responsive Range Controller
