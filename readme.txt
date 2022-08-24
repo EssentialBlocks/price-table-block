@@ -65,7 +65,7 @@ Yes, it will work with any standard WordPress theme.
 
 = 1.2.2 - dev =
 * Added: Pricing table block with new options and preset
-* Improved: Convert style handler to PHP
+* Improved: Controls and structure
 
 = 1.2.1 - 02/06/2022 =
 * Added: Responsive Controls, Animation Controls, Custom CSS

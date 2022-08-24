@@ -63,11 +63,6 @@ const {
 	generateResponsiveRangeStyles,
 } = window.EBPricingTableControls;
 
-const editorStoreForGettingPreivew =
-	eb_conditional_localize.editor_type === "edit-site"
-		? "core/edit-site"
-		: "core/edit-post";
-
 const edit = (props) => {
 	const { attributes, isSelected, setAttributes, clientId, className } = props;
 	const {
@@ -953,15 +948,7 @@ const edit = (props) => {
 			setAttributes({ blockMeta: styleObject });
 		}
 	}, [attributes]);
-
-	// this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class
-	useEffect(() => {
-		setAttributes({
-			resOption: select(
-				editorStoreForGettingPreivew
-			).__experimentalGetPreviewDeviceType(),
-		});
-	}, []);
+	
 	// this useEffect is for creating an unique id for each block's unique className by a random unique number
 	useEffect(() => {
 		const BLOCK_PREFIX = "eb-pricing";

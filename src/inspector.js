@@ -75,11 +75,6 @@ const {
 	AdvancedControls,
 } = window.EBPricingTableControls;
 
-const editorStoreForGettingPreivew =
-	eb_conditional_localize.editor_type === "edit-site"
-		? "core/edit-site"
-		: "core/edit-post";
-
 const Inspector = ({ attributes, setAttributes }) => {
 	const {
 		resOption,
@@ -140,15 +135,6 @@ const Inspector = ({ attributes, setAttributes }) => {
 		showFeatureLine,
 		pricingTopBgColor,
 	} = attributes;
-
-	// this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class only the first time once
-	useEffect(() => {
-		setAttributes({
-			resOption: select(
-				editorStoreForGettingPreivew
-			).__experimentalGetPreviewDeviceType(),
-		});
-	}, []);
 
 	const resRequiredProps = {
 		setAttributes,
