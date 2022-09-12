@@ -43,6 +43,8 @@ import {
 	headerIconHeight,
 	salepriceCurrencyMargin,
 	featuresIconSize,
+	RIBBON_ALIGNMENT_HORIZONTAL,
+	RIBBON_ALIGNMENT_VERTICAL,
 } from "./constants";
 
 import {
@@ -72,11 +74,6 @@ const {
 	BorderShadowControl,
 	AdvancedControls,
 } = window.EBPricingTableControls;
-
-const editorStoreForGettingPreivew =
-	eb_conditional_localize.editor_type === "edit-site"
-		? "core/edit-site"
-		: "core/edit-post";
 
 const Inspector = ({ attributes, setAttributes }) => {
 	const {
@@ -132,16 +129,12 @@ const Inspector = ({ attributes, setAttributes }) => {
 		headerAlignment,
 		priceAlignment,
 		iconAlignment,
+		ribbonAlignHorizontal,
+		ribbonAlignVertical,
+		newWindow,
+		showFeatureLine,
+		pricingTopBgColor,
 	} = attributes;
-
-	// this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class only the first time once
-	useEffect(() => {
-		setAttributes({
-			resOption: select(
-				editorStoreForGettingPreivew
-			).__experimentalGetPreviewDeviceType(),
-		});
-	}, []);
 
 	const resRequiredProps = {
 		setAttributes,
@@ -171,6 +164,15 @@ const Inspector = ({ attributes, setAttributes }) => {
 				setAttributes({
 					showSubtitle: false,
 					showHeaderIcon: false,
+					iconColor: "#000000",
+					iconHoverColor: "#000000",
+					titleTextColor: "#000000",
+					priceCurrencyTextColor: "#000000",
+					priceTextColor: "#000000",
+					pricingPeriodTextColor: "#999999",
+					ribbonBackgroundColor: "#00c853",
+					// ribbonColor: "#7967ff",
+					btnBgbackgroundColor: "#00c853",
 				});
 				defaultSubtitle ? setAttributes({ showSubtitle: true }) : "";
 				defaultHeaderIcon ? setAttributes({ showHeaderIcon: true }) : "";
@@ -180,6 +182,17 @@ const Inspector = ({ attributes, setAttributes }) => {
 				break;
 
 			case "style-2":
+				setAttributes({
+					iconColor: "#000000",
+					iconHoverColor: "#000000",
+					titleTextColor: "#000000",
+					priceCurrencyTextColor: "#000000",
+					priceTextColor: "#000000",
+					pricingPeriodTextColor: "#999999",
+					ribbonBackgroundColor: "#00c853",
+					// ribbonColor: "#7967ff",
+					btnBgbackgroundColor: "#00c853",
+				});
 				defaultSubtitle === undefined
 					? setAttributes({ showSubtitle: true })
 					: "";
@@ -195,6 +208,15 @@ const Inspector = ({ attributes, setAttributes }) => {
 				setAttributes({
 					showSubtitle: false,
 					showHeaderIcon: false,
+					iconColor: "#000000",
+					iconHoverColor: "#000000",
+					titleTextColor: "#000000",
+					priceCurrencyTextColor: "#000000",
+					priceTextColor: "#000000",
+					pricingPeriodTextColor: "#999999",
+					ribbonBackgroundColor: "#00c853",
+					// ribbonColor: "#7967ff",
+					btnBgbackgroundColor: "#00c853",
 				});
 				defaultSubtitle ? setAttributes({ showSubtitle: true }) : "";
 				defaultHeaderIcon ? setAttributes({ showHeaderIcon: true }) : "";
@@ -202,6 +224,24 @@ const Inspector = ({ attributes, setAttributes }) => {
 					? setAttributes({ showTitleLine: true })
 					: "";
 				break;
+			case "style-4":
+				setAttributes({
+					iconColor: "#ffffff",
+					iconHoverColor: "#ffffff",
+					titleTextColor: "#ffffff",
+					priceCurrencyTextColor: "#ffffff",
+					priceTextColor: "#ffffff",
+					pricingPeriodTextColor: "#ffffff",
+					ribbonBackgroundColor: "#cc5ae7",
+					// ribbonColor: "#7967ff",
+					btnBgbackgroundColor: "#7967ff",
+				});
+				defaultHeaderIcon === undefined
+					? setAttributes({ showHeaderIcon: true })
+					: "";
+				break;
+			default:
+				return false;
 		}
 	};
 	return (
@@ -222,9 +262,9 @@ const Inspector = ({ attributes, setAttributes }) => {
 							className: "eb-tab styles",
 						},
 						{
-							name: 'advance',
+							name: "advance",
 							title: __("Advanced", "essential-blocks"),
-							className: 'eb-tab advance',
+							className: "eb-tab advance",
 						},
 					]}
 				>
@@ -240,6 +280,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 												{ label: "Default", value: "style-1" },
 												{ label: "Style 2", value: "style-2" },
 												{ label: "Style 3", value: "style-3" },
+												{ label: "Style 4 (New)", value: "style-4" },
 											]}
 											onChange={(pricingStyle) =>
 												handlePricingStyle(pricingStyle)
@@ -297,16 +338,19 @@ const Inspector = ({ attributes, setAttributes }) => {
 												/>
 											</BaseControl>
 										)}
-										<ToggleControl
-											label={__("Show title line?")}
-											checked={showTitleLine}
-											onChange={() => {
-												setAttributes({
-													showTitleLine: !showTitleLine,
-													defaultTitleLine: !showTitleLine,
-												});
-											}}
-										/>
+
+										{pricingStyle !== "style-4" && (
+											<ToggleControl
+												label={__("Show title line?")}
+												checked={showTitleLine}
+												onChange={() => {
+													setAttributes({
+														showTitleLine: !showTitleLine,
+														defaultTitleLine: !showTitleLine,
+													});
+												}}
+											/>
+										)}
 									</PanelBody>
 
 									<PanelBody
@@ -384,6 +428,16 @@ const Inspector = ({ attributes, setAttributes }) => {
 										/>
 										{hideFeatures !== true && (
 											<>
+												<ToggleControl
+													label={__("Show line?")}
+													checked={showFeatureLine}
+													onChange={() => {
+														setAttributes({
+															showFeatureLine: !showFeatureLine,
+														});
+													}}
+												/>
+
 												<SortableFeatures
 													features={attributes.features}
 													setAttributes={setAttributes}
@@ -452,6 +506,16 @@ const Inspector = ({ attributes, setAttributes }) => {
 											value={buttonURL}
 											onChange={(link) => setAttributes({ buttonURL: link })}
 										/>
+
+										{buttonURL && (
+											<ToggleControl
+												label={__("Open in New Tab", "essential-blocks")}
+												checked={newWindow}
+												onChange={() =>
+													setAttributes({ newWindow: !newWindow })
+												}
+											/>
+										)}
 									</PanelBody>
 
 									<PanelBody
@@ -482,14 +546,70 @@ const Inspector = ({ attributes, setAttributes }) => {
 														setAttributes({ ribbonStyle });
 													}}
 												/>
+												{ribbonStyle == "ribbon-1" && (
+													<BaseControl label={__("Align", "essential-blocks")}>
+														<ButtonGroup>
+															{RIBBON_ALIGNMENT_VERTICAL.map((item, index) => (
+																<Button
+																	// isLarge
+																	key={index}
+																	isPrimary={ribbonAlignVertical === item.value}
+																	isSecondary={
+																		ribbonAlignVertical !== item.value
+																	}
+																	onClick={() =>
+																		setAttributes({
+																			ribbonAlignVertical: item.value,
+																		})
+																	}
+																>
+																	{item.label}
+																</Button>
+															))}
+														</ButtonGroup>
+													</BaseControl>
+												)}
+
 												{ribbonStyle !== "ribbon-1" && (
-													<TextControl
-														label={__("Featured Tag Text", "essential-blocks")}
-														value={ribbonText}
-														onChange={(ribbonText) =>
-															setAttributes({ ribbonText })
-														}
-													/>
+													<>
+														<BaseControl
+															label={__("Align", "essential-blocks")}
+														>
+															<ButtonGroup>
+																{RIBBON_ALIGNMENT_HORIZONTAL.map(
+																	(item, index) => (
+																		<Button
+																			// isLarge
+																			key={index}
+																			isPrimary={
+																				ribbonAlignHorizontal === item.value
+																			}
+																			isSecondary={
+																				ribbonAlignHorizontal !== item.value
+																			}
+																			onClick={() =>
+																				setAttributes({
+																					ribbonAlignHorizontal: item.value,
+																				})
+																			}
+																		>
+																			{item.label}
+																		</Button>
+																	)
+																)}
+															</ButtonGroup>
+														</BaseControl>
+														<TextControl
+															label={__(
+																"Featured Tag Text",
+																"essential-blocks"
+															)}
+															value={ribbonText}
+															onChange={(ribbonText) =>
+																setAttributes({ ribbonText })
+															}
+														/>
+													</>
 												)}
 											</>
 										)}
@@ -520,6 +640,16 @@ const Inspector = ({ attributes, setAttributes }) => {
 											controlName={wrapperBorderShadow}
 											resRequiredProps={resRequiredProps}
 										/>
+
+										{pricingStyle == "style-4" && (
+											<ColorControl
+												label={__("Pricing Top Color", "essential-blocks")}
+												color={pricingTopBgColor}
+												onChange={(pricingTopBgColor) =>
+													setAttributes({ pricingTopBgColor })
+												}
+											/>
+										)}
 									</PanelBody>
 									<PanelBody
 										title={__("Header", "essential-blocks")}
@@ -559,7 +689,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 												setAttributes({ titleTextColor })
 											}
 										/>
-										{showTitleLine && (
+										{showTitleLine && pricingStyle !== "style-4" && (
 											<ColorControl
 												label={__("Line Color", "essential-blocks")}
 												color={titleLineColor}
@@ -1036,7 +1166,10 @@ const Inspector = ({ attributes, setAttributes }) => {
 											baseLabel={__("Margin", "essential-blocks")}
 										/>
 									</PanelBody>
-									<AdvancedControls attributes={attributes} setAttributes={setAttributes} />
+									<AdvancedControls
+										attributes={attributes}
+										setAttributes={setAttributes}
+									/>
 								</>
 							)}
 						</div>
