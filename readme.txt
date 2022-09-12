@@ -63,8 +63,9 @@ Yes, it will work with any standard WordPress theme.
 
 == Changelog ==
 
-= 1.2.2 - dev =
+= 1.2.2 - 12/09/2022 =
 * Added: Pricing table block with new options and preset
+* Added: Open new tab option for button link
 * Improved: Controls and structure
 
 = 1.2.1 - 02/06/2022 =
