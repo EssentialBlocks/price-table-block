@@ -2,8 +2,8 @@
 Contributors: wpdevteam, re_enter_rupok, Asif2BD, rahat89, fencermonir
 Tags: block, blocks, price, pricing, discount, offers, price table, pricing table, gutenberg, gutenberg blocks
 Requires at least: 5.6
-Tested up to: 6.0
-Stable tag: 1.2.2
+Tested up to: 6.1
+Stable tag: 1.2.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -23,14 +23,14 @@ Super Light-weight: No extra resources used and it's highly optimized for super 
 
 ## 🚀 BACKED BY A TRUSTED TEAM ##
 
-This Block is brought to you by [WPDeveloper](https://wpdeveloper.net), the team behind the most popular elements library [Essential Addons for Elementor](https://wordpress.org/plugins/essential-addons-for-elementor-lite/) (used by almost 700,000 happy users from 180+ countries).
+This Block is brought to you by [WPDeveloper](https://wpdeveloper.com), the team behind the most popular elements library [Essential Addons for Elementor](https://wordpress.org/plugins/essential-addons-for-elementor-lite/) (used by almost 1 million+ happy users from 180+ countries).
 
 ## 👨‍💻 DOCUMENTATION AND SUPPORT ##
 
 - For documentation and tutorials go to our [documentation](https://essential-blocks.com/docs/)
 - To report issue and contribution visit [Github](https://github.com/EssentialBlocks/pricing-table).
 - If you have any more questions, visit our support on the [Plugin's Forum](https://wordpress.org/support/plugin/price-table-block).
-- For more information about features, FAQs and documentation, check out our website at [WPDeveloper](https://wpdeveloper.net/).
+- For more information about features, FAQs and documentation, check out our website at [WPDeveloper](https://wpdeveloper.com/).
 
 ## 🙌 JOIN THE COMMUNITY ##
 
@@ -62,6 +62,10 @@ Yes, it will work with any standard WordPress theme.
 
 
 == Changelog ==
+
+= 1.2.3 - 12/12/2022 =
+* Fixed: Minor bugs
+* Improved: Controls and structure
 
 = 1.2.2 - 12/09/2022 =
 * Added: Pricing table block with new options and preset
