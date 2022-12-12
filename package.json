@@ -1,7 +1,7 @@
 {
 	"name": "pricing-table",
-	"version": "1.2.2",
-	"description": "Example block written with ESNext standard and JSX support – build step required.",
+	"version": "1.2.3",
+	"description": "EB Pricing Table will let you create effective product pricing table with perfect styling to get more sales from your prospective buyers.",
 	"author": "The WordPress Contributors",
 	"license": "GPL-2.0-or-later",
 	"main": "Gruntfile.js",
