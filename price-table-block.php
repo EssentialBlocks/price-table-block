@@ -28,7 +28,7 @@ require_once __DIR__ . '/lib/style-handler/style-handler.php';
 
 function create_block_pricing_table_block_init() {
 
-    define( 'PRICE_TABLE_BLOCKS_VERSION', "1.2.3" );
+    define( 'PRICE_TABLE_BLOCKS_VERSION', "1.2.4" );
     define( 'PRICE_TABLE_BLOCKS_ADMIN_URL', plugin_dir_url( __FILE__ ) );
     define( 'PRICE_TABLE_BLOCKS_ADMIN_PATH', dirname( __FILE__ ) );
 
