@@ -455,7 +455,6 @@ const edit = (props) => {
 			  text-align: ${contentAlign};
 			  ${ribbonStyle === "ribbon-4" ? "overflow: hidden;" : ""}
 		  }
-		  
 		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item.ribbon-1::before {
 			  content: "";
 			  color: ${ribbonColor};
@@ -583,7 +582,7 @@ const edit = (props) => {
 						: "center"
 				};
 		  }
-		  
+
 		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-icon .icon {
 			  display: flex;
 			  align-items: center;
@@ -612,7 +611,7 @@ const edit = (props) => {
 		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item:hover .eb-pricing-icon .icon i {
 			  color: ${iconHoverColor};
 		  }
-  
+
 		  ${
 				featuresAlignment
 					? `.eb-pricing-wrapper.${blockId} .eb-pricing-body {
@@ -620,7 +619,7 @@ const edit = (props) => {
 			  }`
 					: ""
 			}
-  
+
 		  ${
 				buttonAlignment
 					? `.eb-pricing-wrapper.${blockId} .eb-pricing-footer {
@@ -628,7 +627,7 @@ const edit = (props) => {
 			  }`
 					: ""
 			}
-  
+
 		  ${
 				headerAlignment
 					? `.eb-pricing-wrapper.${blockId} .eb-pricing-header {
@@ -636,7 +635,7 @@ const edit = (props) => {
 			  }`
 					: ""
 			}
-  
+
 		  ${
 				priceAlignment
 					? `.eb-pricing-wrapper.${blockId} .eb-pricing-tag {
@@ -644,7 +643,7 @@ const edit = (props) => {
 			  }`
 					: ""
 			}
-		  
+
 	  `;
 
 	const tabStyles = `
@@ -786,7 +785,7 @@ const edit = (props) => {
 		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-body ul li {
 			  ${featuresTypoStylesMobile}
 		  }
-		  
+
 		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-body ul li .eb-pricebox-icon {
 			  ${featuresIconSizeMobile}
 		  }
@@ -870,7 +869,7 @@ const edit = (props) => {
 						 }`
 					: ""
 			}
-		  
+
 		 ${
 				priceAlignment
 					? `.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-tag::after {
@@ -878,7 +877,7 @@ const edit = (props) => {
 					 }`
 					: ""
 			}
-		  
+
 		  .${blockId}.eb-pricing-content-left .eb-pricing.style-3 .eb-pricing-item .eb-pricing-header:after, .${blockId}.eb-pricing-content-left .eb-pricing.style-3 .eb-pricing-item .eb-pricing-tag:after {
 			  transform: translateX(-80%);
 		  }
@@ -948,7 +947,7 @@ const edit = (props) => {
 			setAttributes({ blockMeta: styleObject });
 		}
 	}, [attributes]);
-	
+
 	// this useEffect is for creating an unique id for each block's unique className by a random unique number
 	useEffect(() => {
 		const BLOCK_PREFIX = "eb-pricing";
@@ -1019,28 +1018,28 @@ const edit = (props) => {
 				<style>
 					{`
 				   ${desktopAllStyles}
-   
+
 				   /* mimmikcssStart */
-   
+
 				   ${resOption === "Tablet" ? tabAllStyles : " "}
 				   ${resOption === "Mobile" ? tabAllStyles + mobileAllStyles : " "}
-   
+
 				   /* mimmikcssEnd */
-   
-				   @media all and (max-width: 1024px) {	
-   
-					   /* tabcssStart */			
+
+				   @media all and (max-width: 1024px) {
+
+					   /* tabcssStart */
 					   ${softMinifyCssStrings(tabAllStyles)}
-					   /* tabcssEnd */			
-				   
+					   /* tabcssEnd */
+
 				   }
-				   
+
 				   @media all and (max-width: 767px) {
-					   
-					   /* mobcssStart */			
+
+					   /* mobcssStart */
 					   ${softMinifyCssStrings(mobileAllStyles)}
-					   /* mobcssEnd */			
-				   
+					   /* mobcssEnd */
+
 				   }
 				   `}
 				</style>
