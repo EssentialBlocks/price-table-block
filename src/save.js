@@ -370,6 +370,7 @@ const Save = ({ attributes }) => {
 												<a
 													href={buttonURL}
 													{...(newWindow && { target: "_blank" })}
+													rel="noopener"
 													className="eb-pricing-button"
 												>
 													{buttonIconPosition === "left" && (
