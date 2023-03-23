@@ -2,6 +2,7 @@
  * WordPress dependeincies
  */
 import { __ } from "@wordpress/i18n";
+import { registerBlockType } from "@wordpress/blocks";
 
 /**
  * Internal dependencies
@@ -14,7 +15,7 @@ import attributes from "./attributes";
 import deprecated from "./deprecated";
 import "./style.scss";
 import metadata from "../block.json";
-const { ebConditionalRegisterBlockType } = EBPricingTableControls;
+const { ebConditionalRegisterBlockType } = window.EBPricingTableControls;
 
 ebConditionalRegisterBlockType(metadata, {
 	icon: PricingTableIcon,
