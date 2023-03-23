@@ -455,6 +455,7 @@ const edit = (props) => {
 			  text-align: ${contentAlign};
 			  ${ribbonStyle === "ribbon-4" ? "overflow: hidden;" : ""}
 		  }
+
 		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item.ribbon-1::before {
 			  content: "";
 			  color: ${ribbonColor};
