@@ -3,7 +3,7 @@ Contributors: wpdevteam, re_enter_rupok, Asif2BD, rahat89, fencermonir
 Tags: block, blocks, price, pricing, discount, offers, price table, pricing table, gutenberg, gutenberg blocks
 Requires at least: 5.6
 Tested up to: 6.5
-Stable tag:  1.2.6
+Stable tag:  1.2.7
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -62,6 +62,9 @@ Yes, it will work with any standard WordPress theme.
 
 
 == Changelog ==
+
+= 1.2.7 - 15/04/2024 =
+* Fixed: files missing error
 
 = 1.2.6 - 15/04/2024 =
 * Fixed: compatibility support with wordpress 6.5 version
