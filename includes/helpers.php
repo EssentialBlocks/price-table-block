@@ -42,16 +42,16 @@ class Price_Table_Helper
     {
         global $pagenow;
         /**
-         * Only for Admin Add/Edit Pages 
+         * Only for Admin Add/Edit Pages
          */
         if ($hook == 'post-new.php' || $hook == 'post.php' || $hook == 'site-editor.php' || ($pagenow == 'themes.php' && !empty($_SERVER['QUERY_STRING']) && str_contains($_SERVER['QUERY_STRING'], 'gutenberg-edit-site'))) {
 
-            $controls_dependencies = include_once PRICE_TABLE_BLOCKS_ADMIN_PATH . '/dist/controls.asset.php';
+            $controls_dependencies = include_once PRICE_TABLE_BLOCKS_ADMIN_PATH . '/dist/modules.asset.php';
 
             wp_register_script(
                 "eb-price-table-blocks-controls-util",
-                PRICE_TABLE_BLOCKS_ADMIN_URL . '/dist/controls.js',
-                $controls_dependencies['dependencies'],
+                PRICE_TABLE_BLOCKS_ADMIN_URL . '/dist/modules.js',
+                 array_merge($controls_dependencies['dependencies'],['lodash']),
                 $controls_dependencies['version'],
                 true
             );
@@ -59,6 +59,7 @@ class Price_Table_Helper
             wp_localize_script('eb-price-table-blocks-controls-util', 'EssentialBlocksLocalize', array(
                 'eb_wp_version' => (float) get_bloginfo('version'),
                 'rest_rootURL' => get_rest_url(),
+				'fontAwesome' => "true"
             ));
 
             if ($hook == 'post-new.php' || $hook == 'post.php') {
@@ -71,10 +72,18 @@ class Price_Table_Helper
                 ));
             }
 
+			wp_register_style(
+				'essential-blocks-iconpicker-css',
+				PRICE_TABLE_BLOCKS_ADMIN_URL . 'dist/style-modules.css',
+				[],
+				PRICE_TABLE_BLOCKS_VERSION,
+				'all'
+			);
+
             wp_enqueue_style(
                 'essential-blocks-editor-css',
-                PRICE_TABLE_BLOCKS_ADMIN_URL . '/dist/controls.css',
-                array(),
+                PRICE_TABLE_BLOCKS_ADMIN_URL . '/dist/modules.css',
+                array('essential-blocks-iconpicker-css'),
                 $controls_dependencies['version'],
                 'all'
             );
