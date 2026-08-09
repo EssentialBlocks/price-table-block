@@ -9,7 +9,7 @@ class Price_Table_Post_Meta
 {
     public function __construct()
     {
-        add_filter('init', array($this, 'register_meta'));
+        add_action('init', array($this, 'register_meta'));
     }
 
     /**

@@ -4,15 +4,22 @@
  * Plugin Name:     Price Table Block
  * Plugin URI:         https://essential-blocks.com
  * Description:     Instantly create beautiful pricing menu for eCommerce website
- * Version:         1.2.7
+ * Version:         1.5.0
  * Author:          WPDeveloper
  * Author URI:         https://wpdeveloper.net
  * License:         GPL-3.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain:     price-table-block
+ * Requires at least: 6.0
+ * Requires PHP:    7.4
  *
  * @package         price-table-block
  */
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 
 /**
  * Registers all block assets so that they can be enqueued through the block editor
@@ -24,11 +31,19 @@
 require_once __DIR__ . '/includes/font-loader.php';
 require_once __DIR__ . '/includes/post-meta.php';
 require_once __DIR__ . '/includes/helpers.php';
-require_once __DIR__ . '/lib/style-handler/style-handler.php';
 
+/**
+ * `lib/style-handler` ships as a git submodule. Guard the require so an
+ * uninitialised submodule degrades gracefully instead of fataling the site.
+ */
+if ( file_exists( __DIR__ . '/lib/style-handler/style-handler.php' ) ) {
+    require_once __DIR__ . '/lib/style-handler/style-handler.php';
+}
+
+if ( ! function_exists( 'create_block_pricing_table_block_init' ) ) {
 function create_block_pricing_table_block_init() {
 
-    define( 'PRICE_TABLE_BLOCKS_VERSION', " 1.2.7" );
+    define( 'PRICE_TABLE_BLOCKS_VERSION', '1.5.0' );
     define( 'PRICE_TABLE_BLOCKS_ADMIN_URL', plugin_dir_url( __FILE__ ) );
     define( 'PRICE_TABLE_BLOCKS_ADMIN_PATH', dirname( __FILE__ ) );
 
@@ -39,9 +54,19 @@ function create_block_pricing_table_block_init() {
         );
     }
 
-    $index_js         = PRICE_TABLE_BLOCKS_ADMIN_URL . 'dist/index.js';
-    $script_asset     = require $script_asset_path;
-    $all_dependencies = array_merge( $script_asset['dependencies'], [
+    $index_js     = PRICE_TABLE_BLOCKS_ADMIN_URL . 'dist/index.js';
+    $script_asset = require $script_asset_path;
+
+    // Generated *.asset.php files are trusted but may be stale/partial.
+    if ( ! is_array( $script_asset ) ) {
+        $script_asset = array();
+    }
+    $asset_dependencies = isset( $script_asset['dependencies'] ) && is_array( $script_asset['dependencies'] )
+        ? $script_asset['dependencies']
+        : array();
+    $asset_version = isset( $script_asset['version'] ) ? $script_asset['version'] : PRICE_TABLE_BLOCKS_VERSION;
+
+    $all_dependencies = array_merge( $asset_dependencies, [
         'wp-blocks',
         'wp-i18n',
         'wp-element',
@@ -54,7 +79,7 @@ function create_block_pricing_table_block_init() {
         'eb-pricing-table-block-editor',
         $index_js,
         $all_dependencies,
-        $script_asset['version']
+        $asset_version
     );
 
     $load_animation_js = PRICE_TABLE_BLOCKS_ADMIN_URL . 'assets/js/eb-animation-load.js';
@@ -78,37 +103,49 @@ function create_block_pricing_table_block_init() {
     wp_register_style(
         'fontpicker-default-theme',
         plugins_url( $fontpicker_theme, __FILE__ ),
-        []
+        [],
+        PRICE_TABLE_BLOCKS_VERSION
     );
 
     $fontpicker_material_theme = 'assets/css/fonticonpicker.material-theme.react.css';
     wp_register_style(
         'fontpicker-matetial-theme',
         plugins_url( $fontpicker_material_theme, __FILE__ ),
-        []
+        [],
+        PRICE_TABLE_BLOCKS_VERSION
     );
 
-    $editor_css = 'dist/style.css';
+    /**
+     * filemtime() emits a warning (PHP 8+) and returns false on a missing file,
+     * which would silently drop the cache-busting version. Fall back to the
+     * plugin version instead.
+     */
+    $editor_css      = 'dist/style.css';
+    $editor_css_path = PRICE_TABLE_BLOCKS_ADMIN_PATH . '/' . $editor_css;
+    $editor_css_ver  = file_exists( $editor_css_path ) ? filemtime( $editor_css_path ) : PRICE_TABLE_BLOCKS_VERSION;
     wp_register_style(
         'eb-pricing-table-block-editor-style',
         plugins_url( $editor_css, __FILE__ ),
         ['fontawesome-frontend-css', 'fontpicker-default-theme', 'fontpicker-matetial-theme'],
-        filemtime( PRICE_TABLE_BLOCKS_ADMIN_PATH . "/$editor_css" )
+        $editor_css_ver
     );
 
     $fontawesome_css = 'assets/css/font-awesome5.css';
     wp_register_style(
         'fontawesome-frontend-css',
         plugins_url( $fontawesome_css, __FILE__ ),
-        []
+        [],
+        PRICE_TABLE_BLOCKS_VERSION
     );
 
-    $style_css = PRICE_TABLE_BLOCKS_ADMIN_URL . 'dist/style.css';
+    $style_css      = PRICE_TABLE_BLOCKS_ADMIN_URL . 'dist/style.css';
+    $style_css_path = PRICE_TABLE_BLOCKS_ADMIN_PATH . '/dist/style.css';
+    $style_css_ver  = file_exists( $style_css_path ) ? filemtime( $style_css_path ) : PRICE_TABLE_BLOCKS_VERSION;
     wp_register_style(
         'create-block-pricing-table-block',
         $style_css,
         ['fontawesome-frontend-css', 'essential-blocks-animation'],
-        filemtime( PRICE_TABLE_BLOCKS_ADMIN_PATH . '/dist/style.css' )
+        $style_css_ver
     );
 
     if ( ! WP_Block_Type_Registry::get_instance()->is_registered( 'essential-blocks/pricing-table' ) ) {
@@ -127,5 +164,6 @@ function create_block_pricing_table_block_init() {
             ]
         );
     }
+}
 }
 add_action( 'init', 'create_block_pricing_table_block_init' );

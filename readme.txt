@@ -1,9 +1,10 @@
 === Price Table Block ===
 Contributors: wpdevteam, re_enter_rupok, Asif2BD, rahat89, fencermonir
 Tags: block, blocks, price, pricing, discount, offers, price table, pricing table, gutenberg, gutenberg blocks
-Requires at least: 5.6
-Tested up to: 6.5
-Stable tag:  1.2.7
+Requires at least: 6.0
+Tested up to: 7.0
+Requires PHP: 7.4
+Stable tag: 1.5.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -62,6 +63,15 @@ Yes, it will work with any standard WordPress theme.
 
 
 == Changelog ==
+
+= 1.5.0 - 09/08/2026 =
+* Changed: minimum requirements raised to WordPress 6.0 and PHP 7.4
+* Fixed: responsive (tablet/mobile) styles not applying in the editor preview
+* Fixed: fatal error on PHP 7.x caused by the PHP 8 only str_contains() call
+* Fixed: fatal error when the bundled style-handler library is missing
+* Fixed: block registration on WordPress 5.7
+* Fixed: PHP 8 warnings from asset version lookups and block attribute parsing
+* Improved: compatibility tested up to WordPress 7.0 and PHP 8.5
 
 = 1.2.7 - 15/04/2024 =
 * Fixed: files missing error
