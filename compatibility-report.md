@@ -1,7 +1,7 @@
 # Price Table Block — Compatibility Report
 
 **Plugin:** Price Table Block (`price-table-block`)
-**Version:** 1.2.7 → **1.5.0**
+**Version:** 1.2.7 → **1.3.0**
 **Branch:** `price-table-block-dev` (branched off `latest`)
 **Date of audit:** 2026-08-09
 **Nothing committed or pushed — all changes left in the working tree.**
@@ -101,15 +101,15 @@ Checked and found **clean**: no `mysql_*`, `create_function()`, `each()`, `ereg*
 | 14 | Init function wrapped in `if ( ! function_exists( … ) )`. |
 | 15 | Removed the duplicated leading slash on the two `dist/` URLs. |
 | 16 | `add_filter('init', …)` → `add_action('init', …)`. |
-| 17 | Version literals cleaned and bumped to `1.5.0` in the header, `PRICE_TABLE_BLOCKS_VERSION`, `readme.txt` `Stable tag`, and `package.json`. |
+| 17 | Version literals cleaned and bumped to `1.3.0` in the header, `PRICE_TABLE_BLOCKS_VERSION`, `readme.txt` `Stable tag`, and `package.json`. |
 | 18 | `enqueues()` returns early unless both plugin constants are defined. |
 | 19 | The three `wp_register_style()` calls now pass `PRICE_TABLE_BLOCKS_VERSION`. |
 
 Metadata updated:
 
-- `price-table-block.php` header — `Version: 1.5.0`, added `Requires at least: 6.0` and `Requires PHP: 7.4`.
-- `readme.txt` — `Tested up to: 7.0`, added `Requires PHP: 7.4`, `Requires at least: 6.0`, `Stable tag: 1.5.0`, new `= 1.5.0 - 09/08/2026 =` changelog entry.
-- `package.json` — `"version": "1.5.0"`.
+- `price-table-block.php` header — `Version: 1.3.0`, added `Requires at least: 6.0` and `Requires PHP: 7.4`.
+- `readme.txt` — `Tested up to: 7.1`, added `Requires PHP: 7.4`, `Requires at least: 6.0`, `Stable tag: 1.3.0`, new `= 1.3.0 - 20/08/2026 =` changelog entry.
+- `package.json` — `"version": "1.3.0"`.
 
 No feature, UI, block markup, attribute, option name, hook name, or public API was changed.
 
@@ -125,7 +125,7 @@ No feature, UI, block markup, attribute, option name, hook name, or public API w
 
 4. **`dist/` was built with `@wordpress/scripts` ^19.2.2** and lists `react` / `react-dom` as dependencies. WP 7.0 ships React 19 in the editor. Nothing in the audited PHP breaks, but the JS bundle should be rebuilt against current `@wordpress/scripts` and smoke-tested in the WP 7.0 editor before release. Out of scope for a PHP compatibility pass.
 
-5. **Adding `$ver` to three stylesheets** (issue 19) changes the `?ver=` query string on those asset URLs from the WordPress version to `1.5.0`. Behaviour is identical; visitors get one cache-bust on upgrade. Say the word if you want those reverted.
+5. **Adding `$ver` to three stylesheets** (issue 19) changes the `?ver=` query string on those asset URLs from the WordPress version to `1.3.0`. Behaviour is identical; visitors get one cache-bust on upgrade. Say the word if you want those reverted.
 
 6. ~~**`Requires at least: 5.6` was kept**~~ — **resolved 2026-08-09: the floor was raised to WP 6.0 on request.** One consequence remains open: `Price_Table_Helper::get_block_register_path()` exists solely to hand a block *name* rather than a *directory* to `register_block_type()` on WP 5.6/5.7. At a 6.0 floor its `version_compare( …, '5.8', '>=' )` is always true, so the fallback branch is now dead code. It is harmless and was left in place — say the word to delete the helper and inline `PRICE_TABLE_BLOCKS_ADMIN_PATH` at the call site.
 
@@ -143,9 +143,9 @@ None that could not be reconciled. The one genuine tension — PHP 8's `str_cont
 
 ```
 Requires at least: 6.0
-Tested up to:      7.0
+Tested up to:      7.1
 Requires PHP:      7.4
-Stable tag:        1.5.0
+Stable tag:        1.3.0
 ```
 
 ---
