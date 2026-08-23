@@ -77,10 +77,21 @@ class Price_Table_Helper
                 ? $controls_dependencies['version']
                 : PRICE_TABLE_BLOCKS_VERSION;
 
+            /**
+             * The controls bundle contains Babel-compiled `async`/`await` (the font
+             * picker requests `/wp/v2/font-families`), which resolves
+             * `window.regeneratorRuntime` at call time. DependencyExtractionWebpackPlugin
+             * externalises that global but emits `wp-polyfill` instead of the
+             * `regenerator-runtime` handle, because wp-polyfill used to bundle it.
+             * WordPress 7.1's wp-polyfill no longer carries it, and core registers
+             * `regenerator-runtime` with no dependents, so it never loads unless asked
+             * for. Without this the font picker throws "Cannot read properties of
+             * undefined (reading 'mark')" the moment the Typography panel is opened.
+             */
             wp_register_script(
                 "eb-price-table-blocks-controls-util",
                 PRICE_TABLE_BLOCKS_ADMIN_URL . 'dist/modules.js',
-                 array_merge($controls_deps,['lodash']),
+                array_values(array_unique(array_merge($controls_deps, ['lodash', 'regenerator-runtime']))),
                 $controls_version,
                 true
             );
