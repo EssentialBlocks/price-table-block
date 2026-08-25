@@ -411,10 +411,27 @@ export default function Style(props) {
 		attributes,
 	});
 
+	/**
+	 * Ribbon style 4 is a rotated banner (200px wide at right: -55px) that has
+	 * to be clipped to the box to read as a corner triangle. That clip used to
+	 * sit on the parent .eb-pricing, which also clipped .eb-pricing-item's outer
+	 * box-shadow. An inset shadow paints inside the padding box and was
+	 * unaffected, which is why the shadow only disappeared with Inset off.
+	 *
+	 * The ribbon is an absolutely positioned ::before on .eb-pricing-item, but
+	 * that element is statically positioned, so its containing block was
+	 * .eb-pricing. Making the item relatively positioned moves the containing
+	 * block onto it, so the item's own overflow clips the ribbon instead. An
+	 * element's overflow never clips its own box-shadow, so the outer shadow
+	 * survives. Scoped to ribbon-4 — no other ribbon style overflows enough to
+	 * need clipping.
+	 */
+	const ribbon4Clip =
+		ribbonStyle === "ribbon-4" ? "position: relative; overflow: hidden;" : "";
+
 	const desktopStyles = `
 		  .eb-pricing-wrapper.${blockId} .eb-pricing {
 			  text-align: ${contentAlign};
-			  ${ribbonStyle === "ribbon-4" ? "overflow: hidden;" : ""}
 		  }
 
 		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item.ribbon-1::before {
@@ -449,6 +466,7 @@ export default function Style(props) {
 			  ${priceTableBackgroundStylesDesktop}
 			  ${bdShadowStyesDesktop}
 			  transition: ${priceTableBgTransitionStyle}, ${bdShadowTransitionStyle};
+			  ${ribbon4Clip}
 		  }
 		  .eb-pricing-wrapper.${blockId} .eb-pricing-item-overlay::before  {
 			  ${priceTableOverlayStylesDesktop}

@@ -116,6 +116,73 @@ function create_block_pricing_table_block_init() {
     );
 
     /**
+     * Font Awesome 6, not 5 — and never at the mercy of a shared handle.
+     *
+     * `wordpress-icon-picker` ships a Font Awesome 6 icon list while emitting
+     * FA5-era prefix classes, so a chosen icon is saved as `fas fa-house`. Under
+     * an FA5 stylesheet the `.fas` prefix still resolves and the `<i>` keeps its
+     * box, but `.fa-house:before` is never defined, so `content` stays empty and
+     * the icon renders as blank space in a correctly positioned container. 798 of
+     * the 1873 icons the picker offers are FA6 renames or FA6 additions and fail
+     * exactly this way.
+     *
+     * `fontawesome-frontend-css` is a handle shared with the other Essential
+     * Blocks standalone plugins, and `WP_Dependencies::add()` keeps the first
+     * registration and silently discards the rest. `active_plugins` is sorted, so
+     * `button-group/button-group.php` registers before this file and its Font
+     * Awesome 5.15.2 build takes the handle for the whole site — which is what
+     * emptied this block's icons in both the picker and the saved markup.
+     *
+     * The 6.5.1 registration below is still offered, so a sibling that has no
+     * Font Awesome of its own inherits FA6. But this block no longer *depends* on
+     * the shared handle: when another plugin already owns it, a private handle is
+     * registered instead, so the FA6 face and the full FA6 glyph set are on the
+     * page no matter who won.
+     */
+    $fontawesome_css = plugins_url( 'assets/css/fontawesome/css/all.min.css', __FILE__ );
+
+    wp_register_style(
+        'fontawesome-frontend-css',
+        $fontawesome_css,
+        [],
+        PRICE_TABLE_BLOCKS_VERSION
+    );
+
+    $shared_fontawesome = wp_styles()->query( 'fontawesome-frontend-css', 'registered' );
+    $fontawesome_handle = ( $shared_fontawesome && $shared_fontawesome->src === $fontawesome_css )
+        ? 'fontawesome-frontend-css'
+        : 'eb-price-table-fontawesome';
+
+    if ( 'eb-price-table-fontawesome' === $fontawesome_handle ) {
+        wp_register_style(
+            $fontawesome_handle,
+            $fontawesome_css,
+            [],
+            PRICE_TABLE_BLOCKS_VERSION
+        );
+    }
+
+    /**
+     * Loading FA6 alongside a sibling's FA5 is not enough on its own: both files
+     * define `.fas` / `.far` / `.fab`, and 28 icon names that exist in both
+     * releases carry different codepoints, so the winner would come down to
+     * stylesheet order. This layer restates Font Awesome 6 under this block's own
+     * scopes — `.eb-pricing-wrapper`, `#wipIcon`, `.wip-iconpicker-popup` — so it
+     * wins on specificity instead, and cannot reach any other plugin's icons.
+     *
+     * It is a dependency of both styles below rather than a separate enqueue so
+     * it is always printed directly after the Font Awesome build it corrects.
+     */
+    $fontawesome_compat_css  = 'assets/css/fontawesome-compat.css';
+    $fontawesome_compat_path = PRICE_TABLE_BLOCKS_ADMIN_PATH . '/' . $fontawesome_compat_css;
+    wp_register_style(
+        'eb-price-table-fontawesome-compat',
+        plugins_url( $fontawesome_compat_css, __FILE__ ),
+        [ $fontawesome_handle ],
+        file_exists( $fontawesome_compat_path ) ? filemtime( $fontawesome_compat_path ) : PRICE_TABLE_BLOCKS_VERSION
+    );
+
+    /**
      * filemtime() emits a warning (PHP 8+) and returns false on a missing file,
      * which would silently drop the cache-busting version. Fall back to the
      * plugin version instead.
@@ -136,37 +203,13 @@ function create_block_pricing_table_block_init() {
      * (which has `wp-admin`) but came out as an empty box in the canvas, where
      * `.dashicons-*:before` was never defined so `content` computed to `none` and
      * `font-family` fell through to the theme font. Font Awesome was unaffected
-     * only because it was already declared as a dependency below.
+     * only because it was already declared as a dependency above.
      */
     wp_register_style(
         'eb-pricing-table-block-editor-style',
         plugins_url( $editor_css, __FILE__ ),
-        ['fontawesome-frontend-css', 'dashicons', 'fontpicker-default-theme', 'fontpicker-matetial-theme'],
+        ['eb-price-table-fontawesome-compat', 'dashicons', 'fontpicker-default-theme', 'fontpicker-matetial-theme'],
         $editor_css_ver
-    );
-
-    /**
-     * Font Awesome 6, not 5.
-     *
-     * `wordpress-icon-picker` ships a Font Awesome 6 icon list, so more than half
-     * of the icons it offers (every FA6 rename — `xmark`, `house`, `gear`,
-     * `magnifying-glass`, the digits, …) has no glyph in FA5 and rendered as an
-     * empty box in both the picker and the saved markup.
-     *
-     * `fontawesome-frontend-css` is a handle shared with the other Essential
-     * Blocks standalone plugins, and `WP_Dependencies::add()` keeps the first
-     * registration and silently discards the rest. Because `active_plugins` is
-     * sorted alphabetically, this plugin used to win that race and force its FA5
-     * onto siblings that ship FA6 (social-share-block), breaking their icons too.
-     * Registering the same 6.5.1 build every sibling uses makes whichever plugin
-     * wins the handle irrelevant.
-     */
-    $fontawesome_css = 'assets/css/fontawesome/css/all.min.css';
-    wp_register_style(
-        'fontawesome-frontend-css',
-        plugins_url( $fontawesome_css, __FILE__ ),
-        [],
-        PRICE_TABLE_BLOCKS_VERSION
     );
 
     $style_css      = PRICE_TABLE_BLOCKS_ADMIN_URL . 'dist/style.css';
@@ -182,7 +225,7 @@ function create_block_pricing_table_block_init() {
     wp_register_style(
         'create-block-pricing-table-block',
         $style_css,
-        ['fontawesome-frontend-css', 'dashicons', 'essential-blocks-animation'],
+        ['eb-price-table-fontawesome-compat', 'dashicons', 'essential-blocks-animation'],
         $style_css_ver
     );
 
