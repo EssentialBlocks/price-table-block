@@ -1,0 +1,300 @@
+/*!
+ * Font Awesome 6 compatibility layer -- Pricing Table block only.
+ *
+ * `fontawesome-frontend-css` is a style handle shared by every Essential Blocks
+ * standalone plugin, and `WP_Dependencies::add()` keeps the FIRST registration
+ * and silently discards every later one. `active_plugins` is sorted, so
+ * `button-group/button-group.php` registers before
+ * `price-table-block/price-table-block.php`, and its Font Awesome 5.15.2 build
+ * takes the handle for the whole site.
+ *
+ * The icon picker this block uses (`wordpress-icon-picker`) offers a Font
+ * Awesome 6 icon list while emitting FA5-era prefix classes, i.e.
+ * `<i class="fas fa-house">`. Under FA5 the `.fas` prefix still resolves, so the
+ * `<i>` keeps its box and its sizing, but `.fa-house:before` is never defined --
+ * 798 of the 1873 icons the picker offers are FA6 renames or FA6 additions --
+ * so `content` stays empty and the icon draws as blank space inside a correctly
+ * positioned container.
+ *
+ * This file re-asserts Font Awesome 6 inside this block's own scopes only. Every
+ * selector is prefixed, so it outranks the unprefixed FA5 rules on specificity
+ * rather than on load order, and it cannot reach the Button Group block (whose
+ * picker is react-fonticonpicker, not `#wipIcon` / `.wip-iconpicker-popup`) or
+ * any other plugin's icons.
+ *
+ * Scopes:
+ *   .eb-pricing-wrapper    - saved + editor block markup (all three icon slots)
+ *   #wipIcon               - icon picker trigger/preview, editor sidebar
+ *   .wip-iconpicker-popup  - icon picker grid popover, editor sidebar
+ *
+ * Rule order below mirrors Font Awesome 6's own: the bare `.fa` default first,
+ * then families, then weights. All of these selectors carry equal specificity,
+ * so on `class="fa fab fa-twitter"` the later `.fab` rules must be the ones that
+ * win -- reordering them would silently break the brand and regular styles.
+ */
+
+/* Font family + weight. FA5 sets these at (0,1,0); these win at (0,2,0)+. */
+.eb-pricing-wrapper .fa,
+#wipIcon .fa,
+.wip-iconpicker-popup .fa {
+	font-family: "Font Awesome 6 Free";
+	font-weight: 900;
+}
+
+.eb-pricing-wrapper .fa-classic,
+#wipIcon .fa-classic,
+.wip-iconpicker-popup .fa-classic,
+.eb-pricing-wrapper .fa-regular,
+#wipIcon .fa-regular,
+.wip-iconpicker-popup .fa-regular,
+.eb-pricing-wrapper .fa-solid,
+#wipIcon .fa-solid,
+.wip-iconpicker-popup .fa-solid,
+.eb-pricing-wrapper .far,
+#wipIcon .far,
+.wip-iconpicker-popup .far,
+.eb-pricing-wrapper .fas,
+#wipIcon .fas,
+.wip-iconpicker-popup .fas {
+	font-family: "Font Awesome 6 Free";
+}
+
+.eb-pricing-wrapper .fa-brands,
+#wipIcon .fa-brands,
+.wip-iconpicker-popup .fa-brands,
+.eb-pricing-wrapper .fab,
+#wipIcon .fab,
+.wip-iconpicker-popup .fab {
+	font-family: "Font Awesome 6 Brands";
+}
+
+.eb-pricing-wrapper .fa-brands,
+#wipIcon .fa-brands,
+.wip-iconpicker-popup .fa-brands,
+.eb-pricing-wrapper .fab,
+#wipIcon .fab,
+.wip-iconpicker-popup .fab {
+	font-weight: 400;
+}
+
+.eb-pricing-wrapper .fa-regular,
+#wipIcon .fa-regular,
+.wip-iconpicker-popup .fa-regular,
+.eb-pricing-wrapper .far,
+#wipIcon .far,
+.wip-iconpicker-popup .far {
+	font-weight: 400;
+}
+
+.eb-pricing-wrapper .fa-solid,
+#wipIcon .fa-solid,
+.wip-iconpicker-popup .fa-solid,
+.eb-pricing-wrapper .fas,
+#wipIcon .fas,
+.wip-iconpicker-popup .fas {
+	font-weight: 900;
+}
+
+/*
+ * Codepoint corrections.
+ *
+ * 28 icon names exist in both FA5 and FA6 but map to different codepoints, so
+ * whichever stylesheet loaded last would decide the glyph. With the family
+ * pinned to FA6 above, an FA5 codepoint resolves to the wrong glyph or to
+ * nothing, so the FA6 value is restated here at the same raised specificity.
+ */
+/* FA5 \f069 -> FA6 \2a */
+.eb-pricing-wrapper .fa-asterisk:before,
+#wipIcon .fa-asterisk:before,
+.wip-iconpicker-popup .fa-asterisk:before {
+	content: "\2a";
+}
+
+/* FA5 \f1fa -> FA6 \40 */
+.eb-pricing-wrapper .fa-at:before,
+#wipIcon .fa-at:before,
+.wip-iconpicker-popup .fa-at:before {
+	content: "\40";
+}
+
+/* FA5 \f381 -> FA6 \f0ed */
+.eb-pricing-wrapper .fa-cloud-download-alt:before,
+#wipIcon .fa-cloud-download-alt:before,
+.wip-iconpicker-popup .fa-cloud-download-alt:before {
+	content: "\f0ed";
+}
+
+/* FA5 \f382 -> FA6 \f0ee */
+.eb-pricing-wrapper .fa-cloud-upload-alt:before,
+#wipIcon .fa-cloud-upload-alt:before,
+.wip-iconpicker-popup .fa-cloud-upload-alt:before {
+	content: "\f0ee";
+}
+
+/* FA5 \f108 -> FA6 \f390 */
+.eb-pricing-wrapper .fa-desktop:before,
+#wipIcon .fa-desktop:before,
+.wip-iconpicker-popup .fa-desktop:before {
+	content: "\f390";
+}
+
+/* FA5 \f155 -> FA6 \24 */
+.eb-pricing-wrapper .fa-dollar-sign:before,
+#wipIcon .fa-dollar-sign:before,
+.wip-iconpicker-popup .fa-dollar-sign:before {
+	content: "\24";
+}
+
+/* FA5 \f52c -> FA6 \3d */
+.eb-pricing-wrapper .fa-equals:before,
+#wipIcon .fa-equals:before,
+.wip-iconpicker-popup .fa-equals:before {
+	content: "\3d";
+}
+
+/* FA5 \f12a -> FA6 \21 */
+.eb-pricing-wrapper .fa-exclamation:before,
+#wipIcon .fa-exclamation:before,
+.wip-iconpicker-popup .fa-exclamation:before {
+	content: "\21";
+}
+
+/* FA5 \f425 -> FA6 \f2b4 */
+.eb-pricing-wrapper .fa-font-awesome-flag:before,
+#wipIcon .fa-font-awesome-flag:before,
+.wip-iconpicker-popup .fa-font-awesome-flag:before {
+	content: "\f2b4";
+}
+
+/* FA5 \f4e6 -> FA6 \f2b4 */
+.eb-pricing-wrapper .fa-font-awesome-logo-full:before,
+#wipIcon .fa-font-awesome-logo-full:before,
+.wip-iconpicker-popup .fa-font-awesome-logo-full:before {
+	content: "\f2b4";
+}
+
+/* FA5 \f531 -> FA6 \3e */
+.eb-pricing-wrapper .fa-greater-than:before,
+#wipIcon .fa-greater-than:before,
+.wip-iconpicker-popup .fa-greater-than:before {
+	content: "\3e";
+}
+
+/* FA5 \f4c2 -> FA6 \f2a7 */
+.eb-pricing-wrapper .fa-hands:before,
+#wipIcon .fa-hands:before,
+.wip-iconpicker-popup .fa-hands:before {
+	content: "\f2a7";
+}
+
+/* FA5 \f292 -> FA6 \23 */
+.eb-pricing-wrapper .fa-hashtag:before,
+#wipIcon .fa-hashtag:before,
+.wip-iconpicker-popup .fa-hashtag:before {
+	content: "\23";
+}
+
+/* FA5 \f47d -> FA6 \f0f8 */
+.eb-pricing-wrapper .fa-hospital-alt:before,
+#wipIcon .fa-hospital-alt:before,
+.wip-iconpicker-popup .fa-hospital-alt:before {
+	content: "\f0f8";
+}
+
+/* FA5 \e065 -> FA6 \e1b0 */
+.eb-pricing-wrapper .fa-house-user:before,
+#wipIcon .fa-house-user:before,
+.wip-iconpicker-popup .fa-house-user:before {
+	content: "\e1b0";
+}
+
+/* FA5 \f536 -> FA6 \3c */
+.eb-pricing-wrapper .fa-less-than:before,
+#wipIcon .fa-less-than:before,
+.wip-iconpicker-popup .fa-less-than:before {
+	content: "\3c";
+}
+
+/* FA5 \f3c7 -> FA6 \f23a */
+.eb-pricing-wrapper .fa-medium-m:before,
+#wipIcon .fa-medium-m:before,
+.wip-iconpicker-popup .fa-medium-m:before {
+	content: "\f23a";
+}
+
+/* FA5 \f10b -> FA6 \f3ce */
+.eb-pricing-wrapper .fa-mobile:before,
+#wipIcon .fa-mobile:before,
+.wip-iconpicker-popup .fa-mobile:before {
+	content: "\f3ce";
+}
+
+/* FA5 \f295 -> FA6 \25 */
+.eb-pricing-wrapper .fa-percent:before,
+#wipIcon .fa-percent:before,
+.wip-iconpicker-popup .fa-percent:before {
+	content: "\25";
+}
+
+/* FA5 \f541 -> FA6 \25 */
+.eb-pricing-wrapper .fa-percentage:before,
+#wipIcon .fa-percentage:before,
+.wip-iconpicker-popup .fa-percentage:before {
+	content: "\25";
+}
+
+/* FA5 \f067 -> FA6 \2b */
+.eb-pricing-wrapper .fa-plus:before,
+#wipIcon .fa-plus:before,
+.wip-iconpicker-popup .fa-plus:before {
+	content: "\2b";
+}
+
+/* FA5 \f128 -> FA6 \3f */
+.eb-pricing-wrapper .fa-question:before,
+#wipIcon .fa-question:before,
+.wip-iconpicker-popup .fa-question:before {
+	content: "\3f";
+}
+
+/* FA5 \f3ef -> FA6 \f198 */
+.eb-pricing-wrapper .fa-slack-hash:before,
+#wipIcon .fa-slack-hash:before,
+.wip-iconpicker-popup .fa-slack-hash:before {
+	content: "\f198";
+}
+
+/* FA5 \f2ac -> FA6 \f2ab */
+.eb-pricing-wrapper .fa-snapchat-ghost:before,
+#wipIcon .fa-snapchat-ghost:before,
+.wip-iconpicker-popup .fa-snapchat-ghost:before {
+	content: "\f2ab";
+}
+
+/* FA5 \f10a -> FA6 \f3fb */
+.eb-pricing-wrapper .fa-tablet:before,
+#wipIcon .fa-tablet:before,
+.wip-iconpicker-popup .fa-tablet:before {
+	content: "\f3fb";
+}
+
+/* FA5 \f3fd -> FA6 \f625 */
+.eb-pricing-wrapper .fa-tachometer-alt:before,
+#wipIcon .fa-tachometer-alt:before,
+.wip-iconpicker-popup .fa-tachometer-alt:before {
+	content: "\f625";
+}
+
+/* FA5 \f3fe -> FA6 \f2c6 */
+.eb-pricing-wrapper .fa-telegram-plane:before,
+#wipIcon .fa-telegram-plane:before,
+.wip-iconpicker-popup .fa-telegram-plane:before {
+	content: "\f2c6";
+}
+
+/* FA5 \f224 -> FA6 \f225 */
+.eb-pricing-wrapper .fa-transgender:before,
+#wipIcon .fa-transgender:before,
+.wip-iconpicker-popup .fa-transgender:before {
+	content: "\f225";
+}

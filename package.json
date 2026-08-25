@@ -1,9 +1,9 @@
 {
 	"name": "pricing-table",
-	"version": "1.2.5",
-	"description": "EB Pricing Table will let you create effective product pricing table with perfect styling to get more sales from your prospective buyers.",
+	"version": "1.3.0",
+	"description": "Pricing Table will let you create effective product pricing table with perfect styling to get more sales from your prospective buyers.",
 	"author": "The WordPress Contributors",
-	"license": "GPL-2.0-or-later",
+	"license": "GPL-3.0-or-later",
 	"main": "Gruntfile.js",
 	"scripts": {
 		"build": "wp-scripts build",
@@ -18,7 +18,6 @@
 		"@wordpress/scripts": "^19.2.2"
 	},
 	"dependencies": {
-		"@fonticonpicker/react-fonticonpicker": "^1.2.0",
 		"classnames": "^2.2.6",
 		"prop-types": "^15.7.2",
 		"react-sortable-hoc": "^1.11.0",

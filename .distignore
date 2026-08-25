@@ -1,61 +1,133 @@
-# A set of files you probably don't want in your WordPress.org distribution
-.babelrc
-.deployignore
-.distignore
-.editorconfig
-.eslintignore
-.eslintrc
-.gitmodules
+# A set of files you probably don't want in your WordPress.org distribution.
+#
+# Consumed by `wp dist-archive`. A line that resolves to a real directory is
+# automatically expanded to `<dir>/*`, so bare directory names are fine.
+
+# --- Version control ---
 .git
 .gitignore
-.github
 .gitattributes
+.gitmodules
+.github
 .gitlab-ci.yml
+
+# --- CI / deployment ---
 .travis.yml
+.circleci/config.yml
+bitbucket-pipelines.yml
+behat.yml
+dependencies.yml
+wp-cli.local.yml
+.deployignore
+.distignore
+
+# --- Editor / OS / tooling ---
+.editorconfig
+.idea
+.vscode
+.claude
 .DS_Store
 Thumbs.db
-behat.yml
-bitbucket-pipelines.yml
-bin
-.circleci/config.yml
-composer.json
-composer.lock
-dependencies.yml
+.env
+.env.*
+logs
+*.log
+coverage
+
+# --- Build config & sources (compiled output lives in dist/) ---
+src
+util
+config
+webpack.config.js
 Gruntfile.js
+gulpfile.js
+rollup.config.js
+vite.config.js
+postcss.config.js
+tsconfig.json
+
+# --- Babel ---
+.babelrc
+.babelrc.js
+.babelrc.json
+babel.config.js
+babel.config.json
+
+# --- Linting & formatting ---
+.eslintrc
+.eslintrc.js
+.eslintrc.json
+.eslintrc.yml
+.eslintignore
+.eslintcache
+.prettierrc
+.prettierrc.js
+.prettierrc.json
+.prettierignore
+prettier.config.js
+.stylelintrc
+.stylelintrc.js
+.stylelintrc.json
+.phpcs.xml
+.phpcs.xml.dist
+phpcs.xml
+phpcs.xml.dist
+
+# --- Package managers ---
 package.json
 package-lock.json
+yarn.lock
+pnpm-lock.yaml
+.npmrc
+.nvmrc
+.yarnrc
+.yarnrc.yml
+composer.json
+composer.lock
+node_modules
+node_modules/**/*.*
+vendor
+
+# --- Tests & local environments ---
+tests
+bin
 phpunit.xml
 phpunit.xml.dist
 multisite.xml
 multisite.xml.dist
-.phpcs.xml
-phpcs.xml
-.phpcs.xml.dist
-phpcs.xml.dist
-README.md
-webpack.config.js
-wp-cli.local.yml
-yarn.lock
-tests
-vendor
-node_modules
-*.sql
-*.tar.gz
-*.zip
-gulpfile.js
-.git
-node_modules/**/*.*
-**/*.zip
-src
-util
+.wp-env.json
+.wp-env.override.json
+
+# --- Docs & repo assets (readme.txt is the only one WordPress.org needs) ---
+*.md
 .wordpress-org
-.idea
+
+# --- Submodule sources: ship only the built style-handler ---
+# An initialised submodule leaves a `.git` *file* (a gitlink pointer). The root
+# `.git` entry expands to `.git/*` because it is a directory, so it cannot match
+# this one — it needs its own explicit path.
+lib/style-handler/.git
 controls
-config
 lib/style-handler/helpers.js
 lib/style-handler/style-handler.js
 lib/style-handler/gitignore
 lib/style-handler/dist/index.js.map
 lib/style-handler/README.md
-dist/*.*.map
 
+# --- Legacy webfont formats ---
+# Every @font-face lists woff2/woff/ttf ahead of these, so a browser new enough
+# to run the block editor never requests them. .eot is IE-only (WordPress
+# dropped IE11 in 5.8); SVG fonts were removed from Chrome 38 and only ever
+# worked in Safari <= 4.1 / Android <= 4.3.
+#
+# assets/fonts/ now holds only the fontIconPicker face; the Font Awesome 6
+# webfonts live in assets/css/fontawesome/webfonts/ and ship woff2 + ttf only.
+assets/fonts/*.eot
+assets/fonts/*.svg
+
+# --- Archives & build artefacts ---
+*.map
+*.sql
+*.tar.gz
+*.zip
+**/*.zip

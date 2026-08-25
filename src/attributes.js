@@ -37,7 +37,7 @@ import {
 	salepriceCurrencyMargin,
 	featuresIconSize,
 } from "./constants";
-import { truncate } from "lodash";
+
 
 const attributes = {
 	// the following 4 attributes is must required for responsive options and asset generation for frontend
@@ -232,21 +232,27 @@ const attributes = {
 	},
 	priceTextColor: {
 		type: "string",
+		default: "#101828",
 	},
 	priceCurrencyTextColor: {
 		type: "string",
+		default: "#101828",
 	},
 	salePriceTextColor: {
 		type: "string",
+		default: "#101828",
 	},
 	salepriceCurrencyTextColor: {
 		type: "string",
+		default: "#101828",
 	},
 	pricingPeriodTextColor: {
 		type: "string",
+		default: "#475467",
 	},
 	featuresTextColor: {
 		type: "string",
+		default: "#475467",
 	},
 	contentAlign: {
 		type: "String",
@@ -286,6 +292,7 @@ const attributes = {
 	},
 	hoverTextColor: {
 		type: "string",
+		default: "#FFFFFF",
 	},
 	buttonURL: {
 		type: "string",
@@ -351,6 +358,7 @@ const attributes = {
 	// background attributes
 	...generateBackgroundAttributes(buttonBackgroundControl, {
 		defaultFillColor: "#00c853",
+		defaultHovFillColor: "#98A2B3",
 		noOverlay: true,
 		noMainBgi: true,
 	}),
@@ -360,7 +368,12 @@ const attributes = {
 	}),
 	// border shadow attriubtes
 	...generateBorderShadowAttributes(buttonBorderShadow),
-	...generateBorderShadowAttributes(wrapperBorderShadow),
+	// Opt in to a default shadow colour so the Price Table Box > Box Shadow
+	// offset/blur/spread/inset controls produce a visible shadow on their own.
+	// Without a colour the style generator emits no `box-shadow` at all.
+	...generateBorderShadowAttributes(wrapperBorderShadow, {
+		defaultShadowColor: "rgba(0,0,0,0.2)",
+	}),
 	...generateBorderShadowAttributes(iconBorderShadow),
 	...generateBorderShadowAttributes(ribbonBorderShadow),
 };
