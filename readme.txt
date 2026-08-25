@@ -64,7 +64,7 @@ Yes, it will work with any standard WordPress theme.
 
 == Changelog ==
 
-= 1.3.0 - 23/08/2026 =
+= 1.3.0 - 25/08/2026 =
 * Fixed: PHP 8.0–8.5 compatibility issues
 * Fixed: WordPress version detection
 * Fixed: PHP 7.x compatibility
