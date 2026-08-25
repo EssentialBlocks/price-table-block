@@ -123,14 +123,45 @@ function create_block_pricing_table_block_init() {
     $editor_css      = 'dist/style.css';
     $editor_css_path = PRICE_TABLE_BLOCKS_ADMIN_PATH . '/' . $editor_css;
     $editor_css_ver  = file_exists( $editor_css_path ) ? filemtime( $editor_css_path ) : PRICE_TABLE_BLOCKS_VERSION;
+    /**
+     * `dashicons` is a core-registered handle and must be declared here.
+     *
+     * The block editor canvas is an iframe, and it only receives the stylesheets
+     * WordPress collects for it — a block's `editor_style` and that handle's
+     * dependency chain. `dashicons` is not in that set on its own: it reaches the
+     * admin document only because the `wp-admin` style depends on it, and the
+     * iframe is a separate document that never gets `wp-admin`.
+     *
+     * Without this, a Dashicon chosen in the icon picker rendered in the sidebar
+     * (which has `wp-admin`) but came out as an empty box in the canvas, where
+     * `.dashicons-*:before` was never defined so `content` computed to `none` and
+     * `font-family` fell through to the theme font. Font Awesome was unaffected
+     * only because it was already declared as a dependency below.
+     */
     wp_register_style(
         'eb-pricing-table-block-editor-style',
         plugins_url( $editor_css, __FILE__ ),
-        ['fontawesome-frontend-css', 'fontpicker-default-theme', 'fontpicker-matetial-theme'],
+        ['fontawesome-frontend-css', 'dashicons', 'fontpicker-default-theme', 'fontpicker-matetial-theme'],
         $editor_css_ver
     );
 
-    $fontawesome_css = 'assets/css/font-awesome5.css';
+    /**
+     * Font Awesome 6, not 5.
+     *
+     * `wordpress-icon-picker` ships a Font Awesome 6 icon list, so more than half
+     * of the icons it offers (every FA6 rename — `xmark`, `house`, `gear`,
+     * `magnifying-glass`, the digits, …) has no glyph in FA5 and rendered as an
+     * empty box in both the picker and the saved markup.
+     *
+     * `fontawesome-frontend-css` is a handle shared with the other Essential
+     * Blocks standalone plugins, and `WP_Dependencies::add()` keeps the first
+     * registration and silently discards the rest. Because `active_plugins` is
+     * sorted alphabetically, this plugin used to win that race and force its FA5
+     * onto siblings that ship FA6 (social-share-block), breaking their icons too.
+     * Registering the same 6.5.1 build every sibling uses makes whichever plugin
+     * wins the handle irrelevant.
+     */
+    $fontawesome_css = 'assets/css/fontawesome/css/all.min.css';
     wp_register_style(
         'fontawesome-frontend-css',
         plugins_url( $fontawesome_css, __FILE__ ),
@@ -141,10 +172,17 @@ function create_block_pricing_table_block_init() {
     $style_css      = PRICE_TABLE_BLOCKS_ADMIN_URL . 'dist/style.css';
     $style_css_path = PRICE_TABLE_BLOCKS_ADMIN_PATH . '/dist/style.css';
     $style_css_ver  = file_exists( $style_css_path ) ? filemtime( $style_css_path ) : PRICE_TABLE_BLOCKS_VERSION;
+    /**
+     * `dashicons` is declared here for the same reason as the editor style above.
+     *
+     * Nothing pulls it onto a public page: it reached the frontend only for
+     * logged-in users, because the admin bar's style depends on it. Logged out —
+     * i.e. for every real visitor — a saved Dashicon rendered as an empty box.
+     */
     wp_register_style(
         'create-block-pricing-table-block',
         $style_css,
-        ['fontawesome-frontend-css', 'essential-blocks-animation'],
+        ['fontawesome-frontend-css', 'dashicons', 'essential-blocks-animation'],
         $style_css_ver
     );
 

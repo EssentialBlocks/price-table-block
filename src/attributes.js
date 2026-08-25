@@ -368,7 +368,12 @@ const attributes = {
 	}),
 	// border shadow attriubtes
 	...generateBorderShadowAttributes(buttonBorderShadow),
-	...generateBorderShadowAttributes(wrapperBorderShadow),
+	// Opt in to a default shadow colour so the Price Table Box > Box Shadow
+	// offset/blur/spread/inset controls produce a visible shadow on their own.
+	// Without a colour the style generator emits no `box-shadow` at all.
+	...generateBorderShadowAttributes(wrapperBorderShadow, {
+		defaultShadowColor: "rgba(0,0,0,0.2)",
+	}),
 	...generateBorderShadowAttributes(iconBorderShadow),
 	...generateBorderShadowAttributes(ribbonBorderShadow),
 };

@@ -121,7 +121,25 @@ class Price_Table_Helper
                 ));
             }
 
-			wp_register_style(
+            /**
+             * Enqueued directly, not merely as a dependency of
+             * `essential-blocks-editor-css`.
+             *
+             * Both handles are shared with the other Essential Blocks standalone
+             * plugins, and `WP_Dependencies::add()` returns early when a handle is
+             * already registered — src, deps and ver are all discarded. So once a
+             * sibling that sorts earlier in `active_plugins` (image-comparison)
+             * registered `essential-blocks-editor-css` with its own dependency
+             * list, the `essential-blocks-iconpicker-css` dependency below was
+             * dropped and the icon picker's stylesheet never loaded: the Button
+             * Icon popup lost `.wip-iconpicker-popup`, `.wip-icon-area`,
+             * `.wip-icon-box` and `#wipIcon` and collapsed into an unstyled list.
+             *
+             * Enqueuing it on its own line is independent of who wins the other
+             * handle. The dependency is kept so the load order still holds when
+             * this plugin does register `essential-blocks-editor-css` first.
+             */
+			wp_enqueue_style(
 				'essential-blocks-iconpicker-css',
 				PRICE_TABLE_BLOCKS_ADMIN_URL . 'dist/style-modules.css',
 				[],
