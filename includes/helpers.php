@@ -147,6 +147,22 @@ class Price_Table_Helper
 				'all'
 			);
 
+            /**
+             * The icon picker's grid and preview render in the editor sidebar,
+             * which is the admin document — not the iframed canvas the block's
+             * `editor_style` is collected for. Font Awesome reaches it only
+             * incidentally, through whichever plugin happens to own the shared
+             * `fontawesome-frontend-css` handle, and when that owner ships Font
+             * Awesome 5 every FA6-only icon in the picker draws as blank space.
+             *
+             * Enqueuing the scoped compatibility layer here puts Font Awesome 6
+             * (its registered dependency) and the `#wipIcon` /
+             * `.wip-iconpicker-popup` overrides in the admin document directly,
+             * so the picker no longer depends on that race. Registered on `init`
+             * in the plugin bootstrap; `admin_enqueue_scripts` runs after it.
+             */
+            wp_enqueue_style( 'eb-price-table-fontawesome-compat' );
+
             wp_enqueue_style(
                 'essential-blocks-editor-css',
                 PRICE_TABLE_BLOCKS_ADMIN_URL . 'dist/modules.css',
