@@ -321,6 +321,13 @@ const edit = (props) => {
 														<a
 															href={buttonURL}
 															className="eb-pricing-button"
+															// Editor only: keep the link inert so clicking it
+															// selects the block / edits the label instead of
+															// navigating away. `save.js` is unaffected, so the
+															// button still works on the frontend.
+															onClick={(event) =>
+																event.preventDefault()
+															}
 														>
 															{buttonIconPosition ===
 																"left" && (
@@ -591,6 +598,13 @@ const edit = (props) => {
 													<a
 														href={buttonURL}
 														className="eb-pricing-button"
+														// Editor only: keep the link inert so clicking it
+														// selects the block / edits the label instead of
+														// navigating away. `save.js` is unaffected, so the
+														// button still works on the frontend.
+														onClick={(event) =>
+															event.preventDefault()
+														}
 													>
 														{buttonIconPosition ===
 															"left" && (

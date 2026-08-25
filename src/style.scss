@@ -36,7 +36,14 @@
 }
 
 .eb-pricing .eb-pricing-button {
-	display: inline-block;
+	// inline-flex centres the icon against the label on the cross axis at any
+	// font size. The previous inline-block relied on inline vertical-align, and
+	// Dashicons ship `vertical-align: top` from core, which pushed them above
+	// the label. Centring here works for both icon types and needs no
+	// per-size offset.
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	padding: 12px 25px;
 	background: #00c853;
 	font-size: 14px;
@@ -49,6 +56,21 @@
 	-o-transition: 0.3s;
 	transition: 0.3s;
 	border-radius: 4px;
+}
+
+// Core ships Dashicons as a fixed 20x20 box with `line-height: 1`. That fixed
+// box ignores the configured Icon Size, so the glyph overflowed its container
+// instead of scaling with it. Letting the box follow the font-size makes Icon
+// Size and Icon Spacing behave exactly as they do for Font Awesome.
+//
+// Scoped to `.dashicons` inside the button so Font Awesome `<i>` rendering and
+// the feature-list icons are both untouched. Vertical centring is handled by
+// the flex container above rather than by `vertical-align`, so it holds at any
+// font size without a per-size offset.
+.eb-pricing .eb-pricing-button .dashicons {
+	width: auto;
+	height: auto;
+	line-height: 1;
 }
 
 .eb-pricing .eb-pricing-button:hover {

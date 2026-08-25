@@ -114,18 +114,14 @@ lib/style-handler/gitignore
 lib/style-handler/dist/index.js.map
 lib/style-handler/README.md
 
-# --- Orphaned Font Awesome 4 webfonts ---
-# assets/css/font-awesome5.css is FA5 and references only fa-solid-900,
-# fa-brands-400 and fa-regular-400. These FA4 leftovers are referenced by no
-# CSS, JS, PHP or src file and cost ~1.1 MB uncompressed.
-assets/fonts/FontAwesome.otf
-assets/fonts/fontawesome-webfont.*
-
 # --- Legacy webfont formats ---
 # Every @font-face lists woff2/woff/ttf ahead of these, so a browser new enough
 # to run the block editor never requests them. .eot is IE-only (WordPress
 # dropped IE11 in 5.8); SVG fonts were removed from Chrome 38 and only ever
-# worked in Safari <= 4.1 / Android <= 4.3. Saves ~2.2 MB.
+# worked in Safari <= 4.1 / Android <= 4.3.
+#
+# assets/fonts/ now holds only the fontIconPicker face; the Font Awesome 6
+# webfonts live in assets/css/fontawesome/webfonts/ and ship woff2 + ttf only.
 assets/fonts/*.eot
 assets/fonts/*.svg
 

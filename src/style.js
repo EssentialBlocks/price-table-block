@@ -522,7 +522,8 @@ export default function Style(props) {
 			  ${buttonHoverBackgroundStylesDesktop}
 			  color: ${hoverTextColor};
 		  }
-		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button i {
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button i,
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button .dashicons {
 			  ${buttonIconPosition === "left" ? buttonIconSpaceRightDesktop : buttonIconSpaceLeftDesktop}
 			  ${buttonIconSizeDesktop}
 		  }
@@ -649,7 +650,8 @@ export default function Style(props) {
 		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button:hover {
 			  ${btnShadowStylesHoverTab}
 		  }
-		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button i {
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button i,
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button .dashicons {
 			  ${buttonIconPosition === "left" ? buttonIconSpaceRightTab : buttonIconSpaceLeftTab}
 			  ${buttonIconSizeTab}
 		  }
@@ -733,7 +735,8 @@ export default function Style(props) {
 		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button:hover {
 			  ${btnShadowStylesHoverMobile}
 		  }
-		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button i {
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button i,
+		  .eb-pricing-wrapper.${blockId} .eb-pricing .eb-pricing-item .eb-pricing-footer .eb-pricing-button .dashicons {
 			  ${buttonIconPosition === "left" ? buttonIconSpaceRightMobile : buttonIconSpaceLeftMobile}
 			  ${buttonIconSizeMobile}
 		  }
