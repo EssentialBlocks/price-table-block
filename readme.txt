@@ -109,15 +109,15 @@ Yes, it will work with any standard WordPress theme.
 * Improved: Security for asset generation
 * Fixed: Warning in controls
 
-== 1.1.2 - 28/07/2021 =
+= 1.1.2 - 28/07/2021 =
 * Added: Alignment Option For Every Section
 * Improved: HTML Structure For CSS Issues
 
-== 1.1.1 - 13/07/2021 =
+= 1.1.1 - 13/07/2021 =
 * Fixed: naming convention on block.json file
 * Fixed: remove extra block.json file
 
-== 1.1.0 - 11/07/2021 =
+= 1.1.0 - 11/07/2021 =
 * Added: Preset Designs, More flexibility on controls
 * Added: Dynamic asset generation for inline styles
 * Added: Responsive control
