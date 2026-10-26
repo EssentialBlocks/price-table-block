@@ -100,7 +100,6 @@ Please branch off `dev` and target `dev` with your pull request.
 - [re_enter_rupok](https://profiles.wordpress.org/re_enter_rupok/)
 - [Asif2BD](https://profiles.wordpress.org/asif2bd/)
 - [rahat89](https://profiles.wordpress.org/rahat89/)
-- [fencermonir](https://profiles.wordpress.org/fencermonir/)
 - [RahatSheikhLeon](https://github.com/RahatSheikhLeon)
 
 ## Support & Documentation
