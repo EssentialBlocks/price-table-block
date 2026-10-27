@@ -16,6 +16,7 @@ import { select } from "@wordpress/data";
 import classnames from "classnames";
 
 import Inspector from "./inspector";
+import sanitizeLink from "./sanitize-link";
 
 import Style from "./style";
 
@@ -279,7 +280,7 @@ const edit = (props) => {
 																		link ? (
 																		<a
 																			href={
-																				link
+																				sanitizeLink(link)
 																			}
 																		>
 																			<EBDisplayIcon
@@ -319,7 +320,7 @@ const edit = (props) => {
 												>
 													<div className="eb-pricing-button-wrapper">
 														<a
-															href={buttonURL}
+															href={sanitizeLink(buttonURL)}
 															className="eb-pricing-button"
 															// Editor only: keep the link inert so clicking it
 															// selects the block / edits the label instead of
@@ -486,7 +487,7 @@ const edit = (props) => {
 																	link ? (
 																	<a
 																		href={
-																			link
+																			sanitizeLink(link)
 																		}
 																	>
 																		<EBDisplayIcon
@@ -596,7 +597,7 @@ const edit = (props) => {
 											>
 												<div className="eb-pricing-button-wrapper">
 													<a
-														href={buttonURL}
+														href={sanitizeLink(buttonURL)}
 														className="eb-pricing-button"
 														// Editor only: keep the link inert so clicking it
 														// selects the block / edits the label instead of

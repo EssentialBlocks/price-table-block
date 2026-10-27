@@ -4,7 +4,7 @@
  * Plugin Name:     Price Table Block
  * Plugin URI:         https://essential-blocks.com
  * Description:     Instantly create beautiful pricing menu for eCommerce website
- * Version:         1.3.0
+ * Version:         1.3.1
  * Author:          WPDeveloper
  * Author URI:         https://wpdeveloper.net
  * License:         GPL-3.0-or-later
@@ -29,7 +29,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 
 require_once __DIR__ . '/includes/font-loader.php';
-require_once __DIR__ . '/includes/post-meta.php';
 require_once __DIR__ . '/includes/helpers.php';
 
 /**
@@ -43,7 +42,7 @@ if ( file_exists( __DIR__ . '/lib/style-handler/style-handler.php' ) ) {
 if ( ! function_exists( 'create_block_pricing_table_block_init' ) ) {
 function create_block_pricing_table_block_init() {
 
-    define( 'PRICE_TABLE_BLOCKS_VERSION', '1.3.0' );
+    define( 'PRICE_TABLE_BLOCKS_VERSION', '1.3.1' );
     define( 'PRICE_TABLE_BLOCKS_ADMIN_URL', plugin_dir_url( __FILE__ ) );
     define( 'PRICE_TABLE_BLOCKS_ADMIN_PATH', dirname( __FILE__ ) );
 
@@ -240,7 +239,7 @@ function create_block_pricing_table_block_init() {
                         wp_enqueue_script( 'essential-blocks-eb-animation' );
                         wp_enqueue_style( 'create-block-pricing-table-block' );
                     }
-                    return $content;
+                    return Price_Table_Helper::sanitize_links( $content );
                 }
             ]
         );

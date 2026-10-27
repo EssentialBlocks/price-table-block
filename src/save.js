@@ -2,6 +2,7 @@
  * WordPress dependencies
  */
 import { useBlockProps } from "@wordpress/block-editor";
+import sanitizeLink from "./sanitize-link";
 const { EBDisplayIcon } = window.EBPricingTableControls;
 
 const Save = ({ attributes }) => {
@@ -126,7 +127,7 @@ const Save = ({ attributes }) => {
                                                                     data-link={link}
                                                                 >
                                                                     {clickable && link ? (
-                                                                        <a href={link}>
+                                                                        <a href={sanitizeLink(link)}>
                                                                             <EBDisplayIcon
                                                                                 className={`eb-pricebox-icon`}
                                                                                 icon={icon}
@@ -160,7 +161,7 @@ const Save = ({ attributes }) => {
                                             <div className="eb-pricing-footer" data-icon={buttonIcon}>
                                                 <div className="eb-pricing-button-wrapper">
                                                     <a
-                                                        href={buttonURL == '#' ? '' : buttonURL}
+                                                        href={buttonURL == '#' ? '' : sanitizeLink(buttonURL)}
                                                         {...(newWindow && { target: "_blank" })}
                                                         className="eb-pricing-button"
                                                     >
@@ -247,7 +248,7 @@ const Save = ({ attributes }) => {
                                                             data-link={link}
                                                         >
                                                             {clickable && link ? (
-                                                                <a href={link}>
+                                                                <a href={sanitizeLink(link)}>
                                                                     <EBDisplayIcon
                                                                         className={`eb-pricebox-icon`}
                                                                         icon={icon}
@@ -319,7 +320,7 @@ const Save = ({ attributes }) => {
                                         <div className="eb-pricing-footer" data-icon={buttonIcon}>
                                             <div className="eb-pricing-button-wrapper">
                                                 <a
-                                                    href={buttonURL == '#' ? '' : buttonURL}
+                                                    href={buttonURL == '#' ? '' : sanitizeLink(buttonURL)}
                                                     {...(newWindow && { target: "_blank" })}
                                                     className="eb-pricing-button"
                                                 >
