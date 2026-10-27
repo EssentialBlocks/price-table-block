@@ -131,3 +131,8 @@ assets/fonts/*.svg
 *.tar.gz
 *.zip
 **/*.zip
+
+# Controls' eb_frontend helper bundle: built by webpack but never registered or
+# enqueued by this plugin
+dist/frontend.js
+dist/frontend.asset.php

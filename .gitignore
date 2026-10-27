@@ -28,3 +28,5 @@ node_modules/
 
 # mac generate files
 .DS_Store
+# Source maps expose the private controls source
+*.map

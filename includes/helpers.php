@@ -224,5 +224,39 @@ class Price_Table_Helper
 
         return $blockname;
     }
+
+    /**
+     * Replace link targets that would run script (javascript:, vbscript:, data:) with "#".
+     *
+     * Other links are left byte for byte as saved. Needs the HTML API
+     * (WordPress 6.2+); on older versions the markup is returned as is.
+     *
+     * @param string $content Saved block markup.
+     * @return string
+     */
+    public static function sanitize_links($content)
+    {
+        if (!is_string($content) || false === stripos($content, '<a') || !class_exists('WP_HTML_Tag_Processor')) {
+            return $content;
+        }
+
+        $tags    = new WP_HTML_Tag_Processor($content);
+        // Only schemes that run script are dropped; app links such as whatsapp: are kept.
+        $blocked = array('javascript', 'vbscript', 'data');
+        while ($tags->next_tag('a')) {
+            $href = $tags->get_attribute('href');
+            if (!is_string($href)) {
+                continue;
+            }
+            // Browsers ignore leading/trailing control characters and spaces,
+            // and tabs or newlines anywhere, when they read a URL's scheme.
+            $normalised = preg_replace('/[\t\n\r]/', '', trim($href, "\x00..\x20"));
+            if (preg_match('/^([a-z][a-z0-9+.\-]*):/i', $normalised, $scheme) && in_array(strtolower($scheme[1]), $blocked, true)) {
+                $tags->set_attribute('href', '#');
+            }
+        }
+
+        return $tags->get_updated_html();
+    }
 }
 Price_Table_Helper::register();
