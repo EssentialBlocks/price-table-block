@@ -228,22 +228,30 @@ function create_block_pricing_table_block_init() {
         $style_css_ver
     );
 
-    if ( ! WP_Block_Type_Registry::get_instance()->is_registered( 'essential-blocks/pricing-table' ) ) {
-        register_block_type(
-            Price_Table_Helper::get_block_register_path( 'price-table-block/pricing-table', PRICE_TABLE_BLOCKS_ADMIN_PATH ),
-            [
-                'editor_script'   => 'eb-pricing-table-block-editor',
-                'editor_style'    => 'eb-pricing-table-block-editor-style',
-                'render_callback' => function ( $attributes, $content ) {
-                    if ( ! is_admin() ) {
-                        wp_enqueue_script( 'essential-blocks-eb-animation' );
-                        wp_enqueue_style( 'create-block-pricing-table-block' );
-                    }
-                    return Price_Table_Helper::sanitize_links( $content );
-                }
-            ]
-        );
+    $eb_has_block = WP_Block_Type_Registry::get_instance()->is_registered( 'essential-blocks/pricing-table' );
+    $block_args   = [
+        'editor_script'   => 'eb-pricing-table-block-editor',
+        'editor_style'    => 'eb-pricing-table-block-editor-style',
+        'render_callback' => function ( $attributes, $content ) {
+            if ( ! is_admin() ) {
+                wp_enqueue_script( 'essential-blocks-eb-animation' );
+                wp_enqueue_style( 'create-block-pricing-table-block' );
+            }
+            return Price_Table_Helper::sanitize_links( $content );
+        }
+    ];
+
+    // Essential Blocks has its own version of this block under another name. Posts saved
+    // with this one still need its render callback and front-end assets, so keep it
+    // registered, but leave out the editor bundle, which can't run beside Essential Blocks.
+    if ( $eb_has_block ) {
+        unset( $block_args['editor_script'], $block_args['editor_style'] );
     }
+
+    register_block_type(
+        Price_Table_Helper::get_block_register_path( 'price-table-block/pricing-table', PRICE_TABLE_BLOCKS_ADMIN_PATH ),
+        $block_args
+    );
 }
 }
 add_action( 'init', 'create_block_pricing_table_block_init' );

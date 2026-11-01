@@ -122,22 +122,12 @@ class Price_Table_Helper
             }
 
             /**
-             * Enqueued directly, not merely as a dependency of
-             * `essential-blocks-editor-css`.
+             * Enqueued directly, not merely as a dependency of `price-table-block-controls-css`.
              *
-             * Both handles are shared with the other Essential Blocks standalone
+             * This handle is shared with the other Essential Blocks standalone
              * plugins, and `WP_Dependencies::add()` returns early when a handle is
-             * already registered — src, deps and ver are all discarded. So once a
-             * sibling that sorts earlier in `active_plugins` (image-comparison)
-             * registered `essential-blocks-editor-css` with its own dependency
-             * list, the `essential-blocks-iconpicker-css` dependency below was
-             * dropped and the icon picker's stylesheet never loaded: the Button
-             * Icon popup lost `.wip-iconpicker-popup`, `.wip-icon-area`,
-             * `.wip-icon-box` and `#wipIcon` and collapsed into an unstyled list.
-             *
-             * Enqueuing it on its own line is independent of who wins the other
-             * handle. The dependency is kept so the load order still holds when
-             * this plugin does register `essential-blocks-editor-css` first.
+             * already registered, so a sibling's copy can win. Enqueuing it on its
+             * own line loads the icon picker's styles whoever owns the handle.
              */
 			wp_enqueue_style(
 				'essential-blocks-iconpicker-css',
@@ -164,7 +154,7 @@ class Price_Table_Helper
             wp_enqueue_style( 'eb-price-table-fontawesome-compat' );
 
             wp_enqueue_style(
-                'essential-blocks-editor-css',
+                'price-table-block-controls-css',
                 PRICE_TABLE_BLOCKS_ADMIN_URL . 'dist/modules.css',
                 array('essential-blocks-iconpicker-css'),
                 $controls_version,
