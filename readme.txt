@@ -1,6 +1,6 @@
 === Price Table Block ===
 Contributors: wpdevteam, re_enter_rupok, Asif2BD, rahat89, RahatSheikhLeon
-Tags: block, blocks, price, pricing, discount, offers, price table, pricing table, gutenberg, gutenberg blocks
+Tags: price table, pricing table, pricing, gutenberg, block
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 7.4
